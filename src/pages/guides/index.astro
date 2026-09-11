@@ -2,71 +2,187 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Tous les guides" description="Les guides d'achat batteries électroniques par budget, situation et type de matériel." currentPage="guides">
+<BaseLayout title="Une question, un guide, une réponse" description="Chaque guide répond à une seule question, celle que tu tapes dans Google à 23 h. Un tableau, deux ou trois modèles recommandés, le budget réel." currentPage="guides">
+
+  <nav class="breadcrumb">ACCUEIL / GUIDES</nav>
+
   <section class="hub-hero">
-    <h1>Tous les guides</h1>
-    <p>Un guide = une question, une réponse. Par budget, par situation ou par type de matériel.</p>
+    <span class="badge turquoise">10 GUIDES</span>
+    <h1>Une question, un guide, une réponse</h1>
+    <p>Chaque guide répond à une seule question, celle que tu tapes dans Google à 23 h. Un tableau, deux ou trois modèles recommandés, le budget réel. Pas de liste de quarante références où tu ne sais plus quoi choisir.</p>
+    <div class="hub-date">MIS À JOUR LE 11 SEPT. 2026</div>
   </section>
 
-  <section class="hub-content">
-    <div class="guides-familles">
-      <div class="famille">
-        <h2>Par budget</h2>
-        <div class="famille-list">
-          <a href="/guides/meilleure-batterie-moins-500-euros/" class="guide-card">
-            <div class="guide-badge">GUIDE D'ACHAT</div>
-            <h3>La meilleure batterie électronique à moins de 500 €</h3>
-            <p>Neuf modèles comparés, trois recommandations, les pièges du segment, le budget réel.</p>
-            <span class="guide-cta">Lire le guide →</span>
-          </a>
-          <div class="guide-card bientot">
-            <h3>La meilleure batterie électronique à moins de 300 €</h3>
-            <p>Bientôt disponible.</p>
-          </div>
-          <div class="guide-card bientot">
-            <h3>La meilleure batterie électronique à moins de 1 000 €</h3>
-            <p>Bientôt disponible.</p>
-          </div>
-        </div>
-      </div>
+  <!-- Le plus lu -->
+  <section class="plus-lu">
+    <div class="plus-lu-content">
+      <span class="plus-lu-badge">LE PLUS LU</span>
+      <div class="plus-lu-titre">Quelle batterie électronique pour un appartement</div>
+      <p>Neuf lecteurs sur dix arrivent ici avec la même peur : déranger les voisins. Ce guide dit ce qu'ils entendent vraiment, ce qui règle le problème pour quarante euros et les quatre modèles qui passent inaperçus.</p>
+      <a href="/guides/batterie-appartement/" class="btn-corail">Lire le guide</a>
+    </div>
+    <div class="plus-lu-image">
+      <img src="https://www.thomann.de/prodbilder/557748.jpg" alt="ROLAND TD-02KV" />
+    </div>
+  </section>
 
-      <div class="famille">
-        <h2>Par situation</h2>
-        <div class="famille-list">
-          <a href="/guides/batterie-appartement/" class="guide-card">
-            <div class="guide-badge turquoise">GUIDE D'ACHAT</div>
-            <h3>Quelle batterie électronique pour un appartement ?</h3>
-            <p>En appartement, le problème n'est jamais le son : c'est le bruit des baguettes et celui de la pédale dans le plancher.</p>
-            <span class="guide-cta turquoise">Lire le guide →</span>
-          </a>
-          <div class="guide-card bientot">
-            <h3>Quelle batterie électronique pour un enfant de 6 à 12 ans ?</h3>
-            <p>Bientôt disponible.</p>
-          </div>
-          <div class="guide-card bientot">
-            <h3>Quelle batterie pour un adulte qui débute vraiment ?</h3>
-            <p>Bientôt disponible.</p>
-          </div>
-        </div>
-      </div>
+  <!-- Par budget -->
+  <div class="section-header">
+    <h2>Par budget</h2>
+    <div class="section-line"></div>
+    <div class="section-count">3 GUIDES</div>
+  </div>
 
-      <div class="famille">
-        <h2>Par type de matériel</h2>
-        <div class="famille-list">
-          <div class="guide-card bientot">
-            <h3>Peaux mesh ou pads en caoutchouc ?</h3>
-            <p>Bientôt disponible.</p>
-          </div>
-          <div class="guide-card bientot">
-            <h3>Le pack complet prêt à jouer</h3>
-            <p>Bientôt disponible.</p>
-          </div>
-          <div class="guide-card bientot">
-            <h3>Batterie électronique ou batterie acoustique ?</h3>
-            <p>Bientôt disponible.</p>
-          </div>
-        </div>
+  <section class="guides-grid">
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/407855.jpg" alt="MILLENIUM MPS-150X" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
       </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">La meilleure batterie électronique à moins de 300 €</div>
+        <p>Six modèles à ce prix, deux qui valent le coup. On dit lesquels et pourquoi les quatre autres non.</p>
+        <div class="guide-card-bientot">En préparation</div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/575657.jpg" alt="ALESIS NITRO MAX" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">La meilleure batterie électronique à moins de 500 €</div>
+        <p>Le segment où se joue 70 % des achats. Cinq modèles comparés, un gagnant net.</p>
+        <a href="/guides/meilleure-batterie-moins-500-euros/" class="btn-corail-card">Lire le guide</a>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/511732.jpg" alt="MILLENIUM MPS-1000" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">Quelle batterie électronique à moins de 1 000 €</div>
+        <p>Ce que 500 € de plus achètent vraiment : des pads plus grands, un module plus fin, pas plus de plaisir.</p>
+        <div class="guide-card-bientot">En préparation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Par situation -->
+  <div class="section-header">
+    <h2>Par situation</h2>
+    <div class="section-line"></div>
+    <div class="section-count">4 GUIDES</div>
+  </div>
+
+  <section class="guides-grid">
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/557748.jpg" alt="ROLAND TD-02KV" />
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">Quelle batterie électronique pour un appartement</div>
+        <p>Ce qui traverse le plancher, ce qui ne traverse rien, les trois modèles qui passent inaperçus.</p>
+        <a href="/guides/batterie-appartement/" class="btn-corail-card">Lire le guide</a>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/549098.jpg" alt="MILLENIUM ROOKIE" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">Quelle batterie électronique pour un enfant de 6 à 12 ans</div>
+        <p>Taille du rack, hauteur du siège, robustesse du matériel. Ce qui compte n'est pas le prix.</p>
+        <div class="guide-card-bientot">En préparation</div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/454253.jpg" alt="MILLENIUM MPS-450" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">Quelle batterie pour un adulte qui débute vraiment</div>
+        <p>Tu n'as jamais tenu une baguette. Voilà par où commencer sans y laisser un mois de loyer.</p>
+        <div class="guide-card-bientot">En préparation</div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/520620.jpg" alt="CASQUE" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">Le pack complet prêt à jouer, batterie plus accessoires</div>
+        <p>Casque, tapis, siège, baguettes. Le budget réel et les trois paniers qu'on recommande.</p>
+        <div class="guide-card-bientot">En préparation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Par type de matériel -->
+  <div class="section-header">
+    <h2>Par type de matériel</h2>
+    <div class="section-line"></div>
+    <div class="section-count">3 GUIDES</div>
+  </div>
+
+  <section class="guides-grid">
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/385630.jpg" alt="PAD MESH" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">Peaux mesh ou pads en caoutchouc</div>
+        <p>La différence de toucher, la différence de bruit, la différence de prix. Le point le plus important d'un premier achat.</p>
+        <div class="guide-card-bientot">En préparation</div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/560759.jpg" alt="SNARE ACOUSTIQUE" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">Batterie électronique ou batterie acoustique pour débuter</div>
+        <p>La vraie question n'est pas le son, c'est où tu habites et qui dort à côté.</p>
+        <div class="guide-card-bientot">En préparation</div>
+      </div>
+    </div>
+
+    <div class="guide-card">
+      <div class="guide-card-image">
+        <img src="https://www.thomann.de/prodbilder/379192.jpg" alt="MODULE" />
+        <span class="guide-card-badge-bientot">BIENTÔT</span>
+      </div>
+      <div class="guide-card-body">
+        <div class="guide-card-titre">Acheter d'occasion sans se faire avoir</div>
+        <p>Ce qui s'use, ce qui se remplace, ce qui condamne une batterie. Les six points à vérifier avant de payer.</p>
+        <div class="guide-card-bientot">En préparation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Encarts finaux -->
+  <section class="encarts-fin">
+    <div class="encart-fonc">
+      <div class="encart-fonc-titre">Tu ne sais pas par où commencer</div>
+      <p>Trois questions, deux modèles en face. C'est le chemin le plus court entre toi et une réponse.</p>
+      <a href="/comparatif/" class="btn-jaune">Aller au comparatif</a>
+    </div>
+    <div class="encart-clair">
+      <div class="encart-clair-titre">Il te manque un guide</div>
+      <p>Une situation qu'on n'a pas traitée, une question restée sans réponse : dis-le nous. C'est comme ça que la liste s'allonge.</p>
+      <a href="/contact/" class="btn-secondaire">Proposer un sujet</a>
     </div>
   </section>
 
@@ -74,105 +190,65 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 </BaseLayout>
 
 <style>
-  .hub-hero {
-    padding: 44px 40px 34px;
-    border-bottom: var(--border-epais) solid var(--color-encre);
-  }
+  .breadcrumb { padding: 22px 40px 0; font: 500 12.5px var(--font-mono); color: var(--texte-mono); }
 
-  .hub-hero h1 {
-    font: 800 54px/1 var(--font-titres);
-    letter-spacing: -0.035em;
-    margin: 0 0 14px;
-  }
+  .hub-hero { padding: 20px 40px 30px; max-width: 860px; }
 
-  .hub-hero p {
-    font: 400 18px/1.55 var(--font-texte);
-    color: var(--texte-secondaire);
-    margin: 0;
-    max-width: 700px;
-  }
+  .badge { display: inline-flex; align-items: center; gap: 8px; font: 700 12px var(--font-texte); letter-spacing: 0.04em; border: var(--border-epais) solid var(--color-encre); border-radius: 9px; padding: 6px 12px; margin-bottom: 20px; }
+  .badge.turquoise { background: var(--color-turquoise); color: #fff; }
 
-  .hub-content {
-    padding: 34px 40px;
-  }
+  .hub-hero h1 { font: 800 56px/1.02 var(--font-titres); letter-spacing: -0.035em; margin: 0 0 18px; text-wrap: pretty; }
+  .hub-hero p { font: 400 20px/1.55 var(--font-texte); color: var(--texte-secondaire); margin: 0 0 20px; max-width: 720px; text-wrap: pretty; }
+  .hub-date { font: 500 13px var(--font-mono); color: var(--texte-mono); }
 
-  .guides-familles {
-    display: flex;
-    flex-direction: column;
-    gap: 34px;
-  }
+  /* Plus lu */
+  .plus-lu { margin: 0 40px 34px; display: grid; grid-template-columns: 1fr 340px; gap: 22px; background: var(--color-jaune); border: var(--border-epais) solid var(--color-encre); border-radius: 22px; padding: 26px; box-shadow: 7px 7px 0 var(--color-encre); align-items: center; }
+  .plus-lu-badge { display: inline-block; font: 700 11.5px var(--font-texte); letter-spacing: 0.05em; background: var(--color-encre); color: var(--color-jaune); border: var(--border-epais) solid var(--color-encre); border-radius: 8px; padding: 5px 10px; margin-bottom: 14px; }
+  .plus-lu-titre { font: 800 36px/1.05 var(--font-titres); letter-spacing: -0.03em; margin-bottom: 12px; }
+  .plus-lu-content p { font: 400 16.5px/1.6 var(--font-texte); color: var(--texte-principal); margin: 0 0 20px; max-width: 520px; }
+  .plus-lu-image { height: 210px; border: var(--border-epais) solid var(--color-encre); border-radius: 16px; overflow: hidden; }
+  .plus-lu-image img { width: 100%; height: 100%; object-fit: contain; padding: 10px; box-sizing: border-box; background: #fff; }
 
-  .famille h2 {
-    font: 800 30px var(--font-titres);
-    letter-spacing: -0.025em;
-    margin-bottom: 18px;
-  }
+  .btn-corail { display: inline-block; font: 700 15px var(--font-texte); text-decoration: none; color: #fff; background: var(--color-corail); border: var(--border-epais) solid var(--color-encre); padding: 13px 20px; border-radius: 12px; box-shadow: 4px 4px 0 var(--color-encre); transition: box-shadow 0.15s; }
+  .btn-corail:hover { box-shadow: 1px 1px 0 var(--color-encre); color: #fff; }
 
-  .famille-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
-  }
+  /* Section headers */
+  .section-header { display: flex; align-items: baseline; gap: 12px; margin: 0 40px 14px; }
+  .section-header h2 { font: 800 26px var(--font-titres); letter-spacing: -0.025em; }
+  .section-line { flex: 1; height: 2.5px; background: var(--color-encre); }
+  .section-count { font: 500 12.5px var(--font-mono); color: var(--texte-mono); }
 
-  .guide-card {
-    position: relative;
-    background: #fff;
-    border: var(--border-epais) solid var(--color-encre);
-    border-radius: 18px;
-    padding: 22px;
-    box-shadow: 5px 5px 0 var(--color-encre);
-    text-decoration: none;
-    color: inherit;
-    transition: box-shadow 0.15s;
-  }
+  /* Guides grid */
+  .guides-grid { margin: 0 40px 26px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .guide-card { background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 18px; overflow: hidden; box-shadow: 5px 5px 0 var(--color-encre); display: flex; flex-direction: column; }
+  .guide-card-image { position: relative; height: 130px; border-bottom: var(--border-epais) solid var(--color-encre); }
+  .guide-card-image img { width: 100%; height: 100%; object-fit: contain; padding: 10px; box-sizing: border-box; background: #fff; }
+  .guide-card-badge-bientot { position: absolute; top: 10px; right: 10px; font: 700 10.5px var(--font-texte); letter-spacing: 0.05em; background: var(--color-creme); color: var(--texte-secondaire); border: var(--border-moyen) solid var(--color-encre); border-radius: 7px; padding: 5px 9px; }
+  .guide-card-body { padding: 17px 19px 19px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+  .guide-card-titre { font: 700 18px/1.2 var(--font-titres); letter-spacing: -0.02em; }
+  .guide-card-body p { font: 400 14px/1.5 var(--font-texte); color: var(--texte-carte); margin: 0; flex: 1; }
+  .guide-card-bientot { text-align: center; font: 700 13.5px var(--font-texte); color: var(--texte-secondaire); background: var(--color-creme); border: var(--border-epais) dashed var(--color-sable-clair); padding: 10px; border-radius: 11px; }
+  .btn-corail-card { display: inline-block; text-align: center; font: 700 13.5px var(--font-texte); text-decoration: none; color: #fff; background: var(--color-corail); border: var(--border-epais) solid var(--color-encre); padding: 10px; border-radius: 11px; box-shadow: 3px 3px 0 var(--color-encre); transition: box-shadow 0.15s; }
+  .btn-corail-card:hover { box-shadow: 1px 1px 0 var(--color-encre); color: #fff; }
 
-  .guide-card:hover {
-    box-shadow: 2px 2px 0 var(--color-encre);
-  }
+  /* Encarts fin */
+  .encarts-fin { margin: 34px 40px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .encart-fonc { background: var(--color-encre); border-radius: 20px; padding: 26px 28px; color: var(--color-creme); }
+  .encart-fonc-titre { font: 800 24px var(--font-titres); letter-spacing: -0.025em; color: var(--color-jaune); margin-bottom: 10px; }
+  .encart-fonc p { font: 400 15.5px/1.6 var(--font-texte); color: #c4b7a7; margin: 0 0 18px; }
+  .btn-jaune { display: inline-block; font: 700 14.5px var(--font-texte); text-decoration: none; color: var(--color-encre); background: var(--color-jaune); padding: 12px 18px; border-radius: 11px; }
+  .encart-clair { background: var(--color-turquoise-clair); border: var(--border-epais) solid var(--color-encre); border-radius: 20px; padding: 26px 28px; }
+  .encart-clair-titre { font: 800 24px var(--font-titres); letter-spacing: -0.025em; color: var(--color-turquoise-fonce); margin-bottom: 10px; }
+  .encart-clair p { font: 400 15.5px/1.6 var(--font-texte); color: var(--color-turquoise-clair-texte); margin: 0 0 18px; }
+  .btn-secondaire { display: inline-block; font: 700 14.5px var(--font-texte); text-decoration: none; color: var(--color-encre); background: var(--color-creme); border: var(--border-epais) solid var(--color-encre); padding: 12px 18px; border-radius: 11px; box-shadow: 3px 3px 0 var(--color-encre); transition: box-shadow 0.15s; }
+  .btn-secondaire:hover { box-shadow: 1px 1px 0 var(--color-encre); color: var(--color-encre); }
 
-  .guide-card.bientot {
-    background: var(--color-sable);
-    border-color: var(--color-sable-clair);
-    box-shadow: none;
-  }
+  .spacer { height: 52px; }
 
-  .guide-badge {
-    display: inline-block;
-    font: 700 12px var(--font-titres);
-    background: var(--color-corail);
-    color: #fff;
-    border: var(--border-epais) solid var(--color-encre);
-    border-radius: 9px;
-    padding: 6px 12px;
-    margin-bottom: 12px;
-  }
-
-  .guide-badge.turquoise {
-    background: var(--color-turquoise);
-  }
-
-  .guide-card h3 {
-    font: 700 20px/1.2 var(--font-titres);
-    letter-spacing: -0.02em;
-    margin: 0 0 10px;
-  }
-
-  .guide-card p {
-    font: 400 14.5px/1.5 var(--font-texte);
-    color: var(--texte-carte);
-    margin: 0 0 14px;
-  }
-
-  .guide-cta {
-    font: 700 14px var(--font-texte);
-    color: var(--color-corail);
-  }
-
-  .guide-cta.turquoise {
-    color: var(--color-turquoise-fonce);
-  }
-
-  .spacer {
-    height: 52px;
+  @media (max-width: 900px) {
+    .plus-lu { grid-template-columns: 1fr; }
+    .guides-grid { grid-template-columns: 1fr; }
+    .encarts-fin { grid-template-columns: 1fr; }
+    .hub-hero h1 { font-size: 36px; }
   }
 </style>
