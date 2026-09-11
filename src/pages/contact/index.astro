@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Contact" description="Contactez BipBop pour toute question." currentPage="">
+  <section class="page-hero">
+    <h1>Contact</h1>
+    <p>Une question, une suggestion, un modèle à nous signaler ? Écris-nous.</p>
+  </section>
+
+  <section class="page-content">
+    <div class="content-col">
+      <form class="contact-form" action="/api/contact" method="POST">
+        <div class="form-group">
+          <label for="nom">Ton nom</label>
+          <input type="text" id="nom" name="nom" placeholder="Camille" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Ton e-mail</label>
+          <input type="email" id="email" name="email" placeholder="camille@exemple.fr" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Ton message</label>
+          <textarea id="message" name="message" rows="6" placeholder="Ta question, ta suggestion…" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Envoyer</button>
+      </form>
+
+      <div class="contact-info">
+        <p>On répond dans la semaine. Pas de newsletter, pas de relance commerciale.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 44px 40px 34px;
+    border-bottom: var(--border-epais) solid var(--color-encre);
+  }
+
+  .page-hero h1 {
+    font: 800 54px/1 var(--font-titres);
+    letter-spacing: -0.035em;
+    margin: 0 0 14px;
+  }
+
+  .page-hero p {
+    font: 400 18px/1.55 var(--font-texte);
+    color: var(--texte-secondaire);
+    margin: 0;
+    max-width: 700px;
+  }
+
+  .page-content {
+    padding: 34px 40px;
+  }
+
+  .content-col {
+    max-width: 560px;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .form-group label {
+    font: 700 13.5px var(--font-texte);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font: 400 15px var(--font-texte);
+    background: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 12px;
+    padding: 13px 15px;
+    color: var(--color-encre);
+    font-family: var(--font-texte);
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--texte-placeholder);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-jaune);
+  }
+
+  .btn-submit {
+    font: 700 15px var(--font-texte);
+    color: #fff;
+    background: var(--color-corail);
+    border: var(--border-epais) solid var(--color-encre);
+    padding: 14px 24px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 var(--color-encre);
+    cursor: pointer;
+    transition: box-shadow 0.15s;
+    align-self: flex-start;
+  }
+
+  .btn-submit:hover {
+    box-shadow: 1px 1px 0 var(--color-encre);
+  }
+
+  .contact-info p {
+    font: 400 15px/1.6 var(--font-texte);
+    color: var(--texte-secondaire);
+  }
+
+  .spacer {
+    height: 52px;
+  }
+</style>

@@ -1,0 +1,202 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Tous les avis" description="Les avis complets sur les batteries électroniques pour débutants." currentPage="avis">
+  <section class="hub-hero">
+    <h1>Tous les avis</h1>
+    <p>Les tests complets, honnêtes et sans jargon. Un avis = une recommandation claire.</p>
+  </section>
+
+  <section class="hub-content">
+    <div class="avis-grid">
+      <!-- Avis publiés -->
+      <a href="/avis/alesis-nitro-max/" class="avis-card">
+        <span class="avis-badge corail">NOTRE CHOIX</span>
+        <div class="avis-image">
+          <img src="https://www.thomann.de/prodbilder/575657.jpg" alt="Alesis Nitro Max" />
+        </div>
+        <div class="avis-body">
+          <div class="avis-marque">ALESIS · 409 €</div>
+          <h3>Nitro Max Mesh</h3>
+          <p>La batterie qu'on conseille les yeux fermés. Huit pads mesh, du Bluetooth, un module qui tient la route.</p>
+          <span class="avis-cta">Lire l'avis →</span>
+        </div>
+      </a>
+
+      <a href="/avis/millenium-mps-150x/" class="avis-card">
+        <span class="avis-badge turquoise">PETIT BUDGET</span>
+        <div class="avis-image">
+          <img src="https://www.thomann.de/prodbilder/407855.jpg" alt="Millenium MPS-150X" />
+        </div>
+        <div class="avis-body">
+          <div class="avis-marque">MILLENIUM · 298 €</div>
+          <h3>MPS-150X Mesh</h3>
+          <p>Des pads mesh à moins de 300 €. Le vrai ticket d'entrée pour débuter sans se ruiner.</p>
+          <span class="avis-cta">Lire l'avis →</span>
+        </div>
+      </a>
+
+      <a href="/avis/roland-td-02kv/" class="avis-card">
+        <span class="avis-badge jaune">LE PLUS DISCRET</span>
+        <div class="avis-image">
+          <img src="https://www.thomann.de/prodbilder/557748.jpg" alt="Roland TD-02KV" />
+        </div>
+        <div class="avis-body">
+          <div class="avis-marque">ROLAND · 498 €</div>
+          <h3>TD-02KV</h3>
+          <p>Tu paies le module Roland et ça s'entend. La championne du silence pour les appartements sensibles.</p>
+          <span class="avis-cta">Lire l'avis →</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Avis à venir -->
+    <div class="avis-avenir">
+      <h2>Bientôt</h2>
+      <div class="avis-avenir-list">
+        <div class="avis-avenir-item">Yamaha DTX432K</div>
+        <div class="avis-avenir-item">Donner DED-200X</div>
+        <div class="avis-avenir-item">Millenium MPS-450</div>
+        <div class="avis-avenir-item">Alesis Turbo Mesh Kit</div>
+        <div class="avis-avenir-item">Alesis Debut Kit</div>
+        <div class="avis-avenir-item">Woodbrass DDX50-Mesh</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+</BaseLayout>
+
+<style>
+  .hub-hero {
+    padding: 44px 40px 34px;
+    border-bottom: var(--border-epais) solid var(--color-encre);
+  }
+
+  .hub-hero h1 {
+    font: 800 54px/1 var(--font-titres);
+    letter-spacing: -0.035em;
+    margin: 0 0 14px;
+  }
+
+  .hub-hero p {
+    font: 400 18px/1.55 var(--font-texte);
+    color: var(--texte-secondaire);
+    margin: 0;
+    max-width: 700px;
+  }
+
+  .hub-content {
+    padding: 34px 40px;
+  }
+
+  .avis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-bottom: 44px;
+  }
+
+  .avis-card {
+    position: relative;
+    background: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 5px 5px 0 var(--color-encre);
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow 0.15s;
+  }
+
+  .avis-card:hover {
+    box-shadow: 2px 2px 0 var(--color-encre);
+  }
+
+  .avis-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    font: 700 12px var(--font-titres);
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 9px;
+    padding: 6px 12px;
+  }
+
+  .avis-badge.corail { background: var(--color-corail); color: #fff; }
+  .avis-badge.turquoise { background: var(--color-turquoise); color: #fff; }
+  .avis-badge.jaune { background: var(--color-jaune); color: var(--color-encre); }
+
+  .avis-image {
+    height: 168px;
+    border-bottom: var(--border-epais) solid var(--color-encre);
+    background: #fff;
+  }
+
+  .avis-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .avis-body {
+    padding: 18px 20px 20px;
+  }
+
+  .avis-marque {
+    font: 500 12px var(--font-mono);
+    color: var(--texte-mono);
+    margin-bottom: 5px;
+  }
+
+  .avis-body h3 {
+    font: 700 21px/1.15 var(--font-titres);
+    letter-spacing: -0.02em;
+    margin: 0 0 9px;
+  }
+
+  .avis-body p {
+    font: 400 14.5px/1.5 var(--font-texte);
+    color: var(--texte-carte);
+    margin: 0 0 15px;
+  }
+
+  .avis-cta {
+    font: 700 14px var(--font-texte);
+    color: var(--color-corail);
+  }
+
+  /* Avis à venir */
+  .avis-avenir {
+    margin-top: 20px;
+  }
+
+  .avis-avenir h2 {
+    font: 800 30px var(--font-titres);
+    letter-spacing: -0.025em;
+    margin-bottom: 18px;
+  }
+
+  .avis-avenir-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .avis-avenir-item {
+    background: var(--color-sable);
+    border: var(--border-moyen) solid var(--color-sable-clair);
+    border-radius: 12px;
+    padding: 16px 18px;
+    font: 600 15px var(--font-texte);
+    color: var(--texte-secondaire);
+  }
+
+  .spacer {
+    height: 52px;
+  }
+</style>

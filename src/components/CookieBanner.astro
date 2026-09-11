@@ -1,0 +1,101 @@
+<div id="cookie-banner" class="cookie-banner">
+  <div class="cookie-text">
+    <div class="cookie-title">Une question de cookies, vite réglée</div>
+    <p>On mesure l'audience pour savoir quelles pages t'aident vraiment. Pas de publicité, pas de revente de données. Tu peux refuser, le site marche exactement pareil. <a href="/politique-confidentialite/">Notre politique de confidentialité</a>.</p>
+  </div>
+  <div class="cookie-buttons">
+    <button type="button" data-consent="refuse" class="btn-refuse">Refuser</button>
+    <button type="button" data-consent="accept" class="btn-accept">Accepter</button>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const K = 'bipbop-consent';
+    const banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+
+    if (!localStorage.getItem(K)) {
+      banner.style.display = 'flex';
+    }
+
+    banner.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-consent]');
+      if (!btn) return;
+      try {
+        localStorage.setItem(K, btn.getAttribute('data-consent'));
+      } catch(err) {}
+      banner.style.display = 'none';
+    });
+  })();
+</script>
+
+<style>
+  .cookie-banner {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    background: var(--color-encre);
+    border-top: 3px solid var(--color-jaune);
+    padding: 18px 40px;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    font-family: var(--font-texte);
+    box-shadow: 0 -6px 24px rgba(36, 28, 20, 0.28);
+  }
+
+  .cookie-text {
+    flex: 1;
+    max-width: 760px;
+  }
+
+  .cookie-title {
+    font: 700 16px var(--font-texte);
+    color: var(--color-jaune);
+    margin-bottom: 6px;
+  }
+
+  .cookie-text p {
+    font: 400 14.5px/1.55 var(--font-texte);
+    color: #d6cabb;
+    margin: 0;
+  }
+
+  .cookie-text a {
+    color: var(--color-jaune);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .cookie-buttons {
+    display: flex;
+    gap: 12px;
+    flex: none;
+  }
+
+  .btn-refuse {
+    font: 700 14.5px var(--font-texte);
+    color: var(--color-creme);
+    background: transparent;
+    border: var(--border-epais) solid #8a7866;
+    padding: 12px 22px;
+    border-radius: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .btn-accept {
+    font: 700 14.5px var(--font-texte);
+    color: var(--color-encre);
+    background: var(--color-jaune);
+    border: var(--border-epais) solid var(--color-jaune);
+    padding: 12px 22px;
+    border-radius: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+</style>

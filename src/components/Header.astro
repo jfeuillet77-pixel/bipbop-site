@@ -1,0 +1,107 @@
+---
+interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = '' } = Astro.props;
+
+const navItems = [
+  { label: 'Comparatif', href: '/comparatif/', key: 'comparatif' },
+  { label: 'Avis', href: '/avis/', key: 'avis' },
+  { label: 'Guides', href: '/guides/', key: 'guides' },
+  { label: 'À propos', href: '/a-propos/', key: 'a-propos' },
+];
+---
+
+<header class="header">
+  <a href="/" class="logo">
+    <span class="logo-icon"></span>
+    <span class="logo-text">BipBop</span>
+  </a>
+  <nav class="nav">
+    {navItems.map((item) => (
+      <a
+        href={item.href}
+        class:list={{ active: currentPage === item.key }}
+      >
+        {item.label}
+      </a>
+    ))}
+  </nav>
+  <a href="/comparatif/" class="cta-header">Trouver ma batterie</a>
+</header>
+
+<style>
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 40px;
+    background: var(--color-creme);
+    border-bottom: var(--border-epais) solid var(--color-encre);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+    color: var(--color-encre);
+  }
+
+  .logo-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: var(--color-corail);
+    border: var(--border-epais) solid var(--color-encre);
+  }
+
+  .logo-text {
+    font: 800 20px var(--font-titres);
+    letter-spacing: -0.02em;
+  }
+
+  .nav {
+    display: flex;
+    gap: 24px;
+    font: 500 14px var(--font-texte);
+  }
+
+  .nav a {
+    color: var(--color-encre);
+    text-decoration: none;
+  }
+
+  .nav a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+  }
+
+  .nav a.active {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 5px;
+    text-decoration-color: var(--color-corail);
+  }
+
+  .cta-header {
+    font: 700 13px var(--font-texte);
+    text-decoration: none;
+    color: var(--color-encre);
+    background: var(--color-jaune);
+    border: var(--border-epais) solid var(--color-encre);
+    padding: 9px 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0 var(--color-encre);
+    transition: box-shadow 0.15s;
+  }
+
+  .cta-header:hover {
+    box-shadow: 1px 1px 0 var(--color-encre);
+    color: var(--color-encre);
+  }
+</style>

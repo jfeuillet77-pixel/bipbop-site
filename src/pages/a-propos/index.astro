@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="À propos" description="Qui est derrière BipBop, comment on gagne notre vie, nos promesses." currentPage="a-propos">
+  <section class="page-hero">
+    <h1>À propos</h1>
+    <p>Ce qu'on fait, comment on le fait, et ce qu'on ne fera jamais.</p>
+  </section>
+
+  <section class="page-content">
+    <div class="content-col">
+      <h2>Ce qu'est BipBop</h2>
+      <p>Un site qui compare les batteries électroniques pour les gens qui débutent. On écrit en français, sans jargon, et on te dit laquelle prendre selon ton budget, ta place et ce que tu veux en faire.</p>
+      <p>On ne fait pas semblant qu'un modèle à 250 € vaut un modèle à 1 200 €. On ne note pas les produits avec des étoiles inventées. On ne publie pas d'avis sur un produit qu'on n'a pas au moins tenu dans les mains en magasin ou longuement étudié via les retours utilisateurs.</p>
+
+      <h2>Comment on gagne notre vie</h2>
+      <p>Si tu achètes via nos liens Thomann, Woodbrass ou Donner Music, on touche une commission. Ton prix ne change pas. Aucun classement n'a jamais bougé pour ça, et aucun ne bougera.</p>
+      <p>On refuse les textes fournis par les marques. On refuse les placements de produits payants. Si un jour on change d'avis, on te le dira ici.</p>
+
+      <h2>Nos promesses</h2>
+      <div class="promesses">
+        <div class="promesse">
+          <div class="promesse-num">1</div>
+          <div>
+            <strong>Une recommandation par page.</strong> Pas de « ça dépend », pas de tableau de 40 lignes. On tranche.
+          </div>
+        </div>
+        <div class="promesse">
+          <div class="promesse-num">2</div>
+          <div>
+            <strong>Les défauts au même niveau que les qualités.</strong> Si un produit a un problème, on le dit.
+          </div>
+        </div>
+        <div class="promesse">
+          <div class="promesse-num">3</div>
+          <div>
+            <strong>Le prix réel, pas le prix affiché.</strong> On ajoute le casque, le tapis, le siège. Ce que tu vas vraiment payer.
+          </div>
+        </div>
+        <div class="promesse">
+          <div class="promesse-num">4</div>
+          <div>
+            <strong>Des dates de mise à jour vraies.</strong> Si la date dit septembre 2026, c'est qu'on a vérifié en septembre 2026.
+          </div>
+        </div>
+      </div>
+
+      <h2>Le nom BipBop</h2>
+      <p>BipBop, c'est le bruit que fait un pad mesh quand tu tapes dessus. C'est aussi le nom de la mascotte du site : un petit robot batteur qui n'a pas de voisins et qui teste des batteries toute la journée.</p>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 44px 40px 34px;
+    border-bottom: var(--border-epais) solid var(--color-encre);
+  }
+
+  .page-hero h1 {
+    font: 800 54px/1 var(--font-titres);
+    letter-spacing: -0.035em;
+    margin: 0 0 14px;
+  }
+
+  .page-hero p {
+    font: 400 18px/1.55 var(--font-texte);
+    color: var(--texte-secondaire);
+    margin: 0;
+    max-width: 700px;
+  }
+
+  .page-content {
+    padding: 34px 40px;
+  }
+
+  .content-col {
+    max-width: var(--colonne-lecture);
+  }
+
+  .content-col h2 {
+    font: 800 30px/1.15 var(--font-titres);
+    letter-spacing: -0.025em;
+    margin: 34px 0 16px;
+  }
+
+  .content-col h2:first-child {
+    margin-top: 0;
+  }
+
+  .content-col p {
+    font: 400 17px/1.72 var(--font-texte);
+    color: var(--texte-principal);
+    margin: 0 0 16px;
+  }
+
+  .promesses {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 20px 0 30px;
+  }
+
+  .promesse {
+    display: grid;
+    grid-template-columns: 44px 1fr;
+    gap: 18px;
+    background: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 18px;
+    padding: 20px 22px;
+    box-shadow: 4px 4px 0 var(--color-encre);
+  }
+
+  .promesse-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--color-corail);
+    border: var(--border-epais) solid var(--color-encre);
+    color: #fff;
+    font: 800 19px var(--font-titres);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .promesse:nth-child(2) .promesse-num { background: var(--color-turquoise); }
+  .promesse:nth-child(3) .promesse-num { background: var(--color-jaune); color: var(--color-encre); }
+  .promesse:nth-child(4) .promesse-num { background: var(--color-encre); }
+
+  .promesse strong {
+    font-weight: 700;
+  }
+
+  .spacer {
+    height: 52px;
+  }
+</style>

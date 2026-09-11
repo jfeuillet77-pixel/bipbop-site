@@ -1,0 +1,46 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  currentPage?: string;
+}
+
+const { title, description = 'Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.', currentPage = '' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} — BipBop</title>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <Header currentPage={currentPage} />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+      <CookieBanner />
+    </div>
+  </body>
+</html>
+
+<style>
+  .site-wrapper {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: var(--color-creme);
+    font-family: var(--font-texte);
+    color: var(--color-encre);
+    min-height: 100vh;
+  }
+</style>

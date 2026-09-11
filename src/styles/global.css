@@ -1,0 +1,99 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+/* Design System BipBop — Variables CSS */
+
+:root {
+  /* Couleurs */
+  --color-encre: #241c14;
+  --color-creme: #fdf6ec;
+  --color-corail: #d2431f;
+  --color-corail-hover: #b93a19;
+  --color-jaune: #ffd166;
+  --color-jaune-hover: #ffdd8c;
+  --color-turquoise: #0f7d76;
+  --color-turquoise-fonce: #0f5f5a;
+  --color-turquoise-clair: #e7f3f2;
+  --color-turquoise-clair-texte: #264c49;
+  --color-rouge-clair: #faeae5;
+  --color-rouge-clair-texte: #a3401f;
+  --color-rouge-clair-texte-fonce: #5b3226;
+  --color-sable: #efe6d8;
+  --color-sable-clair: #e4d8c6;
+
+  /* Gris de texte */
+  --texte-principal: #3a2f26;
+  --texte-carte: #4a3d31;
+  --texte-secondaire: #5a4c3e;
+  --texte-mono: #786550;
+  --texte-placeholder: #7a6b59;
+
+  /* Typographie */
+  --font-titres: 'Bricolage Grotesque', system-ui, sans-serif;
+  --font-texte: 'Work Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Espacements */
+  --space-1: 6px;
+  --space-2: 9px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 18px;
+  --space-6: 22px;
+  --space-7: 26px;
+  --space-8: 34px;
+  --space-9: 44px;
+
+  /* Bordures */
+  --border-epais: 2.5px;
+  --border-moyen: 2px;
+  --border-fin: 1.5px;
+
+  /* Rayons */
+  --radius-sm: 9px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-xl: 22px;
+
+  /* Ombres */
+  --shadow-sm: 3px 3px 0 var(--color-encre);
+  --shadow-md: 5px 5px 0 var(--color-encre);
+  --shadow-lg: 7px 7px 0 var(--color-encre);
+  --shadow-corail: 7px 7px 0 var(--color-corail);
+  --shadow-turquoise: 5px 5px 0 var(--color-turquoise);
+
+  /* Layout */
+  --max-width: 1180px;
+  --marge-horizontale: 40px;
+  --colonne-lecture: 760px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-texte);
+  background: var(--color-sable);
+  color: var(--color-encre);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-corail);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-corail-hover);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

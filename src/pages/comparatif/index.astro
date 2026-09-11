@@ -1,0 +1,472 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Comparatif interactif" description="Trois questions, deux modèles en face. Le comparatif de batteries électroniques pour débutants." currentPage="comparatif">
+  <section class="comparatif-hero">
+    <div class="comparatif-hero-content">
+      <h1>Dis-moi trois trucs.<br />Je te dis quoi acheter.</h1>
+      <p>Pas de tableau de 40 lignes, pas de specs que personne ne comprend. Trois questions, deux modèles en face et une phrase honnête sur chacun.</p>
+    </div>
+    <div class="comparatif-mascotte">
+      <div class="mascotte-avatar"></div>
+      <div class="mascotte-bulle">Salut, moi c'est BipBop. Je teste des batteries toute la journée parce que je n'ai pas de voisins. Toi, tu en as. On va faire ça bien.</div>
+    </div>
+  </section>
+
+  <section class="filtres">
+    <div class="filtre">
+      <div class="filtre-header">
+        <span class="filtre-num">1</span>
+        <span class="filtre-titre">T'as combien ?</span>
+      </div>
+      <div class="filtre-options">
+        <button class="filtre-option">Moins de 300 €</button>
+        <button class="filtre-option selected">Entre 300 et 500 €</button>
+        <button class="filtre-option">Plus de 500 €</button>
+      </div>
+    </div>
+    <div class="filtre">
+      <div class="filtre-header">
+        <span class="filtre-num turquoise">2</span>
+        <span class="filtre-titre">Tu la mets où ?</span>
+      </div>
+      <div class="filtre-options">
+        <button class="filtre-option selected">Dans un coin de chambre</button>
+        <button class="filtre-option">Dans le salon</button>
+        <button class="filtre-option">J'ai une pièce pour ça</button>
+      </div>
+    </div>
+    <div class="filtre">
+      <div class="filtre-header">
+        <span class="filtre-num encre">3</span>
+        <span class="filtre-titre">Tu veux en faire quoi ?</span>
+      </div>
+      <div class="filtre-options">
+        <button class="filtre-option selected">Apprendre sans déranger</button>
+        <button class="filtre-option">Rejouer mes morceaux</button>
+        <button class="filtre-option">Jouer avec des potes</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="resultats">
+    <div class="resultats-header">
+      <h2>Alors voilà ce que je prendrais</h2>
+      <div class="resultats-line"></div>
+      <div class="resultats-count">2 modèles sur 31</div>
+    </div>
+
+    <div class="resultats-grid">
+      <!-- Recommandation principale -->
+      <article class="resultat-principal">
+        <div class="resultat-badge-principal">CELLE-LÀ, LES YEUX FERMÉS</div>
+        <div class="resultat-image">
+          <img src="https://www.thomann.de/prodbilder/575657.jpg" alt="Alesis Nitro Max" />
+        </div>
+        <div class="resultat-body">
+          <div class="resultat-marque">ALESIS · 409 € environ</div>
+          <h3>Nitro Max Mesh</h3>
+          <p>Huit pads en mesh, donc une frappe qui ressemble à une vraie peau et un bruit de tape très correct pour les voisins. Le Bluetooth te laisse jouer par-dessus ta playlist, ce qui est la seule raison pour laquelle on continue à s'entraîner les premiers mois. Non, tu ne deviendras pas Dave Grohl. Mais tu vas t'éclater.</p>
+          <div class="resultat-tags">
+            <span class="tag turquoise">Voisins : ils n'entendront rien</span>
+            <span class="tag">1,10 m de large</span>
+            <span class="tag">Montage : 45 min à deux</span>
+          </div>
+          <div class="resultat-actions">
+            <a href="https://www.thomann.fr/alesis_nitro_max_kit.htm?offid=1&affid=3711" rel="sponsored noopener" target="_blank" class="btn-primary">Voir le prix chez Thomann</a>
+            <a href="/avis/alesis-nitro-max/" class="lien-avis">Lire l'avis complet</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Alternative -->
+      <div class="resultat-secondaire">
+        <article class="resultat-card">
+          <div class="resultat-image-small">
+            <img src="https://cdn.shopify.com/s/files/1/0612/3120/2528/files/5_6f759e66-464b-4495-8e59-713d28b965e7.jpg?v=1764927814" alt="Donner DED-200X" />
+          </div>
+          <div class="resultat-body-small">
+            <div class="resultat-marque">DONNER · 499,99 € environ</div>
+            <h3>DED-200X</h3>
+            <p>Si la Nitro est en rupture, ça arrive souvent, celle-ci offre un fût et une cymbale de plus. Compte quatre-vingt-onze euros de plus.</p>
+            <a href="https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=7786764075232&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-ded-200-set-de-batterie-electronique&intsrc=CATF_28584" rel="sponsored noopener" target="_blank" class="btn-secondaire">Voir le prix</a>
+          </div>
+        </article>
+
+        <div class="conseil-bipbop">
+          <div class="conseil-title">Le truc que personne ne te dit</div>
+          <p>Ajoute 60 € pour un tapis et un casque fermé. Sans tapis, la pédale tape dans le plancher et c'est ça que ton voisin du dessous entend, pas les pads.</p>
+          <a href="/guides/batterie-appartement/" class="lien-jaune">Ce qu'il faut acheter en plus →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+</BaseLayout>
+
+<style>
+  .comparatif-hero {
+    display: grid;
+    grid-template-columns: 1fr 330px;
+    gap: 40px;
+    padding: 46px 40px 34px;
+    align-items: start;
+  }
+
+  .comparatif-hero h1 {
+    font: 800 60px/1.02 var(--font-titres);
+    letter-spacing: -0.035em;
+    margin: 0 0 20px;
+    text-wrap: pretty;
+  }
+
+  .comparatif-hero p {
+    font: 400 18px/1.55 var(--font-texte);
+    color: var(--texte-secondaire);
+    margin: 0;
+    max-width: 560px;
+    text-wrap: pretty;
+  }
+
+  .comparatif-mascotte {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .mascotte-avatar {
+    width: 76px;
+    height: 76px;
+    flex: none;
+    border-radius: 50%;
+    overflow: hidden;
+    border: var(--border-epais) solid var(--color-encre);
+    background: var(--color-jaune);
+    background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px);
+  }
+
+  .mascotte-bulle {
+    position: relative;
+    background: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 16px;
+    padding: 15px 17px;
+    font: 400 14.5px/1.45 var(--font-texte);
+    box-shadow: 4px 4px 0 var(--color-encre);
+  }
+
+  /* Filtres */
+  .filtres {
+    margin: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .filtre {
+    background: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 5px 5px 0 var(--color-encre);
+  }
+
+  .filtre-header {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 15px;
+  }
+
+  .filtre-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--color-corail);
+    border: var(--border-moyen) solid var(--color-encre);
+    color: #fff;
+    font: 700 12px var(--font-texte);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .filtre-num.turquoise { background: var(--color-turquoise); }
+  .filtre-num.encre { background: var(--color-encre); }
+
+  .filtre-titre {
+    font: 700 17px var(--font-titres);
+    letter-spacing: -0.01em;
+  }
+
+  .filtre-options {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .filtre-option {
+    font: 500 14.5px var(--font-texte);
+    padding: 11px 14px;
+    border-radius: 11px;
+    border: var(--border-moyen) solid var(--color-sable-clair);
+    color: var(--texte-secondaire);
+    background: #fff;
+    cursor: pointer;
+    text-align: left;
+    transition: all 0.15s;
+  }
+
+  .filtre-option:hover {
+    border-color: var(--color-encre);
+  }
+
+  .filtre-option.selected {
+    font: 700 14.5px var(--font-texte);
+    border: var(--border-epais) solid var(--color-encre);
+    background: var(--color-jaune);
+    color: var(--color-encre);
+  }
+
+  /* Résultats */
+  .resultats {
+    padding: 0 40px;
+  }
+
+  .resultats-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 34px 0 18px;
+  }
+
+  .resultats-header h2 {
+    font: 800 26px var(--font-titres);
+    letter-spacing: -0.02em;
+  }
+
+  .resultats-line {
+    flex: 1;
+    height: 2.5px;
+    background: var(--color-encre);
+  }
+
+  .resultats-count {
+    font: 500 13px var(--font-mono);
+    color: var(--texte-mono);
+  }
+
+  .resultats-grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+
+  .resultat-principal {
+    position: relative;
+    background: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 7px 7px 0 var(--color-corail);
+  }
+
+  .resultat-badge-principal {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    transform: rotate(6deg);
+    background: var(--color-corail);
+    color: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 10px;
+    padding: 8px 13px;
+    font: 700 13px var(--font-titres);
+    letter-spacing: 0.01em;
+  }
+
+  .resultat-image {
+    height: 236px;
+    background: var(--color-sable);
+    border-bottom: var(--border-epais) solid var(--color-encre);
+  }
+
+  .resultat-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .resultat-body {
+    padding: 24px 26px 26px;
+  }
+
+  .resultat-marque {
+    font: 500 13px var(--font-mono);
+    color: var(--texte-mono);
+    margin-bottom: 6px;
+  }
+
+  .resultat-body h3 {
+    font: 800 32px/1.1 var(--font-titres);
+    letter-spacing: -0.025em;
+    margin: 0 0 12px;
+  }
+
+  .resultat-body > p {
+    font: 400 16px/1.6 var(--font-texte);
+    color: var(--texte-carte);
+    margin: 0 0 18px;
+    max-width: 520px;
+    text-wrap: pretty;
+  }
+
+  .resultat-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .tag {
+    font: 600 13px var(--font-texte);
+    padding: 7px 12px;
+    border-radius: 9px;
+    border: var(--border-moyen) solid var(--color-encre);
+    background: var(--color-creme);
+  }
+
+  .tag.turquoise {
+    background: var(--color-turquoise-clair);
+  }
+
+  .resultat-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    font: 700 15px var(--font-texte);
+    text-decoration: none;
+    color: #fff;
+    background: var(--color-corail);
+    border: var(--border-epais) solid var(--color-encre);
+    padding: 13px 20px;
+    border-radius: 12px;
+    box-shadow: 4px 4px 0 var(--color-encre);
+    transition: box-shadow 0.15s;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 1px 1px 0 var(--color-encre);
+    color: #fff;
+  }
+
+  .lien-avis {
+    font: 600 14px var(--font-texte);
+    color: var(--color-encre);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  /* Secondaire */
+  .resultat-secondaire {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .resultat-card {
+    background: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 5px 0 var(--color-turquoise);
+  }
+
+  .resultat-image-small {
+    height: 130px;
+    background: var(--color-sable);
+    border-bottom: var(--border-epais) solid var(--color-encre);
+  }
+
+  .resultat-image-small img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 8px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+
+  .resultat-body-small {
+    padding: 18px 20px 20px;
+  }
+
+  .resultat-body-small h3 {
+    font: 700 22px/1.15 var(--font-titres);
+    letter-spacing: -0.02em;
+    margin: 0 0 9px;
+  }
+
+  .resultat-body-small p {
+    font: 400 14.5px/1.5 var(--font-texte);
+    color: var(--texte-carte);
+    margin: 0 0 14px;
+  }
+
+  .btn-secondaire {
+    display: inline-block;
+    font: 700 13.5px var(--font-texte);
+    text-decoration: none;
+    color: var(--color-encre);
+    background: var(--color-creme);
+    border: var(--border-epais) solid var(--color-encre);
+    padding: 10px 15px;
+    border-radius: 11px;
+    box-shadow: 3px 3px 0 var(--color-encre);
+    transition: box-shadow 0.15s;
+  }
+
+  .btn-secondaire:hover {
+    box-shadow: 1px 1px 0 var(--color-encre);
+    color: var(--color-encre);
+  }
+
+  .conseil-bipbop {
+    background: var(--color-encre);
+    border-radius: 20px;
+    padding: 22px;
+    color: var(--color-creme);
+  }
+
+  .conseil-title {
+    font: 700 17px var(--font-titres);
+    margin-bottom: 9px;
+  }
+
+  .conseil-bipbop p {
+    font: 400 14.5px/1.55 var(--font-texte);
+    color: #c4b7a7;
+    margin: 0 0 14px;
+  }
+
+  .lien-jaune {
+    font: 600 13.5px var(--font-texte);
+    color: var(--color-jaune);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  .spacer {
+    height: 52px;
+  }
+</style>

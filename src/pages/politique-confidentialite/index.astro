@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Politique de confidentialité" description="Politique de confidentialité de BipBop." currentPage="">
+  <section class="page-hero">
+    <h1>Politique de confidentialité</h1>
+    <p>Ce qu'on fait de tes données, ce qu'on ne fait pas.</p>
+  </section>
+
+  <section class="page-content">
+    <div class="content-col">
+      <h2>Données collectées</h2>
+      <p>On mesure l'audience du site pour savoir quelles pages t'aident vraiment. On n'utilise pas de publicité, on ne revend pas de données.</p>
+
+      <h2>Cookies</h2>
+      <p>Un bandeau te demande ton consentement au premier visite. Tu peux refuser, le site marche exactement pareil. Le choix est stocké dans ton navigateur (localStorage).</p>
+
+      <h2>Formulaire de contact</h2>
+      <p>Les informations envoyées via le formulaire de contact (nom, e-mail, message) ne sont utilisées que pour te répondre. Elles ne sont pas partagées avec des tiers.</p>
+
+      <h2>Liens affiliés</h2>
+      <p>Quand tu cliques sur un lien vers Thomann, Woodbrass ou Donner Music, ces sites peuvent déposer leurs propres cookies. On ne contrôle pas leurs pratiques de confidentialité.</p>
+
+      <h2>Droit d'accès</h2>
+      <p>Tu peux nous contacter à tout moment pour savoir quelles données on détient à ton sujet, ou pour demander leur suppression.</p>
+    </div>
+  </section>
+
+  <div class="spacer"></div>
+</BaseLayout>
+
+<style>
+  .page-hero {
+    padding: 44px 40px 34px;
+    border-bottom: var(--border-epais) solid var(--color-encre);
+  }
+
+  .page-hero h1 {
+    font: 800 54px/1 var(--font-titres);
+    letter-spacing: -0.035em;
+    margin: 0 0 14px;
+  }
+
+  .page-hero p {
+    font: 400 18px/1.55 var(--font-texte);
+    color: var(--texte-secondaire);
+    margin: 0;
+    max-width: 700px;
+  }
+
+  .page-content {
+    padding: 34px 40px;
+  }
+
+  .content-col {
+    max-width: var(--colonne-lecture);
+  }
+
+  .content-col h2 {
+    font: 800 30px/1.15 var(--font-titres);
+    letter-spacing: -0.025em;
+    margin: 34px 0 16px;
+  }
+
+  .content-col h2:first-child {
+    margin-top: 0;
+  }
+
+  .content-col p {
+    font: 400 17px/1.72 var(--font-texte);
+    color: var(--texte-principal);
+    margin: 0 0 16px;
+  }
+
+  .spacer {
+    height: 52px;
+  }
+</style>
