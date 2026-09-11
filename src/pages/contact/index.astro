@@ -2,128 +2,145 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Contact" description="Contactez BipBop pour toute question." currentPage="">
-  <section class="page-hero">
-    <h1>Contact</h1>
-    <p>Une question, une suggestion, un modèle à nous signaler ? Écris-nous.</p>
+<BaseLayout title="Une question, une erreur à signaler, une envie de discuter ?" description="Il n'y a pas de service client derrière ce site, juste une petite équipe qui lit tout. Pose ta question, on répond en général sous deux jours ouvrés." currentPage="contact">
+
+  <nav class="breadcrumb">ACCUEIL / CONTACT</nav>
+
+  <section class="contact-hero">
+    <span class="badge corail">ON RÉPOND VRAIMENT</span>
+    <h1>Une question, une erreur à signaler, une envie de discuter&nbsp;?</h1>
+    <p>Il n'y a pas de service client derrière ce site, juste une petite équipe qui lit tout. Pose ta question, on répond en général sous deux jours ouvrés.</p>
+    <div class="hero-meta">RÉPONSE SOUS 48 H EN MOYENNE</div>
   </section>
 
-  <section class="page-content">
-    <div class="content-col">
+  <section class="contact-content">
+    <div class="form-card">
       <form class="contact-form" action="/api/contact" method="POST">
-        <div class="form-group">
-          <label for="nom">Ton nom</label>
-          <input type="text" id="nom" name="nom" placeholder="Camille" required />
+        <div class="form-row">
+          <div class="form-group">
+            <label for="prenom">Ton prénom</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Camille" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Ton e-mail</label>
+            <input type="email" id="email" name="email" placeholder="camille@exemple.fr" required />
+          </div>
         </div>
+
         <div class="form-group">
-          <label for="email">Ton e-mail</label>
-          <input type="email" id="email" name="email" placeholder="camille@exemple.fr" required />
+          <label>De quoi veux-tu parler ?</label>
+          <div class="sujet-options">
+            <label class="sujet-option active">
+              <input type="radio" name="sujet" value="choisir" checked />
+              <span>Quelle batterie choisir</span>
+            </label>
+            <label class="sujet-option">
+              <input type="radio" name="sujet" value="erreur" />
+              <span>Signaler une erreur</span>
+            </label>
+            <label class="sujet-option">
+              <input type="radio" name="sujet" value="marque" />
+              <span>Je suis une marque</span>
+            </label>
+            <label class="sujet-option">
+              <input type="radio" name="sujet" value="autre" />
+              <span>Autre</span>
+            </label>
+          </div>
         </div>
+
         <div class="form-group">
           <label for="message">Ton message</label>
-          <textarea id="message" name="message" rows="6" placeholder="Ta question, ta suggestion…" required></textarea>
+          <textarea id="message" name="message" rows="5" placeholder="Dis-nous ton budget, la place dont tu disposes et si tu vis en appartement. Avec ça on peut déjà répondre quelque chose d'utile." required></textarea>
         </div>
-        <button type="submit" class="btn-submit">Envoyer</button>
-      </form>
 
-      <div class="contact-info">
-        <p>On répond dans la semaine. Pas de newsletter, pas de relance commerciale.</p>
-      </div>
+        <div class="form-rgpd">
+          <input type="checkbox" id="rgpd" name="rgpd" required />
+          <label for="rgpd">J'accepte que mon message soit conservé le temps d'obtenir une réponse. Voir la <a href="/politique-confidentialite/">politique de confidentialité</a>.</label>
+        </div>
+
+        <button type="submit" class="btn-envoyer">Envoyer le message</button>
+      </form>
     </div>
+
+    <aside class="sidebar-contact">
+      <div class="sidebar-email">
+        <div class="sidebar-email-title">Par e-mail, si tu préfères</div>
+        <p><span class="email-highlight">contact@bipbop.eu</span></p>
+        <p class="sidebar-email-note">On lit tout. On ne répond pas toujours en trois lignes, mais on répond.</p>
+      </div>
+      <div class="sidebar-marque">
+        <div class="sidebar-marque-title">Tu es une marque ?</div>
+        <p>On accepte de recevoir du matériel en prêt pour l'essayer. On n'accepte ni article sponsorisé, ni avis rédigé par un tiers, ni lien payant. Aucun budget ne fait bouger un classement. C'est non négociable, autant le savoir avant d'écrire.</p>
+      </div>
+      <div class="sidebar-avant">
+        <div class="sidebar-avant-title">Avant d'écrire</div>
+        <p>La réponse à « quelle batterie pour moi ? » est peut-être déjà là.</p>
+        <a href="/comparatif/" class="btn-comparatif">Aller au comparatif</a>
+      </div>
+    </aside>
   </section>
 
   <div class="spacer"></div>
 </BaseLayout>
 
 <style>
-  .page-hero {
-    padding: 44px 40px 34px;
-    border-bottom: var(--border-epais) solid var(--color-encre);
-  }
+  .breadcrumb { padding: 22px 40px 0; font: 500 12.5px var(--font-mono); color: var(--texte-mono); }
 
-  .page-hero h1 {
-    font: 800 54px/1 var(--font-titres);
-    letter-spacing: -0.035em;
-    margin: 0 0 14px;
-  }
+  .contact-hero { padding: 20px 40px 34px; max-width: 840px; }
 
-  .page-hero p {
-    font: 400 18px/1.55 var(--font-texte);
-    color: var(--texte-secondaire);
-    margin: 0;
-    max-width: 700px;
-  }
+  .badge { display: inline-flex; align-items: center; gap: 8px; font: 700 12px var(--font-texte); letter-spacing: 0.04em; border: var(--border-epais) solid var(--color-encre); border-radius: 9px; padding: 6px 12px; margin-bottom: 20px; }
+  .badge.corail { background: var(--color-corail); color: #fff; }
 
-  .page-content {
-    padding: 34px 40px;
-  }
+  .contact-hero h1 { font: 800 50px/1.03 var(--font-titres); letter-spacing: -0.035em; margin: 0 0 18px; text-wrap: pretty; }
+  .contact-hero > p { font: 400 19px/1.55 var(--font-texte); color: var(--texte-secondaire); margin: 0 0 18px; max-width: 700px; text-wrap: pretty; }
+  .hero-meta { font: 500 13px var(--font-mono); color: var(--texte-mono); }
 
-  .content-col {
-    max-width: 560px;
-  }
+  .contact-content { padding: 0 40px 20px; display: grid; grid-template-columns: 1fr 320px; gap: 36px; align-items: start; }
 
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-bottom: 24px;
-  }
+  /* Form */
+  .form-card { background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 20px; padding: 28px 30px; box-shadow: 6px 6px 0 var(--color-encre); }
+  .contact-form { display: flex; flex-direction: column; gap: 18px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .form-group { display: flex; flex-direction: column; gap: 7px; }
+  .form-group label { font: 700 13.5px var(--font-texte); }
+  .form-group input, .form-group textarea { font: 400 15px var(--font-texte); background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 12px; padding: 13px 15px; color: var(--color-encre); font-family: var(--font-texte); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--texte-placeholder); }
+  .form-group input:focus, .form-group textarea:focus { outline: none; box-shadow: 0 0 0 3px var(--color-jaune); }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-  }
+  .sujet-options { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sujet-option { cursor: pointer; }
+  .sujet-option input { display: none; }
+  .sujet-option span { font: 500 14px var(--font-texte); padding: 9px 14px; border-radius: 11px; border: 2px solid var(--color-sable-clair); color: var(--texte-secondaire); display: inline-block; }
+  .sujet-option.active span { font-weight: 700; padding: 9px 14px; border-radius: 11px; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); color: var(--color-encre); }
 
-  .form-group label {
-    font: 700 13.5px var(--font-texte);
-  }
+  .form-rgpd { display: flex; align-items: flex-start; gap: 11px; }
+  .form-rgpd input[type="checkbox"] { width: 20px; height: 20px; flex: none; border-radius: 6px; border: var(--border-epais) solid var(--color-encre); margin-top: 2px; }
+  .form-rgpd label { font: 400 13.5px/1.5 var(--font-texte); color: var(--texte-secondaire); max-width: 520px; }
+  .form-rgpd a { color: var(--color-corail); }
 
-  .form-group input,
-  .form-group textarea {
-    font: 400 15px var(--font-texte);
-    background: #fff;
-    border: var(--border-epais) solid var(--color-encre);
-    border-radius: 12px;
-    padding: 13px 15px;
-    color: var(--color-encre);
-    font-family: var(--font-texte);
-  }
+  .btn-envoyer { display: inline-block; font: 700 16px var(--font-texte); color: #fff; background: var(--color-corail); border: var(--border-epais) solid var(--color-encre); padding: 15px 24px; border-radius: 13px; box-shadow: 5px 5px 0 var(--color-encre); cursor: pointer; align-self: flex-start; }
 
-  .form-group input::placeholder,
-  .form-group textarea::placeholder {
-    color: var(--texte-placeholder);
-  }
+  /* Sidebar */
+  .sidebar-contact { display: flex; flex-direction: column; gap: 16px; }
+  .sidebar-email { background: var(--color-turquoise-clair); border: var(--border-epais) solid var(--color-encre); border-radius: 18px; padding: 20px; }
+  .sidebar-email-title { font: 700 15.5px var(--font-texte); color: var(--color-turquoise-fonce); margin-bottom: 9px; }
+  .sidebar-email p { font: 400 14.5px/1.55 var(--font-texte); color: var(--color-turquoise-clair-texte); margin: 0 0 12px; }
+  .email-highlight { background: var(--color-jaune); border-bottom: 2px solid var(--color-encre); padding: 1px 6px; font-weight: 600; }
+  .sidebar-email-note { font: 400 13.5px/1.5 var(--font-texte); color: var(--color-turquoise-fonce); margin: 0 !important; }
+  .sidebar-marque { background: var(--color-encre); border-radius: 18px; padding: 20px; color: var(--color-creme); }
+  .sidebar-marque-title { font: 700 15.5px var(--font-texte); color: var(--color-jaune); margin-bottom: 9px; }
+  .sidebar-marque p { font: 400 14.5px/1.55 var(--font-texte); color: #c4b7a7; margin: 0; }
+  .sidebar-avant { background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 18px; padding: 20px; }
+  .sidebar-avant-title { font: 700 15.5px var(--font-texte); margin-bottom: 9px; }
+  .sidebar-avant p { font: 400 14.5px/1.55 var(--font-texte); color: var(--texte-carte); margin: 0 0 12px; }
+  .btn-comparatif { display: block; text-align: center; font: 700 13.5px var(--font-texte); text-decoration: none; color: var(--color-encre); background: var(--color-jaune); border: var(--border-epais) solid var(--color-encre); padding: 11px; border-radius: 11px; box-shadow: 3px 3px 0 var(--color-encre); }
 
-  .form-group input:focus,
-  .form-group textarea:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px var(--color-jaune);
-  }
+  .spacer { height: 52px; }
 
-  .btn-submit {
-    font: 700 15px var(--font-texte);
-    color: #fff;
-    background: var(--color-corail);
-    border: var(--border-epais) solid var(--color-encre);
-    padding: 14px 24px;
-    border-radius: 12px;
-    box-shadow: 4px 4px 0 var(--color-encre);
-    cursor: pointer;
-    transition: box-shadow 0.15s;
-    align-self: flex-start;
-  }
-
-  .btn-submit:hover {
-    box-shadow: 1px 1px 0 var(--color-encre);
-  }
-
-  .contact-info p {
-    font: 400 15px/1.6 var(--font-texte);
-    color: var(--texte-secondaire);
-  }
-
-  .spacer {
-    height: 52px;
+  @media (max-width: 900px) {
+    .contact-content { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .contact-hero h1 { font-size: 36px; }
   }
 </style>
