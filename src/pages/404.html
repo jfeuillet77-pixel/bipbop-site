@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — BipBop</title>
+  <meta name="description" content="Cette page a disparu. Retrouve le comparatif, les guides ou les avis sur BipBop.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #efe6d8; font-family: 'Work Sans', system-ui, sans-serif; color: #241c14; }
+    a { color: #d2431f; }
+    a:hover { color: #b93a19; }
+
+    .wrapper { max-width: 1180px; margin: 0 auto; background: #fdf6ec; min-height: 100vh; }
+
+    /* Header */
+    .header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 40px; border-bottom: 2.5px solid #241c14; }
+    .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; color: #241c14; }
+    .logo-icon { width: 32px; height: 32px; border-radius: 10px; background: #d2431f; border: 2.5px solid #241c14; }
+    .logo-text { font: 800 20px 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; }
+    .nav { display: flex; gap: 24px; font: 500 14px 'Work Sans', sans-serif; }
+    .nav a { color: #241c14; text-decoration: none; }
+    .btn-header { font: 700 13px 'Work Sans', sans-serif; text-decoration: none; color: #241c14; background: #ffd166; border: 2.5px solid #241c14; padding: 9px 15px; border-radius: 10px; box-shadow: 3px 3px 0 #241c14; }
+
+    /* 404 Hero */
+    .hero-404 { padding: 80px 40px 60px; display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: center; max-width: 1000px; margin: 0 auto; }
+    .hero-404-number { font: 800 120px/1 'Bricolage Grotesque', sans-serif; letter-spacing: -0.05em; color: #d2431f; margin-bottom: 18px; }
+    .hero-404 h1 { font: 800 42px/1.06 'Bricolage Grotesque', sans-serif; letter-spacing: -0.03em; margin: 0 0 18px; }
+    .hero-404 p { font: 400 18px/1.6 'Work Sans', sans-serif; color: #5a4c3e; margin: 0 0 28px; max-width: 520px; }
+    .hero-404-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-corail { font: 700 15px 'Work Sans', sans-serif; text-decoration: none; color: #fff; background: #d2431f; border: 2.5px solid #241c14; padding: 14px 22px; border-radius: 13px; box-shadow: 5px 5px 0 #241c14; }
+    .btn-jaune { font: 700 15px 'Work Sans', sans-serif; text-decoration: none; color: #241c14; background: #ffd166; border: 2.5px solid #241c14; padding: 14px 22px; border-radius: 13px; box-shadow: 5px 5px 0 #241c14; }
+
+    /* Mascotte */
+    .mascotte-col { display: flex; flex-direction: column; gap: 16px; align-items: center; }
+    .mascotte-avatar { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 2.5px solid #241c14; background: #ffd166; box-shadow: 7px 7px 0 #241c14; display: flex; align-items: center; justify-content: center; background-image: repeating-linear-gradient(45deg, rgba(36,28,20,.06) 0 1px, transparent 1px 9px); }
+    .mascotte-label { font: 500 11px 'IBM Plex Mono', monospace; letter-spacing: 0.08em; color: #a3937f; text-align: center; line-height: 1.35; padding: 0 8px; }
+    .bulle { position: relative; background: #fff; border: 2.5px solid #241c14; border-radius: 16px; padding: 14px 16px; font: 400 14.5px/1.5 'Work Sans', sans-serif; box-shadow: 4px 4px 0 #241c14; text-align: center; }
+
+    /* Pages utiles */
+    .pages-utiles { margin: 0 40px; padding-top: 34px; border-top: 2.5px solid #241c14; }
+    .pages-utiles-title { font: 800 22px 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; margin-bottom: 18px; }
+    .pages-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .page-card { text-decoration: none; color: inherit; background: #fff; border: 2.5px solid #241c14; border-radius: 16px; padding: 20px; box-shadow: 4px 4px 0 #241c14; display: block; }
+    .page-card:hover { box-shadow: 1px 1px 0 #241c14; }
+    .page-card-title { font: 700 17px/1.2 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; margin-bottom: 8px; }
+    .page-card-desc { font: 400 14px/1.5 'Work Sans', sans-serif; color: #4a3d31; }
+
+    /* Footer */
+    .footer { background: #241c14; color: #fdf6ec; padding: 48px 40px 26px; margin-top: 52px; }
+    .footer-grid { display: grid; grid-template-columns: 1.7fr 1fr 1.1fr 1.2fr; gap: 40px; padding-bottom: 34px; border-bottom: 1px solid #4a3d31; }
+    .footer p { font: 400 15px/1.6 'Work Sans', sans-serif; color: #c4b7a7; margin: 0 0 16px; max-width: 300px; }
+    .footer a { color: #ece2d4; text-decoration: none; display: block; padding: 6px 0; font-weight: 500; }
+    .footer-label { font: 700 12.5px 'Work Sans', sans-serif; letter-spacing: 0.09em; color: #ffd166; margin-bottom: 10px; }
+    .footer-copy { padding-top: 20px; font: 400 13.5px 'Work Sans', sans-serif; color: #a8998a; }
+
+    .spacer { height: 52px; }
+
+    @media (max-width: 900px) {
+      .hero-404 { grid-template-columns: 1fr; padding: 40px 20px; }
+      .mascotte-col { display: none; }
+      .pages-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-404 h1 { font-size: 30px; }
+      .hero-404-number { font-size: 80px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <a href="/" class="logo">
+        <span class="logo-icon"></span>
+        <span class="logo-text">BipBop</span>
+      </a>
+      <nav class="nav">
+        <a href="/comparatif/">Comparatif</a>
+        <a href="/avis/">Avis</a>
+        <a href="/guides/">Guides</a>
+        <a href="/a-propos/">À propos</a>
+      </nav>
+      <a href="/comparatif/" class="btn-header">Trouver ma batterie</a>
+    </header>
+
+    <div class="hero-404">
+      <div>
+        <div class="hero-404-number">404</div>
+        <h1>Cette page a disparu comme une baguette sous le canapé</h1>
+        <p>Soit l'adresse comporte une faute, soit on a déplacé la page en faisant le ménage. Dans les deux cas, voilà par où repartir.</p>
+        <div class="hero-404-actions">
+          <a href="/comparatif/" class="btn-corail">Trouver ma batterie</a>
+          <a href="/" class="btn-jaune">Retour à l'accueil</a>
+        </div>
+      </div>
+      <div class="mascotte-col">
+        <div class="mascotte-avatar">
+          <span class="mascotte-label">BIPBOP<br>PERPLEXE</span>
+        </div>
+        <div class="bulle">J'ai cherché partout. Elle n'y est pas.</div>
+      </div>
+    </div>
+
+    <div class="pages-utiles">
+      <div class="pages-utiles-title">Les pages les plus utiles</div>
+      <div class="pages-grid">
+        <a href="/comparatif/" class="page-card">
+          <div class="page-card-title">Le comparatif</div>
+          <div class="page-card-desc">Trois questions, deux modèles en face.</div>
+        </a>
+        <a href="/guides/batterie-appartement/" class="page-card">
+          <div class="page-card-title">Batterie en appartement</div>
+          <div class="page-card-desc">Le guide le plus lu du site.</div>
+        </a>
+        <a href="/avis/" class="page-card">
+          <div class="page-card-title">Tous les avis</div>
+          <div class="page-card-desc">Douze modèles, prix réels compris.</div>
+        </a>
+        <a href="/guides/" class="page-card">
+          <div class="page-card-title">Tous les guides</div>
+          <div class="page-card-desc">Une question, une réponse.</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="spacer"></div>
+
+    <footer class="footer">
+      <div class="footer-grid">
+        <div>
+          <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+            <span class="logo-icon" style="width:30px;height:30px;border-color:#fdf6ec"></span>
+            <span style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+          </div>
+          <p>Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>
+        </div>
+        <div>
+          <div class="footer-label">TROUVER</div>
+          <a href="/comparatif/">Le comparatif</a>
+          <a href="/guides/">Tous les guides</a>
+          <a href="/avis/">Tous les avis</a>
+        </div>
+        <div>
+          <div class="footer-label">LE SITE</div>
+          <a href="/a-propos/">À propos</a>
+          <a href="/contact/">Contact</a>
+          <a href="/mentions-legales/">Mentions légales</a>
+          <a href="/politique-confidentialite/">Politique de confidentialité</a>
+        </div>
+        <div style="background:#302519;border-radius:16px;padding:20px;align-self:start">
+          <div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:8px">Pas encore décidé ?</div>
+          <p style="font:400 14px/1.55 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 14px">Trois questions, deux modèles en face. Trente secondes.</p>
+          <a href="/comparatif/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:11px;border-radius:11px">Trouver ma batterie</a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 BipBop. Tous droits réservés.</div>
+    </footer>
+  </div>
+</body>
+</html>
