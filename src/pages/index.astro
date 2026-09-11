@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BipbopAvatar from '../components/mascotte/BipbopAvatar.astro';
 
 const featuredProducts = [
   {
@@ -70,8 +71,10 @@ const faq = [
     <div class="hero-sidebar">
       <div class="hero-bulle">Neuf personnes sur dix qui arrivent ici cherchent la même chose : une batterie à moins de 500 € qui ne réveille personne. Bonne nouvelle, ça existe.</div>
       <div class="hero-mascotte">
-        <div class="mascotte-avatar"></div>
-        <div class="mascotte-label">BipBop<br />votre robot batteur</div>
+        <div class="mascotte-avatar">
+          <BipbopAvatar />
+        </div>
+        <div class="mascotte-label">BipBop<br />votre robot collecteur</div>
       </div>
     </div>
   </section>
@@ -157,7 +160,9 @@ const faq = [
 
   <!-- Affiliation -->
   <section class="affiliation-section">
-    <div class="mascotte-avatar small"></div>
+    <div class="mascotte-avatar small">
+      <BipbopAvatar />
+    </div>
     <div class="affiliation-text">
       <div class="affiliation-title">Comment on gagne notre vie</div>
       <p>Si tu achètes via nos liens Thomann, on touche une commission. Ton prix ne change pas et aucun classement n'a jamais bougé pour ça. On explique tout sur la page À propos.</p>
@@ -270,7 +275,15 @@ const faq = [
     overflow: hidden;
     border: var(--border-epais) solid var(--color-encre);
     background: var(--color-jaune);
-    background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mascotte-avatar svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .mascotte-avatar.small {

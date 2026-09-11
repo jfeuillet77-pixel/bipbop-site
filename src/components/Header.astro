@@ -1,4 +1,6 @@
 ---
+import BipbopMarque from './mascotte/BipbopMarque.astro';
+
 interface Props {
   currentPage?: string;
 }
@@ -15,7 +17,7 @@ const navItems = [
 
 <header class="header">
   <a href="/" class="logo">
-    <span class="logo-icon"></span>
+    <span class="logo-icon"><BipbopMarque /></span>
     <span class="logo-text">BipBop</span>
   </a>
   <nav class="nav">
@@ -51,11 +53,10 @@ const navItems = [
   }
 
   .logo-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 10px;
-    background: var(--color-corail);
-    border: var(--border-epais) solid var(--color-encre);
+    width: 34px;
+    height: 34px;
+    flex: none;
+    display: block;
   }
 
   .logo-text {

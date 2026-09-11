@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BipbopAvatar from '../../../components/mascotte/BipbopAvatar.astro';
 ---
 
 <BaseLayout title="Quelle batterie électronique choisir quand on vit en appartement ?" description="En appartement, le problème n'est jamais le son de la batterie : c'est le bruit des baguettes sur les pads et celui de la pédale dans le plancher. Voilà ce que tes voisins entendent vraiment et les modèles qui les laissent tranquilles." currentPage="guides">
@@ -11,7 +12,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <h1>Quelle batterie électronique choisir quand on vit en appartement&nbsp;?</h1>
     <p class="chapo">En appartement, le problème n'est jamais le son de la batterie : c'est le bruit des baguettes sur les pads et celui de la pédale dans le plancher. Voilà ce que tes voisins entendent vraiment et les modèles qui les laissent tranquilles.</p>
     <div class="meta">
-      <div class="mascotte-avatar small"></div>
+      <div class="mascotte-avatar small"><BipbopAvatar /></div>
       <div>Par <strong>BipBop</strong></div>
       <span class="meta-sep">·</span>
       <div class="meta-date">MIS À JOUR LE 11 SEPT. 2026 · 9 MIN</div>
@@ -87,7 +88,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       </div>
 
       <div class="conseil-bipbop">
-        <div class="mascotte-avatar small"></div>
+        <div class="mascotte-avatar small"><BipbopAvatar /></div>
         <div>
           <div class="conseil-title">Le conseil de BipBop</div>
           <p>Fais le test avant d'acheter : tape trente secondes du talon par terre, là où tu comptes mettre la pédale. Si ça résonne dans tout l'appart, il te faudra une plaque de mousse, pas juste un tapis.</p>
@@ -252,8 +253,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   .meta strong { color: var(--color-encre); font-weight: 700; }
   .meta-sep { color: var(--color-sable-clair); }
   .meta-date { font: 500 13px var(--font-mono); color: var(--texte-mono); }
-  .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px); }
+  .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); display:flex;align-items:center;justify-content:center; }
   .mascotte-avatar.small { width: 44px; height: 44px; flex: none; }
+  .mascotte-avatar svg { width:100%; height:100%; display:block; }
+  .conseil-bipbop .mascotte-avatar { width:52px; height:52px; border-color:var(--color-jaune); }
 
   .article-content { padding: 0 40px 40px; display: grid; grid-template-columns: 214px 1fr; gap: 44px; align-items: start; }
 

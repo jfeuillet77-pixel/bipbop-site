@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="t-a">
+  <title id="t-a">Direction A — le boîtier, pose neutre</title>
+  <g stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 20V13" fill="none"/>
+    <circle cx="48" cy="9" r="5" fill="#ffd166" stroke-width="4"/>
+    <rect x="34" y="86" width="12" height="6" rx="3" fill="#241c14" stroke="none"/>
+    <rect x="50" y="86" width="12" height="6" rx="3" fill="#241c14" stroke="none"/>
+    <rect x="32" y="64" width="32" height="24" rx="9" fill="#fdf6ec"/>
+    <rect x="40" y="71" width="16" height="7" rx="3.5" fill="#0f7d76" stroke-width="4"/>
+    <rect x="8" y="36" width="10" height="16" rx="5" fill="#fdf6ec"/>
+    <rect x="78" y="36" width="10" height="16" rx="5" fill="#fdf6ec"/>
+    <rect x="14" y="20" width="68" height="46" rx="18" fill="#0f7d76"/>
+    <rect x="25" y="31" width="46" height="24" rx="11" fill="#241c14" stroke="none"/>
+    <path d="M36 48c0-6 4-9 7-9s7 3 7 9M52 48c0-6 4-9 7-9s7 3 7 9" fill="none" stroke="#fdf6ec" stroke-width="6"/>
+  </g>
+</svg>

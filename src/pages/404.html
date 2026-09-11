@@ -18,7 +18,7 @@
     /* Header */
     .header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 18px 40px; border-bottom: 2.5px solid #241c14; }
     .logo { display: flex; align-items: center; gap: 11px; text-decoration: none; color: #241c14; }
-    .logo-icon { width: 32px; height: 32px; border-radius: 10px; background: #d2431f; border: 2.5px solid #241c14; }
+    .logo-icon { width: 34px; height: 34px; flex: none; display: block; }
     .logo-text { font: 800 20px 'Bricolage Grotesque', sans-serif; letter-spacing: -0.02em; }
     .nav { display: flex; gap: 24px; font: 500 14px 'Work Sans', sans-serif; }
     .nav a { color: #241c14; text-decoration: none; }
@@ -35,7 +35,8 @@
 
     /* Mascotte */
     .mascotte-col { display: flex; flex-direction: column; gap: 16px; align-items: center; }
-    .mascotte-avatar { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; border: 2.5px solid #241c14; background: #ffd166; box-shadow: 7px 7px 0 #241c14; display: flex; align-items: center; justify-content: center; background-image: repeating-linear-gradient(45deg, rgba(36,28,20,.06) 0 1px, transparent 1px 9px); }
+    .mascotte-avatar { width: 200px; height: 250px; border-radius: 14px; overflow: hidden; border: 2.5px solid #241c14; background: #ffd166; box-shadow: 4px 4px 0 #241c14; display: flex; align-items: center; justify-content: center; padding: 8px; }
+    .mascotte-avatar svg { width: 100%; height: 100%; display: block; }
     .mascotte-label { font: 500 11px 'IBM Plex Mono', monospace; letter-spacing: 0.08em; color: #a3937f; text-align: center; line-height: 1.35; padding: 0 8px; }
     .bulle { position: relative; background: #fff; border: 2.5px solid #241c14; border-radius: 16px; padding: 14px 16px; font: 400 14.5px/1.5 'Work Sans', sans-serif; box-shadow: 4px 4px 0 #241c14; text-align: center; }
 
@@ -72,7 +73,7 @@
   <div class="wrapper">
     <header class="header">
       <a href="/" class="logo">
-        <span class="logo-icon"></span>
+        <span class="logo-icon"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
         <span class="logo-text">BipBop</span>
       </a>
       <nav class="nav">
@@ -96,7 +97,7 @@
       </div>
       <div class="mascotte-col">
         <div class="mascotte-avatar">
-          <span class="mascotte-label">BIPBOP<br>PERPLEXE</span>
+          <svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="52 12 296 362" role="img"> <title>BipBop, mascotte complète</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu.</desc> <g fill="none" stroke="#241c14" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"> <ellipse cx="208" cy="352" rx="92" ry="13" fill="#241c14" stroke="none"></ellipse> <path d="M200 72V49" fill="none"></path> <circle cx="200" cy="35" r="16" fill="#ffd166"></circle> <rect x="76" y="78" width="248" height="156" rx="62" fill="#0f7d76"></rect> <rect x="111" y="113" width="178" height="91" rx="34" fill="#241c14" stroke="none"></rect> <path d="M157 163c0-15 10-24 21-24s21 9 21 24" fill="none" stroke="#fdf6ec" stroke-width="11"></path> <path d="M222 163c0-15 10-24 21-24s21 9 21 24" fill="none" stroke="#fdf6ec" stroke-width="11"></path> <path d="M91 136c-21 4-30 24-25 47 4 18 15 27 30 25" fill="#fdf6ec"></path> <path d="M309 136c21 4 30 24 25 47-4 18-15 27-30 25" fill="#fdf6ec"></path> <path d="M151 229c-2 27-7 44-23 61" fill="none"></path> <path d="M249 229c2 27 7 44 23 61" fill="none"></path> <path d="M128 278c-16 9-23 28-20 44 2 13 12 20 25 17 11-3 17-14 20-27" fill="#0f7d76"></path> <path d="M272 278c16 9 23 28 20 44-2 13-12 20-25 17-11-3-17-14-20-27" fill="#0f7d76"></path> <rect x="151" y="231" width="98" height="89" rx="20" fill="#fdf6ec"></rect> <rect x="171" y="252" width="58" height="24" rx="8" fill="#0f7d76" stroke-width="7"></rect> <path d="M179 292h42" fill="none" stroke-width="7"></path> <circle cx="218" cy="263" r="5" fill="#ffd166" stroke="none"></circle> <path d="M177 320v20" fill="none"></path> <path d="M223 320v20" fill="none"></path> <path d="M159 340h27" fill="#0f7d76"></path> <path d="M214 340h27" fill="#0f7d76"></path> </g> </svg>
         </div>
         <div class="bulle">J'ai cherché partout. Elle n'y est pas.</div>
       </div>
@@ -130,7 +131,7 @@
       <div class="footer-grid">
         <div>
           <div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
-            <span class="logo-icon" style="width:30px;height:30px;border-color:#fdf6ec"></span>
+            <span style="width:32px;height:32px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée claire</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#fdf6ec" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
             <span style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
           </div>
           <p>Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>

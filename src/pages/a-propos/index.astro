@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BipbopMascotte from '../../components/mascotte/BipbopMascotte.astro';
+import BipbopMono from '../../components/mascotte/BipbopMono.astro';
 ---
 
 <BaseLayout title="À propos" description="Qui est derrière BipBop, comment on gagne notre vie, nos promesses." currentPage="a-propos">
@@ -22,7 +24,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <div class="robot-card">
         <div class="robot-avatar">
-          <span class="robot-label">BIPBOP</span>
+          <BipbopMascotte />
         </div>
         <div class="robot-text">
           <div class="robot-label-top">NOTRE ROBOT</div>
@@ -83,7 +85,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       </div>
 
       <div class="cta-block">
-        <div class="cta-avatar"></div>
+        <div class="cta-avatar">
+          <BipbopMono />
+        </div>
         <div class="cta-content">
           <div class="cta-title">Une idée pour améliorer le site ?</div>
           <p>On est preneurs. Une page peu claire, un modèle qui manque, une question sans réponse, une erreur de prix : écris-nous. Le site existe pour ses lecteurs, il se corrige avec eux.</p>
@@ -199,15 +203,22 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
   .robot-avatar {
     width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    height: 152px;
+    border-radius: 18px;
     border: var(--border-epais) solid var(--color-encre);
     background: var(--color-jaune);
-    background-image: repeating-linear-gradient(45deg, rgba(36,28,20,.10) 0 1px, transparent 1px 9px);
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding: 12px 8px;
+    box-sizing: border-box;
+  }
+
+  .robot-avatar svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .robot-label {
@@ -336,7 +347,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     border-radius: 50%;
     border: var(--border-epais) solid var(--color-jaune);
     background: #3a2d1e;
-    background-image: repeating-linear-gradient(45deg, rgba(255,209,102,.16) 0 1px, transparent 1px 9px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cta-avatar svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .cta-content { flex: 1; }

@@ -1,0 +1,11 @@
+fichier;rôle;emplacement;taille en pixels;forme;fond;couleur du trait;remarque
+bipbop-marque.svg;logo;en-tête, à gauche du mot BipBop;34;carré;crème #fdf6ec;encre #241c14;remplace le carré corail, le mot BipBop reste
+bipbop-marque.svg;favicon;onglet du navigateur;16 et 32;carré;transparent;encre #241c14;déclaré par link rel icon dans le head
+bipbop-touch-180.png;icône;écran d'accueil iOS;180;carré;crème #fdf6ec;encre #241c14;PNG obligatoire, iOS ne lit pas le SVG
+bipbop-marque-claire.svg;logo;pied de page;32;carré;encre #241c14;crème #fdf6ec;la version standard disparaîtrait sur fond sombre
+bipbop-avatar.svg;avatar;signature d'article, à côté de « Par BipBop »;44;cercle;jaune #ffd166;encre #241c14;cercle avec contour encre 2,5 px
+bipbop-avatar.svg;avatar;encart « BipBop dit »;52;cercle;jaune #ffd166;encre #241c14;bordure jaune car l'encart est sur fond encre
+bipbop-avatar.svg;avatar;hero accueil et bulle du comparatif;96 et 76;cercle;jaune #ffd166;encre #241c14;accompagne le label « votre robot collecteur »
+bipbop-mascotte.svg;personnage;page À propos, carte « Notre robot »;120 × 152;rectangle arrondi;jaune #ffd166;encre #241c14;ne jamais forcer dans un carré, ombre au sol comprise
+bipbop-mascotte.svg;personnage;page 404;200 × 250;rectangle arrondi;jaune #ffd166;encre #241c14;ombre portée dure 4 px, bulle de dialogue dessous
+bipbop-mono.svg;personnage;page À propos, bandeau contact;56;cercle;sombre #3a2d1e;crème #fdf6ec;version claire, réservée aux fonds sombres

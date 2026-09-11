@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BipbopAvatar from '../../../components/mascotte/BipbopAvatar.astro';
 ---
 
 <BaseLayout title="C'est quoi un pad mesh et pourquoi tout le monde en parle ?" description="C'est le mot que tu croises dans toutes les fiches produits sans que personne ne prenne trois minutes pour l'expliquer. Voilà ces trois minutes." currentPage="">
@@ -11,7 +12,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <h1>C'est quoi un pad mesh et pourquoi tout le monde en parle&nbsp;?</h1>
     <p class="chapo">C'est le mot que tu croises dans toutes les fiches produits sans que personne ne prenne trois minutes pour l'expliquer. Voilà ces trois minutes.</p>
     <div class="meta-row">
-      <div class="mascotte-avatar small"></div>
+      <div class="mascotte-avatar small"><BipbopAvatar /></div>
       <div>Par <strong>BipBop</strong></div>
       <span class="meta-sep">·</span>
       <div class="meta-date">11 SEPT. 2026 · 4 MIN</div>
@@ -49,7 +50,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <p>Deuxième conséquence, souvent oubliée : la fatigue. Une heure de travail sur du caoutchouc dur laisse les avant-bras tendus. Sur du mesh, on tient plus longtemps, donc on progresse plus vite.</p>
 
     <div class="conseil-bipbop">
-      <div class="mascotte-avatar small"></div>
+      <div class="mascotte-avatar small"><BipbopAvatar /></div>
       <div>
         <div class="conseil-title">Le conseil de BipBop</div>
         <p>Si tu vas essayer une batterie en magasin, demande à jouer trente secondes sur un modèle caoutchouc puis trente secondes sur un modèle mesh. Tu n'auras plus besoin qu'on t'explique la différence.</p>
@@ -130,8 +131,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   .meta-sep { color: var(--color-sable-clair); }
   .meta-date { font: 500 13px var(--font-mono); color: var(--texte-mono); }
   .badge-achat { font: 600 12px var(--font-texte); color: var(--color-turquoise-fonce); background: var(--color-turquoise-clair); border: var(--border-moyen) solid var(--color-encre); border-radius: 7px; padding: 4px 9px; }
-  .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px); }
+  .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); display:flex;align-items:center;justify-content:center; }
   .mascotte-avatar.small { width: 40px; height: 40px; flex: none; }
+  .mascotte-avatar svg { width:100%; height:100%; display:block; }
+  .conseil-bipbop .mascotte-avatar { width:52px; height:52px; border-color:var(--color-jaune); }
 
   .article-body { max-width: 820px; margin: 0 auto; padding: 0 40px; }
 

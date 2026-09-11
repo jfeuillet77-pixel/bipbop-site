@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="t-c">
+  <title id="t-c">Direction C — la tête seule, pose neutre</title>
+  <g stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M48 22V13" fill="none"/>
+    <circle cx="48" cy="9" r="5" fill="#ffd166" stroke-width="4"/>
+    <rect x="6" y="40" width="12" height="20" rx="6" fill="#fdf6ec"/>
+    <rect x="78" y="40" width="12" height="20" rx="6" fill="#fdf6ec"/>
+    <rect x="12" y="22" width="72" height="64" rx="26" fill="#0f7d76"/>
+    <rect x="24" y="36" width="48" height="30" rx="14" fill="#241c14" stroke="none"/>
+    <path d="M36 55c0-7 4-11 8-11s8 4 8 11M52 55c0-7 4-11 8-11s8 4 8 11" fill="none" stroke="#fdf6ec" stroke-width="7"/>
+    <rect x="42" y="72" width="12" height="6" rx="3" fill="#ffd166" stroke-width="4"/>
+  </g>
+</svg>

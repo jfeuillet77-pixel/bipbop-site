@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BipbopAvatar from '../../../components/mascotte/BipbopAvatar.astro';
 ---
 
 <BaseLayout title="Alesis Nitro Max Mesh : la batterie qu'on conseille les yeux fermés" description="Huit pads en mesh, du Bluetooth, un module qui tient la route et 409 € à sortir. C'est le meilleur premier achat du moment." currentPage="avis">
@@ -10,7 +11,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <h1>Alesis Nitro Max Mesh : la batterie qu'on conseille les yeux fermés (ou presque)</h1>
     <p class="chapo">Huit pads en mesh, du Bluetooth, un module qui tient la route et 409 € à sortir. C'est le meilleur premier achat du moment, à condition de prévoir 150 € de plus que le prix affiché.</p>
     <div class="meta">
-      <div class="mascotte-avatar small"></div>
+      <div class="mascotte-avatar small"><BipbopAvatar /></div>
       <div>Par <strong>BipBop</strong></div>
       <span class="meta-sep">·</span>
       <div class="meta-date">11 SEPT. 2026 · 7 MIN DE LECTURE</div>
@@ -119,7 +120,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <p>La pédale de grosse caisse, elle, tape dans ton plancher et le plancher, c'est le plafond du voisin du dessous. C'est ça qu'on entend et c'est ça qu'il faut traiter. Un tapis de batterie épais posé sur une plaque de mousse haute densité fait disparaître l'essentiel du problème pour une quarantaine d'euros.</p>
 
       <div class="conseil-bipbop">
-        <div class="mascotte-avatar small"></div>
+        <div class="mascotte-avatar small"><BipbopAvatar /></div>
         <div>
           <div class="conseil-title">BipBop dit</div>
           <p>Avant d'acheter quoi que ce soit, va sonner chez ta voisine du dessous et préviens-la. Ça coûte zéro euro et ça règle plus de conflits qu'une plaque de mousse à 60 €.</p>
@@ -327,13 +328,27 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     overflow: hidden;
     border: var(--border-epais) solid var(--color-encre);
     background: var(--color-jaune);
-    background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .mascotte-avatar.small {
     width: 44px;
     height: 44px;
     flex: none;
+  }
+
+  .mascotte-avatar svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .conseil-bipbop .mascotte-avatar {
+    width: 52px;
+    height: 52px;
+    border-color: var(--color-jaune);
   }
 
   /* Hero image */

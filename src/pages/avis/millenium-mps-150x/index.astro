@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BipbopAvatar from '../../../components/mascotte/BipbopAvatar.astro';
 ---
 
 <BaseLayout title="Millenium MPS-150X Mesh : tous les fûts en mesh pour 298 €, où est le piège ?" description="Cinq pads à peau maillée, grosse caisse comprise, à un prix où la concurrence vend encore du caoutchouc. Le piège est réel mais il n'est pas là où tu l'attends." currentPage="avis">
@@ -10,7 +11,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <h1>Millenium MPS-150X Mesh : tous les fûts en mesh pour 298 €, où est le piège&nbsp;?</h1>
     <p class="chapo">Cinq pads à peau maillée, grosse caisse comprise, à un prix où la concurrence vend encore du caoutchouc. Le piège est réel mais il n'est pas là où tu l'attends.</p>
     <div class="meta">
-      <div class="mascotte-avatar small"></div>
+      <div class="mascotte-avatar small"><BipbopAvatar /></div>
       <div>Par <strong>BipBop</strong></div>
       <span class="meta-sep">·</span>
       <div class="meta-date">11 SEPT. 2026 · 6 MIN DE LECTURE</div>
@@ -91,7 +92,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <p>La parade coûte une soixantaine d'euros : un tapis épais et de la mousse haute densité sous le pad de grosse caisse. Ce n'est pas optionnel si tu vis en appartement ancien.</p>
 
       <div class="conseil-bipbop">
-        <div class="mascotte-avatar small"></div>
+        <div class="mascotte-avatar small"><BipbopAvatar /></div>
         <div>
           <div class="conseil-title">BipBop dit</div>
           <p>Retourne la batte de la pédale côté plastique noir, la vis se desserre sans outil. Thomann le précise en petit : la face en feutre use la peau maillée beaucoup plus vite. Deux minutes de réglage à la livraison, plusieurs années de peau gagnées.</p>
@@ -233,8 +234,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   .meta strong { color: var(--color-encre); font-weight: 700; }
   .meta-sep { color: var(--color-sable-clair); }
   .meta-date { font: 500 13px var(--font-mono); color: var(--texte-mono); }
-  .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px); }
+  .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); display: flex; align-items: center; justify-content: center; }
   .mascotte-avatar.small { width: 44px; height: 44px; flex: none; }
+  .mascotte-avatar svg { width:100%; height:100%; display:block; }
+  .conseil-bipbop .mascotte-avatar { width:52px; height:52px; border-color:var(--color-jaune); }
   .article-hero-image { margin: 0 40px 34px; }
   .hero-image-wrap { height: 380px; border: var(--border-epais) solid var(--color-encre); border-radius: 20px; overflow: hidden; background: #fff; }
   .hero-image-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 18px; box-sizing: border-box; }

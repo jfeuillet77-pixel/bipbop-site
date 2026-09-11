@@ -1,8 +1,12 @@
+---
+import BipbopMarqueClaire from './mascotte/BipbopMarqueClaire.astro';
+---
+
 <footer class="footer">
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="logo-row">
-        <span class="logo-icon"></span>
+        <span class="logo-icon"><BipbopMarqueClaire /></span>
         <span class="logo-text">BipBop</span>
       </div>
       <p class="footer-desc">Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>
@@ -62,11 +66,10 @@
   }
 
   .logo-icon {
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    background: var(--color-corail);
-    border: var(--border-epais) solid var(--color-creme);
+    width: 32px;
+    height: 32px;
+    flex: none;
+    display: block;
   }
 
   .logo-text {

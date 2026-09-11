@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import BipbopAvatar from '../../components/mascotte/BipbopAvatar.astro';
 ---
 
 <BaseLayout title="Comparatif interactif" description="Trois questions, deux modèles en face. Le comparatif de batteries électroniques pour débutants." currentPage="comparatif">
@@ -9,7 +10,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       <p>Pas de tableau de 40 lignes, pas de specs que personne ne comprend. Trois questions, deux modèles en face et une phrase honnête sur chacun.</p>
     </div>
     <div class="comparatif-mascotte">
-      <div class="mascotte-avatar"></div>
+      <div class="mascotte-avatar">
+        <BipbopAvatar />
+      </div>
       <div class="mascotte-bulle">Salut, moi c'est BipBop. Je teste des batteries toute la journée parce que je n'ai pas de voisins. Toi, tu en as. On va faire ça bien.</div>
     </div>
   </section>
@@ -144,7 +147,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     overflow: hidden;
     border: var(--border-epais) solid var(--color-encre);
     background: var(--color-jaune);
-    background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mascotte-avatar svg {
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .mascotte-bulle {

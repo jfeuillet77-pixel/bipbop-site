@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import BipbopAvatar from '../../../components/mascotte/BipbopAvatar.astro';
 ---
 
 <BaseLayout title="Alesis Nitro Max ou Donner DED-200X : laquelle prendre ?" description="Quatre-vingt-onze euros d'écart, des pads mesh des deux côtés, deux modèles qui reviennent sans arrêt dans les recherches. Le moins cher n'est pas celui que la réputation désigne." currentPage="">
@@ -11,7 +12,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     <h1>Alesis Nitro Max ou Donner DED-200X : laquelle prendre&nbsp;?</h1>
     <p class="chapo">Quatre-vingt-onze euros d'écart, des pads mesh des deux côtés, deux modèles qui reviennent sans arrêt dans les recherches. Le moins cher n'est pas celui que la réputation désigne. Voilà où se joue la différence.</p>
     <div class="meta">
-      <div class="mascotte-avatar small"></div>
+      <div class="mascotte-avatar small"><BipbopAvatar /></div>
       <div>Par <strong>BipBop</strong></div>
       <span class="meta-sep">·</span>
       <div class="meta-date">11 SEPT. 2026 · 5 MIN</div>
@@ -100,7 +101,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
       <p>Ça paraît anecdotique. Ça ne l'est pas. Le principal facteur d'abandon chez les débutants, c'est le nombre de gestes entre l'envie de jouer et le premier coup de baguette. Chaque câble en moins compte. Un débutant utilisera le Bluetooth tous les jours, la neuvième pièce du kit une fois par mois.</p>
 
       <div class="conseil-bipbop">
-        <div class="mascotte-avatar small"></div>
+        <div class="mascotte-avatar small"><BipbopAvatar /></div>
         <div>
           <div class="conseil-title">Le conseil de BipBop</div>
           <p>Quatre-vingt-onze euros, c'est exactement le prix du casque et du tapis qu'il te faudra de toute façon. Prends l'Alesis et commande les deux avec. Tu joueras le soir même, sans déranger personne.</p>
@@ -190,8 +191,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   .meta strong { color: var(--color-encre); font-weight: 700; }
   .meta-sep { color: var(--color-sable-clair); }
   .meta-date { font: 500 13px var(--font-mono); color: var(--texte-mono); }
-  .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px); }
+  .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); display:flex;align-items:center;justify-content:center; }
   .mascotte-avatar.small { width: 44px; height: 44px; flex: none; }
+  .mascotte-avatar svg { width:100%; height:100%; display:block; }
+  .conseil-bipbop .mascotte-avatar { width:52px; height:52px; border-color:var(--color-jaune); }
 
   /* Face-à-face */
   .face-a-face { margin: 0 40px 34px; position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
