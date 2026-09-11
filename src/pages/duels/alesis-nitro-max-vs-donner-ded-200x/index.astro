@@ -2,12 +2,14 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Alesis Nitro Max contre Donner DED-200X : laquelle prendre ?" description="Deux batteries mesh autour de 400-500 €. On les compare critère par critère pour t'aider à choisir." currentPage="">
-  <nav class="breadcrumb">ACCUEIL / DUELS / NITRO MAX VS DED-200X</nav>
+<BaseLayout title="Alesis Nitro Max ou Donner DED-200X : laquelle prendre ?" description="Quatre-vingt-onze euros d'écart, des pads mesh des deux côtés, deux modèles qui reviennent sans arrêt dans les recherches. Le moins cher n'est pas celui que la réputation désigne." currentPage="">
+
+  <nav class="breadcrumb">ACCUEIL / DUELS / ALESIS NITRO MAX VS DONNER DED-200X</nav>
 
   <section class="duel-hero">
-    <h1>Alesis Nitro Max contre Donner DED-200X</h1>
-    <p class="chapo">Deux batteries mesh autour de 400-500 €. La Nitro Max est notre recommandation principale, la DED-200X est son concurrent direct. On les compare critère par critère.</p>
+    <span class="badge duel">DUEL</span>
+    <h1>Alesis Nitro Max ou Donner DED-200X : laquelle prendre&nbsp;?</h1>
+    <p class="chapo">Quatre-vingt-onze euros d'écart, des pads mesh des deux côtés, deux modèles qui reviennent sans arrêt dans les recherches. Le moins cher n'est pas celui que la réputation désigne. Voilà où se joue la différence.</p>
     <div class="meta">
       <div class="mascotte-avatar small"></div>
       <div>Par <strong>BipBop</strong></div>
@@ -16,97 +18,163 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     </div>
   </section>
 
+  <!-- Face-à-face -->
+  <section class="face-a-face">
+    <div class="ffa-card gauche">
+      <div class="ffa-badge-notre-choix">NOTRE CHOIX</div>
+      <div class="ffa-image"><img src="https://www.thomann.de/prodbilder/575657.jpg" alt="ALESIS NITRO MAX" /></div>
+      <div class="ffa-body">
+        <div class="ffa-marque">ALESIS</div>
+        <div class="ffa-nom">Nitro Max Mesh</div>
+        <div class="ffa-prix-row"><span class="ffa-prix">409 €</span><span class="ffa-prix-label">prix indicatif</span></div>
+        <p>Moins chère, du Bluetooth, un module bien plus fourni. Un fût et une cymbale de moins : c'est le seul vrai sacrifice.</p>
+        <div class="ffa-plus-moins">
+          <div class="ffa-plus"><span>+</span>Quatre-vingt-onze euros moins chère</div>
+          <div class="ffa-plus"><span>+</span>Bluetooth audio intégré</div>
+          <div class="ffa-moins"><span>−</span>Le pied de cymbale bouge</div>
+        </div>
+        <a href="/avis/alesis-nitro-max/" class="btn-corail">Voir le prix chez Thomann</a>
+      </div>
+    </div>
+
+    <div class="ffa-vs">VS</div>
+
+    <div class="ffa-card droite">
+      <div class="ffa-image"><img src="https://cdn.shopify.com/s/files/1/0612/3120/2528/files/5_6f759e66-464b-4495-8e59-713d28b965e7.jpg?v=1764927814" alt="DONNER DED-200X" /></div>
+      <div class="ffa-body">
+        <div class="ffa-marque">DONNER</div>
+        <div class="ffa-nom">DED-200X</div>
+        <div class="ffa-prix-row"><span class="ffa-prix">499,99 €</span><span class="ffa-prix-label">prix indicatif</span></div>
+        <p>Le kit le plus complet des deux : neuf pads au lieu de huit. Tu paies quatre-vingt-onze euros pour deux éléments de plus.</p>
+        <div class="ffa-plus-moins">
+          <div class="ffa-plus"><span>+</span>9 pads : 5 fûts, 4 cymbales</div>
+          <div class="ffa-plus"><span>+</span>Rack plus rigide</div>
+          <div class="ffa-moins"><span>−</span>Pas de Bluetooth, moins de sons</div>
+        </div>
+        <a href="https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=7786764075232&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-ded-200-set-de-batterie-electronique&intsrc=CATF_28584" rel="sponsored noopener" target="_blank" class="btn-secondaire-clair">Voir le prix chez Thomann</a>
+      </div>
+    </div>
+  </section>
+
   <section class="duel-content">
-    <div class="duel-face-a-face">
-      <div class="duel-modele gauche">
-        <div class="duel-badge corail">NOTRE CHOIX</div>
-        <div class="duel-image">
-          <img src="https://www.thomann.de/prodbilder/575657.jpg" alt="Alesis Nitro Max" />
+    <div class="contenu">
+      <!-- Ligne par ligne -->
+      <h2>Ligne par ligne</h2>
+      <div class="tableau-duel">
+        <div class="tableau-duel-header">
+          <div>Critère</div><div>Alesis Nitro Max</div><div>Donner DED-200X</div><div>Avantage</div>
         </div>
-        <div class="duel-marque">ALESIS</div>
-        <h2>Nitro Max Mesh</h2>
-        <div class="duel-prix">409 € environ</div>
-        <a href="/avis/alesis-nitro-max/" class="btn-corail">Lire l'avis</a>
+        <div class="tableau-duel-row">
+          <div class="td-cell titre">Prix</div><div class="td-cell">409 €</div><div class="td-cell">499,99 €</div><div class="td-cell avantage-gauche">Alesis</div>
+        </div>
+        <div class="tableau-duel-row alt">
+          <div class="td-cell titre">Nombre de pads</div><div class="td-cell">8</div><div class="td-cell">9</div><div class="td-cell avantage-droite">Donner</div>
+        </div>
+        <div class="tableau-duel-row">
+          <div class="td-cell titre">Peaux</div><div class="td-cell">Mesh sur toute la batterie</div><div class="td-cell">Mesh sur toute la batterie</div><div class="td-cell egal">Égalité</div>
+        </div>
+        <div class="tableau-duel-row alt">
+          <div class="td-cell titre">Sons du module</div><div class="td-cell">440 sons, 80 kits</div><div class="td-cell">180 sons, 30 kits</div><div class="td-cell avantage-gauche">Alesis</div>
+        </div>
+        <div class="tableau-duel-row">
+          <div class="td-cell titre">Bluetooth</div><div class="td-cell">Oui</div><div class="td-cell">Non, câble jack uniquement</div><div class="td-cell avantage-gauche">Alesis</div>
+        </div>
+        <div class="tableau-duel-row alt">
+          <div class="td-cell titre">Solidité du rack</div><div class="td-cell">Correcte, la cymbale se déplace</div><div class="td-cell">Plus rigide à l'usage</div><div class="td-cell avantage-droite">Donner</div>
+        </div>
+        <div class="tableau-duel-row">
+          <div class="td-cell titre">Discrétion</div><div class="td-cell"><span class="badge-disc">Bonne</span></div><div class="td-cell"><span class="badge-disc">Bonne</span></div><div class="td-cell egal">Égalité</div>
+        </div>
+        <div class="tableau-duel-row alt">
+          <div class="td-cell titre">Encombrement</div><div class="td-cell">1,10 m</div><div class="td-cell">1,20 m</div><div class="td-cell avantage-gauche">Alesis</div>
+        </div>
+        <div class="tableau-duel-row">
+          <div class="td-cell titre">Revente d'occasion</div><div class="td-cell">Facile, marque connue</div><div class="td-cell">Plus lente, marque moins installée</div><div class="td-cell avantage-gauche">Alesis</div>
+        </div>
       </div>
-      <div class="duel-vs">VS</div>
-      <div class="duel-modele droite">
-        <div class="duel-badge">CONCURRENT</div>
-        <div class="duel-image">
-          <img src="https://cdn.shopify.com/s/files/1/0612/3120/2528/files/5_6f759e66-464b-4495-8e59-713d28b965e7.jpg?v=1764927814" alt="Donner DED-200X" />
+
+      <!-- Ce qui les sépare -->
+      <h2>Ce qui les sépare vraiment</h2>
+      <p>Au toucher, elles se ressemblent beaucoup. Les deux ont des peaux en maille tendue, les deux rebondissent correctement sous la baguette, les deux font le même bruit sourd dans la pièce d'à côté. Si tu les essayais à l'aveugle pendant cinq minutes, tu ne saurais probablement pas dire laquelle est laquelle.</p>
+      <p>La différence se voit au bout de trois semaines. La Donner aligne un fût et une cymbale de plus, ce qui ouvre le jeu quand on commence à enchaîner des morceaux entiers. L'Alesis répond avec son module : quatre fois plus de sons, des kits réellement utilisables et surtout le Bluetooth qui envoie la musique de ton téléphone dans ton casque sans câble à brancher.</p>
+      <p>Ça paraît anecdotique. Ça ne l'est pas. Le principal facteur d'abandon chez les débutants, c'est le nombre de gestes entre l'envie de jouer et le premier coup de baguette. Chaque câble en moins compte. Un débutant utilisera le Bluetooth tous les jours, la neuvième pièce du kit une fois par mois.</p>
+
+      <div class="conseil-bipbop">
+        <div class="mascotte-avatar small"></div>
+        <div>
+          <div class="conseil-title">Le conseil de BipBop</div>
+          <p>Quatre-vingt-onze euros, c'est exactement le prix du casque et du tapis qu'il te faudra de toute façon. Prends l'Alesis et commande les deux avec. Tu joueras le soir même, sans déranger personne.</p>
         </div>
-        <div class="duel-marque">DONNER</div>
-        <h2>DED-200X</h2>
-        <div class="duel-prix">499,99 € environ</div>
-        <a href="/avis/donner-ded-200x/" class="btn-secondaire">Lire l'avis</a>
+      </div>
+
+      <!-- Prends si -->
+      <div class="prends-si">
+        <div class="prends-si-card jaune">
+          <div class="prends-si-title">Prends l'Alesis si</div>
+          <div class="prends-si-items">
+            <div class="prends-si-item"><span>·</span>Tu veux dépenser le moins possible sans sacrifier le mesh</div>
+            <div class="prends-si-item"><span>·</span>Tu comptes la revendre dans deux ou trois ans</div>
+            <div class="prends-si-item"><span>·</span>Tu veux jouer sur tes morceaux dès le premier soir</div>
+          </div>
+        </div>
+        <div class="prends-si-card blanc">
+          <div class="prends-si-title">Prends la Donner si</div>
+          <div class="prends-si-items">
+            <div class="prends-si-item"><span>·</span>Tu veux le kit le plus fourni, cinq fûts et quatre cymbales</div>
+            <div class="prends-si-item"><span>·</span>L'Alesis est en rupture, ce qui arrive souvent</div>
+            <div class="prends-si-item"><span>·</span>Le Bluetooth ne t'intéresse pas, tu joues en jack</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <h2>Deux questions qui reviennent</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Les pads Donner s'usent-ils plus vite&nbsp;?</div>
+          <p class="faq-reponse">Rien ne le montre sur les premières années. Le point faible d'une batterie d'entrée de gamme n'est presque jamais la peau : c'est le pied de cymbale ou la pédale.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Peut-on ajouter une cymbale à ces batteries&nbsp;?</div>
+          <p class="faq-reponse">Oui. C'est plutôt l'inverse qui est intéressant : l'Alesis accepte un pack d'extension officiel à 89 € qui ajoute un tom et une cymbale. Elle rattrape alors la Donner en nombre de pads, pour un total encore inférieur.</p>
+        </div>
+      </div>
+
+      <!-- Verdict -->
+      <div class="verdict">
+        <div class="verdict-title">Le verdict</div>
+        <p>L'Alesis Nitro Max gagne, cette fois assez nettement. Elle coûte quatre-vingt-onze euros de moins, son module est bien plus riche et le Bluetooth change le quotidien. La Donner garde un argument réel : neuf pads contre huit et un rack plus rigide. Si tu veux le kit le plus complet dès le départ sans jamais rien y ajouter, elle se défend.</p>
+        <div class="verdict-actions">
+          <a href="https://www.thomann.fr/alesis_nitro_max_kit.htm?offid=1&affid=3711" rel="sponsored noopener" target="_blank" class="btn-corail">Voir l'Alesis chez Thomann</a>
+          <a href="https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=7786764075232&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-ded-200-set-de-batterie-electronique&intsrc=CATF_28584" rel="sponsored noopener" target="_blank" class="btn-secondaire-clair">Voir la Donner</a>
+        </div>
       </div>
     </div>
 
-    <div class="duel-tableau">
-      <div class="duel-tableau-header">
-        <div>Critère</div>
-        <div>Nitro Max</div>
-        <div>DED-200X</div>
-        <div>Avantage</div>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-resultat">
+        <div class="sidebar-label">RÉSULTAT DU DUEL</div>
+        <div class="sidebar-gagnant">Alesis Nitro Max</div>
+        <p>Gagne 5 critères sur 9. Deux vont à la Donner, deux sont à égalité.</p>
+        <a href="https://www.thomann.fr/alesis_nitro_max_kit.htm?offid=1&affid=3711" rel="sponsored noopener" target="_blank" class="btn-corail-sidebar">Voir le prix</a>
       </div>
-      <div class="duel-row">
-        <div class="duel-cell titre">Prix</div>
-        <div class="duel-cell">409 €</div>
-        <div class="duel-cell">499,99 €</div>
-        <div class="duel-cell avantage-gauche">Nitro Max</div>
+      <div class="sidebar-ecart">
+        <div class="sidebar-ecart-label">L'ÉCART RÉEL</div>
+        <div class="sidebar-ecart-val">91 €</div>
+        <p>En faveur de l'Alesis. Soit le prix du casque et du tapis qu'il te faudra de toute façon.</p>
       </div>
-      <div class="duel-row">
-        <div class="duel-cell titre">Pads</div>
-        <div class="duel-cell">8 · mesh</div>
-        <div class="duel-cell">7 · mesh</div>
-        <div class="duel-cell avantage-gauche">Nitro Max</div>
+      <div class="sidebar-autre">
+        <div class="sidebar-autre-title">Aucune des deux&nbsp;?</div>
+        <p>Dis-nous ton budget et la place dont tu disposes, on te sort deux autres modèles.</p>
+        <a href="/comparatif/" class="btn-jaune-sidebar">Aller au comparatif</a>
       </div>
-      <div class="duel-row">
-        <div class="duel-cell titre">Bluetooth</div>
-        <div class="duel-cell">Oui</div>
-        <div class="duel-cell">Oui</div>
-        <div class="duel-cell egal">Égalité</div>
+      <div class="sidebar-avis">
+        <div class="sidebar-avis-title">Les avis complets</div>
+        <a href="/avis/alesis-nitro-max/" class="sidebar-avis-link">Alesis Nitro Max Mesh</a>
+        <a href="/avis/" class="sidebar-avis-link last">Donner DED-200X</a>
       </div>
-      <div class="duel-row">
-        <div class="duel-cell titre">Module</div>
-        <div class="duel-cell">440 sons, 80 kits</div>
-        <div class="duel-cell">385 sons, 60 kits</div>
-        <div class="duel-cell avantage-gauche">Nitro Max</div>
-      </div>
-      <div class="duel-row">
-        <div class="duel-cell titre">Largeur</div>
-        <div class="duel-cell">1,10 m</div>
-        <div class="duel-cell">1,05 m</div>
-        <div class="duel-cell avantage-droite">DED-200X</div>
-      </div>
-      <div class="duel-row">
-        <div class="duel-cell titre">Cymbales</div>
-        <div class="duel-cell">3</div>
-        <div class="duel-cell">4</div>
-        <div class="duel-cell avantage-droite">DED-200X</div>
-      </div>
-      <div class="duel-row">
-        <div class="duel-cell titre">Fûts</div>
-        <div class="duel-cell">4</div>
-        <div class="duel-cell">5</div>
-        <div class="duel-cell avantage-droite">DED-200X</div>
-      </div>
-      <div class="duel-row total">
-        <div class="duel-cell titre">Décompte</div>
-        <div class="duel-cell">4 avantages</div>
-        <div class="duel-cell">3 avantages</div>
-        <div class="duel-cell">Nitro Max</div>
-      </div>
-    </div>
-
-    <div class="duel-verdict">
-      <h2>Le verdict</h2>
-      <p>La Nitro Max gagne sur les critères qui comptent au quotidien : le prix (91 € de moins), le module plus riche et un pad de plus. La DED-200X offre un fût et une cymbale de plus, mais c'est un avantage sur le papier : en pratique, tu n'utilises pas la différence.</p>
-      <p>Si la Nitro Max est en rupture (ça arrive souvent), la DED-200X est une alternative correcte. Mais si les deux sont disponibles, prends la Nitro Max.</p>
-      <div class="duel-verdict-actions">
-        <a href="/avis/alesis-nitro-max/" class="btn-corail">Voir l'avis Nitro Max</a>
-        <a href="/avis/donner-ded-200x/" class="btn-secondaire">Voir l'avis DED-200X</a>
-      </div>
-    </div>
+    </aside>
   </section>
 
   <div class="spacer"></div>
@@ -114,204 +182,116 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 
 <style>
   .breadcrumb { padding: 22px 40px 0; font: 500 12.5px var(--font-mono); color: var(--texte-mono); }
-  .duel-hero { padding: 44px 40px 34px; border-bottom: var(--border-epais) solid var(--color-encre); }
-  .duel-hero h1 { font: 800 54px/1 var(--font-titres); letter-spacing: -0.035em; margin: 0 0 14px; }
-  .chapo { font: 400 18px/1.55 var(--font-texte); color: var(--texte-secondaire); margin: 0 0 22px; max-width: 700px; }
+  .duel-hero { padding: 20px 40px 30px; max-width: 860px; }
+  .badge.duel { display: inline-flex; align-items: center; gap: 8px; font: 700 12px var(--font-texte); letter-spacing: 0.04em; background: var(--color-encre); color: var(--color-jaune); border: var(--border-epais) solid var(--color-encre); border-radius: 9px; padding: 6px 12px; margin-bottom: 20px; }
+  .duel-hero h1 { font: 800 54px/1.02 var(--font-titres); letter-spacing: -0.035em; margin: 0 0 18px; text-wrap: pretty; }
+  .chapo { font: 400 20px/1.55 var(--font-texte); color: var(--texte-secondaire); margin: 0 0 20px; max-width: 720px; text-wrap: pretty; }
   .meta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font: 500 14px var(--font-texte); color: var(--texte-secondaire); }
   .meta strong { color: var(--color-encre); font-weight: 700; }
   .meta-sep { color: var(--color-sable-clair); }
   .meta-date { font: 500 13px var(--font-mono); color: var(--texte-mono); }
   .mascotte-avatar { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; border: var(--border-epais) solid var(--color-encre); background: var(--color-jaune); background-image: repeating-linear-gradient(45deg, rgba(36,28,20,0.10) 0 1px, transparent 1px 9px); }
   .mascotte-avatar.small { width: 44px; height: 44px; flex: none; }
-  .duel-content { padding: 34px 40px; }
 
-  /* Face à face */
-  .duel-face-a-face {
-    display: grid;
-    grid-template-columns: 1fr 80px 1fr;
-    gap: 20px;
-    align-items: start;
-    margin-bottom: 44px;
-  }
+  /* Face-à-face */
+  .face-a-face { margin: 0 40px 34px; position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .ffa-card { position: relative; background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 20px; overflow: hidden; }
+  .ffa-card.gauche { background: var(--color-jaune); box-shadow: 7px 7px 0 var(--color-encre); }
+  .ffa-card.droite { box-shadow: 7px 7px 0 var(--color-turquoise); }
+  .ffa-badge-notre-choix { position: absolute; top: 14px; right: 14px; z-index: 2; transform: rotate(5deg); background: var(--color-corail); color: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 10px; padding: 7px 12px; font: 700 12.5px var(--font-titres); }
+  .ffa-image { height: 200px; border-bottom: var(--border-epais) solid var(--color-encre); }
+  .ffa-image img { width: 100%; height: 100%; object-fit: contain; padding: 8px; box-sizing: border-box; background: #fff; }
+  .ffa-body { padding: 22px 24px 24px; }
+  .ffa-marque { font: 500 12px var(--font-mono); color: var(--texte-mono); margin-bottom: 6px; }
+  .ffa-nom { font: 800 30px/1.08 var(--font-titres); letter-spacing: -0.025em; margin-bottom: 12px; }
+  .ffa-prix-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+  .ffa-prix { font: 800 30px var(--font-titres); letter-spacing: -0.02em; }
+  .ffa-prix-label { font: 400 13px var(--font-mono); color: var(--texte-secondaire); }
+  .ffa-body > p { font: 400 15.5px/1.6 var(--font-texte); color: var(--texte-principal); margin: 0 0 16px; }
+  .ffa-plus-moins { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; font: 500 14px var(--font-texte); }
+  .ffa-plus { display: flex; gap: 9px; }
+  .ffa-plus span { color: var(--color-turquoise-fonce); font-weight: 700; }
+  .ffa-moins { display: flex; gap: 9px; }
+  .ffa-moins span { color: var(--color-rouge-clair-texte); font-weight: 700; }
+  .ffa-vs { position: absolute; left: 50%; top: 170px; transform: translate(-50%, -50%); z-index: 3; width: 62px; height: 62px; border-radius: 50%; background: var(--color-encre); border: 3px solid var(--color-creme); color: var(--color-jaune); font: 800 21px var(--font-titres); display: flex; align-items: center; justify-content: center; }
+  .btn-corail { display: block; text-align: center; font: 700 15px var(--font-texte); text-decoration: none; color: #fff; background: var(--color-corail); border: var(--border-epais) solid var(--color-encre); padding: 13px; border-radius: 12px; box-shadow: 4px 4px 0 var(--color-encre); }
+  .btn-secondaire-clair { display: block; text-align: center; font: 700 15px var(--font-texte); text-decoration: none; color: var(--color-encre); background: var(--color-creme); border: var(--border-epais) solid var(--color-encre); padding: 13px; border-radius: 12px; box-shadow: 4px 4px 0 var(--color-encre); }
 
-  .duel-modele {
-    background: #fff;
-    border: var(--border-epais) solid var(--color-encre);
-    border-radius: 18px;
-    padding: 24px;
-    text-align: center;
-    box-shadow: 5px 5px 0 var(--color-encre);
-  }
+  /* Contenu */
+  .duel-content { padding: 0 40px 40px; display: grid; grid-template-columns: 1fr 330px; gap: 44px; align-items: start; }
+  .contenu { max-width: 720px; }
+  .contenu h2 { font: 800 30px/1.14 var(--font-titres); letter-spacing: -0.028em; margin: 34px 0 16px; max-width: 720px; }
+  .contenu h2:first-child { margin-top: 0; }
+  .contenu > p { font: 400 17px/1.72 var(--font-texte); color: var(--texte-principal); margin: 0 0 16px; max-width: 720px; text-wrap: pretty; }
 
-  .duel-modele.gauche { box-shadow: 5px 5px 0 var(--color-corail); }
+  /* Tableau duel */
+  .tableau-duel { border: var(--border-epais) solid var(--color-encre); border-radius: 16px; overflow: hidden; margin-bottom: 34px; font: 400 14.5px var(--font-texte); }
+  .tableau-duel-header { display: grid; grid-template-columns: minmax(120px,1.1fr) 1fr 1fr minmax(96px,.8fr); background: var(--color-encre); color: var(--color-creme); font-weight: 600; font-size: 13px; }
+  .tableau-duel-header > div { padding: 12px 16px; }
+  .tableau-duel-row { display: grid; grid-template-columns: minmax(120px,1.1fr) 1fr 1fr minmax(96px,.8fr); background: #fff; border-bottom: var(--border-fin) solid var(--color-sable-clair); }
+  .tableau-duel-row:last-child { border-bottom: none; }
+  .tableau-duel-row.alt { background: var(--color-creme); }
+  .td-cell { padding: 14px 16px; color: var(--texte-carte); }
+  .td-cell.titre { font-weight: 600; }
+  .td-cell.avantage-gauche { color: var(--color-rouge-clair-texte); font-weight: 600; }
+  .td-cell.avantage-droite { color: var(--color-turquoise-fonce); font-weight: 600; }
+  .td-cell.egal { color: var(--texte-secondaire); }
+  .badge-disc { display: inline-block; font: 600 12.5px var(--font-texte); padding: 5px 10px; border-radius: 8px; border: var(--border-moyen) solid var(--color-encre); background: var(--color-creme); }
 
-  .duel-badge {
-    display: inline-block;
-    font: 700 12px var(--font-titres);
-    background: var(--color-encre);
-    color: var(--color-creme);
-    border: var(--border-epais) solid var(--color-encre);
-    border-radius: 9px;
-    padding: 6px 12px;
-    margin-bottom: 16px;
-  }
+  /* Conseil BipBop */
+  .conseil-bipbop { display: flex; gap: 16px; align-items: flex-start; background: var(--color-encre); border-radius: 18px; padding: 22px 24px; margin-bottom: 34px; color: var(--color-creme); max-width: 760px; }
+  .conseil-title { font: 700 15px var(--font-texte); color: var(--color-jaune); margin-bottom: 6px; }
+  .conseil-bipbop p { font: 400 16px/1.6 var(--font-texte); color: #e0d5c8; margin: 0; }
 
-  .duel-badge.corail { background: var(--color-corail); }
+  /* Prends si */
+  .prends-si { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-bottom: 34px; }
+  .prends-si-card { border: var(--border-epais) solid var(--color-encre); border-radius: 18px; padding: 22px 24px; }
+  .prends-si-card.jaune { background: var(--color-jaune); box-shadow: 5px 5px 0 var(--color-encre); }
+  .prends-si-card.blanc { background: #fff; box-shadow: 5px 5px 0 var(--color-turquoise); }
+  .prends-si-title { font: 800 19px var(--font-titres); letter-spacing: -0.02em; margin-bottom: 12px; }
+  .prends-si-items { display: flex; flex-direction: column; gap: 10px; font: 400 15.5px/1.5 var(--font-texte); color: var(--texte-principal); }
+  .prends-si-item { display: flex; gap: 10px; }
+  .prends-si-item span { font-weight: 700; }
 
-  .duel-image {
-    height: 180px;
-    border: var(--border-moyen) solid var(--color-sable-clair);
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 16px;
-    background: #fff;
-  }
-
-  .duel-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    padding: 12px;
-    box-sizing: border-box;
-  }
-
-  .duel-marque {
-    font: 500 12px var(--font-mono);
-    color: var(--texte-mono);
-    margin-bottom: 6px;
-  }
-
-  .duel-modele h2 {
-    font: 700 24px/1.15 var(--font-titres);
-    letter-spacing: -0.02em;
-    margin: 0 0 10px;
-  }
-
-  .duel-prix {
-    font: 800 22px var(--font-titres);
-    margin-bottom: 16px;
-  }
-
-  .duel-vs {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font: 800 36px var(--font-titres);
-    color: var(--color-sable-clair);
-    padding-top: 100px;
-  }
-
-  .btn-corail {
-    display: inline-block;
-    font: 700 14px var(--font-texte);
-    text-decoration: none;
-    color: #fff;
-    background: var(--color-corail);
-    border: var(--border-epais) solid var(--color-encre);
-    padding: 11px 18px;
-    border-radius: 11px;
-    box-shadow: 3px 3px 0 var(--color-encre);
-    transition: box-shadow 0.15s;
-  }
-
-  .btn-corail:hover { box-shadow: 1px 1px 0 var(--color-encre); color: #fff; }
-
-  .btn-secondaire {
-    display: inline-block;
-    font: 700 14px var(--font-texte);
-    text-decoration: none;
-    color: var(--color-encre);
-    background: var(--color-creme);
-    border: var(--border-epais) solid var(--color-encre);
-    padding: 11px 18px;
-    border-radius: 11px;
-    box-shadow: 3px 3px 0 var(--color-encre);
-    transition: box-shadow 0.15s;
-  }
-
-  .btn-secondaire:hover { box-shadow: 1px 1px 0 var(--color-encre); color: var(--color-encre); }
-
-  /* Tableau */
-  .duel-tableau {
-    border: var(--border-epais) solid var(--color-encre);
-    border-radius: 16px;
-    overflow: hidden;
-    margin-bottom: 34px;
-    font: 400 15px var(--font-texte);
-  }
-
-  .duel-tableau-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background: var(--color-encre);
-    color: var(--color-creme);
-    font-weight: 600;
-    font-size: 13.5px;
-  }
-
-  .duel-tableau-header > div { padding: 12px 16px; }
-
-  .duel-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background: #fff;
-    border-bottom: var(--border-fin) solid var(--color-sable-clair);
-  }
-
-  .duel-row:last-child { border-bottom: none; }
-  .duel-row.total { background: var(--color-jaune); font-weight: 700; }
-
-  .duel-cell {
-    padding: 14px 16px;
-    color: var(--texte-carte);
-  }
-
-  .duel-cell.titre { font-weight: 600; }
-
-  .duel-cell.avantage-gauche {
-    background: var(--color-rouge-clair);
-    color: var(--color-rouge-clair-texte);
-    font-weight: 600;
-  }
-
-  .duel-cell.avantage-droite {
-    background: var(--color-turquoise-clair);
-    color: var(--color-turquoise-fonce);
-    font-weight: 600;
-  }
-
-  .duel-cell.egal {
-    background: var(--color-sable);
-    color: var(--texte-secondaire);
-    font-weight: 600;
-  }
+  /* FAQ */
+  .faq-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 34px; max-width: 760px; }
+  .faq-item { background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 16px; padding: 19px 22px; }
+  .faq-question { font: 700 17px var(--font-texte); margin-bottom: 7px; }
+  .faq-reponse { font: 400 15.5px/1.6 var(--font-texte); color: var(--texte-carte); margin: 0; }
 
   /* Verdict */
-  .duel-verdict {
-    background: #fff;
-    border: var(--border-epais) solid var(--color-encre);
-    border-radius: 18px;
-    padding: 28px 30px;
-    box-shadow: 5px 5px 0 var(--color-encre);
-  }
+  .verdict { background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 20px; padding: 28px 30px; box-shadow: 7px 7px 0 var(--color-corail); }
+  .verdict-title { font: 800 30px var(--font-titres); letter-spacing: -0.025em; margin-bottom: 14px; }
+  .verdict p { font: 400 17px/1.7 var(--font-texte); color: var(--texte-principal); margin: 0 0 22px; text-wrap: pretty; }
+  .verdict-actions { display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
 
-  .duel-verdict h2 {
-    font: 800 30px var(--font-titres);
-    letter-spacing: -0.025em;
-    margin: 0 0 16px;
-  }
-
-  .duel-verdict p {
-    font: 400 17px/1.7 var(--font-texte);
-    color: var(--texte-principal);
-    margin: 0 0 16px;
-  }
-
-  .duel-verdict-actions {
-    display: flex;
-    gap: 14px;
-    margin-top: 20px;
-  }
+  /* Sidebar */
+  .sidebar { position: sticky; top: 20px; display: flex; flex-direction: column; gap: 16px; }
+  .sidebar-resultat { background: var(--color-jaune); border: var(--border-epais) solid var(--color-encre); border-radius: 18px; padding: 20px; box-shadow: 5px 5px 0 var(--color-encre); }
+  .sidebar-label { font: 500 11px var(--font-mono); letter-spacing: 0.07em; color: var(--texte-secondaire); margin-bottom: 8px; }
+  .sidebar-gagnant { font: 800 24px/1.1 var(--font-titres); letter-spacing: -0.025em; margin-bottom: 10px; }
+  .sidebar-resultat p { font: 400 14.5px/1.55 var(--font-texte); color: var(--texte-principal); margin: 0 0 16px; }
+  .btn-corail-sidebar { display: block; text-align: center; font: 700 14.5px var(--font-texte); text-decoration: none; color: #fff; background: var(--color-corail); border: var(--border-epais) solid var(--color-encre); padding: 12px; border-radius: 12px; box-shadow: 3px 3px 0 var(--color-encre); }
+  .sidebar-ecart { background: var(--color-turquoise-clair); border: var(--border-epais) solid var(--color-encre); border-radius: 18px; padding: 20px; text-align: center; }
+  .sidebar-ecart-label { font: 500 11px var(--font-mono); letter-spacing: 0.07em; color: var(--color-turquoise-fonce); margin-bottom: 8px; }
+  .sidebar-ecart-val { font: 800 44px/1 var(--font-titres); letter-spacing: -0.03em; margin-bottom: 8px; }
+  .sidebar-ecart p { font: 400 13.5px/1.5 var(--font-texte); color: var(--color-turquoise-clair-texte); margin: 0; }
+  .sidebar-autre { background: var(--color-encre); border-radius: 18px; padding: 20px; color: var(--color-creme); }
+  .sidebar-autre-title { font: 700 15px var(--font-texte); color: var(--color-jaune); margin-bottom: 9px; }
+  .sidebar-autre p { font: 400 14px/1.55 var(--font-texte); color: #c4b7a7; margin: 0 0 14px; }
+  .btn-jaune-sidebar { display: block; text-align: center; font: 700 13.5px var(--font-texte); text-decoration: none; color: var(--color-encre); background: var(--color-jaune); padding: 11px; border-radius: 11px; }
+  .sidebar-avis { background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: 18px; padding: 20px; }
+  .sidebar-avis-title { font: 700 15px var(--font-texte); margin-bottom: 11px; }
+  .sidebar-avis-link { display: block; font: 500 14px var(--font-texte); color: var(--color-encre); text-decoration: none; border-bottom: var(--border-fin) solid var(--color-sable-clair); padding-bottom: 9px; margin-bottom: 9px; }
+  .sidebar-avis-link.last { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
 
   .spacer { height: 52px; }
+
+  @media (max-width: 900px) {
+    .face-a-face { grid-template-columns: 1fr; }
+    .ffa-vs { display: none; }
+    .duel-content { grid-template-columns: 1fr; }
+    .sidebar { position: static; }
+    .prends-si { grid-template-columns: 1fr; }
+  }
 </style>
