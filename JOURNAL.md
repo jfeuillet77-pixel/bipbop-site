@@ -1,5 +1,64 @@
 # Journal BipBop
 
+## 13 septembre 2026 — Vague A, page 1 : la méthode change pour les cinq suivantes
+
+Reprise de `/comparatif/` terminée (voir l'entrée précédente). Ouverture de la vague A, les
+six avis qui manquent au hub et au comparatif.
+
+**Outil ajouté d'abord : `scripts/fidelite.mjs`** (`npm run fidelite`). Les six contrôles de
+l'`Aide-Memoire` portent sur les liens, les compteurs, les prix, la navigation et la largeur :
+**aucun ne voit une section supprimée ou réécrite**, alors que c'est le défaut qui a coûté cher
+en septembre sur « À propos ». L'outil compare segment à segment le texte du contenu de la
+maquette et celui de la page, et signale ce qui manque, ce qui s'ajoute, ce qui est déplacé.
+
+Il a trouvé sur-le-champ trois divergences entre l'ancienne et la nouvelle maquette, sur des
+pages pourtant passées par la campagne de fidélité :
+
+- `/les-bases/pad-mesh/` : « **Douze** modèles passés en revue » côté site, « **Neuf** » côté
+  maquette actuelle ;
+- `/guides/batterie-appartement/` : la plaque de mousse passe de **25 € à 55 €** et de
+  « si plancher sensible » à « si étage » ;
+- les trois avis publiés : l'encart « aller au comparatif » a changé de libellé et de phrase.
+
+À traiter dans la resynchronisation, pas ici.
+
+**Page livrée : `/avis/alesis-turbo-mesh/`** (`Avis-Alesis-Turbo-Mesh.dc.html`). Fidélité 100 %
+au segment près, aucun ajout ni déplacement. Responsive mesuré dans Chrome à 1024/900/768/390 :
+aucun débordement, la fiche technique s'empile à 620 px avec ses cellules d'en-tête retirées,
+le tableau de concurrence à 4 colonnes défile au lieu de s'écraser. Prix, compteurs, navigation
+et notes internes au vert.
+
+**Ce que la page a révélé de la famille.** Les neuf avis ont **la charpente identique au crochet
+près** : mêmes cinq `h2` dans le même ordre (« À qui elle s'adresse », « La fiche technique,
+traduite », « Est-ce que les voisins vont entendre ? », « Le vrai budget… », « Face à la
+concurrence »), et les mêmes compteurs de crochets (`sp`, `sp2`, `c3`, `def`, `tbl`, `tblrow`,
+`sticky`, `big=a→d`). Seules trois divergences structurelles, toutes expliquées :
+
+| Page | Écart | Cause |
+|---|---|---|
+| `Avis-Donner-DED-200X` | `rwd=def` compte 1 au lieu de 3 | son bloc responsive est amputé (déjà relevé dans `design/ecarts-maquettes.md`) |
+| `Avis-Millenium-MPS-750X`, `…-MPS-850` | `tblrow` 9 au lieu de 8 | tableau de concurrence à cinq modèles, pas quatre |
+
+**Conséquence de méthode pour les cinq restantes** : la charpente étant fixe, un gabarit
+`Avis.astro` piloté par le contenu de chaque page est plus sûr que cinq transcriptions
+manuelles — chaque page est ensuite tenue au contrôle de fidélité contre **sa** maquette, donc
+la garantie n'est pas relâchée. Les paragraphes, lignes de fiche, cartes d'accessoires et lignes
+de tableau restent des données, pas du HTML recopié à la main.
+
+**Ordre de publication imposé par les liens**, pas par moi : la Turbo Mesh lie
+`/avis/millenium-mps-450/`, que le contrôle de liens signale comme manquante. Donc **MPS-450
+ensuite**, puis DED-200X, MPS-750X, MPS-850, DTX432K. Le hub Avis, ses compteurs et sa liste
+d'attente se mettent à jour **en fin de vague**, une fois les six pages publiées — l'`Aide-Memoire`
+§01 les exige complètes, pas nécessairement page par page.
+
+**Question éditoriale ouverte, non résolue par nous** : la note « 7,2/10 » s'affiche sur la
+Turbo Mesh comme sur les huit autres avis, et **aucune grille n'existe nulle part dans les
+46 fichiers** — le hub répète « Note de 8,4 sur 10 » sans jamais dire ce que couvre le score.
+La règle I02 (« aucune note chiffrée sans grille explicitée ») est donc en défaut sur toute la
+famille. C'est la même classe de problème que les échelles `discretion` et `module` de
+`modeles.json`, déjà notée. **À fournir par le design** : une note inventée par nous serait
+publiée comme une méthode de test que nous n'avons pas.
+
 ## 13 septembre 2026 — Reprise sur « Claude Design - MàJ » : socle responsive, données, comparatif interactif
 
 ### Contexte
