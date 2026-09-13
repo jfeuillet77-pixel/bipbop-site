@@ -220,7 +220,10 @@ function porter(fichier, table) {
     '<meta charset="utf-8">',
     '<meta name="viewport" content="width=device-width, initial-scale=1">',
     `<meta name="description" content="${description ?? ''}">`,
-    '<meta name="robots" content="noindex, nofollow">',
+    // Site ouvert aux moteurs depuis le 13/09 au soir : plus de « noindex, nofollow » sur les
+    // pages publiées. La 404 fait exception — pas de permalien, pas de sitemap, servie en statut
+    // 404 par Netlify, et le meta évite qu'on l'indexe sur son URL directe.
+    route === '404.html' ? '<meta name="robots" content="noindex, nofollow">' : null,
     '<link rel="apple-touch-icon" href="/bipbop-touch-180.png">',
     /^https?:/.test(entree.permalien) ? `<link rel="canonical" href="${entree.permalien}">` : null,
     `<title>${titre} — BipBop</title>`,
