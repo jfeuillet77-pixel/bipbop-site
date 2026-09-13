@@ -17,6 +17,7 @@ import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import plan from '../src/data/plan.json' with { type: 'json' };
+import { appliquerGreffes } from './greffes.mjs';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MAQUETTES = join(SITE, '..', 'Claude Design - MàJ');
@@ -73,8 +74,10 @@ function corpsMaquette(html) {
 }
 
 function corpsPage(html) {
+  // Les pages portées portent leur chrome dans le corps, sans balise <main> : on applique
+  // la même borne d'en-tête qu'à la maquette, sinon le menu compterait comme du contenu ajouté.
   const o = html.indexOf('<main');
-  const d = o >= 0 ? html.indexOf('>', o) + 1 : 0;
+  const d = o >= 0 ? html.indexOf('>', o) + 1 : aprésEnTete(html, FIN_EN_TETE);
   const coupures = [html.indexOf('</main>', d), ...DEBUT_PIED.map((m) => html.indexOf(m, d)).filter((p) => p >= 0)].filter((p) => p >= 0);
   const f = coupures.length ? Math.min(...coupures) : html.length;
   return f > d ? html.slice(d, f) : html.slice(d);
@@ -130,7 +133,10 @@ for (const [route, fichier] of PAR_RACINE) {
   const chemin = join(MAQUETTES, maquette);
   if (!existsSync(chemin)) { resultats.push({ route, maquette, faute: `maquette absente du dossier : ${maquette}` }); continue; }
 
-  const dMaq = segments(corpsMaquette(readFileSync(chemin, 'utf8')));
+  // La maquette est comparée augmentée des greffes déclarées (corrections de prix, liste
+  // d'attente du hub) : un écart qu'on a décidé d'avoir ne doit pas compter comme une dérive.
+  const greffe = appliquerGreffes(corpsMaquette(readFileSync(chemin, 'utf8')), maquette, { sobre: true });
+  const dMaq = segments(greffe.corps);
   const dPage = segments(corpsPage(readFileSync(fichier, 'utf8')));
   const pr = new Map();
   dPage.forEach((s, i) => { if (!pr.has(s)) pr.set(s, i); });

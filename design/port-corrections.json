@@ -1,0 +1,13 @@
+{
+  "_": [
+    "Corrections apportées au texte des maquettes Claude Design, appliquées par scripts/greffes.mjs à chaque portage.",
+    "Un portage réécrit les pages depuis la maquette : toute correction faite à la main dans src/pages/ disparaît",
+    "à la run suivante. Elles vivent donc ici, avec leur raison et leur source.",
+    "« au » doit apparaitre EXACTEMENT UNE FOIS dans le corps porté : une correction qui mordrait sur une",
+    "sous-chaîne d'ailleurs (198 € dans 1 199 €) fait échouer le portage au lieu d'abimer la page.",
+    "Si « au » n'est plus trouvé, le portage échoue exprès : la maquette a bougé, ou la divergence n'a plus lieu d'être.",
+    "Les quatre prix faux que le hub Avis publiait dans sa liste d'attente n'y sont plus : ce tableau se construit",
+    "désormais depuis src/data/modeles.json (voir liste-attente-avis.csv), leurs prix viennent donc de la source."
+  ],
+  "corrections": []
+}

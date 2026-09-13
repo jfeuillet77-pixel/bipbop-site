@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Chaque guide répond à une seule question, celle que tu tapes dans Google à 23 h. Un tableau, deux ou trois modèles recommandés, le budget réel.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" href="/bipbop-touch-180.png">
+<link rel="canonical" href="https://bipbop.eu/guides/">
+<title>Une question, un guide, une réponse — BipBop</title>
+<link rel="icon" type="image/svg+xml" href="/bipbop-marque.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#efe6d8;font-family:'Work Sans',system-ui,sans-serif}
+a{color:#d2431f}a:hover{color:#b93a19}
+</style>
+<!--responsive--><style>
+/* Adaptation aux petits ecrans. Rien ne change au-dela de 1080px. */
+@media (max-width:1080px){
+  html{--rwd:on}
+  [data-rwd="tbl"],*:has(>[data-rwd="tblrow"]){overflow-x:auto!important;scrollbar-width:thin}
+  [data-rwd="tblrow"]{min-width:620px}
+  [data-rwd="sp"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c4"],[data-rwd="c5"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  [data-sticky]{position:static!important;top:auto!important}
+  [data-hdr] a{white-space:nowrap}
+  [data-pad]{padding-left:26px!important;padding-right:26px!important}
+  [data-mar]{margin-left:26px!important;margin-right:26px!important}
+  img{max-width:100%}
+  pre{max-width:100%}
+}
+@media (max-width:860px){
+  [data-rwd="sp2"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c3"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  [data-pad]{padding-left:18px!important;padding-right:18px!important}
+  [data-mar]{margin-left:18px!important;margin-right:18px!important}
+  [data-hdr]{flex-wrap:wrap!important;row-gap:12px!important}
+  [data-nav]{flex-wrap:wrap!important;gap:16px!important}
+  [data-big="a"]{font-size:76px!important}
+  [data-big="b"]{font-size:34px!important;line-height:1.06!important}
+  [data-big="c"]{font-size:27px!important;line-height:1.1!important}
+  [data-big="d"]{font-size:23px!important;line-height:1.14!important}
+}
+@media (max-width:620px){
+  [data-rwd="c3"],[data-rwd="c4"],[data-rwd="c5"],[data-rwd="mini"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="mini"]{justify-items:start!important;row-gap:12px!important}
+  [data-rwd="tblrow"]{min-width:540px}
+  [data-pad]{padding-left:14px!important;padding-right:14px!important}
+  [data-mar]{margin-left:14px!important;margin-right:14px!important}
+  [data-big="a"]{font-size:58px!important}
+  [data-big="b"]{font-size:29px!important}
+  [data-big="c"]{font-size:24px!important}
+  [data-big="d"]{font-size:21px!important}
+}
+
+@media (max-width:1080px){
+  [data-rwd="foot"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px!important}
+}
+@media (max-width:620px){
+  [data-rwd="foot"]{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+}
+
+@media (max-width:620px){
+  [data-rwd="def"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="def"]>div:nth-child(-n+2){display:none}
+}
+</style>
+
+<script>
+(function(){var K='bipbop-consent';
+function go(){var el=document.getElementById('cookie-banner');if(!el)return false;
+if(!localStorage.getItem(K)){el.style.display='flex';}
+el.addEventListener('click',function(e){var b=e.target.closest('[data-consent]');if(!b)return;
+try{localStorage.setItem(K,b.getAttribute('data-consent'));}catch(err){}el.style.display='none';});
+return true;}
+var t=setInterval(function(){if(go())clearInterval(t);},150);setTimeout(function(){clearInterval(t);},20000);})();
+</script>
+</head>
+<body>
+<div style="max-width:1180px;margin:0 auto;background:#fdf6ec;font-family:'Work Sans',system-ui,sans-serif;color:#241c14">
+
+<div data-pad data-hdr style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 40px;background:#fdf6ec;border-bottom:2.5px solid #241c14">
+<a href="/" style="display:flex;align-items:center;gap:11px;text-decoration:none;color:#241c14">
+<span style="width:34px;height:34px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 20px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</a>
+<div data-nav style="display:flex;gap:24px;font:500 14px 'Work Sans',sans-serif">
+<a href="/comparatif/" style="color:#241c14;text-decoration:none">Comparatif</a><a href="/avis/" style="color:#241c14;text-decoration:none">Avis</a><a href="/guides/" style="color:#241c14;font-weight:700;text-decoration:underline;text-decoration-thickness:2.5px;text-underline-offset:5px;text-decoration-color:#d2431f">Guides</a><a href="/a-propos/" style="color:#241c14;text-decoration:none">À propos</a>
+</div>
+<a href="/comparatif/" style="font:700 13px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;border:2.5px solid #241c14;padding:9px 15px;border-radius:10px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Trouver ma batterie</a>
+</div><div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">ACCUEIL / GUIDES</div>
+<div data-pad style="padding:20px 40px 30px;max-width:860px">
+<div style="display:inline-flex;align-items:center;gap:8px;font:700 12px 'Work Sans',sans-serif;letter-spacing:.04em;background:#0f7d76;color:#fff;border:2.5px solid #241c14;border-radius:9px;padding:6px 12px;margin-bottom:20px">11 GUIDES ET 6 ARTICLES PUBLIÉS</div>
+<h1 data-big="b" style="font:800 56px/1.02 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:pretty">Une question, un guide, une réponse</h1>
+<p style="font:400 20px/1.55 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 20px;max-width:720px;text-wrap:pretty">Chaque guide répond à une seule question, celle que tu tapes dans Google à 23 h. Un tableau, deux ou trois modèles recommandés, le budget réel. Pas de liste de quarante références où tu ne sais plus quoi choisir.</p>
+
+<div style="display:flex;align-items:center;gap:14px;margin-bottom:18px">
+<div style="width:46px;height:46px;flex:none;border-radius:50%;overflow:hidden;border:2.5px solid #241c14;background:#ffd166"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 -45 400 400" role="img"> <title>BipBop, avatar rond</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Cadre carré, prévu pour un découpage circulaire.</desc> <g fill="none" stroke="#241c14" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"> <path d="M200 72V49" fill="none"></path> <circle cx="200" cy="35" r="16" fill="#ffd166"></circle> <rect x="46" y="78" width="308" height="206" rx="78" fill="#0f7d76"></rect> <rect x="91" y="125" width="218" height="116" rx="42" fill="#241c14" stroke="none"></rect> <path d="M145 184c0-17 12-28 24-28s24 11 24 28" fill="none" stroke="#fdf6ec" stroke-width="12"></path> <path d="M207 184c0-17 12-28 24-28s24 11 24 28" fill="none" stroke="#fdf6ec" stroke-width="12"></path> <path d="M61 153c-25 5-34 29-28 51 5 19 18 30 35 28" fill="#fdf6ec"></path> <path d="M339 153c25 5 34 29 28 51-5 19-18 30-35 28" fill="#fdf6ec"></path> </g> </svg></div>
+<div style="font:500 14.5px/1.45 'Work Sans',sans-serif;color:#5a4c3e">Écrit par l'équipe, tenu à jour par <strong style="color:#241c14;font-weight:700">BipBop</strong>. Les prix sont relevés chaque semaine chez les marchands.</div>
+</div>
+<div style="font:500 13px 'IBM Plex Mono',monospace;color:#786550">MIS À JOUR LE 11 SEPT. 2026</div>
+</div>
+
+<div data-rwd="sp" data-mar style="margin:0 40px 34px;display:grid;grid-template-columns:1fr 340px;gap:22px;background:#ffd166;border:2.5px solid #241c14;border-radius:22px;padding:26px;box-shadow:7px 7px 0 #241c14;align-items:center">
+<div>
+<div style="display:inline-block;font:700 11.5px 'Work Sans',sans-serif;letter-spacing:.05em;background:#241c14;color:#ffd166;border:2.5px solid #241c14;border-radius:8px;padding:5px 10px;margin-bottom:14px">LE PLUS LU</div>
+<div data-big="c" style="font:800 36px/1.05 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em;margin-bottom:12px">Quelle batterie électronique pour un appartement</div>
+<p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 20px;max-width:520px">Neuf lecteurs sur dix arrivent ici avec la même peur : déranger les voisins. Ce guide dit ce qu'ils entendent vraiment, ce qui règle le problème pour quarante euros et les quatre modèles qui passent inaperçus.</p>
+<a href="/guides/batterie-appartement/" style="display:inline-block;font:700 15px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:13px 20px;border-radius:12px;box-shadow:4px 4px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+<div style="height:210px;border:2.5px solid #241c14;border-radius:16px;overflow:hidden"><img src="https://www.thomann.de/prodbilder/557748.jpg" alt="ROLAND TD-02KV" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+</div>
+
+<div data-mar style="margin:0 40px 26px">
+<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px">
+<div data-big="d" style="font:800 26px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em">Par budget</div>
+<div style="flex:1;height:2.5px;background:#241c14"></div>
+<div style="font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">3 GUIDES</div>
+</div>
+<div data-rwd="c3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="position:relative;height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/407855.jpg" alt="MILLENIUM MPS-150X" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff">
+</div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">La meilleure batterie électronique à moins de 300 €</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Six modèles à ce prix, deux qui valent le coup. On dit lesquels et pourquoi les quatre autres non.</p>
+<a href="/guides/meilleure-batterie-moins-300-euros/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="position:relative;height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/575657.jpg" alt="ALESIS NITRO MAX" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff">
+</div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">La meilleure batterie électronique à moins de 500 €</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Le segment où se joue 70 % des achats. Cinq modèles comparés, un gagnant net.</p>
+<a href="/guides/meilleure-batterie-moins-500-euros/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/597347.jpg" alt="Quelle batterie électronique à moins de 1 000 €" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Quelle batterie électronique à moins de 1 000 €</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Ce que 500 € de plus achètent vraiment. Plus les trois cas où ça vaut le coup.</p>
+<a href="/guides/batterie-moins-1000-euros/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div data-mar style="margin:0 40px 26px">
+<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px">
+<div data-big="d" style="font:800 26px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em">Par situation</div>
+<div style="flex:1;height:2.5px;background:#241c14"></div>
+<div style="font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">5 GUIDES</div>
+</div>
+<div data-rwd="c3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="position:relative;height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/557748.jpg" alt="ROLAND TD-02KV" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff">
+</div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Quelle batterie électronique pour un appartement</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Ce qui traverse le plancher, ce qui ne traverse rien, les trois modèles qui passent inaperçus.</p>
+<a href="/guides/batterie-appartement/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="position:relative;height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/549098.jpg" alt="MILLENIUM ROOKIE" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff">
+</div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Quelle batterie électronique pour un enfant de 6 à 12 ans</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Taille du rack, hauteur du siège, robustesse du matériel. Ce qui compte n'est pas le prix.</p>
+<a href="/guides/batterie-electronique-enfant/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="position:relative;height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/454253.jpg" alt="MILLENIUM MPS-450" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Quelle batterie pour un adulte qui débute vraiment</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Tu n'as jamais tenu une baguette. Voilà par où commencer sans y laisser un mois de loyer.</p>
+<a href="/guides/batterie-adulte-debutant/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="position:relative;height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/520620.jpg" alt="CASQUE" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Le pack complet prêt à jouer, batterie plus accessoires</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Casque, tapis, siège, baguettes. Le budget réel et les trois paniers qu'on recommande.</p>
+<a href="/guides/pack-complet/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/644692.jpg" alt="Installer sa batterie sans déranger" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Installer sa batterie sans déranger</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Quatre interventions par ordre d'efficacité, de dix euros à deux cent quarante.</p>
+<a href="/les-bases/installer-sans-deranger/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+</div>
+</div>
+<div data-mar style="margin:0 40px 26px">
+<div style="display:flex;align-items:baseline;gap:12px;margin-bottom:14px">
+<div data-big="d" style="font:800 26px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em">Par type de matériel</div>
+<div style="flex:1;height:2.5px;background:#241c14"></div>
+<div style="font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">3 GUIDES</div>
+</div>
+<div data-rwd="c3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="position:relative;height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/385630.jpg" alt="PAD MESH" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff">
+<div style="position:absolute;top:10px;right:10px;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.05em;background:#fdf6ec;color:#5a4c3e;border:2px solid #241c14;border-radius:7px;padding:5px 9px">BIENTÔT</div></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Peaux mesh ou pads en caoutchouc</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">La différence de toucher, la différence de bruit, la différence de prix. Le point le plus important d'un premier achat.</p>
+<div style="text-align:center;font:700 13.5px 'Work Sans',sans-serif;color:#5a4c3e;background:#fdf6ec;border:2.5px dashed #c9b9a3;padding:10px;border-radius:11px">En préparation</div>
+</div>
+</div>
+
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="position:relative;height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/379192.jpg" alt="MODULE" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Acheter d'occasion sans se faire avoir</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Ce qui s'use, ce qui se remplace, ce qui condamne une batterie. Les six points à vérifier avant de payer.</p>
+<a href="/guides/acheter-occasion/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/493327.jpg" alt="Faire évoluer sa batterie" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Faire évoluer sa batterie</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Ce qui vaut le coup d'être remplacé, ce qui n'en vaut pas la peine, le calcul qui tranche.</p>
+<a href="/guides/faire-evoluer-sa-batterie/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #d2431f;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/629071.jpg" alt="Enregistrer sa batterie" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Enregistrer sa batterie</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Un câble USB suffit pour de meilleurs sons que n'importe quel module à 1 000 €.</p>
+<a href="/guides/enregistrer-sa-batterie/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire le guide</a>
+</div>
+</div>
+</div>
+</div>
+
+<div data-mar style="display:flex;align-items:baseline;gap:12px;margin:0 40px 14px">
+<div data-big="d" style="font:800 26px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em">Les bases</div>
+<div style="flex:1;height:2.5px;background:#241c14"></div>
+<div style="font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">6 ARTICLES</div>
+</div>
+<p data-mar style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#5a4c3e;margin:0 40px 16px;max-width:760px">Des explications sans produit à vendre, écrites pour que le reste du site devienne compréhensible.</p>
+<div data-rwd="c3" data-mar style="margin:0 40px 26px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px">
+
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/385630.jpg" alt="Pad mesh" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">C'est quoi un pad mesh</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Le mot que tu croises dans toutes les fiches produits, expliqué en trois minutes.</p>
+<a href="/les-bases/pad-mesh/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire l'article</a>
+</div>
+</div>
+
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/520620.jpg" alt="Casque the t.bone HD 150" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Quel casque choisir</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">L'achat qu'on oublie de prévoir et qui décide si tu joueras tous les jours.</p>
+<a href="/les-bases/quel-casque/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire l'article</a>
+</div>
+</div>
+
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/644692.jpg" alt="Tapis Thomann E-Drum Rug" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Faut-il un tapis</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Ce qu'il règle vraiment, ce qu'il ne règle pas, les trois modèles à connaître.</p>
+<a href="/les-bases/tapis-batterie/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire l'article</a>
+</div>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/575657.jpg" alt="Batterie électronique" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Électronique ou acoustique</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">La vraie question n'est pas le son. C'est où tu habites et qui dort à côté.</p>
+<a href="/les-bases/electronique-ou-acoustique/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire l'article</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/575657.jpg" alt="Combien de temps pour savoir jouer" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Combien de temps pour savoir jouer</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Le calendrier honnête, du premier rythme au jeu en groupe. Plus le mur des six semaines.</p>
+<a href="/les-bases/combien-de-temps/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire l'article</a>
+</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column">
+<div style="height:130px;border-bottom:2.5px solid #241c14"><img src="https://www.thomann.de/prodbilder/133547.jpg" alt="Seul ou avec un professeur" style="width:100%;height:100%;object-fit:contain;display:block;padding:10px;box-sizing:border-box;background:#fff"></div>
+<div style="padding:17px 19px 19px;display:flex;flex-direction:column;gap:10px;flex:1">
+<div style="font:700 18px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Seul ou avec un professeur</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Trois choses ne s'apprennent pas dans une vidéo. Tout le reste, si.</p>
+<a href="/les-bases/seul-ou-prof/" style="display:inline-block;text-align:center;font:700 13.5px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Lire l'article</a>
+</div>
+</div>
+
+<div data-rwd="sp2" data-mar style="margin:34px 40px 0;display:grid;grid-template-columns:1fr 1fr;gap:18px">
+<div style="background:#241c14;border-radius:20px;padding:26px 28px;color:#fdf6ec">
+<div style="font:800 24px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em;color:#ffd166;margin-bottom:10px">Tu ne sais pas par où commencer</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 18px">Trois questions, deux modèles en face. C'est le chemin le plus court entre toi et une réponse.</p>
+<a href="/comparatif/" style="display:inline-block;font:700 14.5px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:12px 18px;border-radius:11px" style-hover="background:#ffdd8c">Aller au comparatif</a>
+</div>
+<div style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:20px;padding:26px 28px">
+<div style="font:800 24px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em;color:#0f5f5a;margin-bottom:10px">Il te manque un guide</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#264c49;margin:0 0 18px">Une situation qu'on n'a pas traitée, une question restée sans réponse : dis-le nous. C'est comme ça que la liste s'allonge.</p>
+<a href="/contact/" style="display:inline-block;font:700 14.5px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#fdf6ec;border:2.5px solid #241c14;padding:12px 18px;border-radius:11px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Proposer un sujet</a>
+</div>
+</div>
+
+<div style="height:52px"></div>
+<footer data-pad style="background:#241c14;color:#fdf6ec;padding:48px 40px 26px">
+<div data-rwd="foot" style="display:grid;grid-template-columns:1.7fr 1fr 1.1fr 1.2fr;gap:40px;padding-bottom:34px;border-bottom:1px solid #4a3d31">
+<div>
+<div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+<span style="width:32px;height:32px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée claire</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#fdf6ec" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</div>
+<p style="font:400 15px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 16px;max-width:300px">Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>
+<div style="display:inline-block;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#ffd166;border:1px solid #4a3d31;border-radius:8px;padding:7px 11px">MIS À JOUR EN SEPT. 2026</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">TROUVER</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/comparatif/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Le comparatif</a><a href="/guides/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les guides</a><a href="/avis/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les avis</a>
+</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">LE SITE</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/a-propos/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">À propos</a><a href="/contact/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Contact</a><a href="/mentions-legales/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Mentions légales</a><a href="/politique-confidentialite/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Politique de confidentialité</a>
+</div>
+</div>
+<div style="background:#302519;border-radius:16px;padding:20px;align-self:start">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:8px">Pas encore décidé ?</div>
+<p style="font:400 14px/1.55 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 14px">Trois questions, deux modèles en face. Trente secondes.</p>
+<a href="/comparatif/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:11px;border-radius:11px" style-hover="background:#ffdd8c">Trouver ma batterie</a>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:14px;padding:22px 0 20px;border-bottom:1px solid #4a3d31">
+<span style="font:700 12px 'Work Sans',sans-serif;color:#ffd166;white-space:nowrap;padding-top:2px">LIENS AFFILIÉS</span>
+<p style="font:400 14px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0;max-width:840px">Les liens vers Thomann, Woodbrass et Donner Music nous rapportent une commission si tu achètes. Ton prix ne bouge pas. Les prix affichés sont relevés à la date de publication : vérifie toujours sur la fiche du marchand avant de commander.</p>
+</div>
+<div style="padding-top:20px;font:400 13.5px 'Work Sans',sans-serif;color:#a8998a">© 2026 BipBop. Tous droits réservés.</div>
+</footer>
+</div>
+
+<div id="cookie-banner" data-pad style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#241c14;border-top:3px solid #ffd166;padding:18px 40px;align-items:center;justify-content:center;gap:32px;font-family:'Work Sans',system-ui,sans-serif;box-shadow:0 -6px 24px rgba(36,28,20,.28)">
+<div style="flex:1;max-width:760px">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:6px">Une question de cookies, vite réglée</div>
+<p style="font:400 14.5px/1.55 'Work Sans',sans-serif;color:#d6cabb;margin:0">On mesure l'audience pour savoir quelles pages t'aident vraiment. Pas de publicité, pas de revente de données. Tu peux refuser, le site marche exactement pareil. <a href="/politique-confidentialite/" style="color:#ffd166;text-decoration:underline;text-underline-offset:3px">Notre politique de confidentialité</a>.</p>
+</div>
+<div style="display:flex;gap:12px;flex:none">
+<button type="button" data-consent="refuse" style="font:700 14.5px 'Work Sans',sans-serif;color:#fdf6ec;background:transparent;border:2.5px solid #8a7866;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Refuser</button>
+<button type="button" data-consent="accept" style="font:700 14.5px 'Work Sans',sans-serif;color:#241c14;background:#ffd166;border:2.5px solid #ffd166;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Accepter</button>
+</div>
+</div>
+</body>
+</html>

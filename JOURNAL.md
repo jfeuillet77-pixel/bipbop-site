@@ -1,5 +1,96 @@
 # Journal BipBop
 
+## 13 septembre 2026 (soir) — On arrête de retaper les maquettes : elles sont portées par script
+
+Jordane a arrêté la séance sur une question juste : *« Claude a mâché le travail, j'ai l'impression
+que tu refais tout le travail déjà fait. »* Elle était exacte. Preuve dans les fichiers : une
+maquette `.dc.html` fait ~350 lignes de HTML + CSS complets, dont un bloc `<!--responsive-->` qui
+porte ses 34 à 39 crochets `data-*` ; une page Astro faisait 198 à 609 lignes de **cette même
+maquette recopiée à la main**. La recopie introduisait des écarts (compteurs faux, crochets
+oubliés, formules qui dérivent), et `scripts/fidelite.mjs` avait été écrit pour détecter ces
+écarts. Les 9 commits « reproduire fidèlement les designs » sont tous là pour réparer une boucle
+que notre méthode avait elle-même créée.
+
+**Décision actée : portage mécanique, tout re-porter** — les 21 pages publiées compris. Le
+comparatif (seule page dynamique, déjà portée avec le moteur DCLogic) et l'import des prix
+restent tels quels.
+
+**`scripts/port.mjs`** fait six choses, toutes triviales : il sort le `<helmet>` du `<body>` vers
+le `<head>`, retire `<x-dc>` et `support.js`, garde les deux blocs `<style>` et le corps **mot pour
+mot**, réécrit les ~10 liens `.dc.html` en permaliens (table `fichier_maquette → permalien` du plan
+éditorial), remplace `assets/…` par `/…`, et pose les quatre choses que le design ne contient pas :
+`description`, `canonical`, `robots` (phase de test), `lang`. Titre et description déjà rédigés sont
+**repris de la page Astro existante** avant qu'elle soit déplacée dans `design/port-seche/` ; pour
+une page neuve, ils sont **cités** de la maquette (`<h1>`, première phrase du chapeau), jamais
+rédigés. `--dry` rend sans écrire.
+
+**Résultat mesuré, en une exécution :** 38 pages au build (contre 21). Contrôle de fidélité :
+**36 pages sur 37 strictement identiques à leur maquette**, la seule exception étant les 4 prix
+corrigés ci-dessous. `npm run check` : **responsive vert sur les 38 pages** — les 8 qui débordaient
+à 390 px sont réglées parce que le bloc responsive est copié, pas reproduit ; 773 liens internes,
+0 cassé ; navigation identique sur les 38 ; aucun chiffre interne qui fuit. **12 problèmes → 3.**
+
+**La catégorie « 15 pages à resynchroniser » du plan disparaît** : elle n'existait que parce
+qu'on réécrivait les pages à la main.
+
+**`design/port-corrections.json`** — les corrections de données ne se font plus dans la page
+(générée, donc écrasée au portage suivant) : 4 entrées, chacune avec sa raison. Le portage échoue
+exprès si le texte d'origine n'est plus trouvé, ce qui signale que Claude Design a bougé.
+Millenium HD-120 198 → **219 €** (aucun catalogue ne donnait 198), Alesis Nitro Pro 599 → **698 €**
+(599 € est le prix de la Nitro Max), Donner DED-300X 699,99 → **539,99 €**, Yamaha DTX6K2-X
+1 199 → **1 198 €** (la source est à 1198).
+
+**Deux outils corrigés, pas réécrits** : `fidelite.mjs` cherchait un `<main>` que les maquettes
+n'ont pas et comptait le menu comme du contenu ajouté — la borne d'en-tête est maintenant
+symétrique ; `verif.mjs` détectait la navigation sur la première occurrence de `data-nav`, qui est
+un sélecteur CSS dans les pages portées — il ne retient que l'attribut.
+
+**Reste 3 problèmes, tous sur le hub `/avis/`, et tous éditoriaux** : la maquette annonce « 23 au
+programme » avec une liste d'attente de **14 lignes**, là où la base compte **22 modèles sans avis**.
+Compléter, c'est publier les 8 phrases que j'ai rédigées dans `design/hub-avis-liste-attente.md` —
+ma plume, pas celle de Claude Design, donc à trancher par Jordane. Voir le plan.
+
+**Tranché dans la foulée, même séance — Jordane : publier les 22, avec les phrases rédigées.** Le
+tableau « en préparation » du hub ne se corrige plus ligne par ligne, il se **construit** :
+`design/liste-attente-avis.csv` porte 22 fois `cle ; libellé affiché ; phrase`, et
+`scripts/greffes.mjs` régénère les lignes avec le balisage de la maquette, **prix et segment lus
+dans `src/data/modeles.json`**. Le badge devient « 9 AVIS PUBLIÉS · 22 AU PROGRAMME » et
+l'intitulé « Les 22 avis en préparation », calculés depuis la base. Les 14 lignes du design
+restent dans leur ordre et mot pour mot ; les 8 rédigées se placent en fin de segment.
+Conséquence heureuse : **les 4 corrections de prix deviennent inutiles** (le tableau sort de la
+source) et sortent de `port-corrections.json`, qui se retrouve vide mais gardé comme mécanisme —
+avec une règle neuve, une correction doit trouver **exactement une** occurrence (« 198 € » mordait
+sur « 1 198 € », et l'aurait changé en « 1 219 € » sans que personne le voie).
+
+La greffe vit dans un module **partagé** avec le contrôle de fidélité : `fidelite.mjs` applique les
+mêmes greffes à la maquette avant de comparer, pour qu'un écart déclaré ne compte pas comme une
+dérive. Elle échoue si la base gagne un 23ᵉ modèle sans avis que le CSV ne cite pas : le hub ne
+peut plus devenir faux silencieusement.
+
+**Les deux contrôles sont au vert.** `npm run check` : 6/6, 0 problème sur 38 pages.
+`npm run fidelite` : **37/37 pages reproduisent leur maquette au segment près**. Une limite à dire
+clairement : le portage n'est **rejouable** que si `design/port-seche/` est là (il est hors dépôt) ou
+si la page existe déjà, pour retrouver les titres et descriptions SEO rédigés à la main. Sans l'un
+ni l'autre, `port.mjs` les cite dans la maquette — ce qui s'est produit au deuxième portage de la
+soirée et a été réparé depuis (`copySeo` lit maintenant le `<head>` des pages déjà portées).
+
+**Une page sur deux n'a pas encore son titre relu** : les 17 pages neuves portent un titre **copié
+de leur `<h1>`** et une description **copiée de leur chapeau** — corrects, mais jamais relus par
+Jordane. La liste se lit dans les avertissements de `node scripts/port.mjs`.
+
+**Ce que le portage laisse en suspens, à surveiller :** les pages portées sont verbatim, donc
+(a) la faute « au lieu d une » de la DED-200X est réapparue telle que la maquette l'écrit — à
+corriger dans Claude Design, ou en une entrée `port-corrections.json` si tu préfères qu'elle tienne
+ici ; (b) les prix des pages statiques autres que le hub sont ceux de la maquette, plus ceux de
+`modeles.json` (le hub, lui, sort de la base) ; (c) `Header.astro`/`Footer.astro`/`BaseLayout` ne
+servent plus qu'au comparatif.
+
+**Le site est toujours en phase de test** : `noindex, nofollow` sur les 38 routes, `robots.txt`
+bloquant. Les deux contrôles étant au vert, l'ouverture aux moteurs n'attend plus que la main de
+Jordane — deux endroits à changer ensemble, `scripts/port.mjs` et `src/layouts/BaseLayout.astro`.
+
+---
+
 ## 13 septembre 2026 — Pause de session : où on en est, comment reprendre
 
 Objectif acté en fin de session par Jordane : **publier la totalité des 38 pages de site désignées
