@@ -65,13 +65,17 @@ for (const m of modeles.modeles) {
 
 /* ------------------------ jointure avec la sélection -------------------------
    Les noms diffèrent entre les deux fichiers (« MPS-150X Mesh » côté base,
-   « MPS-150X E-Drum Mesh Set » côté sélection) et aucun id n'est commun :
-   la seule clé fiable est l'URL produit, identique et unique dans les deux. */
+   « MPS-150X E-Drum Mesh Set » côté sélection) et aucun id n'est commun : la clé
+   est l'URL produit. Elle doit être prise ENTIÈRE : chez Donner, les six modèles
+   partagent la même URL d'affiliateur et ne se distinguent que par leur paramètre
+   prodsku. Tronquer après le « ? » les collapsait sur une seule ligne et leur donnait
+   à tous le segment du même modèle. */
 
-const SEL = new Map(selModeles.map((r) => [r.url.split('?')[0], r]));
+const cleUrl = (u) => String(u || '').replace(/&amp;/g, '&').trim();
+const SEL = new Map(selModeles.map((r) => [cleUrl(r.url), r]));
 let sansSeg = 0;
 for (const m of modeles.modeles) {
-  const r = SEL.get(m.url.split('?')[0]);
+  const r = SEL.get(cleUrl(m.url));
   if (r) {
     m.segment = r.seg;
     m.role_editorial = r.role;      // note interne : ne se publie jamais telle quelle
@@ -79,6 +83,14 @@ for (const m of modeles.modeles) {
   } else { m.segment = null; m.nom_marchand = null; sansSeg++; }
   m.nom_complet = `${m.marque} ${m.modele}`;
 }
+
+/* Un segment doit contenir son prix : s'il n'y en a plus 31 sur 31, c'est la
+   jointure qui a dérapé et il faut le savoir ici, pas sur une page publiée. */
+const BORNES = { 'Moins de 300 €': [0, 300], '300 à 500 €': [300, 500], '500 à 800 €': [500, 800], '800 à 1600 €': [800, 1600] };
+const segmentsFaux = modeles.modeles.filter((m) => {
+  const b = BORNES[m.segment];
+  return b && !(b[0] <= m.prix && m.prix <= b[1]);
+});
 
 /* --------------------------------- écritures -------------------------------- */
 
@@ -126,3 +138,8 @@ if (inconnus.length) console.log(`  ⚠ ${inconnus.length} avis sans route connu
 const nonSourc = modeles.modeles.filter((m) => !m.empreinte).length;
 console.log(`  empreintes au sol : ${modeles.modeles.length - nonSourc} sourcées, ${nonSourc} à ne surtout pas afficher`);
 if (sansSeg) console.log('  ⚠ modèles sans segment joint :', modeles.modeles.filter((m) => !m.segment).map((m) => m.nom_complet).join(', '));
+if (segmentsFaux.length) {
+  console.log(`\n  ✗ ${segmentsFaux.length} SEGMENT(S) INCOHÉRENTS avec le prix — jointure à corriger, ne pas publier :`);
+  for (const m of segmentsFaux) console.log(`     ${m.nom_complet.padEnd(30)} ${m.prixTexte.padStart(9)}  seg=«${m.segment}»`);
+  process.exit(1);
+}

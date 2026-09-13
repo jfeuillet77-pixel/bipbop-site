@@ -77,23 +77,26 @@ les nomme un par un (`npm run fidelite`). Constats déjà établis :
   changé de libellé et de phrase ;
 - `/guides/` : hub à 3 guides, la maquette en annonce 11 ; `/avis/` : hub à 3 avis, 9 existent.
 
-### 3. Clôture de la vague A, en attente
+### 3. Clôture de la vague A — débloquée, prête à être portée
 
-Le **hub `/avis/`** n'est pas encore porté. Deux contraintes découvertes en l'ouvrant :
+Le **hub `/avis/`** n'est pas encore porté. Les deux contraintes découvertes en l'ouvrant sont levées :
 
 - ses 9 cartes portent **leur propre texte**, différent du champ `phrase` de `modeles.json`
   (comparé sur 8 cartes : toutes différentes). Structure et compteurs viennent des données,
   le texte vient de la maquette du hub ;
-- sa liste d'attente affiche **14 lignes pour 22 modèles sans avis** : 8 phrases manquent.
-  **Ne pas les inventer.** Option retenue par défaut : garder 14 lignes, titre « Les 14 avis en
-  préparation », badge de tête corrigé à « 9 publiés · 22 au programme ».
+- sa liste d'attente affichait **14 lignes pour 22 modèles sans avis**. Les 8 phrases manquantes
+  sont **rédigées**, dans `design/hub-avis-liste-attente.md`, avec les 14 du design en référence de
+  ton et les prix corrigés. À relire par Jordane puisque c'est ma plume, pas celle de Claude Design.
+  Le même fichier porte le **registre des notes `/10`** (décision du 13/09 : on les garde) : 9 pages
+  en portent une, aucune autre, et la plus visible absence est que **8 des 9 cartes du hub
+  n'affichent pas la note de leur propre avis**. À réparer au portage.
 
 ## Questions ouvertes, à trancher par toi (pas par moi)
 
-1. **Grille de notation** — les 9 avis affichent une note `/10` et **aucune grille n'existe**
-   dans les 46 fichiers. Règle I02 du guide-agent : aucune note chiffrée sans grille explicitée.
-   Pareil pour les échelles `discretion` et `module` de la base, qui entrent dans le score du
-   comparatif. Fournir la grille, ou retirer les notes.
+1. **Grille de notation** — **décision du 13/09 : les notes `/10` restent publiées.** Reste à
+   fournir : une grille qui dise ce que recouvre un `7,2` contre un `8,4` (règle I02), et les
+   échelles `discretion` et `module` de la base, qui entrent dans le score du comparatif sans
+   jamais être expliquées au lecteur. Les notes sont publiées sans barème en attendant.
 2. **Définition de l'empreinte au sol** — `MPS-750X` et `MPS-850` publient « 140 × 90 » et
    « 150 × 100 » en disant « siège compris », là où Thomann garantit 140 × 80 et où le
    comparatif affiche la mesure du marchand. Deux définitions coexistent sur le même site.
