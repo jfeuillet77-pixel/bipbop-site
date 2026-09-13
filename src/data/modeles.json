@@ -90,8 +90,8 @@
    "empreinte": null,
    "empreinte_source": null,
    "nom_complet": "Donner DED-70",
-   "segment": "800 à 1600 €",
-   "nom_marchand": "BackBeat"
+   "segment": "Moins de 300 €",
+   "nom_marchand": "DED-70"
   },
   {
    "id": "ded80",
@@ -115,8 +115,8 @@
    "empreinte": null,
    "empreinte_source": null,
    "nom_complet": "Donner DED-80",
-   "segment": "800 à 1600 €",
-   "nom_marchand": "BackBeat"
+   "segment": "Moins de 300 €",
+   "nom_marchand": "DED-80"
   },
   {
    "id": "debut",
@@ -472,8 +472,8 @@
    "empreinte": null,
    "empreinte_source": null,
    "nom_complet": "Donner DED-200X",
-   "segment": "800 à 1600 €",
-   "nom_marchand": "BackBeat"
+   "segment": "300 à 500 €",
+   "nom_marchand": "DED-200X"
   },
   {
    "id": "dtx452",
@@ -523,8 +523,8 @@
    "empreinte": null,
    "empreinte_source": null,
    "nom_complet": "Donner DED-300X",
-   "segment": "800 à 1600 €",
-   "nom_marchand": "BackBeat"
+   "segment": "500 à 800 €",
+   "nom_marchand": "DED-300X"
   },
   {
    "id": "mps850",
@@ -574,8 +574,8 @@
    "empreinte": null,
    "empreinte_source": null,
    "nom_complet": "Donner DED-200 Pro",
-   "segment": "800 à 1600 €",
-   "nom_marchand": "BackBeat"
+   "segment": "500 à 800 €",
+   "nom_marchand": "DED-200 Pro"
   },
   {
    "id": "nitropro",
