@@ -62,6 +62,31 @@ Analytics déclaré sans outil installé — choix assumé de Jordane, ligne « 
 retirée, adresse/SIREN/TVA non publiés), encart e-mail supprimé de Contact, formulaire réel. Tout
 est dans `scripts/greffes.mjs`, rien dans les pages.
 
+### 2 bis. Les deux sitemaps sont en place, leur déclaration attend l'ouverture
+
+Écrits le 13/09 au soir, dans la foulée. **Ils se régénèrent tout seuls à chaque build** :
+`npm run build` appelle `scripts/sitemap.mjs` (`postbuild`), qui pose `dist/sitemap.xml` —
+38 URL, `lastmod` pris du dernier commit du fichier source, jamais de l'horloge.
+
+Les deux lectures partagent **une seule arborescence**, `src/lib/arborescence.mjs` : les routes
+viennent du plan éditorial, les libellés du `<title>` publié de chaque page. Rien n'est ressaisi,
+donc le plan du site ne peut pas promettre une URL que le sitemap tait. Deux garde-fous : une
+ligne « Publié » sans page dans `dist/` **fait échouer le build** (une URL morte dans un sitemap
+ne se voit jamais), et une page construite hors du plan est signalée sans être publiée — c'est la
+règle d'AGENTS.md sur les documents internes.
+
+`/plan-du-site/` est la **deuxième page écrite à la main** du dépôt, après `/comparatif/`. Elle
+est déclarée où il faut : `SANS_MAQUETTE` dans `scripts/fidelite.mjs`, `HORS_PLAN` dans la lib
+(`plan.json` se régénère depuis Claude Design, on ne peut pas y inscrire une route). Son lien en
+pied de page est une **greffe** (`grefferPlanDuSite` dans `scripts/greffes.mjs`) : les maquettes ne
+le contiennent pas, il aurait disparu au portage suivant. Profits de bord : `BaseLayout` publie
+désormais un `canonical` (il manquait au comparatif) et `public/robots.txt` dit en commentaire les
+trois gestes de l'ouverture.
+
+**La ligne `Sitemap:` de robots.txt est volontairement en commentaire.** Tant que
+`Disallow: /` tient, la déclarer livrerait la liste complète des URL à Google avant l'ouverture,
+sans même qu'il puisse lire les `noindex`. Elle se décommente au moment du §2, pas avant.
+
 ### 3. Questions ouvertes, sans urgence de publication
 
 1. **Grille de notation** — décision du 13/09 : les notes `/10` restent publiées. 9 pages en
@@ -92,7 +117,7 @@ cd bipbop-site
 git checkout dev && git pull
 npm ci
 node scripts/port.mjs --dry   # ce que le portage va écrire, avec ses avertissements
-npm run check                 # build + 6 contrôles mesurés dans Chrome
+npm run check                 # build (sitemap.xml inclus) + 7 contrôles mesurés dans Chrome
 npm run fidelite              # chaque page contre sa maquette, segment par segment
 npm run data                  # relance l'import si data/ du dossier Claude Design a bougé
 node scripts/captures.mjs /guides/pack-complet/   # rendu visuel

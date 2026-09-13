@@ -26,9 +26,16 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
    réellement la largeur de défilement dans Chrome à 1024 / 900 / 768 / 390 px ; `fidelite`
    compare chaque page à sa maquette segment par segment. Une page peut paraître correcte et casser.
 
-**Exceptions à la loi 1** : `/comparatif/` est la seule page dynamique du dossier (`DCLogic`,
-42 liaisons `{{ }}`) — elle reste en `src/pages/comparatif/index.astro` et se maintient à la main.
-`404.html` se porte aussi (route sans permalien).
+**Exceptions à la loi 1** : deux pages se maintiennent à la main, aucune maquette ne les contient.
+`/comparatif/` est la seule page dynamique du dossier (`DCLogic`, 42 liaisons `{{ }}`) — elle reste
+en `src/pages/comparatif/index.astro`. `/plan-du-site/` (le plan du site HTML) se **construit**
+depuis `src/lib/arborescence.mjs`, qui est aussi la seule source de `dist/sitemap.xml` écrit par
+`scripts/sitemap.mjs` à chaque build. Chacune est déclarée dans `SANS_MAQUETTE` de
+`scripts/fidelite.mjs`, et la seconde dans `HORS_PLAN` de la lib — `plan.json` se régénère depuis
+Claude Design, on ne peut pas y inscrire une route. Un lien qu'aucune maquette ne contient mais
+qu'on publie partout (le lien « Plan du site » du pied de page) passe par une greffe de
+`scripts/greffes.mjs`, jamais par une édition des 37 pages. `404.html` se porte aussi (route sans
+permalien).
 
 ## Ce qui ne se publie jamais
 

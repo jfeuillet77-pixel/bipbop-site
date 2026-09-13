@@ -12,9 +12,11 @@
     "astro": "astro",
     "data": "node scripts/import-data.mjs",
     "port": "node scripts/port.mjs",
+    "sitemap": "node scripts/sitemap.mjs",
     "verif": "node scripts/verif.mjs",
     "check": "npm run build && node scripts/verif.mjs",
     "prebuild": "node scripts/import-data.mjs",
+    "postbuild": "node scripts/sitemap.mjs",
     "fidelite": "node scripts/fidelite.mjs"
   },
   "dependencies": {

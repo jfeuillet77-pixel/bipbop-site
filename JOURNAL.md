@@ -1,5 +1,45 @@
 # Journal BipBop
 
+## 13 septembre 2026 (fin de nuit) — Deux sitemaps, un seul arbre
+
+Jordane demande un sitemap XML pour les moteurs et un plan du site HTML accessible depuis le pied
+de page, pour les lecteurs qui veulent comprendre comment le site est rangé. Les deux existent,
+et **ils lisent le même fichier** : `src/lib/arborescence.mjs`.
+
+**Ce qui est écrit.** `scripts/sitemap.mjs`, branché en `postbuild` : chaque `npm run build` pose
+`dist/sitemap.xml`, 38 URL, dans l'ordre de lecture du plan du site. `src/pages/plan-du-site/`
+(devient `/plan-du-site/`), deuxième page écrite à la main du dépôt après `/comparatif/`, qui
+range les 37 autres en six sections avec un chapeau par section. Le lien du pied de page est une
+**greffe** (`grefferPlanDuSite`) ajoutée aux 37 pages portées plus `Footer.astro`, parce qu'aucune
+maquette Claude Design ne le contient.
+
+**Rien n'est ressaisi, c'est le principe de la page.** Les routes viennent du plan éditorial, les
+libellés du `<title>` publié de chaque page — un libellé tapé à la main dérive, un titre qui change
+change la liste toute seule. Seule règle de retouche : les avis et les duels s'affichent sans leur
+phrase (le titre publié de `Millenium MPS-150X Mesh : tous les fûts en mesh pour 298 €, où est le
+piège ?` devient `Millenium MPS-150X Mesh`), les guides et les bases gardent leur question entière.
+
+**Deux garde-fous qui font échouer plutôt que de taire.** Une ligne du plan marquée « Publié » sans
+page correspondante dans `dist/` bloque le build : une URL morte dans un sitemap est le seul bug
+qu'on ne voit jamais, personne ne clique sur un sitemap. Une page construite que le plan ne connait
+pas est signalée et **non publiée** — AGENTS.md interdit de laisser paraitre un document interne
+dans un sitemap, donc on n'y entre pas tout seul. Le `lastmod` vient du dernier commit du fichier
+source, jamais de l'horloge : rebuild sans changement ne doit pas dire à Google que tout a bougé.
+Sans dépôt git sous les pieds (build Netlify sur clone sans historique), la ligne saute et l'URL se
+publie quand même.
+
+**Trois effets de bord.** `BaseLayout` écrit maintenant un `<link rel="canonical">` — le comparatif
+n'en avait aucun, et le canonical non-www est la règle du site. `public/robots.txt` porte en
+commentaire les trois gestes de l'ouverture (noindex, robots, re-portage). Et `npm run fidelite`
+compte toujours 37/37 : la page neuve est déclarée dans `SANS_MAQUETTE`, la greffe du pied de page
+est rejouée sur la maquette avant comparaison.
+
+**La ligne `Sitemap:` de robots.txt reste en commentaire, et c'est voulu.** Tant que `Disallow: /`
+tient, la déclarer livrerait l'inventaire complet des URL à Google avant l'ouverture, sans même
+qu'il puisse lire les `noindex` pour les écarter. Elle se décommente avec l'ouverture SEO
+(§2 du plan de reprise), pas avant. Contrôle : `npm run check` → 7/7 sur 39 pages et 876 liens
+internes, `npm run fidelite` → 37/37.
+
 ## 13 septembre 2026 (nuit) — Registre légal rempli, formulaire de contact réel, et leçon Netlify
 
 Demande de Jordane en trois points : nommer le responsable de traitement, compléter les
@@ -596,14 +636,16 @@ La page "À propos" publiée ne correspondait pas au design Claude Design — el
 
 ### Retraits du noindex
 Quand le site est prêt pour le SEO :
-1. Retirer `<meta name="robots" content="noindex, nofollow">` de BaseLayout.astro
+1. Retirer `<meta name="robots" content="noindex, nofollow">` de BaseLayout.astro **et** du gabarit
+   de head dans `scripts/port.mjs` (les 37 pages portées), puis relancer `node scripts/port.mjs`
 2. Remplacer public/robots.txt par :
    ```
    User-agent: *
    Allow: /
-   Sitemap: https://bipbop.eu/sitemap-index.xml
+   Sitemap: https://bipbop.eu/sitemap.xml
    ```
-3. Générer un sitemap (plugin Astro ou manuel)
+3. ~~Générer un sitemap~~ — fait : `scripts/sitemap.mjs` écrit `dist/sitemap.xml` à chaque build,
+   et `/plan-du-site/` le reprend pour les lecteurs (entrée du 13 septembre, fin de nuit)
 
 ### Champs à compléter avant publication SEO
 - Mentions légales : adresse postale, SIREN, TVA, email (surlignés en jaune dans le design)

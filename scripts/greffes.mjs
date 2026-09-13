@@ -350,7 +350,38 @@ function grefferContact(corps, { sobre = false } = {}) {
   return { corps, notes };
 }
 
-/** Point d'entrée : toutes les greffes qui regardent une maquette, dans un ordre fixe. */
+/* ------------------------- le lien « Plan du site » au pied de page -------------------------
+
+   Le plan du site (page + sitemap XML) est une bonne pratique SEO et un repère pour les
+   lecteurs : il doit être accessible depuis le pied de page, donc depuis les 37 pages portées.
+   Les maquettes Claude Design ne le contiennent pas et ne le contiendront pas avant que le
+   design soit refait — la ligne est donc greffée, comme tout ce qui diverge d'une maquette.
+   Elle est écrite sur le modèle des voisines de la colonne « LE SITE », attribut de style
+   compris, pour que le pied de page reste homogène.
+
+   La chaîne cherchée est le texte du dernier lien de la colonne, pas son `href` : dans la
+   maquette l'adresse pointe encore vers `Politique-Confidentialite.dc.html` et n'est réécrite
+   qu'après. C'est ce texte qui est identique des deux côtés, vérifié sur les 37 pages.        */
+
+const DERNIER_LIEN_LEGAL = '>Politique de confidentialité</a>';
+const LIEN_PLAN = '<a href="/plan-du-site/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Plan du site</a>';
+
+export function grefferPlanDuSite(corps, { sobre = false } = {}) {
+  const notes = [];
+  const occurrences = corps.split(DERNIER_LIEN_LEGAL).length - 1;
+  if (occurrences === 0) return { corps, notes, greffe: false }; // page sans pied de page (404, composants)
+  if (occurrences > 1) {
+    throw new Error(`lien « Politique de confidentialité » trouvé ${occurrences} fois : la greffe du plan du site ne saurait plus où poser le lien`);
+  }
+  if (corps.includes('href="/plan-du-site/"')) throw new Error('la greffe du plan du site tourne deux fois sur le même corps — vérifier l\u0027ordre dans appliquerGreffes');
+  corps = corps.replace(DERNIER_LIEN_LEGAL, DERNIER_LIEN_LEGAL + LIEN_PLAN);
+  if (!sobre) notes.push('pied de page : lien « Plan du site » greffé après « Politique de confidentialité » — la maquette ne le contient pas');
+  return { corps, notes, greffe: true };
+}
+
+/** Point d'entrée : toutes les greffes qui regardent une maquette, dans un ordre fixe.
+    Les greffes globales (pied de page) passent en dernier, une correction de texte ne doit
+    pas pouvoir déplacer le point où elles s'accrochent. */
 export function appliquerGreffes(corps, fichier, options = {}) {
   const notes = [];
   if (fichier === 'Avis.dc.html') {
@@ -369,5 +400,8 @@ export function appliquerGreffes(corps, fichier, options = {}) {
     notes.push(...g.notes);
   }
   const c = appliquerCorrections(corps, fichier, options);
-  return { corps: c.corps, notes: [...notes, ...c.notes] };
+  corps = c.corps;
+  notes.push(...c.notes);
+  const plan = grefferPlanDuSite(corps, options);
+  return { corps: plan.corps, notes: [...notes, ...plan.notes] };
 }

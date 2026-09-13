@@ -1,0 +1,213 @@
+---
+/**
+ * Plan du site. Page écrite à la main (comme /comparatif/) : elle n'existe dans aucune
+ * maquette Claude Design, donc `scripts/port.mjs` ne la touche pas. Déclarée dans
+ * `SANS_MAQUETTE` de scripts/fidelite.mjs et dans `HORS_PLAN` de src/lib/arborescence.mjs.
+ *
+ * Elle ne liste rien à la main : les routes viennent du plan éditorial, les libellés du
+ * `<title>` publié de chaque page. Ajouter une page au site la fait apparaitre ici toute seule.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { arborescence } from '../../lib/arborescence.mjs';
+
+const ICI = '/plan-du-site/';
+const CHAPEAU = {
+  Depart:
+    "Les deux portes d'entrée. Le comparatif te demande trois choses et sort deux modèles, l'accueil explique comment le site est organisé.",
+  Avis: "Un avis par modèle testé : ce qu'on a relevé chez le marchand, ce qui va, ce qui coince. La page Avis les reprend tous, modèle par modèle.",
+  Duels: 'Deux kits dans la même gamme de prix, mis côte à côte, avec une conclusion qui dit lequel prendre.',
+  Guides: "Un guide par situation concrète : le budget, l'appartement, l'âge, le matériel à ajouter après le premier kit.",
+  Bases: "Les mots et les questions qu'on se pose avant de commander : pad mesh, tapis, casque, temps d'apprentissage.",
+  Site: 'Qui écrit ici, comment signaler une erreur à corriger, ce que le site fait de tes données.',
+};
+
+const { sections, pages } = arborescence();
+const publiees = pages.filter((p) => p.route !== ICI);
+---
+
+<BaseLayout
+  title="Plan du site"
+  description="Toutes les pages publiées sur BipBop, rangées par usage : comparatif, avis par modèle, duels, guides d'achat, les bases et les pages du site."
+>
+  <div data-pad class="tete">
+    <div class="surtitre">PLAN DU SITE</div>
+    <h1 data-big="b" class="titre">Tout ce qui est publié, dans l'ordre où on le parcourt.</h1>
+    {/* Astro avale le saut de ligne quand une balise inline ouvre une ligne : les espaces
+        restent sur la ligne de l'élément, sinon « détail.37 pages » sort dans le HTML. */}
+    <p class="chapeau">
+      BipBop répond à une seule question : quelle batterie électronique acheter quand on débute et
+      qu'on a des voisins. Le site se lit en trois temps. Le <a href="/comparatif/">comparatif</a> borne
+      le budget et la pièce, les avis vérifient un modèle précis, les guides règlent un détail.
+      Tout est là : <strong>{publiees.length} pages</strong> publiées à ce jour, les voici toutes.
+    </p>
+  </div>
+
+  {
+    sections.map((section) => (
+      <section data-mar class="section">
+        <div class="section-tete">
+          <h2 class="section-titre">{section.titre}</h2>
+          <span class="section-filet" aria-hidden="true"></span>
+          <span class="section-compteur">{section.pages.length}</span>
+        </div>
+        <p class="section-chapeau">{CHAPEAU[section.cle]}</p>
+        <div data-rwd="c3" class="liste">
+          {section.pages.map((p) =>
+            p.route === ICI ? (
+              <span class="ligne ligne-courant">{p.libelle}</span>
+            ) : (
+              <a class="ligne" href={p.route}>
+                <span class="ligne-titre">{p.libelle}</span>
+                <span class="ligne-route">{p.route}</span>
+              </a>
+            )
+          )}
+        </div>
+      </section>
+    ))
+  }
+
+  <div data-pad data-mar class="bas">
+    <div class="bas-texte">
+      <h2 class="bas-titre">Il manque une page ?</h2>
+      <p>
+        La page Avis liste aussi les modèles qu'on n'a pas encore testés. Si tu cherches une
+        batterie qui n'est pas dans cette liste, <a href="/contact/">écris-nous</a> : on te dit si
+        elle est au programme et dans quel ordre elle arrive.
+      </p>
+    </div>
+    <p class="bas-note">
+      Les moteurs de recherche lisent la même arborescence dans le fichier <a href="/sitemap.xml">/sitemap.xml</a>.
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  /* Les marges horizontales sont écrites ici, et les crochets data-pad / data-mar les
+     reprennent à 26 / 18 / 14 px sous 1080 px : c'est le mécanisme des maquettes, où
+     l'inline porte la valeur de base et le crochet la valeur réduite. */
+  .tete {
+    padding: 46px 40px 30px;
+  }
+
+  .surtitre {
+    font: 500 11.5px var(--font-mono);
+    letter-spacing: 0.08em;
+    color: var(--texte-mono);
+    margin-bottom: 14px;
+  }
+
+  .titre {
+    font: 800 52px/1.04 var(--font-titres);
+    letter-spacing: -0.03em;
+    max-width: 720px;
+    text-wrap: pretty;
+  }
+
+  .chapeau {
+    font: 400 18px/1.55 var(--font-texte);
+    color: var(--texte-secondaire);
+    max-width: 640px;
+    margin-top: 18px;
+    text-wrap: pretty;
+  }
+
+  .section {
+    margin: 34px 40px 8px;
+  }
+
+  .section-tete {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .section-titre {
+    font: 800 26px var(--font-titres);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .section-filet {
+    flex: 1;
+    min-width: 40px;
+    height: var(--border-epais);
+    background: var(--color-encre);
+  }
+
+  .section-compteur {
+    font: 600 13px var(--font-mono);
+    color: var(--texte-mono);
+  }
+
+  .section-chapeau {
+    font: 400 15.5px/1.5 var(--font-texte);
+    color: var(--texte-secondaire);
+    max-width: 680px;
+    margin: 10px 0 18px;
+    text-wrap: pretty;
+  }
+
+  .liste {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px 22px;
+  }
+
+  .ligne {
+    display: block;
+    padding: 11px 2px;
+    border-bottom: var(--border-fin) solid var(--color-sable-clair);
+    color: var(--texte-principal);
+    min-width: 0;
+  }
+
+  .ligne:hover .ligne-titre {
+    color: var(--color-corail);
+  }
+
+  .ligne-titre {
+    display: block;
+    font: 600 15.5px/1.4 var(--font-texte);
+    overflow-wrap: break-word;
+  }
+
+  .ligne-route {
+    display: block;
+    font: 400 11.5px var(--font-mono);
+    color: var(--texte-mono);
+    margin-top: 3px;
+    overflow-wrap: anywhere;
+  }
+
+  .ligne-courant {
+    font: 600 15.5px/1.4 var(--font-texte);
+    color: var(--texte-mono);
+  }
+
+  .bas {
+    margin: 40px 40px 52px;
+    background: var(--color-turquoise-clair);
+    border-radius: var(--radius-lg);
+    padding: 26px 40px 24px;
+  }
+
+  .bas-titre {
+    font: 800 22px var(--font-titres);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .bas-texte p {
+    font: 400 15.5px/1.6 var(--font-texte);
+    color: var(--color-turquoise-clair-texte);
+    max-width: 640px;
+  }
+
+  .bas-note {
+    font: 400 13.5px/1.6 var(--font-texte);
+    color: var(--texte-mono);
+    margin-top: 22px;
+  }
+</style>

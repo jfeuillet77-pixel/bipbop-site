@@ -14,6 +14,10 @@ interface Props {
 }
 
 const { title, description = 'Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.', currentPage = '', cta = 'comparatif' } = Astro.props;
+
+// Canonical au même endroit que les pages portées (`scripts/port.mjs` le reprend du permalien
+// du plan éditorial) : bipbop.eu sans www, chemin avec barre oblique finale, comme le sitemap.
+const canonique = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
 ---
 
 <!doctype html>
@@ -23,6 +27,7 @@ const { title, description = 'Des recommandations de batteries électroniques po
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="robots" content="noindex, nofollow" />
+    <link rel="canonical" href={canonique} />
     <link rel="icon" type="image/svg+xml" href="/bipbop-marque.svg" />
     <link rel="apple-touch-icon" href="/bipbop-touch-180.png" />
     <title>{title} — BipBop</title>
