@@ -166,11 +166,205 @@ export function grefferListeAttente(corps, { sobre = false } = {}) {
   return { corps, notes, lignes: lignes.length };
 }
 
+/* ----------------------------- les pages légales ------------------------------
+
+   Les maquettes légales arrivent avec des champs en attente, surlignés en jaune :
+   `[Nom / raison sociale]`, `[Adresse postale complète]`, `[Outil utilisé]`… Ils ne se
+   publient pas tels quels. Les valeurs viennent des décisions de Jordane du 13/09 au soir :
+
+     - responsable de traitement et directeur de publication : Jordane Feuillet ;
+     - contact : le formulaire de la page Contact, en tous points — aucune adresse e-mail
+       n'est publiée sur le site ;
+     - hébergeur : Netlify, Inc. ;
+     - mesure d'audience déclarée : Google Analytics (Google Ireland Limited). À la date de
+       cette écriture, AUCUN outil de mesure n'est installé dans le code — Jordane a choisi de
+       le déclarer quand même. Le jour où il l'installe, brancher le script derrière le
+       consentement du bandeau et aligner la durée de conservation (GA4 plafonne à 14 mois,
+       la page en dit 25) ;
+     - pas de service d'envoi d'e-mails : le site ne fait pas de mailing, la ligne saute.
+
+   Une ligne supprimée l'est du gabarit porté, pas du HTML publié à la main : elle reviendrait
+   au portage suivant.                                                                    */
+
+const PLACEHOLDERS = {
+  'Politique-Confidentialite.dc.html': {
+    'Nom / raison sociale': 'Jordane Feuillet',
+    "Nom de l'hébergeur": 'Netlify, Inc.',
+    'contact@bipbop.eu': '<a href="/contact/" style="color:#d2431f">la page Contact</a>',
+    'Outil utilisé': 'Google Analytics — Google Ireland Limited',
+  },
+  'Mentions-Legales.dc.html': {
+    'Adresse postale complète': 'non publiée — communiquée sur demande via la <a href="/contact/" style="color:#d2431f">page Contact</a>',
+    'Numéro': 'non publié — communiqué sur demande via la <a href="/contact/" style="color:#d2431f">page Contact</a>',
+    'Numéro ou mention de non-assujettissement': 'non publiée — communiquée sur demande via la <a href="/contact/" style="color:#d2431f">page Contact</a>',
+    'contact@bipbop.eu': '<a href="/contact/" style="color:#d2431f">la page Contact</a>',
+  },
+};
+
+/** Phrases réécrites parce que la décision « aucun lien affilié » les rend fausses. */
+const PHRASES_LEGALES = {
+  'Politique-Confidentialite.dc.html': [
+    { au: 'Une demande par e-mail suffit : on répond sous trente jours au maximum.',
+      remplace: 'Une demande depuis la <a href="/contact/" style="color:#d2431f">page Contact</a> suffit : on répond sous trente jours au maximum.' },
+    { au: 'Quand tu cliques vers Thomann, un identifiant d\'affiliation est transmis au marchand. Il permet de rattacher une vente au site. Nous ne recevons aucune information nominative en retour.',
+      remplace: 'Le site ne porte aucun identifiant d\'affiliation : un clic ouvre la fiche du marchand sans que rien ne rattache ta visite à BipBop. Les éventuelles données que le marchand dépose le sont sur son propre domaine, pour son compte.' },
+    { au: 'Déposés par le marchand sur son propre domaine au moment du clic. Durée : variable selon le programme, souvent 30 jours.',
+      remplace: 'Déposés par le marchand sur son propre domaine au moment du clic, pas par BipBop. Durée : variable selon le marchand.' },
+    { au: 'La mesure d\'audience et les cookies d\'affiliation reposent sur ton consentement',
+      remplace: 'La mesure d\'audience et les cookies non essentiels reposent sur ton consentement' },
+  ],
+  'Mentions-Legales.dc.html': [],
+};
+
+/** Retire une ligne complète du tableau, par son libellé de première colonne. */
+function retirerLigne(corps, libelle, fichier) {
+  const i = corps.indexOf('>' + libelle + '</div>');
+  if (i < 0) throw new Error(`${fichier} : ligne « ${libelle} » introuvable — la maquette a bougé`);
+  const debut = corps.lastIndexOf('<div data-rwd="sp"', i);
+  const fin = corps.indexOf('</div></div>', i);
+  if (debut < 0 || fin < 0) throw new Error(`${fichier} : bornes de la ligne « ${libelle} » introuvables`);
+  return corps.slice(0, debut) + corps.slice(fin + '</div></div>'.length).replace(/^\n/, '');
+}
+
+const MARQUEUR_PLACEHOLDER = /<span style="background:#ffd166;border-bottom:2px solid #241c14;padding:1px 6px;font-weight:600">\[([^\]]+)\]<\/span>/g;
+
+function grefferLegal(corps, fichier, { sobre = false } = {}) {
+  const notes = [];
+  const table = PLACEHOLDERS[fichier] ?? {};
+  let combles = 0;
+  corps = corps.replace(MARQUEUR_PLACEHOLDER, (tout, cle) => {
+    if (!(cle in table)) return tout;
+    combles++;
+    return table[cle];
+  });
+  for (const p of PHRASES_LEGALES[fichier] ?? []) {
+    const n = corps.split(p.au).length - 1;
+    if (n !== 1) throw new Error(`${fichier} : la phrase « ${p.au.slice(0, 42)}… » trouve ${n} occurrence(s), greffe interrompue`);
+    corps = corps.split(p.au).join(p.remplace);
+  }
+  if (fichier === 'Politique-Confidentialite.dc.html') corps = retirerLigne(corps, 'Envoi des e-mails', fichier);
+  const restants = [...corps.matchAll(MARQUEUR_PLACEHOLDER)].map((m) => m[1]);
+  if (restants.length) {
+    throw new Error(`${fichier} : ${restants.length} champ(s) en attente non renseigné(s) : ${restants.join(', ')} — à ajouter dans scripts/greffes.mjs`);
+  }
+  if (!sobre) {
+    notes.push(`${fichier} : ${combles} champ(s) en attente comblé(s), ${(PHRASES_LEGALES[fichier] ?? []).length} phrase(s) alignée(s) sur la décision « aucun lien affilié »${fichier === 'Politique-Confidentialite.dc.html' ? ', ligne « Envoi des e-mails » retirée' : ''}`);
+  }
+  return { corps, notes };
+}
+
+/* ------------------------- le formulaire de la page Contact -------------------------
+
+   Dans la maquette, le formulaire est décoratif : les champs sont des `<div>`, les options de
+   vraies `<span>`, la case de consentement un carré sans input, et le bouton est
+   `type="button"`. Il ne peut rien envoyer. Cette greffe remplace le bloc par un formulaire
+   Netlify réel — mêmes libellés, mêmes polices, mêmes bordures à 2,5 px, mêmes ombres — en
+   gardant l'écriture du design mot pour mot, y compris les trois phrases d'exemple qui
+   deviennent les `placeholder`.
+
+   Côté réception : `data-netlify="true"` declare le formulaire à Netlify au build ; l'adresse
+   qui reçoit les soumissions se règle dans le tableau de bord Netlify (Forms →
+   Notifications), jamais dans la page — Jordane ne veut aucune adresse e-mail publiée.
+   Le champ `_champ_invisible` est un honeypot anti-robot ; sans JavaScript, le navigateur
+   poste le formulaire et Netlify affiche sa page de confirmation.                    */
+
+const FORMULAIRE_CONTACT = `<form id="form-contact" name="contact" method="POST" action="/contact/" data-netlify="true" netlify-honeypot="_champ_invisible">
+<input type="hidden" name="form-name" value="contact">
+<div data-rwd="sp2" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
+<div style="display:flex;flex-direction:column;gap:7px">
+<label for="prenom" style="font:700 13.5px 'Work Sans',sans-serif">Ton prénom</label><input class="champ" id="prenom" name="prenom" type="text" required placeholder="Camille" autocomplete="given-name"></div>
+<div style="display:flex;flex-direction:column;gap:7px">
+<label for="email" style="font:700 13.5px 'Work Sans',sans-serif">Ton e-mail</label><input class="champ" id="email" name="email" type="email" required placeholder="camille@exemple.fr" autocomplete="email"></div>
+</div>
+<fieldset style="border:0;margin:0 0 18px;padding:0">
+<legend style="font:700 13.5px 'Work Sans',sans-serif;margin-bottom:9px">De quoi veux-tu parler ?</legend>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<label class="pastille"><input type="radio" name="sujet" value="Quelle batterie choisir" checked required><span>Quelle batterie choisir</span></label>
+<label class="pastille"><input type="radio" name="sujet" value="Signaler une erreur"><span>Signaler une erreur</span></label>
+<label class="pastille"><input type="radio" name="sujet" value="Je suis une marque"><span>Je suis une marque</span></label>
+<label class="pastille"><input type="radio" name="sujet" value="Autre"><span>Autre</span></label>
+</div></fieldset>
+<div style="margin-bottom:18px;display:flex;flex-direction:column;gap:7px">
+<label for="message" style="font:700 13.5px 'Work Sans',sans-serif">Ton message</label><textarea class="champ" id="message" name="message" rows="7" required placeholder="Dis-nous ton budget, la place dont tu disposes et si tu vis en appartement. Avec ça on peut déjà répondre quelque chose d'utile."></textarea></div>
+<label class="case" style="display:flex;align-items:flex-start;gap:11px;margin-bottom:22px">
+<input type="checkbox" name="consentement" value="oui" required><span class="carre" aria-hidden="true"></span>
+<span style="font:400 13.5px/1.5 'Work Sans',sans-serif;color:#5a4c3e;max-width:520px">J'accepte que mon message soit conservé le temps d'obtenir une réponse. Voir la <a href="/politique-confidentialite/" style="color:#d2431f">politique de confidentialité</a>.</span></label>
+<p id="erreur" hidden role="alert" style="font:600 14px 'Work Sans',sans-serif;color:#8a1f00;background:#fde3dd;border:2.5px solid #241c14;border-radius:12px;padding:12px 14px;margin:0 0 16px"></p>
+<input type="text" name="_champ_invisible" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<button id="envoi" type="submit" style="display:inline-block;font:700 16px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:15px 24px;border-radius:13px;box-shadow:5px 5px 0 #241c14;cursor:pointer">Envoyer le message</button>
+</form>
+<div id="envoye" hidden style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:16px;padding:22px 24px">
+<div style="font:800 22px 'Bricolage Grotesque',sans-serif;color:#0f5f5a;margin-bottom:8px">C'est envoyé.</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#264c49;margin:0">Ton message est arrivé. On répond en général sous 48 heures, et jamais par un robot.</p></div>
+<style>
+#form-contact .champ{background:#fff;border:2.5px solid #241c14;border-radius:12px;padding:13px 15px;font:400 15px 'Work Sans',sans-serif;color:#241c14;width:100%;box-sizing:border-box}
+#form-contact .champ::placeholder{color:#7a6b59}
+#form-contact .champ:focus{outline:none;border-color:#0f7d76;box-shadow:0 0 0 3px rgba(15,125,118,.18)}
+#form-contact textarea.champ{min-height:150px;line-height:1.6;resize:vertical}
+#form-contact .pastille input{position:absolute;opacity:0;width:1px;height:1px}
+#form-contact .pastille span{font:500 14px 'Work Sans',sans-serif;padding:9px 14px;border-radius:11px;border:2px solid #e4d8c6;color:#5a4c3e;cursor:pointer;display:inline-block}
+#form-contact .pastille:has(input:checked) span{background:#ffd166;border:2.5px solid #241c14;color:#241c14;font-weight:700}
+#form-contact .pastille:has(input:focus-visible) span{outline:2.5px solid #0f7d76;outline-offset:2px}
+#form-contact .case input{position:absolute;opacity:0;width:1px;height:1px}
+#form-contact .case .carre{width:20px;height:20px;flex:none;border-radius:6px;border:2.5px solid #241c14;background:#fff;margin-top:2px;display:block;position:relative}
+#form-contact .case:has(input:checked) .carre{background:#ffd166}
+#form-contact .case:has(input:checked) .carre::after{content:"";position:absolute;left:5px;top:1px;width:6px;height:11px;border:solid #241c14;border-width:0 2.5px 2.5px 0;transform:rotate(42deg)}
+#form-contact .case:has(input:focus-visible) .carre{outline:2.5px solid #0f7d76;outline-offset:2px}
+</style>
+<script>
+(function(){
+  var f=document.getElementById('form-contact');if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var b=document.getElementById('envoi'),d=new FormData(f);
+    b.disabled=true;b.textContent="Envoi en cours…";
+    fetch(f.getAttribute('action')||'/contact/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()})
+    .then(function(r){if(!r.ok)throw new Error(r.status);f.hidden=true;var m=document.getElementById('envoye');m.hidden=false;m.scrollIntoView({behavior:'smooth',block:'center'});})
+    .catch(function(){b.disabled=false;b.textContent='Envoyer le message';var e2=document.getElementById('erreur');e2.hidden=false;e2.textContent="L'envoi n'a pas abouti. Réessaie dans un instant — si ça persiste, le message est bien parti vers la page de Netlify, signale-le nous.";});
+  });
+})();
+</script>`;
+
+function grefferContact(corps, { sobre = false } = {}) {
+  const notes = [];
+  // 1. le bloc décoratif devient un formulaire réel : on remplace l'intérieur du cadre blanc.
+  const ouverture = '<div style="background:#fff;border:2.5px solid #241c14;border-radius:20px;padding:28px 30px;box-shadow:6px 6px 0 #241c14">';
+  const iOuverture = corps.indexOf(ouverture);
+  const iBouton = corps.indexOf('Envoyer le message</button>');
+  if (iOuverture < 0 || iBouton < 0 || iBouton < iOuverture) {
+    throw new Error('Contact.dc.html : les bornes du formulaire décoratif sont introuvables — la maquette a bougé');
+  }
+  const iFinBouton = corps.indexOf('\n', iBouton);
+  corps = corps.slice(0, iOuverture + ouverture.length) + '\n' + FORMULAIRE_CONTACT + corps.slice(iFinBouton);
+
+  // 2. l'adresse e-mail ne se publie pas : l'encart « Par e-mail, si tu préfères » sort de la page.
+  const iEncart = corps.indexOf('Par e-mail, si tu préfères');
+  if (iEncart < 0) throw new Error('Contact.dc.html : encart « Par e-mail » introuvable — déjà retiré, ou maquette changée');
+  const debutEncart = corps.lastIndexOf('<div style="background:#e7f3f2;', iEncart);
+  const iQueue = corps.indexOf('On lit tout.', iEncart);
+  const finEncart = corps.indexOf('</div>', iQueue) + '</div>'.length;
+  if (debutEncart < 0 || iQueue < 0 || finEncart <= debutEncart) throw new Error('Contact.dc.html : bornes de l\'encart e-mail introuvables');
+  corps = corps.slice(0, debutEncart) + corps.slice(finEncart).replace(/^\n/, '');
+
+  if (!sobre) notes.push('Contact.dc.html : formulaire décoratif remplacé par un formulaire Netlify réel (nom, e-mail, sujet, message, consentement, honeypot) et encart e-mail retiré');
+  return { corps, notes };
+}
+
 /** Point d'entrée : toutes les greffes qui regardent une maquette, dans un ordre fixe. */
 export function appliquerGreffes(corps, fichier, options = {}) {
   const notes = [];
   if (fichier === 'Avis.dc.html') {
     const g = grefferListeAttente(corps, options);
+    corps = g.corps;
+    notes.push(...g.notes);
+  }
+  if (fichier === 'Contact.dc.html') {
+    const g = grefferContact(corps, options);
+    corps = g.corps;
+    notes.push(...g.notes);
+  }
+  if (fichier in PLACEHOLDERS) {
+    const g = grefferLegal(corps, fichier, options);
     corps = g.corps;
     notes.push(...g.notes);
   }
