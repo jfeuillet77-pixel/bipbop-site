@@ -1,2 +1,14 @@
+# Site en phase de test (décision de Jordane du 13/09/2026) : rien ne se crawl tant que la
+# publication n'est pas ouverte. Le sitemap XML est bien généré à chaque build
+# (scripts/sitemap.mjs), il n'est simplement pas déclaré. L'ouverture tient à trois gestes :
+#
+#   1. retirer « Disallow: / » ci-dessous et décommenter la ligne Sitemap ;
+#   2. retirer « noindex, nofollow » du gabarit de head dans scripts/port.mjs (les 37 pages
+#      portées) et dans src/layouts/BaseLayout.astro (les pages écrites à la main) ;
+#   3. relancer « node scripts/port.mjs && npm run build », puis vérifier en HTTP que l'en-tête
+#      a changé. Les deux se respondent : tant que robots.txt bloque, Google ne peut pas lire
+#      le noindex, et un sitemap déclaré livrerait la liste des URL avant l'ouverture.
 User-agent: *
 Disallow: /
+
+# Sitemap: https://bipbop.eu/sitemap.xml
