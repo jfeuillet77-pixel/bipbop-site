@@ -99,6 +99,11 @@ quatre largeurs. Le 404 est un fichier HTML brut hors `BaseLayout` (pas de `data
 
 ### Ce qui reste à faire
 
+- **Cibles tactiles** : `scripts/captures.mjs` en décompte **28 sous 44 px** sur `/comparatif/`
+  (minimum 16 px) à 1200 px, 21 à 390 px. Seuls les liens de l'en-tête ont été traités. Les
+  liens du pied de page, les intitulés de chiffres mono et les liens « L'avis → » des cartes sont
+  les plus exposés. Le `Brief-Responsive` §06 laisse ce point à l'intégration : il est **à faire
+  sur les 38 pages**, pas seulement sur l'en-tête.
 - **Vague A** : 6 avis (`/avis/alesis-turbo-mesh`, `donner-ded-200x`, `millenium-mps-450`,
   `millenium-mps-750x`, `millenium-mps-850`, `yamaha-dtx432k`) — débloque les compteurs du hub Avis
   et les 6 liens que le comparatif attend.
