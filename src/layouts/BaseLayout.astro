@@ -3,14 +3,17 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import '../styles/global.css';
+import '../styles/responsive.css';
 
 interface Props {
   title: string;
   description?: string;
   currentPage?: string;
+  /** « demarrer » = le CTA « Par où commencer ? » vers Guides, que la maquette ne réserve qu'au comparatif. */
+  cta?: 'comparatif' | 'demarrer';
 }
 
-const { title, description = 'Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.', currentPage = '' } = Astro.props;
+const { title, description = 'Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.', currentPage = '', cta = 'comparatif' } = Astro.props;
 ---
 
 <!doctype html>
@@ -26,7 +29,7 @@ const { title, description = 'Des recommandations de batteries électroniques po
   </head>
   <body>
     <div class="site-wrapper">
-      <Header currentPage={currentPage} />
+      <Header currentPage={currentPage} cta={cta} />
       <main>
         <slot />
       </main>

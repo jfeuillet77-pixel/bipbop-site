@@ -9,12 +9,19 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "data": "node scripts/import-data.mjs",
+    "verif": "node scripts/verif.mjs",
+    "check": "npm run build && node scripts/verif.mjs",
+    "prebuild": "node scripts/import-data.mjs"
   },
   "dependencies": {
     "astro": "^7.3.2"
   },
   "allowScripts": {
     "esbuild": true
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.10.0"
   }
 }

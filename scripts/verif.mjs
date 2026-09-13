@@ -1,0 +1,345 @@
+#!/usr/bin/env node
+/**
+ * verif.mjs — contrôle de fin de séance, automatisé.
+ *
+ * Implémente les 5 vérifications de « Aide-Memoire-Mises-A-Jour » §06
+ * et les 4 étapes de « Brief-Responsive » §05.
+ *
+ *   npm run build && node scripts/verif.mjs
+ *   node scripts/verif.mjs /comparatif/ /avis/
+ *   LARGEURS=1024,900,768,390 node scripts/verif.mjs
+ *
+ * Code de sortie 0 si tout passe, 1 sinon. La base de données a toujours raison
+ * sur une page : c'est la règle énoncée par le Guide-Du-Projet §02.
+ */
+import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
+import { join, relative, dirname, basename } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { MODELES, ACCESSOIRES, PLAN, nomCourt, prixDe } from '../src/data/produits.mjs';
+
+const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
+/** Réglable : permet de passer au crible les maquettes elles-mêmes, pas seulement le site built. */
+const DIST = process.env.DIST ? join(SITE, process.env.DIST) : join(SITE, 'dist');
+const LARGEURS = (process.env.LARGEURS || '1024,900,768,390').split(',').map(Number);
+const CHROME = process.env.CHROME || '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
+const IGNORE = new Set(['sitemap-index.xml', 'sitemap-0.xml', 'robots.txt', 'favicon.ico']);
+/** Une ressource n'est pas une page : le contrôle de liens ne doit porter que sur la navigation. */
+const RESSOURCE = /(\.css|\.js|\.mjs|\.svg|\.png|\.jpe?g|\.webp|\.gif|\.ico|\.xml|\.txt|\.webmanifest|\.json|\.woff2?)$/i;
+
+/* --------------------------------- collecte --------------------------------- */
+
+function cueillir(dir, acc = []) {
+  for (const nom of readdirSync(dir)) {
+    const p = join(dir, nom);
+    if (IGNORE.has(nom)) continue;
+    if (statSync(p).isDirectory()) cueillir(p, acc);
+    else if (nom.endsWith('.html')) acc.push(p);
+  }
+  return acc;
+}
+
+/** dist/avis/index.html → /avis/ ; dist/index.html → / ; dist/404.html → /404.html */
+function route(f) {
+  const r = relative(DIST, f).replace(/\\/g, '/');
+  if (r === 'index.html') return '/';
+  if (r.endsWith('/index.html')) return '/' + r.slice(0, -'index.html'.length);
+  return '/' + r;
+}
+
+const fichiers = existsSync(DIST) ? cueillir(DIST) : [];
+if (!fichiers.length) {
+  console.error(`Aucun HTML dans ${relative(SITE, DIST)} — lancer « npm run build » d'abord.`);
+  process.exit(2);
+}
+const filtre = process.argv.slice(2).filter((a) => a.startsWith('/'));
+const pages = filtre.length ? fichiers.filter((f) => filtre.includes(route(f))) : fichiers;
+const lu = (f) => readFileSync(f, 'utf8');
+
+const PUBLIEES = new Set();
+for (const f of fichiers) { const r = route(f); PUBLIEES.add(r); PUBLIEES.add(r.replace(/\/$/, '') || '/'); }
+
+/* ---------------------------- 1. aucun lien cassé ---------------------------- */
+
+function verifLiens() {
+  const casses = [], relatifs = [];
+  let total = 0;
+  for (const f of pages) {
+    const ici = route(f);
+    for (const m of lu(f).matchAll(/href="([^"#]+)(?:#[^"]*)?"/g)) {
+      const h = m[1].trim();
+      if (!h || /^(https?:|mailto:|tel:|data:|\/\/)/.test(h) || RESSOURCE.test(h)) continue;
+      total++;
+      if (/\.dc\.html$/.test(h)) { casses.push({ ici, h, pourquoi: 'pointe vers une maquette' }); continue; }
+      if (h.startsWith('/')) {
+        const cible = h.replace(/\/+$/, '') || '/';
+        if (!PUBLIEES.has(cible) && !PUBLIEES.has(cible + '/')) casses.push({ ici, h, pourquoi: 'page inexistante' });
+      } else relatifs.push({ ici, h });
+    }
+  }
+  return { total, casses, relatifs };
+}
+
+/* ------------------------- 2. les compteurs sont vrais ------------------------ */
+
+const sansBalises = (html) => html
+  .replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>|<!--[\s\S]*?-->/g, ' ')
+  .replace(/<[^>]+>/g, ' ')
+  .replace(/&nbsp;|&#160;|\u202f/g, ' ')
+  .replace(/\s+/g, ' ');
+
+const publies = (gabarit) => PLAN.filter((r) => r.gabarit === gabarit && r.statut === 'Publié').length;
+const NB_AVIS = MODELES.filter((m) => m.avis).length;
+const NB_SANS_AVIS = MODELES.length - NB_AVIS;
+const NB_GUIDES = publies('Guide');
+const NB_ARTICLES = publies('Article informationnel');
+
+function verifCompteurs() {
+  const anomalies = [];
+  const reference = (t) => {
+    const m = t.match(/(\d+)\s+AVIS PUBL/i); return m ? +m[1] : null;
+  };
+  for (const f of pages) {
+    const ici = route(f), html = lu(f), t = sansBalises(html);
+    const guette = (regex, attendu, quoi) => {
+      for (const m of t.matchAll(regex)) {
+        if (+m[1] !== attendu) anomalies.push({ ici, quoi, annonce: m[0].trim(), attendu });
+      }
+    };
+    guette(/(\d+)\s+AVIS PUBLI/gi, NB_AVIS, 'badge avis publiés');
+    guette(/(\d+)\s+AU PROGRAMME/gi, NB_SANS_AVIS, 'avis au programme');
+    guette(/(\d+)\s+GUIDES?(?: ET \d+ ARTICLE| ET \d+ ARTICLES)? PUBLI/gi, NB_GUIDES, 'guides publiés');
+    guette(/ET (\d+) ARTICLES? PUBLI/gi, NB_ARTICLES, 'articles publiés');
+    guette(/(\d+)\s+MOD[EÈ]LES SUIVIS/gi, MODELES.length, 'modèles suivis');
+    guette(/(\d+)\s+ACCESSOIRES/gi, ACCESSOIRES.length, 'accessoires');
+
+    // intitulé de la liste d'attente vs lignes réellement affichées
+    const att = t.match(/les\s+(\d+)\s+avis en préparation/i);
+    if (att) {
+      const i = html.search(/en préparation/i);
+      const lignes = (html.slice(i).match(/data-rwd="tblrow"/g) || []).length;
+      if (lignes && +att[1] !== lignes) anomalies.push({ ici, quoi: 'liste d’attente', annonce: `${att[1]} annoncés`, attendu: `${lignes} lignes` });
+    }
+    if (att && +att[1] !== NB_SANS_AVIS) anomalies.push({ ici, quoi: 'liste d’attente', annonce: `${att[1]} annoncés`, attendu: `${NB_SANS_AVIS} modèles sans avis` });
+    // écart entre deux compteurs d'une même page
+    const a = t.match(/(\d+)\s+GUIDES?\b/i), b = t.match(/(\d+)\s+GUIDES? PUBLI/i);
+    if (a && b && +a[1] !== +b[1] && ici === '/guides/') anomalies.push({ ici, quoi: 'compteurs contradictoires', annonce: `${a[1]} vs ${b[1]}`, attendu: 'identiques' });
+  }
+  return anomalies;
+}
+
+/* --------------------------- 3. aucun prix périmé ---------------------------- */
+
+const ALIAS = [];
+for (const m of MODELES) {
+  const formes = new Set([`${m.marque} ${m.modele}`, m.modele, nomCourt(m), `${m.marque} ${nomCourt(m)}`]);
+  for (const v of formes) if (v && v.length > 4) ALIAS.push({ cle: v.toLowerCase(), m });
+}
+ALIAS.sort((a, b) => b.cle.length - a.cle.length);
+/** Bornes de segment et arrondis de prose : jamais le prix relevé d'un modèle. */
+const BORNES = new Set([100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 2000]);
+
+function verifPrix() {
+  const anomalies = new Map();
+  for (const f of pages) {
+    const ici = route(f), brut = sansBalises(lu(f)), bas = brut.toLowerCase();
+    for (const { cle, m } of ALIAS) {
+      for (let i = bas.indexOf(cle); i >= 0; i = bas.indexOf(cle, i + 1)) {
+        const suite = brut.slice(i + cle.length, i + cle.length + 46);
+        const mm = suite.match(/^\s*[·:–-]?\s*(\d{1,5}(?:[ ]?\d{3})*(?:[.,]\d{2})?)\s*€/);
+        if (!mm) continue;                       // pas un prix collé au nom : prose, pas une étiquette
+        const vu = prixDe(mm[1]);
+        if (Math.abs(vu - prixDe(m.prix)) < 0.5) continue;
+        // Un prix collé au nom est SON prix, même s'il coïncide avec celui d'un accessoire :
+        // l'ancre ci-dessus a déjà écarté la prose comparative (« 111 € de plus, la Nitro Max… »).
+        // Sauf si l'accessoire porte ce nom (« Millenium MPS-750X Expansion Pack », 125 €).
+        const PorteLeNom = (a) => a.produit.toLowerCase().includes(cle) || a.produit.toLowerCase().includes(cle.replace(`${m.marque.toLowerCase()} `, ''));
+        if (ACCESSOIRES.some((a) => PorteLeNom(a) && Math.abs(prixDe(a.prix) - vu) < 0.5)) continue;
+        if (BORNES.has(vu)) continue;
+        const k = `${ici}|${m.id}|${vu}`;
+        if (!anomalies.has(k)) anomalies.set(k, { ici, modele: `${m.marque} ${m.modele}`, attendu: m.prixTexte, trouve: `${mm[1]} €`, contexte: suite.trim().slice(0, 46) });
+      }
+    }
+  }
+  return [...anomalies.values()];
+}
+
+/* ----------------------- 4. la navigation est partout la même ---------------- */
+
+function verifNav() {
+  const signatures = new Map();
+  for (const f of pages) {
+    const html = lu(f), i = html.search(/data-nav/);
+    let sig;
+    if (i < 0) sig = '(aucune navigation marquée data-nav)';
+    else {
+      const liens = [...html.slice(i, i + 3000).matchAll(/>([^<>]{2,30})<\/a>/g)].map((x) => x[1].trim()).filter(Boolean).slice(0, 4);
+      sig = liens.join(' | ');
+    }
+    if (!signatures.has(sig)) signatures.set(sig, []);
+    signatures.get(sig).push(route(f));
+  }
+  return signatures;
+}
+
+/* ----------------- 5. la page tient, mesurée dans un navigateur --------------
+   Un serveur HTTP local est indispensable : sous file://, les href absolus
+   « /_astro/… » ne résolvent pas, le CSS n'est jamais chargé, et l'on mesurerait
+   une page sans aucun de ses styles. */
+
+import { createServer } from 'node:http';
+
+const MIME = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.mjs': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.ico': 'image/x-icon', '.txt': 'text/plain', '.xml': 'application/xml', '.woff2': 'font/woff2' };
+
+function servirDist() {
+  const serveur = createServer((req, res) => {
+    const url = decodeURIComponent(req.url.split('?')[0]);
+    let cible = join(DIST, url);
+    if (existsSync(cible) && statSync(cible).isDirectory()) cible = join(cible, 'index.html');
+    if (!existsSync(cible) && existsSync(cible + '.html')) cible += '.html';
+    if (!existsSync(cible) && !cible.endsWith('index.html')) cible = join(DIST, 'index.html');
+    res.writeHead(200, { 'content-type': MIME[basename(cible).slice(basename(cible).lastIndexOf('.'))] || 'application/octet-stream' });
+    res.end(readFileSync(cible));
+  });
+  return new Promise((ok) => serveur.listen(0, '127.0.0.1', () => ok({ serveur, port: serveur.address().port })));
+}
+
+async function verifResponsive(puppeteer) {
+  const { serveur, port } = await servirDist();
+  const base = `http://127.0.0.1:${port}`;
+  const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--no-sandbox', '--disable-dev-shm-usage'] });
+  const results = [];
+  try {
+    for (const f of pages) {
+      const page = await browser.newPage();
+      const mesures = {};
+      try {
+        for (const w of LARGEURS) {
+          await page.setViewport({ width: w, height: 900 });
+          await page.goto(base + route(f), { waitUntil: 'load', timeout: 20000 });
+          await page.evaluate(() => document.fonts && document.fonts.ready);
+          mesures[w] = await page.evaluate(() => {
+            const de = document.documentElement;
+            const coupables = [];
+            for (const el of document.querySelectorAll('body *')) {
+              const r = el.getBoundingClientRect();
+              if (r.width > de.clientWidth + 1 && r.right > de.clientWidth + 1) {
+                coupables.push({
+                  tag: el.tagName.toLowerCase(),
+                  rwd: el.getAttribute('data-rwd') || el.parentElement?.getAttribute?.('data-rwd') || '-',
+                  cls: String(el.className || '').slice(0, 24),
+                  largeur: Math.round(r.width),
+                  texte: (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 36),
+                });
+                if (coupables.length >= 3) break;
+              }
+            }
+            return { scroll: de.scrollWidth, client: de.clientWidth, sonde: getComputedStyle(de).getPropertyValue('--rwd').trim(), css: document.styleSheets.length, coupables };
+          });
+        }
+      } finally { await page.close(); }
+
+      const defauts = [];
+      for (const w of LARGEURS) {
+        const m = mesures[w];
+        if (!m) continue;
+        if (m.scroll > m.client + 1) defauts.push(`${w}px : largeur de défilement ${m.scroll} > fenêtre ${m.client}`);
+        const attendu = w <= 1080 ? 'on' : '';
+        if (m.sonde !== attendu) defauts.push(`${w}px : sonde --rwd = «${m.sonde || 'off'}», attendu «${attendu || 'off'}»`);
+      }
+      results.push({ page: route(f), mesures, defauts });
+    }
+  } finally {
+    await browser.close();
+    serveur.close();
+  }
+  return results;
+}
+
+/* ----------------------------------- rendu ---------------------------------- */
+
+const titre = (n, s) => console.log(`\n${n}. ${s} — `);
+const L = '═'.repeat(78);
+console.log(`\ncontrôle de fin de séance · ${pages.length} page(s) · largeurs ${LARGEURS.join(' / ')} px\n${L}`);
+
+const liens = verifLiens();
+titre(1, `LIENS (${liens.total} internes)`);
+console.log(liens.casses.length ? `${liens.casses.length} CASSÉ(S)` : 'ras');
+for (const c of liens.casses.slice(0, 30)) console.log(`   ✗ ${c.ici} → ${c.h}  [${c.pourquoi}]`);
+if (liens.relatifs.length) console.log(`   ! ${liens.relatifs.length} lien(s) relatif(s) non résolus : ${[...new Set(liens.relatifs.map((r) => r.h))].slice(0, 6).join(', ')}`);
+
+const compteurs = verifCompteurs();
+titre(2, 'COMPTEURS');
+console.log(compteurs.length ? `${compteurs.length} INCOHÉRENCE(S)` : 'ras');
+for (const c of compteurs) console.log(`   ✗ ${c.ici} : ${c.quoi} — ${c.annonce}, la base dit ${c.attendu}`);
+
+const prix = verifPrix();
+titre(3, 'PRIX');
+console.log(prix.length ? `${prix.length} DIVERGENCE(S) avec la source` : 'ras');
+for (const p of prix) console.log(`   ✗ ${p.ici} : ${p.modele} — ${p.trouve} sur la page, ${p.attendu} en source  «${p.contexte}»`);
+
+const nav = verifNav();
+titre(4, 'NAVIGATION');
+const majorite = [...nav.entries()].sort((a, b) => b[1].length - a[1].length)[0];
+console.log(nav.size === 1 ? 'identique partout : ' + majorite[0] : `${nav.size} VARIANTES`);
+for (const [sig, pgs] of nav) console.log(`   ${sig === majorite[0] ? '✓' : '✗'} ${String(pgs.length).padStart(3)}p  ${sig}${sig === majorite[0] ? '' : '\n        → ' + pgs.join(', ')}`);
+
+let responsive = [];
+try {
+  const puppeteer = (await import('puppeteer-core')).default;
+  responsive = await verifResponsive(puppeteer);
+  const cassees = responsive.filter((r) => r.defauts.length);
+  titre(5, 'RESPONSIVE (mesuré)');
+  console.log(cassees.length ? `${cassees.length} PAGE(S) CASSÉE(S) sur ${responsive.length}` : `ras sur ${responsive.length} page(s)`);
+  for (const r of cassees) {
+    console.log(`   ✗ ${r.page}`);
+    for (const d of r.defauts) console.log(`        ${d}`);
+    for (const w of LARGEURS) for (const c of (r.mesures[w]?.coupables || [])) console.log(`        ${w}px → <${c.tag} data-rwd=${c.rwd}> ${c.largeur}px  «${c.texte}»`);
+  }
+} catch (e) {
+  titre(5, 'RESPONSIVE');
+  console.log(`NON MESURÉ — ${e.message.split('\n')[0]}`);
+  console.log('   indique le navigateur : CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"');
+}
+
+/* ----- 6. aucune note interne ne sort du dépôt (règle D01) -----
+   Le JavaScript bundlé par Astro se télécharge et se lit : une note interne importée
+   dans un composant est publiée, même si elle ne s'affiche jamais.
+   On ne liste que des marqueurs qui ne correspondent à aucune copie du design :
+   « Le plancher de prix » est par exemple la phrase éditoriale publiée du Rookie,
+   pas le rôle interne — ces deux-là resteraient des faux positifs. */
+
+const INTERDITS = [
+  ['role_editorial', 'nom de la colonne interne du guide D01'],
+  ['largeur_maquette', 'valeur de design non validée par un marchand'],
+  ['Mention comparatif', 'rôle éditorial interne'],
+  ['Avis complet ·', 'rôle éditorial interne'],
+  ['Avis complet ✓', 'rôle éditorial interne'],
+  ['· recommandation principale', 'rôle éditorial interne'],
+];
+
+function verifNotesInternes() {
+  const fuites = [];
+  const parcourir = (dir) => {
+    for (const nom of readdirSync(dir)) {
+      const p = join(dir, nom);
+      if (statSync(p).isDirectory()) { parcourir(p); continue; }
+      if (!/\.(html|js|css|json|map)$/.test(nom)) continue;
+      const txt = readFileSync(p, 'utf8');
+      for (const [motif, pourquoi] of INTERDITS) {
+        if (txt.includes(motif)) fuites.push({ fichier: relative(DIST, p), motif, pourquoi });
+      }
+    }
+  };
+  parcourir(DIST);
+  return fuites;
+}
+
+const fuites = verifNotesInternes();
+titre(6, 'NOTES INTERNES');
+console.log(fuites.length ? `${fuites.length} FUITE(S) dans le build` : 'ras — rien d’interne ne sort du dépôt');
+for (const f of fuites.slice(0, 12)) console.log(`   ✗ ${f.fichier} contient «${f.motif}» (${f.pourquoi})`);
+
+const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length;
+console.log(`\n${L}`);
+console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 6 contrôles de fin de séance sont passés\n');
+process.exit(nbProblemes ? 1 : 0);
