@@ -39,6 +39,12 @@ et les 8 documents internes (`Guide-Du-Projet`, `Design-System`, `Selection-Prod
 
 ## Interdits de contenu
 
+**Aucun lien affilié** — le site n'a pas de programme d'affiliation, et les tags des maquettes
+(`?offid=1&affid=3711` chez Thomann, passerelle `donnnermusic.sjv.io` chez Donner) appartiennent à
+un autre site de Jordane. `urlPublique()` les retire au portage et à l'import ; le contrôle 7 de
+`verif.mjs` fait échouer `npm run check` si un marqueur de traçage survit. Ne jamais « réparer » un
+lien affilié à la main dans une page : la maquette le ramènerait.
+
 Aucun protocole de test inventé · aucune note chiffrée sans grille affichée · aucune signature
 individuelle · aucun article sponsorisé · ne jamais reprendre un **prix barré Donner** · ne
 jamais utiliser un **prix de bundle Thomann** comme prix du modèle · **ne jamais inventer une URL

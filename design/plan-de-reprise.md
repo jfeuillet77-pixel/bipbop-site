@@ -64,8 +64,14 @@ et `src/layouts/BaseLayout.astro` (le comparatif) — à changer ensemble, sinon
    `port-corrections.json` (une des 8 phrases rédigées du hub est concernée aussi).
 4. **Priorité des lignes P24/P25** du plan éditorial — « Moyenne » par déduction après avoir réparé
    le décalage de colonnes. Champ interne, non publié.
-5. **22 URLs Woodbrass sans identifiant d'affiliation** (14 % du catalogue) — hors périmètre décidé
-   ce jour, mais c'est du revenu qui ne se capte pas.
+5. **Affiliation** — sans objet pour l'instant, et la question change de nature. Les maquettes
+   étaient taguées pour **un autre site de Jordane** (`?offid=1&affid=3711` sur 126 URLs Thomann,
+   passerelle shareasale `donnnermusic.sjv.io` pour les 12 liens Donner). Décision du 13/09 au
+   soir : **BipBop ne publie aucun lien affilié**, le nettoyage est mécanique et un contrôle fait
+   échouer le build si un traçant survit. Le point soulevé ici (« 22 URLs Woodbrass sans
+   identifiant ») ne se pose plus : aucun marchand n'en porte. Le jour où tu actives l'affiliation
+   sur BipBop, il faudra **ton identifiant BipBop** — pas celui des maquettes — et le décider pour
+   les trois marchands à la fois.
 
 ## Comment reprendre techniquement
 
