@@ -50,6 +50,18 @@ Retirer `<meta name="robots" content="noindex, nofollow">` des 38 routes et déb
 `public/robots.txt`. Les deux lignes à changer sont dans `scripts/port.mjs` (les 37 pages portées)
 et `src/layouts/BaseLayout.astro` (le comparatif) — à changer ensemble, sinon une route traîne.
 
+**Une seule ligne reste hors du dépôt, côté tableau de bord Netlify** : Forms → Notifications →
+`contact@bipbop.eu`. Le formulaire de contact fonctionne (vérifié en POST → 200 traité par le
+service de formulaires, pas par le fichier statique) et **aucune adresse e-mail n'est publiée dans
+le code** — c'est voulu. Détail d'installation : la détection des formulaires ne vaut que pour le
+déploiement suivant son activation, et une règle `[[redirects]] from="/*" status=404` avale les
+POST — les deux pièges sont racontés dans le JOURNAL du 13 septembre (soir).
+
+**Fait depuis, et consigné** : registre légal des deux pages (Jordane Feuillet, Netlify, Google
+Analytics déclaré sans outil installé — choix assumé de Jordane, ligne « Envoi des e-mails »
+retirée, adresse/SIREN/TVA non publiés), encart e-mail supprimé de Contact, formulaire réel. Tout
+est dans `scripts/greffes.mjs`, rien dans les pages.
+
 ### 3. Questions ouvertes, sans urgence de publication
 
 1. **Grille de notation** — décision du 13/09 : les notes `/10` restent publiées. 9 pages en
