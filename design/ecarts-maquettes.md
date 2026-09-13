@@ -99,7 +99,30 @@ champs vides en fin de ligne : le maillage sortant tombait dans `priorite`. Corr
 `gabarit` = « Article informationnel » (convention des autres lignes), `priorite` = « Moyenne »
 **— cette priorité est une supposition de notre part, à confirmer.**
 
-## 7. Bois de fil non traité, hors périmètre
+## 8. Deux découvertes faites en portant la vague A
+
+**a) Le hub Avis écrit ses propres phrases.** Les 9 cartes du hub ne reprennent **pas** le champ
+`phrase` de `modeles.json` — celui-ci sert au comparatif. Exemple, Millenium MPS-150X :
+
+- carte du hub : « Le mesh au prix plancher. Le module est pauvre, le toucher ne l'est pas »
+- `modeles.json` : « Tous les fûts en mesh à 298 €, avec une caisse claire de 10 pouces. »
+
+Les huit cartes comparées sont toutes différentes, et pas seulement de ponctuation. Le hub porte
+donc un texte éditorial qui n'existe nulle part ailleurs : il ne peut pas être déduit de la base,
+et la base ne peut pas le remplacer. Conséquence pour le portage du hub : **la structure et les
+compteurs viennent des données, le texte vient de la maquette du hub.**
+
+**b) Deux pages disent une empreinte que le marchand ne donne pas.** `Avis-Millenium-MPS-750X`
+écrit « 140 × 90 cm » et `Avis-Millenium-MPS-850` « 150 × 100 cm », quand la fiche Thomann de ces
+deux modèles indique **140 × 80** dans les deux cas. Deux pages sur deux, dans le même sens, et
+toujours avec la mention « siège compris » : ce n'est pas une faute de frappe isolée mais une
+**définition différente** — l'encombrement mesuré avec le siège, la batterie étant posée dessus.
+
+Le comparatif, lui, affiche la mesure du marchand. Il faut trancher une définition, pas deux
+chiffres : soit le site publie l'empreinte batterie seule (ce que le marchand garantit), soit il
+publie l'empreinte avec siège et il le dit de façon visible partout où un chiffre apparaît.
+
+## 9. Bois de fil non traité, hors périmètre
 
 - **22 URLs Woodbrass** de la sélection ne portent **aucun identifiant d'affiliation** : elles
   ne rapportent rien. 124 Thomann (`offid=1&affid=3711`) et 11 Donner (`donnnermusic.sjv.io/c/…`)
