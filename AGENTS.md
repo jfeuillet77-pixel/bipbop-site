@@ -1,6 +1,7 @@
 # BipBop — règles de travail
 
-**Une session = lire dans cet ordre** : `README.md` (règle de fidélité),
+**Une session = lire dans cet ordre** : `design/plan-de-reprise.md` (où on en est, quoi faire,
+quelles questions attendent Jordane), `README.md` (règle de fidélité),
 `design/crochets-responsive.md` (comment rendre une page responsive ici),
 `design/ecarts-maquettes.md` (ce que la maquette contredit avec sa propre source).
 

@@ -1,5 +1,49 @@
 # Journal BipBop
 
+## 13 septembre 2026 — Pause de session : où on en est, comment reprendre
+
+Objectif acté en fin de session par Jordane : **publier la totalité des 38 pages de site désignées
+par Claude Design**. L'inventaire complet, l'ordre à tenir et les 5 questions ouvertes tiennent
+dans **`design/plan-de-reprise.md`** — c'est le fichier à ouvrir en premier à la reprise.
+
+**Avancée : 21 pages en ligne sur 38, dont 6 identiques à leur maquette au segment près**
+(les 6 avis de la vague A). 17 à créer, 15 existantes à resynchroniser.
+
+**Ajouté à l'outillage pendant la session**, tout est rejouable :
+
+- `npm run check` — build + les 6 contrôles de l'`Aide-Memoire` §06 mesurés dans Chrome réel
+  (liens, compteurs, prix, navigation, largeur de défilement à 1024/900/768/390, et un 6ᵉ
+  contrôle ajouté ici : aucune note interne dans le bundle) ;
+- `npm run fidelite [route]` — comparaison segment à segment entre chaque page et sa maquette.
+  C'est l'outil qui manque aux 6 contrôles pour voir une section supprimée ou réécrite ;
+- `npm run data` — réimporte la base depuis le dossier Claude Design, et régénère la liste des
+  avis réellement publiés (le comparatif s'y cale, il ne peut plus promettre une page vide) ;
+- `node scripts/captures.mjs <route>` — rend la page dans Chrome à trois largeurs, pour
+  l'essai visuel que le brief réclame en plus des mesures.
+
+**Arbitrages pris pendant la session**, tous motivés dans `design/ecarts-maquettes.md` :
+
+- empreinte au sol relevée chez le marchand plutôt que la largeur de rack notée par le design
+  (12 modèles sourcés, 10 valeurs corrigées, 19 sans donnée → aucun chiffre affiché) ;
+- Woodbrass sans tag d'affiliation : hors périmètre, porté tel quel ;
+- pas de gabarit commun pour les avis : les six maquettes ont six designs réellement différents,
+  la MPS-850 l'a prouvé avec son tableau à cinq colonnes et ses vignettes ;
+- les fautes et contradictions des maquettes sont **reproduites puis signalées**, jamais
+  corrigées en silence — c'est ce qui garantit qu'on puisse les corriger à la source.
+
+**Clos dans la session** : socle responsive centralisé, chaîne de données, comparatif interactif
+porté et vérifié dans le navigateur, vague A complète (6 avis).
+
+**Reste ouvert, à trancher par Jordane** : la grille de notation des avis (règle I02), la
+définition de l'empreinte au sol (avec ou sans siège), une apostrophe manquante dans la DED-200X,
+la priorité des deux lignes du plan que j'ai reconstruites.
+
+### Déploiement
+Commit et push sur `dev`, puis merge `dev` → `main` pour la revue en ligne, selon la convention
+des fins de session. **Le site reste en phase de test** : `noindex, nofollow` sur les 38 routes et
+`robots.txt` bloquant en place — le merge ne l'expose donc pas dans les résultats de recherche.
+À retirer seulement quand les 38 pages sont publiées et que `check` et `fidelite` sortent au vert.
+
 ## 13 septembre 2026 — Vague A, page 1 : la méthode change pour les cinq suivantes
 
 Reprise de `/comparatif/` terminée (voir l'entrée précédente). Ouverture de la vague A, les
