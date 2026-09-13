@@ -45,6 +45,46 @@ export function segmentDe(prix) {
   throw new Error(`aucun segment pour ${prix} € — les tranches du hub ne couvrent pas ce modèle`);
 }
 
+/* -------------------------------- les liens marchands --------------------------------
+
+   BipBop ne publie AUCUN lien affilié : le site n'a pas encore de programme d'affiliation,
+   et les liens tagués qui viennent des maquettes appartiennent à un autre site de Jordane
+   (`?offid=1&affid=3711` sur 126 URLs Thomann, la passerelle shareasale
+   `donnnermusic.sjv.io/c/6882776/...` pour Donner). Publiés tels quels, ils enverraient
+   les clics — et les commissions — sur ce compte-là.
+
+   Les maquettes restent la source du texte ; seule l'adresse de destination est nettoyée,
+   le contenu ne change pas d'un caractère. La règle est écrite ici parce qu'elle doit
+   tenir au portage suivant : effacée de la page, elle y reviendrait avec la maquette.      */
+
+/** Paramètres de traçage, où qu'ils soient. */
+const PARAMS_DE_TRAÇAGE = /^(affid|offid|at|a_aid|pubref|irclickid|intsrc|sPartner|utm_.+|gclid|fbclid|msclkid)$/i;
+
+/** Domaines qui ne sont pas le marchand mais une passerelle de tracking. */
+const PASSERELLES = [/(^|\.)sjv\.io$/i, /(^|\.)shareasale\.com$/i, /(^|\.)anrdoezrs\.net$/i, /(^|\.)linksynergy\.com$/i, /(^|\.)awin1\.com$/i, /(^|\.)refer\d?\.com$/i, /(^|\.)dpbolvw\.net$/i];
+
+/**
+ * L'adresse publique d'un lien marchand : sans traçage, et hors passerelle si possible.
+ * Renvoie `null` quand la passerelle ne dit pas où elle mène — dans ce cas le lien ne
+ * part pas, plutôt que de publier un traquant dont on ignore la destination.
+ */
+export function urlPublique(brute) {
+  let url;
+  try { url = new URL(brute); } catch { return brute; }          // mailto:, #ancre, chemin relatif…
+  if (PASSERELLES.some((r) => r.test(url.hostname))) {
+    const cible = url.searchParams.get('u') || url.searchParams.get('url') || url.searchParams.get('target');
+    if (!cible) return null;
+    try { return urlPublique(decodeURIComponent(cible)); } catch { return urlPublique(cible); }
+  }
+  let touchée = false;
+  for (const p of [...url.searchParams.keys()]) {
+    if (PARAMS_DE_TRAÇAGE.test(p)) { url.searchParams.delete(p); touchée = true; }
+  }
+  if (!touchée) return brute;
+  const reste = url.searchParams.toString();
+  return url.origin + url.pathname + (reste ? `?${reste}` : '') + url.hash;
+}
+
 /** 1. Les remplacements déclarés. `au` introuvable est une erreur, pas un silence. */
 export function appliquerCorrections(corps, fichier, { sobre = false } = {}) {
   const notes = [];

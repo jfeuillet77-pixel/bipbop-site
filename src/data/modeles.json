@@ -23,7 +23,6 @@
    "prix": 179,
    "prixTexte": "179 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_rookie_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/549098.jpg",
    "pads": 7,
    "cymbales": 3,
@@ -40,7 +39,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Millenium Rookie E-Drum Set",
    "segment": "Moins de 300 €",
-   "nom_marchand": "Rookie E-Drum Set"
+   "nom_marchand": "Rookie E-Drum Set",
+   "url": "https://www.thomann.fr/millenium_rookie_e_drum_set.htm"
   },
   {
    "id": "hd120",
@@ -49,7 +49,6 @@
    "prix": 219,
    "prixTexte": "219 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_hd_120_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/461227.jpg",
    "pads": 7,
    "cymbales": 3,
@@ -66,7 +65,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Millenium HD-120 E-Drum Set",
    "segment": "Moins de 300 €",
-   "nom_marchand": "HD-120 E-Drum Set"
+   "nom_marchand": "HD-120 E-Drum Set",
+   "url": "https://www.thomann.fr/millenium_hd_120_e_drum_set.htm"
   },
   {
    "id": "ded70",
@@ -75,7 +75,6 @@
    "prix": 199.99,
    "prixTexte": "199,99 €",
    "marchand": "Donner Music",
-   "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=47112746893536&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-ded-70-electronic-drum-set&intsrc=CATF_28584",
    "img": "https://cdn.shopify.com/s/files/1/0612/3120/2528/files/BatterieelectroniqueDonnerDED-70aveccasquesiegedebatterie_1.jpg?v=1741598803",
    "pads": 7,
    "cymbales": 3,
@@ -91,7 +90,8 @@
    "empreinte_source": null,
    "nom_complet": "Donner DED-70",
    "segment": "Moins de 300 €",
-   "nom_marchand": "DED-70"
+   "nom_marchand": "DED-70",
+   "url": "https://fr.donnermusic.com/products/donner-ded-70-electronic-drum-set"
   },
   {
    "id": "ded80",
@@ -100,7 +100,6 @@
    "prix": 219.99,
    "prixTexte": "219,99 €",
    "marchand": "Donner Music",
-   "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=8759874093280&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fbatterie-electrique-donner-ded-80-5-tambours-et-3-cymbales&intsrc=CATF_28584",
    "img": "https://cdn.shopify.com/s/files/1/0612/3120/2528/files/DED-80_52dc4ced-5339-4810-af8b-a5861ee84d62.webp?v=1760669056",
    "pads": 7,
    "cymbales": 3,
@@ -116,7 +115,8 @@
    "empreinte_source": null,
    "nom_complet": "Donner DED-80",
    "segment": "Moins de 300 €",
-   "nom_marchand": "DED-80"
+   "nom_marchand": "DED-80",
+   "url": "https://fr.donnermusic.com/products/batterie-electrique-donner-ded-80-5-tambours-et-3-cymbales"
   },
   {
    "id": "debut",
@@ -125,7 +125,6 @@
    "prix": 279,
    "prixTexte": "279 €",
    "marchand": "Woodbrass",
-   "url": "https://www.woodbrass.com/kit-electroniques-alesis-debutkit-mesh-kit-4-futs-3-cymbales-p340997.html",
    "img": "https://www.woodbrass.com/images/woodbrass/ALESIS+DEBUTKIT.JPG",
    "pads": 7,
    "cymbales": 3,
@@ -141,7 +140,8 @@
    "empreinte_source": null,
    "nom_complet": "Alesis Debut Kit",
    "segment": "Moins de 300 €",
-   "nom_marchand": "Debut Kit"
+   "nom_marchand": "Debut Kit",
+   "url": "https://www.woodbrass.com/kit-electroniques-alesis-debutkit-mesh-kit-4-futs-3-cymbales-p340997.html"
   },
   {
    "id": "mps150x",
@@ -150,7 +150,6 @@
    "prix": 298,
    "prixTexte": "298 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_mps_150x_e_drum_mesh_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/407855.jpg",
    "pads": 8,
    "cymbales": 3,
@@ -167,7 +166,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Millenium MPS-150X Mesh",
    "segment": "Moins de 300 €",
-   "nom_marchand": "MPS-150X E-Drum Mesh Set"
+   "nom_marchand": "MPS-150X E-Drum Mesh Set",
+   "url": "https://www.thomann.fr/millenium_mps_150x_e_drum_mesh_set.htm"
   },
   {
    "id": "turbo",
@@ -176,7 +176,6 @@
    "prix": 298,
    "prixTexte": "298 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/alesis_turbo_mesh_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/454813.jpg",
    "pads": 7,
    "cymbales": 3,
@@ -193,7 +192,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Alesis Turbo Mesh Kit",
    "segment": "Moins de 300 €",
-   "nom_marchand": "Turbo Mesh Kit"
+   "nom_marchand": "Turbo Mesh Kit",
+   "url": "https://www.thomann.fr/alesis_turbo_mesh_kit.htm"
   },
   {
    "id": "td02k",
@@ -202,7 +202,6 @@
    "prix": 349,
    "prixTexte": "349 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/roland_td_02k_v_drums_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/557719.jpg",
    "pads": 6,
    "cymbales": 3,
@@ -219,7 +218,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Roland TD-02K",
    "segment": "300 à 500 €",
-   "nom_marchand": "TD-02K V-Drums"
+   "nom_marchand": "TD-02K V-Drums",
+   "url": "https://www.thomann.fr/roland_td_02k_v_drums_kit.htm"
   },
   {
    "id": "mps350",
@@ -228,7 +228,6 @@
    "prix": 349,
    "prixTexte": "349 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_mps_350_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/598586.jpg",
    "pads": 8,
    "cymbales": 3,
@@ -244,7 +243,8 @@
    "empreinte_source": null,
    "nom_complet": "Millenium MPS-350",
    "segment": "300 à 500 €",
-   "nom_marchand": "MPS-350 E-Drum Set"
+   "nom_marchand": "MPS-350 E-Drum Set",
+   "url": "https://www.thomann.fr/millenium_mps_350_e_drum_set.htm"
   },
   {
    "id": "dm110",
@@ -253,7 +253,6 @@
    "prix": 349,
    "prixTexte": "349 €",
    "marchand": "Woodbrass",
-   "url": "https://www.woodbrass.com/kit-electroniques-nux-dm-110-mesh-kit-p407936.html",
    "img": "https://www.woodbrass.com/images/woodbrass/PNU-DM-110.JPG",
    "pads": 7,
    "cymbales": 3,
@@ -269,7 +268,8 @@
    "empreinte_source": null,
    "nom_complet": "Nux DM-110 Mesh Kit",
    "segment": "300 à 500 €",
-   "nom_marchand": "DM-110 Mesh Kit"
+   "nom_marchand": "DM-110 Mesh Kit",
+   "url": "https://www.woodbrass.com/kit-electroniques-nux-dm-110-mesh-kit-p407936.html"
   },
   {
    "id": "dtx402",
@@ -278,7 +278,6 @@
    "prix": 369,
    "prixTexte": "369 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/yamaha_dtx402k_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/443798.jpg",
    "pads": 7,
    "cymbales": 3,
@@ -294,7 +293,8 @@
    "empreinte_source": null,
    "nom_complet": "Yamaha DTX402K",
    "segment": "300 à 500 €",
-   "nom_marchand": "DTX402K"
+   "nom_marchand": "DTX402K",
+   "url": "https://www.thomann.fr/yamaha_dtx402k_e_drum_set.htm"
   },
   {
    "id": "mps450",
@@ -303,7 +303,6 @@
    "prix": 398,
    "prixTexte": "398 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_mps_450_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/454253.jpg",
    "pads": 8,
    "cymbales": 3,
@@ -320,7 +319,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Millenium MPS-450",
    "segment": "300 à 500 €",
-   "nom_marchand": "MPS-450 E-Drum Set"
+   "nom_marchand": "MPS-450 E-Drum Set",
+   "url": "https://www.thomann.fr/millenium_mps_450_e_drum_set.htm"
   },
   {
    "id": "nitromax",
@@ -329,7 +329,6 @@
    "prix": 409,
    "prixTexte": "409 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/alesis_nitro_max_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/575657.jpg",
    "pads": 8,
    "cymbales": 3,
@@ -345,7 +344,8 @@
    "empreinte_source": null,
    "nom_complet": "Alesis Nitro Max Kit",
    "segment": "300 à 500 €",
-   "nom_marchand": "Nitro Max Kit"
+   "nom_marchand": "Nitro Max Kit",
+   "url": "https://www.thomann.fr/alesis_nitro_max_kit.htm"
   },
   {
    "id": "ddx50",
@@ -354,7 +354,6 @@
    "prix": 429,
    "prixTexte": "429 €",
    "marchand": "Woodbrass",
-   "url": "https://www.woodbrass.com/kit-electroniques-woodbrass-ddx50-mesh-p425216.html",
    "img": "https://www.woodbrass.com/images/woodbrass/PWB-DDX50-MESH.JPG",
    "pads": 8,
    "cymbales": 3,
@@ -370,7 +369,8 @@
    "empreinte_source": null,
    "nom_complet": "Woodbrass DDX50-Mesh",
    "segment": "300 à 500 €",
-   "nom_marchand": "DDX50-Mesh"
+   "nom_marchand": "DDX50-Mesh",
+   "url": "https://www.woodbrass.com/kit-electroniques-woodbrass-ddx50-mesh-p425216.html"
   },
   {
    "id": "td02kv",
@@ -379,7 +379,6 @@
    "prix": 498,
    "prixTexte": "498 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/roland_td_02kv_v_drums_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/557748.jpg",
    "pads": 6,
    "cymbales": 3,
@@ -396,7 +395,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Roland TD-02KV",
    "segment": "300 à 500 €",
-   "nom_marchand": "TD-02KV V-Drums"
+   "nom_marchand": "TD-02KV V-Drums",
+   "url": "https://www.thomann.fr/roland_td_02kv_v_drums_kit.htm"
   },
   {
    "id": "dtx432",
@@ -405,7 +405,6 @@
    "prix": 498,
    "prixTexte": "498 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/yamaha_dtx432k_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/443801.jpg",
    "pads": 7,
    "cymbales": 3,
@@ -422,7 +421,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Yamaha DTX432K",
    "segment": "300 à 500 €",
-   "nom_marchand": "DTX432K"
+   "nom_marchand": "DTX432K",
+   "url": "https://www.thomann.fr/yamaha_dtx432k_e_drum_set.htm"
   },
   {
    "id": "mps750x",
@@ -431,7 +431,6 @@
    "prix": 498,
    "prixTexte": "498 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_mps_750x_e_drum_mesh_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/464015.jpg",
    "pads": 8,
    "cymbales": 4,
@@ -448,7 +447,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Millenium MPS-750X Mesh",
    "segment": "300 à 500 €",
-   "nom_marchand": "MPS-750X E-Drum Mesh Set"
+   "nom_marchand": "MPS-750X E-Drum Mesh Set",
+   "url": "https://www.thomann.fr/millenium_mps_750x_e_drum_mesh_set.htm"
   },
   {
    "id": "ded200x",
@@ -457,7 +457,6 @@
    "prix": 499.99,
    "prixTexte": "499,99 €",
    "marchand": "Donner Music",
-   "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=7786764075232&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-ded-200-set-de-batterie-electronique&intsrc=CATF_28584",
    "img": "https://cdn.shopify.com/s/files/1/0612/3120/2528/files/5_6f759e66-464b-4495-8e59-713d28b965e7.jpg?v=1764927814",
    "pads": 9,
    "cymbales": 4,
@@ -473,7 +472,8 @@
    "empreinte_source": null,
    "nom_complet": "Donner DED-200X",
    "segment": "300 à 500 €",
-   "nom_marchand": "DED-200X"
+   "nom_marchand": "DED-200X",
+   "url": "https://fr.donnermusic.com/products/donner-ded-200-set-de-batterie-electronique"
   },
   {
    "id": "dtx452",
@@ -482,7 +482,6 @@
    "prix": 519,
    "prixTexte": "519 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/yamaha_dtx452k_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/443803.jpg",
    "pads": 7,
    "cymbales": 3,
@@ -499,7 +498,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Yamaha DTX452K",
    "segment": "500 à 800 €",
-   "nom_marchand": "DTX452K"
+   "nom_marchand": "DTX452K",
+   "url": "https://www.thomann.fr/yamaha_dtx452k_e_drum_set.htm"
   },
   {
    "id": "ded300x",
@@ -508,7 +508,6 @@
    "prix": 539.99,
    "prixTexte": "539,99 €",
    "marchand": "Donner Music",
-   "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=46776412930272&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fbatterie-electronique-donner-ded-300x-5-tambours-4-cymbales&intsrc=CATF_28584",
    "img": "https://cdn.shopify.com/s/files/1/0612/3120/2528/files/4_6074bf24-897d-40fc-b44d-bcaa9abe588d.jpg?v=1734683839",
    "pads": 9,
    "cymbales": 4,
@@ -524,7 +523,8 @@
    "empreinte_source": null,
    "nom_complet": "Donner DED-300X",
    "segment": "500 à 800 €",
-   "nom_marchand": "DED-300X"
+   "nom_marchand": "DED-300X",
+   "url": "https://fr.donnermusic.com/products/batterie-electronique-donner-ded-300x-5-tambours-4-cymbales"
   },
   {
    "id": "mps850",
@@ -533,7 +533,6 @@
    "prix": 598,
    "prixTexte": "598 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_mps_850_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/428224.jpg",
    "pads": 9,
    "cymbales": 4,
@@ -550,7 +549,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Millenium MPS-850",
    "segment": "500 à 800 €",
-   "nom_marchand": "MPS-850 E-Drum Set"
+   "nom_marchand": "MPS-850 E-Drum Set",
+   "url": "https://www.thomann.fr/millenium_mps_850_e_drum_set.htm"
   },
   {
    "id": "ded200pro",
@@ -559,7 +559,6 @@
    "prix": 599.99,
    "prixTexte": "599,99 €",
    "marchand": "Donner Music",
-   "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=9273475367136&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fded-200pro-new-electronic-drum-set&intsrc=CATF_28584",
    "img": "https://cdn.shopify.com/s/files/1/0612/3120/2528/files/4_1097d93b-35cc-4280-9d35-f5da2694d1bd.jpg?v=1773130075",
    "pads": 9,
    "cymbales": 4,
@@ -575,7 +574,8 @@
    "empreinte_source": null,
    "nom_complet": "Donner DED-200 Pro",
    "segment": "500 à 800 €",
-   "nom_marchand": "DED-200 Pro"
+   "nom_marchand": "DED-200 Pro",
+   "url": "https://fr.donnermusic.com/products/ded-200pro-new-electronic-drum-set"
   },
   {
    "id": "nitropro",
@@ -584,7 +584,6 @@
    "prix": 698,
    "prixTexte": "698 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/alesis_nitro_pro_drum_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/597347.jpg",
    "pads": 10,
    "cymbales": 4,
@@ -600,7 +599,8 @@
    "empreinte_source": null,
    "nom_complet": "Alesis Nitro Pro",
    "segment": "500 à 800 €",
-   "nom_marchand": "Nitro Pro Drum Kit"
+   "nom_marchand": "Nitro Pro Drum Kit",
+   "url": "https://www.thomann.fr/alesis_nitro_pro_drum_kit.htm"
   },
   {
    "id": "nitroproxl",
@@ -609,7 +609,6 @@
    "prix": 729,
    "prixTexte": "729 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/alesis_nitro_pro_xl_drum_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/602644.jpg",
    "pads": 11,
    "cymbales": 5,
@@ -625,7 +624,8 @@
    "empreinte_source": null,
    "nom_complet": "Alesis Nitro Pro XL",
    "segment": "500 à 800 €",
-   "nom_marchand": "Nitro Pro XL Drum Kit"
+   "nom_marchand": "Nitro Pro XL Drum Kit",
+   "url": "https://www.thomann.fr/alesis_nitro_pro_xl_drum_kit.htm"
   },
   {
    "id": "mps750pro",
@@ -634,7 +634,6 @@
    "prix": 749,
    "prixTexte": "749 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_mps_750x_pro_e_drum_mesh_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/561586.jpg",
    "pads": 9,
    "cymbales": 4,
@@ -650,7 +649,8 @@
    "empreinte_source": null,
    "nom_complet": "Millenium MPS-750X Pro",
    "segment": "500 à 800 €",
-   "nom_marchand": "MPS-750X PRO E-Drum Mesh Set"
+   "nom_marchand": "MPS-750X PRO E-Drum Mesh Set",
+   "url": "https://www.thomann.fr/millenium_mps_750x_pro_e_drum_mesh_set.htm"
   },
   {
    "id": "nitroultimate",
@@ -659,7 +659,6 @@
    "prix": 799,
    "prixTexte": "799 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/alesis_nitro_ultimate_drum_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/625865.jpg",
    "pads": 12,
    "cymbales": 5,
@@ -675,7 +674,8 @@
    "empreinte_source": null,
    "nom_complet": "Alesis Nitro Ultimate",
    "segment": "500 à 800 €",
-   "nom_marchand": "Nitro Ultimate Drum Kit"
+   "nom_marchand": "Nitro Ultimate Drum Kit",
+   "url": "https://www.thomann.fr/alesis_nitro_ultimate_drum_kit.htm"
   },
   {
    "id": "backbeat",
@@ -684,7 +684,6 @@
    "prix": 899.99,
    "prixTexte": "899,99 €",
    "marchand": "Donner Music",
-   "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=9901649789152&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Foffre-exclusive-donner-backbeat-batterie-electronique&intsrc=CATF_28584",
    "img": "https://cdn.shopify.com/s/files/1/0612/3120/2528/files/01_8dce4d14-1869-44ed-a923-51cda6bff9df.jpg?v=1719557444",
    "pads": 9,
    "cymbales": 4,
@@ -700,7 +699,8 @@
    "empreinte_source": null,
    "nom_complet": "Donner BackBeat",
    "segment": "800 à 1600 €",
-   "nom_marchand": "BackBeat"
+   "nom_marchand": "BackBeat",
+   "url": "https://fr.donnermusic.com/products/offre-exclusive-donner-backbeat-batterie-electronique"
   },
   {
    "id": "mps1000",
@@ -709,7 +709,6 @@
    "prix": 999,
    "prixTexte": "999 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/millenium_mps_1000_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/511732.jpg",
    "pads": 10,
    "cymbales": 4,
@@ -725,7 +724,8 @@
    "empreinte_source": null,
    "nom_complet": "Millenium MPS-1000",
    "segment": "800 à 1600 €",
-   "nom_marchand": "MPS-1000 E-Drum Set"
+   "nom_marchand": "MPS-1000 E-Drum Set",
+   "url": "https://www.thomann.fr/millenium_mps_1000_e_drum_set.htm"
   },
   {
    "id": "dtx6k2x",
@@ -734,7 +734,6 @@
    "prix": 1198,
    "prixTexte": "1198 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/yamaha_dtx6k2_x_e_drum_set.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/507767.jpg",
    "pads": 8,
    "cymbales": 4,
@@ -751,7 +750,8 @@
    "empreinte_date": "2026-09-13",
    "nom_complet": "Yamaha DTX6K2-X",
    "segment": "800 à 1600 €",
-   "nom_marchand": "DTX6K2-X"
+   "nom_marchand": "DTX6K2-X",
+   "url": "https://www.thomann.fr/yamaha_dtx6k2_x_e_drum_set.htm"
   },
   {
    "id": "td313",
@@ -760,7 +760,6 @@
    "prix": 1498,
    "prixTexte": "1498 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/roland_td313_v_drum_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/626240.jpg",
    "pads": 8,
    "cymbales": 4,
@@ -776,7 +775,8 @@
    "empreinte_source": null,
    "nom_complet": "Roland TD313",
    "segment": "800 à 1600 €",
-   "nom_marchand": "TD313 V-Drum Kit"
+   "nom_marchand": "TD313 V-Drum Kit",
+   "url": "https://www.thomann.fr/roland_td313_v_drum_kit.htm"
   },
   {
    "id": "strata",
@@ -785,7 +785,6 @@
    "prix": 1539,
    "prixTexte": "1539 €",
    "marchand": "Thomann",
-   "url": "https://www.thomann.fr/alesis_strata_club_e_drum_kit.htm?offid=1&affid=3711",
    "img": "https://www.thomann.de/prodbilder/612610.jpg",
    "pads": 9,
    "cymbales": 4,
@@ -801,7 +800,8 @@
    "empreinte_source": null,
    "nom_complet": "Alesis Strata Club",
    "segment": "800 à 1600 €",
-   "nom_marchand": "Strata Club E-Drum Kit"
+   "nom_marchand": "Strata Club E-Drum Kit",
+   "url": "https://www.thomann.fr/alesis_strata_club_e_drum_kit.htm"
   }
  ],
  "notes": [

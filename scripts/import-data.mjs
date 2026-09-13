@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync, mkdirSync, readdirSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { urlPublique } from './greffes.mjs';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE = join(SITE, '..', 'Claude Design - MàJ', 'data');
@@ -130,8 +131,33 @@ const segmentsFaux = modeles.modeles.filter((m) => {
  * dossier Claude Design, qui en est la seule copie conservée.
  */
 const NOTES_INTERNES = ['role_editorial', 'largeur_maquette'];
-const modèlePublic = (m) => Object.fromEntries(Object.entries(m).filter(([k]) => !NOTES_INTERNES.includes(k)));
+
+/**
+ * Le traçage affilié des maquettes ne part pas dans la base publiée : 126 URLs Thomann portent
+ * « ?offid=1&affid=3711 » et les Donner passent par une passerelle shareasale, les deux tagués
+ * pour un autre site de Jordane. La jointure du dessus se fait sur l'URL brute — chez Donner, les
+ * six modèles ne se distinguent QUE par leur paramètre prodsku —, donc on nettoie ici, après.
+ */
+let liensNettoyes = 0, liensRetires = 0;
+const sansTracage = (u) => {
+  const brute = String(u || '').replace(/&amp;/g, '&');
+  if (!brute.startsWith('http')) return u;
+  const propre = urlPublique(brute);
+  if (propre === null) {
+    liensRetires++;
+    console.log(`  ⚠ lien retiré de la base — passerelle de tracking sans destination : ${brute.slice(0, 72)}`);
+    return null;
+  }
+  if (propre !== brute) liensNettoyes++;
+  return propre;
+};
+
+const modèlePublic = (m) => {
+  const { url, ...reste } = Object.fromEntries(Object.entries(m).filter(([k]) => !NOTES_INTERNES.includes(k)));
+  return { ...reste, url: sansTracage(url) };
+};
 const modelesPublic = { ...modeles, modeles: modeles.modeles.map(modèlePublic) };
+for (const a of acc) a.url = sansTracage(a.url);
 
 const write = (p, o) => {
   mkdirSync(dirname(join(SITE, p)), { recursive: true });
@@ -155,6 +181,7 @@ console.log(`import terminé
   ${nbr(plan.length)} entrées du plan éditorial
   ${nbr(reecrits)} liens d'avis réécrits de .dc.html → route publique
   segments joints : ${modeles.modeles.length - sansSeg}/${modeles.modeles.length}
+  liens marchands : ${liensNettoyes} débarrassés de leur traçage, ${liensRetires} retirés (aucun lien affilié ne se publie)
   avis publiés sur ce site : ${avisPublicies.length} (la base en annonce ${reecrits})`);
 if (inconnus.length) console.log(`  ⚠ ${inconnus.length} avis sans route connue :\n     ` + inconnus.join('\n     '));
 const nonSourc = modeles.modeles.filter((m) => !m.empreinte).length;
