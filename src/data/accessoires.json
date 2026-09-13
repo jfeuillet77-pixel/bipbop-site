@@ -1,0 +1,1136 @@
+[
+ {
+  "cat": "Casques",
+  "marque": "the t.bone",
+  "produit": "HD 150",
+  "prix": "26 €",
+  "marchand": "Thomann",
+  "role": "Le casque fermé à 26 €, celui qu'on cite par défaut",
+  "url": "https://www.thomann.fr/the_t.bone_hd_150.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Casques",
+  "marque": "Superlux",
+  "produit": "HD-681 Evo BK",
+  "prix": "27 €",
+  "marchand": "Thomann",
+  "role": "Le meilleur rapport qualité prix du catalogue",
+  "url": "https://www.thomann.fr/superlux_hd_681_evo_bk.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Casques",
+  "marque": "Behringer",
+  "produit": "DH100",
+  "prix": "36 €",
+  "marchand": "Thomann",
+  "role": "Alternative à moins de 40 €",
+  "url": "https://www.thomann.fr/behringer_dh100.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Casques",
+  "marque": "Drumeo",
+  "produit": "Headphones",
+  "prix": "77 €",
+  "marchand": "Thomann",
+  "role": "Conçu pour la batterie, isolation renforcée",
+  "url": "https://www.thomann.fr/drumeo_headphones.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Casques",
+  "marque": "Vic Firth",
+  "produit": "SIH3 Headphones",
+  "prix": "92 €",
+  "marchand": "Thomann",
+  "role": "Isolation maximale, pour jouer à côté d'une acoustique",
+  "url": "https://www.thomann.fr/vic_firth_sih3_headphones.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Casques",
+  "marque": "Alesis",
+  "produit": "DRP100",
+  "prix": "53 €",
+  "marchand": "Woodbrass",
+  "role": "Casque à isolation renforcée pensé pour la batterie",
+  "url": "https://www.woodbrass.com/casques-et-bouchons-alesis-dmphones-p211049.html"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Thomann",
+  "produit": "E-Drum Rug Black 120",
+  "prix": "59 €",
+  "marchand": "Thomann",
+  "role": "Tapis taillé pour les batteries électroniques, 59 €",
+  "url": "https://www.thomann.fr/thomann_e_drum_rug_black_120.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "On-Stage",
+  "produit": "DMA6450 Drum Rug",
+  "prix": "44 €",
+  "marchand": "Thomann",
+  "role": "Le tapis le moins cher du catalogue",
+  "url": "https://www.thomann.fr/on_stage_dma6450.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Efnote",
+  "produit": "Drum Rug",
+  "prix": "57 €",
+  "marchand": "Thomann",
+  "role": "Format compact pour petits kits",
+  "url": "https://www.thomann.fr/efnote_drum_rug.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Rockbag",
+  "produit": "22200 Drum Carpet",
+  "prix": "77 €",
+  "marchand": "Thomann",
+  "role": "Tapis épais, bonne absorption",
+  "url": "https://www.thomann.fr/rockbag_22200_drum_carpet.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Yamaha",
+  "produit": "MAT-1",
+  "prix": "79 €",
+  "marchand": "Thomann",
+  "role": "Tapis compact pour kits DTX",
+  "url": "https://www.thomann.fr/yamaha_mat1.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "t.akustik",
+  "produit": "DS4-1 Add-On",
+  "prix": "74 €",
+  "marchand": "Thomann",
+  "role": "Panneau acoustique, pour les cas difficiles",
+  "url": "https://www.thomann.fr/the_t.akustik_ds4_1_add_on.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Roland",
+  "produit": "TDM-10",
+  "prix": "129 €",
+  "marchand": "Woodbrass",
+  "role": "Tapis conçu pour les racks V-Drums",
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-tapis-tdm-10-p75963.html"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Roland",
+  "produit": "TDM-20",
+  "prix": "208 €",
+  "marchand": "Woodbrass",
+  "role": "Version large pour les kits 5 fûts",
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-tdm-20-tapis-150-x-160-cm-p75964.html"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Meinl",
+  "produit": "Tapis 150 x 160 cm",
+  "prix": "105 €",
+  "marchand": "Woodbrass",
+  "role": "Alternative moins chère au Roland",
+  "url": "https://www.woodbrass.com/pads-accessoires-meinl-mdr-e-tapis-de-sol-pour-batterie-electronique-150-cm-x-160-p164618.html"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Roland",
+  "produit": "NE-1 Noise Eater",
+  "prix": "39 €",
+  "marchand": "Woodbrass",
+  "role": "Patins anti-vibration sous les pieds du rack",
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-ne-1-absorbeur-de-sons-noise-eater-p167491.html"
+ },
+ {
+  "cat": "Tapis et isolation",
+  "marque": "Roland",
+  "produit": "NE-10 Noise Eater",
+  "prix": "138 €",
+  "marchand": "Woodbrass",
+  "role": "Plateau isolant sous la pédale de grosse caisse",
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-ne-10-absorbeur-de-sons-noise-eater-p167486.html"
+ },
+ {
+  "cat": "Sièges",
+  "marque": "Millenium",
+  "produit": "MDTJR Drum Throne Round",
+  "prix": "39 €",
+  "marchand": "Thomann",
+  "role": "Siège junior, guide enfant",
+  "url": "https://www.thomann.fr/millenium_mdtjr_drum_throne_round.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Sièges",
+  "marque": "Millenium",
+  "produit": "MDT4 Drum Throne Round",
+  "prix": "44 €",
+  "marchand": "Thomann",
+  "role": "Le siège d'entrée de gamme correct",
+  "url": "https://www.thomann.fr/millenium_mdt4_drummersitz_rund.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Sièges",
+  "marque": "Tama",
+  "produit": "HT10S Drum Throne",
+  "prix": "55 €",
+  "marchand": "Thomann",
+  "role": "Le premier siège qui ne se dérègle pas",
+  "url": "https://www.thomann.fr/tama_ht10s_drum_throne.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Sièges",
+  "marque": "Pearl",
+  "produit": "D-50 Drum Throne",
+  "prix": "66 €",
+  "marchand": "Thomann",
+  "role": "Montée en gamme, assise plus large",
+  "url": "https://www.thomann.fr/pearl_d_50_drum_throne.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Sièges",
+  "marque": "Donner",
+  "produit": "DT-50",
+  "prix": "72,99 €",
+  "marchand": "Donner Music",
+  "role": "Souvent offert dans les packs Donner",
+  "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=46510495793376&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fsiege-de-batterie-mince-donner-dt-50-marron&intsrc=CATF_28584"
+ },
+ {
+  "cat": "Baguettes",
+  "marque": "Millenium",
+  "produit": "5AN Maple Nylon",
+  "prix": "2,33 €",
+  "marchand": "Thomann",
+  "role": "Olive nylon, moins de claquement sur les pads",
+  "url": "https://www.thomann.fr/millenium_5an_drumsticks.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Baguettes",
+  "marque": "Millenium",
+  "produit": "7A Maple Wood",
+  "prix": "2,22 €",
+  "marchand": "Thomann",
+  "role": "Plus légères, pour les petites mains",
+  "url": "https://www.thomann.fr/millenium_7a_drumsticks.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Baguettes",
+  "marque": "Vic Firth",
+  "produit": "5A Nova Natural",
+  "prix": "5,90 €",
+  "marchand": "Thomann",
+  "role": "La référence, à moins de 6 €",
+  "url": "https://www.thomann.fr/vic_firth_5a_nova_natural_wood_tip.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Baguettes",
+  "marque": "Millenium",
+  "produit": "FY-2 Floppy Stick Rods",
+  "prix": "14,60 €",
+  "marchand": "Thomann",
+  "role": "Pour jouer encore plus doucement le soir",
+  "url": "https://www.thomann.fr/millenium_fy2_floppy_stick_rods.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Baguettes",
+  "marque": "Millenium",
+  "produit": "TC54 Nylon Drum Brushes",
+  "prix": "10,50 €",
+  "marchand": "Thomann",
+  "role": "Balais nylon, frappe silencieuse",
+  "url": "https://www.thomann.fr/millenium_tc54_schlagzeugbesen_nylon.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Baguettes",
+  "marque": "Thomann",
+  "produit": "SMB45 Soft Mallet Bag",
+  "prix": "4,55 €",
+  "marchand": "Thomann",
+  "role": "Housse à baguettes à moins de 5 €",
+  "url": "https://www.thomann.fr/thomann_smb45_soft_mallet_bag.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Baguettes",
+  "marque": "Vic Firth",
+  "produit": "American Classic spécial électronique",
+  "prix": "15,90 €",
+  "marchand": "Woodbrass",
+  "role": "Modèle pensé pour les pads",
+  "url": "https://www.woodbrass.com/baguettes-de-batterie-vic-firth-estick-american-classic-hickory-special-batterie-electronique-p33114.html"
+ },
+ {
+  "cat": "Pads d'entraînement",
+  "marque": "Millenium",
+  "produit": "14\" Practice Pad",
+  "prix": "11 €",
+  "marchand": "Thomann",
+  "role": "Le pad d'entraînement à 11 €",
+  "url": "https://www.thomann.fr/millenium_practice_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads d'entraînement",
+  "marque": "Thomann",
+  "produit": "Sticky Practice Pad",
+  "prix": "12,90 €",
+  "marchand": "Thomann",
+  "role": "Se pose sur n'importe quelle surface",
+  "url": "https://www.thomann.fr/thomann_sticky_practice_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads d'entraînement",
+  "marque": "Thomann",
+  "produit": "Knee Practice Pad",
+  "prix": "14,90 €",
+  "marchand": "Thomann",
+  "role": "S'attache sur la cuisse, pour travailler devant la télé",
+  "url": "https://www.thomann.fr/thomann_knee_practice_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads d'entraînement",
+  "marque": "Remo",
+  "produit": "Putty Pad",
+  "prix": "23,90 €",
+  "marchand": "Thomann",
+  "role": "Le plus silencieux de tous",
+  "url": "https://www.thomann.fr/remo_putty_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads d'entraînement",
+  "marque": "Millenium",
+  "produit": "R1 12\" Metronome Practice Pad",
+  "prix": "49 €",
+  "marchand": "Thomann",
+  "role": "Pad avec métronome intégré",
+  "url": "https://www.thomann.fr/millenium_r1_12_metronome_practice_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Millenium",
+  "produit": "MPS-850 08\" Mesh Head Pad",
+  "prix": "66 €",
+  "marchand": "Thomann",
+  "role": "Le pad mesh de complément le moins cher",
+  "url": "https://www.thomann.fr/millenium_mps_850_08_mesh_head_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Millenium",
+  "produit": "MPS-500/750 10\" Mesh Head Pad",
+  "prix": "79 €",
+  "marchand": "Thomann",
+  "role": "Extension pour la gamme MPS",
+  "url": "https://www.thomann.fr/millenium_mps_500_750_10_mesh_head_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Alesis",
+  "produit": "Nitro Max Expansion Pack",
+  "prix": "89 €",
+  "marchand": "Thomann",
+  "role": "L'extension à lier depuis l'avis Nitro Max",
+  "url": "https://www.thomann.fr/alesis_nitro_max_expansion_pack.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Millenium",
+  "produit": "PT-10 Tompad",
+  "prix": "95 €",
+  "marchand": "Thomann",
+  "role": "Tom au format acoustique",
+  "url": "https://www.thomann.fr/millenium_pt_10_10_x06_tompad_nt.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Millenium",
+  "produit": "PS-13 Snare Pad",
+  "prix": "129 €",
+  "marchand": "Thomann",
+  "role": "Caisse claire au format acoustique",
+  "url": "https://www.thomann.fr/millenium_ps_13_13_x05_snare_nt.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Roland",
+  "produit": "PD-8",
+  "prix": "105 €",
+  "marchand": "Thomann",
+  "role": "Pad caoutchouc de complément",
+  "url": "https://www.thomann.fr/roland_pd8_vdrum_stereo_gummipad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Roland",
+  "produit": "PD-8H 8\" V-Pad",
+  "prix": "189 €",
+  "marchand": "Thomann",
+  "role": "Version mesh du PD-8",
+  "url": "https://www.thomann.fr/roland_pd_8h_8_v_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Roland",
+  "produit": "PDX-6 8\" Mesh",
+  "prix": "198 €",
+  "marchand": "Thomann",
+  "role": "Pad mesh accordable",
+  "url": "https://www.thomann.fr/roland_pdx6_08_vdrum_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Roland",
+  "produit": "PDX-100 10\" V-Pad",
+  "prix": "215 €",
+  "marchand": "Thomann",
+  "role": "Caisse claire de remplacement",
+  "url": "https://www.thomann.fr/roland_pdx100_10_vdrum_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de caisse claire et toms",
+  "marque": "Yamaha",
+  "produit": "TP70S 7,5 pouces 3 zones",
+  "prix": "149 €",
+  "marchand": "Woodbrass",
+  "role": "Caisse claire 3 zones pour DTX",
+  "url": "https://www.woodbrass.com/pads-accessoires-yamaha-tp70s-pad-de-caisse-claire-tom-7-5-3-zones-rim-shots-ouverts-ferms-p266294.html"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Millenium",
+  "produit": "HD-120 9\" Cymbal Pad",
+  "prix": "24,90 €",
+  "marchand": "Thomann",
+  "role": "La cymbale d'appoint à moins de 25 €",
+  "url": "https://www.thomann.fr/millenium_hd_120_9_cymbal_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Millenium",
+  "produit": "MPS-450 12\" Mono Cymbal Pad",
+  "prix": "45 €",
+  "marchand": "Thomann",
+  "role": "Extension MPS-450",
+  "url": "https://www.thomann.fr/millenium_mps_450_12_mono_cymbal_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Millenium",
+  "produit": "MPS-250/500/750 12\" Crash Pad",
+  "prix": "59 €",
+  "marchand": "Thomann",
+  "role": "Troisième cymbale sur la gamme MPS",
+  "url": "https://www.thomann.fr/millenium_mps_250_500_750_12_crash_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Millenium",
+  "produit": "MPS-850 12\" Ride Cymbal Pad",
+  "prix": "69 €",
+  "marchand": "Thomann",
+  "role": "Ride de complément",
+  "url": "https://www.thomann.fr/millenium_mps_850_12_ride_cymbal_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Millenium",
+  "produit": "CC-15 15\" Crash",
+  "prix": "98 €",
+  "marchand": "Thomann",
+  "role": "Grande cymbale, meilleur ressenti",
+  "url": "https://www.thomann.fr/millenium_cc_15_15_crash_cymbal_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Millenium",
+  "produit": "MPS-750X Expansion Pack",
+  "prix": "125 €",
+  "marchand": "Thomann",
+  "role": "Pack d'extension complet",
+  "url": "https://www.thomann.fr/millenium_mps_750x_expansion_pack.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Yamaha",
+  "produit": "PCY-135",
+  "prix": "125 €",
+  "marchand": "Thomann",
+  "role": "Extension pour la gamme DTX",
+  "url": "https://www.thomann.fr/yamaha_pcy135_edrum_cymbal_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Yamaha",
+  "produit": "PCY-100 10\" 3 zones",
+  "prix": "129 €",
+  "marchand": "Thomann",
+  "role": "Cymbale 3 zones",
+  "url": "https://www.thomann.fr/yamaha_pcy_100_10_3_zone_cymbal_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Roland",
+  "produit": "CY-8",
+  "prix": "129 €",
+  "marchand": "Thomann",
+  "role": "Cymbale double zone abordable",
+  "url": "https://www.thomann.fr/roland_cy8_vdrum_stereo_beckenpad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de cymbale",
+  "marque": "Roland",
+  "produit": "OP-TD1C Cymbal Set",
+  "prix": "139 €",
+  "marchand": "Woodbrass",
+  "role": "Extension officielle des TD-1 et TD-02",
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-op-td1c-cymbale-optionnelle-pour-td-1k-kv-p184392.html"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Millenium",
+  "produit": "Hi-Hat Controller",
+  "prix": "29 €",
+  "marchand": "Thomann",
+  "role": "Le contrôleur de charleston à 29 €",
+  "url": "https://www.thomann.fr/millenium_hihat_controller.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Millenium",
+  "produit": "MPS-850 Hi-Hat Controller V2",
+  "prix": "39 €",
+  "marchand": "Thomann",
+  "role": "Contrôleur de remplacement",
+  "url": "https://www.thomann.fr/millenium_mps_850_hi_hat_controller_v2.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Yamaha",
+  "produit": "HH-65 Hi-Hat Controller",
+  "prix": "105 €",
+  "marchand": "Thomann",
+  "role": "Pour les DTX d'entrée de gamme",
+  "url": "https://www.thomann.fr/yamaha_hh60.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Roland",
+  "produit": "CY-5",
+  "prix": "109 €",
+  "marchand": "Thomann",
+  "role": "Petite cymbale charleston ou splash",
+  "url": "https://www.thomann.fr/roland_cy5_v_drum_hihat_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Millenium",
+  "produit": "CH-13 13\" Hi-Hat Pad",
+  "prix": "119 €",
+  "marchand": "Thomann",
+  "role": "Passer au charleston sur pied",
+  "url": "https://www.thomann.fr/millenium_ch_13_13_hi_hat_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Roland",
+  "produit": "FD-8",
+  "prix": "125 €",
+  "marchand": "Thomann",
+  "role": "Le contrôleur Roland le plus courant",
+  "url": "https://www.thomann.fr/roland_fd8_vdrum_hihatcontroller.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Roland",
+  "produit": "FD-9",
+  "prix": "219 €",
+  "marchand": "Woodbrass",
+  "role": "Version récente, meilleure sensibilité",
+  "url": "https://www.woodbrass.com/pedales-charleston-hi-hat-roland-fd-9-p220779.html"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Yamaha",
+  "produit": "KU100 Silent Kick Pedal",
+  "prix": "88 €",
+  "marchand": "Thomann",
+  "role": "La moins chère des pédales sans batte",
+  "url": "https://www.thomann.fr/yamaha_ku100_silent_kick_pedal.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Roland",
+  "produit": "KT-9 Kick Trigger Pedal",
+  "prix": "229 €",
+  "marchand": "Thomann",
+  "role": "Pédale silencieuse, solution appartement",
+  "url": "https://www.thomann.fr/roland_kt_9_kick_trigger_pedal.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Roland",
+  "produit": "KT-10 Kick Trigger Pedal",
+  "prix": "249 €",
+  "marchand": "Woodbrass",
+  "role": "La référence en pédale sans impact",
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-kt-10-pedale-de-declenchement-grosse-caisse-p167563.html"
+ },
+ {
+  "cat": "Charleston et pédales",
+  "marque": "Donner",
+  "produit": "HHCB-12 charleston + pied",
+  "prix": "72,99 €",
+  "marchand": "Donner Music",
+  "role": "Charleston sur pied pour les kits Donner",
+  "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=9255429406944&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-hhcb-12-separater-hi-hat&intsrc=CATF_28584"
+ },
+ {
+  "cat": "Pads de grosse caisse",
+  "marque": "Millenium",
+  "produit": "E-Drum Kick Bass Pad",
+  "prix": "44 €",
+  "marchand": "Thomann",
+  "role": "Pad de grosse caisse de remplacement",
+  "url": "https://www.thomann.fr/millenium_e_drum_kick_bass_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de grosse caisse",
+  "marque": "Millenium",
+  "produit": "MPS-850 08\" Mesh Kick Pad",
+  "prix": "59 €",
+  "marchand": "Thomann",
+  "role": "Version mesh",
+  "url": "https://www.thomann.fr/millenium_mps_850_08_mesh_head_kick_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de grosse caisse",
+  "marque": "Yamaha",
+  "produit": "KP-65A",
+  "prix": "77 €",
+  "marchand": "Thomann",
+  "role": "Pad compact pour DTX",
+  "url": "https://www.thomann.fr/yamaha_kp_65a.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de grosse caisse",
+  "marque": "Roland",
+  "produit": "KD-7 Kick Controller",
+  "prix": "169 €",
+  "marchand": "Thomann",
+  "role": "Déclencheur compact",
+  "url": "https://www.thomann.fr/roland_kd7_kick_controller.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Pads de grosse caisse",
+  "marque": "Roland",
+  "produit": "KD-10 Kick Pad",
+  "prix": "219 €",
+  "marchand": "Thomann",
+  "role": "Pad de grosse caisse V-Drums",
+  "url": "https://www.thomann.fr/roland_kd_10_kick_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Millenium",
+  "produit": "Rack Clamp cymbale",
+  "prix": "7,90 €",
+  "marchand": "Thomann",
+  "role": "Pièce de rack à moins de 10 €",
+  "url": "https://www.thomann.fr/millenium_mps_150_250_425_rack_clamp_cym.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Millenium",
+  "produit": "E-Drum Mounting Plate",
+  "prix": "8,90 €",
+  "marchand": "Thomann",
+  "role": "Plaque de fixation du module",
+  "url": "https://www.thomann.fr/millenium_e_drum_mounting_plate.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Alesis",
+  "produit": "Module Mount",
+  "prix": "14,90 €",
+  "marchand": "Thomann",
+  "role": "Le support de module le moins cher",
+  "url": "https://www.thomann.fr/alesis_module_mount.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Millenium",
+  "produit": "Rack Clamp with L-Rod",
+  "prix": "15,90 €",
+  "marchand": "Thomann",
+  "role": "Ajouter un pad sur le rack",
+  "url": "https://www.thomann.fr/millenium_rack_klammer_mit_lrod.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Millenium",
+  "produit": "E-Drum Multi-Clamp",
+  "prix": "29 €",
+  "marchand": "Thomann",
+  "role": "Multipince universelle",
+  "url": "https://www.thomann.fr/millenium_multiclamp.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Yamaha",
+  "produit": "RCL500 Clamp",
+  "prix": "32 €",
+  "marchand": "Thomann",
+  "role": "Pince pour racks DTX",
+  "url": "https://www.thomann.fr/yamaha_rcl500_clamp.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Roland",
+  "produit": "MDH-STD Pad Holder",
+  "prix": "44 €",
+  "marchand": "Thomann",
+  "role": "Support de pad Roland",
+  "url": "https://www.thomann.fr/roland_mdh_std_pad_holder.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Millenium",
+  "produit": "Multipad Stand Bundle",
+  "prix": "49 €",
+  "marchand": "Thomann",
+  "role": "Pied pour multipad",
+  "url": "https://www.thomann.fr/millenium_multipad_stand_bundle.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Millenium",
+  "produit": "EDR-1 E-Drum Rack",
+  "prix": "129 €",
+  "marchand": "Thomann",
+  "role": "Rack complet de remplacement",
+  "url": "https://www.thomann.fr/millenium_edr_1_e_drum_rack.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Tama",
+  "produit": "MPH63 Electronic Pad Holder",
+  "prix": "82 €",
+  "marchand": "Woodbrass",
+  "role": "Qualité hardware acoustique",
+  "url": "https://www.woodbrass.com/pads-accessoires-tama-electronic-pad-holder-mph63-p367043.html"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Roland",
+  "produit": "PDS-20 Pad Stand",
+  "prix": "159 €",
+  "marchand": "Woodbrass",
+  "role": "Pied pour SPD et Handsonic",
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-pds-20-pour-multipad-spd-et-handsonic-p352404.html"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Sparedrum",
+  "produit": "PCUP1 support module",
+  "prix": "40 €",
+  "marchand": "Woodbrass",
+  "role": "Alternative économique",
+  "url": "https://www.woodbrass.com/pads-accessoires-sparedrum-pcup1-support-module-multipad-+-clamp-p338567.html"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Sparedrum",
+  "produit": "RYMP support acier",
+  "prix": "18 €",
+  "marchand": "Woodbrass",
+  "role": "Moins de 20 €",
+  "url": "https://www.woodbrass.com/pads-accessoires-sparedrum-rymp-support-acier-module-multipad-p338352.html"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Nux",
+  "produit": "Kit tom 10 pouces + clamp",
+  "prix": "99 €",
+  "marchand": "Woodbrass",
+  "role": "Extension propre à la gamme Nux",
+  "url": "https://www.woodbrass.com/pads-accessoires-nux-kit-tom-10-+-stand-clamp-cable-pour-dm-8-dm7-x-p397296.html"
+ },
+ {
+  "cat": "Supports et clamps",
+  "marque": "Nux",
+  "produit": "Perchette + cymbale 10 pouces",
+  "prix": "49 €",
+  "marchand": "Woodbrass",
+  "role": "Extension propre à la gamme Nux",
+  "url": "https://www.woodbrass.com/pads-accessoires-nux-kit-perchette-+-clamp-cymbale-10-pour-dm-210-p396214.html"
+ },
+ {
+  "cat": "Câbles et connectique",
+  "marque": "Millenium",
+  "produit": "M5 Screw Set",
+  "prix": "3,90 €",
+  "marchand": "Thomann",
+  "role": "La visserie qu'on perd toujours",
+  "url": "https://www.thomann.fr/millenium_m5_screw_set_for_module_plates.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Câbles et connectique",
+  "marque": "Roland",
+  "produit": "V-Drum Cable 3,5 m",
+  "prix": "15,90 €",
+  "marchand": "Thomann",
+  "role": "Câble de pad de rechange",
+  "url": "https://www.thomann.fr/roland_v_drum_cable_35m_624477.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Câbles et connectique",
+  "marque": "Millenium",
+  "produit": "MPS-150 Multicore",
+  "prix": "19,90 €",
+  "marchand": "Thomann",
+  "role": "Faisceau de remplacement",
+  "url": "https://www.thomann.fr/millenium_mps_150_multicore.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Câbles et connectique",
+  "marque": "Roland",
+  "produit": "FD-8 Hi-Hat Actuator",
+  "prix": "20,90 €",
+  "marchand": "Thomann",
+  "role": "Pièce d'usure du contrôleur",
+  "url": "https://www.thomann.fr/roland_fd_8_hi_hat_control_actuator.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Câbles et connectique",
+  "marque": "Millenium",
+  "produit": "E-Drum Cable Loom",
+  "prix": "35 €",
+  "marchand": "Thomann",
+  "role": "Faisceau universel",
+  "url": "https://www.thomann.fr/millenium_e_drum_cable_loom_black.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Câbles et connectique",
+  "marque": "Roland",
+  "produit": "V-Drum Multicore",
+  "prix": "49 €",
+  "marchand": "Thomann",
+  "role": "Faisceau Roland",
+  "url": "https://www.thomann.fr/roland_td_9_td_11_td_15_multicore.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Câbles et connectique",
+  "marque": "Alesis",
+  "produit": "Nitro Multicore",
+  "prix": "89 €",
+  "marchand": "Thomann",
+  "role": "Faisceau Nitro, pièce d'usure fréquente",
+  "url": "https://www.thomann.fr/alesis_nitro_multicore.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Câbles et connectique",
+  "marque": "Roland",
+  "produit": "RSH-10 Smartphone Holder",
+  "prix": "49 €",
+  "marchand": "Thomann",
+  "role": "Poser son téléphone sur le rack",
+  "url": "https://www.thomann.fr/roland_rsh_10_drums_smartphone_holder.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Amplification",
+  "marque": "Alesis",
+  "produit": "Nitro Amp",
+  "prix": "98 €",
+  "marchand": "Thomann",
+  "role": "Le premier ampli, moins de 100 €",
+  "url": "https://www.thomann.fr/alesis_nitro_amp.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Amplification",
+  "marque": "Millenium",
+  "produit": "DM-30 Drum Monitor",
+  "prix": "149 €",
+  "marchand": "Thomann",
+  "role": "Alternative petit budget",
+  "url": "https://www.thomann.fr/millenium_dm30_drum_monitor.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Amplification",
+  "marque": "Alesis",
+  "produit": "Nitro Amp Pro",
+  "prix": "149 €",
+  "marchand": "Thomann",
+  "role": "Plus de puissance",
+  "url": "https://www.thomann.fr/alesis_nitro_amp_pro.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Amplification",
+  "marque": "Roland",
+  "produit": "PM-03 Monitor System",
+  "prix": "229 €",
+  "marchand": "Thomann",
+  "role": "Compact et stéréo",
+  "url": "https://www.thomann.fr/roland_pm03_monitor_system.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Amplification",
+  "marque": "Alesis",
+  "produit": "Strike Amp 8 MK2",
+  "prix": "290 €",
+  "marchand": "Thomann",
+  "role": "Pour jouer avec des musiciens",
+  "url": "https://www.thomann.fr/alesis_strike_amp_8_mk2.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Amplification",
+  "marque": "Yamaha",
+  "produit": "MS45DR",
+  "prix": "329 €",
+  "marchand": "Thomann",
+  "role": "Système Yamaha pour DTX",
+  "url": "https://www.thomann.fr/yamaha_ms45dr_e_drum_monitor_system.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Amplification",
+  "marque": "Roland",
+  "produit": "PM-100",
+  "prix": "398 €",
+  "marchand": "Thomann",
+  "role": "La référence en moniteur de batterie",
+  "url": "https://www.thomann.fr/roland_pm_100_personal_drum_monitor.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Amplification",
+  "marque": "Donner",
+  "produit": "DDA-20SE",
+  "prix": "129,99 €",
+  "marchand": "Donner Music",
+  "role": "Le moins cher du lot",
+  "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=47888179626208&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-dda-20se-drum-monitor-speaker&intsrc=CATF_28584"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "DDrum",
+  "produit": "Red Shot Snare / Tom Trigger",
+  "prix": "17,50 €",
+  "marchand": "Thomann",
+  "role": "Hybrider une acoustique pour moins de 20 €",
+  "url": "https://www.thomann.fr/ddrum_d751.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Rtom",
+  "produit": "Black Hole Single Zone Trigger",
+  "prix": "32 €",
+  "marchand": "Thomann",
+  "role": "Convertir un fût acoustique en pad",
+  "url": "https://www.thomann.fr/rtom_black_hole_single_zone_trigger.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Yamaha",
+  "produit": "DT50S Snare Trigger",
+  "prix": "63 €",
+  "marchand": "Thomann",
+  "role": "Capteur de caisse claire",
+  "url": "https://www.thomann.fr/yamaha_dt50s_snare_trigger.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Yamaha",
+  "produit": "DT50K Kick Trigger",
+  "prix": "74 €",
+  "marchand": "Thomann",
+  "role": "Capteur de grosse caisse",
+  "url": "https://www.thomann.fr/yamaha_dt50k_kick_trigger.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Roland",
+  "produit": "RT-30HR Dual Trigger",
+  "prix": "82 €",
+  "marchand": "Thomann",
+  "role": "Peau et cercle",
+  "url": "https://www.thomann.fr/roland_rt_30hr_dual_trigger.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Roland",
+  "produit": "RT-30H Single Trigger",
+  "prix": "83 €",
+  "marchand": "Thomann",
+  "role": "Trigger simple",
+  "url": "https://www.thomann.fr/roland_rt_30h_single_trigger.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Roland",
+  "produit": "RT-30K Kick Trigger",
+  "prix": "93 €",
+  "marchand": "Thomann",
+  "role": "Trigger de grosse caisse",
+  "url": "https://www.thomann.fr/roland_rt_30k_kick_trigger.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Roland",
+  "produit": "BT-1 Bar Trigger Pad",
+  "prix": "125 €",
+  "marchand": "Thomann",
+  "role": "Pad barre à clipser",
+  "url": "https://www.thomann.fr/roland_bt_1_bar_trigger_pad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Roland",
+  "produit": "TM-1 Trigger Module",
+  "prix": "198 €",
+  "marchand": "Thomann",
+  "role": "Le module hybride le plus simple",
+  "url": "https://www.thomann.fr/roland_tm_1_trigger_module.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Triggers et hybride",
+  "marque": "Roland",
+  "produit": "TM-2 Trigger Module",
+  "prix": "239 €",
+  "marchand": "Thomann",
+  "role": "Deux entrées, plus de réglages",
+  "url": "https://www.thomann.fr/roland_tm_2_trigger_module.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Modules de remplacement",
+  "marque": "Millenium",
+  "produit": "MPS-150 Drum Module",
+  "prix": "89 €",
+  "marchand": "Thomann",
+  "role": "Module de rechange, moins de 100 €",
+  "url": "https://www.thomann.fr/millenium_mps_150_drum_module.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Modules de remplacement",
+  "marque": "Millenium",
+  "produit": "MPS-450 Drum Module",
+  "prix": "129 €",
+  "marchand": "Thomann",
+  "role": "Module de rechange",
+  "url": "https://www.thomann.fr/millenium_mps_450_drum_module.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Modules de remplacement",
+  "marque": "Millenium",
+  "produit": "MPS-750X E-Drum Module",
+  "prix": "198 €",
+  "marchand": "Thomann",
+  "role": "Monter en gamme sans changer de kit",
+  "url": "https://www.thomann.fr/millenium_mps_750x_e_drum_module.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Modules de remplacement",
+  "marque": "Millenium",
+  "produit": "MPS-1000 E-Drum Module",
+  "prix": "398 €",
+  "marchand": "Thomann",
+  "role": "Le module le plus complet de la gamme",
+  "url": "https://www.thomann.fr/millenium_mps_1000_e_drum_module.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Housses et transport",
+  "marque": "Thomann",
+  "produit": "Cover Millenium NonaPad",
+  "prix": "15,90 €",
+  "marchand": "Thomann",
+  "role": "Housse à moins de 20 €",
+  "url": "https://www.thomann.fr/thomann_cover_millenium_nonapad.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Housses et transport",
+  "marque": "Millenium",
+  "produit": "Universal Percussion Pad Bag",
+  "prix": "39 €",
+  "marchand": "Thomann",
+  "role": "Sac universel pour multipad",
+  "url": "https://www.thomann.fr/millenium_universal_percussion_pad_bag.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Housses et transport",
+  "marque": "Millenium",
+  "produit": "E-Drum Bag",
+  "prix": "75 €",
+  "marchand": "Thomann",
+  "role": "Transporter le kit complet",
+  "url": "https://www.thomann.fr/millenium_edrumgigbag.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Housses et transport",
+  "marque": "Protection Racket",
+  "produit": "E-Drum Kit Bag 28x16",
+  "prix": "153 €",
+  "marchand": "Thomann",
+  "role": "Protection sérieuse pour les déplacements",
+  "url": "https://www.thomann.fr/protection_racket_e_drum_kit_bag_28x16.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Housses et transport",
+  "marque": "Gewa",
+  "produit": "Housse rack batterie électronique",
+  "prix": "249 €",
+  "marchand": "Woodbrass",
+  "role": "Housse de rack",
+  "url": "https://www.woodbrass.com/pads-accessoires-gewa-housse-rack-batterie-electronique-p76288.html"
+ },
+ {
+  "cat": "Entretien et réglage",
+  "marque": "Thomann",
+  "produit": "Drum Tuning Key",
+  "prix": "1,99 €",
+  "marchand": "Thomann",
+  "role": "Clé de serrage à 2 €, à citer dans tous les packs",
+  "url": "https://www.thomann.fr/thomann_stimmschluessel.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Entretien et réglage",
+  "marque": "Tama",
+  "produit": "TDK05 Drum Tuning Key",
+  "prix": "3,22 €",
+  "marchand": "Thomann",
+  "role": "Clé plus solide",
+  "url": "https://www.thomann.fr/tama_tdk05_drum_tuning_key.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Entretien et réglage",
+  "marque": "Evans",
+  "produit": "SO-6 Tom Sound Off Damper",
+  "prix": "9,40 €",
+  "marchand": "Thomann",
+  "role": "Sourdine, pour hybrider une acoustique",
+  "url": "https://www.thomann.fr/evans_so_6_tom_sound_off_damper.htm?offid=1&affid=3711"
+ },
+ {
+  "cat": "Entretien et réglage",
+  "marque": "Roland",
+  "produit": "CYM-10 Cymbal Part Set",
+  "prix": "11,90 €",
+  "marchand": "Woodbrass",
+  "role": "Feutres et rondelles de rechange",
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-cym-10-kit-pour-cymbales-v-drums-p89155.html"
+ },
+ {
+  "cat": "Apprentissage",
+  "marque": "Donner",
+  "produit": "Pupitre de batterie",
+  "prix": "39,99 €",
+  "marchand": "Donner Music",
+  "role": "Poser sa tablette ou ses partitions",
+  "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=51229459939552&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-drum-music-stand&intsrc=CATF_28584"
+ },
+ {
+  "cat": "Apprentissage",
+  "marque": "Donner",
+  "produit": "Table de percussion",
+  "prix": "39,99 €",
+  "marchand": "Donner Music",
+  "role": "Ranger baguettes et téléphone",
+  "url": "https://donnnermusic.sjv.io/c/6882776/3379894/43895?prodsku=48119954604256&u=https%3A%2F%2Ffr.donnermusic.com%2Fproducts%2Fdonner-percussion-table&intsrc=CATF_28584"
+ }
+]

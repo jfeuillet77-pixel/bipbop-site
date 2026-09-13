@@ -1,0 +1,49 @@
+/* Adaptation aux petits écrans. Rien ne change au-delà de 1080 px.
+   Système de crochets data-* — voir design/brief-responsive.md.
+   Recopié tel quel depuis les maquettes Claude Design (dossier « Claude Design - MàJ »),
+   bloc réellement livré dans les 42 pages saines, et non la version du §03 du brief,
+   qui a perdu la sonde html{--rwd:on} dont se sert le contrôle n°3 de la procédure.
+   NE PAS ÉDITER LOCALEMENT : les 3 paliers doivent rester identiques sur tout le site. */
+
+@media (max-width:1080px){
+  html{--rwd:on}
+  [data-rwd="tbl"],*:has(>[data-rwd="tblrow"]){overflow-x:auto!important;scrollbar-width:thin}
+  [data-rwd="tblrow"]{min-width:620px}
+  [data-rwd="sp"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c4"],[data-rwd="c5"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  [data-rwd="foot"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px!important}
+  [data-sticky]{position:static!important;top:auto!important}
+  [data-hdr] a{white-space:nowrap}
+  [data-pad]{padding-left:26px!important;padding-right:26px!important}
+  [data-mar]{margin-left:26px!important;margin-right:26px!important}
+  img{max-width:100%}
+  pre{max-width:100%}
+}
+
+@media (max-width:860px){
+  [data-rwd="sp2"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c3"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  [data-pad]{padding-left:18px!important;padding-right:18px!important}
+  [data-mar]{margin-left:18px!important;margin-right:18px!important}
+  [data-hdr]{flex-wrap:wrap!important;row-gap:12px!important}
+  [data-nav]{flex-wrap:wrap!important;gap:16px!important}
+  [data-big="a"]{font-size:76px!important}
+  [data-big="b"]{font-size:34px!important;line-height:1.06!important}
+  [data-big="c"]{font-size:27px!important;line-height:1.1!important}
+  [data-big="d"]{font-size:23px!important;line-height:1.14!important}
+}
+
+@media (max-width:620px){
+  [data-rwd="c3"],[data-rwd="c4"],[data-rwd="c5"],[data-rwd="mini"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="mini"]{justify-items:start!important;row-gap:12px!important}
+  [data-rwd="def"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="def"]>div:nth-child(-n+2){display:none}
+  [data-rwd="foot"]{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+  [data-rwd="tblrow"]{min-width:540px}
+  [data-pad]{padding-left:14px!important;padding-right:14px!important}
+  [data-mar]{margin-left:14px!important;margin-right:14px!important}
+  [data-big="a"]{font-size:58px!important}
+  [data-big="b"]{font-size:29px!important}
+  [data-big="c"]{font-size:24px!important}
+  [data-big="d"]{font-size:21px!important}
+}

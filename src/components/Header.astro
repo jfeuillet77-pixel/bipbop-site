@@ -3,9 +3,15 @@ import BipbopMarque from './mascotte/BipbopMarque.astro';
 
 interface Props {
   currentPage?: string;
+  cta?: 'comparatif' | 'demarrer';
 }
 
-const { currentPage = '' } = Astro.props;
+const { currentPage = '', cta = 'comparatif' } = Astro.props;
+
+const CTA = {
+  comparatif: { label: 'Trouver ma batterie', href: '/comparatif/' },
+  demarrer: { label: 'Par où commencer\u00a0?', href: '/guides/' },
+}[cta];
 
 const navItems = [
   { label: 'Comparatif', href: '/comparatif/', key: 'comparatif' },
@@ -15,12 +21,12 @@ const navItems = [
 ];
 ---
 
-<header class="header">
+<header class="header" data-pad data-hdr>
   <a href="/" class="logo">
     <span class="logo-icon"><BipbopMarque /></span>
     <span class="logo-text">BipBop</span>
   </a>
-  <nav class="nav">
+  <nav class="nav" data-nav aria-label="Navigation principale">
     {navItems.map((item) => (
       <a
         href={item.href}
@@ -30,7 +36,7 @@ const navItems = [
       </a>
     ))}
   </nav>
-  <a href="/comparatif/" class="cta-header">Trouver ma batterie</a>
+  <a href={CTA.href} class="cta-header">{CTA.label}</a>
 </header>
 
 <style>
@@ -104,5 +110,26 @@ const navItems = [
   .cta-header:hover {
     box-shadow: 1px 1px 0 var(--color-encre);
     color: var(--color-encre);
+  }
+
+  /* Cibles tactiles : le Brief-Responsive §06 en laisse la charge à l'intégration.
+     Sous 860 px, tout ce qui est cliquable dans l'en-tête atteint 44 px de haut
+     sans changer le dessin au-delà. */
+  @media (max-width: 860px) {
+    .nav a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 2px;
+    }
+    .cta-header {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0 16px;
+    }
+    .logo {
+      min-height: 44px;
+    }
   }
 </style>
