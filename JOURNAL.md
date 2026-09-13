@@ -1,5 +1,55 @@
 # Journal BipBop
 
+## 13 septembre 2026 (nuit) — Registre légal rempli, formulaire de contact réel, et leçon Netlify
+
+Demande de Jordane en trois points : nommer le responsable de traitement, compléter les
+sous-traitants, supprimer l'envoi d'e-mails (pas de mailing) ; retirer l'encart e-mail de la page
+Contact ; faire marcher le formulaire, vers `contact@bipbop.eu`.
+
+**Tout est passé par `scripts/greffes.mjs`, rien par les pages** : une page est régénérée à chaque
+portage, une retouche manuelle y aurait tenu dix minutes. Trois greffes donc — `grefferLegal()` sur
+les deux pages légales, `grefferContact()` sur Contact. Un champ `[en attente]` qui resterait
+non renseigné **fait échouer le portage**, au lieu de se publier entre crochets comme hier.
+
+**État légal publié maintenant** : responsable de traitement et directeur de publication « Jordane
+Feuillet » ; hébergeur « Netlify, Inc. » ; mesure d'audience déclarée « Google Analytics — Google
+Ireland Limited » ; ligne « Envoi des e-mails » retirée du tableau ; adresse postale, SIREN et TVA
+non publiés, renvoyés à la page Contact. **Aucune adresse e-mail n'apparaît dans le HTML publié** (`grep contact@bipbop` → 0 dans `src/pages` comme dans `dist`) — la destination des soumissions se
+règle dans Netlify, pas dans le code. Quatre phrases de la politique ont aussi été réalignées parce
+que la décision « aucun lien affilié » les rendait fausses (elles affirmaient qu'un identifiant
+d'affiliation part au clic).
+
+**Choix assumé, à ne pas confondre avec un oubli** : la politique déclare Google Analytics alors
+qu'**aucun outil de mesure n'est installé** — Jordane a tranché ainsi quand je le lui ai signalé.
+Écrit dans l'en-tête du module, avec les deux choses à faire le jour de l'installation : brancher
+le script derrière le consentement du bandeau, et aligner la durée (la page dit 25 mois, GA4
+plafonne à 14). Le bandeau réclame donc aujourd'hui un accord pour une mesure qui n'existe pas.
+
+**Le formulaire de la maquette était décoratif** : `<div>` en guise de champs, `<span>` en guise
+d'options, un carré sans `input` pour le consentement, bouton `type="button"`. Remplacé par un
+formulaire Netlify réel (prénom, e-mail, sujet en radios, message, consentement obligatoire,
+honeypot), dans les styles du design ; les trois phrases d'exemple de la maquette sont devenues les
+`placeholder`. Capture d'écran à l'appui, la pastille sélectionnée et la case cochée rendent comme
+le design, et les 38 pages passent toujours la mesure à 390 px.
+
+**Pourquoi ça ne marchait pas, deux causes, et une leçon.** (1) `[[redirects]] from="/*"
+to="/404.html" status=404` dans `netlify.toml` attrapait le POST avant le gestionnaire de
+formulaires : règle retirée, elle était inutile — Netlify sert `/404.html` par convention.
+(2) La **détection de formulaires était désactivée** sur le site ; Jordane l'a activée, et **ça n'a
+rien changé tant qu'un nouveau déploiement n'a pas eu lieu** — Netlify enregistre les formulaires à
+la compilation, pas rétroactivement. Après le rebuild (`0f2aafc`) : `POST /contact/` → **200**, en
+`cache-control: no-store` sans `etag`, alors que le même fichier en GET répond `public,max-age=0,
+must-revalidate` + `etag` — c'est bien le service de formulaires qui répond, pas le statique.
+**Leçon à garder : « déployé » et « enregistré » ne sont pas la même chose, et l'un ne prouve pas
+l'autre.** Reste à saisir dans Netlify : Forms → Notifications → `contact@bipbop.eu`.
+
+Deux soumissions de test sont dans Netlify (prénom « Test ») — à effacer si ça gêne. Sans
+JavaScript, la page est rendue telle quelle sans confirmation : un `public/thank-you.html`
+(à ajouter au `IGNORE` de `verif.mjs`, sinon sa navigation manquante fait échouer le contrôle)
+couvrirait ce cas si on le demande.
+
+---
+
 ## 13 septembre 2026 (nuit) — Les liens marchands partaient en commission chez quelqu'un d'autre
 
 Jordane a repéré `?offid=1&affid=3711` dans une URL Thomann publiée. Ce n'était pas un détail de
