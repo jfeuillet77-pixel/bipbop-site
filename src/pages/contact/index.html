@@ -102,33 +102,64 @@ var t=setInterval(function(){if(go())clearInterval(t);},150);setTimeout(function
 </div>
 <div data-rwd="sp" data-pad style="padding:0 40px 20px;display:grid;grid-template-columns:1fr 320px;gap:36px;align-items:start">
 <div style="background:#fff;border:2.5px solid #241c14;border-radius:20px;padding:28px 30px;box-shadow:6px 6px 0 #241c14">
+<form id="form-contact" name="contact" method="POST" action="/contact/" data-netlify="true" netlify-honeypot="_champ_invisible">
+<input type="hidden" name="form-name" value="contact">
 <div data-rwd="sp2" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px">
 <div style="display:flex;flex-direction:column;gap:7px">
-<label style="font:700 13.5px 'Work Sans',sans-serif">Ton prénom</label><div style="background:#fff;border:2.5px solid #241c14;border-radius:12px;padding:13px 15px;font:400 15px 'Work Sans',sans-serif;color:#7a6b59">Camille</div></div>
+<label for="prenom" style="font:700 13.5px 'Work Sans',sans-serif">Ton prénom</label><input class="champ" id="prenom" name="prenom" type="text" required placeholder="Camille" autocomplete="given-name"></div>
 <div style="display:flex;flex-direction:column;gap:7px">
-<label style="font:700 13.5px 'Work Sans',sans-serif">Ton e-mail</label><div style="background:#fff;border:2.5px solid #241c14;border-radius:12px;padding:13px 15px;font:400 15px 'Work Sans',sans-serif;color:#7a6b59">camille@exemple.fr</div></div>
+<label for="email" style="font:700 13.5px 'Work Sans',sans-serif">Ton e-mail</label><input class="champ" id="email" name="email" type="email" required placeholder="camille@exemple.fr" autocomplete="email"></div>
 </div>
-<div style="margin-bottom:18px"><div style="display:flex;flex-direction:column;gap:7px">
-<label style="font:700 13.5px 'Work Sans',sans-serif">De quoi veux-tu parler ?</label><div style="display:flex;flex-wrap:wrap;gap:8px">
-<span style="font:700 14px 'Work Sans',sans-serif;padding:9px 14px;border-radius:11px;border:2.5px solid #241c14;background:#ffd166">Quelle batterie choisir</span>
-<span style="font:500 14px 'Work Sans',sans-serif;padding:9px 14px;border-radius:11px;border:2px solid #e4d8c6;color:#5a4c3e">Signaler une erreur</span>
-<span style="font:500 14px 'Work Sans',sans-serif;padding:9px 14px;border-radius:11px;border:2px solid #e4d8c6;color:#5a4c3e">Je suis une marque</span>
-<span style="font:500 14px 'Work Sans',sans-serif;padding:9px 14px;border-radius:11px;border:2px solid #e4d8c6;color:#5a4c3e">Autre</span>
-</div></div></div>
-<div style="margin-bottom:18px"><div style="display:flex;flex-direction:column;gap:7px">
-<label style="font:700 13.5px 'Work Sans',sans-serif">Ton message</label><div style="background:#fff;border:2.5px solid #241c14;border-radius:12px;padding:13px 15px;min-height:130px;font:400 15px/1.6 'Work Sans',sans-serif;color:#7a6b59">Dis-nous ton budget, la place dont tu disposes et si tu vis en appartement. Avec ça on peut déjà répondre quelque chose d'utile.</div></div></div>
-<div style="display:flex;align-items:flex-start;gap:11px;margin-bottom:22px">
-<span style="width:20px;height:20px;flex:none;border-radius:6px;border:2.5px solid #241c14;background:#fff;margin-top:2px"></span>
-<span style="font:400 13.5px/1.5 'Work Sans',sans-serif;color:#5a4c3e;max-width:520px">J'accepte que mon message soit conservé le temps d'obtenir une réponse. Voir la <a href="/politique-confidentialite/" style="color:#d2431f">politique de confidentialité</a>.</span>
-</div>
-<button type="button" style="display:inline-block;font:700 16px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:15px 24px;border-radius:13px;box-shadow:5px 5px 0 #241c14" style-hover="box-shadow:2px 2px 0 #241c14">Envoyer le message</button>
+<fieldset style="border:0;margin:0 0 18px;padding:0">
+<legend style="font:700 13.5px 'Work Sans',sans-serif;margin-bottom:9px">De quoi veux-tu parler ?</legend>
+<div style="display:flex;flex-wrap:wrap;gap:8px">
+<label class="pastille"><input type="radio" name="sujet" value="Quelle batterie choisir" checked required><span>Quelle batterie choisir</span></label>
+<label class="pastille"><input type="radio" name="sujet" value="Signaler une erreur"><span>Signaler une erreur</span></label>
+<label class="pastille"><input type="radio" name="sujet" value="Je suis une marque"><span>Je suis une marque</span></label>
+<label class="pastille"><input type="radio" name="sujet" value="Autre"><span>Autre</span></label>
+</div></fieldset>
+<div style="margin-bottom:18px;display:flex;flex-direction:column;gap:7px">
+<label for="message" style="font:700 13.5px 'Work Sans',sans-serif">Ton message</label><textarea class="champ" id="message" name="message" rows="7" required placeholder="Dis-nous ton budget, la place dont tu disposes et si tu vis en appartement. Avec ça on peut déjà répondre quelque chose d'utile."></textarea></div>
+<label class="case" style="display:flex;align-items:flex-start;gap:11px;margin-bottom:22px">
+<input type="checkbox" name="consentement" value="oui" required><span class="carre" aria-hidden="true"></span>
+<span style="font:400 13.5px/1.5 'Work Sans',sans-serif;color:#5a4c3e;max-width:520px">J'accepte que mon message soit conservé le temps d'obtenir une réponse. Voir la <a href="/politique-confidentialite/" style="color:#d2431f">politique de confidentialité</a>.</span></label>
+<p id="erreur" hidden role="alert" style="font:600 14px 'Work Sans',sans-serif;color:#8a1f00;background:#fde3dd;border:2.5px solid #241c14;border-radius:12px;padding:12px 14px;margin:0 0 16px"></p>
+<input type="text" name="_champ_invisible" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+<button id="envoi" type="submit" style="display:inline-block;font:700 16px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:15px 24px;border-radius:13px;box-shadow:5px 5px 0 #241c14;cursor:pointer">Envoyer le message</button>
+</form>
+<div id="envoye" hidden style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:16px;padding:22px 24px">
+<div style="font:800 22px 'Bricolage Grotesque',sans-serif;color:#0f5f5a;margin-bottom:8px">C'est envoyé.</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#264c49;margin:0">Ton message est arrivé. On répond en général sous 48 heures, et jamais par un robot.</p></div>
+<style>
+#form-contact .champ{background:#fff;border:2.5px solid #241c14;border-radius:12px;padding:13px 15px;font:400 15px 'Work Sans',sans-serif;color:#241c14;width:100%;box-sizing:border-box}
+#form-contact .champ::placeholder{color:#7a6b59}
+#form-contact .champ:focus{outline:none;border-color:#0f7d76;box-shadow:0 0 0 3px rgba(15,125,118,.18)}
+#form-contact textarea.champ{min-height:150px;line-height:1.6;resize:vertical}
+#form-contact .pastille input{position:absolute;opacity:0;width:1px;height:1px}
+#form-contact .pastille span{font:500 14px 'Work Sans',sans-serif;padding:9px 14px;border-radius:11px;border:2px solid #e4d8c6;color:#5a4c3e;cursor:pointer;display:inline-block}
+#form-contact .pastille:has(input:checked) span{background:#ffd166;border:2.5px solid #241c14;color:#241c14;font-weight:700}
+#form-contact .pastille:has(input:focus-visible) span{outline:2.5px solid #0f7d76;outline-offset:2px}
+#form-contact .case input{position:absolute;opacity:0;width:1px;height:1px}
+#form-contact .case .carre{width:20px;height:20px;flex:none;border-radius:6px;border:2.5px solid #241c14;background:#fff;margin-top:2px;display:block;position:relative}
+#form-contact .case:has(input:checked) .carre{background:#ffd166}
+#form-contact .case:has(input:checked) .carre::after{content:"";position:absolute;left:5px;top:1px;width:6px;height:11px;border:solid #241c14;border-width:0 2.5px 2.5px 0;transform:rotate(42deg)}
+#form-contact .case:has(input:focus-visible) .carre{outline:2.5px solid #0f7d76;outline-offset:2px}
+</style>
+<script>
+(function(){
+  var f=document.getElementById('form-contact');if(!f)return;
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var b=document.getElementById('envoi'),d=new FormData(f);
+    b.disabled=true;b.textContent="Envoi en cours…";
+    fetch(f.getAttribute('action')||'/contact/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(d).toString()})
+    .then(function(r){if(!r.ok)throw new Error(r.status);f.hidden=true;var m=document.getElementById('envoye');m.hidden=false;m.scrollIntoView({behavior:'smooth',block:'center'});})
+    .catch(function(){b.disabled=false;b.textContent='Envoyer le message';var e2=document.getElementById('erreur');e2.hidden=false;e2.textContent="L'envoi n'a pas abouti. Réessaie dans un instant — si ça persiste, le message est bien parti vers la page de Netlify, signale-le nous.";});
+  });
+})();
+</script>
 </div>
 <div style="display:flex;flex-direction:column;gap:16px">
-<div style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:18px;padding:20px">
-<div style="font:700 15.5px 'Work Sans',sans-serif;color:#0f5f5a;margin-bottom:9px">Par e-mail, si tu préfères</div>
-<p style="font:400 14.5px/1.55 'Work Sans',sans-serif;color:#264c49;margin:0 0 12px"><span style="background:#ffd166;border-bottom:2px solid #241c14;padding:1px 6px;font-weight:600">[contact@bipbop.eu]</span></p>
-<p style="font:400 13.5px/1.5 'Work Sans',sans-serif;color:#3f5b58;margin:0">On lit tout. On ne répond pas toujours en trois lignes, mais on répond.</p>
-</div>
 <div style="background:#241c14;border-radius:18px;padding:20px;color:#fdf6ec">
 <div style="font:700 15.5px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:9px">Tu es une marque ?</div>
 <p style="font:400 14.5px/1.55 'Work Sans',sans-serif;color:#c4b7a7;margin:0">On accepte de recevoir du matériel en prêt pour l'essayer. On n'accepte ni article sponsorisé, ni avis rédigé par un tiers, ni lien payant. Aucun budget ne fait bouger un classement. C'est non négociable, autant le savoir avant d'écrire.</p>
