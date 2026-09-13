@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# sources Astro retirées par le portage — l'historique git les garde déjà
+design/port-seche/

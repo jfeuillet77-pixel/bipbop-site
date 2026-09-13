@@ -7,18 +7,28 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
 
 ## Les cinq lois non négociables
 
-1. **Fidélité à la maquette.** `../Claude Design - MàJ/<Page>.dc.html` dictent contenu, structure,
-   ton et layout. Ne jamais simplifier, résumer, réécrire ou inventer une section.
-2. **Les chiffres viennent de `src/data/`.** Jamais recopiés depuis une autre page. Si la
-   maquette et `src/data/` divergent, c'est la maquette qui a tort — et on l'écrit dans
-   `design/ecarts-maquettes.md`.
-3. **Le responsive se fait par crochets `data-*`.** Les styles étant en ligne dans les maquettes,
-   un sélecteur qui cible `style="…"` ne matche jamais rien. Poser les crochets, ne jamais les
-   renommer. Un tableau de 4 colonnes ou plus **défile**, il ne se replie pas.
+1. **On ne retape pas une maquette, on la porte.** `node scripts/port.mjs` écrit les 37 pages
+   statiques depuis `../Claude Design - MàJ/<Page>.dc.html`, corps et `<style>` mot pour mot. Une
+   page se modifie dans Claude Design, puis se re-porte — jamais à la main dans `src/pages/` :
+   l'édition serait écrasée au portage suivant. Écrire une page à la main, c'est créer les dérives
+   que `npm run fidelite` aurait ensuite à réparer.
+2. **Un écart assumé avec la maquette se déclare, il ne se tape pas.** Prix faux, faute : une
+   entrée dans `design/port-corrections.json` avec sa raison et sa source, appliquée à chaque
+   portage. Le portage échoue si le texte d'origine a bougé, ce qui force la relecture.
+   Sinon c'est `src/data/` qui a raison et la divergence s'écrit dans `design/ecarts-maquettes.md`.
+3. **Le responsive vient de la maquette, tel quel.** Le bloc `<!--responsive-->` porte les crochets
+   `data-rwd` / `data-pad` / `data-mar` / `data-big` / `data-sticky` / `data-hdr` et leurs
+   `@media 1080 / 860 / 620`. Les styles étant en ligne, un sélecteur qui cible `style="…"` ne
+   matche jamais rien. Un tableau de 4 colonnes ou plus **défile**, il ne se replie pas.
 4. **Publier une page a des conséquences sur 3 à 6 autres.** Les listes de l'`Aide-Memoire`
    §01 à §04 ne sont pas optionnelles : hubs, compteurs, maillage, comparatif, plan éditorial.
-5. **`npm run check` doit passer** avant un commit. Il mesure réellement la largeur de défilement
-   dans Chrome à 1024 / 900 / 768 / 390 px ; une page peut paraître correcte et casser.
+5. **`npm run check` et `npm run fidelite` doivent passer** avant un commit. `check` mesure
+   réellement la largeur de défilement dans Chrome à 1024 / 900 / 768 / 390 px ; `fidelite`
+   compare chaque page à sa maquette segment par segment. Une page peut paraître correcte et casser.
+
+**Exceptions à la loi 1** : `/comparatif/` est la seule page dynamique du dossier (`DCLogic`,
+42 liaisons `{{ }}`) — elle reste en `src/pages/comparatif/index.astro` et se maintient à la main.
+`404.html` se porte aussi (route sans permalien).
 
 ## Ce qui ne se publie jamais
 

@@ -168,7 +168,11 @@ function verifPrix() {
 function verifNav() {
   const signatures = new Map();
   for (const f of pages) {
-    const html = lu(f), i = html.search(/data-nav/);
+    // Le crochet responsive porte le même nom dans le CSS (« [data-nav]{…} », en tête de page)
+    // et dans le balisage de l'en-tête : on ne retient que l'attribut, pas le sélecteur.
+    const html = lu(f);
+    const m = html.match(/<(\w+)[^>]*\sdata-nav/);
+    const i = m ? html.indexOf(m[0]) : -1;
     let sig;
     if (i < 0) sig = '(aucune navigation marquée data-nav)';
     else {

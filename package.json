@@ -11,6 +11,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "data": "node scripts/import-data.mjs",
+    "port": "node scripts/port.mjs",
     "verif": "node scripts/verif.mjs",
     "check": "npm run build && node scripts/verif.mjs",
     "prebuild": "node scripts/import-data.mjs",

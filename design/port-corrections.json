@@ -1,0 +1,36 @@
+{
+  "_": [
+    "Corrections apportées au texte des maquettes Claude Design, appliquées par scripts/port.mjs à chaque portage.",
+    "Un portage réécrit les pages depuis la maquette : toute correction faite à la main dans src/pages/ disparaît",
+    "à la run suivante. Elles vivent donc ici, avec leur raison et leur source.",
+    "Si le texte « au » n'est plus trouvé dans la maquette, le portage échoue exprès : cela veut dire que",
+    "Claude Design a bougé et qu'il faut vérifier si la correction est encore juste.",
+    "Pour les prix, la source est le catalogue marchand dont est issu data/modeles.json (relevé 2026-09-13)."
+  ],
+  "corrections": [
+    {
+      "fichier": "Avis.dc.html",
+      "au": "198 €",
+      "remplace": "219 €",
+      "pourquoi": "Millenium HD-120 : la maquette donne un prix que aucun catalogue ne confirme ; Thomann est à 219 €."
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": "599 €",
+      "remplace": "698 €",
+      "pourquoi": "Alesis Nitro Pro : 599 € est le prix de la Nitro Max, pas de la Nitro Pro, en source à 698 €."
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": "699,99 €",
+      "remplace": "539,99 €",
+      "pourquoi": "Donner DED-300X : le catalogue Donner comme Woodbrass le donnent à 539,99 €, pas 699,99 €."
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": "1 199 €",
+      "remplace": "1 198 €",
+      "pourquoi": "Yamaha DTX6K2-X : la source est à 1198 € ; la maquette arrondissait à 1 199 €."
+    }
+  ]
+}

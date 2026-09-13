@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Tu as déjà la batterie.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="apple-touch-icon" href="/bipbop-touch-180.png">
+<link rel="canonical" href="https://bipbop.eu/les-bases/installer-sans-deranger/">
+<title>Installer sa batterie sans déranger les voisins — BipBop</title>
+<link rel="icon" type="image/svg+xml" href="/bipbop-marque.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#efe6d8;font-family:'Work Sans',system-ui,sans-serif}
+a{color:#d2431f}a:hover{color:#b93a19}
+</style>
+<!--responsive--><style>
+/* Adaptation aux petits ecrans. Rien ne change au-dela de 1080px. */
+@media (max-width:1080px){
+  html{--rwd:on}
+  [data-rwd="tbl"],*:has(>[data-rwd="tblrow"]){overflow-x:auto!important;scrollbar-width:thin}
+  [data-rwd="tblrow"]{min-width:620px}
+  [data-rwd="sp"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c4"],[data-rwd="c5"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  [data-sticky]{position:static!important;top:auto!important}
+  [data-hdr] a{white-space:nowrap}
+  [data-pad]{padding-left:26px!important;padding-right:26px!important}
+  [data-mar]{margin-left:26px!important;margin-right:26px!important}
+  img{max-width:100%}
+  pre{max-width:100%}
+}
+@media (max-width:860px){
+  [data-rwd="sp2"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c3"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  [data-pad]{padding-left:18px!important;padding-right:18px!important}
+  [data-mar]{margin-left:18px!important;margin-right:18px!important}
+  [data-hdr]{flex-wrap:wrap!important;row-gap:12px!important}
+  [data-nav]{flex-wrap:wrap!important;gap:16px!important}
+  [data-big="a"]{font-size:76px!important}
+  [data-big="b"]{font-size:34px!important;line-height:1.06!important}
+  [data-big="c"]{font-size:27px!important;line-height:1.1!important}
+  [data-big="d"]{font-size:23px!important;line-height:1.14!important}
+}
+@media (max-width:620px){
+  [data-rwd="c3"],[data-rwd="c4"],[data-rwd="c5"],[data-rwd="mini"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="mini"]{justify-items:start!important;row-gap:12px!important}
+  [data-rwd="tblrow"]{min-width:540px}
+  [data-pad]{padding-left:14px!important;padding-right:14px!important}
+  [data-mar]{margin-left:14px!important;margin-right:14px!important}
+  [data-big="a"]{font-size:58px!important}
+  [data-big="b"]{font-size:29px!important}
+  [data-big="c"]{font-size:24px!important}
+  [data-big="d"]{font-size:21px!important}
+}
+
+@media (max-width:1080px){
+  [data-rwd="foot"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px!important}
+}
+@media (max-width:620px){
+  [data-rwd="foot"]{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+}
+
+@media (max-width:620px){
+  [data-rwd="def"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="def"]>div:nth-child(-n+2){display:none}
+}
+</style>
+
+<script>
+(function(){var K='bipbop-consent';
+function go(){var el=document.getElementById('cookie-banner');if(!el)return false;
+if(!localStorage.getItem(K)){el.style.display='flex';}
+el.addEventListener('click',function(e){var b=e.target.closest('[data-consent]');if(!b)return;
+try{localStorage.setItem(K,b.getAttribute('data-consent'));}catch(err){}el.style.display='none';});
+return true;}
+var t=setInterval(function(){if(go())clearInterval(t);},150);setTimeout(function(){clearInterval(t);},20000);})();
+</script>
+</head>
+<body>
+<div style="max-width:1180px;margin:0 auto;background:#fdf6ec;font-family:'Work Sans',system-ui,sans-serif;color:#241c14">
+
+<div data-pad data-hdr style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 40px;background:#fdf6ec;border-bottom:2.5px solid #241c14">
+<a href="/" style="display:flex;align-items:center;gap:11px;text-decoration:none;color:#241c14">
+<span style="width:34px;height:34px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 20px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</a>
+<div data-nav style="display:flex;gap:24px;font:500 14px 'Work Sans',sans-serif">
+<a href="/comparatif/" style="color:#241c14;text-decoration:none">Comparatif</a><a href="/avis/" style="color:#241c14;text-decoration:none">Avis</a><a href="/guides/" style="color:#241c14;font-weight:700;text-decoration:underline;text-decoration-thickness:2.5px;text-underline-offset:5px;text-decoration-color:#d2431f">Guides</a><a href="/a-propos/" style="color:#241c14;text-decoration:none">À propos</a>
+</div>
+<a href="/comparatif/" style="font:700 13px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;border:2.5px solid #241c14;padding:9px 15px;border-radius:10px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Trouver ma batterie</a>
+</div>
+<div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">ACCUEIL / GUIDES / JOUER SANS DÉRANGER</div>
+
+<div data-pad style="padding:20px 40px 32px;max-width:840px">
+<div style="display:inline-flex;align-items:center;gap:8px;font:700 12px 'Work Sans',sans-serif;letter-spacing:.04em;background:#0f7d76;color:#fff;border:2.5px solid #241c14;border-radius:9px;padding:6px 12px;margin-bottom:20px">GUIDE PRATIQUE</div>
+<h1 data-big="b" style="font:800 56px/1.02 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:pretty">Installer sa batterie sans déranger les voisins</h1>
+<p style="font:400 20px/1.55 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 22px;max-width:720px;text-wrap:pretty">Tu as déjà la batterie. Reste à la rendre supportable pour les gens autour. Quatre interventions par ordre d'efficacité, de dix euros à deux cent quarante.</p>
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+<div style="width:44px;height:44px;border-radius:50%;overflow:hidden;border:2.5px solid #241c14;background:#ffd166"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></div>
+<div style="font:500 14px 'Work Sans',sans-serif;color:#5a4c3e">Par <strong style="color:#241c14;font-weight:700">BipBop</strong></div>
+<span style="color:#c9b9a3">·</span>
+<div style="font:500 13px 'IBM Plex Mono',monospace;color:#786550">12 SEPT. 2026 · 8 MIN DE LECTURE</div>
+</div>
+</div>
+
+<div data-rwd="sp" data-pad style="padding:0 40px 40px;display:grid;grid-template-columns:214px 1fr;gap:44px;align-items:start">
+
+<div data-sticky style="position:sticky;top:20px;display:flex;flex-direction:column;gap:16px">
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:18px;box-shadow:4px 4px 0 #241c14">
+<div style="font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#786550;margin-bottom:13px">AU PROGRAMME</div>
+<div style="display:flex;flex-direction:column;gap:10px;font:500 13.5px/1.35 'Work Sans',sans-serif">
+<a href="#reponse" style="color:#241c14;text-decoration:none;font-weight:700;border-left:3px solid #d2431f;padding-left:10px;margin-left:-13px">La réponse courte</a>
+<a href="#quoi" style="color:#4a3d31;text-decoration:none">Ce que le voisin entend</a>
+<a href="#actions" style="color:#4a3d31;text-decoration:none">Les quatre interventions</a>
+<a href="#budgets" style="color:#4a3d31;text-decoration:none">Trois budgets</a>
+<a href="#gratuit" style="color:#4a3d31;text-decoration:none">Ce qui ne coûte rien</a>
+<a href="#voisins" style="color:#4a3d31;text-decoration:none">Parler à ses voisins</a>
+<a href="#questions" style="color:#4a3d31;text-decoration:none">Les questions qu'on nous pose</a>
+</div>
+</div>
+<div style="background:#241c14;border-radius:16px;padding:18px;color:#fdf6ec">
+<div style="font:700 14.5px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:8px">Pas encore de batterie&nbsp;?</div>
+<p style="font:400 13.5px/1.5 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 13px">Le choix du modèle règle déjà la moitié du problème.</p>
+<a href="/guides/batterie-appartement/" style="display:block;text-align:center;font:700 13px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:10px;border-radius:10px" style-hover="background:#ffdd8c">Le guide appartement</a>
+</div>
+</div>
+
+<div>
+
+<div style="background:#ffd166;border:2.5px solid #241c14;border-radius:20px;padding:26px 28px;box-shadow:6px 6px 0 #241c14;margin-bottom:40px">
+<div id="reponse" style="font:800 24px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em;margin-bottom:10px;scroll-margin-top:20px">La réponse courte</div>
+<p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 12px;max-width:690px">Le bruit qui dérange n'est pas celui que tu crois. Ton casque règle le son de la batterie, pas les vibrations. Ce qui traverse le plancher, c'est la pédale de grosse caisse, accessoirement les pieds du rack.</p>
+<p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#3a2f26;margin:0;max-width:690px">Commence par le tapis, à 59 €. Puis traite la pédale, ce qui coûte de 39 à 229 € selon la méthode. Ces deux interventions règlent la quasi-totalité des situations. Le reste est du confort.</p>
+</div>
+
+<h2 id="quoi" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px">Ce que ton voisin entend réellement</h2>
+<p style="font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;max-width:720px;text-wrap:pretty">Il faut distinguer deux trajets. Le son aérien traverse l'air et se heurte aux murs : c'est le claquement de la baguette sur le pad, audible dans la pièce mais très atténué dès qu'il y a une cloison. Le son solidien passe par la structure du bâtiment : il entre par le sol, voyage dans la dalle et ressort plusieurs pièces plus loin sans perdre grand-chose.</p>
+<p style="font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;max-width:720px;text-wrap:pretty">Ton casque supprime le son de la batterie elle-même, celui que produit le module. Il ne change strictement rien aux deux autres. C'est pourquoi tant de gens sont surpris : ils jouent au casque, persuadés d'être discrets, pendant que le voisin du dessous entend un bruit sourd toutes les secondes.</p>
+<div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:22px;font:400 15.5px 'Work Sans',sans-serif">
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(130px,1fr) minmax(110px,.8fr) minmax(170px,1.5fr);background:#241c14;color:#fdf6ec;font-weight:600;font-size:13.5px">
+<div style="padding:13px 18px">Source du bruit</div><div style="padding:13px 18px">Qui l'entend</div><div style="padding:13px 18px">Ce qui le règle</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(130px,1fr) minmax(110px,.8fr) minmax(170px,1.5fr);background:#fff;border-top:1.5px solid #e4d8c6">
+<div style="padding:14px 18px;font-weight:600">Pédale de grosse caisse</div><div style="padding:14px 18px;color:#4a3d31;white-space:nowrap">Le dessous</div><div style="padding:14px 18px;color:#4a3d31">Un tapis épais, des patins isolants, voire une pédale sans batte.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(130px,1fr) minmax(110px,.8fr) minmax(170px,1.5fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6">
+<div style="padding:14px 18px;font-weight:600">Pieds du rack</div><div style="padding:14px 18px;color:#4a3d31;white-space:nowrap">Le dessous</div><div style="padding:14px 18px;color:#4a3d31">Le même tapis, plus des patins sous chaque pied.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(130px,1fr) minmax(110px,.8fr) minmax(170px,1.5fr);background:#fff;border-top:1.5px solid #e4d8c6">
+<div style="padding:14px 18px;font-weight:600">Baguettes sur les pads</div><div style="padding:14px 18px;color:#4a3d31;white-space:nowrap">La pièce à côté</div><div style="padding:14px 18px;color:#4a3d31">Des baguettes légères ou des fagots. Atténuation réelle mais partielle.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(130px,1fr) minmax(110px,.8fr) minmax(170px,1.5fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6">
+<div style="padding:14px 18px;font-weight:600">Charleston qui claque</div><div style="padding:14px 18px;color:#4a3d31;white-space:nowrap">La pièce à côté</div><div style="padding:14px 18px;color:#4a3d31">Rien de simple. C'est le bruit le plus difficile à traiter.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(130px,1fr) minmax(110px,.8fr) minmax(170px,1.5fr);background:#fff;border-top:1.5px solid #e4d8c6">
+<div style="padding:14px 18px;font-weight:600">Son du module</div><div style="padding:14px 18px;color:#4a3d31;white-space:nowrap">Personne</div><div style="padding:14px 18px;color:#4a3d31">Le casque. C'est déjà réglé.</div>
+</div>
+</div>
+<p style="font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 38px;max-width:720px;text-wrap:pretty">Retiens la première ligne. Dans neuf situations sur dix qu'on nous décrit, c'est la pédale de grosse caisse qui pose problème, rien d'autre.</p>
+
+<h2 id="actions" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px">Les quatre interventions, par ordre d'efficacité</h2>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:28px">
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#d2431f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">1</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Le tapis épais, 59 à 77 €</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">C'est le geste qui rapporte le plus pour le moins cher. Un tapis de batterie dense découple le rack du sol et absorbe une partie de l'impact de la pédale. Prends-le assez grand pour que tout le kit tienne dessus, pieds du siège compris. Un tapis de salon ne fonctionne pas : il faut une sous-couche caoutchouc.</p></div></div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#0f7d76;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">2</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Traiter la pédale, 39 à 229 €</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Trois niveaux. Les patins anti-vibration à 39 € se glissent sous les pieds du rack et sous la pédale : efficacité correcte, prix imbattable. Le plateau isolant à 138 € se place sous la pédale seule et fait bien mieux. La pédale sans batte à 229 € supprime le problème à la source, puisque plus rien ne percute.</p></div></div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#241c14;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">3</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Alléger la frappe, 15 €</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Des baguettes en fagot de nylon frappent deux fois moins fort pour un ressenti proche. Ce n'est pas une solution structurelle, c'est un moyen de jouer une heure de plus le soir. Elles usent aussi moins vite les peaux maillées.</p></div></div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#a3401f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">4</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Traiter la pièce, 74 € le panneau</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">En dernier recours, uniquement si le problème est le son aérien vers une pièce mitoyenne. Un panneau acoustique derrière le kit réduit la réverbération. Attention : cela ne fait rien contre les vibrations du sol, qui sont le vrai sujet.</p></div></div>
+</div>
+<div data-rwd="c4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px">
+<a href="https://www.thomann.fr/thomann_e_drum_rug_black_120.htm?offid=1&affid=3711" rel="sponsored noopener" target="_blank" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:16px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:4px 4px 0 #241c14">
+<div style="height:126px;border-bottom:2px solid #e4d8c6;background:#fff"><img src="https://www.thomann.de/prodbilder/644692.jpg" alt="Thomann E-Drum Rug Black 120" style="width:100%;height:100%;object-fit:contain;display:block;padding:11px;box-sizing:border-box"></div>
+<div style="padding:13px 15px;display:flex;flex-direction:column;gap:6px;flex:1">
+<div style="font:500 11px 'IBM Plex Mono',monospace;color:#786550">ÉTAPE 1</div>
+<div style="font:700 14.5px/1.2 'Work Sans',sans-serif">E-Drum Rug Black 120</div>
+<div style="font:400 13px/1.45 'Work Sans',sans-serif;color:#4a3d31;flex:1">Tapis conçu pour l'électronique. Le premier achat.</div>
+<div style="font:800 18px 'Bricolage Grotesque',sans-serif;color:#d2431f;margin-top:2px">59 €</div>
+</div></a>
+<a href="https://www.thomann.fr/roland_ne_1_noise_eater.htm?offid=1&affid=3711" rel="sponsored noopener" target="_blank" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:16px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:4px 4px 0 #241c14">
+<div style="height:126px;border-bottom:2px solid #e4d8c6;background:#fff"><img src="https://www.thomann.de/prodbilder/335038.jpg" alt="Roland NE-1 Noise Eater" style="width:100%;height:100%;object-fit:contain;display:block;padding:11px;box-sizing:border-box"></div>
+<div style="padding:13px 15px;display:flex;flex-direction:column;gap:6px;flex:1">
+<div style="font:500 11px 'IBM Plex Mono',monospace;color:#786550">ÉTAPE 2, ÉCONOMIQUE</div>
+<div style="font:700 14.5px/1.2 'Work Sans',sans-serif">NE-1 Noise Eater</div>
+<div style="font:400 13px/1.45 'Work Sans',sans-serif;color:#4a3d31;flex:1">Patins sous les pieds du rack et la pédale.</div>
+<div style="font:800 18px 'Bricolage Grotesque',sans-serif;color:#d2431f;margin-top:2px">39 €</div>
+</div></a>
+<a href="https://www.thomann.fr/roland_ne_10_noise_eater.htm?offid=1&affid=3711" rel="sponsored noopener" target="_blank" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:16px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:4px 4px 0 #241c14">
+<div style="height:126px;border-bottom:2px solid #e4d8c6;background:#fff"><img src="https://www.thomann.de/prodbilder/335037.jpg" alt="Roland NE-10 Noise Eater" style="width:100%;height:100%;object-fit:contain;display:block;padding:11px;box-sizing:border-box"></div>
+<div style="padding:13px 15px;display:flex;flex-direction:column;gap:6px;flex:1">
+<div style="font:500 11px 'IBM Plex Mono',monospace;color:#786550">ÉTAPE 2, EFFICACE</div>
+<div style="font:700 14.5px/1.2 'Work Sans',sans-serif">NE-10 Noise Eater</div>
+<div style="font:400 13px/1.45 'Work Sans',sans-serif;color:#4a3d31;flex:1">Plateau isolant sous la pédale seule.</div>
+<div style="font:800 18px 'Bricolage Grotesque',sans-serif;color:#d2431f;margin-top:2px">138 €</div>
+</div></a>
+<a href="https://www.thomann.fr/millenium_fy2_floppy_stick_rods.htm?offid=1&affid=3711" rel="sponsored noopener" target="_blank" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:16px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:4px 4px 0 #241c14">
+<div style="height:126px;border-bottom:2px solid #e4d8c6;background:#fff"><img src="https://www.thomann.de/prodbilder/182711.jpg" alt="Millenium FY-2 Floppy Stick Rods" style="width:100%;height:100%;object-fit:contain;display:block;padding:11px;box-sizing:border-box"></div>
+<div style="padding:13px 15px;display:flex;flex-direction:column;gap:6px;flex:1">
+<div style="font:500 11px 'IBM Plex Mono',monospace;color:#786550">ÉTAPE 3</div>
+<div style="font:700 14.5px/1.2 'Work Sans',sans-serif">FY-2 Floppy Stick Rods</div>
+<div style="font:400 13px/1.45 'Work Sans',sans-serif;color:#4a3d31;flex:1">Fagots nylon. Deux fois moins de frappe.</div>
+<div style="font:800 18px 'Bricolage Grotesque',sans-serif;color:#d2431f;margin-top:2px">14,60 €</div>
+</div></a>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:0 0 38px">Liens affiliés. On touche une commission, ton prix ne bouge pas. Prix relevés chez Thomann le 12 septembre 2026.</p>
+
+<h2 id="budgets" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px">Trois budgets, trois résultats</h2>
+<p style="font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 22px;max-width:720px;text-wrap:pretty">Selon la gravité de ta situation et ce que tu peux y mettre, voilà trois paniers cohérents. Le premier suffit dans la majorité des cas.</p>
+<div data-rwd="c3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px">
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column;gap:10px">
+<div style="font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;color:#0f7d76">LE MINIMUM</div>
+<div style="font:800 32px 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">98 €</div>
+<div style="display:flex;flex-direction:column;gap:6px;font:400 14px/1.4 'Work Sans',sans-serif;color:#3a2f26;padding-bottom:10px;border-bottom:1.5px solid #e4d8c6">
+<div style="display:flex;gap:8px"><span style="color:#0f7d76;font-weight:700">+</span><span>Tapis Thomann 120</span></div>
+<div style="display:flex;gap:8px"><span style="color:#0f7d76;font-weight:700">+</span><span>Patins Roland NE-1</span></div>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Suffisant si tu es en maison, au rez-de-chaussée, si le voisin du dessous n'est pas sensible. C'est le panier qu'on recommande par défaut.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:5px 5px 0 #d2431f;display:flex;flex-direction:column;gap:10px">
+<div style="font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;color:#d2431f">LE SÉRIEUX</div>
+<div style="font:800 32px 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">197 €</div>
+<div style="display:flex;flex-direction:column;gap:6px;font:400 14px/1.4 'Work Sans',sans-serif;color:#3a2f26;padding-bottom:10px;border-bottom:1.5px solid #e4d8c6">
+<div style="display:flex;gap:8px"><span style="color:#d2431f;font-weight:700">+</span><span>Tapis Thomann 120</span></div>
+<div style="display:flex;gap:8px"><span style="color:#d2431f;font-weight:700">+</span><span>Plateau Roland NE-10</span></div>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Le bon compromis en appartement avec un voisin du dessous. Le plateau isolant fait une différence nette sur la grosse caisse.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column;gap:10px">
+<div style="font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;color:#241c14">LE RADICAL</div>
+<div style="font:800 32px 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em">288 €</div>
+<div style="display:flex;flex-direction:column;gap:6px;font:400 14px/1.4 'Work Sans',sans-serif;color:#3a2f26;padding-bottom:10px;border-bottom:1.5px solid #e4d8c6">
+<div style="display:flex;gap:8px"><span style="color:#241c14;font-weight:700">+</span><span>Tapis Thomann 120</span></div>
+<div style="display:flex;gap:8px"><span style="color:#241c14;font-weight:700">+</span><span>Pédale Roland KT-9 sans batte</span></div>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;margin:0;flex:1">Quand rien d'autre ne suffit. Ou quand tu joues tard. Plus aucun impact mécanique au sol, seulement le pied sur la planche.</p></div>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:0 0 38px">La pédale Yamaha KU100 à 88 € est une alternative moins chère à la Roland, mais elle ne convient qu'aux modules Yamaha et à certains kits d'entrée de gamme. Vérifie la compatibilité avant de commander.</p>
+
+<h2 id="gratuit" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px">Ce qui ne coûte rien</h2>
+<p style="font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;max-width:720px;text-wrap:pretty">Avant d'acheter quoi que ce soit, quatre réglages gratuits améliorent la situation. Ils ne suffisent pas seuls, mais ils s'additionnent au reste.</p>
+<div data-rwd="sp2" style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:38px">
+<div style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:18px;padding:22px 24px">
+<div style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:14px;color:#0f5f5a">À faire tout de suite</div>
+<div style="display:flex;flex-direction:column;gap:11px;font:400 15.5px/1.5 'Work Sans',sans-serif;color:#264c49">
+<div style="display:flex;gap:10px"><span style="color:#0f5f5a;font-weight:700">+</span><span>Détends les peaux maillées d'un demi-tour. Plus souples, elles claquent moins.</span></div>
+<div style="display:flex;gap:10px"><span style="color:#0f5f5a;font-weight:700">+</span><span>Écarte le kit des murs porteurs d'au moins trente centimètres.</span></div>
+<div style="display:flex;gap:10px"><span style="color:#0f5f5a;font-weight:700">+</span><span>Joue talon levé plutôt que talon au sol : l'impact est plus court, donc moins transmis.</span></div>
+<div style="display:flex;gap:10px"><span style="color:#0f5f5a;font-weight:700">+</span><span>Baisse le volume du casque. On frappe d'autant plus fort qu'on s'entend mal.</span></div>
+</div>
+</div>
+<div style="background:#faeae5;border:2.5px solid #241c14;border-radius:18px;padding:22px 24px">
+<div style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:14px;color:#a3401f">Ce qui ne sert à rien</div>
+<div style="display:flex;flex-direction:column;gap:11px;font:400 15.5px/1.5 'Work Sans',sans-serif;color:#6b3223">
+<div style="display:flex;gap:10px"><span style="color:#a3401f;font-weight:700">−</span><span>Les boîtes à œufs au mur. Elles ne font rien, ni contre l'aérien ni contre le solidien.</span></div>
+<div style="display:flex;gap:10px"><span style="color:#a3401f;font-weight:700">−</span><span>Un tapis de salon sans sous-couche. Il habille, il n'isole pas.</span></div>
+<div style="display:flex;gap:10px"><span style="color:#a3401f;font-weight:700">−</span><span>Poser la batterie sur une moquette existante en pensant que ça suffit.</span></div>
+<div style="display:flex;gap:10px"><span style="color:#a3401f;font-weight:700">−</span><span>Acheter un casque plus fermé pour régler un problème de vibrations.</span></div>
+</div>
+</div>
+</div>
+
+<div style="display:flex;gap:16px;align-items:flex-start;background:#241c14;border-radius:20px;padding:24px 26px;margin-bottom:38px;color:#fdf6ec">
+<div style="width:54px;height:54px;flex:none;border-radius:50%;overflow:hidden;border:2.5px solid #ffd166;background:#ffd166"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></div>
+<div>
+<div style="font:700 15px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:7px">Le conseil de BipBop</div>
+<p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#e0d5c8;margin:0">Avant d'acheter, fais le test : demande à quelqu'un de descendre chez le voisin pendant que tu joues deux minutes, d'abord en frappant seulement la grosse caisse, puis seulement les pads. Tu sauras en cinq minutes lequel des deux bruits pose problème. Tu achèteras la bonne chose au lieu de tout acheter.</p>
+</div>
+</div>
+
+<h2 id="voisins" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px">Parler à ses voisins, ce qui fonctionne</h2>
+<p style="font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;max-width:720px;text-wrap:pretty">C'est l'intervention la moins chère et la plus efficace, elle est pourtant presque toujours oubliée. Un voisin prévenu tolère largement ce qu'un voisin surpris signale au syndic.</p>
+<p style="font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;max-width:720px;text-wrap:pretty">Trois choses aident concrètement. Préviens avant d'installer, pas après la première plainte : le message passe complètement différemment. Annonce des horaires précis, par exemple entre dix-huit et vingt-et-une heures en semaine, puis tiens-les. Et propose-leur de monter écouter cinq minutes pour qu'ils se rendent compte eux-mêmes de ce que ça donne chez eux.</p>
+<p style="font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 38px;max-width:720px;text-wrap:pretty">En France, il n'existe pas d'horaire légal national pour le bruit domestique : ce sont les arrêtés préfectoraux et le règlement de copropriété qui s'appliquent, avec des règles variables selon les communes. Le critère juridique retenu est celui du trouble anormal de voisinage, apprécié sur la durée, la répétition et l'intensité. Autrement dit, une pratique régulière et annoncée sur des créneaux raisonnables se défend bien mieux qu'une session imprévisible à vingt-trois heures.</p>
+
+<h2 id="questions" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px">Les questions qu'on nous pose</h2>
+<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:38px">
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Une pédale sans batte, ça change vraiment tout&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Oui, c'est de loin l'intervention la plus efficace sur le bruit solidien. Il n'y a plus de percussion : ton pied appuie sur une planche munie d'un capteur. Il reste le bruit du pied lui-même, comparable à une marche sur le parquet. Compte 229 € pour la KT-9, 249 € pour la KT-10.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Je suis au dernier étage, suis-je tranquille&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Pour le voisin du dessous, non : le bruit descend, il ne monte pas seulement. Tu évites en revanche de gêner quelqu'un au-dessus de toi. Le tapis reste nécessaire, le traitement de la pédale aussi si le plancher est en bois.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Un plancher en bois ou une dalle béton, ça change quoi&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Beaucoup. Une dalle béton absorbe très bien les vibrations, un plancher bois les amplifie et les propage. Dans un immeuble ancien à plancher bois, le traitement de la pédale n'est pas optionnel.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Faut-il un casque plus isolant&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Le casque ne change rien à ce que les voisins entendent, il change ce que toi tu entends. Un casque bien isolant a toutefois un effet indirect réel : tu joues moins fort parce que tu t'entends mieux. Le SIH3 Headphones à 92 € est le plus isolant du catalogue.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Et si mon voisin se plaint quand même&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Demande-lui de préciser le moment et la nature du bruit, puis descends écouter chez lui pendant que quelqu'un joue. Dans la plupart des cas on découvre que c'est un seul élément, souvent la grosse caisse, ce qui rend le problème beaucoup plus simple à régler qu'il n'y paraît.</p></div>
+</div>
+
+<div data-rwd="sp2" style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+<div style="background:#241c14;border-radius:20px;padding:26px 28px;color:#fdf6ec">
+<div style="font:800 23px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em;color:#ffd166;margin-bottom:10px">Pas encore équipé&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 18px">Le choix du modèle règle déjà la moitié du problème. Certaines batteries sont nettement plus discrètes que d'autres.</p>
+<a href="/guides/batterie-appartement/" style="display:inline-block;font:700 14.5px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:12px 18px;border-radius:11px" style-hover="background:#ffdd8c">Le guide appartement</a>
+</div>
+<div style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:20px;padding:26px 28px">
+<div style="font:800 23px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em;color:#0f5f5a;margin-bottom:10px">À lire ensuite</div>
+<div style="display:flex;flex-direction:column;gap:11px;font:600 15px 'Work Sans',sans-serif">
+<a href="/les-bases/tapis-batterie/" style="color:#264c49;text-decoration:none;border-bottom:1.5px solid rgba(23,148,140,.3);padding-bottom:11px">Faut-il un tapis sous sa batterie</a>
+<a href="/avis/roland-td-02kv/" style="color:#264c49;text-decoration:none;border-bottom:1.5px solid rgba(23,148,140,.3);padding-bottom:11px">L'avis de la Roland TD-02KV</a>
+<a href="/les-bases/quel-casque/" style="color:#264c49;text-decoration:none">Quel casque pour une batterie électronique</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<div data-mar style="display:flex;align-items:center;gap:14px;margin:0 40px;padding:16px 20px;background:#e7f3f2;border:2.5px solid #241c14;border-radius:14px;font:400 14.5px/1.55 'Work Sans',sans-serif;color:#264c49">
+<span style="font:700 13px 'Work Sans',sans-serif;color:#0f5f5a;white-space:nowrap">LIENS AFFILIÉS</span>
+<span>Les liens vers Thomann nous rapportent une commission si tu achètes. Ton prix ne bouge pas. Photos produits fournies par Thomann.</span>
+</div>
+
+<div style="height:52px"></div>
+<footer data-pad style="background:#241c14;color:#fdf6ec;padding:48px 40px 26px">
+<div data-rwd="foot" style="display:grid;grid-template-columns:1.7fr 1fr 1.1fr 1.2fr;gap:40px;padding-bottom:34px;border-bottom:1px solid #4a3d31">
+<div>
+<div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+<span style="width:32px;height:32px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée claire</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#fdf6ec" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</div>
+<p style="font:400 15px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 16px;max-width:300px">Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>
+<div style="display:inline-block;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#ffd166;border:1px solid #4a3d31;border-radius:8px;padding:7px 11px">MIS À JOUR EN SEPT. 2026</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">TROUVER</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/comparatif/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Le comparatif</a><a href="/guides/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les guides</a><a href="/avis/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les avis</a>
+</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">LE SITE</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/a-propos/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">À propos</a><a href="/contact/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Contact</a><a href="/mentions-legales/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Mentions légales</a><a href="/politique-confidentialite/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Politique de confidentialité</a>
+</div>
+</div>
+<div style="background:#302519;border-radius:16px;padding:20px;align-self:start">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:8px">Pas encore décidé ?</div>
+<p style="font:400 14px/1.55 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 14px">Trois questions, deux modèles en face. Trente secondes.</p>
+<a href="/comparatif/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:11px;border-radius:11px" style-hover="background:#ffdd8c">Trouver ma batterie</a>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:14px;padding:22px 0 20px;border-bottom:1px solid #4a3d31">
+<span style="font:700 12px 'Work Sans',sans-serif;color:#ffd166;white-space:nowrap;padding-top:2px">LIENS AFFILIÉS</span>
+<p style="font:400 14px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0;max-width:840px">Les liens vers Thomann, Woodbrass et Donner Music nous rapportent une commission si tu achètes. Ton prix ne bouge pas. Les prix affichés sont relevés à la date de publication : vérifie toujours sur la fiche du marchand avant de commander.</p>
+</div>
+<div style="padding-top:20px;font:400 13.5px 'Work Sans',sans-serif;color:#a8998a">© 2026 BipBop. Tous droits réservés.</div>
+</footer>
+</div>
+<div id="cookie-banner" data-pad style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#241c14;border-top:3px solid #ffd166;padding:18px 40px;align-items:center;justify-content:center;gap:32px;font-family:'Work Sans',system-ui,sans-serif;box-shadow:0 -6px 24px rgba(36,28,20,.28)">
+<div style="flex:1;max-width:760px">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:6px">Une question de cookies, vite réglée</div>
+<p style="font:400 14.5px/1.55 'Work Sans',sans-serif;color:#d6cabb;margin:0">On mesure l'audience pour savoir quelles pages t'aident vraiment. Pas de publicité, pas de revente de données. Tu peux refuser, le site marche exactement pareil. <a href="/politique-confidentialite/" style="color:#ffd166;text-decoration:underline;text-underline-offset:3px">Notre politique de confidentialité</a>.</p>
+</div>
+<div style="display:flex;gap:12px;flex:none">
+<button type="button" data-consent="refuse" style="font:700 14.5px 'Work Sans',sans-serif;color:#fdf6ec;background:transparent;border:2.5px solid #8a7866;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Refuser</button>
+<button type="button" data-consent="accept" style="font:700 14.5px 'Work Sans',sans-serif;color:#241c14;background:#ffd166;border:2.5px solid #ffd166;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Accepter</button>
+</div>
+</div>
+</body>
+</html>

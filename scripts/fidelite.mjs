@@ -73,8 +73,10 @@ function corpsMaquette(html) {
 }
 
 function corpsPage(html) {
+  // Les pages portées portent leur chrome dans le corps, sans balise <main> : on applique
+  // la même borne d'en-tête qu'à la maquette, sinon le menu compterait comme du contenu ajouté.
   const o = html.indexOf('<main');
-  const d = o >= 0 ? html.indexOf('>', o) + 1 : 0;
+  const d = o >= 0 ? html.indexOf('>', o) + 1 : aprésEnTete(html, FIN_EN_TETE);
   const coupures = [html.indexOf('</main>', d), ...DEBUT_PIED.map((m) => html.indexOf(m, d)).filter((p) => p >= 0)].filter((p) => p >= 0);
   const f = coupures.length ? Math.min(...coupures) : html.length;
   return f > d ? html.slice(d, f) : html.slice(d);

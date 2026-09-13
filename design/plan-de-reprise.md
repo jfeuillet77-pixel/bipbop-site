@@ -1,140 +1,88 @@
-# Plan de reprise — état du chantier au 13 septembre 2026
+# Plan de reprise — état du chantier au 13 septembre 2026 (soir)
 
-**Objectif acté par Jordane : publier la totalité des pages désignées par Claude Design.**
-Soit **38 pages de site** (les 8 autres fichiers du dossier sont des documents internes, ils ne
-se publient pas).
+**Objectif : publier la totalité des 38 pages de site désignées par Claude Design.**
+Il est atteint en structure. Les 38 routes existent et sont buildées ; il reste **3 compteurs à
+trancher sur le hub `/avis/`**, puis ouvrir le site aux moteurs.
 
-## Où on en est
+## Ce qui a changé de méthode
 
-| | Nombre | État |
+Jusqu'ici chaque page était **retapée à la main** depuis sa maquette, ce qui créait des écarts
+(crochets responsive oubliés, compteurs faux, formules qui dérivent) qu'un outil
+(`scripts/fidelite.mjs`) devait ensuite rattraper. Depuis ce soir, **`scripts/port.mjs` porte les
+37 pages statiques** depuis `Claude Design - MàJ/`, corps et styles mot pour mot : la fidélité est
+tenue par construction au lieu d'être vérifiée après coup. Décision prise par Jordane, avec
+l'instruction de tout re-porter, pages déjà publiées comprises.
+
+| | Avant le portage | Après |
 |---|---|---|
-| Pages de site publiées | **21 / 38** | dont 6 livrées aujourd'hui |
-| Pages identiques à leur maquette au segment près | **6 / 21** | les 6 avis de la vague A |
-| Pages à créer | **17** | listées ci-dessous |
-| Pages existantes à resynchroniser | **15** | crochets responsive + deltas de texte |
+| Routes buildées | 21 / 38 | **38 / 38** |
+| Pages identiques à leur maquette | 6 / 21 | **36 / 37** |
+| Problèmes `npm run check` | 12 | **3** |
+| Pages dépassant à 390 px | 8 | **0** |
+| Liens internes cassés | — | **0 sur 773** |
 
-Le site est toujours en **phase de test** : `noindex, nofollow` actif sur les 38 routes,
-`public/robots.txt` bloquant. À retirer à l'ouverture SEO, pas avant.
+## Ce qui reste, dans l'ordre
 
-## Ce qui bloque la mise en ligne complète
+### 1. Tranché par Jordane : la liste d'attente du hub `/avis/` (3 problèmes)
 
-Trois familles de travail, dans l'ordre où les mener.
+La maquette `Avis.dc.html` annonce « 23 AU PROGRAMME » avec une liste d'attente de **14 lignes**,
+là où `src/data/modeles.json` compte **22 modèles sans avis** (31 modèles, 9 avis). Le contrôle
+signale les trois incohérences. Deux issues possibles, aucune n'est technique :
 
-### 1. Créer les 17 pages qui manquent
+- **publier les 22** : les 8 phrases manquantes sont rédigées dans
+  `design/hub-avis-liste-attente.md` (§1), au registre des 14 lignes du design, prix corrigés.
+  C'est ma plume, pas celle de Claude Design — à relire. Le titre « 23 au programme » deviendrait
+  faux à son tour (31) : il faudrait aussi l'écrire dans `design/port-corrections.json`.
+- **publier 14 comme la maquette** : la liste d'attente devient un choix éditorial assumé
+  (les modèles qu'on estime valoir le coup), et les 8 phrases rédigées ne sortent pas. Il faut
+  alors dire au contrôle de ne plus comparer ce compteur à la base.
 
-**8 guides** — gabarit `Guide` (colonne de lecture + sommaire collant) :
+Dire lequel et je l'applique ; les deux sont tenables, c'est un choix de ligne éditoriale.
 
-```
-/guides/acheter-occasion                     Guide-Acheter-Occasion.dc.html
-/guides/batterie-adulte-debutant             Guide-Adulte-Debutant.dc.html
-/guides/batterie-electronique-enfant         Guide-Enfant.dc.html
-/guides/batterie-moins-1000-euros            Guide-Moins-De-1000-Euros.dc.html
-/guides/enregistrer-sa-batterie              Guide-Enregistrer-Sa-Batterie.dc.html
-/guides/faire-evoluer-sa-batterie            Guide-Faire-Evoluer-Sa-Batterie.dc.html
-/guides/meilleure-batterie-moins-300-euros   Guide-Moins-De-300-Euros.dc.html
-/guides/pack-complet                         Guide-Pack-Complet.dc.html
-```
+### 2. Ouverture SEO, quand le point 1 est clos
 
-**6 « Les bases »** — gabarit `Article informationnel` :
+Retirer `<meta name="robots" content="noindex, nofollow">` des 38 routes et débloquer
+`public/robots.txt`. Les deux lignes à changer sont dans `scripts/port.mjs` (les 37 pages portées)
+et `src/layouts/BaseLayout.astro` (le comparatif) — à changer ensemble, sinon une route traîne.
 
-```
-/les-bases/combien-de-temps                  Les-Bases-Combien-De-Temps.dc.html
-/les-bases/electronique-ou-acoustique        Les-Bases-Electronique-Ou-Acoustique.dc.html
-/les-bases/installer-sans-deranger           Guide-Installer-Sans-Deranger.dc.html   ← nommé « Guide » dans le dossier, classé « Les bases » par le plan
-/les-bases/quel-casque                       Les-Bases-Quel-Casque.dc.html
-/les-bases/seul-ou-prof                       Les-Bases-Seul-Ou-Prof.dc.html
-/les-bases/tapis-batterie                    Les-Bases-Tapis-Batterie.dc.html
-```
+### 3. Questions ouvertes, sans urgence de publication
 
-**2 duels** — gabarit `Duel` :
-
-```
-/duels/mps-150x-vs-turbo-mesh                Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html
-/duels/nitro-max-vs-td-02kv                   Duel-Alesis-Nitro-Max-vs-Roland-TD-02KV.dc.html
-```
-
-**Le 404** — `src/pages/404.html` est un fichier HTML brut, hors `BaseLayout` : pas de navigation,
-pas de CSS responsive, 557 px de large à 390 px. À porter en `404.astro`.
-
-### 2. Resynchroniser les 15 pages héritées
-
-Elles viennent de l'ancienne livraison. Deux écarts de nature différente :
-
-**a) Crochets responsive absents** — 8 pages dépassent encore à 390 px (mesuré dans Chrome) :
-`/`, `/avis/alesis-nitro-max/`, `/avis/millenium-mps-150x/`, `/avis/roland-td-02kv/`,
-`/duels/alesis-nitro-max-vs-donner-ded-200x/`, `/guides/batterie-appartement/`,
-`/guides/meilleure-batterie-moins-500-euros/`, `/les-bases/pad-mesh/`.
-Il faut poser les `data-rwd` / `data-pad` / `data-mar` / `data-big` / `data-sticky` / `data-hdr`
-sur chaque grille, marge et gros titre. Voir `design/crochets-responsive.md`.
-
-**b) Textes qui ont bougé entre les deux versions de Claude Design** — le contrôle de fidélité
-les nomme un par un (`npm run fidelite`). Constats déjà établis :
-
-- `/les-bases/pad-mesh/` : « Douze modèles passés en revue » → la maquette dit « Neuf » ;
-- `/guides/batterie-appartement/` : plaque de mousse 25 € → **55 €**, « si plancher sensible »
-  → « si étage » ;
-- les 3 avis publiés + `/contact/` + `/a-propos/` + légaux : encart « aller au comparatif »
-  changé de libellé et de phrase ;
-- `/guides/` : hub à 3 guides, la maquette en annonce 11 ; `/avis/` : hub à 3 avis, 9 existent.
-
-### 3. Clôture de la vague A — débloquée, prête à être portée
-
-Le **hub `/avis/`** n'est pas encore porté. Les deux contraintes découvertes en l'ouvrant sont levées :
-
-- ses 9 cartes portent **leur propre texte**, différent du champ `phrase` de `modeles.json`
-  (comparé sur 8 cartes : toutes différentes). Structure et compteurs viennent des données,
-  le texte vient de la maquette du hub ;
-- sa liste d'attente affichait **14 lignes pour 22 modèles sans avis**. Les 8 phrases manquantes
-  sont **rédigées**, dans `design/hub-avis-liste-attente.md`, avec les 14 du design en référence de
-  ton et les prix corrigés. À relire par Jordane puisque c'est ma plume, pas celle de Claude Design.
-  Le même fichier porte le **registre des notes `/10`** (décision du 13/09 : on les garde) : 9 pages
-  en portent une, aucune autre, et la plus visible absence est que **8 des 9 cartes du hub
-  n'affichent pas la note de leur propre avis**. À réparer au portage.
-
-## Questions ouvertes, à trancher par toi (pas par moi)
-
-1. **Grille de notation** — **décision du 13/09 : les notes `/10` restent publiées.** Reste à
-   fournir : une grille qui dise ce que recouvre un `7,2` contre un `8,4` (règle I02), et les
-   échelles `discretion` et `module` de la base, qui entrent dans le score du comparatif sans
-   jamais être expliquées au lecteur. Les notes sont publiées sans barème en attendant.
-2. **Définition de l'empreinte au sol** — `MPS-750X` et `MPS-850` publient « 140 × 90 » et
-   « 150 × 100 » en disant « siège compris », là où Thomann garantit 140 × 80 et où le
-   comparatif affiche la mesure du marchand. Deux définitions coexistent sur le même site.
-3. **Faute dans la DED-200X** — « Deux cymbales de crash au lieu **d** une », sans apostrophe.
-   Un caractère, à corriger dans Claude Design ou ici.
-4. **Priorité des lignes P24/P25** du plan éditorial — j'ai mis « Moyenne » par déduction après
-   avoir réparé le décalage de colonnes. Champ interne, non publié.
-5. **22 URLs Woodbrass sans identifiant d'affiliation** (14 % du catalogue) — hors périmètre
-   décidé ce jour, mais c'est du revenu qui ne se capte pas.
-
-## Dans quel ordre finir
-
-1. Clôture vague A : hub Avis + les 3 avis existants resynchronisés. **Débloque les 3 compteurs
-   faux** et le seul point encore incohérent visible par un lecteur.
-2. Vague B : les 8 guides (gabarit commun, le plus gros bloc).
-3. Vague C : 6 « Les bases » + 2 duels.
-4. Vague D : 404 + hubs Guides et Accueil + **resync des 8 pages sans crochets**, avec les
-   compteurs finaux partout.
-5. Retirer le `noindex` et ouvrir `robots.txt` — seulement quand les 38 pages sont là et que
-   `npm run check` et `npm run fidelite` sortent tous les deux au vert.
+1. **Grille de notation** — décision du 13/09 : les notes `/10` restent publiées. 9 pages en
+   portent une, aucune autre. Il manque un barème qui dise ce que recouvre un `7,2` contre un
+   `8,4` (règle I02), et les échelles `discretion` et `module` de la base, qui entrent dans le
+   score du comparatif sans jamais être expliquées au lecteur.
+2. **Empreinte au sol** — `MPS-750X` et `MPS-850` publient « 140 × 90 » et « 150 × 100 » en disant
+   « siège compris », là où Thomann garantit 140 × 80 et où le comparatif affiche la mesure du
+   marchand. Deux définitions coexistent sur le même site.
+3. **Faute dans la DED-200X** — « Deux cymbales de crash au lieu **d** une », sans apostrophe. Elle
+   est revenue au portage : la page est verbatim. À corriger dans Claude Design, ou en une entrée
+   `port-corrections.json` (une des 8 phrases rédigées du hub est concernée aussi).
+4. **Priorité des lignes P24/P25** du plan éditorial — « Moyenne » par déduction après avoir réparé
+   le décalage de colonnes. Champ interne, non publié.
+5. **22 URLs Woodbrass sans identifiant d'affiliation** (14 % du catalogue) — hors périmètre décidé
+   ce jour, mais c'est du revenu qui ne se capte pas.
 
 ## Comment reprendre techniquement
 
 ```bash
 cd bipbop-site
 git checkout dev && git pull
-npm ci                    # astro 7.3.2, puppeteer-core (Chrome du système, rien à télécharger)
-npm run check             # build + les 6 contrôles de fin de séance
-npm run fidelite          # chaque page contre sa maquette, segment par segment
-npm run data              # relance l'import si data/ du dossier Claude Design a bougé
+npm ci
+node scripts/port.mjs --dry   # ce que le portage va écrire, avec ses avertissements
+npm run check                 # build + 6 contrôles mesurés dans Chrome
+npm run fidelite              # chaque page contre sa maquette, segment par segment
+npm run data                  # relance l'import si data/ du dossier Claude Design a bougé
+node scripts/captures.mjs /guides/pack-complet/   # rendu visuel
 ```
 
-`npm run check` sort en échec aujourd'hui, **c'est normal et voulu** : 12 problèmes restants =
-3 compteurs du hub Avis + 1 navigation de 404 + 8 pages sans crochets. Chacun correspond à une
-ligne du plan ci-dessus. Le jour où il sort au vert, le site est publiable.
+**Règle de travail qui découle du portage** (elle est dans `AGENTS.md`) : une page se change dans
+Claude Design, puis `node scripts/port.mjs`. Rien ne se retape dans `src/pages/` — une correction
+manuelle y est écrasée au portage suivant. Un écart qu'on veut garder (prix, faute) s'inscrit dans
+`design/port-corrections.json`, avec sa raison.
 
 Le dossier `Claude Design - MàJ/` **n'est dans aucun dépôt git** : les corrections apportées à
 `data/modeles.json` (version 2, empreintes relevées) et `data/plan-editorial.csv` (2 lignes
 reconstruites) n'ont d'autre filet que les copies `.avant-phase0` posées à côté. Si tu ré-exportes
-le dossier depuis Claude Design, **relis `design/ecarts-maquettes.md` avant de réimporter** :
-il garde la trace de ce qui avait été corrigé ici et qui disparaîtrait.
+le dossier depuis Claude Design, **relis `design/ecarts-maquettes.md` avant de réimporter** : il
+garde la trace de ce qui avait été corrigé ici et qui disparaîtrait. Les sources Astro retirées par
+le portage sont dans `design/port-seche/` (et dans l'historique git).
