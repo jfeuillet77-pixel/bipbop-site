@@ -1,8 +1,9 @@
 # Plan de reprise — état du chantier au 13 septembre 2026 (soir)
 
 **Objectif : publier la totalité des 38 pages de site désignées par Claude Design.**
-Il est atteint. Les 38 routes existent, sont buildées et passent les deux contrôles. Ce qui reste :
-**ouvrir le site aux moteurs**, puis relire ce que la machine n'a pas pu écrire (plus bas, §3).
+Il est atteint. Les 38 routes existent, sont buildées et passent les deux contrôles. **Le site est
+ouvert aux moteurs depuis le 13 septembre au soir** (§2 fait). Ce qui reste : déclarer le sitemap
+dans Search Console et relire ce que la machine n'a pas pu écrire (§3).
 
 ## Ce qui a changé de méthode
 
@@ -44,11 +45,21 @@ les 17 pages neuves, un **titre copié de leur `<h1>`** et une **description cop
 ils sont exacts, jamais relus. La liste complète s'affiche dans les avertissements de
 `node scripts/port.mjs`.
 
-### 2. Ouverture SEO — plus rien ne la retient
+### 2. Ouverture SEO — faite le 13 septembre 2026 au soir
 
-Retirer `<meta name="robots" content="noindex, nofollow">` des 38 routes et débloquer
-`public/robots.txt`. Les deux lignes à changer sont dans `scripts/port.mjs` (les 37 pages portées)
-et `src/layouts/BaseLayout.astro` (le comparatif) — à changer ensemble, sinon une route traîne.
+Trois gestes, faits ensemble (un seul des trois ne rouvre rien) :
+
+1. `<meta name="robots" content="noindex, nofollow">` retiré du gabarit de head de
+   `scripts/port.mjs` (les 37 pages portées) et de `src/layouts/BaseLayout.astro` (les pages
+   écrites à la main). **Seule la 404 garde son `noindex`** : pas de permalien, pas de sitemap,
+   servie en statut 404 — le meta l'empêche d'être indexée sur son URL directe.
+2. `public/robots.txt` débloqué (`Allow: /`) et la ligne `Sitemap:` déclarée. Le fichier porte
+   maintenant la trace des trois gestes, pour la prochaine fois qu'il faudrait refermer.
+3. `node scripts/port.mjs && npm run build` relancé, `npm run check` 7/7, `npm run fidelite`
+   37/37, puis **vérification en HTTP** sur bipbop.eu — pas dans le dépôt.
+
+**Reste hors du dépôt, côté compte Google** : vérifier la propriété `bipbop.eu` dans Search Console
+et y soumettre `https://bipbop.eu/sitemap.xml`. Le site est ouvert, mais rien ne le dit à Google.
 
 **Une seule ligne reste hors du dépôt, côté tableau de bord Netlify** : Forms → Notifications →
 `contact@bipbop.eu`. Le formulaire de contact fonctionne (vérifié en POST → 200 traité par le
@@ -62,7 +73,7 @@ Analytics déclaré sans outil installé — choix assumé de Jordane, ligne « 
 retirée, adresse/SIREN/TVA non publiés), encart e-mail supprimé de Contact, formulaire réel. Tout
 est dans `scripts/greffes.mjs`, rien dans les pages.
 
-### 2 bis. Les deux sitemaps sont en place, leur déclaration attend l'ouverture
+### 2 bis. Les deux sitemaps sont en place et déclarés
 
 Écrits le 13/09 au soir, dans la foulée. **Ils se régénèrent tout seuls à chaque build** :
 `npm run build` appelle `scripts/sitemap.mjs` (`postbuild`), qui pose `dist/sitemap.xml` —
@@ -83,9 +94,10 @@ le contiennent pas, il aurait disparu au portage suivant. Profits de bord : `Bas
 désormais un `canonical` (il manquait au comparatif) et `public/robots.txt` dit en commentaire les
 trois gestes de l'ouverture.
 
-**La ligne `Sitemap:` de robots.txt est volontairement en commentaire.** Tant que
-`Disallow: /` tient, la déclarer livrerait la liste complète des URL à Google avant l'ouverture,
-sans même qu'il puisse lire les `noindex`. Elle se décommente au moment du §2, pas avant.
+**La ligne `Sitemap:` de robots.txt est déclarée depuis l'ouverture (§2).** Elle avait été laissée
+en commentaire le temps du `noindex` : sous `Disallow: /`, la déclarer aurait livré la liste
+complète des URL à Google sans même qu'il puisse lire les `noindex`. Les deux conditions sont
+levées, le fichier `robots.txt` publié porte `Allow: /` et le sitemap.
 
 ### 3. Questions ouvertes, sans urgence de publication
 

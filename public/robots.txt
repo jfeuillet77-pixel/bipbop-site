@@ -1,14 +1,17 @@
-# Site en phase de test (décision de Jordane du 13/09/2026) : rien ne se crawl tant que la
-# publication n'est pas ouverte. Le sitemap XML est bien généré à chaque build
-# (scripts/sitemap.mjs), il n'est simplement pas déclaré. L'ouverture tient à trois gestes :
+# Ouvert aux moteurs le 13 septembre 2026 au soir. Les trois gestes de l'ouverture, pour
+# mémoire — ils tiennent ensemble, un seul des trois ne rouvre rien :
 #
-#   1. retirer « Disallow: / » ci-dessous et décommenter la ligne Sitemap ;
-#   2. retirer « noindex, nofollow » du gabarit de head dans scripts/port.mjs (les 37 pages
-#      portées) et dans src/layouts/BaseLayout.astro (les pages écrites à la main) ;
-#   3. relancer « node scripts/port.mjs && npm run build », puis vérifier en HTTP que l'en-tête
-#      a changé. Les deux se respondent : tant que robots.txt bloque, Google ne peut pas lire
-#      le noindex, et un sitemap déclaré livrerait la liste des URL avant l'ouverture.
+#   1. « noindex, nofollow » retiré du gabarit de head dans scripts/port.mjs (les 37 pages
+#      portées) et de src/layouts/BaseLayout.astro (les pages écrites à la main). La 404 garde
+#      son noindex : ni permalien, ni place dans le sitemap, servie en statut 404.
+#   2. « Disallow: / » retiré ici même et la ligne Sitemap déclarée en bas de ce fichier.
+#   3. « node scripts/port.mjs && npm run build » relancé, puis vérification EN HTTP que le meta
+#      a disparu des pages servies — pas dans le dépôt.
+#
+# Le sitemap est écrit à chaque build par scripts/sitemap.mjs (38 URL). Tant que
+# « Disallow: / » tenait, le déclarer aurait livré l'inventaire des URL à Google sans même
+# qu'il puisse lire les noindex pour les écarter — c'est pour ça qu'il attendait ici.
 User-agent: *
-Disallow: /
+Allow: /
 
-# Sitemap: https://bipbop.eu/sitemap.xml
+Sitemap: https://bipbop.eu/sitemap.xml
