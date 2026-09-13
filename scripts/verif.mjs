@@ -90,11 +90,29 @@ const sansBalises = (html) => html
 const publies = (gabarit) => PLAN.filter((r) => r.gabarit === gabarit && r.statut === 'Publié').length;
 const NB_AVIS = MODELES.filter((m) => m.avis).length;
 const NB_SANS_AVIS = MODELES.length - NB_AVIS;
+
+/**
+ * `src/data/avis.json` est la liste des routes d'avis que le comparatif a le droit de lier
+ * (libellé « L'avis → » plutôt que « Le prix → »). Elle se reconstruit au build en parcourant
+ * `src/pages/avis/` : si ce parcours ne reconnaît plus le format des pages, la liste se vide
+ * sans que la page change d'aspect — et le comparatif cesse de relier les 9 avis qui existent.
+ */
+const AVIS_SUR_DISQUE = (() => {
+  const dossier = join(SITE, 'src', 'pages', 'avis');
+  if (!existsSync(dossier)) return [];
+  return readdirSync(dossier, { withFileTypes: true })
+    .filter((e) => e.isDirectory() && ['index.astro', 'index.html'].some((n) => existsSync(join(dossier, e.name, n))))
+    .map((e) => `/avis/${e.name}/`);
+})();
 const NB_GUIDES = publies('Guide');
 const NB_ARTICLES = publies('Article informationnel');
 
 function verifCompteurs() {
   const anomalies = [];
+  const reconnus = JSON.parse(readFileSync(join(SITE, 'src', 'data', 'avis.json'), 'utf8'));
+  if (reconnus.length !== AVIS_SUR_DISQUE.length) {
+    anomalies.push({ ici: 'src/data/avis.json', quoi: 'routes que le comparatif a le droit de lier', annonce: `${reconnus.length}`, attendu: `${AVIS_SUR_DISQUE.length} dossiers d’avis sur le disque` });
+  }
   const reference = (t) => {
     const m = t.match(/(\d+)\s+AVIS PUBL/i); return m ? +m[1] : null;
   };
