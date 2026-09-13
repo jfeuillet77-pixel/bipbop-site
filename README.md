@@ -85,8 +85,9 @@ Règle d'écriture : `/section/slug/` avec barre oblique finale (règle S09), fi
 |---|---|
 | `npm run dev` | serveur de développement (localhost:4321) |
 | `npm run data` | réimporte `modeles.json`, `accessoires.json`, `plan.json` depuis le dossier Claude Design |
-| `npm run build` | build de production dans `./dist/` |
-| `npm run verif` | les 6 contrôles de fin de séance sur `dist/` (après un build) |
+| `npm run build` | build de production dans `./dist/`, puis `scripts/sitemap.mjs` pose `dist/sitemap.xml` (`postbuild`) |
+| `npm run sitemap` | régénère `dist/sitemap.xml` seul, sans rebuild |
+| `npm run verif` | les 7 contrôles de fin de séance sur `dist/` (après un build) |
 | `npm run check` | `build` + `verif` |
 | `npm run preview` | prévisualiser le build |
 
@@ -111,10 +112,10 @@ bipbop-site/
 │   ├── pages/          → une route = un dossier + index.astro
 │   ├── layouts/        → BaseLayout : <head>, en-tête, pied, cookies, responsive.css
 │   ├── components/     → Header, Footer, CookieBanner, mascotte/
-│   ├── lib/            → moteur du comparatif + gabarits HTML partagés build / navigateur
+│   ├── lib/            → moteur du comparatif, arborescence (plan du site + sitemap), gabarits partagés
 │   ├── data/           → produits et plan éditorial, importés du dossier Claude Design
 │   └── styles/         → global.css (variables) + responsive.css (les 3 paliers)
-├── scripts/            → import-data.mjs, verif.mjs, tests du comparatif
+├── scripts/            → port.mjs, import-data.mjs, sitemap.mjs, verif.mjs, tests du comparatif
 ├── design/             → docs internes : crochets, écarts maquettes, mascotte
 ├── public/             → assets statiques + data/modeles.json servi au navigateur
 └── dist/               → build
