@@ -16,6 +16,34 @@ import { fileURLToPath } from 'node:url';
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SOURCE = join(SITE, '..', 'Claude Design - MàJ', 'data');
 
+/**
+ * Les routes d'avis réellement publiées sur ce site. La base en annonce plus que le site n'en
+ * contient, et le comparatif ne doit jamais envoyer le lecteur dans une page vide.
+ * Une page d'avis est soit une source Astro, soit une page portée depuis une maquette.
+ */
+function avisPubliciesSurLeSite() {
+  const dossier = join(SITE, 'src', 'pages', 'avis');
+  if (!existsSync(dossier)) return [];
+  return readdirSync(dossier, { withFileTypes: true })
+    .filter((e) => e.isDirectory() && ['index.astro', 'index.html'].some((n) => existsSync(join(dossier, e.name, n))))
+    .map((e) => `/avis/${e.name}/`)
+    .sort();
+}
+
+/*
+ * « Claude Design - MàJ/ » est une source d'auteur, pas une dépendance de build : il n'est pas
+ * dans le dépôt, donc il n'existe pas sur Netlify. Sans lui, les JSON déjà commités dans
+ * src/data/ restent tels quels et le build continue. `avis.json` se reconstruit quand même,
+ * puisqu'il ne dépend que des pages publiées ici — figer cette liste ferait disparaître les
+ * liens « L'avis → » du comparatif sans changer l'aspect d'aucune page.
+ */
+if (!existsSync(SOURCE)) {
+  const liste = avisPubliciesSurLeSite();
+  writeFileSync(join(SITE, 'src', 'data', 'avis.json'), JSON.stringify(liste, null, 1) + '\n', 'utf8');
+  console.log(`import ignoré — « ${SOURCE} » absent : src/data/ reste tel que committé, avis.json recalculé (${liste.length} routes)`);
+  process.exit(0);
+}
+
 /* ------------------------------- CSV → objets ------------------------------- */
 
 function parseCsv(txt, delim) {
@@ -117,13 +145,7 @@ write('src/data/plan.json', plan);
 
 /* Quels avis sont réellement publiés sur ce site — la base en annonce plus que le site
    n'en contient, et le comparatif ne doit jamais envoyer le lecteur dans une page vide. */
-const dossierAvis = join(SITE, 'src', 'pages', 'avis');
-const avisPublicies = existsSync(dossierAvis)
-  ? readdirSync(dossierAvis, { withFileTypes: true })
-      .filter((e) => e.isDirectory() && existsSync(join(dossierAvis, e.name, 'index.astro')))
-      .map((e) => `/avis/${e.name}/`)
-      .sort()
-  : [];
+const avisPublicies = avisPubliciesSurLeSite();
 write('src/data/avis.json', avisPublicies);
 
 const nbr = (n) => String(n).padStart(3);
