@@ -24,6 +24,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, rmSync } from 'node:fs';
 import { join, dirname, basename, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { appliquerGreffes } from './greffes.mjs';
 
 const SITE = dirname(fileURLToPath(import.meta.url)).replace(/\/scripts$/, '');
 const MAQUETTES = join(SITE, '..', 'Claude Design - MàJ');
@@ -35,12 +36,6 @@ const NEUF = process.argv.includes('--neuf');
 
 /** Maquettes qui ne se portent pas : la seule page dynamique du dossier est déjà portée. */
 const EXCLUES = new Set(['Comparatif.dc.html']);
-
-/** Écarts assumés entre la maquette et ce qu'on publie, avec leur raison et leur source. */
-const CHEMIN_CORRECTIONS = join(SITE, 'design', 'port-corrections.json');
-const CORRECTIONS = existsSync(CHEMIN_CORRECTIONS)
-  ? (JSON.parse(readFileSync(CHEMIN_CORRECTIONS, 'utf8')).corrections ?? [])
-  : [];
 
 // ---------------------------------------------------------------- table maquette -> route
 
@@ -75,21 +70,35 @@ function cheminDeRoute(fichier, permalien) {
 
 /** Chemin de la source Astro qui occupe aujourd'hui cette route, s'il y en a une. */
 function sourceAstro(route) {
+  const seche = route.endsWith('/index.html')
+    ? join(SECHE, dirname(route), 'index.astro')
+    : join(SECHE, route.replace(/\.html$/, '.astro'));
   const candidates = route.endsWith('/index.html')
-    ? [join(PAGES, dirname(route), 'index.astro')]
-    : [join(PAGES, route.replace(/\.html$/, '.astro')), join(PAGES, dirname(route), basename(route, '.html') + '.astro')];
+    ? [join(PAGES, dirname(route), 'index.astro'), seche]
+    : [join(PAGES, route.replace(/\.html$/, '.astro')), join(PAGES, dirname(route), basename(route, '.html') + '.astro'), seche];
   for (const chemin of candidates) if (existsSync(chemin)) return chemin;
   return null;
 }
 
-/** Récupère le `title` et la `description` déjà rédigés dans cette source. */
+/** Récupère le `title` et la `description` déjà rédigés, dans la source Astro ou dans la page portée. */
 function copySeo(route) {
   const chemin = sourceAstro(route);
-  if (!chemin) return { title: null, description: null, source: null };
-  const src = readFileSync(chemin, 'utf8');
-  const t = src.match(/<(?:BaseLayout|Layout)[^>]*?\btitle="([^"]+)"/);
-  const d = src.match(/\bdescription="([^"]+)"/);
-  return { title: t?.[1] ?? null, description: d?.[1] ?? null, source: chemin };
+  if (chemin) {
+    const src = readFileSync(chemin, 'utf8');
+    const t = src.match(/<(?:BaseLayout|Layout)[^>]*?\btitle="([^"]+)"/);
+    const d = src.match(/\bdescription="([^"]+)"/);
+    return { title: t?.[1] ?? null, description: d?.[1] ?? null, source: chemin };
+  }
+  // Une page déjà portée : sa copie SEO vit dans son <head>, il faut la retrouver là aussi,
+  // sinon le deuxième portage d'une même page effacerait ce que le premier avait repris.
+  const page = join(PAGES, route);
+  if (existsSync(page)) {
+    const src = readFileSync(page, 'utf8');
+    const t = src.match(/<title>([\s\S]*?) — BipBop<\/title>/);
+    const d = src.match(/<meta name="description" content="([^"]*)"/);
+    if (t || d) return { title: t?.[1] ?? null, description: d?.[1] ?? null, source: page };
+  }
+  return { title: null, description: null, source: null };
 }
 
 /**
@@ -171,15 +180,10 @@ function porter(fichier, table) {
     break;
   }
 
-  // 5bis. corrections connues du texte de la maquette (prix erronés, fautes relevées)
-  for (const c of CORRECTIONS) {
-    if (c.fichier !== fichier) continue;
-    if (!corpsNu.includes(c.au)) {
-      throw new Error(`la correction « ${c.au} » ne trouve plus son texte dans ${fichier} — la maquette a bougé, revoir design/port-corrections.json`);
-    }
-    corpsNu = corpsNu.split(c.au).join(c.remplace);
-    AVERTISSEMENTS.push(`${fichier} : correction appliquée (${c.au} -> ${c.remplace}) — ${c.pourquoi}`);
-  }
+  // 5bis. les écarts déclarés avec la maquette : voir scripts/greffes.mjs
+  const greffe = appliquerGreffes(corpsNu, fichier);
+  corpsNu = greffe.corps;
+  AVERTISSEMENTS.push(...greffe.notes);
 
   // 6. head
   const route = cheminDeRoute(fichier, entree.permalien);
@@ -254,7 +258,7 @@ for (const p of portees) {
 
   // la source Astro qu'elle remplace est archivée hors de src/ (git la garde aussi)
   const astro = sourceAstro(p.route);
-  if (astro) {
+  if (astro && astro.startsWith(PAGES + '/')) {
     const seche = join(SECHE, relative(PAGES, astro));
     mkdirSync(dirname(seche), { recursive: true });
     writeFileSync(seche, readFileSync(astro));

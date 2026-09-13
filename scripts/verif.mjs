@@ -116,7 +116,10 @@ function verifCompteurs() {
     const att = t.match(/les\s+(\d+)\s+avis en préparation/i);
     if (att) {
       const i = html.search(/en préparation/i);
-      const lignes = (html.slice(i).match(/data-rwd="tblrow"/g) || []).length;
+      // La ligne d'en-tête porte le même crochet que les lignes de données : on la retire.
+      const rangees = (html.slice(i).match(/<div data-rwd="tblrow"[\s\S]*?<\/div>\n<\/div>/g) || [])
+        .filter((r) => !/>Mod<\/|>Modèle</.test(r));
+      const lignes = rangees.length;
       if (lignes && +att[1] !== lignes) anomalies.push({ ici, quoi: 'liste d’attente', annonce: `${att[1]} annoncés`, attendu: `${lignes} lignes` });
     }
     if (att && +att[1] !== NB_SANS_AVIS) anomalies.push({ ici, quoi: 'liste d’attente', annonce: `${att[1]} annoncés`, attendu: `${NB_SANS_AVIS} modèles sans avis` });

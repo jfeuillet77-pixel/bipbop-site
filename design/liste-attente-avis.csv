@@ -1,0 +1,33 @@
+# Hub /avis/ — liste d'attente des modèles sans avis publié.
+# Les 22 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
+# cle     = nom_complet de src/data/modeles.json — c'est elle qui joint la base ; prix et segment
+#           en sont lus, ils ne se saisissent pas ici.
+# affiche = le libellé tel que la maquette l'écrit dans la colonne « Modèle » (il diffère de la base :
+#           « Nux DM-110 Mesh » pour « Nux DM-110 Mesh Kit »).
+# phrase  = la colonne « Ce qu'on en dira ». Les 14 premières viennent mot pour mot de la maquette ;
+#           les 8 marquées « rédigée » viennent de design/hub-avis-liste-attente.md §1 (plume de
+#           l'agent, relue par Jordane) — condensation du champ `phrase` de la base.
+# L'ordre suit celui de la maquette ; les lignes rédigées se placent en fin de leur segment.
+cle;affiche;phrase;source
+Millenium Rookie E-Drum Set;Millenium Rookie;Le plancher de prix. Guide enfant;maquette
+Millenium HD-120 E-Drum Set;Millenium HD-120;Pads caoutchouc, le premier kit complet;maquette
+Alesis Debut Kit;Alesis Debut Kit;Format réduit, pensé pour les 7 à 12 ans;maquette
+Donner DED-80;Donner DED-80;Pliable, pour les très petits espaces;maquette
+Donner DED-70;Donner DED-70;Des fûts en mesh sous 200 €, un module dépouillé;rédigée
+Roland TD-02K;Roland TD-02K;Les sons Roland sans le mesh;maquette
+Millenium MPS-350;Millenium MPS-350;Entre la MPS-150X et la MPS-450;maquette
+Yamaha DTX402K;Yamaha DTX402K;La Yamaha la moins chère;maquette
+Nux DM-110 Mesh Kit;Nux DM-110 Mesh;Outsider mesh distribué par Woodbrass;maquette
+Woodbrass DDX50-Mesh;Woodbrass DDX50-Mesh;Pads de 10 pouces au meilleur prix;maquette
+Alesis Nitro Pro;Alesis Nitro Pro;La marche au-dessus de la Nitro Max;maquette
+Donner DED-300X;Donner DED-300X;Cinq fûts mesh et module évolué;maquette
+Alesis Nitro Ultimate;Alesis Nitro Ultimate;Le plafond de la cible;maquette
+Yamaha DTX6K2-X;Yamaha DTX6K2-X;La première vraie intermédiaire;maquette
+Millenium MPS-1000;Millenium MPS-1000;Le module le plus complet de la gamme;maquette
+Yamaha DTX452K;Yamaha DTX452K;La DTX432K, avec la caisse claire en mesh;rédigée
+Donner DED-200 Pro;Donner DED-200 Pro;La DED-200X avec un module enrichi et le Bluetooth;rédigée
+Alesis Nitro Pro XL;Alesis Nitro Pro XL;Onze pads, la configuration la plus complète de la gamme;rédigée
+Millenium MPS-750X Pro;Millenium MPS-750X Pro;La MPS-750X avec le module le plus complet de la marque;rédigée
+Donner BackBeat;Donner BackBeat;Le haut de gamme Donner, avec un module tactile;rédigée
+Roland TD313;Roland TD313;La vitrine Roland : le meilleur module et la meilleure réponse;rédigée
+Alesis Strata Club;Alesis Strata Club;Le haut de gamme Alesis : module tactile et cymbales larges;rédigée

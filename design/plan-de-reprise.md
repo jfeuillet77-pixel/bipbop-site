@@ -1,8 +1,8 @@
 # Plan de reprise — état du chantier au 13 septembre 2026 (soir)
 
 **Objectif : publier la totalité des 38 pages de site désignées par Claude Design.**
-Il est atteint en structure. Les 38 routes existent et sont buildées ; il reste **3 compteurs à
-trancher sur le hub `/avis/`**, puis ouvrir le site aux moteurs.
+Il est atteint. Les 38 routes existent, sont buildées et passent les deux contrôles. Ce qui reste :
+**ouvrir le site aux moteurs**, puis relire ce que la machine n'a pas pu écrire (plus bas, §3).
 
 ## Ce qui a changé de méthode
 
@@ -16,30 +16,35 @@ l'instruction de tout re-porter, pages déjà publiées comprises.
 | | Avant le portage | Après |
 |---|---|---|
 | Routes buildées | 21 / 38 | **38 / 38** |
-| Pages identiques à leur maquette | 6 / 21 | **36 / 37** |
-| Problèmes `npm run check` | 12 | **3** |
+| Pages identiques à leur maquette | 6 / 21 | **37 / 37** |
+| Problèmes `npm run check` | 12 | **0** |
 | Pages dépassant à 390 px | 8 | **0** |
 | Liens internes cassés | — | **0 sur 773** |
 
+Les deux contrôles sortent au vert. Une page reste hors de ce comptage, `/comparatif/` : seule page
+dynamique du dossier, elle se maintient à la main en Astro.
+
 ## Ce qui reste, dans l'ordre
 
-### 1. Tranché par Jordane : la liste d'attente du hub `/avis/` (3 problèmes)
+### 1. Fait ce soir — la liste d'attente du hub `/avis/`
 
-La maquette `Avis.dc.html` annonce « 23 AU PROGRAMME » avec une liste d'attente de **14 lignes**,
-là où `src/data/modeles.json` compte **22 modèles sans avis** (31 modèles, 9 avis). Le contrôle
-signale les trois incohérences. Deux issues possibles, aucune n'est technique :
+La maquette annonçait « 23 AU PROGRAMME » avec **14 lignes** de liste d'attente, là où la base compte
+**22 modèles sans avis**. Décision de Jordane : publier les 22, avec les phrases rédigées. Le tableau
+ne se corrige plus, il se **construit** : `design/liste-attente-avis.csv` (22 ×
+`cle ; libellé affiché ; phrase`) est régénéré par `scripts/greffes.mjs` dans le balisage même de la
+maquette, **prix et segment lus dans `src/data/modeles.json`**, badge et intitulé calculés depuis la
+base. Les 14 lignes du design restent mot pour mot et dans leur ordre ; les 8 rédigées se placent en
+fin de segment.
 
-- **publier les 22** : les 8 phrases manquantes sont rédigées dans
-  `design/hub-avis-liste-attente.md` (§1), au registre des 14 lignes du design, prix corrigés.
-  C'est ma plume, pas celle de Claude Design — à relire. Le titre « 23 au programme » deviendrait
-  faux à son tour (31) : il faudrait aussi l'écrire dans `design/port-corrections.json`.
-- **publier 14 comme la maquette** : la liste d'attente devient un choix éditorial assumé
-  (les modèles qu'on estime valoir le coup), et les 8 phrases rédigées ne sortent pas. Il faut
-  alors dire au contrôle de ne plus comparer ce compteur à la base.
+Si la base gagne un 23ᵉ modèle sans avis que le CSV ne cite pas, **le portage échoue** en le nommant :
+le hub ne peut plus devenir faux silencieusement, et les prix du hub se mettent à jour avec la base.
 
-Dire lequel et je l'applique ; les deux sont tenables, c'est un choix de ligne éditoriale.
+**Ce que ça laisse à ta relecture :** les 8 phrases (`design/hub-avis-liste-attente.md` §1) et, pour
+les 17 pages neuves, un **titre copié de leur `<h1>`** et une **description copiée de leur chapeau** —
+ils sont exacts, jamais relus. La liste complète s'affiche dans les avertissements de
+`node scripts/port.mjs`.
 
-### 2. Ouverture SEO, quand le point 1 est clos
+### 2. Ouverture SEO — plus rien ne la retient
 
 Retirer `<meta name="robots" content="noindex, nofollow">` des 38 routes et débloquer
 `public/robots.txt`. Les deux lignes à changer sont dans `scripts/port.mjs` (les 37 pages portées)

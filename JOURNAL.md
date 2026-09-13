@@ -50,14 +50,44 @@ programme » avec une liste d'attente de **14 lignes**, là où la base compte *
 Compléter, c'est publier les 8 phrases que j'ai rédigées dans `design/hub-avis-liste-attente.md` —
 ma plume, pas celle de Claude Design, donc à trancher par Jordane. Voir le plan.
 
-**Ce que le portage a remis à zéro, à surveiller :** les pages portées sont verbatim, donc
-(a) la faute « au lieu d une » de la DED-200X et (b) les 8 phrases rédigées du hub Avis ne sont
-plus dans le site ; (c) les prix des pages statiques sont ceux de la maquette, plus ceux de
-`modeles.json` — seule la correction documentée les écarte. Et `Header.astro`/`Footer.astro`/
-`BaseLayout` ne servent plus qu'au comparatif.
+**Tranché dans la foulée, même séance — Jordane : publier les 22, avec les phrases rédigées.** Le
+tableau « en préparation » du hub ne se corrige plus ligne par ligne, il se **construit** :
+`design/liste-attente-avis.csv` porte 22 fois `cle ; libellé affiché ; phrase`, et
+`scripts/greffes.mjs` régénère les lignes avec le balisage de la maquette, **prix et segment lus
+dans `src/data/modeles.json`**. Le badge devient « 9 AVIS PUBLIÉS · 22 AU PROGRAMME » et
+l'intitulé « Les 22 avis en préparation », calculés depuis la base. Les 14 lignes du design
+restent dans leur ordre et mot pour mot ; les 8 rédigées se placent en fin de segment.
+Conséquence heureuse : **les 4 corrections de prix deviennent inutiles** (le tableau sort de la
+source) et sortent de `port-corrections.json`, qui se retrouve vide mais gardé comme mécanisme —
+avec une règle neuve, une correction doit trouver **exactement une** occurrence (« 198 € » mordait
+sur « 1 198 € », et l'aurait changé en « 1 219 € » sans que personne le voie).
+
+La greffe vit dans un module **partagé** avec le contrôle de fidélité : `fidelite.mjs` applique les
+mêmes greffes à la maquette avant de comparer, pour qu'un écart déclaré ne compte pas comme une
+dérive. Elle échoue si la base gagne un 23ᵉ modèle sans avis que le CSV ne cite pas : le hub ne
+peut plus devenir faux silencieusement.
+
+**Les deux contrôles sont au vert.** `npm run check` : 6/6, 0 problème sur 38 pages.
+`npm run fidelite` : **37/37 pages reproduisent leur maquette au segment près**. Une limite à dire
+clairement : le portage n'est **rejouable** que si `design/port-seche/` est là (il est hors dépôt) ou
+si la page existe déjà, pour retrouver les titres et descriptions SEO rédigés à la main. Sans l'un
+ni l'autre, `port.mjs` les cite dans la maquette — ce qui s'est produit au deuxième portage de la
+soirée et a été réparé depuis (`copySeo` lit maintenant le `<head>` des pages déjà portées).
+
+**Une page sur deux n'a pas encore son titre relu** : les 17 pages neuves portent un titre **copié
+de leur `<h1>`** et une description **copiée de leur chapeau** — corrects, mais jamais relus par
+Jordane. La liste se lit dans les avertissements de `node scripts/port.mjs`.
+
+**Ce que le portage laisse en suspens, à surveiller :** les pages portées sont verbatim, donc
+(a) la faute « au lieu d une » de la DED-200X est réapparue telle que la maquette l'écrit — à
+corriger dans Claude Design, ou en une entrée `port-corrections.json` si tu préfères qu'elle tienne
+ici ; (b) les prix des pages statiques autres que le hub sont ceux de la maquette, plus ceux de
+`modeles.json` (le hub, lui, sort de la base) ; (c) `Header.astro`/`Footer.astro`/`BaseLayout` ne
+servent plus qu'au comparatif.
 
 **Le site est toujours en phase de test** : `noindex, nofollow` sur les 38 routes, `robots.txt`
-bloquant. À retirer quand les 3 compteurs du hub sont tranchés.
+bloquant. Les deux contrôles étant au vert, l'ouverture aux moteurs n'attend plus que la main de
+Jordane — deux endroits à changer ensemble, `scripts/port.mjs` et `src/layouts/BaseLayout.astro`.
 
 ---
 
