@@ -2,7 +2,7 @@
   command = "npm run build"
   publish = "dist"
 
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
+# Pas de règle « from = "/*" to = "/404.html" status = 404 » ici : elle est superflue
+# (Netlify sert automatiquement /404.html du dossier publié comme page d'erreur) et elle est
+# surtout nuisible — attrapée avant le gestionnaire de formulaires, elle renvoyait notre
+# page 404 à toute soumission du formulaire de contact, POST inclus.
