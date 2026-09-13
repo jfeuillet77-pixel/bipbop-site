@@ -1,5 +1,46 @@
 # Journal BipBop
 
+## 13 septembre 2026 (nuit) — Les liens marchands partaient en commission chez quelqu'un d'autre
+
+Jordane a repéré `?offid=1&affid=3711` dans une URL Thomann publiée. Ce n'était pas un détail de
+plus : **ce tag appartient à un autre site de sa main**, et il donne la règle — *BipBop ne publie
+aucun lien affilié pour le moment*. Le site n'a pas de programme d'affiliation ; chaque clic tagué
+partait donc créditer l'autre compte.
+
+**L'ampleur, mesurée dans la source :** 126 URLs `thomann.fr` sur `?offid=1&affid=3711` (un seul
+identifiant partout), et les 12 liens Donner qui ne vont pas chez Donner mais sur la passerelle
+shareasale `donnnermusic.sjv.io/c/6882776/3379894/43895`. Les Woodbrass étaient, elles, déjà
+propre — la question ouverte n°5 du plan (« 22 URLs Woodbrass sans identifiant d'affiliation »)
+n'a plus d'objet : c'est voulu, pour tous les marchands.
+
+**Ce n'était pas dans les pages, c'était dans les maquettes.** Corriger les pages ne tenait pas un
+portage. La règle est donc descendue dans la chaîne, en un seul endroit, `urlPublique()` dans
+`scripts/greffes.mjs`, appliqué aux **deux** bouts : `port.mjs` (les 37 pages statiques) et
+`import-data.mjs` (`src/data/`, donc le comparatif, qui construit ses liens au build). L'adresse
+seule change, le texte du lien reste celui du design. La passerelle shareasale est **remplacée par
+sa destination réelle**, lue dans son paramètre `u` : les liens Donner partent maintenant en direct
+sur `fr.donnermusic.com/products/…`, chaque modèle avec son propre produit. Une passerelle qui ne
+dit pas où elle mène ne se publie pas, le lien saute.
+
+**Ordre important, et piégé :** la jointure de l'import se fait sur l'**URL brute**, parce que chez
+Donner les six modèles ne se distinguent que par leur paramètre `prodsku` (c'est le corrigé de la
+veille). Nettoyer avant la jointure aurait tout recalé. Le nettoyage se fait donc à l'écriture,
+après.
+
+**Un contrôle, pas une confiance :** `verif.mjs` a une famille 7, *LIENS AFFILIÉS*, qui balaie tout
+le build — HTML, JS bundlé, JSON — et **fait échouer `npm run check`** si un `affid`, un `sjv.io`,
+un `a_aid`, un `irclickid` ou un `utm_source|medium|campaign` survit où que ce soit. Le portage est
+mécanique, le traçage l'est aussi dans l'autre sens : sans filet, une maquette ré-exportée ramène
+les tags sans que personne ouvre un fichier.
+
+**Mesure après fix :** 0 occurrence de `affid=` et 0 de `sjv.io` dans `src/pages`, `src/data` et
+`dist` ; 135 liens nettoyés dans la base, 0 retiré ; production vérifiée en HTTP (`/`, `/avis/`,
+`/guides/pack-complet/`, `/comparatif/`), propre et bien déployée. Les 52 URLs marchandes
+répondent **200 propres comme taguées** — le balayage rapide donnait 46 × 429, c'est le plafond
+anti-bot de Thomann, pas des liens morts ; vérifié en espaçant les requêtes.
+
+---
+
 ## 13 septembre 2026 (soir) — On arrête de retaper les maquettes : elles sont portées par script
 
 Jordane a arrêté la séance sur une question juste : *« Claude a mâché le travail, j'ai l'impression
