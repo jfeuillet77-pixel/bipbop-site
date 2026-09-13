@@ -1,5 +1,31 @@
 # Journal BipBop
 
+## 13 septembre 2026 (fin de nuit, 2) — Le site est ouvert aux moteurs
+
+Jordane : « On ouvre le SEO. C'est le moment. » Il notait au passage que **Screaming Frog
+n'arrivait pas à analyser le site** — c'était bien ça : `robots.txt` valait `Disallow: /`, et
+l'outil respecte `robots.txt` par défaut. Le crawl n'était pas cassé, il était interdit.
+
+**Les trois gestes, faits ensemble** (un seul des trois ne rouvre rien) :
+
+1. `<meta name="robots" content="noindex, nofollow">` retiré du gabarit de head de
+   `scripts/port.mjs` (les 37 pages portées) et de `src/layouts/BaseLayout.astro` (les pages
+   écrites à la main). Le portage n'a touché que cette ligne : 36 fichiers, −1 ligne chacun.
+2. `public/robots.txt` réécrit : `Allow: /` et `Sitemap: https://bipbop.eu/sitemap.xml`. Le
+   fichier garde en tête la trace des trois gestes — c'est la deuxième fois qu'on les cherche.
+3. `node scripts/port.mjs && npm run build` relancé, puis `npm run check` (7/7) et
+   `npm run fidelite` (37/37).
+
+**La 404 garde son `noindex`, et c'est le seul écart assumé.** Elle n'a ni permalien ni place dans
+le sitemap, Netlify la sert en statut 404 — mais son URL directe `/404.html` répond bien 200, et
+sans meta elle resterait indexable. Elle est la seule page du `dist` publié à porter un `robots`.
+
+**Ce que l'ouverture ne règle pas.** Rien ne dit à Google que le site est libre : la propriété
+`bipbop.eu` reste à vérifier dans Search Console et `/sitemap.xml` à y soumettre. Et le site n'a
+**aucune balise sociale** (`og:*` absent des maquettes comme du build, vérifié) — un lien BipBop
+collé dans un message part sans titre, sans description, sans image. Ça se décide dans Claude
+Design (il faudrait une image 1200 × 630), pas ici.
+
 ## 13 septembre 2026 (fin de nuit) — Deux sitemaps, un seul arbre
 
 Jordane demande un sitemap XML pour les moteurs et un plan du site HTML accessible depuis le pied
