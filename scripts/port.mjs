@@ -24,7 +24,7 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync, rmSync } from 'node:fs';
 import { join, dirname, basename, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { appliquerGreffes } from './greffes.mjs';
+import { appliquerGreffes, urlPublique } from './greffes.mjs';
 
 const SITE = dirname(fileURLToPath(import.meta.url)).replace(/\/scripts$/, '');
 const MAQUETTES = join(SITE, '..', 'Claude Design - MàJ');
@@ -170,6 +170,24 @@ function porter(fichier, table) {
 
   // 4. assets -> racine servie
   corpsNu = corpsNu.replace(/(href|src)="\.?\/?assets\/([^"]+)"/g, '$1="/$2"');
+
+  // 4bis. aucun lien affilié ne sort du site : les URLs des maquettes sont taguées pour un
+  // autre site de Jordane (Thomann « ?offid=1&affid=3711 », Donner via passerelle shareasale).
+  // Le nettoyage porte sur l'adresse seulement — le texte du lien reste celui du design.
+  let nettoyes = 0, retirer = 0;
+  corpsNu = corpsNu.replace(/href="(https?:\/\/[^"]+)"/g, (tout, brut) => {
+    const propre = urlPublique(brut.replace(/&amp;/g, '&'));
+    if (propre === null) {
+      retirer++;
+      AVERTISSEMENTS.push(`${fichier} : passerelle de tracking sans destination lisible, lien retiré — ${brut.slice(0, 64)}`);
+      return 'href="#" data-lien-retire="passerelle-sans-destination"';
+    }
+    if (propre !== brut.replace(/&amp;/g, '&')) nettoyes++;
+    return `href="${propre.replace(/&/g, '&amp;')}"`;
+  });
+  if (nettoyes || retirer) {
+    AVERTISSEMENTS.push(`${fichier} : ${nettoyes} lien(s) marchand(s) débarrassé(s) de leur traçage${retirer ? ` , ${retirer} retiré(s)` : ''}`);
+  }
 
   // 5. ce qui reste de dynamique dans le corps mérite un regard humain
   for (const m of corpsNu.matchAll(/<script\b(?! src)[^>]*>([\s\S]{0,80})/g)) {

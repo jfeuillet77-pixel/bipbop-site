@@ -364,7 +364,47 @@ titre(6, 'NOTES INTERNES');
 console.log(fuites.length ? `${fuites.length} FUITE(S) dans le build` : 'ras — rien d’interne ne sort du dépôt');
 for (const f of fuites.slice(0, 12)) console.log(`   ✗ ${f.fichier} contient «${f.motif}» (${f.pourquoi})`);
 
-const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length;
+/* ----- 7. aucun lien affilié ne sort du dépôt -----
+   BipBop n'a pas de programme d'affiliation, et les liens des maquettes sont tagués pour un
+   autre site de Jordane (`?offid=1&affid=3711` sur 126 URLs Thomann, passerelle shareasale
+   `donnnermusic.sjv.io` pour Donner). Le nettoyage se fait au portage et à l'import
+   (`urlPublique` dans scripts/greffes.mjs) ; ce contrôle est le filet : une retape, un import
+   oublié ou une maquette qui change ne doit pas laisser passer un clic qui partirait en
+   commission ailleurs. */
+
+const MARQUEURS_AFFILIES = [
+  [/affid=\d+/i, 'paramètre affilié Thomann'],
+  [/offid=\d+/i, 'paramètre affilié Thomann'],
+  [/\bsjv\.io\b/i, 'passerelle shareasale'],
+  [/a_aid=[\w.]+/i, 'paramètre Awin'],
+  [/irclickid=/i, 'paramètre Impact'],
+  [/utm_(?:source|medium|campaign)=/i, 'paramètre de campagne'],
+];
+
+function verifLiensAffilies() {
+  const trouvés = [];
+  const parcourir = (dir) => {
+    for (const nom of readdirSync(dir)) {
+      const p = join(dir, nom);
+      if (statSync(p).isDirectory()) { parcourir(p); continue; }
+      if (!/\.(html|js|css|json|map)$/.test(nom)) continue;
+      const txt = readFileSync(p, 'utf8');
+      for (const [motif, pourquoi] of MARQUEURS_AFFILIES) {
+        const n = (txt.match(new RegExp(motif.source, 'gi')) || []).length;
+        if (n) trouvés.push({ fichier: relative(DIST, p), pourquoi, n });
+      }
+    }
+  };
+  parcourir(DIST);
+  return trouvés;
+}
+
+const affilies = verifLiensAffilies();
+titre(7, 'LIENS AFFILIÉS');
+console.log(affilies.length ? `${affilies.length} MARQUEUR(S) DE TRAÇAGE DANS LE BUILD — aucun lien affilié ne se publie` : 'ras — aucun lien traquant dans les 38 routes ni dans la base');
+for (const a of affilies.slice(0, 12)) console.log(`   ✗ ${a.fichier} : ${a.n}× ${a.pourquoi}`);
+
+const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length;
 console.log(`\n${L}`);
-console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 6 contrôles de fin de séance sont passés\n');
+console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 7 contrôles de fin de séance sont passés\n');
 process.exit(nbProblemes ? 1 : 0);
