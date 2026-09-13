@@ -89,6 +89,25 @@ servent plus qu'au comparatif.
 bloquant. Les deux contrôles étant au vert, l'ouverture aux moteurs n'attend plus que la main de
 Jordane — deux endroits à changer ensemble, `scripts/port.mjs` et `src/layouts/BaseLayout.astro`.
 
+## 13 septembre 2026 (fin de soirée) — Le site en ligne n'était pas le site déployé
+
+Pour la revue, merge `dev` → `main` et push. Rien ne change en ligne. Test HTTP sur une route neuve
+(`/guides/pack-complet/` → 404) alors que `origin/main` la contient, et zéro crochet `data-*` sur
+`/` : **la production datait d'avant la chaîne de données**. Cause : `prebuild` enchaîne sur
+`import-data.mjs`, qui ouvrait `../Claude Design - MàJ/data/selection-accessoires.csv` sans tester
+son existence. Le dossier n'est pas dans le dépôt, donc pas sur Netlify → `ENOENT` → build en
+échec → Netlify ressert son dernier succès, sans que rien le signale à un visiteur.
+`import-data.mjs` calcule maintenant : source absente → `src/data/` reste tel que committé, le build
+continue ; `avis.json` se recalcule quand même, puisqu'il ne dépend que des pages publiées ici.
+
+**Deux bugs du même genre, silencieux, trouvés en chemin :** `import-data.mjs` reconnaissait les
+avis publiés en cherchant `index.astro`, alors que les pages portées sont des `index.html` — la
+liste était revenue à `[]`, ce qui éteint les liens « L'avis → » du comparatif sans changer l'aspect
+d'une page. Et `npm run check` ne pouvait pas le voir : il lisait le nombre d'avis dans la base, pas
+sur le disque. Les deux lisent maintenant les deux formats, et `verif.mjs` compare `avis.json` aux
+dossiers réels. Après fix : **38 routes en 200 sur bipbop.eu**, hub à « 9 AVIS PUBLIÉS · 22 AU
+PROGRAMME ». **Retenir : `git log` ne prouve rien, une requête HTTP prouve.**
+
 ---
 
 ## 13 septembre 2026 — Pause de session : où on en est, comment reprendre
