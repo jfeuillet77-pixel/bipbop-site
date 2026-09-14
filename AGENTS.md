@@ -79,7 +79,10 @@ garde la fiche validée page par page) :
 
 1. `design/port-seche/<route>/index.astro` si le fichier existe (20 pages y sont passées) :
    `copySeo()` lit le `<BaseLayout title= description=>` **en priorité**, et une édition du
-   `<head>` de la page portée serait écrasée au portage suivant.
+   `<head>` de la page portée serait écrasée au portage suivant. **Ce dossier est dans
+   `.gitignore`** : la copie n'y est pas versionnée. Après une édition là, écrire la même chaîne
+   dans le `<head>` de `src/pages/<route>/index.html` avant de committer — sinon un autre poste,
+   ou un clone frais, régénérera l'ancienne.
 2. Sinon, le `<head>` de `src/pages/<route>/index.html` : ces deux balises-là survivent au portage
    (c'est le seul contenu de `src/pages/` autorisé, le corps reste interdit, loi 1).
 3. `/comparatif/` et `/plan-du-site/` : les props de `<BaseLayout>` dans leur `.astro`.

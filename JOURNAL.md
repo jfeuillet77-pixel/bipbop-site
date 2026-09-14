@@ -1,5 +1,52 @@
 # Journal BipBop
 
+## 14 septembre 2026 — `/llms.txt` : une troisième lecture du même arbre
+
+Jordane : « Peux-tu générer le fichier llms.txt de mon site BipBop.eu ? »
+
+**Ce que c'est.** Un fichier Markdown posé à la racine (`https://bipbop.eu/llms.txt`, format
+[llmstxt.org](https://llmstxt.org)) que les modèles lisent avant de parcourir un site : un titre,
+un blockquote de résumé, puis des listes de liens avec une note par lien. Il ne remplace pas le
+sitemap — il dit ce que le sitemap ne dit pas : ce que contient chaque page et selon quelle règle
+elle est écrite. Les moteurs n'ont pas confirmé qu'ils le consomment ; les agents et les outils de
+RAG, si. Coût d'entrée faible, c'est un fichier de plus au build.
+
+**Ce qui est publié maintenant.** `scripts/llms.mjs`, branché en `postbuild` derrière
+`scripts/sitemap.mjs`, et `npm run llms` pour le lancer seul. Il écrit `dist/llms.txt` : 38 liens
+rangés dans les six sections du plan (« Le point de départ », « Les avis », « Les duels », « Les
+guides d'achat », « Les bases », « Le site ») plus une section `Optional` pour les deux pages
+légales — la convention du format veut qu'`Optional` regroupe ce qu'un agent peut sauter.
+
+**C'est un arbre, trois lectures.** Les routes viennent de `arborescence(DIST)` dans
+`src/lib/arborescence.mjs`, exactement comme le sitemap XML et la page `/plan-du-site/`. Le nom
+d'un lien est le `<title>` publié de la page, sa note est sa `<meta description>` publiée : la
+fiche SEO du 14/09 sert donc aux trois publics, et une page qui change de copie change de note
+toute seule. Rien n'est ressaisi dans le script, et aucun lien n'est écrit à la main dans le
+fichier. Les deux phrases de contexte qui citent un chiffre (`9` avis, `31` modèles suivis, relevé
+du `13 septembre 2026`) sont comptées dans `src/data/` et lues dans `RELEVE`, pas tapées.
+
+**Ce que le fichier affirme, et pourquoi c'est vrai.** « Aucun lien affilié, aucun article
+sponsorisé » et « une note n'existe que si la grille qui la produit est affichée » : les
+contrôles 6 et 7 de `verif.mjs` font échouer `npm run check` si un traqueur ou une note interne
+survit, donc la phrase tient tant que le contrôle de fin de séance est vert. C'est aussi la seule
+page du site qui
+résume la méthode éditoriale en quatre lignes pour un lecteur qui ne cliquera sur aucune autre.
+
+**Deux garde-fous qui font échouer le script** (même esprit que `sitemap.mjs`) : une page publiée
+sans `<meta description>` publierait un lien nu ; et le fichier relu après écriture doit contenir
+exactement un lien par page revendiquée par le plan.
+
+**Vérifié.** `npm run build` → 39 pages, `llms.txt · 38 lien(s), dont 36 hors « Optional »`, les
+6 sections aux mêmes compteurs que le sitemap. Les 38 URL du fichier sont **identiques** à celles
+de `dist/sitemap.xml` (`diff` vide en retirant les 3 liens de la phrase de contexte).
+`node scripts/verif.mjs` : **7/7**, 876 liens internes, aucun traquant. `https://bipbop.eu/llms.txt`
+répond encore **404** — le fichier n'est pas déployé.
+
+**Ce qui reste ouvert.** Déployer (`dist/` est gitignoré, seul le build de Netlify publie le
+fichier). `public/robots.txt` n'a rien à changer : `llms.txt` n'est pas un fichier qu'on déclare,
+il se trouve. Et si un jour les pages ont une version Markdown lisible par machine, le format
+veut que les liens du `llms.txt` pointent dessus plutôt que sur le HTML.
+
 ## 14 septembre 2026 — Passe SEO : les 39 titles et metas réécrits, la marque et les prix hors des titres
 
 Jordane : « Les Titles SEO des pages ne sont pas optimisés… ils sont souvent trop longs. » Puis, à
