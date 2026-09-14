@@ -58,6 +58,36 @@ jamais utiliser un **prix de bundle Thomann** comme prix du modèle · **ne jama
 produit** · pas de virgule avant « et » ni avant « ou » · pas de tiret cadratin · tutoiement du
 premier au dernier mot.
 
+## Copie SEO : la règle, et où elle vit
+
+Décidée par Jordane le 14/09/2026, appliquée aux 39 fichiers du site (`design/seo-titles-meta.md`
+garde la fiche validée page par page) :
+
+- **`<title>` entre 50 et 60 caractères**, espaces compris. La fiche est produite et relue par
+  script, jamais à l'œil.
+- **Jamais la marque dans un title.** Elle ne porte aucune requête et mange 9 caractères. Elle
+  reste tolérée sur les trois pages où elle est le sujet : `/a-propos/`, mentions légales,
+  confidentialité.
+- **Jamais de montant dans un title.** Le mot « Prix » oui (c'est une requête), `298 €` non : un
+  prix publié dans un titre est faux dès le relevé suivant. Seules exceptions : les trois guides
+  dont le budget EST la requête (« à moins de 300 € »).
+- **Meta description entre 120 et 155**, avec le mot clé, un chiffre vérifiable et une raison de
+  cliquer. Les montants, eux, vivent là.
+- Un avis porte « Avis » + le nom du modèle + « Prix » + l'année.
+
+**Où écrire la copie**, parce que le portage a deux sources et pas une :
+
+1. `design/port-seche/<route>/index.astro` si le fichier existe (20 pages y sont passées) :
+   `copySeo()` lit le `<BaseLayout title= description=>` **en priorité**, et une édition du
+   `<head>` de la page portée serait écrasée au portage suivant.
+2. Sinon, le `<head>` de `src/pages/<route>/index.html` : ces deux balises-là survivent au portage
+   (c'est le seul contenu de `src/pages/` autorisé, le corps reste interdit, loi 1).
+3. `/comparatif/` et `/plan-du-site/` : les props de `<BaseLayout>` dans leur `.astro`.
+
+Le suffixe « — BipBop » était ajouté par `scripts/port.mjs` et `BaseLayout.astro` ; il n'est plus
+écrit depuis le 14/09. Si quelqu'un le remettait, `copySeo()` retomberait sur les `<h1>` des
+maquettes : la regex de lecture du title ne doit plus dépendre du suffixe.
+
 ## Development
 
 When starting the dev server, use background mode:

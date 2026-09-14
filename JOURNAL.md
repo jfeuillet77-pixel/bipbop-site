@@ -1,5 +1,66 @@
 # Journal BipBop
 
+## 14 septembre 2026 — Passe SEO : les 39 titles et metas réécrits, la marque et les prix hors des titres
+
+Jordane : « Les Titles SEO des pages ne sont pas optimisés… ils sont souvent trop longs. » Puis, à
+la relecture de la première fiche : « Ne mets pas le nom de la marque dans le Title, ça ne sert à
+rien, cela réduit l'espace » et « Pas de prix affichés dans les titles. Tu utilises le mot-clé
+"Prix" mais tu ne mets pas de chiffres. » Les deux montants gardés dans les metas et dans les trois
+guides de budget ont été validés en 2ᵉ passe.
+
+**État mesuré avant.** 24 titles sur 39 dépassaient 60 caractères (jusqu'à 87, « Millenium MPS-850 :
+cent euros de plus que la MPS-750X, pour quoi exactement ? — BipBop »), 7 faisaient moins de 50,
+**39 sur 39 portaient la marque**. Côté metas : 9 au-dessus de 155 et 22 sous 120 — des résidus de
+chapeau recopiés par le portage faute de copie écrite en place (« Tu as déjà la batterie. », 23
+caractères). Le trafic du site venant du SEO seulement, c'était le point à plus fort rendement avant
+Search Console.
+
+**Ce qui est publié maintenant.** 36 titles entre 51 et 60 caractères (trois pages hors contrainte :
+mentions légales, confidentialité, et la 404 en `noindex`), toutes les metas entre 120 et 155. Les
+9 pages d'avis portent « Avis » + le nom du modèle + « Prix » + 2026, vérifié page par page.
+Aucun title dupliqué. La marque n'apparaît plus que sur les trois pages où elle est le sujet. Les
+montants sont sortis des titles et vivent dans les metas, relues avec l'article. Des titres de
+maquette tombés sous le poids du suffixe sont récupérés en entier (`C'est quoi un pad mesh et
+pourquoi tout le monde en parle ?`, 68 → 59).
+
+**La leçon de la journée : `src/pages/` n'est pas la source de la copie SEO.** Première tentative,
+les 39 copies écrites dans les `<head>` : `node scripts/port.mjs` les a effacées et remises à
+l'ancienne. `copySeo()` cherche le titre **d'abord** dans `design/port-seche/<route>/index.astro`,
+l'archive des 20 sources Astro retirées par le portage, et ne relit la page portée qu'en l'absence
+de ce fichier. La règle est écrite dans `AGENTS.md` (§« Copie SEO : la règle, et où elle vit »),
+avec le chemin d'écriture selon les cas.
+
+**Le piège qui allait avec.** La marque était ajoutée par `scripts/port.mjs` (l. 229) et
+`BaseLayout.astro`, mais `copySeo()` la re-recognisait avec la regex
+`<title>(…) — BipBop</title>`. Retirer le suffixe sans élargir cette lecture fait retomber les 37
+pages portées sur le `<h1>` de leur maquette, silencieusement, avec pour seul signal un
+avertissement dans la sortie du portage. Les deux ont été changés ensemble, et la regex lit
+désormais le `<title>` du seul `<head>` — comme le fait déjà `titrePublie()` de
+`src/lib/arborescence.mjs`.
+
+**Un effet de bord assumé.** `libelleDe()` tronque les titres d'avis et de duels aux deux-points pour
+les listes du plan du site : « Millenium MPS-450 : avis complet, prix et verdict 2026 » devient
+« Millenium MPS-450 » (tant mieux), mais « Que vaut la Roland TD-02KV ? Avis, prix et verdict 2026 »
+reste entier faute de deux-points. Deux styles de libellés cohabitent dans `/plan-du-site/`. À
+repeindre si ça gêne, ce n'est pas une erreur.
+
+**Contrôles.** `node scripts/port.mjs` relancé deux fois de suite : le second portage ne change plus
+un octet (copie survivante, donc). `npm run check` : **7/7**, 0 problème. `npm run fidelite` :
+**37/37** pages identiques à leur maquette — la copie SEO n'est pas du corps, elle ne pouvait pas
+déclencher l'écart. Dans `dist/` : 39 titles construits, aucun hors plage hormis les trois
+exemptées, aucun montant hors des trois guides de budget, sitemap à 38 URL.
+
+**Ce qui reste ouvert.** (a) Search Console : vérifier `bipbop.eu` et soumettre `/sitemap.xml`, seul
+geste qui apprenne à Google que le site est libre. (b) Les balises sociales (`og:title`,
+`og:description`) n'existent toujours pas : elles devraient reprendre ces mêmes chaînes, et c'est ce
+qui fait passer un lien collé dans un message de « rien » à « titre + description + image ».
+(c) Aucun contrôle de longueur dans `scripts/verif.mjs` : la règle des 50-60 tient aujourd'hui par la
+fiche et par `AGENTS.md`, pas par la machine — un contrôle (longueurs, doublons, montant, marque) est
+la seule chose qui l'empêche de se dégrader au prochain portage. (d) Deux compteurs que les pages
+contredisent elles-mêmes (badge « 22 AU PROGRAMME » contre « Vingt-trois » dans le chapeau du hub
+Avis ; « 11 guides et 6 articles » contre 10 + 7 dans le build) : à corriger dans Claude Design, les
+metas publiées n'affichent que ce qui est vérifiable.
+
 ## 13 septembre 2026 (fin de nuit, 2) — Le site est ouvert aux moteurs
 
 Jordane : « On ouvre le SEO. C'est le moment. » Il notait au passage que **Screaming Frog

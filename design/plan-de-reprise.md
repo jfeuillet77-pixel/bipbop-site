@@ -1,9 +1,10 @@
-# Plan de reprise — état du chantier au 13 septembre 2026 (soir)
+# Plan de reprise — état du chantier au 14 septembre 2026
 
 **Objectif : publier la totalité des 38 pages de site désignées par Claude Design.**
 Il est atteint. Les 38 routes existent, sont buildées et passent les deux contrôles. **Le site est
-ouvert aux moteurs depuis le 13 septembre au soir** (§2 fait). Ce qui reste : déclarer le sitemap
-dans Search Console et relire ce que la machine n'a pas pu écrire (§3).
+ouvert aux moteurs depuis le 13 septembre au soir** (§2 fait) et **ses titles et meta descriptions
+sont écrits depuis le 14** (§2 ter fait). Ce qui reste : déclarer le sitemap dans Search Console,
+les balises sociales, et relire ce que la machine n'a pas pu écrire (§3).
 
 ## Ce qui a changé de méthode
 
@@ -40,10 +41,9 @@ fin de segment.
 Si la base gagne un 23ᵉ modèle sans avis que le CSV ne cite pas, **le portage échoue** en le nommant :
 le hub ne peut plus devenir faux silencieusement, et les prix du hub se mettent à jour avec la base.
 
-**Ce que ça laisse à ta relecture :** les 8 phrases (`design/hub-avis-liste-attente.md` §1) et, pour
-les 17 pages neuves, un **titre copié de leur `<h1>`** et une **description copiée de leur chapeau** —
-ils sont exacts, jamais relus. La liste complète s'affiche dans les avertissements de
-`node scripts/port.mjs`.
+**Ce que ça laisse à ta relecture :** les 8 phrases (`design/hub-avis-liste-attente.md` §1). Les
+titles et les descriptions des 17 pages neuves — un temps **copiés de leur `<h1>` et de leur
+chapeau** — ont été réécrits et validés page par page le 14 septembre (§2 ter).
 
 ### 2. Ouverture SEO — faite le 13 septembre 2026 au soir
 
@@ -98,6 +98,32 @@ trois gestes de l'ouverture.
 en commentaire le temps du `noindex` : sous `Disallow: /`, la déclarer aurait livré la liste
 complète des URL à Google sans même qu'il puisse lire les `noindex`. Les deux conditions sont
 levées, le fichier `robots.txt` publié porte `Allow: /` et le sitemap.
+
+### 2 ter. Copie SEO — faite le 14 septembre 2026
+
+Les 39 fichiers du site ont un **title de 50 à 60 caractères** et une **meta de 120 à 155**, écrits
+pour le clic et non pour la description interne. La règle vient de Jordane, elle est consignée dans
+`AGENTS.md` (§« Copie SEO : la règle, et où elle vit ») et la fiche validée page par page dans
+`design/seo-titles-meta.md` : **jamais la marque dans un title** (elle ne porte aucune requête et
+coûte 9 caractères), **jamais de montant dans un title** (le mot « Prix » oui, `298 €` non — un prix
+publié dans un titre est faux dès le relevé suivant), les 9 avis portent « Avis » + le modèle +
+« Prix » + l'année.
+
+Exceptions actées : les trois guides dont le budget est la requête, et les trois
+pages qui nomment le site (`/a-propos/`, mentions légales, confidentialité).
+
+Avant : 24 titles sur 39 au-dessus de 60 (jusqu'à 87), 39 sur 39 portant la marque, 22 metas sous
+120 caractères (des résidus de chapeau recopiés par le portage).
+
+**Le point à retenir, parce qu'il coûte cher à découvrir deux fois :** la copie SEO ne se tapait pas
+où on croyait l'écrire. `copySeo()` lit `design/port-seche/<route>/index.astro` **en priorité** (les
+20 sources Astro retirées par le portage y sont) et ne relit le `<head>` de la page portée qu'à
+défaut. Et le title se reliait par la regex `<title>(…) — BipBop</title>` : sans le suffixe, les 37
+pages portées retombaient sur le `<h1>` de leur maquette, en silence. Les deux ont été corrigés
+ensemble ; `node scripts/port.mjs` relancé deux fois ne change plus un octet.
+
+**Ce que ça laisse à ta relecture :** les libellés de `/plan-du-site/` (ceux coupés aux deux-points
+et les autres cohabitent), et les deux compteurs que les pages contredisent elles-mêmes, notés au journal du 14/09.
 
 ### 3. Questions ouvertes, sans urgence de publication
 

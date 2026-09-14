@@ -91,10 +91,15 @@ function copySeo(route) {
   }
   // Une page déjà portée : sa copie SEO vit dans son <head>, il faut la retrouver là aussi,
   // sinon le deuxième portage d'une même page effacerait ce que le premier avait repris.
+  // Le titre se relit dans le `<head>` uniquement : le corps des maquettes porte ses propres
+  // balises `<title>` (SVG), et depuis la passe SEO du 14/09 la marque n'est plus dans les
+  // titles — le suffixe ne sert donc plus de discriminant. Même lecture que `titrePublie()`
+  // de src/lib/arborescence.mjs.
   const page = join(PAGES, route);
   if (existsSync(page)) {
     const src = readFileSync(page, 'utf8');
-    const t = src.match(/<title>([\s\S]*?) — BipBop<\/title>/);
+    const tete = src.split('</head>')[0];
+    const t = tete.match(/<title>([\s\S]*?)<\/title>/);
     const d = src.match(/<meta name="description" content="([^"]*)"/);
     if (t || d) return { title: t?.[1] ?? null, description: d?.[1] ?? null, source: page };
   }
@@ -226,7 +231,7 @@ function porter(fichier, table) {
     route === '404.html' ? '<meta name="robots" content="noindex, nofollow">' : null,
     '<link rel="apple-touch-icon" href="/bipbop-touch-180.png">',
     /^https?:/.test(entree.permalien) ? `<link rel="canonical" href="${entree.permalien}">` : null,
-    `<title>${titre} — BipBop</title>`,
+    `<title>${titre}</title>`,
     casquePort,
   ].filter(Boolean).join('\n');
 
