@@ -1,5 +1,29 @@
 # Journal BipBop
 
+## 15 septembre 2026 — Ce qui ne se publie pas : les commentaires du sitemap et de robots.txt
+
+Jordane, en relisant `/sitemap.xml` : « C'est dingue qu'elle y soit ! Google va lire ça… »
+
+**Ce qui sortait du dépôt.** `scripts/sitemap.mjs` écrivait un commentaire XML de deux lignes en
+tête de sitemap — « Généré par scripts/sitemap.mjs à chaque build. Ne pas éditer : la source est
+`src/data/plan.json`… » — et `public/robots.txt` portait 11 lignes de `#` racontant les trois
+gestes de l'ouverture aux moteurs de 2026, avec les chemins des scripts concernés.
+
+**Pourquoi ça part.** La spec sitemaps autorise les commentaires et les `#` sont légaux dans
+robots.txt : techniquement, rien ne casse. Mais un fichier publié n'est pas un fichier de travail.
+Son destinataire est un crawler — ce qu'il y lit ne nuit ni à l'affichage ni au classement, mais
+lui apprend où vivent nos routes et comment le dépôt est monté. Ce qui explique un fichier se note
+dans `JOURNAL.md` et dans l'en-tête du script, pas dans l'artefact servi.
+
+**Ce qui a changé.** Les deux lignes retirées du tableau `xml` de `scripts/sitemap.mjs` ; la
+prose explicative reste dans son JSDoc, qui ne se publie pas. `public/robots.txt` réduit à
+`User-agent` / `Allow` / `Sitemap` — l'historique de l'ouverture est déjà consigné dans ce journal
+(13/09, « les trois gestes »), rien n'est perdu.
+
+**Vérifié.** `npm run check` → 39 pages, **7/7**, 876 liens internes, aucun traquant.
+`npm run fidelite` → **37/37**. `dist/sitemap.xml` relu par un parseur : document valide, 38 `<loc>`,
+38 `<lastmod>`, **0 nœud commentaire**. `dist/robots.txt` : 4 lignes.
+
 ## 14 septembre 2026 — `/llms.txt` : une troisième lecture du même arbre
 
 Jordane : « Peux-tu générer le fichier llms.txt de mon site BipBop.eu ? »
@@ -29,8 +53,8 @@ du `13 septembre 2026`) sont comptées dans `src/data/` et lues dans `RELEVE`, p
 sponsorisé » et « une note n'existe que si la grille qui la produit est affichée » : les
 contrôles 6 et 7 de `verif.mjs` font échouer `npm run check` si un traqueur ou une note interne
 survit, donc la phrase tient tant que le contrôle de fin de séance est vert. C'est aussi la seule
-page du site qui
-résume la méthode éditoriale en quatre lignes pour un lecteur qui ne cliquera sur aucune autre.
+page du site qui résume la méthode éditoriale en quatre lignes pour un lecteur qui ne cliquera sur
+aucune autre.
 
 **Deux garde-fous qui font échouer le script** (même esprit que `sitemap.mjs`) : une page publiée
 sans `<meta description>` publierait un lien nu ; et le fichier relu après écriture doit contenir
@@ -39,13 +63,18 @@ exactement un lien par page revendiquée par le plan.
 **Vérifié.** `npm run build` → 39 pages, `llms.txt · 38 lien(s), dont 36 hors « Optional »`, les
 6 sections aux mêmes compteurs que le sitemap. Les 38 URL du fichier sont **identiques** à celles
 de `dist/sitemap.xml` (`diff` vide en retirant les 3 liens de la phrase de contexte).
-`node scripts/verif.mjs` : **7/7**, 876 liens internes, aucun traquant. `https://bipbop.eu/llms.txt`
-répond encore **404** — le fichier n'est pas déployé.
+`node scripts/verif.mjs` : **7/7**, 876 liens internes, aucun traquant. `npm run fidelite` :
+**37/37**.
 
-**Ce qui reste ouvert.** Déployer (`dist/` est gitignoré, seul le build de Netlify publie le
-fichier). `public/robots.txt` n'a rien à changer : `llms.txt` n'est pas un fichier qu'on déclare,
-il se trouve. Et si un jour les pages ont une version Markdown lisible par machine, le format
-veut que les liens du `llms.txt` pointent dessus plutôt que sur le HTML.
+**En ligne.** Commit `c7b4fa9` sur `dev`, merge `2eda10c` sur `main` à la demande de Jordane pour
+revue, vérifié **en HTTP** sur la production : `https://bipbop.eu/llms.txt` → 200,
+`content-type: text/plain; charset=UTF-8`, octet pour octet identique au `dist/` construit,
+`www.bipbop.eu/llms.txt` → 301 vers le canonical. Le fichier se régénère à chaque build : une page
+ajoutée au plan éditorial y entre toute seule, sans qu'on y touche.
+
+**Ce qui reste ouvert.** `public/robots.txt` n'a rien à changer : `llms.txt` n'est pas un fichier
+qu'on déclare, il se trouve. Et si un jour les pages ont une version Markdown lisible par machine,
+le format veut que les liens du `llms.txt` pointent dessus plutôt que sur le HTML.
 
 ## 14 septembre 2026 — Passe SEO : les 39 titles et metas réécrits, la marque et les prix hors des titres
 

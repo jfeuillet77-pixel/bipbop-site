@@ -83,8 +83,6 @@ for (const section of sections) {
 
 const xml = [
   '<?xml version="1.0" encoding="UTF-8"?>',
-  '<!-- Généré par scripts/sitemap.mjs à chaque build. Ne pas éditer : la source est',
-  '     src/data/plan.json (les routes) et le <title> de chaque page (les libellés du plan du site). -->',
   '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
   ...LIGNES,
   '</urlset>',
