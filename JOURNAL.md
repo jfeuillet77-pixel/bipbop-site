@@ -28,12 +28,14 @@ un backoff et retarde ses tentatives de plusieurs jours. Le geste qui casse ce b
 obtenu via un agent de recherche tiers : je ne peux pas garantir que les neuf pages viennent de
 l'index Google plutôt que d'un autre moteur.
 
-**Question ouverte, trouvée en route : `bipbop.fr` n'est branché nulle part.** Le `.eu` est bien chez
-Netlify (`*.p01.nsone.net`), le `.fr` est resté chez OVH (A `213.186.33.5`, NS `dns111.ovh.net` /
-`ns111.ovh.net`) et son handshake TLS est reset : le domaine ne sert rien du tout. Deux issues
-possibles, à trancher — en faire un 301 vers `bipbop.eu` (le `.fr` rassure un lecteur français mais
-ne doit surtout pas dupliquer le site), ou l'oublier tant que l'indexation du `.eu` n'est pas assise.
-Si une URL soumise dans Search Console contient `bipbop.fr`, elle explique le rouge à elle seule.
+**Un point trouvé en route, tranché le jour même : `bipbop.fr` n'est branché nulle part.** Le `.eu` est
+bien chez Netlify (`*.p01.nsone.net`), le `.fr` est resté chez OVH (A `213.186.33.5`, NS
+`dns111.ovh.net` / `ns111.ovh.net`) et son handshake TLS est reset : le domaine ne sert rien du tout.
+**Décision du 15/09 : on le laisse en attente** — toute l'énergie va à l'indexation du `.eu`, le
+domaine canonical et celui soumis dans Search Console. Le jour où on y touche, ce sera pour un
+**301 vers `bipbop.eu`**, jamais pour un site miroir qui dupliquerait le contenu. Une URL soumise dans
+Search Console qui contiendrait `bipbop.fr` expliquerait le rouge à elle seule, et il faudrait
+trancher plus tôt.
 
 ## 15 septembre 2026 — Ce qui ne se publie pas : les commentaires du sitemap et de robots.txt
 
