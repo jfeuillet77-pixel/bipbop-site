@@ -1,5 +1,40 @@
 # Journal BipBop
 
+## 15 septembre 2026 — Search Console tient le sitemap en rouge, le serveur est propre
+
+Jordane, à propos du « Impossible de récupérer le sitemap » affiché par Search Console : « Tu es sûr
+qu'il n'y a pas de Disallow sur le sitemap XML ? »
+
+**D'abord une confusion à défaire, elle revient souvent.** Une directive d'accès ne peut pas vivre
+dans un sitemap : `Disallow` n'existe que dans `robots.txt` ou dans un en-tête `X-Robots-Tag`. Un
+fichier XML de sitemap ne contient que des `<url>`, et Google n'y cherche pas la même chose. Ce que
+la version d'hier affichait en tête était un commentaire, du texte ignoré.
+
+**Mesuré deux fois, depuis deux réseaux différents** (la box de Jordane, puis une sortie par un autre
+chemin), le 15/09 à 08h55 : `/sitemap.xml` répond 200 en HTTP/2 et HTTP/1.1, `application/xml`,
+4 812 octets, brotli accepté, XML valide, 38 `<loc>`, 12 requêtes de suite sans un seul 5xx, chaîne
+TLS complète (4 certificats, `Verify return code: 0`), aucun `x-robots-tag`, **pas de record AAAA**
+sur la zone Netlify — donc pas de piège Googlebot dual-stack — et des `lastmod` au 14/09, aucun dans
+le futur. `robots.txt` servi : `User-agent` / `Allow` / `Sitemap`, 63 octets. La chaîne « Disallow »
+n'apparaît dans **aucun fichier publié** du dépôt (trois mentions en prose dans ce journal et dans
+`design/plan-de-reprise.md`).
+
+**Ce qui a déplacé le diagnostic : le site est déjà indexé.** Une recherche `site:bipbop.eu` renvoie
+neuf pages, dont `/plan-du-site/`, qui n'existe que depuis le 13/09. Googlebot passe donc sur ce
+serveur, l'explore et l'indexe. Le rouge attaché au sitemap n'est plus un problème d'accès mais un
+rapport en retard : après les échecs du 13/09 (le `Disallow: /` d'avant l'ouverture), Google applique
+un backoff et retarde ses tentatives de plusieurs jours. Le geste qui casse ce backoff est de
+**supprimer puis re-soumettre** le sitemap dans Search Console, pas de retoucher le serveur. Résultat
+obtenu via un agent de recherche tiers : je ne peux pas garantir que les neuf pages viennent de
+l'index Google plutôt que d'un autre moteur.
+
+**Question ouverte, trouvée en route : `bipbop.fr` n'est branché nulle part.** Le `.eu` est bien chez
+Netlify (`*.p01.nsone.net`), le `.fr` est resté chez OVH (A `213.186.33.5`, NS `dns111.ovh.net` /
+`ns111.ovh.net`) et son handshake TLS est reset : le domaine ne sert rien du tout. Deux issues
+possibles, à trancher — en faire un 301 vers `bipbop.eu` (le `.fr` rassure un lecteur français mais
+ne doit surtout pas dupliquer le site), ou l'oublier tant que l'indexation du `.eu` n'est pas assise.
+Si une URL soumise dans Search Console contient `bipbop.fr`, elle explique le rouge à elle seule.
+
 ## 15 septembre 2026 — Ce qui ne se publie pas : les commentaires du sitemap et de robots.txt
 
 Jordane, en relisant `/sitemap.xml` : « C'est dingue qu'elle y soit ! Google va lire ça… »
