@@ -15,6 +15,7 @@
     "sitemap": "node scripts/sitemap.mjs",
     "llms": "node scripts/llms.mjs",
     "verif": "node scripts/verif.mjs",
+    "prix": "node scripts/releve-prix.mjs",
     "check": "npm run build && node scripts/verif.mjs",
     "prebuild": "node scripts/import-data.mjs",
     "postbuild": "node scripts/sitemap.mjs && node scripts/llms.mjs",

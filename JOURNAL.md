@@ -1,5 +1,93 @@
 # Journal BipBop
 
+## 17 septembre 2026 — Relevé des 157 prix sur le web : trois bougent, dont une qui sort de son segment
+
+Jordane : « Va vérifier que tous les prix des modèles / produits proposés sur le site (batteries,
+accessoires) sont toujours exacts. Peux-tu consulter le web pour ça (web FR). » Les trois flux
+`Archives/` datent du 10/09 et le dernier relevé publié du 13/09 : ils ne peuvent pas répondre, il
+fallait relire les fiches marchandes une par une.
+
+**D'abord vérifié que la base est bien l'unique source.** `scripts/verif.mjs` est au vert sur les 39
+pages et mon contrôle croisé des 68 étiquettes de prix d'accessoires dans `dist/` donne zéro
+divergence page ↔ `src/data/`. Production testée sur un échantillon : les 22 montants de
+`bipbop.eu/avis/alesis-nitro-max/` sont identiques au build local. Donc corriger la base suffit à
+faire bouger le comparatif, le hub et ses compteurs ; les pages portées, elles, gardent leur texte.
+
+**Comment se lit un prix, chez chacun.** Thomann ne publie **aucun JSON-LD** : microdata
+`itemprop="price"` (virgule décimale), dispo dans `itemprop="availability"`, et le `itemprop="name"`
+du fil d'Ariane renvoie « Home » — le nom ne se vérifie que dans le bloc e-commerce GTM. Deux
+requêtes simultanées déclenchent le 429 : **une seule lane Thomann à ~5 s d'intervalle**, les 122
+fiches en 14 minutes. Woodbrass donne du JSON-LD. Donner est un Shopify **multi-variantes** dont le
+JSON-LD ne dit que la variante par défaut, très souvent le bundle : c'est `/<slug>.json` qu'il faut
+lire, et retenir le minimum des variantes.
+
+**Résultat : 152 des 156 prix lus sont exacts au centime.** Trois écarts au-dessus du seuil de 5 € de
+la procédure, un dessous (Roland RT-30K, 93 → 95 €, on n'y touche pas) :
+
+| Référence | Publié | Réel 17/09 | Ce que ça casse |
+|---|---|---|---|
+| Alesis Turbo Mesh Kit | 298 € | **309 €** | franchit les 300 €, 9 routes, un duel entier |
+| Alesis Strata Club | 1 539 € | **1 598 €** | aucune page, juste le tableau du hub |
+| Donner HHCB-12 | 72,99 € | **165,99 €** | le lien vend le pack, pas le contrôleur seul |
+
+Le flux du 10/09 donnait encore 298 et 1 539 : le site n'a jamais été faux, il est dépassé.
+
+**La Turbo n'est pas une correction de chiffre.** Elle sort du segment « Moins de 300 € » et le duel
+MPS-150X contre Turbo Mesh reposait textuellement sur l'égalité : H1 « le match à 298 € », « Exactement
+le même prix », ligne « Prix 298 € / 298 € → Égalité », eyebrow « MÊME PRIX, MOINS DE MATÉRIEL », meta
+« au même prix ». Décision de Jordane : **chiffres et réécriture**, pas les chiffres seuls. 42
+corrections dorénavant dans `design/port-corrections.json` — c'est là qu'elles vivent, pas dans les
+pages, un portage les écrase sinon. Le piège est réel : « 298 € » apparaît **62 fois** dans `dist/`
+parce que la MPS-150X est toujours à 298 € chez Thomann ; seules 16 occurrences étaient les siennes.
+D'où la règle déjà écrite dans `port-corrections.json` : une ancre qui mord un autre prix fait échouer
+le portage au lieu d'abîmer la page.
+
+**La Turbo sort du guide « moins de 300 € »**, donc le guide change de forme : 7 modèles → 6, la
+table des matières et le titre de section suivent, « deux valent vraiment le coup » devient « un »,
+« les deux lignes surlignées » devient « la ligne surlignée ». **Il n'a plus de second choix** :
+promouvoir un autre modèle du segment est une recommandation, pas une déduction — c'est à Jordane de
+le choisir ou d'assumer qu'il n'y en a plus.
+
+**Un bug d'outillage trouvé en route.** `fidelite.mjs` appliquait les corrections au corps **brut** de
+la maquette, `port.mjs` au corps **déjà nettoyé** de son traçage : une correction dont l'ancre
+traverse un lien marchand ne pouvait donc passer que dans un des deux scripts. Réparé dans
+`corpsMaquette()` (mêmes href nettoyés ; les segments comparés sont du texte pur, l'attribut n'entre
+pas dans la comparaison).
+
+**La référence Sparedrum RYMP est morte**, pas illisible : l'URL Woodbrass renvoie HTTP 200 sur une
+page de catégorie générique sans prix, alors qu'elle était à 18,00 € au flux du 10/09. Retirée de
+`selection-accessoires.csv`. Conséquence mesurée une fois de plus par le garde-fou : `/a-propos/`
+annonçait « 126 accessoires », la base en dit 125 — le compteur est corrigé par la même mécanique.
+
+**17 références en rupture de stock, prix toujours affichés** (le piège n°3). Aucune n'est une erreur
+de prix. Cinq sont liées depuis une page publiée, et l'alternative Woodbrass a été revérifiée **en
+ligne**, pas dans le flux du 10/09 : KU100 88 €, BT-1 125 € et TM-1 198 € y sont En stock au même
+tarif, alors que Thomann annonce « sous 2-3 semaines », « sous 7-9 semaines » et pas de date. Nitro
+Amp et Nitro Multicore n'ont pas d'alternative. **Décision de Jordane : rien basculer pour l'instant,
+journaliser.** Le flux Thomann local n'a aucune colonne de stock : on ne peut pas dater une rupture
+avec ce qu'on a en magasin, seule la page le dit.
+
+**Ce qui reste vrai mais fragile.** Le Strata Club est à 1 598 €, à 2 € du plafond de tranche : au
+relèvement suivant, `segmentDe()` lève et le build casse. `Selection-Produits.dc.html`,
+`Design-System.dc.html` et `Guide-Du-Projet.dc.html` citent encore 298 €, 1 539 € et « 126
+accessoires » — ce sont des documents internes qui ne se publient pas, mais ce sont les seuls endroits
+où le site ne se corrige pas tout seul.
+
+**Deux affirmations ne se corrigeaient pas d'elles-mêmes.** Le duel terminait son tableau par
+« Trois critères pour la Millenium, trois pour l'Alesis, cinq égalités » : la ligne Prix étant passée
+de « Égalité » à « Millenium », le décompte réel est 4 / 3 / 4. Le guide « moins de 300 € » fermait ses
+pièges par « Aucune de ces sept batteries n'est livrée avec un casque », six désormais. `verif.mjs` ne
+voit ni l'un ni l'autre : il contrôle les prix collés aux noms et les compteurs publiés, pas les
+bilans chiffrés d'un tableau. **Et les badges de date** : les huit pages modifiées affichaient encore
+« MISE À JOUR · 11/12 SEPT. 2026 », plus le hub. Étape 5 de la procédure — on rafraîchit la date des
+pages réellement touchées, pas des autres : les 30 pages non modifiées gardent leur date.
+
+**Le relevé demandé par la procédure §06 existe maintenant** : `npm run prix`
+(`scripts/releve-prix.mjs`), seuil de 5 € intégré, détection du changement de tranche et des
+ruptures, sortie datée dans `releves/prix-<date>.jsonl` — celle du 17/09 y est déjà, la procédure veut
+qu'on garde les quatre dernières. `npm run check` : les 7 contrôles au vert. `npm run fidelite` :
+37/37 pages reproduisent leur maquette.
+
 ## 15 septembre 2026 — Search Console tient le sitemap en rouge, le serveur est propre
 
 Jordane, à propos du « Impossible de récupérer le sitemap » affiché par Search Console : « Tu es sûr
