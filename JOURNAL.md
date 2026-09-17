@@ -82,6 +82,21 @@ bilans chiffrés d'un tableau. **Et les badges de date** : les huit pages modifi
 « MISE À JOUR · 11/12 SEPT. 2026 », plus le hub. Étape 5 de la procédure — on rafraîchit la date des
 pages réellement touchées, pas des autres : les 30 pages non modifiées gardent leur date.
 
+**Second piège d'outillage, celui-là m'a mordu.** `copySeo()` de `port.mjs` cherche le titre et la
+description **d'abord dans la source Astro archivée dans `design/port-seche/`**, et seulement ensuite
+dans le `<head>` de la page portée. Pour les pages qui ont encore une copie sèche — dont
+`/avis/alesis-turbo-mesh/` — la copie SEO publiée vient donc d'une **archive retirée du circuit** :
+j'ai corrigé le `<head>` de la page, le portage suivant l'a ressuscitée en 298 € sans un mot, et c'est
+la production qui l'a montré. Il a fallu remettre l'archive à jour aussi pour que la correction tienne.
+`design/port-seche/` étant gitignoré, le dépôt n'est pas touché et Netlify ne porte rien — mais sur tout
+poste où l'archive est en place, **une meta corrigée en page doit l'être aussi dans l'archive**.
+
+Et une faute à moi, rattrapée en ligne : les deux nouvelles metas que j'avais écrites passaient à
+**165 caractères**, hors des 120-155. Elles ne sont signalées ni par les 7 contrôles de `verif.mjs` ni
+par `fidelite.mjs` — le contrôle de longueur des metas n'existe nulle part dans le dépôt. Revérifié à la
+main sur les 38 pages : titles 50-60, metas 120-155, tout au format. C'est le garde-fou qui manque :
+à ajouter à `verif.mjs` si d'autres passes SEO doivent suivre.
+
 **Le relevé demandé par la procédure §06 existe maintenant** : `npm run prix`
 (`scripts/releve-prix.mjs`), seuil de 5 € intégré, détection du changement de tranche et des
 ruptures, sortie datée dans `releves/prix-<date>.jsonl` — celle du 17/09 y est déjà, la procédure veut
