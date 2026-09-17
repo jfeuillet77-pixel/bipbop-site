@@ -88,6 +88,7 @@ Règle d'écriture : `/section/slug/` avec barre oblique finale (règle S09), fi
 | `npm run build` | build de production dans `./dist/`, puis `scripts/sitemap.mjs` pose `dist/sitemap.xml` (`postbuild`) |
 | `npm run sitemap` | régénère `dist/sitemap.xml` seul, sans rebuild |
 | `npm run verif` | les 7 contrôles de fin de séance sur `dist/` (après un build) |
+| `npm run prix` | le relevé hebdomadaire : relit les 31 modèles et les accessoires chez Thomann, Woodbrass et Donner Music, et sort la liste des écarts (`releves/prix-<date>.jsonl`) |
 | `npm run check` | `build` + `verif` |
 | `npm run preview` | prévisualiser le build |
 

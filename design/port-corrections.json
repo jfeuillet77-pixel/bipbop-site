@@ -9,5 +9,318 @@
     "Les quatre prix faux que le hub Avis publiait dans sa liste d'attente n'y sont plus : ce tableau se construit",
     "désormais depuis src/data/modeles.json (voir liste-attente-avis.csv), leurs prix viennent donc de la source."
   ],
-  "corrections": []
+  "corrections": [
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "MÊME PRIX, MOINS DE MATÉRIEL",
+      "remplace": "ONZE EUROS DE PLUS, MOINS DE MATÉRIEL",
+      "pourquoi": "Turbo Mesh relevée à 309 € chez Thomann le 17/09/2026 (298 € au 13/09) : les deux kits ne sont plus au même prix."
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "À 298 €, elle affronte la Millenium MPS-150X au centime près.",
+      "remplace": "À 309 €, elle affronte la Millenium MPS-150X à onze euros près.",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "C'est une batterie honnête à 298 €.",
+      "remplace": "C'est une batterie honnête à 309 €.",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "Le problème est qu'au même prix, la Millenium MPS-150X donne",
+      "remplace": "Le problème est qu'à onze euros de moins, la Millenium MPS-150X donne",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "<span>Des peaux maillées à 298 €</span>",
+      "remplace": "<span>Des peaux maillées à 309 €</span>",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": ">298 €, c'est la batterie seule.",
+      "remplace": ">309 €, c'est la batterie seule.",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "<span>Alesis Turbo Mesh Kit</span><span style=\"font-weight:600\">298 €</span>",
+      "remplace": "<span>Alesis Turbo Mesh Kit</span><span style=\"font-weight:600\">309 €</span>",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">298 €</div>",
+      "remplace": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">309 €</div>",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "Même prix, cymbales de 12 pouces, grosse caisse en mesh. Notre choix à 298 €.",
+      "remplace": "Onze euros moins cher, cymbales de 12 pouces, grosse caisse en mesh. Notre choix à 298 €.",
+      "pourquoi": "la MPS-150X reste à 298 €, mais le « même prix » n'est plus vrai"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "moins à offrir que sa rivale au même prix",
+      "remplace": "moins à offrir que sa rivale, onze euros moins cher",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "letter-spacing:-.02em\">298 €</div>",
+      "remplace": "letter-spacing:-.02em\">309 €</div>",
+      "pourquoi": "bloc « prix indicatif » du verdict"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": "relevés chez Thomann le 11 septembre 2026",
+      "remplace": "relevés chez Thomann le 17 septembre 2026",
+      "pourquoi": "page modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": "Millenium MPS-150X ou Alesis Turbo Mesh&nbsp;: le match à 298 €",
+      "remplace": "Millenium MPS-150X ou Alesis Turbo Mesh&nbsp;: le match des 300 €",
+      "pourquoi": "les deux kits ne sont plus au même tarif : 298 € contre 309 €"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": "Exactement le même prix, exactement le même positionnement : la batterie en peaux maillées la moins chère du marché.",
+      "remplace": "Onze euros d'écart, exactement le même positionnement : les deux batteries en peaux maillées les moins chères du marché.",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": "Au même prix que sa rivale.",
+      "remplace": "Onze euros moins cher que sa rivale.",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": ">L'AUTRE À 298 €</div>",
+      "remplace": ">L'AUTRE À 309 €</div>",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": ">Alesis Turbo Mesh</div>\n<div style=\"display:flex;align-items:baseline;gap:8px;margin-bottom:12px;flex-wrap:wrap\"><span style=\"font:800 30px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em\">298 €</span>",
+      "remplace": ">Alesis Turbo Mesh</div>\n<div style=\"display:flex;align-items:baseline;gap:8px;margin-bottom:12px;flex-wrap:wrap\"><span style=\"font:800 30px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em\">309 €</span>",
+      "pourquoi": "rail de la Turbo"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": ">Prix</div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div><div style=\"padding:14px 16px;font-weight:600;color:#5a4c3e\">Égalité</div>",
+      "remplace": ">Prix</div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div><div style=\"padding:14px 16px;white-space:nowrap\">309 €</div><div style=\"padding:14px 16px;font-weight:600;color:#5a4c3e\">Millenium</div>",
+      "pourquoi": "ligne Prix du tableau : 298 contre 309, l'avantage bascule"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": "À 298 €, les deux modules sonnent quelconque.",
+      "remplace": "À 300 €, les deux modules sonnent quelconque.",
+      "pourquoi": "les deux sont maintenant de part et d'autre des 300 €"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": "relevés chez Thomann le 12 septembre 2026",
+      "remplace": "relevés chez Thomann le 17 septembre 2026",
+      "pourquoi": "page modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": " L'Alesis Turbo Mesh coûte pareil et fait presque aussi bien.",
+      "remplace": "",
+      "pourquoi": "la Turbo est passée à 309 €, elle n'est plus un choix « moins de 300 »"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "Sept modèles tiennent dans ce budget. Deux valent vraiment le coup, un troisième si tu es contraint au centime près. Les quatre autres, on explique pourquoi on les écarte.",
+      "remplace": "Six modèles tiennent dans ce budget. Un vaut vraiment le coup, un deuxième si tu es contraint au centime près. Les cinq autres, on explique pourquoi on les écarte.",
+      "pourquoi": "décompte du guide après la sortie de la Turbo"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": ">Les sept modèles</a>",
+      "remplace": ">Les six modèles</a>",
+      "pourquoi": "table des matières"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": ">Les sept modèles de ce budget</h2>",
+      "remplace": ">Les six modèles de ce budget</h2>",
+      "pourquoi": "titre de section"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "Sept modèles disponibles en France sous 300 €. Les deux lignes surlignées sont celles qu'on recommande. Prix relevés le 11 septembre 2026.",
+      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 17 septembre 2026.",
+      "pourquoi": "une seule ligne recommandée reste dans le tableau"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "<div style=\"background:#fdf6ec;border:2.5px solid #241c14;border-radius:14px;overflow:hidden;display:flex;flex-direction:column\">\n<div style=\"height:104px;background:#fff;border-bottom:2px solid #241c14\"><img src=\"https://www.thomann.de/prodbilder/454813.jpg\" alt=\"Alesis Turbo Mesh\" style=\"width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box\"></div>\n<div style=\"padding:14px 16px;display:flex;flex-direction:column;gap:6px;flex:1\">\n<div style=\"font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.06em;color:#0f5f5a\">MÊME PRIX</div>\n<div style=\"font:700 16.5px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.015em\">Alesis Turbo Mesh</div>\n<div style=\"font:400 13.5px/1.45 'Work Sans',sans-serif;color:#4a3d31;flex:1\">Du mesh aussi, des pads plus petits, une marque qui se revend mieux.</div>\n<div style=\"display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:4px\">\n<span style=\"font:800 18px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em\">298 €</span>\n<a href=\"https://www.thomann.fr/alesis_turbo_mesh_kit.htm\" rel=\"sponsored noopener\" target=\"_blank\" style=\"font:700 12.5px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;border-bottom:2px solid #d2431f\">Le prix →</a>\n</div></div></div>\n",
+      "remplace": "",
+      "pourquoi": "carte Turbo retirée du guide : 309 € n'est plus « moins de 300 € »"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#ffd166;border-bottom:1.5px solid #241c14;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/454813.jpg\" alt=\"Alesis Turbo Mesh\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:700\">Alesis Turbo Mesh<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">NOTRE SECOND CHOIX</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">298 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Mesh</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">120 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Du mesh, la marque la plus revendable, des pads un peu petits.</div>\n</div>\n",
+      "remplace": "",
+      "pourquoi": "ligne Turbo retirée du tableau du guide : même raison"
+    },
+    {
+      "fichier": "Guide-Moins-De-500-Euros.dc.html",
+      "au": ">Alesis Turbo Mesh</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">298 €</div>",
+      "remplace": ">Alesis Turbo Mesh</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">309 €</div>",
+      "pourquoi": "Turbo à 309 €"
+    },
+    {
+      "fichier": "Guide-Moins-De-500-Euros.dc.html",
+      "au": "Même prix, pads plus petits, rack plus léger.",
+      "remplace": "Onze euros de plus, pads plus petits, rack plus léger.",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Guide-Moins-De-500-Euros.dc.html",
+      "au": "relevés le 11 septembre 2026",
+      "remplace": "relevés le 17 septembre 2026",
+      "pourquoi": "page modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Guide-Acheter-Occasion.dc.html",
+      "au": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div>",
+      "remplace": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap\">309 €</div>",
+      "pourquoi": "colonne « Neuf » du tableau"
+    },
+    {
+      "fichier": "Guide-Acheter-Occasion.dc.html",
+      "au": "relevés chez Thomann le 12 septembre 2026",
+      "remplace": "relevés chez Thomann le 17 septembre 2026",
+      "pourquoi": "page modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
+      "au": "Tu as une Alesis Turbo Mesh payée 298 €",
+      "remplace": "Tu as une Alesis Turbo Mesh payée 309 €",
+      "pourquoi": "le exemple chiffré suit le prix d'achat ; la revente à 190 € et les 508 € après revente ne dépendent pas de ce montant"
+    },
+    {
+      "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
+      "au": "relevés chez Thomann le 12 septembre 2026",
+      "remplace": "relevés chez Thomann le 17 septembre 2026",
+      "pourquoi": "page modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Avis-Millenium-MPS-150X.dc.html",
+      "au": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">298 €</div>",
+      "remplace": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">309 €</div>",
+      "pourquoi": "Turbo à 309 €"
+    },
+    {
+      "fichier": "Avis-Millenium-MPS-150X.dc.html",
+      "au": "Même prix, mais les toms sont plus petits et le module ne fait pas mieux.",
+      "remplace": "Onze euros de plus, mais les toms sont plus petits et le module ne fait pas mieux.",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis-Millenium-MPS-150X.dc.html",
+      "au": "relevés chez Thomann le 11 septembre 2026",
+      "remplace": "relevés chez Thomann le 17 septembre 2026",
+      "pourquoi": "page modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": ">ALESIS · 298 €</div>",
+      "remplace": ">ALESIS · 309 €</div>",
+      "pourquoi": "carte d'avis publiée, prix relevé le 17/09"
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": "Le match des deux batteries mesh à 298 €. À prix identique, l'une donne nettement plus que l'autre.",
+      "remplace": "Le match des deux batteries mesh autour de 300 €. À onze euros d'écart, l'une donne nettement plus que l'autre.",
+      "pourquoi": "même relevé"
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": "relevés chez Thomann, Woodbrass et Donner Music le 13 septembre 2026",
+      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 17 septembre 2026",
+      "pourquoi": "page modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "A-Propos.dc.html",
+      "au": "<div style=\"font:800 30px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em\">126</div>",
+      "remplace": "<div style=\"font:800 30px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em\">125</div>",
+      "pourquoi": "la référence Sparedrum RYMP a quitté la base (fiche Woodbrass morte le 17/09/2026) : le compteur d'accessoires suit la base"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": "Prends la Millenium. À prix identique, elle donne un pad de plus",
+      "remplace": "Prends la Millenium. À onze euros de moins, elle donne un pad de plus",
+      "pourquoi": "Turbo Mesh relevée à 309 € le 17/09/2026 : les deux kits ne sont plus au même tarif"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": "Trois critères pour la Millenium, trois pour l'Alesis, cinq égalités. Mais les trois critères de la Millenium pèsent lourd au quotidien.",
+      "remplace": "Quatre critères pour la Millenium, trois pour l'Alesis, quatre égalités. Mais ce sont ceux de la Millenium qui pèsent lourd au quotidien.",
+      "pourquoi": "la ligne Prix est passée de « Égalité » à « Millenium » avec la Turbo à 309 € : le décompte suit le tableau"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "Aucune de ces sept batteries n'est livrée avec un casque.",
+      "remplace": "Aucune de ces six batteries n'est livrée avec un casque.",
+      "pourquoi": "le guide liste six modèles depuis la sortie de la Turbo Mesh"
+    },
+    {
+      "fichier": "Avis-Alesis-Turbo-Mesh.dc.html",
+      "au": ">11 SEPT. 2026 · 6 MIN DE LECTURE</div>",
+      "remplace": ">17 SEPT. 2026 · 6 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Avis-Millenium-MPS-150X.dc.html",
+      "au": ">11 SEPT. 2026 · 6 MIN DE LECTURE</div>",
+      "remplace": ">17 SEPT. 2026 · 6 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
+      "au": ">12 SEPT. 2026 · 6 MIN DE LECTURE</div>",
+      "remplace": ">17 SEPT. 2026 · 6 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": ">11 SEPT. 2026 · 8 MIN DE LECTURE</div>",
+      "remplace": ">17 SEPT. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Guide-Moins-De-500-Euros.dc.html",
+      "au": ">11 SEPT. 2026 · 9 MIN DE LECTURE</div>",
+      "remplace": ">17 SEPT. 2026 · 9 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Guide-Acheter-Occasion.dc.html",
+      "au": ">12 SEPT. 2026 · 9 MIN DE LECTURE</div>",
+      "remplace": ">17 SEPT. 2026 · 9 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
+      "au": ">12 SEPT. 2026 · 8 MIN DE LECTURE</div>",
+      "remplace": ">17 SEPT. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": ">MIS À JOUR LE 11 SEPT. 2026</div>",
+      "remplace": ">MIS À JOUR LE 17 SEPT. 2026</div>",
+      "pourquoi": "date rafraîchie : le hub publie la Turbo à 309 €"
+    }
+  ]
 }

@@ -17,7 +17,7 @@ import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import plan from '../src/data/plan.json' with { type: 'json' };
-import { appliquerGreffes } from './greffes.mjs';
+import { appliquerGreffes, urlPublique } from './greffes.mjs';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MAQUETTES = join(SITE, '..', 'Claude Design - MàJ');
@@ -73,7 +73,16 @@ function corpsMaquette(html) {
   const d = aprésEnTete(html, FIN_EN_TETE);
   const fins = DEBUT_PIED.map((m) => html.indexOf(m)).filter((p) => p >= 0);
   const f = fins.length ? Math.min(...fins) : html.length;
-  return f > d ? html.slice(d, f) : html.slice(d);
+  let corps = f > d ? html.slice(d, f) : html.slice(d);
+  // Le portage applique les corrections après avoir nettoyé les href (étape 4bis de port.mjs).
+  // Sans ce même nettoyage ici, une correction dont l'ancre traverse un lien marchand n'est
+  // jamais retrouvée par ce script. Les segments comparés sont du texte pur : l'attribut, lui,
+  // n'entre nulle part dans la comparaison.
+  corps = corps.replace(/href="(https?:\/\/[^"]+)"/g, (tout, brut) => {
+    const propre = urlPublique(brut.replace(/&amp;/g, '&'));
+    return propre === null ? tout : `href="${propre.replace(/&/g, '&amp;')}"`;
+  });
+  return corps;
 }
 
 function corpsPage(html) {
