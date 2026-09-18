@@ -1,5 +1,83 @@
 # Journal BipBop
 
+## 18 septembre 2026 — Quatre arbitrages de Jordane, une erreur de spec trouvée dans l'affaire, et un huitième contrôle
+
+Quatre questions posées après le relevé du 17, quatre réponses de Jordane : la DED‑70 en second
+choix du guide « moins de 300 € », basculer tout de suite les trois ruptures qui ont un équivalent
+Woodbrass, une **surcharge versionnée** pour la vérité des prix, et un seul garde‑fou ajouté :
+les longueurs de copie.
+
+**La vérité des prix est entrée dans le dépôt.** `design/prix-reperes.json` : deux modèles, quatre
+accessoires, un retrait, chacun avec sa date et sa preuve, appliqué par `import-data.mjs` après la
+lecture du dossier Claude Design (et l'en‑tête de la base se surcharge aussi — c'est lui que le
+comparatif et le hub datent sous leurs tableaux). **Les trois fichiers de l'auteur sont repartis à
+leur état d'origine** : je ne suis plus celui qui retape la source de quelqu'un d'autre, mes valeurs
+vérifiées sont versionnées avec le reste. Une entrée de surcharge qui ne correspond à rien **fait
+échouer l'import** : le 18 au soir elle a refusé de publier parce que j'avais écrit « TM‑1 module
+trigger » pour un fichier qui dit « TM‑1 Trigger Module ». C'est le comportement voulu, pas un
+ennui. Testé dans le sens qui compte : en remettant l'auteur à 298 / 1 539 / 72,99 avec la RYMP
+présente, l'import rejoue exactement l'état corrigé.
+
+**Trois liens changés de marchand, zéro prix changé.** KU100 (88 €), BT‑1 (125 €) et TM‑1 (198 €)
+sont En stock chez Woodbrass **au même tarif** que chez Thomann, revérifié en direct le 18/09 — pas
+dans le flux du 10/09. Thomann les annonçait « sous 2‑3 semaines », « sous 7‑9 semaines » et « sans
+date ». Le TM‑1 porte le badge **NOTRE SÉLECTION** de `/guides/enregistrer-sa-batterie/` : cette
+recommandation ne mène plus vers une fiche vide. Deux pièges au passage : chez Woodbrass le « TM‑1 »
+existe aussi en **pack à 369 € hors stock**, et le piège a failli être pris pour le module seul ;
+et la **photo** de ces trois lignes reste hébergée chez Thomann (même produit, le flux Woodbrass ne
+fournit aucune colonne d'image). Les deux pages portent maintenant « prix relevés chez Thomann et
+Woodbrass le 18 septembre 2026 ».
+
+**Une erreur de spécification, trouvée en cherchant le second choix.** Le guide « moins de 300 € »
+présentait la Donner DED‑70 comme « **Tout en caoutchouc** », et sa colonne Peaux disait
+« Caoutchouc ». La fiche Donner dit autre chose : quatre têtes double couche **6,5" Mesh** (caisse
+claire + trois toms) et trois **cymbales** en caoutchouc 9". La base, elle, était juste (`peaux:
+mixte`, « Pads de fûts en mesh à moins de 200 € ») — c'est la page portée qui avait tort, et
+c'était le modèle qu'on venait de remonter. Les deux cellules sont corrigées. **Je n'ai pas
+touché à « les pads claquent »** dans la colonne « En une phrase » : c'est une appréciation, pas
+une mesure, et ce n'est pas à moi de la réécrire. À noter aussi : « Aujourd'hui deux modèles
+mettent de la peau maillée partout » reste vrai (MPS‑150X et DED‑70), mais ne l'est plus pour la
+même raison qu'hier.
+
+**Le second choix était déjà là, pas moi.** Sa grille de cartes est `data-rwd="c3"` (trois
+colonnes) et jouait sur MPS‑150X (NOTRE CHOIX), Turbo Mesh, Donner DED‑70 (SI 300 € EST TROP). En
+disant à Jordane que le guide « n'avait plus de second choix », je confondais l'étiquette retirée
+(`NOTRE SECOND CHOIX`, qui était le rôle de la Turbo) et le rôle éditorial : la DED‑70 occupe déjà
+le deuxième rang, avec son propre badge. Sa réponse était donc dans la page — aucune carte à créer,
+seulement la ligne de spécification à réparer. **Ce qui reste vrai en revanche : la grille est
+mesurée à 2 cartes dans un moule de 3** (vérifié au parseur, pas au feeling) — depuis le retrait de
+la Turbo, le troisième emplacement est vide sur desktop. Le contrôle de responsive ne le voit pas
+(rien ne déborde), c'est une question de composition, pas de casse.
+**Et ma faute de compte de la veille** : j'avais écrit « Les cinq autres » là où six modèles moins
+le choix moins l'alternative font quatre.
+
+**Huitième contrôle dans `verif.mjs` : les longueurs de copie** (titles 50‑60, descriptions
+120‑155). Il a trouvé deux cas réels dès sa première exécution — `mentions-legales` (26) et
+`politique-confidentialite` (38). Ce ne sont pas des erreurs : gonfler un titre juridique jusqu'à
+cinquante caractères ne sert personne. Elles sont donc **exceptions explicites dans le script, et
+affichées à chaque exécution**, pas un `if` silencieux. Les 38 routes passent.
+
+Mesure finale de la passe : 60 corrections de portage, `npm run check` avec les 8 contrôles au
+vert, `npm run fidelite` 37/37, et 19 assertions sur `dist/` (liens, prix, cellules, compteurs)
+toutes vertes.
+
+**Deux points laissés sur décision du 18/09, pas par oubli.** Le premier : le pied de page, **sur les
+39 pages**, annonce « **LIENS AFFILIÉS** — Les liens vers Thomann, Woodbrass et Donner Music nous
+rapportent une commission si tu achètes ». La liste des marchands est exacte, mais le journal du
+14/09 consigne que le site n'a **pas** de programme d'affiliation et le contrôle n°7 vérifie
+justement qu'aucun lien traquant ne sort du dépôt : la page affirme donc une commission que le site
+ne touche pas. Présenté à Jordane avec trois issues (réécrire sans la commission, retirer la
+mention, laisser), **sa réponse : laisser tel quel.** C'est écrit ici pour que personne ne le
+« corrige » par initiative propre ni ne le redécouvre comme une nouveauté dans six mois — à rouvrir
+le jour où le programme d'affiliation sera signé. Le second : la grille du guide « moins de 300 € »
+rend **deux cartes dans un moule de trois** depuis le retrait de la Turbo. Propositions (monter le
+Debut Kit en carte, repasser la grille en deux colonnes, laisser) — **sa réponse : laisser deux
+cartes.** Rien à toucher au layout.
+
+**Resté ouvert, non tranché.** Nitro Amp (98 €) et Nitro Multicore (89 €) : en rupture chez Thomann
+**sans** équivalent dans le catalogue Woodbrass, et toujours liés depuis `/guides/pack-complet/` et
+`/guides/acheter-occasion/`. Les 12 autres ruptures dorment en base, sans page.
+
 ## 17 septembre 2026 — Relevé des 157 prix sur le web : trois bougent, dont une qui sort de son segment
 
 Jordane : « Va vérifier que tous les prix des modèles / produits proposés sur le site (batteries,

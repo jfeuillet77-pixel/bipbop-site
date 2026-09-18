@@ -84,17 +84,19 @@ Règle d'écriture : `/section/slug/` avec barre oblique finale (règle S09), fi
 | Commande | Action |
 |---|---|
 | `npm run dev` | serveur de développement (localhost:4321) |
-| `npm run data` | réimporte `modeles.json`, `accessoires.json`, `plan.json` depuis le dossier Claude Design |
+| `npm run data` | réimporte `modeles.json`, `accessoires.json`, `plan.json` depuis le dossier Claude Design, puis applique `design/prix-reperes.json` (les valeurs vérifiées en ligne après l'export de l'auteur) |
 | `npm run build` | build de production dans `./dist/`, puis `scripts/sitemap.mjs` pose `dist/sitemap.xml` (`postbuild`) |
 | `npm run sitemap` | régénère `dist/sitemap.xml` seul, sans rebuild |
-| `npm run verif` | les 7 contrôles de fin de séance sur `dist/` (après un build) |
+| `npm run verif` | les 8 contrôles de fin de séance sur `dist/` (après un build) |
 | `npm run prix` | le relevé hebdomadaire : relit les 31 modèles et les accessoires chez Thomann, Woodbrass et Donner Music, et sort la liste des écarts (`releves/prix-<date>.jsonl`) |
 | `npm run check` | `build` + `verif` |
 | `npm run preview` | prévisualiser le build |
 
 `scripts/verif.mjs` contrôle dans l'ordre : liens internes, véracité des compteurs, cohérence
-de chaque prix avec la source, uniformité de la navigation, et largeur de défilement réelle dans
-Chrome à 1024 / 900 / 768 / 390 px. Son code de sortie est non nul s'il reste un problème :
+de chaque prix avec la source, uniformité de la navigation, largeur de défilement réelle dans
+Chrome à 1024 / 900 / 768 / 390 px, fuites de notes internes, marqueurs de traçage, et longueur
+des copies SEO (titles 50-60, descriptions 120-155 — les pages légales y figurent en exception
+assumée, pas en angle mort). Son code de sortie est non nul s'il reste un problème :
 c'est le garde-fou de chaque vague de publication.
 
 ```bash

@@ -404,7 +404,53 @@ titre(7, 'LIENS AFFILIÉS');
 console.log(affilies.length ? `${affilies.length} MARQUEUR(S) DE TRAÇAGE DANS LE BUILD — aucun lien affilié ne se publie` : 'ras — aucun lien traquant dans les 38 routes ni dans la base');
 for (const a of affilies.slice(0, 12)) console.log(`   ✗ ${a.fichier} : ${a.n}× ${a.pourquoi}`);
 
-const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length;
+/* 8. Longueurs SEO — la règle du projet : title entre 50 et 60 caractères, meta description
+   entre 120 et 155. Une passe de copie retouche des dizaines de metas sans que personne les
+   recompte, et aucun des sept contrôles précédents ne regarde leur taille. Constaté le
+   18/09/2026 : deux metas réécrites la veille passaient à 165 caractères et partaient
+   en production sans un signal. */
+/* Les pages légales ne se vendent pas : leur titre est leur nom, et le gonfler à cinquante
+   caractères de promesses ne servirait personne. Exception assumée et affichée, pas silencieuse. */
+const TITRES_COURTS_ASSUMES = {
+  'mentions-legales': 'page légale : le titre est son nom',
+  'politique-confidentialite': 'page légale : le titre est son nom',
+};
+
+function verifLongueursSeo() {
+  const horsFormat = [];
+  const exceptions = [];
+  const parcourir = (dossier) => {
+    for (const e of readdirSync(dossier, { withFileTypes: true })) {
+      const p = join(dossier, e.name);
+      if (e.isDirectory()) { parcourir(p); continue; }
+      if (!e.name.endsWith('.html')) continue;
+      const c = readFileSync(p, 'utf8');
+      const route = relative(DIST, p).replace(/\\/g, '/').replace(/^\/+/, '').replace(/\/index\.html$/, '') || '/';
+      const titre = (c.match(/<title>([^<]*)<\/title>/) ?? [])[1];
+      const description = (c.match(/<meta name="description" content="([^"]*)"/) ?? [])[1];
+      if (titre === undefined || description === undefined) {
+        horsFormat.push({ route, champ: 'absent', attendu: 'title + description', obtenu: '—' });
+        continue;
+      }
+      if (titre.length < 50 || titre.length > 60) {
+        const why = TITRES_COURTS_ASSUMES[route];
+        if (why) exceptions.push(`${route} (${titre.length}) : ${why}`);
+        else horsFormat.push({ route, champ: 'title', attendu: '50-60', obtenu: `${titre.length} · ${titre}` });
+      }
+      if (description.length < 120 || description.length > 155) horsFormat.push({ route, champ: 'description', attendu: '120-155', obtenu: `${description.length} · ${description.slice(0, 54)}…` });
+    }
+  };
+  parcourir(DIST);
+  return { horsFormat, exceptions };
+}
+
+const seo = verifLongueursSeo();
+titre(8, 'LONGUEURS SEO');
+console.log(seo.horsFormat.length ? `${seo.horsFormat.length} COPIE(S) HORS FORMAT — titles 50-60, descriptions 120-155` : 'ras — toutes les routes de copie sont dans les fourchettes');
+for (const s of seo.horsFormat.slice(0, 14)) console.log(`   ✗ ${s.route.padEnd(46)} ${s.champ} : attendu ${s.attendu}, obtenu ${s.obtenu}`);
+if (seo.exceptions.length) console.log(`   · ${seo.exceptions.length} exception(s) assumée(s) : ${seo.exceptions.join(' · ')}`);
+
+const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length + seo.horsFormat.length;
 console.log(`\n${L}`);
-console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 7 contrôles de fin de séance sont passés\n');
+console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 8 contrôles de fin de séance sont passés\n');
 process.exit(nbProblemes ? 1 : 0);

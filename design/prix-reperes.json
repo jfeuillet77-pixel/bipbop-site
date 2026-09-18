@@ -1,0 +1,59 @@
+{
+  "_commentaire": "Prix et références contrôlés sur le web après coup, enregistrés côté dépôt. « Claude Design - MàJ/data/ » reste la source d'auteur : ce fichier ne la dément que lorsqu'un relevé en ligne a tranché depuis. scripts/import-data.mjs l'applique à chaque import, une entrée sans correspondance fait échouer l'import. Chaque entrée porte sa date et sa preuve.",
+  "_releve": "2026-09-18",
+  "base": { "releve": "2026-09-17", "version": 3 },
+  "_base": "La date d'en-tête est celle du relevé des prix (17/09) — c'est elle que le comparatif et le hub affichent sous leurs tableaux. Les bascules de marchand du 18/09 ne changent aucun prix de modèle.",
+  "modeles": [
+    {
+      "id": "turbo",
+      "prix": 309,
+      "prixTexte": "309 €",
+      "segment": "300 à 500 €",
+      "pourquoi": "Thomann à 309 € relevé le 17/09/2026 (298 € au 13/09). Le prix franchit les 300 € : la tranche suit, sinon le segment annonce un prix qui ne contient plus le modèle."
+    },
+    {
+      "id": "strata",
+      "prix": 1598,
+      "prixTexte": "1598 €",
+      "segment": "800 à 1600 €",
+      "pourquoi": "Thomann à 1 598 € relevé le 17/09/2026 (1 539 € au 13/09). À 2 € du plafond de tranche : au prochain relèvement, segmentDe() fait échouer le build."
+    }
+  ],
+  "accessoires": [
+    {
+      "marque": "Donner",
+      "produit": "HHCB-12 charleston + pied",
+      "prix": "165,99 €",
+      "role": "Le pack contrôleur + pied (variante par défaut de la fiche, en stock). Le contrôleur seul est à 72,99 € mais son pied est une autre variante.",
+      "pourquoi": "Le lien vend le pack « contrôleur de charleston + pied » à 165,99 € (variante par défaut, en stock). Le prix publié doit être celui de ce que vend le lien."
+    },
+    {
+      "marque": "Yamaha",
+      "produit": "KU100 Silent Kick Pedal",
+      "marchand": "Woodbrass",
+      "url": "https://www.woodbrass.com/pads-accessoires-yamaha-ku100-pedale-controleur-grosse-caisse-silent-pour-dtx400k-p207012.html",
+      "pourquoi": "Thomann en rupture annoncée « sous 2-3 semaines » le 17/09/2026 ; Woodbrass En stock à 88 €, le même prix, revérifié le 18/09/2026."
+    },
+    {
+      "marque": "Roland",
+      "produit": "BT-1 Bar Trigger Pad",
+      "marchand": "Woodbrass",
+      "url": "https://www.woodbrass.com/pads-accessoires-roland-bt-1-bar-trigger-pad-p150567.html",
+      "pourquoi": "Thomann en rupture annoncée « sous 7-9 semaines » le 17/09/2026 ; Woodbrass En stock à 125 €, le même prix, revérifié le 18/09/2026."
+    },
+    {
+      "marque": "Roland",
+      "produit": "TM-1 Trigger Module",
+      "marchand": "Woodbrass",
+      "url": "https://www.woodbrass.com/modules-roland-tm-1-trigger-module-hybride-drum-p294495.html",
+      "pourquoi": "Thomann « actuellement indisponible » sans date le 17/09/2026, et la référence porte le badge NOTRE SÉLECTION sur /guides/enregistrer-sa-batterie/. Woodbrass En stock à 198 €, le même prix, revérifié le 18/09/2026. Attention : ne pas confondre avec leur « Pack TM-1 + RT-30K + RT30H » à 369 €, lui hors stock."
+    }
+  ],
+  "retires": [
+    {
+      "marque": "Sparedrum",
+      "produit": "RYMP support acier",
+      "pourquoi": "L'URL Woodbrass répond HTTP 200 sur une page de catégorie sans prix (constaté le 17/09/2026) : la référence a quitté le catalogue, elle était à 18,00 € au flux du 10/09."
+    }
+  ]
+}
