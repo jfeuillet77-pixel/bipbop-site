@@ -553,9 +553,9 @@
   "marque": "Yamaha",
   "produit": "KU100 Silent Kick Pedal",
   "prix": "88 €",
-  "marchand": "Thomann",
+  "marchand": "Woodbrass",
   "role": "La moins chère des pédales sans batte",
-  "url": "https://www.thomann.fr/yamaha_ku100_silent_kick_pedal.htm"
+  "url": "https://www.woodbrass.com/pads-accessoires-yamaha-ku100-pedale-controleur-grosse-caisse-silent-pour-dtx400k-p207012.html"
  },
  {
   "cat": "Charleston et pédales",
@@ -581,7 +581,7 @@
   "produit": "HHCB-12 charleston + pied",
   "prix": "165,99 €",
   "marchand": "Donner Music",
-  "role": "Le charleston sur pied complet, cherché au prix du pack",
+  "role": "Le pack contrôleur + pied (variante par défaut de la fiche, en stock). Le contrôleur seul est à 72,99 € mais son pied est une autre variante.",
   "url": "https://fr.donnermusic.com/products/donner-hhcb-12-separater-hi-hat"
  },
  {
@@ -967,18 +967,18 @@
   "marque": "Roland",
   "produit": "BT-1 Bar Trigger Pad",
   "prix": "125 €",
-  "marchand": "Thomann",
+  "marchand": "Woodbrass",
   "role": "Pad barre à clipser",
-  "url": "https://www.thomann.fr/roland_bt_1_bar_trigger_pad.htm"
+  "url": "https://www.woodbrass.com/pads-accessoires-roland-bt-1-bar-trigger-pad-p150567.html"
  },
  {
   "cat": "Triggers et hybride",
   "marque": "Roland",
   "produit": "TM-1 Trigger Module",
   "prix": "198 €",
-  "marchand": "Thomann",
+  "marchand": "Woodbrass",
   "role": "Le module hybride le plus simple",
-  "url": "https://www.thomann.fr/roland_tm_1_trigger_module.htm"
+  "url": "https://www.woodbrass.com/modules-roland-tm-1-trigger-module-hybride-drum-p294495.html"
  },
  {
   "cat": "Triggers et hybride",

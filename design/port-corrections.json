@@ -321,6 +321,54 @@
       "au": ">MIS À JOUR LE 11 SEPT. 2026</div>",
       "remplace": ">MIS À JOUR LE 17 SEPT. 2026</div>",
       "pourquoi": "date rafraîchie : le hub publie la Turbo à 309 €"
+    },
+    {
+      "fichier": "Guide-Pack-Complet.dc.html",
+      "au": "<a href=\"https://www.thomann.fr/yamaha_ku100_silent_kick_pedal.htm\"",
+      "remplace": "<a href=\"https://www.woodbrass.com/pads-accessoires-yamaha-ku100-pedale-controleur-grosse-caisse-silent-pour-dtx400k-p207012.html\"",
+      "pourquoi": "Yamaha KU100 : Thomann annoncé « disponible sous 2-3 semaines » le 17/09/2026. Woodbrass En stock à 88 €, le même prix, revérifié le 18/09/2026. La photo reste celle du catalogue Thomann (même produit, le flux Woodbrass ne fournit pas d'image)."
+    },
+    {
+      "fichier": "Guide-Pack-Complet.dc.html",
+      "au": "Prix relevés le 12 septembre 2026.",
+      "remplace": "Prix et disponibilités relevés le 18 septembre 2026.",
+      "pourquoi": "la page change de marchand sur une ligne : la date du relevé suit"
+    },
+    {
+      "fichier": "Guide-Enregistrer-Sa-Batterie.dc.html",
+      "au": "<a href=\"https://www.thomann.fr/roland_bt_1_bar_trigger_pad.htm\"",
+      "remplace": "<a href=\"https://www.woodbrass.com/pads-accessoires-roland-bt-1-bar-trigger-pad-p150567.html\"",
+      "pourquoi": "Roland BT-1 : Thomann « disponible sous 7-9 semaines » le 17/09/2026. Woodbrass En stock à 125 €, le même prix, revérifié le 18/09/2026."
+    },
+    {
+      "fichier": "Guide-Enregistrer-Sa-Batterie.dc.html",
+      "au": "<a href=\"https://www.thomann.fr/roland_tm_1_trigger_module.htm\"",
+      "remplace": "<a href=\"https://www.woodbrass.com/modules-roland-tm-1-trigger-module-hybride-drum-p294495.html\"",
+      "pourquoi": "Roland TM-1 : « actuellement indisponible » chez Thomann sans date le 17/09/2026, et la référence porte le badge NOTRE SÉLECTION de la page. Woodbrass En stock à 198 €, le même prix, revérifié le 18/09/2026."
+    },
+    {
+      "fichier": "Guide-Enregistrer-Sa-Batterie.dc.html",
+      "au": "Prix relevés chez Thomann le 12 septembre 2026.",
+      "remplace": "Prix relevés chez Thomann et Woodbrass le 18 septembre 2026.",
+      "pourquoi": "deux des lignes du tableau pointent désormais chez Woodbrass"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "Moins de 200 €. Tout en caoutchouc, mais ça se joue vraiment.",
+      "remplace": "Moins de 200 €. Les quatre fûts en peau maillée, les trois cymbales en caoutchouc.",
+      "pourquoi": "la fiche Donner du DED-70 annonce 4 têtes double couche « 6,5\" Mesh » (caisse claire + 3 toms) et 3 cymbales en caoutchouc 9\" — vérifié le 18/09/2026 ; la carte disait « tout en caoutchouc »"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": ">199,99 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>",
+      "remplace": ">199,99 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Mesh (fûts)</div>",
+      "pourquoi": "colonne Peaux de la ligne DED-70 : mesh sur les quatre fûts, caoutchouc sur les seules cymbales (fiche Donner vérifiée le 18/09/2026)"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "Les cinq autres, on explique pourquoi on les écarte.",
+      "remplace": "Les quatre autres, on explique pourquoi on les écarte.",
+      "pourquoi": "six modèles moins le choix moins l'alternative contrainte = quatre ; c'était une faute de compte de moi, pas du design"
     }
   ]
 }

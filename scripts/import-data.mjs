@@ -113,6 +113,42 @@ for (const m of modeles.modeles) {
   m.nom_complet = `${m.marque} ${m.modele}`;
 }
 
+/* ---------------------------------- la surcharge du dépôt ----------------------------------
+   « Claude Design - MàJ/data/ » est la source d'auteur, mais ses prix sont des instantanés.
+   `design/prix-reperes.json` porte les valeurs vérifiées en ligne depuis (`npm run prix`), avec
+   leur date et leur preuve : un export plus vieux que le dernier relevé ne peut pas les faire
+   revenir tout seul. Le fichier source n'est pas réécrit pour autant, il garde ce que l'auteur y
+   a mis. Une entrée qui ne correspond à rien fait échouer l'import — une surcharge orpheline est
+   une erreur à corriger, pas un état acceptable. */
+const CHEMIN_SURCHARGE = join(SITE, 'design', 'prix-reperes.json');
+const SURCHARGE = existsSync(CHEMIN_SURCHARGE) ? JSON.parse(readFileSync(CHEMIN_SURCHARGE, 'utf8')) : null;
+const surchargés = { prix: 0, accessoires: 0, retires: 0 };
+if (SURCHARGE) {
+  // L'en-tête de la base (date de relevé, version) se surcharge aussi : c'est lui que le
+  // comparatif et le hub affichent sous leurs tableaux de prix.
+  for (const [champ, valeur] of Object.entries(SURCHARGE.base ?? {})) {
+    if (champ.startsWith('_')) continue;
+    modeles[champ] = valeur;
+  }
+  for (const e of SURCHARGE.modeles ?? []) {
+    const m = modeles.modeles.find((x) => x.id === e.id);
+    if (!m) { console.error(`✗ prix-reperes: aucun modèle « ${e.id} » dans la base de l'auteur — surcharge périmée ou identifiants changés.`); process.exit(1); }
+    for (const champ of ['prix', 'prixTexte', 'segment']) if (e[champ] !== undefined) m[champ] = e[champ];
+    surchargés.prix++;
+  }
+  for (const e of SURCHARGE.accessoires ?? []) {
+    const a = acc.find((x) => x.marque === e.marque && x.produit === e.produit);
+    if (!a) { console.error(`✗ prix-reperes: aucune ligne « ${e.marque} ${e.produit} » dans la sélection d'accessoires.`); process.exit(1); }
+    for (const champ of ['prix', 'marchand', 'url', 'role']) if (e[champ] !== undefined) a[champ] = e[champ];
+    surchargés.accessoires++;
+  }
+  for (const e of SURCHARGE.retires ?? []) {
+    const i = acc.findIndex((x) => x.marque === e.marque && x.produit === e.produit);
+    if (i >= 0) { acc.splice(i, 1); surchargés.retires++; }
+    else console.log(`  ⚠ prix-reperes: « ${e.marque} ${e.produit} » n'est déjà plus dans la sélection — retrait sans effet`);
+  }
+}
+
 /* Un segment doit contenir son prix : s'il n'y en a plus 31 sur 31, c'est la
    jointure qui a dérapé et il faut le savoir ici, pas sur une page publiée. */
 const BORNES = { 'Moins de 300 €': [0, 300], '300 à 500 €': [300, 500], '500 à 800 €': [500, 800], '800 à 1600 €': [800, 1600] };
@@ -183,6 +219,8 @@ console.log(`import terminé
   segments joints : ${modeles.modeles.length - sansSeg}/${modeles.modeles.length}
   liens marchands : ${liensNettoyes} débarrassés de leur traçage, ${liensRetires} retirés (aucun lien affilié ne se publie)
   avis publiés sur ce site : ${avisPublicies.length} (la base en annonce ${reecrits})`);
+if (SURCHARGE)
+  console.log(`  surcharge du dépôt (design/prix-reperes.json, relevé ${SURCHARGE._releve}) : ${surchargés.prix} modèles, ${surchargés.accessoires} accessoires retouchés, ${surchargés.retires} retirés`);
 if (inconnus.length) console.log(`  ⚠ ${inconnus.length} avis sans route connue :\n     ` + inconnus.join('\n     '));
 const nonSourc = modeles.modeles.filter((m) => !m.empreinte).length;
 console.log(`  empreintes au sol : ${modeles.modeles.length - nonSourc} sourcées, ${nonSourc} à ne surtout pas afficher`);
