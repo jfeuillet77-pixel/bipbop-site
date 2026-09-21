@@ -44,7 +44,10 @@ export const DOMAINE = 'https://bipbop.eu';
  * le dossier Claude Design (`scripts/import-data.mjs`), y inscrire une route serait effacé au
  * prochain import. Même esprit que `SANS_MAQUETTE` de `scripts/fidelite.mjs`.
  */
-export const HORS_PLAN = [{ route: '/plan-du-site/', type: 'Institutionnel' }];
+export const HORS_PLAN = [
+  { route: '/plan-du-site/', type: 'Institutionnel' },
+  { route: '/suivi-des-prix/', type: 'Institutionnel' },
+];
 
 /** Les deux pages qui ne sont pas une route indexable. */
 const NON_INDEXABLES = new Set(['/404.html']);

@@ -1,0 +1,446 @@
+---
+/**
+ * Suivi des prix. Troisième page écrite à la main (avec /comparatif/ et /plan-du-site/) :
+ * aucune maquette Claude Design ne la contient, donc `scripts/port.mjs` ne la touche pas.
+ * Déclarée dans `SANS_MAQUETTE` de scripts/fidelite.mjs et dans `HORS_PLAN` de
+ * src/lib/arborescence.mjs, qui la fait entrer dans le plan du site et dans le sitemap.
+ *
+ * Elle ne contient aucun chiffre écrit à la main : tout vient de src/data/historique-prix.json,
+ * que `scripts/prix/publier.mjs` remplit à chaque relevé. Un relevé de plus, et la page a une
+ * ligne de plus, sans que personne y touche.
+ *
+ * La règle qu'elle doit tenir : ne jamais s'attribuer un travail qu'on n'a pas fait. Un relevé
+ * sans mouvement s'affiche comme tel, il ne disparait pas — c'est même ce qu'il y a de plus
+ * honnête à montrer.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import historique from '../../data/historique-prix.json';
+
+const releves = [...historique.releves].sort((a, b) => b.date.localeCompare(a.date));
+const dernier = releves[0];
+
+const jour = (d) =>
+  new Date(d + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+/**
+ * « Lundi 21 septembre 2026 » : une majuscule au premier mot, et à lui seul. `capitalize` en CSS
+ * en mettrait une à chaque mot, or un mois et un jour de la semaine ne prennent pas de majuscule
+ * en français.
+ */
+const jourLong = (d) => {
+  const t = new Date(d + 'T12:00:00Z').toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  return t.charAt(0).toUpperCase() + t.slice(1);
+};
+
+const mouvementsEnTout = releves.reduce((n, r) => n + r.mouvements.length, 0);
+const signe = (n) => (n > 0 ? `+${n}` : `${n}`);
+---
+
+<BaseLayout
+  title="Prix des batteries électroniques : notre suivi hebdo"
+  description="On relève le prix des batteries et accessoires du site chaque lundi, chez Thomann, Woodbrass et Donner. Voilà ce qui a bougé, semaine après semaine."
+  currentPage=""
+>
+  <div data-pad class="tete">
+    <div class="surtitre">SUIVI DES PRIX</div>
+    <h1 data-big="b" class="titre">Les prix, relevés chaque lundi.<br />Y compris les semaines où rien ne bouge.</h1>
+    <p class="chapeau">
+      Un prix faux est le seul défaut qu'un lecteur peut vérifier en un clic, et celui qui coûte
+      le plus cher en confiance. Alors on relève les <strong>{dernier?.controlees ?? 0} références</strong> du
+      site toutes les semaines, chez les trois marchands vers lesquels on envoie. Cette page dit
+      quand on a regardé, et ce qu'on a trouvé. Sans trier.
+    </p>
+  </div>
+
+  {dernier && (
+    <div data-rwd="sp" data-pad data-mar class="dernier">
+      <div>
+        <div class="dernier-etiquette">DERNIER CONTRÔLE</div>
+        <div class="dernier-date">{jourLong(dernier.date)}</div>
+      </div>
+      <div data-rwd="c3" class="chiffres">
+        <div class="chiffre">
+          <span class="chiffre-valeur">{dernier.controlees}</span>
+          <span class="chiffre-mot">références contrôlées</span>
+        </div>
+        <div class="chiffre">
+          <span class="chiffre-valeur">{dernier.mouvements.length}</span>
+          <span class="chiffre-mot">{dernier.mouvements.length > 1 ? 'prix modifiés' : 'prix modifié'}</span>
+        </div>
+        <div class="chiffre">
+          <span class="chiffre-valeur">{dernier.ruptures.length}</span>
+          <span class="chiffre-mot">{dernier.ruptures.length > 1 ? 'ruptures de stock' : 'rupture de stock'}</span>
+        </div>
+      </div>
+    </div>
+  )}
+
+  <section data-mar class="section">
+    <div class="section-tete">
+      <h2 class="section-titre">Comment on relève</h2>
+      <span class="section-filet" aria-hidden="true"></span>
+    </div>
+    <div data-rwd="c4" class="methode">
+      <div class="carte">
+        <div class="carte-titre">Le prix vient du marchand lié</div>
+        <p>
+          Jamais d'une autre boutique, jamais d'un comparateur. Le montant affiché sur une ligne
+          vient du marchand vers lequel pointe le lien de cette même ligne. C'est la seule règle
+          que tu peux vérifier toi-même en un clic.
+        </p>
+      </div>
+      <div class="carte">
+        <div class="carte-titre">Cinq euros avant de toucher</div>
+        <p>
+          En dessous de cinq euros d'écart, on ne change rien. Les prix bougent en continu de
+          quelques euros : réécrire une page pour ça, ce serait du mouvement, pas de l'information.
+        </p>
+      </div>
+      <div class="carte">
+        <div class="carte-titre">Le stock avec le prix</div>
+        <p>
+          Un prix attractif sur une référence épuisée ne sert à personne. La disponibilité se
+          relève en même temps que le prix, et une rupture qui dure fait basculer le lien vers un
+          marchand qui a la référence.
+        </p>
+      </div>
+      <div class="carte">
+        <div class="carte-titre">Ni prix barré, ni prix de lot</div>
+        <p>
+          On ne reprend pas les prix barrés affichés en permanence, et on ne fait jamais passer le
+          prix d'un pack batterie plus casque plus siège pour celui de la batterie seule.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section data-mar class="section">
+    <div class="section-tete">
+      <h2 class="section-titre">Semaine après semaine</h2>
+      <span class="section-filet" aria-hidden="true"></span>
+      <span class="section-compteur">{releves.length} {releves.length > 1 ? 'relevés' : 'relevé'} · {mouvementsEnTout} {mouvementsEnTout > 1 ? 'prix modifiés' : 'prix modifié'}</span>
+    </div>
+
+    {releves.map((r) => (
+      <div class="releve">
+        <div class="releve-tete">
+          <span class="releve-date">{jour(r.date)}</span>
+          <span class="releve-resume">
+            {r.controlees} références contrôlées ·{' '}
+            {r.mouvements.length === 0
+              ? 'aucun prix au-dessus du seuil'
+              : `${r.mouvements.length} ${r.mouvements.length > 1 ? 'prix modifiés' : 'prix modifié'}`}
+          </span>
+        </div>
+
+        {r.mouvements.length > 0 && (
+          <div data-rwd="tbl" class="tableau">
+            <div data-rwd="tblrow" class="ligne ligne-entete">
+              <div>Référence</div>
+              <div>Marchand</div>
+              <div class="col-prix">Avant</div>
+              <div class="col-prix">Après</div>
+              <div class="col-prix">Écart</div>
+            </div>
+            {r.mouvements.map((m) => (
+              <div data-rwd="tblrow" class="ligne">
+                <div class="cell-nom">
+                  {m.nom}
+                  {m.changeDeTranche && (
+                    <span class="tranche">change de tranche : {m.changeDeTranche.avant} → {m.changeDeTranche.apres}</span>
+                  )}
+                </div>
+                <div class="cell-marchand">{m.marchand}</div>
+                <div class="col-prix cell-avant">{m.avant}</div>
+                <div class="col-prix cell-apres">{m.apres}</div>
+                <div class={`col-prix cell-ecart ${m.ecart > 0 ? 'hausse' : 'baisse'}`}>
+                  {signe(m.ecart)} €
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {r.ruptures.length > 0 && (
+          <p class="releve-note">
+            <strong>En rupture ce jour-là :</strong>{' '}
+            {r.ruptures.map((x) => `${x.nom} (${x.etat})`).join(' · ')}
+          </p>
+        )}
+        {r.disparues.length > 0 && (
+          <p class="releve-note">
+            <strong>Sorties du catalogue :</strong> {r.disparues.map((x) => x.nom).join(' · ')}
+          </p>
+        )}
+      </div>
+    ))}
+  </section>
+
+  <div data-pad data-mar class="bas">
+    <div>
+      <h2 class="bas-titre">Un prix reste une photo</h2>
+      <p>
+        Celle du jour du relevé, à l'heure du relevé. Entre deux lundis, un marchand peut changer
+        son prix sans prévenir. Avant de commander, regarde le montant sur la fiche du marchand :
+        c'est lui qui fait foi, pas nous. Si tu en vois un qui ne colle pas,{' '}
+        <a href="/contact/">dis-le-nous</a> et on corrige.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .tete {
+    padding: 46px 40px 30px;
+  }
+
+  .surtitre {
+    font: 500 11.5px var(--font-mono);
+    letter-spacing: 0.08em;
+    color: var(--texte-mono);
+    margin-bottom: 14px;
+  }
+
+  .titre {
+    font: 800 52px/1.04 var(--font-titres);
+    letter-spacing: -0.03em;
+    max-width: 780px;
+    text-wrap: pretty;
+  }
+
+  .chapeau {
+    font: 400 18px/1.55 var(--font-texte);
+    color: var(--texte-secondaire);
+    max-width: 640px;
+    margin-top: 18px;
+    text-wrap: pretty;
+  }
+
+  /* Le bandeau du dernier contrôle : le seul endroit de la page où un chiffre est gros. */
+  .dernier {
+    margin: 8px 40px 0;
+    background: var(--color-turquoise-clair);
+    border-radius: var(--radius-lg);
+    padding: 24px 32px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 28px 40px;
+    align-items: center;
+  }
+
+  .dernier-etiquette {
+    font: 500 11.5px var(--font-mono);
+    letter-spacing: 0.08em;
+    color: var(--color-turquoise-clair-texte);
+    margin-bottom: 6px;
+  }
+
+  .dernier-date {
+    font: 800 24px/1.15 var(--font-titres);
+    letter-spacing: -0.02em;
+    color: var(--color-turquoise-fonce);
+  }
+
+  .chiffres {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+
+  .chiffre {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .chiffre-valeur {
+    font: 800 30px/1 var(--font-titres);
+    letter-spacing: -0.03em;
+    color: var(--color-turquoise-fonce);
+  }
+
+  .chiffre-mot {
+    font: 400 13.5px/1.35 var(--font-texte);
+    color: var(--color-turquoise-clair-texte);
+  }
+
+  .section {
+    margin: 40px 40px 8px;
+  }
+
+  .section-tete {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .section-titre {
+    font: 800 26px var(--font-titres);
+    letter-spacing: -0.02em;
+    white-space: nowrap;
+  }
+
+  .section-filet {
+    flex: 1;
+    min-width: 40px;
+    height: var(--border-epais);
+    background: var(--color-encre);
+  }
+
+  .section-compteur {
+    font: 600 13px var(--font-mono);
+    color: var(--texte-mono);
+  }
+
+  .methode {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+  }
+
+  .carte {
+    background: #fff;
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: var(--radius-md);
+    padding: 18px 20px 20px;
+    box-shadow: 4px 4px 0 var(--color-encre);
+  }
+
+  .carte-titre {
+    font: 700 16px/1.25 var(--font-titres);
+    letter-spacing: -0.015em;
+    margin-bottom: 9px;
+  }
+
+  .carte p {
+    font: 400 14px/1.55 var(--font-texte);
+    color: var(--texte-carte);
+  }
+
+  .releve {
+    margin-bottom: 30px;
+  }
+
+  .releve-tete {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-bottom: 9px;
+    border-bottom: var(--border-fin) solid var(--color-sable-clair);
+    margin-bottom: 12px;
+  }
+
+  .releve-date {
+    font: 700 17px var(--font-titres);
+    letter-spacing: -0.015em;
+  }
+
+  .releve-resume {
+    font: 400 13.5px var(--font-texte);
+    color: var(--texte-mono);
+  }
+
+  /* Cinq colonnes : le tableau défile, il ne se replie pas (loi 3 des crochets responsive). */
+  .tableau {
+    border: var(--border-epais) solid var(--color-encre);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .ligne {
+    display: grid;
+    grid-template-columns: 2fr 1fr 0.9fr 0.9fr 0.9fr;
+    background: #fff;
+    border-bottom: var(--border-fin) solid var(--color-sable-clair);
+  }
+
+  .ligne:last-child {
+    border-bottom: 0;
+  }
+
+  .ligne > div {
+    padding: 11px 14px;
+    font: 400 14.5px/1.4 var(--font-texte);
+    min-width: 0;
+  }
+
+  .ligne-entete {
+    background: var(--color-sable);
+  }
+
+  .ligne-entete > div {
+    font: 600 11.5px var(--font-mono);
+    letter-spacing: 0.06em;
+    color: var(--texte-mono);
+    text-transform: uppercase;
+  }
+
+  .col-prix {
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  .cell-nom {
+    font-weight: 600;
+  }
+
+  .tranche {
+    display: block;
+    font: 400 12px/1.35 var(--font-texte);
+    color: var(--texte-mono);
+    margin-top: 2px;
+  }
+
+  .cell-marchand {
+    color: var(--texte-secondaire);
+  }
+
+  .cell-avant {
+    color: var(--texte-mono);
+    text-decoration: line-through;
+  }
+
+  .cell-apres {
+    font-weight: 700;
+  }
+
+  .cell-ecart {
+    font-weight: 600;
+  }
+
+  .hausse {
+    color: var(--color-rouge-clair-texte);
+  }
+
+  .baisse {
+    color: var(--color-turquoise);
+  }
+
+  .releve-note {
+    font: 400 13.5px/1.6 var(--font-texte);
+    color: var(--texte-secondaire);
+    margin-top: 10px;
+  }
+
+  .bas {
+    margin: 40px 40px 52px;
+    background: var(--color-rouge-clair);
+    border-radius: var(--radius-lg);
+    padding: 26px 40px 24px;
+  }
+
+  .bas-titre {
+    font: 800 22px var(--font-titres);
+    letter-spacing: -0.02em;
+    margin-bottom: 8px;
+  }
+
+  .bas p {
+    font: 400 15.5px/1.6 var(--font-texte);
+    color: var(--color-rouge-clair-texte-fonce);
+    max-width: 660px;
+  }
+</style>

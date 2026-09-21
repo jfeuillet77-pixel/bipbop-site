@@ -9,23 +9,24 @@
  * Une lane par marchand : Thomann renvoie du 429 dès deux requêtes simultanées. Le relevé
  * atterrit dans releves/prix-<date>.jsonl (la procédure demande d'en garder quatre).
  *
- * Comment se lit un prix chez chaque marchand — ce n'est pas le même mécanisme partout :
- *   - Thomann ne publie AUCUN JSON-LD. Le prix est en microdata (`itemprop="price"`, décimale
- *     à la virgule), la dispo en `itemprop="availability"`, et le nom vérifiable dans le bloc
- *     e-commerce GTM (`"item_name"`, `"price"`). Le `itemprop="name"` du fil d'Ariane renvoie « Home ».
- *   - Woodbrass et Donner donnent du JSON-LD. Chez Woodbrass, une référence retirée renvoie
- *     HTTP 200 sur une page de catégorie sans prix : c'est la fiche qui est morte, pas le parseur.
- *   - Donner est un Shopify multi-variantes : le JSON-LD ne dit que la variante par défaut, qui
- *     est souvent le bundle. On relit donc `<slug>.json` et on retient le MINIMUM des variantes.
- *     Le `compare_at_price` de Donner est le prix barré permanent (règle I05) : jamais publié.
+ * Comment se lit un prix chez chaque marchand — microdata chez Thomann, JSON-LD chez
+ * Woodbrass, variantes Shopify chez Donner — est documenté et implémenté une seule fois,
+ * dans `scripts/prix/marchands.mjs`.
+ *
+ * Ce script interroge les pages une par une. Le rendez-vous du lundi
+ * (`scripts/prix/semaine.mjs`) part des flux marchands, qui donnent les 131 prix Thomann et
+ * Donner sans une seule requête : c'est lui qui tourne tout seul. Celui-ci reste pour
+ * revérifier une référence à la main, ou pour relever quand un flux est indisponible.
  */
 import { readFile, writeFile, appendFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+// Comment se lit un prix chez chaque marchand vit dans un seul fichier, partagé avec le
+// rendez-vous du lundi (`scripts/prix/`) : deux copies de ces regex dériveraient, et une
+// dérive ici publie un prix faux.
+import { sleep, money, segmentDe, lirePage } from './prix/marchands.mjs';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
-const UA =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
 const argv = process.argv.slice(2);
 const arg = (k) => (argv.includes(k) ? argv[argv.indexOf(k) + 1] : undefined);
 const only = arg('--only');
@@ -37,99 +38,6 @@ const SORTIE = arg('--out') ?? join(SITE, 'releves', `prix-${AUJOURD_HUI}.jsonl`
 
 /** Une seule requête à la fois chez Thomann ; les deux autres marchands encaissent l'aller-retour. */
 const LANES = { Thomann: { latence: 4600 }, Woodbrass: { latence: 1400 }, 'Donner Music': { latence: 1400 } };
-
-const sleep = (ms) => new Promise((s) => setTimeout(s, ms));
-const norm = (s) =>
-  String(s || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, ' ').trim();
-const money = (v) => {
-  if (v === null || v === undefined || v === '') return null;
-  const m = String(v).replace(/\s|\u00a0/g, '').replace(',', '.').match(/-?\d+(?:\.\d+)?/);
-  return m ? Number(m[0]) : null;
-};
-const hote = (u) => { try { return new URL(u).host; } catch { return ''; } };
-
-/* ---------------------------------- les trois lectures --------------------------------- */
-
-function lireThomann(html) {
-  const price = html.match(/itemprop="price"\s+content="([\d.,]+)"/i);
-  if (!price) return null;
-  const nom =
-    html.match(/"item_name":"([^"]+)"/)?.[1] ??
-    html.match(/property="og:title"\s+content="([^"]+)"/i)?.[1] ?? '';
-  const dispo = (html.match(/itemprop="availability"\s+href="[^"]*?\/(\w+)"/i) ?? [])[1] ?? '';
-  const libelle = (html.match(/(Disponible sous [^<]{2,24}|actuellement indisponible)/i) ?? [])[1] ?? '';
-  return { price: money(price[1]), name: nom.trim(), availability: dispo, dispoLisible: libelle };
-}
-
-function blocsLd(html) {
-  const out = [];
-  for (const m of html.matchAll(/<script[^>]+type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/gi)) {
-    try { out.push(JSON.parse(m[1].trim())); } catch { /* bloc illisible */ }
-  }
-  return out;
-}
-function produits(node, acc, profondeur = 0) {
-  if (!node || profondeur > 8) return acc;
-  if (Array.isArray(node)) { for (const n of node) produits(n, acc, profondeur + 1); return acc; }
-  if (typeof node !== 'object') return acc;
-  if (/Product/i.test(String(node['@type'] ?? ''))) acc.push(node);
-  for (const k of ['@graph', 'mainEntity', 'item', 'itemListElement', 'itemList', 'product'])
-    if (node[k] !== undefined) produits(node[k], acc, profondeur + 1);
-  return acc;
-}
-function offres(o, acc, profondeur = 0) {
-  if (!o || profondeur > 6) return acc;
-  if (Array.isArray(o)) { for (const x of o) offres(x, acc, profondeur + 1); return acc; }
-  if (typeof o === 'object') {
-    if (o.price !== undefined || o.lowPrice !== undefined || /Offer/i.test(String(o['@type'] ?? ''))) acc.push(o);
-    for (const k of ['offers', 'itemOffered']) if (o[k] !== undefined) offres(o[k], acc, profondeur + 1);
-  }
-  return acc;
-}
-function lireJsonLd(html, attendu) {
-  const cibles = [];
-  for (const bloc of blocsLd(html))
-    for (const p of produits(bloc, []))
-      for (const o of offres(p.offers ?? p, [])) {
-        const prix = money(o.price ?? o.lowPrice ?? o.priceRange);
-        if (prix === null || prix <= 0 || !/EUR/i.test(String(o.priceCurrency ?? 'EUR'))) continue;
-        cibles.push({ price: prix, name: String(p.name ?? '').trim(), availability: String(o.availability ?? '').split('/').pop(), strike: money(o.listPrice ?? o.strikethroughPrice ?? o.highPrice) });
-      }
-  if (!cibles.length) return null;
-  const mots = norm(attendu).split(' ').filter((w) => w.length > 2);
-  return cibles
-    .map((c) => ({ ...c, score: mots.length ? mots.filter((w) => norm(c.name).includes(w)).length / mots.length : 1 }))
-    .sort((a, b) => b.score - a.score || a.price - b.price)[0];
-}
-
-/** Chez Donner, le prix qui compte est celui de la variante la moins chère : le lien y mène. */
-async function lireDonner(url) {
-  const cible = url.split('?')[0].replace(/\/$/, '') + '.json';
-  const res = await fetch(cible, { headers: { 'user-agent': UA }, signal: AbortSignal.timeout(30000) });
-  if (!res.ok) return null;
-  const p = (await res.json())?.product;
-  if (!p?.variants?.length) return null;
-  const prix = Math.min(...p.variants.map((v) => money(v.price) ?? Infinity));
-  const variante = p.variants.find((v) => money(v.price) === prix);
-  if (!Number.isFinite(prix)) return null;
-  return { price: prix, name: `${p.title}${variante ? ` — ${variante.title}` : ''}`, availability: 'InStock', strike: money(variante?.compare_at_price) };
-}
-
-async function lire(r) {
-  if (r.marchand === 'Donner Music') {
-    try { const d = await lireDonner(r.url); if (d) return d; } catch { /* on retombe sur la page */ }
-  }
-  const res = await fetch(r.url, {
-    headers: { 'user-agent': UA, 'accept-language': 'fr-FR,fr;q=0.9', accept: 'text/html,application/xhtml+xml' },
-    redirect: 'follow', signal: AbortSignal.timeout(45000),
-  });
-  r.http = res.status;
-  const html = await res.text();
-  if (!res.ok) { r.erreur = `HTTP ${res.status}`; return null; }
-  const lu = hote(r.url).includes('thomann') ? lireThomann(html) : lireJsonLd(html, r.nom);
-  if (!lu) r.erreur = 'prix non lisible dans la page';
-  return lu;
-}
 
 /* ------------------------------------ la base à vérifier ---------------------------------- */
 
@@ -176,7 +84,7 @@ async function lane(marchand) {
     r.live = null; r.erreur = null;
     for (let essai = 1; essai <= 4 && r.live === null; essai++) {
       try {
-        const lu = await lire(r);
+        const lu = await lirePage(r);
         if (r.http === 429 || r.http === 503) {
           const attente = 20000 * essai;
           console.log(`  ${r.http} sur ${r.nom} — ${attente / 1000}s d'attente`);
@@ -201,15 +109,6 @@ async function lane(marchand) {
   }
 }
 await Promise.all(Object.keys(LANES).map(lane));
-
-/** Les tranches du hub (mêmes bornes que segmentDe dans greffes.mjs). */
-function segmentDe(prix) {
-  if (prix < 300) return 'Moins de 300 €';
-  if (prix < 500) return '300 à 500 €';
-  if (prix < 800) return '500 à 800 €';
-  if (prix <= 1600) return '800 à 1600 €';
-  return 'HORS TRANCHE — au-delà de 1600 €, segmentDe() fait échouer le build';
-}
 
 /* -------------------------------------------- le bilan -------------------------------------------- */
 const lus = cibles.filter((r) => typeof r.live === 'number');

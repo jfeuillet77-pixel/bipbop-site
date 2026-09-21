@@ -3,11 +3,15 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import BipbopAvatar from '../../components/mascotte/BipbopAvatar.astro';
 import { ETAT_INITIAL, resultat } from '../../lib/comparatif.mjs';
 import { questionsHTML, resultatHTML } from '../../lib/comparatif-ui.mjs';
+import base from '../../data/modeles.json';
 
 // Premier état rendu au build : la page se lit sans JavaScript, et le navigateur
 // affiche exactement la même chose une fois les réponses changées.
 const vue = resultat(ETAT_INITIAL);
-const RELEVE = '13 septembre 2026';
+// La date de relevé n'est plus écrite ici : elle vient de la base, où `design/prix-reperes.json`
+// la met à jour à chaque relevé hebdomadaire (scripts/prix/appliquer.mjs). Écrite à la main,
+// elle annonçait encore le 13 septembre quand les prix affichés dataient du 17.
+const RELEVE = new Date(base.releve + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 ---
 
 <BaseLayout title="Quelle batterie électronique choisir ? Comparatif 2026" description="Trois questions : ton budget, la place dont tu disposes et ce que tu veux jouer. Deux modèles en face, avec une phrase honnête sur chacun et son prix." currentPage="comparatif">
@@ -42,6 +46,7 @@ const RELEVE = '13 septembre 2026';
 <script>
   import { ETAT_INITIAL, resultat, OPTIONS } from '../../lib/comparatif.mjs';
   import { questionsHTML, resultatHTML } from '../../lib/comparatif-ui.mjs';
+import base from '../../data/modeles.json';
 
   const CLE = { budget: 'b', place: 'p', usage: 'u' };
   const questions = document.querySelector('[data-rwd="c3"]');

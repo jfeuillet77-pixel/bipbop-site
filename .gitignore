@@ -25,3 +25,10 @@ pnpm-debug.log*
 
 # sources Astro retirées par le portage — l'historique git les garde déjà
 design/port-seche/
+
+# catalogues marchands bruts du relevé hebdomadaire : 95 Mo, retéléchargeables
+releves/flux/
+
+# journaux du rendez-vous hebdomadaire des prix
+releves/journal.log
+releves/launchd.log

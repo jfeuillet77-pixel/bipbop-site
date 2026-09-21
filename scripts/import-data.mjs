@@ -133,7 +133,12 @@ if (SURCHARGE) {
   for (const e of SURCHARGE.modeles ?? []) {
     const m = modeles.modeles.find((x) => x.id === e.id);
     if (!m) { console.error(`✗ prix-reperes: aucun modèle « ${e.id} » dans la base de l'auteur — surcharge périmée ou identifiants changés.`); process.exit(1); }
-    for (const champ of ['prix', 'prixTexte', 'segment']) if (e[champ] !== undefined) m[champ] = e[champ];
+    // `url` et `marchand` sont surchargeables comme le prix : un marchand retire une fiche et la
+    // republie ailleurs (la BackBeat le 21/09), ou une rupture durable fait basculer le lien chez
+    // un concurrent. La jointure avec la sélection est déjà faite au-dessus, sur l'URL d'origine :
+    // la changer ici ne peut plus casser le segment.
+    for (const champ of ['prix', 'prixTexte', 'segment', 'url', 'marchand'])
+      if (e[champ] !== undefined) m[champ] = e[champ];
     surchargés.prix++;
   }
   for (const e of SURCHARGE.accessoires ?? []) {

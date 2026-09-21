@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Le rendez-vous du lundi matin de BipBop : relevé des prix et de la disponibilité des 156
+  références du site, rapport, mises à jour éditoriales, contrôles, puis commit et push sur dev
+  (donc déploiement Netlify). Tout est dans scripts/prix/semaine.mjs, y compris les trois cas
+  où il refuse de livrer.
+
+  Pose et retrait : scripts/prix/installer-le-rendez-vous.sh
+  Journal : releves/journal.log (et releves/launchd.log pour ce que launchd voit lui-même).
+
+  8 h 17 plutôt que 8 h 00 : rien ne dépend de la minute, et une tâche calée sur l'heure ronde
+  part en même temps que toutes les autres tâches de la machine.
+
+  Le chemin du dépôt est écrit par installer-le-rendez-vous.sh à la pose : ce fichier est le
+  gabarit, il porte __DEPOT__ et ne se charge pas tel quel.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>eu.bipbop.prix-semaine</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/bin/node</string>
+    <string>scripts/prix/semaine.mjs</string>
+  </array>
+
+  <key>WorkingDirectory</key>
+  <string>__DEPOT__</string>
+
+  <!-- launchd ne lit aucun profil : sans PATH, `npm`, `git` et `claude` sont introuvables. -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>__HOME__/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Weekday</key><integer>1</integer>
+    <key>Hour</key><integer>8</integer>
+    <key>Minute</key><integer>17</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>__DEPOT__/releves/launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>__DEPOT__/releves/launchd.log</string>
+
+  <key>RunAtLoad</key>
+  <false/>
+  <key>ProcessType</key>
+  <string>Background</string>
+</dict>
+</plist>

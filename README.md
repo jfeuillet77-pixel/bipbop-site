@@ -88,7 +88,9 @@ Règle d'écriture : `/section/slug/` avec barre oblique finale (règle S09), fi
 | `npm run build` | build de production dans `./dist/`, puis `scripts/sitemap.mjs` pose `dist/sitemap.xml` (`postbuild`) |
 | `npm run sitemap` | régénère `dist/sitemap.xml` seul, sans rebuild |
 | `npm run verif` | les 8 contrôles de fin de séance sur `dist/` (après un build) |
-| `npm run prix` | le relevé hebdomadaire : relit les 31 modèles et les accessoires chez Thomann, Woodbrass et Donner Music, et sort la liste des écarts (`releves/prix-<date>.jsonl`) |
+| `npm run prix:semaine` | **le rendez-vous du lundi, en une commande** : flux, relevé, rapport, prix, réécritures, portage, contrôles, commit et push |
+| `npm run prix:rendez-vous` | pose (ou retire, `--retirer`) la tâche launchd du lundi 8 h 17 |
+| `npm run prix` | le relevé à la demande, référence par référence en lisant les pages : pour revérifier une fiche ou quand un flux est indisponible (`releves/prix-<date>.jsonl`) |
 | `npm run check` | `build` + `verif` |
 | `npm run preview` | prévisualiser le build |
 
@@ -107,6 +109,22 @@ node scripts/test-comparatif-nav.mjs                   # clics, URL, repli sans 
 DIST="../Claude Design - MàJ" node scripts/verif.mjs   # auditer les maquettes elles-mêmes
 ```
 
+## Les prix se tiennent à jour tout seuls
+
+Chaque lundi à 8 h 17, `scripts/prix/semaine.mjs` relève les 156 références du site, écrit
+`PRIX-SEMAINE.md`, met les prix à jour dans `design/prix-reperes.json`, **ouvre une session Claude
+pour les réécritures que la machine ne sait pas faire**, re-porte les pages, passe les deux
+contrôles et pousse sur `dev`. Le détail, les sources de chaque chiffre et les trois cas où il
+refuse de livrer : `AGENTS.md`, section « Le rendez-vous du lundi ».
+
+Ce que ça donne côté lecteur : **[`/suivi-des-prix/`](https://bipbop.eu/suivi-des-prix/)**, une page
+qui dit quand on a relevé, ce qui a bougé, et les semaines où rien n'a bougé. Elle se construit
+depuis `src/data/historique-prix.json` et ne contient aucun chiffre tapé à la main.
+
+Les adresses des deux flux partenaires (Thomann, Donner) portent un jeton : elles vivent dans le
+`.env` de la racine. Sans ce fichier, le relevé se rabat sur la lecture des pages, ce qui marche
+mais prend vingt minutes et se fait jeter par Thomann au-delà.
+
 ## Structure
 
 ```
@@ -119,6 +137,8 @@ bipbop-site/
 │   ├── data/           → produits et plan éditorial, importés du dossier Claude Design
 │   └── styles/         → global.css (variables) + responsive.css (les 3 paliers)
 ├── scripts/            → port.mjs, import-data.mjs, sitemap.mjs, verif.mjs, tests du comparatif
+│   └── prix/           → le rendez-vous du lundi : flux, relevé, rapport, application, page publique
+├── releves/            → un relevé daté par semaine (les 4 derniers) + flux/ (95 Mo, hors dépôt)
 ├── design/             → docs internes : crochets, écarts maquettes, mascotte
 ├── public/             → assets statiques + data/modeles.json servi au navigateur
 └── dist/               → build

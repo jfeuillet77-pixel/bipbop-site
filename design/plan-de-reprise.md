@@ -6,6 +6,42 @@ ouvert aux moteurs depuis le 13 septembre au soir** (§2 fait) et **ses titles e
 sont écrits depuis le 14** (§2 ter fait). Ce qui reste : déclarer le sitemap dans Search Console,
 les balises sociales, et relire ce que la machine n'a pas pu écrire (§3).
 
+## Les prix, depuis le 21 septembre 2026 : automatiques
+
+Le chantier « tenir les prix à jour » est fermé. `scripts/prix/` tourne **chaque lundi à 8 h 17**
+(launchd) et va jusqu'au push sur `dev`. Ce qu'il faut savoir pour reprendre :
+
+- **La commande** : `npm run prix:semaine` pour le lancer à la main, `npm run prix:rendez-vous`
+  pour poser ou retirer (`--retirer`) la tâche, `--etat` pour savoir où elle en est.
+- **Le journal** : `releves/journal.log` (et `releves/launchd.log` pour ce que launchd voit).
+  Les deux sont dans `.gitignore`.
+- **À lire après un lundi** : `PRIX-SEMAINE.md` à la racine. Il est réécrit à chaque relevé.
+- **Le `.env` de la racine** porte `THOMANN_FEED_URL` et `DONNER_FEED_URL`. Il n'est pas versionné :
+  sur un clone frais, il faut le recréer, sinon le relevé se rabat sur 156 lectures de pages et
+  Thomann finit par jeter.
+- **Ce que le lundi ne décide jamais** : une phrase. Il écrit les prix dans
+  `design/prix-reperes.json`, ouvre une session Claude pour les réécritures, et refuse de livrer si
+  le dépôt était déjà modifié, si un contrôle échoue, ou si la session s'est interrompue.
+
+### Ce qui attend une décision de Jordane
+
+- **Woodbrass n'a pas de flux.** Ses 24 références sont relevées page par page, et une référence
+  Woodbrass retirée répond HTTP 200 sur une page de catégorie : on ne sait donc pas détecter une
+  disparition chez eux comme on sait le faire chez Thomann et Donner. S'il existe un flux
+  partenaire Woodbrass, le brancher ferme le dernier angle mort.
+- **Deux ruptures à resurveiller au relevé du 28/09** : Roland PDX-100 (`/guides/faire-evoluer-sa-batterie/`,
+  « sous 6-8 semaines ») et Alesis Nitro Multicore (`/guides/acheter-occasion/`, « actuellement
+  indisponible »). Si elles durent un deuxième relevé, la procédure justifie de basculer le lien
+  vers Woodbrass — encore faut-il qu'il les ait, ce qui n'a pas pu être vérifié : leur moteur de
+  recherche ne répond pas à une requête construite à la main.
+- **La Donner BackBeat est épuisée** dans ses deux variantes depuis le 21/09, à 1 099,99 €. Si ça
+  dure, c'est un candidat au retrait de l'Aide-Mémoire §04.
+- **22 pages affichent une date de relevé antérieure au 21/09** (§6 du rapport). L'Aide-Mémoire §05
+  ne redate à chaque relevé que le comparatif, les guides par budget et la page de sélection : les
+  avis et les duels ne suivent que les modifications de fond. Reste à trancher si une page dont on
+  a revérifié le prix sans le changer mérite une date rafraîchie.
+
+
 ## Ce qui a changé de méthode
 
 Jusqu'ici chaque page était **retapée à la main** depuis sa maquette, ce qui créait des écarts
