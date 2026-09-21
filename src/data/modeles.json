@@ -1,6 +1,6 @@
 {
  "version": 3,
- "releve": "2026-09-17",
+ "releve": "2026-09-21",
  "sources": {
   "Thomann": "catalogue produits",
   "Woodbrass": "catalogue produits",
@@ -681,8 +681,8 @@
    "id": "backbeat",
    "marque": "Donner",
    "modele": "BackBeat",
-   "prix": 899.99,
-   "prixTexte": "899,99 €",
+   "prix": 1099.99,
+   "prixTexte": "1099,99 €",
    "marchand": "Donner Music",
    "img": "https://cdn.shopify.com/s/files/1/0612/3120/2528/files/01_8dce4d14-1869-44ed-a923-51cda6bff9df.jpg?v=1719557444",
    "pads": 9,
@@ -700,7 +700,7 @@
    "nom_complet": "Donner BackBeat",
    "segment": "800 à 1600 €",
    "nom_marchand": "BackBeat",
-   "url": "https://fr.donnermusic.com/products/offre-exclusive-donner-backbeat-batterie-electronique"
+   "url": "https://fr.donnermusic.com/products/donner-backbeat-batteries-electroniques"
   },
   {
    "id": "mps1000",

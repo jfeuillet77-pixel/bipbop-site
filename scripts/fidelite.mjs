@@ -25,7 +25,7 @@ const DIST = join(SITE, 'dist');
 // Pages écrites à la main, sans maquette Claude Design à laquelle les comparer :
 // /comparatif/ (la seule page dynamique du dossier) et /plan-du-site/ (générée depuis le plan
 // éditorial par src/lib/arborescence.mjs).
-const SANS_MAQUETTE = new Set(['/comparatif', '/plan-du-site'].map((r) => r.replace(/\/+$/, '')));
+const SANS_MAQUETTE = new Set(['/comparatif', '/plan-du-site', '/suivi-des-prix'].map((r) => r.replace(/\/+$/, '')));
 
 /** Segments de phrase comparables : texte nu, entités décodées, un segment par élément. */
 function segments(html) {

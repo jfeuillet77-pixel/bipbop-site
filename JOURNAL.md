@@ -1,5 +1,88 @@
 # Journal BipBop
 
+## 21 septembre 2026 — Les prix se tiennent tout seuls, et le premier relevé automatique trouve un lien mort à 200 €
+
+Demande de Jordane : un « cron » qui tient les prix à jour une fois par semaine, qui fasse **toutes
+les mises à jour éditoriales** quand un prix bouge, et une page publique qui montre le travail.
+Autonomie complète demandée, jusqu'au push sur `dev`.
+
+**Le rendez-vous du lundi.** `scripts/prix/`, huit étapes, posé dans launchd à 8 h 17
+(`npm run prix:rendez-vous`) sur le modèle de celui de `refonte-cdlm`. Il télécharge les deux flux
+partenaires, relève, écrit `PRIX-SEMAINE.md`, écrit les prix dans `design/prix-reperes.json`, ouvre
+**une session Claude pour les réécritures**, re-porte, publie l'historique, passe `check` et
+`fidelite`, commite et pousse. `npm run prix:semaine` fait la même chose à la demande.
+
+**Ce que les flux changent, et ce qu'ils ne changent pas.** Les 121 références Thomann et les 11
+Donner viennent désormais du flux partenaire : zéro requête, et le bundle ne peut plus être pris
+pour le kit puisqu'il a son propre article. Mais **le flux Thomann ne dit pas la disponibilité**
+(neuf colonnes, pas de stock) : elle se lit toujours sur la page, une par une, et c'est le piège
+n°3 de la procédure. Woodbrass n'a aucun flux, ses 24 références restent en lecture de page.
+Constat du jour : sur la BackBeat, le flux Donner annonce les deux variantes **en stock** et la
+fiche Shopify dit **épuisé**. C'est la fiche qui l'emporte — c'est elle que le lecteur voit.
+
+**Le premier relevé a trouvé ce qu'un relevé à la main aurait manqué.** 155 prix sur 156, aucun
+écart au-dessus du seuil de 5 €... et la **Donner BackBeat absente du flux**. La fiche répondait
+HTTP 200, donc rien ne clochait en apparence : elle **redirigeait vers l'accueil**. Le produit
+n'avait pas disparu, il avait été republié sous une autre adresse, à **1 099,99 € au lieu de
+899,99 €** — l'ancienne page était une offre promotionnelle. Le site publiait donc un lien mort
+**et** un prix faux de 200 €, sur un modèle que le comparatif peut recommander. Lien et prix
+corrigés ensemble : séparés, le prix affiché ne viendrait plus du marchand vers lequel pointe le
+lien, et c'est la seule règle qu'un lecteur peut vérifier en un clic.
+
+Trois choses en sont sorties, pour que la prochaine fois soit automatique :
+- une absence de flux n'est plus un verdict, c'est un **soupçon** : la page est ouverte, et la
+  disparition n'est retenue que si elle ne répond plus, redirige ailleurs, ou n'a plus de prix ;
+- le relevé **cherche le produit par son nom** dans le catalogue entier avant de laisser conclure
+  à un retrait, et le rapport propose les candidats avec leur écart de prix. Testé : il retrouve
+  la BackBeat exactement comme je l'ai trouvée à la main ;
+- `design/prix-reperes.json` accepte maintenant `url` et `marchand` sur un modèle, pas seulement
+  sur un accessoire — une fiche qui déménage ou une bascule de marchand n'a plus besoin de toucher
+  la source de l'auteur.
+
+**Quatorze ruptures, deux qui comptent, zéro à traiter.** Le rapport ne les jette plus en vrac :
+il sépare le **délai** de la **rupture** (« une rupture de plus de deux semaines justifie de
+basculer le lien » — « disponible sous 1-2 semaines » n'en est pas une), il dit **depuis combien de
+relevés** chacune dure, et **quelles pages publiées la lient**. Résultat : sur quatorze, deux sont
+liées depuis une page (Roland PDX-100 sur `/guides/faire-evoluer-sa-batterie/`, Alesis Nitro
+Multicore sur `/guides/acheter-occasion/`), et aucune n'a encore deux relevés d'ancienneté. Rien à
+basculer cette semaine, et c'est écrit noir sur blanc plutôt que laissé à l'appréciation.
+
+**Le rapport est le brief, pas un résumé.** Pour chaque prix qui bouge, `PRIX-SEMAINE.md` cherche
+l'ancien montant dans les 46 maquettes et les 39 pages portées, et tranche ligne par ligne entre
+**substitution mécanique** et **phrase à réécrire** — « au même prix » quand l'écart devient de
+11 € ne se répare pas avec une regex. Il calcule les franchissements de tranche, les guides par
+budget qu'un modèle quitte ou rejoint, et les écarts de duel qui **s'inversent** (les deux modèles
+d'un duel sont lus dans le NOM de sa maquette, pas dans son corps : une page de duel cite aussi ses
+voisines, et les chercher dans le texte lui faisait affronter trois adversaires à la fois).
+Garde-fou le plus important : quand un montant est **partagé** par plusieurs modèles — au 21/09,
+498 € désigne la TD-02KV, la MPS-750X *et* la DTX432K — le rapport le dit en tête de section et
+aucune substitution automatique n'est appliquée.
+
+**Ce que le lundi ne fait jamais.** Il n'écrit pas une phrase. Il écrit de la donnée, avec sa date
+et sa preuve. Et il refuse de livrer dans trois cas : dépôt déjà modifié au démarrage (quelqu'un
+travaille, on ne balaye pas son travail d'un `git add -A`), `check` ou `fidelite` en échec, session
+éditoriale interrompue. Un garde-fou de plus : si plus d'un cinquième des références changeaient de
+prix d'un coup, ce ne serait pas le marché, ce serait le relevé — rien n'est écrit.
+
+**`/suivi-des-prix/`, la page publique.** Troisième page sans maquette, après `/comparatif/` et
+`/plan-du-site/`. Elle ne contient aucun chiffre tapé à la main : tout vient de
+`src/data/historique-prix.json`, que le relevé remplit. Elle montre le dernier contrôle, la méthode
+en quatre cartes, et l'historique semaine par semaine — **y compris les semaines sans mouvement**,
+parce que c'est là qu'on prouve qu'on a regardé. Elle est déclarée dans `SANS_MAQUETTE` et dans
+`HORS_PLAN`, donc elle entre seule dans le plan du site et le sitemap. Le lien du pied de page
+passe par la greffe, qui devient `grefferLiensDuPied()` et en pose deux.
+
+**Deux dérives corrigées au passage.** `/comparatif/` affichait « prix relevés le 13 septembre »
+en dur alors que la base disait le 17 : la date vient maintenant de `base.releve`, elle suivra
+chaque relevé toute seule. Et `scripts/releve-prix.mjs` a perdu 100 lignes : les regex de lecture
+des marchands vivaient en double, elles sont dans `scripts/prix/marchands.mjs`, importées par les
+deux. Le rapport signale aussi les 22 pages dont la date de relevé affichée a pris du retard, en
+distinguant celles que l'Aide-Mémoire §05 redate à chaque relevé de celles qui ne suivent que le
+fond.
+
+Les deux contrôles sortent au vert : 8/8 sur 40 pages, 37/37 en fidélité, aucun débordement à
+390 px sur la page neuve.
+
 ## 18 septembre 2026 — Quatre arbitrages de Jordane, une erreur de spec trouvée dans l'affaire, et un huitième contrôle
 
 Quatre questions posées après le relevé du 17, quatre réponses de Jordane : la DED‑70 en second

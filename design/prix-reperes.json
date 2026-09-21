@@ -1,7 +1,10 @@
 {
   "_commentaire": "Prix et références contrôlés sur le web après coup, enregistrés côté dépôt. « Claude Design - MàJ/data/ » reste la source d'auteur : ce fichier ne la dément que lorsqu'un relevé en ligne a tranché depuis. scripts/import-data.mjs l'applique à chaque import, une entrée sans correspondance fait échouer l'import. Chaque entrée porte sa date et sa preuve.",
-  "_releve": "2026-09-18",
-  "base": { "releve": "2026-09-17", "version": 3 },
+  "_releve": "2026-09-21",
+  "base": {
+    "releve": "2026-09-21",
+    "version": 3
+  },
   "_base": "La date d'en-tête est celle du relevé des prix (17/09) — c'est elle que le comparatif et le hub affichent sous leurs tableaux. Les bascules de marchand du 18/09 ne changent aucun prix de modèle.",
   "modeles": [
     {
@@ -17,6 +20,14 @@
       "prixTexte": "1598 €",
       "segment": "800 à 1600 €",
       "pourquoi": "Thomann à 1 598 € relevé le 17/09/2026 (1 539 € au 13/09). À 2 € du plafond de tranche : au prochain relèvement, segmentDe() fait échouer le build."
+    },
+    {
+      "id": "backbeat",
+      "prix": 1099.99,
+      "prixTexte": "1099,99 €",
+      "segment": "800 à 1600 €",
+      "url": "https://fr.donnermusic.com/products/donner-backbeat-batteries-electroniques",
+      "pourquoi": "Relevé du 21/09/2026. L'adresse publiée (« offre-exclusive-donner-backbeat-batterie-electronique ») ne répond plus : elle redirige vers l'accueil Donner, ce qu'un HTTP 200 cachait. La fiche vit maintenant sous « donner-backbeat-batteries-electroniques », à 1099,99 € et non 899,99 € : la page retirée était une offre promotionnelle. Le lien et le prix changent ensemble, sinon le prix affiché ne vient plus du marchand vers lequel pointe le lien. Le prix barré de 1499,99 € n'est pas repris (règle I05). Attention : les deux variantes sont données en stock par le flux Impact et épuisées par la fiche Shopify — c'est la fiche qui fait foi, à revoir au relevé suivant."
     }
   ],
   "accessoires": [
@@ -24,8 +35,9 @@
       "marque": "Donner",
       "produit": "HHCB-12 charleston + pied",
       "prix": "165,99 €",
+      "sku": "48873083502816",
       "role": "Le pack contrôleur + pied (variante par défaut de la fiche, en stock). Le contrôleur seul est à 72,99 € mais son pied est une autre variante.",
-      "pourquoi": "Le lien vend le pack « contrôleur de charleston + pied » à 165,99 € (variante par défaut, en stock). Le prix publié doit être celui de ce que vend le lien."
+      "pourquoi": "Le lien vend le pack « contrôleur de charleston + pied » à 165,99 € (variante en stock). Le prix publié doit être celui de ce que vend le lien. La variante est épinglée par son SKU : sans cela le relevé hebdomadaire retiendrait la moins chère en stock, 72,99 €, qui est le contrôleur seul."
     },
     {
       "marque": "Yamaha",

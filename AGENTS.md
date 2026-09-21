@@ -26,16 +26,57 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
    réellement la largeur de défilement dans Chrome à 1024 / 900 / 768 / 390 px ; `fidelite`
    compare chaque page à sa maquette segment par segment. Une page peut paraître correcte et casser.
 
-**Exceptions à la loi 1** : deux pages se maintiennent à la main, aucune maquette ne les contient.
+**Exceptions à la loi 1** : trois pages se maintiennent à la main, aucune maquette ne les contient.
 `/comparatif/` est la seule page dynamique du dossier (`DCLogic`, 42 liaisons `{{ }}`) — elle reste
 en `src/pages/comparatif/index.astro`. `/plan-du-site/` (le plan du site HTML) se **construit**
 depuis `src/lib/arborescence.mjs`, qui est aussi la seule source de `dist/sitemap.xml` écrit par
-`scripts/sitemap.mjs` à chaque build. Chacune est déclarée dans `SANS_MAQUETTE` de
-`scripts/fidelite.mjs`, et la seconde dans `HORS_PLAN` de la lib — `plan.json` se régénère depuis
-Claude Design, on ne peut pas y inscrire une route. Un lien qu'aucune maquette ne contient mais
-qu'on publie partout (le lien « Plan du site » du pied de page) passe par une greffe de
-`scripts/greffes.mjs`, jamais par une édition des 37 pages. `404.html` se porte aussi (route sans
-permalien).
+`scripts/sitemap.mjs` à chaque build. `/suivi-des-prix/` se **construit** depuis
+`src/data/historique-prix.json`, que le relevé hebdomadaire remplit : aucun chiffre n'y est écrit à
+la main. Chacune est déclarée dans `SANS_MAQUETTE` de `scripts/fidelite.mjs`, et les deux dernières
+dans `HORS_PLAN` de la lib — `plan.json` se régénère depuis Claude Design, on ne peut pas y inscrire
+une route. Les liens qu'aucune maquette ne contient mais qu'on publie partout (« Plan du site » et
+« Suivi des prix » au pied de page) passent par la greffe `grefferLiensDuPied()` de
+`scripts/greffes.mjs`, jamais par une édition des 37 pages, et `src/components/Footer.astro` porte
+les mêmes dans le même ordre pour les trois pages sans maquette. `404.html` se porte aussi (route
+sans permalien).
+
+## Le rendez-vous du lundi : les prix
+
+`scripts/prix/` tient les prix à jour tout seul, chaque lundi à 8 h 17 (launchd, posé par
+`npm run prix:rendez-vous`). `npm run prix:semaine` fait la même chose à la demande.
+
+Huit étapes, dans cet ordre : télécharger les deux flux partenaires → relever → écrire
+`PRIX-SEMAINE.md` → écrire les prix dans `design/prix-reperes.json` → **une session Claude pour les
+réécritures** → `npm run data` et `npm run port` → verser le relevé dans l'historique publié →
+`npm run check` et `npm run fidelite` → commit sur `dev`, fusion dans `main`, push des deux.
+
+`main` est la branche que Netlify déploie, `dev` celle où l'on travaille : un commit sur `dev` ne
+met rien en ligne. La fusion est en `--no-ff` (le lundi doit se voir comme un bloc dans l'historique)
+et jamais forcée — si `main` a divergé, le lundi s'arrête en le disant et le travail reste sur `dev`.
+
+**D'où vient chaque chiffre**, parce que ce n'est pas la même source pour tout le monde :
+
+| | Prix | Disponibilité | Disparition du catalogue |
+|---|---|---|---|
+| Thomann (121 réf.) | flux partenaire | page produit — le flux ne la donne pas | flux, **confirmée sur la fiche** |
+| Donner (11 réf.) | flux Impact, par variante | flux (`Stock Availability`) | flux, **confirmée sur la fiche** |
+| Woodbrass (24 réf.) | page, JSON-LD | page, JSON-LD | — (aucun flux) |
+
+Les adresses des flux portent un jeton d'espace partenaire : elles vivent dans le `.env` de la
+racine, jamais dans le dépôt. Les catalogues bruts (95 Mo) atterrissent dans `releves/flux/`, qui
+est dans `.gitignore`.
+
+**Ce que le lundi fait tout seul, et ce qu'il ne fait pas.** Il écrit les prix dans
+`design/prix-reperes.json` — c'est de la donnée, avec sa date et sa preuve. Il ne touche **jamais**
+à une phrase : sur ce site un prix est presque toujours pris dans un raisonnement (« au même prix »,
+« onze euros de moins », « le match à 298 € »), et deux modèles partagent souvent le même montant.
+Réécrire ces phrases est le travail de la session Claude, qui lit `PRIX-SEMAINE.md` — un rapport qui
+cherche l'ancien montant dans les 46 maquettes et les 39 pages portées, et sépare, ligne par ligne,
+ce qui se substitue de ce qui se réécrit.
+
+**Trois refus de livrer**, parce que le script tourne sans personne devant : dépôt déjà modifié au
+démarrage (quelqu'un travaille, on ne balaye pas son travail), `check` ou `fidelite` en échec,
+session éditoriale interrompue. Dans les trois cas le relevé et le rapport restent sur le disque.
 
 ## Ce qui ne se publie jamais
 

@@ -1,0 +1,96 @@
+{
+ "_": "L'historique publié des relevés de prix, source unique de /suivi-des-prix/. Écrit par scripts/prix/publier.mjs à chaque relevé, jamais à la main. Contrairement à releves/, il ne s'élague pas : c'est la trace du travail.",
+ "releves": [
+  {
+   "date": "2026-09-21",
+   "controlees": 156,
+   "lues": 156,
+   "seuil": 5,
+   "mouvements": [
+    {
+     "nom": "Donner BackBeat",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "899,99 €",
+     "apres": "1 099,99 €",
+     "ecart": 200,
+     "pct": 22.2,
+     "changeDeTranche": null
+    }
+   ],
+   "ruptures": [
+    {
+     "nom": "Millenium MPS-750X Pro",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 6-8 semaines"
+    },
+    {
+     "nom": "Behringer DH100",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 7-9 semaines"
+    },
+    {
+     "nom": "Rockbag 22200 Drum Carpet",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Yamaha MAT-1",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 2-3 semaines"
+    },
+    {
+     "nom": "Roland PDX-6 8\" Mesh",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PDX-100 10\" V-Pad",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 6-8 semaines"
+    },
+    {
+     "nom": "Yamaha PCY-100 10\" 3 zones",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 10-13 semaines"
+    },
+    {
+     "nom": "Alesis Nitro Multicore",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PM-03 Monitor System",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PM-100",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 2-3 semaines"
+    },
+    {
+     "nom": "Roland RT-30K Kick Trigger",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 2-3 semaines"
+    },
+    {
+     "nom": "Millenium Universal Percussion Pad Bag",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Protection Racket E-Drum Kit Bag 28x16",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 9-12 semaines"
+    },
+    {
+     "nom": "Tama TDK05 Drum Tuning Key",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 4-5 semaines"
+    }
+   ],
+   "disparues": []
+  }
+ ]
+}

@@ -350,32 +350,46 @@ function grefferContact(corps, { sobre = false } = {}) {
   return { corps, notes };
 }
 
-/* ------------------------- le lien « Plan du site » au pied de page -------------------------
+/* --------------------- les liens du pied de page qu'aucune maquette ne porte ---------------------
 
-   Le plan du site (page + sitemap XML) est une bonne pratique SEO et un repère pour les
-   lecteurs : il doit être accessible depuis le pied de page, donc depuis les 37 pages portées.
-   Les maquettes Claude Design ne le contiennent pas et ne le contiendront pas avant que le
-   design soit refait — la ligne est donc greffée, comme tout ce qui diverge d'une maquette.
-   Elle est écrite sur le modèle des voisines de la colonne « LE SITE », attribut de style
-   compris, pour que le pied de page reste homogène.
+   Deux pages doivent être atteignables depuis les 37 pages portées, et aucune maquette ne les
+   connait : le plan du site (bonne pratique SEO, repère pour les lecteurs) et le suivi des prix
+   (la preuve que les montants publiés sont tenus à jour — une page de comparatif qui affiche des
+   prix doit dire quand elle les a relevés, et d'où). Les maquettes Claude Design ne les
+   contiennent pas et ne les contiendront pas avant que le design soit refait : les lignes sont
+   donc greffées, comme tout ce qui diverge d'une maquette. Elles sont écrites sur le modèle des
+   voisines de la colonne « LE SITE », attribut de style compris, pour que le pied de page reste
+   homogène — et dans le même ordre que `src/components/Footer.astro`, qui sert les trois pages
+   sans maquette : la navigation doit être identique partout (contrôle 4 de l'Aide-Mémoire).
 
    La chaîne cherchée est le texte du dernier lien de la colonne, pas son `href` : dans la
    maquette l'adresse pointe encore vers `Politique-Confidentialite.dc.html` et n'est réécrite
    qu'après. C'est ce texte qui est identique des deux côtés, vérifié sur les 37 pages.        */
 
 const DERNIER_LIEN_LEGAL = '>Politique de confidentialité</a>';
-const LIEN_PLAN = '<a href="/plan-du-site/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Plan du site</a>';
+const STYLE_LIEN_PIED = 'color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500';
+const LIENS_GREFFES = [
+  { route: '/plan-du-site/', libelle: 'Plan du site' },
+  { route: '/suivi-des-prix/', libelle: 'Suivi des prix' },
+];
 
-export function grefferPlanDuSite(corps, { sobre = false } = {}) {
+export function grefferLiensDuPied(corps, { sobre = false } = {}) {
   const notes = [];
   const occurrences = corps.split(DERNIER_LIEN_LEGAL).length - 1;
   if (occurrences === 0) return { corps, notes, greffe: false }; // page sans pied de page (404, composants)
   if (occurrences > 1) {
-    throw new Error(`lien « Politique de confidentialité » trouvé ${occurrences} fois : la greffe du plan du site ne saurait plus où poser le lien`);
+    throw new Error(`lien « Politique de confidentialité » trouvé ${occurrences} fois : la greffe du pied de page ne saurait plus où poser les liens`);
   }
-  if (corps.includes('href="/plan-du-site/"')) throw new Error('la greffe du plan du site tourne deux fois sur le même corps — vérifier l\u0027ordre dans appliquerGreffes');
-  corps = corps.replace(DERNIER_LIEN_LEGAL, DERNIER_LIEN_LEGAL + LIEN_PLAN);
-  if (!sobre) notes.push('pied de page : lien « Plan du site » greffé après « Politique de confidentialité » — la maquette ne le contient pas');
+  for (const { route } of LIENS_GREFFES) {
+    if (corps.includes(`href="${route}"`)) {
+      throw new Error(`la greffe du pied de page tourne deux fois sur le même corps (${route}) — vérifier l\u0027ordre dans appliquerGreffes`);
+    }
+  }
+  const ajout = LIENS_GREFFES
+    .map(({ route, libelle }) => `<a href="${route}" style="${STYLE_LIEN_PIED}" style-hover="color:#ffd166">${libelle}</a>`)
+    .join('');
+  corps = corps.replace(DERNIER_LIEN_LEGAL, DERNIER_LIEN_LEGAL + ajout);
+  if (!sobre) notes.push(`pied de page : liens ${LIENS_GREFFES.map((l) => `« ${l.libelle} »`).join(' et ')} greffés après « Politique de confidentialité » — la maquette ne les contient pas`);
   return { corps, notes, greffe: true };
 }
 
@@ -402,6 +416,6 @@ export function appliquerGreffes(corps, fichier, options = {}) {
   const c = appliquerCorrections(corps, fichier, options);
   corps = c.corps;
   notes.push(...c.notes);
-  const plan = grefferPlanDuSite(corps, options);
+  const plan = grefferLiensDuPied(corps, options);
   return { corps: plan.corps, notes: [...notes, ...plan.notes] };
 }
