@@ -114,7 +114,7 @@ DIST="../Claude Design - MàJ" node scripts/verif.mjs   # auditer les maquettes 
 Chaque lundi à 8 h 17, `scripts/prix/semaine.mjs` relève les 156 références du site, écrit
 `PRIX-SEMAINE.md`, met les prix à jour dans `design/prix-reperes.json`, **ouvre une session Claude
 pour les réécritures que la machine ne sait pas faire**, re-porte les pages, passe les deux
-contrôles et pousse sur `dev`. Le détail, les sources de chaque chiffre et les trois cas où il
+contrôles, puis fusionne `dev` dans `main` et pousse — c'est `main` que Netlify déploie. Le détail, les sources de chaque chiffre et les trois cas où il
 refuse de livrer : `AGENTS.md`, section « Le rendez-vous du lundi ».
 
 Ce que ça donne côté lecteur : **[`/suivi-des-prix/`](https://bipbop.eu/suivi-des-prix/)**, une page

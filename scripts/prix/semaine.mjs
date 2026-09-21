@@ -224,5 +224,44 @@ if (push.status !== 0) {
   dire(`  ✗ le push a échoué. Le commit est fait localement : régler le conflit à la main, puis pousser.`);
   fin(push.status, 'le push a échoué');
 }
-dire(`  ✓ livré sur ${branche} — Netlify déploie.`);
+dire(`  ✓ commité et poussé sur ${branche}.`);
+
+/* ------------------------------------------- mise en ligne ---------------------------------------
+   Netlify déploie `main`, pas `dev` : un commit sur `dev` ne met rien en ligne, et le site
+   resterait indéfiniment à la version de la dernière fusion manuelle. C'est ce qui s'était
+   passé — la prod annonçait encore « prix relevés le 13 septembre » le 21.
+
+   Le merge est en --no-ff, comme celui du 18/09 : le lundi doit se voir comme un bloc dans
+   l'historique de `main`, pas se diluer en une avance de pointeur. Et il n'est jamais forcé :
+   si `main` a divergé, on s'arrête en le disant. Le travail reste sur `dev`, rien n'est perdu.  */
+
+const DEPLOIE = 'main';
+if (branche !== DEPLOIE) {
+  dire(`\n--- mise en ligne ---`);
+  const etapes = [
+    ['récupération', ['fetch', 'origin', DEPLOIE]],
+    ['bascule', ['checkout', DEPLOIE]],
+    ['mise à niveau', ['merge', '--ff-only', `origin/${DEPLOIE}`]],
+    ['fusion', ['merge', '--no-ff', branche, '-m', `Merge branch '${branche}' — ${titre.replace(/^\w+\(prix\): /, '')}`]],
+    ['publication', ['push', 'origin', DEPLOIE]],
+  ];
+  let souci = null;
+  for (const [nom, args] of etapes) {
+    const r = spawnSync('git', args, { encoding: 'utf8', cwd: SITE });
+    const sortie = ((r.stdout ?? '') + (r.stderr ?? '')).trimEnd();
+    if (sortie) for (const l of sortie.split('\n')) dire(`  │ ${l}`);
+    if (r.status !== 0) { souci = nom; break; }
+  }
+  // Quoi qu'il arrive on revient sur `dev`, et on sort d'une fusion inachevée avant : laisser la
+  // machine sur `main` avec un conflit en cours ferait travailler la prochaine session au mauvais
+  // endroit, sur un arbre que `git checkout` refuserait de quitter.
+  if (souci) spawnSync('git', ['merge', '--abort'], { cwd: SITE });
+  spawnSync('git', ['checkout', branche], { cwd: SITE });
+  if (souci) {
+    dire(`  ✗ la mise en ligne s'est arrêtée à « ${souci} ». Le travail est commité et poussé sur ${branche}, rien n'est perdu :`);
+    dire(`    fusionner ${branche} dans ${DEPLOIE} à la main, puis pousser. Le site reste sur sa version précédente en attendant.`);
+    fin(0, '');
+  }
+  dire(`  ✓ ${branche} fusionnée dans ${DEPLOIE} et poussée — Netlify déploie.`);
+}
 fin(0, '');

@@ -48,7 +48,11 @@ sans permalien).
 Huit étapes, dans cet ordre : télécharger les deux flux partenaires → relever → écrire
 `PRIX-SEMAINE.md` → écrire les prix dans `design/prix-reperes.json` → **une session Claude pour les
 réécritures** → `npm run data` et `npm run port` → verser le relevé dans l'historique publié →
-`npm run check` et `npm run fidelite` → commit et push sur `dev`.
+`npm run check` et `npm run fidelite` → commit sur `dev`, fusion dans `main`, push des deux.
+
+`main` est la branche que Netlify déploie, `dev` celle où l'on travaille : un commit sur `dev` ne
+met rien en ligne. La fusion est en `--no-ff` (le lundi doit se voir comme un bloc dans l'historique)
+et jamais forcée — si `main` a divergé, le lundi s'arrête en le disant et le travail reste sur `dev`.
 
 **D'où vient chaque chiffre**, parce que ce n'est pas la même source pour tout le monde :
 
