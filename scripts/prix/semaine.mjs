@@ -177,6 +177,56 @@ const controleOk = construitOk
 
 /* --------------------------------------------- livraison ----------------------------------------- */
 
+/* ------------------------------------------- mise en ligne ---------------------------------------
+   Netlify déploie `main`, pas `dev` : un commit sur `dev` ne met rien en ligne, et le site
+   resterait indéfiniment à la version de la dernière fusion manuelle. C'est ce qui s'était
+   passé — la prod annonçait encore « prix relevés le 13 septembre » le 21.
+
+   Elle est tentée MÊME QUAND LE RELEVÉ N'A RIEN CHANGÉ, parce que ce n'est pas la même question :
+   `dev` peut être en avance sur `main` pour une autre raison — un lundi précédent dont la fusion
+   a échoué, un commit fait à la main. Sortir en disant « rien n'a changé » laisserait ce
+   travail-là hors ligne sans qu'aucun signal ne le dise, ce qui est précisément la panne qu'on
+   vient de corriger.
+
+   Le merge est en --no-ff, comme celui du 18/09 : le lundi doit se voir comme un bloc dans
+   l'historique de `main`, pas se diluer en une avance de pointeur. Et il n'est jamais forcé :
+   si `main` a divergé, on s'arrête en le disant. Le travail reste sur `dev`, rien n'est perdu.  */
+
+const DEPLOIE = 'main';
+
+function mettreEnLigne(sujet) {
+  if (branche === DEPLOIE) return;
+  spawnSync('git', ['fetch', 'origin', DEPLOIE], { cwd: SITE });
+  const enAvance = gitSortie('rev-list', '--count', `origin/${DEPLOIE}..${branche}`);
+  dire(`\n--- mise en ligne ---`);
+  if (enAvance === '0') { dire(`  ${branche} n'a rien de plus que ${DEPLOIE} : le site est déjà à jour.`); return; }
+  dire(`  ${branche} a ${enAvance} commit(s) que ${DEPLOIE} n'a pas.`);
+  const etapes = [
+    ['bascule', ['checkout', DEPLOIE]],
+    ['mise à niveau', ['merge', '--ff-only', `origin/${DEPLOIE}`]],
+    ['fusion', ['merge', '--no-ff', branche, '-m', `Merge branch '${branche}' — ${sujet}`]],
+    ['publication', ['push', 'origin', DEPLOIE]],
+  ];
+  let souci = null;
+  for (const [nom, args] of etapes) {
+    const r = spawnSync('git', args, { encoding: 'utf8', cwd: SITE });
+    const sortie = ((r.stdout ?? '') + (r.stderr ?? '')).trimEnd();
+    if (sortie) for (const l of sortie.split('\n')) dire(`  │ ${l}`);
+    if (r.status !== 0) { souci = nom; break; }
+  }
+  // Quoi qu'il arrive on revient sur `dev`, et on sort d'une fusion inachevée avant : laisser la
+  // machine sur `main` avec un conflit en cours ferait travailler la prochaine session au mauvais
+  // endroit, sur un arbre que `git checkout` refuserait de quitter.
+  if (souci) spawnSync('git', ['merge', '--abort'], { cwd: SITE });
+  spawnSync('git', ['checkout', branche], { cwd: SITE });
+  if (souci) {
+    dire(`  ✗ la mise en ligne s'est arrêtée à « ${souci} ». Le travail est commité et poussé sur ${branche}, rien n'est perdu :`);
+    dire(`    fusionner ${branche} dans ${DEPLOIE} à la main, puis pousser. Le site reste sur sa version précédente en attendant.`);
+    return;
+  }
+  dire(`  ✓ ${branche} fusionnée dans ${DEPLOIE} et poussée — Netlify déploie.`);
+}
+
 dire(`\n--- livraison ---`);
 const refus = [
   saleAuDepart && 'le dépôt était déjà modifié au démarrage',
@@ -194,6 +244,7 @@ if (refus.length) {
 
 if (!gitSortie('status', '--porcelain')) {
   dire(`  rien n'a changé dans le dépôt : pas de commit. (${b.controlees} références contrôlées quand même.)`);
+  mettreEnLigne(`relevé du ${DATE}`);   // `dev` peut être en avance pour une autre raison
   fin(0, '');
 }
 
@@ -225,43 +276,5 @@ if (push.status !== 0) {
   fin(push.status, 'le push a échoué');
 }
 dire(`  ✓ commité et poussé sur ${branche}.`);
-
-/* ------------------------------------------- mise en ligne ---------------------------------------
-   Netlify déploie `main`, pas `dev` : un commit sur `dev` ne met rien en ligne, et le site
-   resterait indéfiniment à la version de la dernière fusion manuelle. C'est ce qui s'était
-   passé — la prod annonçait encore « prix relevés le 13 septembre » le 21.
-
-   Le merge est en --no-ff, comme celui du 18/09 : le lundi doit se voir comme un bloc dans
-   l'historique de `main`, pas se diluer en une avance de pointeur. Et il n'est jamais forcé :
-   si `main` a divergé, on s'arrête en le disant. Le travail reste sur `dev`, rien n'est perdu.  */
-
-const DEPLOIE = 'main';
-if (branche !== DEPLOIE) {
-  dire(`\n--- mise en ligne ---`);
-  const etapes = [
-    ['récupération', ['fetch', 'origin', DEPLOIE]],
-    ['bascule', ['checkout', DEPLOIE]],
-    ['mise à niveau', ['merge', '--ff-only', `origin/${DEPLOIE}`]],
-    ['fusion', ['merge', '--no-ff', branche, '-m', `Merge branch '${branche}' — ${titre.replace(/^\w+\(prix\): /, '')}`]],
-    ['publication', ['push', 'origin', DEPLOIE]],
-  ];
-  let souci = null;
-  for (const [nom, args] of etapes) {
-    const r = spawnSync('git', args, { encoding: 'utf8', cwd: SITE });
-    const sortie = ((r.stdout ?? '') + (r.stderr ?? '')).trimEnd();
-    if (sortie) for (const l of sortie.split('\n')) dire(`  │ ${l}`);
-    if (r.status !== 0) { souci = nom; break; }
-  }
-  // Quoi qu'il arrive on revient sur `dev`, et on sort d'une fusion inachevée avant : laisser la
-  // machine sur `main` avec un conflit en cours ferait travailler la prochaine session au mauvais
-  // endroit, sur un arbre que `git checkout` refuserait de quitter.
-  if (souci) spawnSync('git', ['merge', '--abort'], { cwd: SITE });
-  spawnSync('git', ['checkout', branche], { cwd: SITE });
-  if (souci) {
-    dire(`  ✗ la mise en ligne s'est arrêtée à « ${souci} ». Le travail est commité et poussé sur ${branche}, rien n'est perdu :`);
-    dire(`    fusionner ${branche} dans ${DEPLOIE} à la main, puis pousser. Le site reste sur sa version précédente en attendant.`);
-    fin(0, '');
-  }
-  dire(`  ✓ ${branche} fusionnée dans ${DEPLOIE} et poussée — Netlify déploie.`);
-}
+mettreEnLigne(titre.replace(/^\w+\(prix\): /, ''));
 fin(0, '');
