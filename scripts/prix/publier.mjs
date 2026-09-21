@@ -56,8 +56,21 @@ const entree = {
   disparues: rel.refs.filter((r) => r.disparue).map((r) => ({ nom: r.nom, marchand: r.marchand })),
 };
 
+/*
+ * Deux relevés le même jour ne s'écrasent pas, ils se cumulent — sur les mouvements seulement.
+ * Le cas arrive dès qu'on relève, qu'on corrige un prix, puis qu'on relance pour vérifier : le
+ * second passage ne voit plus d'écart, puisqu'il vient d'être comblé. Écraser effacerait de la
+ * page publique le seul travail réellement fait de la semaine. L'état du jour (ruptures,
+ * disparitions, compteurs), lui, est bien celui du dernier passage : c'est un constat, pas un
+ * historique.
+ */
 const i = hist.releves.findIndex((x) => x.date === DATE);
-if (i >= 0) hist.releves[i] = entree; else hist.releves.push(entree);
+if (i >= 0) {
+  const deja = hist.releves[i].mouvements ?? [];
+  const nouveaux = entree.mouvements.filter((m) => !deja.some((d) => d.nom === m.nom && d.marchand === m.marchand));
+  entree.mouvements = [...deja, ...nouveaux].sort((a, b) => Math.abs(b.ecart) - Math.abs(a.ecart));
+  hist.releves[i] = entree;
+} else hist.releves.push(entree);
 hist.releves.sort((a, b) => b.date.localeCompare(a.date));   // le plus récent en tête
 
 writeFileSync(CHEMIN, JSON.stringify(hist, null, 1) + '\n', 'utf8');
