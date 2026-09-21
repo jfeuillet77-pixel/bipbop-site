@@ -4,7 +4,7 @@
   {
    "date": "2026-09-21",
    "controlees": 156,
-   "lues": 155,
+   "lues": 156,
    "seuil": 5,
    "mouvements": [
     {
@@ -23,11 +23,6 @@
      "nom": "Millenium MPS-750X Pro",
      "marchand": "Thomann",
      "etat": "Disponible sous 6-8 semaines"
-    },
-    {
-     "nom": "Donner BackBeat",
-     "marchand": "Donner Music",
-     "etat": "les deux variantes épuisées sur la fiche"
     },
     {
      "nom": "Behringer DH100",

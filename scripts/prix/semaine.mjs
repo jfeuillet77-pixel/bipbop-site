@@ -130,9 +130,12 @@ INTERDITS : ne modifie jamais un fichier de src/pages/ (le portage l'écrase), n
 .dc.html du dossier Claude Design (c'est la source de l'auteur). Pas de lien affilié. Pas de
 virgule avant « et » ni avant « ou ». Pas de tiret cadratin. Tutoiement partout.
 
+N'écris aucun fichier temporaire dans le dépôt : la livraison se fait par « git add -A », tout ce
+qui traîne partirait avec. Si tu as besoin d'un brouillon, mets-le hors du dépôt.
+
 QUAND TU AS FINI : lance « npm run data && npm run port » et corrige jusqu'à ce que le portage
 passe. Puis ajoute au JOURNAL.md une entrée datée du ${DATE} qui dit ce que tu as changé et
-pourquoi. Ne commite rien : c'est le script qui livre.`;
+pourquoi — y compris ce que tu n'as pas su trancher. Ne commite rien : c'est le script qui livre.`;
 
 let editorialOk = true;
 if (!duTravail) {

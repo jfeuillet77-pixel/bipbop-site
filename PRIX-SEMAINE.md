@@ -1,6 +1,6 @@
 # Relevé de prix — lundi 21 septembre 2026
 
-**1 référence(s) à traiter** sur 156 contrôlées. 0 franchissement(s) de tranche, 16 rupture(s), 0 disparition(s).
+**Rien à traiter.** 156/156 prix relevés, aucun écart n'atteint le seuil de 5 €. 15 rupture(s), 0 disparition(s).
 
 | Source | Ce qu'elle a donné |
 | --- | --- |
@@ -12,40 +12,23 @@ Seuil d'intervention : **5 €**. En dessous, on ne touche à rien — on passer
 
 ## 1. Ce qui a bougé
 
-| Référence | Marchand | Publié | Relevé | Écart | Tranche |
-| --- | --- | ---: | ---: | ---: | --- |
-| Donner BackBeat | Donner Music | 899,99 € | 1 099,99 € | +200 € (+22.2 %) | 800 à 1600 € |
+Rien au-dessus du seuil.
 
-## 2. Le travail, référence par référence
+Sous le seuil, pour mémoire (aucune action) :
 
-Chaque occurrence a été cherchée dans les 46 maquettes, les 39 pages portées, `src/data/` et `design/`.
-**Mécanique** = le montant se remplace tel quel. **À réécrire** = la phrase tient un raisonnement sur l'écart, elle devient fausse et aucune substitution ne la répare.
-
-### Donner BackBeat — 899,99 € → 1 099,99 € (+200 €)
-
-Relevé chez Donner Music le 2026-09-21, par fiche Donner, après recherche du produit déplacé. Lien publié : https://fr.donnermusic.com/products/offre-exclusive-donner-backbeat-batterie-electronique
-> ⚠ **En rupture** (les deux variantes épuisées sur la fiche). Publier un prix attractif sur une référence épuisée est le piège n°3 de la procédure.
-
-**Où écrire la correction** — dans les maquettes, jamais dans `src/pages/` (loi 1) :
-
-Aucune maquette n'écrit 899,99 €. Le prix ne vit que dans la base : `npm run data` suffira.
-
-**Données** : 1 occurrence dans `src/data/` et `design/prix-reperes.json` — mécaniques, régénérées par `npm run data`.
-
-_(1 occurrence dans les documents internes, qui ne se publient jamais.)_
+- Alesis Strike Amp 8 MK2 — 290 € → 289 € (-1 €)
 
 ## 3. Ruptures de stock
 
 La procédure ne traite pas un délai comme une rupture : « une rupture de plus de deux semaines chez Thomann justifie de basculer le lien vers Woodbrass quand il a la référence ». En deçà, c'est un délai de livraison et on ne touche à rien.
 
-### 15 ruptures qui demandent une décision
+### 14 ruptures qui demandent une décision
 
 | Référence | Attente annoncée | Prix | En rupture depuis | Pages qui la lient |
 | --- | --- | ---: | ---: | --- |
 | **Roland PDX-100 10" V-Pad** | Disponible sous 6-8 semaines | 215 € | 1 relevé | `/guides/faire-evoluer-sa-batterie/` |
 | **Alesis Nitro Multicore** | actuellement indisponible | 89 € | 1 relevé | `/guides/acheter-occasion/` |
 | Millenium MPS-750X Pro | Disponible sous 6-8 semaines | 749 € | 1 relevé | — |
-| Donner BackBeat | les deux variantes épuisées sur la fiche | 1 099,99 € | 1 relevé | — |
 | Behringer DH100 | Disponible sous 7-9 semaines | 36 € | 1 relevé | — |
 | Rockbag 22200 Drum Carpet | actuellement indisponible | 77 € | 1 relevé | — |
 | Yamaha MAT-1 | Disponible sous 2-3 semaines | 79 € | 1 relevé | — |
@@ -62,7 +45,7 @@ La procédure ne traite pas un délai comme une rupture : « une rupture de plus
 
 À resurveiller au prochain relevé (liées depuis une page, mais en rupture pour la première fois) : Roland PDX-100 10" V-Pad · Alesis Nitro Multicore.
 
-Les 13 autres sont dans la base d'accessoires mais aucune page publiée ne les lie : leur rupture ne se voit de nulle part.
+Les 12 autres sont dans la base d'accessoires mais aucune page publiée ne les lie : leur rupture ne se voit de nulle part.
 
 ### 1 délai court, pour mémoire — aucune action
 
@@ -71,12 +54,6 @@ Les 13 autres sont dans la base d'accessoires mais aucune page publiée ne les l
 ## 4. Références disparues du catalogue
 
 Aucune.
-
-## 4 bis. Absentes du flux, mais toujours en vente
-
-Le flux partenaire ne les liste plus, leur fiche les vend encore. Rien à faire aujourd'hui : c'est noté parce qu'une référence qui sort d'un flux en sort souvent définitivement quelques semaines plus tard.
-
-- Donner BackBeat (Donner Music) — absente du flux, et la fiche redirige vers https://fr.donnermusic.com/
 
 ## 5. Non relevées
 

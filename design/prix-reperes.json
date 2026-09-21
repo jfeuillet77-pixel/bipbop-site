@@ -1,7 +1,10 @@
 {
   "_commentaire": "Prix et références contrôlés sur le web après coup, enregistrés côté dépôt. « Claude Design - MàJ/data/ » reste la source d'auteur : ce fichier ne la dément que lorsqu'un relevé en ligne a tranché depuis. scripts/import-data.mjs l'applique à chaque import, une entrée sans correspondance fait échouer l'import. Chaque entrée porte sa date et sa preuve.",
   "_releve": "2026-09-21",
-  "base": { "releve": "2026-09-21", "version": 3 },
+  "base": {
+    "releve": "2026-09-21",
+    "version": 3
+  },
   "_base": "La date d'en-tête est celle du relevé des prix (17/09) — c'est elle que le comparatif et le hub affichent sous leurs tableaux. Les bascules de marchand du 18/09 ne changent aucun prix de modèle.",
   "modeles": [
     {
