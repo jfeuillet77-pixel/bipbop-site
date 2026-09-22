@@ -34,11 +34,26 @@ d'index n'a aucune vertu magique, c'est le changement d'adresse qui compte.
 
 Aucune des deux nouvelles adresses n'a jamais été soumise : la chaîne complète est vierge.
 
+**CORRECTION, une heure plus tard, sur une deuxième capture.** La conclusion ci-dessus
+(« Google ne l'a jamais récupéré, la ligne est bloquée ») était trop forte. La liste des sitemaps
+envoyés porte une troisième ligne qu'on n'avait pas regardée : `https://bipbop.eu/llms.txt`,
+soumis le 14/09, **dernière lecture le 20/09**. Google lit donc bien des fichiers sur ce serveur.
+Ce qu'il n'a jamais lu, c'est cette adresse-là — ce qui n'est pas la même chose.
+
+Et cette ligne donne la mesure qui manquait : **six jours entre la soumission et la première
+lecture** sur cette propriété. Les deux sitemaps XML ont été soumis le 22/09 même.
+« Impossible de récupérer » est l'état affiché tant que rien n'a été lu : un « pas encore », pas un
+verdict. Le vrai diagnostic est donc **la latence**, pas une ligne empoisonnée.
+
+Ce que l'index à une adresse neuve garde de valeur : il ne coûte rien, c'est la forme que publient
+la plupart des outils, et il élimine une variable si le problème devait durer. Mais ce n'est pas
+lui qui débloquera la situation.
+
 **Ce qui reste à faire, et qui ne se fait pas d'ici** : supprimer la ligne
-`https://bipbop.eu/sitemap.xml` dans Search Console, soumettre
-`https://bipbop.eu/sitemap-index.xml`. Et se rappeler qu'**un sitemap n'est pas nécessaire à
-l'indexation** : Google explore déjà le site, le levier immédiat est l'inspection d'URL page par
-page, pas le sitemap.
+`https://bipbop.eu/llms.txt` — ce n'est pas un sitemap mais du markdown, elle ne peut qu'échouer
+indéfiniment et elle pollue le rapport. Garder `sitemap-index.xml`, laisser le temps faire. Et se
+rappeler qu'**un sitemap n'est pas nécessaire à l'indexation** : Google explore déjà le site, le
+levier immédiat est l'inspection d'URL page par page, pas le sitemap.
 
 `npm run check` : 8/8. `npm run fidelite` : 37/37.
 
