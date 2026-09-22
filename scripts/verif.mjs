@@ -450,8 +450,9 @@ console.log(seo.horsFormat.length ? `${seo.horsFormat.length} COPIE(S) HORS FORM
 for (const s of seo.horsFormat.slice(0, 14)) console.log(`   ✗ ${s.route.padEnd(46)} ${s.champ} : attendu ${s.attendu}, obtenu ${s.obtenu}`);
 if (seo.exceptions.length) console.log(`   · ${seo.exceptions.length} exception(s) assumée(s) : ${seo.exceptions.join(' · ')}`);
 
-/* 9. Balisage — deux défauts que les huit contrôles précédents laissaient passer, constatés
-   le 22/09/2026 sur /guides/ après un signalement de Jordane.
+/* 9. Balisage — trois défauts que les huit contrôles précédents laissaient passer. Les deux
+   premiers constatés le 22/09/2026 sur /guides/ après un signalement de Jordane, le troisième
+   trouvé par ce contrôle lui-même en cours d'écriture (voir plus bas).
 
    a) Une balise mal fermée. Un `</div>` en trop après « Par budget » fermait le cadre
       `max-width:1180px` de la page : « Par situation », « Par type de matériel », « Les bases »
