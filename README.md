@@ -87,7 +87,7 @@ Règle d'écriture : `/section/slug/` avec barre oblique finale (règle S09), fi
 | `npm run data` | réimporte `modeles.json`, `accessoires.json`, `plan.json` depuis le dossier Claude Design, puis applique `design/prix-reperes.json` (les valeurs vérifiées en ligne après l'export de l'auteur) |
 | `npm run build` | build de production dans `./dist/`, puis `scripts/sitemap.mjs` pose `dist/sitemap.xml` (`postbuild`) |
 | `npm run sitemap` | régénère `dist/sitemap.xml` seul, sans rebuild |
-| `npm run verif` | les 8 contrôles de fin de séance sur `dist/` (après un build) |
+| `npm run verif` | les 9 contrôles de fin de séance sur `dist/` (après un build) |
 | `npm run prix:semaine` | **le rendez-vous du lundi, en une commande** : flux, relevé, rapport, prix, réécritures, portage, contrôles, commit et push |
 | `npm run prix:rendez-vous` | pose (ou retire, `--retirer`) la tâche launchd du lundi 8 h 17 |
 | `npm run prix` | le relevé à la demande, référence par référence en lisant les pages : pour revérifier une fiche ou quand un flux est indisponible (`releves/prix-<date>.jsonl`) |
@@ -98,7 +98,9 @@ Règle d'écriture : `/section/slug/` avec barre oblique finale (règle S09), fi
 de chaque prix avec la source, uniformité de la navigation, largeur de défilement réelle dans
 Chrome à 1024 / 900 / 768 / 390 px, fuites de notes internes, marqueurs de traçage, et longueur
 des copies SEO (titles 50-60, descriptions 120-155 — les pages légales y figurent en exception
-assumée, pas en angle mort). Son code de sortie est non nul s'il reste un problème :
+assumée, pas en angle mort), et enfin le balisage : une balise qui ne se referme pas, une grille
+refermée trop tôt qui laisse ses dernières cartes pleine largeur, un guillemet non échappé qui
+tronque un attribut. Son code de sortie est non nul s'il reste un problème :
 c'est le garde-fou de chaque vague de publication.
 
 ```bash
