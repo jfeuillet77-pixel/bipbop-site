@@ -1,0 +1,30 @@
+# Anciennes URL vers les nouvelles, 22 septembre 2026. Une 301 directe par page,
+# aucune chaine : chaque ancienne adresse pointe vers sa destination finale.
+
+# Page cle
+/comparatif/                                 /comparatif-batterie-electronique/                      301
+
+# Guides
+/guides/batterie-appartement/                /guides/choisir-batterie-electronique-appartement/      301
+/guides/batterie-electronique-enfant/        /guides/choisir-batterie-electronique-enfant/           301
+/guides/batterie-adulte-debutant/            /guides/choisir-batterie-electronique-adulte-debutant/  301
+/guides/meilleure-batterie-moins-300-euros/  /guides/batterie-electronique-moins-300-euros/          301
+/guides/meilleure-batterie-moins-500-euros/  /guides/batterie-electronique-moins-500-euros/          301
+/guides/batterie-moins-1000-euros/           /guides/batterie-electronique-moins-1000-euros/         301
+/guides/pack-complet/                        /guides/pack-batterie-electronique-complet/             301
+/guides/acheter-occasion/                    /guides/acheter-batterie-electronique-occasion/         301
+/guides/faire-evoluer-sa-batterie/           /guides/ameliorer-batterie-electronique/                301
+/guides/enregistrer-sa-batterie/             /guides/enregistrer-batterie-electronique-ordinateur/   301
+
+# Les bases
+/les-bases/pad-mesh/                         /les-bases/pad-mesh-batterie-electronique/              301
+/les-bases/quel-casque/                      /les-bases/casque-batterie-electronique/                301
+/les-bases/tapis-batterie/                   /les-bases/tapis-batterie-electronique/                 301
+/les-bases/electronique-ou-acoustique/       /les-bases/batterie-electronique-ou-acoustique/         301
+/les-bases/combien-de-temps/                 /les-bases/apprendre-batterie-combien-de-temps/         301
+/les-bases/seul-ou-prof/                     /les-bases/apprendre-batterie-seul/                     301
+/les-bases/installer-sans-deranger/          /les-bases/batterie-electronique-bruit-voisins/         301
+
+# Duels
+/duels/nitro-max-vs-td-02kv/                 /duels/alesis-nitro-max-vs-roland-td-02kv/              301
+/duels/mps-150x-vs-turbo-mesh/               /duels/millenium-mps-150x-vs-alesis-turbo-mesh/         301

@@ -52,7 +52,7 @@ sont des débuts de phrase, pas des metas.
 | Route | Title proposé | Long. |
 |---|---|---|
 | `/` | Batterie électronique : laquelle choisir pour 2026 ? | 52 |
-| `/comparatif/` | Quelle batterie électronique choisir ? Comparatif 2026 | 54 |
+| `/comparatif-batterie-electronique/` | Quelle batterie électronique choisir ? Comparatif 2026 | 54 |
 | `/avis/` | Avis batterie électronique : les modèles testés en 2026 | 55 |
 | `/avis/alesis-nitro-max/` | Que vaut l’Alesis Nitro Max Mesh ? Avis et Prix 2026 | 52 |
 | `/avis/alesis-turbo-mesh/` | Que vaut l’Alesis Turbo Mesh Kit ? Avis et Prix 2026 | 52 |
@@ -64,26 +64,26 @@ sont des débuts de phrase, pas des metas.
 | `/avis/roland-td-02kv/` | Que vaut la Roland TD-02KV ? Avis, prix et verdict 2026 | 55 |
 | `/avis/yamaha-dtx432k/` | Yamaha DTX432K : avis complet, prix et verdict 2026 | 51 |
 | `/duels/alesis-nitro-max-vs-donner-ded-200x/` | Alesis Nitro Max ou Donner DED-200X : laquelle choisir ? | 56 |
-| `/duels/mps-150x-vs-turbo-mesh/` | Millenium MPS-150X ou Alesis Turbo Mesh : notre avis | 52 |
-| `/duels/nitro-max-vs-td-02kv/` | Alesis Nitro Max ou Roland TD-02KV : laquelle choisir ? | 55 |
+| `/duels/millenium-mps-150x-vs-alesis-turbo-mesh/` | Millenium MPS-150X ou Alesis Turbo Mesh : notre avis | 52 |
+| `/duels/alesis-nitro-max-vs-roland-td-02kv/` | Alesis Nitro Max ou Roland TD-02KV : laquelle choisir ? | 55 |
 | `/guides/` | Guides d’achat batterie électronique : nos réponses 2026 | 56 |
-| `/guides/batterie-appartement/` | Quelle batterie électronique choisir en appartement ? | 53 |
-| `/guides/batterie-electronique-enfant/` | Batterie électronique pour enfant : quel modèle choisir ? | 57 |
-| `/guides/batterie-adulte-debutant/` | Adulte débutant : quelle batterie électronique choisir ? | 56 |
-| `/guides/meilleure-batterie-moins-300-euros/` | Meilleure batterie électronique à moins de 300 € en 2026 | 56 — *montant = la requête, §À trancher 2* |
-| `/guides/meilleure-batterie-moins-500-euros/` | Meilleure batterie électronique à moins de 500 € en 2026 | 56 — *montant = la requête, §À trancher 2* |
-| `/guides/batterie-moins-1000-euros/` | Quelle batterie électronique à moins de 1 000 € choisir ? | 57 — *montant = la requête, §À trancher 2* |
-| `/guides/pack-complet/` | Batterie électronique : comment composer le pack complet ? | 58 |
-| `/guides/acheter-occasion/` | Batterie électronique d’occasion : le guide des pièges 2026 | 59 |
-| `/guides/enregistrer-sa-batterie/` | Enregistrer sa batterie électronique sur un ordinateur | 54 |
-| `/guides/faire-evoluer-sa-batterie/` | Faire évoluer sa batterie électronique sans tout changer | 56 |
-| `/les-bases/electronique-ou-acoustique/` | Batterie électronique ou acoustique : que choisir ? | 51 |
-| `/les-bases/pad-mesh/` | C’est quoi un pad mesh et pourquoi tout le monde en parle ? | 59 |
-| `/les-bases/combien-de-temps/` | Combien de temps faut-il pour apprendre la batterie ? | 53 |
-| `/les-bases/seul-ou-prof/` | Apprendre la batterie seul ou avec un professeur : le calcul | 60 |
-| `/les-bases/installer-sans-deranger/` | Installer sa batterie électronique sans déranger les voisins | 60 |
-| `/les-bases/tapis-batterie/` | Faut-il un tapis sous une batterie électronique ? La réponse | 60 |
-| `/les-bases/quel-casque/` | Quel casque choisir pour une batterie électronique ? | 52 |
+| `/guides/choisir-batterie-electronique-appartement/` | Quelle batterie électronique choisir en appartement ? | 53 |
+| `/guides/choisir-batterie-electronique-enfant/` | Batterie électronique pour enfant : quel modèle choisir ? | 57 |
+| `/guides/choisir-batterie-electronique-adulte-debutant/` | Adulte débutant : quelle batterie électronique choisir ? | 56 |
+| `/guides/batterie-electronique-moins-300-euros/` | Meilleure batterie électronique à moins de 300 € en 2026 | 56 — *montant = la requête, §À trancher 2* |
+| `/guides/batterie-electronique-moins-500-euros/` | Meilleure batterie électronique à moins de 500 € en 2026 | 56 — *montant = la requête, §À trancher 2* |
+| `/guides/batterie-electronique-moins-1000-euros/` | Quelle batterie électronique à moins de 1 000 € choisir ? | 57 — *montant = la requête, §À trancher 2* |
+| `/guides/pack-batterie-electronique-complet/` | Batterie électronique : comment composer le pack complet ? | 58 |
+| `/guides/acheter-batterie-electronique-occasion/` | Batterie électronique d’occasion : le guide des pièges 2026 | 59 |
+| `/guides/enregistrer-batterie-electronique-ordinateur/` | Enregistrer sa batterie électronique sur un ordinateur | 54 |
+| `/guides/ameliorer-batterie-electronique/` | Faire évoluer sa batterie électronique sans tout changer | 56 |
+| `/les-bases/batterie-electronique-ou-acoustique/` | Batterie électronique ou acoustique : que choisir ? | 51 |
+| `/les-bases/pad-mesh-batterie-electronique/` | C’est quoi un pad mesh et pourquoi tout le monde en parle ? | 59 |
+| `/les-bases/apprendre-batterie-combien-de-temps/` | Combien de temps faut-il pour apprendre la batterie ? | 53 |
+| `/les-bases/apprendre-batterie-seul/` | Apprendre la batterie seul ou avec un professeur : le calcul | 60 |
+| `/les-bases/batterie-electronique-bruit-voisins/` | Installer sa batterie électronique sans déranger les voisins | 60 |
+| `/les-bases/tapis-batterie-electronique/` | Faut-il un tapis sous une batterie électronique ? La réponse | 60 |
+| `/les-bases/casque-batterie-electronique/` | Quel casque choisir pour une batterie électronique ? | 52 |
 | `/a-propos/` | Qui écrit les avis de BipBop et comment on les fabrique | 55 — *la marque est le sujet de la page* |
 | `/contact/` | Contacter l’équipe : une question, une erreur à signaler | 56 |
 | `/plan-du-site/` | Plan du site : toutes les pages publiées, rangées par usage | 59 |
@@ -118,7 +118,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Le titre actuel est la phrase d'accroche du H1 : percutante, mais elle ne contient pas « batterie électronique », le mot clé le plus volumineux du site (2 400 recherches/mois). L'accroche reste vivante dans le H1 de la page.
 
-#### `/comparatif/` — mot clé : batterie electronique comparatif · 90/mois
+#### `/comparatif-batterie-electronique/` — mot clé : batterie electronique comparatif · 90/mois
 
 **Title (54)** — Quelle batterie électronique choisir ? Comparatif 2026
 
@@ -254,7 +254,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Les deux modèles au complet : c'est la requête tapée. La forme « ou … : laquelle choisir ? » remplace le « vs », que personne ne tape en français. Les 91 € d'écart restent dans la meta.
 
-#### `/duels/mps-150x-vs-turbo-mesh/` — mot clé : mps 150x vs turbo mesh
+#### `/duels/millenium-mps-150x-vs-alesis-turbo-mesh/` — mot clé : mps 150x vs turbo mesh
 
 **Title (52)** — Millenium MPS-150X ou Alesis Turbo Mesh : notre avis
 
@@ -265,7 +265,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Les deux noms au complet tiennent enfin à 52 caractères. Le prix du match, 298 €, est écrit sur la page et dans la meta : c'est là qu'il fait cliquer, pas dans un titre qui devrait être réécrit à chaque variation de tarif.
 
-#### `/duels/nitro-max-vs-td-02kv/` — mot clé : nitro max vs td 02kv
+#### `/duels/alesis-nitro-max-vs-roland-td-02kv/` — mot clé : nitro max vs td 02kv
 
 **Title (55)** — Alesis Nitro Max ou Roland TD-02KV : laquelle choisir ?
 
@@ -289,7 +289,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Titre de silo : « guides d'achat » + le mot clé + l'année. La meta annonce la promesse de lecture (la réponse en haut de page), qui est ce qui distingue ces pages d'un comparatif à rallonge.
 
-#### `/guides/batterie-appartement/` — mot clé : batterie silencieuse · 210/mois
+#### `/guides/choisir-batterie-electronique-appartement/` — mot clé : batterie silencieuse · 210/mois
 
 **Title (53)** — Quelle batterie électronique choisir en appartement ?
 
@@ -300,7 +300,7 @@ pas la même contrainte qu'un `<title>`.
 
 → La question que tape le lecteur, avec le mot clé et l'intention « choisir ». Le guide le plus lu du site (neuf lecteurs sur dix) méritait le titre le plus littéral.
 
-#### `/guides/batterie-electronique-enfant/` — mot clé : batterie electronique enfant · 1 000/mois
+#### `/guides/choisir-batterie-electronique-enfant/` — mot clé : batterie electronique enfant · 1 000/mois
 
 **Title (57)** — Batterie électronique pour enfant : quel modèle choisir ?
 
@@ -311,7 +311,7 @@ pas la même contrainte qu'un `<title>`.
 
 → 1 000 recherches/mois sur « batterie electronique enfant », le plus gros volume adressable après le générique : le mot clé est en tête et la question complète tient sans la marque.
 
-#### `/guides/batterie-adulte-debutant/` — mot clé : batterie électronique débutant · 480/mois
+#### `/guides/choisir-batterie-electronique-adulte-debutant/` — mot clé : batterie électronique débutant · 480/mois
 
 **Title (56)** — Adulte débutant : quelle batterie électronique choisir ?
 
@@ -322,7 +322,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Le H1 (« un adulte qui débute vraiment ? ») est très bon mais ne porte pas « électronique », qui est dans la requête. Il reste en H1, le title prend les deux mots clés.
 
-#### `/guides/meilleure-batterie-moins-300-euros/` — mot clé : batterie électronique moins de 300 €
+#### `/guides/batterie-electronique-moins-300-euros/` — mot clé : batterie électronique moins de 300 €
 
 **Title (56)** — Meilleure batterie électronique à moins de 300 € en 2026
 
@@ -333,7 +333,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Le montant reste ici : « moins de 300 € » n'est pas un prix affiché, c'est la requête elle-même, et la page entière est ce budget. Les trois pages de ce type sont marquées, voir « À trancher » §2. La meta était tombée à 37 caractères.
 
-#### `/guides/meilleure-batterie-moins-500-euros/` — mot clé : batterie électronique moins de 500 €
+#### `/guides/batterie-electronique-moins-500-euros/` — mot clé : batterie électronique moins de 500 €
 
 **Title (56)** — Meilleure batterie électronique à moins de 500 € en 2026
 
@@ -344,7 +344,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Idem 300 €, même requête en miroir. La meta tenait en longueur mais laissait tomber les deux arguments qui font cliquer : les trois modèles retenus et le budget réel une fois tout acheté.
 
-#### `/guides/batterie-moins-1000-euros/` — mot clé : prix batterie electronique · 260/mois
+#### `/guides/batterie-electronique-moins-1000-euros/` — mot clé : prix batterie electronique · 260/mois
 
 **Title (57)** — Quelle batterie électronique à moins de 1 000 € choisir ?
 
@@ -355,7 +355,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Segment peu adressé en volume mais à forte intention d'achat ; la meta vend l'arbitrage (« ce que 500 € de plus achètent réellement »), qui est l'angle utile de la page.
 
-#### `/guides/pack-complet/` — mot clé : pack batterie électronique complète
+#### `/guides/pack-batterie-electronique-complet/` — mot clé : pack batterie électronique complète
 
 **Title (58)** — Batterie électronique : comment composer le pack complet ?
 
@@ -366,7 +366,7 @@ pas la même contrainte qu'un `<title>`.
 
 → La requête est « pack batterie électronique » : elle est en tête, et la question « comment composer » est celle de l'acheteur qui a déjà son kit. Les trois paniers et la fourchette 370-680 € viennent du chapeau de la page.
 
-#### `/guides/acheter-occasion/` — mot clé : batterie électronique occasion · 590/mois
+#### `/guides/acheter-batterie-electronique-occasion/` — mot clé : batterie électronique occasion · 590/mois
 
 **Title (59)** — Batterie électronique d’occasion : le guide des pièges 2026
 
@@ -377,7 +377,7 @@ pas la même contrainte qu'un `<title>`.
 
 → 590 recherches/mois sur « batterie électronique occasion », et l'intention qui pèse derrière est « est-ce que je risque quelque chose ». Les deux chiffres de la page répondent dans la meta : 40 % d'économie possible, une pièce à 89 € introuvable qui ruine l'affaire.
 
-#### `/guides/enregistrer-sa-batterie/` — mot clé : enregistrer batterie électronique
+#### `/guides/enregistrer-batterie-electronique-ordinateur/` — mot clé : enregistrer batterie électronique
 
 **Title (54)** — Enregistrer sa batterie électronique sur un ordinateur
 
@@ -388,7 +388,7 @@ pas la même contrainte qu'un `<title>`.
 
 → La requête est longue (« enregistrer sa batterie électronique »), elle la prend en entier ; la meta garde l'argument qui fait cliquer : un câble à 10 € bat n'importe quel module à 1 000 €.
 
-#### `/guides/faire-evoluer-sa-batterie/` — mot clé : faire évoluer sa batterie électronique
+#### `/guides/ameliorer-batterie-electronique/` — mot clé : faire évoluer sa batterie électronique
 
 **Title (56)** — Faire évoluer sa batterie électronique sans tout changer
 
@@ -401,7 +401,7 @@ pas la même contrainte qu'un `<title>`.
 
 ### Les bases
 
-#### `/les-bases/electronique-ou-acoustique/` — mot clé : batterie électronique ou acoustique
+#### `/les-bases/batterie-electronique-ou-acoustique/` — mot clé : batterie électronique ou acoustique
 
 **Title (51)** — Batterie électronique ou acoustique : que choisir ?
 
@@ -412,7 +412,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Le mot « batterie » apparaissait deux fois dans le titre de la maquette (68 caractères) ; le second saute, la question « que choisir ? » gagne la place rendue.
 
-#### `/les-bases/pad-mesh/` — mot clé : pad batterie · 720/mois
+#### `/les-bases/pad-mesh-batterie-electronique/` — mot clé : pad batterie · 720/mois
 
 **Title (59)** — C’est quoi un pad mesh et pourquoi tout le monde en parle ?
 
@@ -423,7 +423,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Le titre de la maquette (« C'est quoi un pad mesh et pourquoi tout le monde en parle ? ») était bon à 68 caractères uniquement à cause de la marque. Sans elle il tient en entier, et l'année est inutile sur une page de vocabulaire. 720 recherches/mois sur « pad batterie ».
 
-#### `/les-bases/combien-de-temps/` — mot clé : apprendre la batterie · 590/mois
+#### `/les-bases/apprendre-batterie-combien-de-temps/` — mot clé : apprendre la batterie · 590/mois
 
 **Title (53)** — Combien de temps faut-il pour apprendre la batterie ?
 
@@ -434,7 +434,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Autre titre de maquette récupéré intégralement (68 → 53) : la forme « faut-il … pour apprendre la batterie » couvre la requête « apprendre la batterie » (590/mois), que la version courte ratait.
 
-#### `/les-bases/seul-ou-prof/` — mot clé : apprendre la batterie seul · 70/mois
+#### `/les-bases/apprendre-batterie-seul/` — mot clé : apprendre la batterie seul · 70/mois
 
 **Title (60)** — Apprendre la batterie seul ou avec un professeur : le calcul
 
@@ -445,7 +445,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Requête réelle dans le CSV (« apprendre la batterie seul », 70/mois). « le calcul » annonce le verdict chiffré de la page : trois ou quatre cours au démarrage, 25 à 40 € la demi-heure.
 
-#### `/les-bases/installer-sans-deranger/` — mot clé : batterie sans bruit pour voisin
+#### `/les-bases/batterie-electronique-bruit-voisins/` — mot clé : batterie sans bruit pour voisin
 
 **Title (60)** — Installer sa batterie électronique sans déranger les voisins
 
@@ -456,7 +456,7 @@ pas la même contrainte qu'un `<title>`.
 
 → Le « électronique » que la marque empêchait d'écrire : c'est lui qui qualifie la requête, le bruit d'une acoustique ne se règle pas avec un tapis. Meta refaite, elle était tombée à 23 caractères.
 
-#### `/les-bases/tapis-batterie/` — mot clé : tapis batterie · 480/mois
+#### `/les-bases/tapis-batterie-electronique/` — mot clé : tapis batterie · 480/mois
 
 **Title (60)** — Faut-il un tapis sous une batterie électronique ? La réponse
 
@@ -467,7 +467,7 @@ pas la même contrainte qu'un `<title>`.
 
 → 480 recherches/mois sur « tapis batterie ». La question est conservée, la meta assume le « oui, mais » de la page, qui est ce qui la rend crédible.
 
-#### `/les-bases/quel-casque/` — mot clé : casque batterie electronique · 140/mois
+#### `/les-bases/casque-batterie-electronique/` — mot clé : casque batterie electronique · 140/mois
 
 **Title (52)** — Quel casque choisir pour une batterie électronique ?
 
@@ -553,7 +553,7 @@ réécriture page à page, c'est une règle de génération :
 
 - `scripts/port.mjs` ligne 229 : `<title>${titre} — BipBop</title>` → `<title>${titre}</title>`.
 - `src/layouts/BaseLayout.astro` : `<title>{title} — BipBop</title>` → `<title>{title}</title>`,
-  pour `/comparatif/` et `/plan-du-site/`.
+  pour `/comparatif-batterie-electronique/` et `/plan-du-site/`.
 - **`scripts/port.mjs` ligne 97, le piège** : `copySeo()` retrouve le titre en place avec la regex
   `<title>(…) — BipBop</title>`. Sans le suffixe dans les fichiers, elle ne matche plus, le
   portage suivant ne trouve « aucun titre en place » et **fait retomber les 37 pages sur le `<h1>`
@@ -597,7 +597,7 @@ pads, la matière des peaux, l'absence de Bluetooth).
   l'en-tête de `src/pages/<route>/index.html`. Contrairement au corps, la copie SEO **survit au
   portage** : `copySeo()` relit ces deux balises dans la page déjà portée et les réécrit à
   l'identique. `npm run fidelite` ne compare que le corps, il ne bougera pas.
-- **`/comparatif/` et `/plan-du-site/`** : les props `title` et `description` de `<BaseLayout>`.
+- **`/comparatif-batterie-electronique/` et `/plan-du-site/`** : les props `title` et `description` de `<BaseLayout>`.
 - **Garde-fou proposé** : `npm run check` ne contrôle aucune longueur aujourd'hui. J'ajouterais
   bien un contrôle (title 50-60 hors les trois pages exemptes, meta 120-155, aucun title dupliqué,
   aucun montant dans un title, aucune marque dans un title) à `scripts/verif.mjs` : sans lui, la

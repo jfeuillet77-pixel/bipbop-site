@@ -27,8 +27,8 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
    compare chaque page à sa maquette segment par segment. Une page peut paraître correcte et casser.
 
 **Exceptions à la loi 1** : trois pages se maintiennent à la main, aucune maquette ne les contient.
-`/comparatif/` est la seule page dynamique du dossier (`DCLogic`, 42 liaisons `{{ }}`) — elle reste
-en `src/pages/comparatif/index.astro`. `/plan-du-site/` (le plan du site HTML) se **construit**
+`/comparatif-batterie-electronique/` est la seule page dynamique du dossier (`DCLogic`, 42 liaisons `{{ }}`) — elle reste
+en `src/pages/comparatif-batterie-electronique/index.astro`. `/plan-du-site/` (le plan du site HTML) se **construit**
 depuis `src/lib/arborescence.mjs`, qui est aussi la seule source de `dist/sitemap.xml` écrit par
 `scripts/sitemap.mjs` à chaque build. `/suivi-des-prix/` se **construit** depuis
 `src/data/historique-prix.json`, que le relevé hebdomadaire remplit : aucun chiffre n'y est écrit à
@@ -126,7 +126,7 @@ garde la fiche validée page par page) :
    ou un clone frais, régénérera l'ancienne.
 2. Sinon, le `<head>` de `src/pages/<route>/index.html` : ces deux balises-là survivent au portage
    (c'est le seul contenu de `src/pages/` autorisé, le corps reste interdit, loi 1).
-3. `/comparatif/` et `/plan-du-site/` : les props de `<BaseLayout>` dans leur `.astro`.
+3. `/comparatif-batterie-electronique/` et `/plan-du-site/` : les props de `<BaseLayout>` dans leur `.astro`.
 
 Le suffixe « — BipBop » était ajouté par `scripts/port.mjs` et `BaseLayout.astro` ; il n'est plus
 écrit depuis le 14/09. Si quelqu'un le remettait, `copySeo()` retomberait sur les `<h1>` des

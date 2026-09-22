@@ -6,7 +6,7 @@
  * et les 4 étapes de « Brief-Responsive » §05.
  *
  *   npm run build && node scripts/verif.mjs
- *   node scripts/verif.mjs /comparatif/ /avis/
+ *   node scripts/verif.mjs /comparatif-batterie-electronique/ /avis/
  *   LARGEURS=1024,900,768,390 node scripts/verif.mjs
  *
  * Code de sortie 0 si tout passe, 1 sinon. La base de données a toujours raison
