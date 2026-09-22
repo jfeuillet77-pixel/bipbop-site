@@ -103,7 +103,7 @@ c'est le garde-fou de chaque vague de publication.
 
 ```bash
 npm run check                                          # tout le site
-node scripts/verif.mjs /comparatif/ /avis/             # deux pages seulement
+node scripts/verif.mjs /comparatif-batterie-electronique/ /avis/             # deux pages seulement
 node scripts/test-comparatif.mjs                       # les 27 combinaisons du comparatif
 node scripts/test-comparatif-nav.mjs                   # clics, URL, repli sans JS, dans Chrome
 DIST="../Claude Design - MàJ" node scripts/verif.mjs   # auditer les maquettes elles-mêmes

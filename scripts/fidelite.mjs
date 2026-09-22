@@ -9,7 +9,7 @@
  * Ici chaque segment de phrase de la maquette doit se retrouver dans la page, et l'ordre des
  * segments communs doit être conservé.
  *
- * /comparatif/ est exclu par nature : sa page est générée depuis la base, pas depuis la
+ * /comparatif-batterie-electronique/ est exclu par nature : sa page est générée depuis la base, pas depuis la
  * maquette. Seule sa charpente (titre, questions, note de relevé) est comparée, et elle est
  * écrite à la main dans le gabarit — la vérifier à l'œil reste nécessaire.
  */
@@ -23,9 +23,9 @@ const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MAQUETTES = join(SITE, '..', 'Claude Design - MàJ');
 const DIST = join(SITE, 'dist');
 // Pages écrites à la main, sans maquette Claude Design à laquelle les comparer :
-// /comparatif/ (la seule page dynamique du dossier) et /plan-du-site/ (générée depuis le plan
+// /comparatif-batterie-electronique/ (la seule page dynamique du dossier) et /plan-du-site/ (générée depuis le plan
 // éditorial par src/lib/arborescence.mjs).
-const SANS_MAQUETTE = new Set(['/comparatif', '/plan-du-site', '/suivi-des-prix'].map((r) => r.replace(/\/+$/, '')));
+const SANS_MAQUETTE = new Set(['/comparatif-batterie-electronique', '/plan-du-site', '/suivi-des-prix'].map((r) => r.replace(/\/+$/, '')));
 
 /** Segments de phrase comparables : texte nu, entités décodées, un segment par élément. */
 function segments(html) {

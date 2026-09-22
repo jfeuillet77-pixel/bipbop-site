@@ -3,7 +3,7 @@
  * Le Brief-Responsive §06 réclame un essai visuel en plus des mesures : c'est cet essai-là,
  * rejouable. Sorties dans ../.qwen/tmp/ (hors dépôt).
  *
- *   node scripts/captures.mjs [route]      # défaut : /comparatif/
+ *   node scripts/captures.mjs [route]      # défaut : /comparatif-batterie-electronique/
  */
 import { createServer } from 'node:http';
 import { readFileSync, existsSync, statSync, mkdirSync } from 'node:fs';
@@ -14,7 +14,7 @@ import puppeteer from 'puppeteer-core';
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const DIST = join(SITE, 'dist');
 const OUT = join(SITE, '..', '.qwen', 'tmp', 'captures');
-const ROUTE = process.argv[2] || '/comparatif/';
+const ROUTE = process.argv[2] || '/comparatif-batterie-electronique/';
 const NOM = basename(ROUTE).replace(/[^a-z0-9-]/gi, '') || 'accueil';
 
 const MIME = { '.html': 'text/html', '.css': 'text/css', '.js': 'text/javascript', '.json': 'application/json', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon' };
@@ -68,7 +68,7 @@ for (const { nom, largeur, hauteur } of plans) {
 
 // l'état choisi doit se lire sur l'image : on recharge une URL de réponses
 await page.setViewport({ width: 1200, height: 1500 });
-await page.goto(base + '/comparatif/?b=moins300&p=chambre&u=morceaux', { waitUntil: 'networkidle0' });
+await page.goto(base + '/comparatif-batterie-electronique/?b=moins300&p=chambre&u=morceaux', { waitUntil: 'networkidle0' });
 await new Promise((r) => setTimeout(r, 400));
 await page.screenshot({ path: join(OUT, 'comparatif-moins300.png'), fullPage: true });
 

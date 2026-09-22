@@ -1,5 +1,5 @@
 /**
- * comparatif.mjs — moteur de recommandation de /comparatif/.
+ * comparatif.mjs — moteur de recommandation de /comparatif-batterie-electronique/.
  *
  * Portage de la classe DCLogic de « Comparatif.dc.html » (Claude Design, 13 sept. 2026).
  * Les poids du score, les seuils et les formulations traduisent 7 règles de métier

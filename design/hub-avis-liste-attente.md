@@ -69,7 +69,7 @@ que les absences soient recensées. Voici l'inventaire, mesuré sur le build.
    Les 8 autres cartes montrent prix et segment, **pas la note**, alors que les 8 avis existent et
    sont notés. C'est l'absence la plus visible : le lecteur ne peut pas trier. À corriger au
    portage du hub en reprenant la note de chaque avis.
-2. **`/comparatif/`** — aucune note affichée, alors que le score interne en intègre une
+2. **`/comparatif-batterie-electronique/`** — aucune note affichée, alors que le score interne en intègre une
    (`if (m.avis) s += 4`) et que les cartes renvoient aux avis. Un lecteur qui compare deux
    modèles n'a pas le niveau d'exigence appliqué à chacun.
 3. **Les duels** — le duel Nitro Max vs DED-200X publié ne montre aucune note, alors que ses deux

@@ -1,5 +1,57 @@
 # Journal BipBop
 
+## 22 septembre 2026 — Les URL disent enfin de quoi parlent les pages
+
+Demande de Jordane : « les urls actuelles sont vraiment catastrophiques, pas du tout optimisées
+pour le SEO », avec la crainte explicite de toucher à des pages déjà indexées.
+
+**La crainte était fondée, le calendrier l'a désamorcée.** Le site n'est ouvert aux moteurs que
+depuis le 13/09 au soir. Au 15/09, `site:bipbop.eu` renvoyait neuf pages et le sitemap était encore
+en backoff côté Search Console. Aucune position acquise, aucun lien entrant connu : renommer
+maintenant coûte une re-soumission de sitemap, le faire dans six mois coûterait des positions. La
+fenêtre était ouverte aujourd'hui, elle se referme toute seule.
+
+**Ce qui n'allait pas, mesuré et pas ressenti.** Seize slugs sur dix-huit ne contenaient pas leur
+`requete_cible` du plan éditorial. Sept « bases » ne voulaient rien dire hors contexte
+(`/les-bases/combien-de-temps/`, `/les-bases/seul-ou-prof/`, `/les-bases/quel-casque/`). Les trois
+guides par budget n'avaient pas la même forme entre eux, deux portaient « meilleure- » et le
+troisième non. Deux duels sur trois avaient perdu les marques (`/duels/nitro-max-vs-td-02kv/`) là
+où le troisième les gardait.
+
+**Trente et une lignes réécrites, une seule source.** `slug` et `permalien` dans
+`Claude Design - MàJ/data/plan-editorial.csv` — vingt routes publiées, onze encore « À produire »
+alignées au passage pendant qu'elles ne coûtent rien. Le reste suit tout seul : `port.mjs` recalcule
+les routes et réécrit les **811 liens internes** des maquettes depuis les permaliens, `import-data`
+régénère `plan.json`, `arborescence.mjs` régénère le sitemap, le plan du site et `llms.txt`. Aucune
+maquette ne contient de chemin absolu, c'est ce qui rend l'opération mécanique plutôt que manuelle.
+
+**Le piège, parce qu'il aurait été invisible.** `copySeo()` retrouve le title et la meta à deux
+endroits, tous deux indexés par la route : `design/port-seche/<route>/index.astro`, puis le `<head>`
+de `src/pages/<route>/index.html`. Renommer la route sans déplacer les dossiers d'abord, et les deux
+lectures échouent : le portage retombe sur le `<h1>` et le chapeau de la maquette, **sans un
+message**. Les vingt titles et metas validés le 14/09 seraient partis avec. Les dossiers ont donc
+été déplacés (`git mv`) **avant** le portage, port-seche compris. Vérifié : zéro avertissement
+« titre repris du `<h1>` » au portage, et le contrôle 8 reste au vert.
+
+**Vingt redirections 301, aucune chaîne.** `public/_redirects`, une ancienne adresse par ligne vers
+sa destination finale. Aucun ancien dossier ne survit dans `src/pages/` ni dans `dist/` : un
+doublon indexable aurait été pire que le mal.
+
+**Une régression rattrapée au passage.** `SUIT_CHAQUE_RELEVE` de `scripts/prix/rapport.mjs` — les
+pages que l'Aide-Mémoire §05 redate à chaque relevé — nommait les routes en dur et ne matchait plus
+rien après le renommage. Corrigée. **Et un bug préexistant trouvé à côté, pas corrigé** : la regex
+de `PLAFONDS` (`moins-de?-(\d+)-euros`) ne matche ni les anciennes routes ni les nouvelles — elle
+attend « moins-de-300 » là où les routes écrivent « moins-300 ». Le contrôle des plafonds du rapport
+de prix est donc inerte depuis sa création. Le réparer changerait le comportement du rendez-vous du
+lundi : c'est une décision de Jordane, pas un effet de bord d'une passe SEO.
+
+**Ce qui reste hors dépôt, côté compte Google** : re-soumettre `/sitemap.xml` dans Search Console
+(il porte déjà les 39 nouvelles URL) et surveiller le rapport de couverture deux semaines, le temps
+que les vingt anciennes adresses basculent. `PRIX-SEMAINE.md` cite encore les anciennes routes :
+c'est un rapport daté du 21/09, il se réécrit au relevé du 28.
+
+`npm run check` : 8/8, 934 liens internes valides. `npm run fidelite` : 37/37.
+
 ## 21 septembre 2026 — Les prix se tiennent tout seuls, et le premier relevé automatique trouve un lien mort à 200 €
 
 Demande de Jordane : un « cron » qui tient les prix à jour une fois par semaine, qui fasse **toutes

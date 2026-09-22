@@ -29,7 +29,7 @@ const choix = () => page.$eval('#zone-resultat', (e) => {
 const actifs = () => page.$$eval('[data-choisir]', (bs) => bs.filter((x) => x.getAttribute('aria-pressed') === 'true').map((x) => x.textContent.trim()));
 
 console.log('— état initial (aucun clic) —');
-await page.goto(base + '/comparatif/', { waitUntil: 'networkidle0' });
+await page.goto(base + '/comparatif-batterie-electronique/', { waitUntil: 'networkidle0' });
 console.log('  titre       :', await titre());
 console.log('  actif       :', (await actifs()).join(' · '));
 console.log('  choix       :', JSON.stringify(await choix()));
@@ -51,7 +51,7 @@ console.log('  actif       :', (await actifs()).join(' · '));
 console.log('  choix       :', JSON.stringify(await choix()));
 
 console.log('\n— URL partagée ?p=piece&b=plus500&u=morceaux (rechargement à froid) —');
-await page.goto(base + '/comparatif/?p=piece&b=plus500&u=morceaux', { waitUntil: 'networkidle0' });
+await page.goto(base + '/comparatif-batterie-electronique/?p=piece&b=plus500&u=morceaux', { waitUntil: 'networkidle0' });
 console.log('  actif       :', (await actifs()).join(' · '));
 console.log('  choix       :', JSON.stringify(await choix()));
 
@@ -63,7 +63,7 @@ console.log('  URL         :', page.url().replace(base, ''));
 console.log('\n— sans JavaScript (rendu au build seul) —');
 const np = await b.newPage();
 await np.setJavaScriptEnabled(false);
-await np.goto(base + '/comparatif/', { waitUntil: 'load' });
+await np.goto(base + '/comparatif-batterie-electronique/', { waitUntil: 'load' });
 console.log('  contenu     :', (await np.$eval('#zone-resultat', (e) => e.textContent.replace(/\s+/g, ' ').trim())).slice(0, 120));
 await np.close();
 await b.close();

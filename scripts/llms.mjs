@@ -92,7 +92,7 @@ const LIGNES = [
   "- **Aucun lien affilié, aucun article sponsorisé.** BipBop n'a pas de programme d'affiliation : aucune commission ne guide un choix.",
   "- **Une note n'existe que si la grille qui la produit est affichée sur la page.** Aucune valeur chiffrée invérifiable n'est publiée.",
   '',
-  'Par où commencer : le [comparatif](https://bipbop.eu/comparatif/) pose trois questions (ton budget, la place dont tu disposes, ce que tu veux jouer) et sort deux modèles. ' +
+  'Par où commencer : le [comparatif](https://bipbop.eu/comparatif-batterie-electronique/) pose trois questions (ton budget, la place dont tu disposes, ce que tu veux jouer) et sort deux modèles. ' +
     `Toutes les pages listées ci-dessous sont publiées et indexables ; l'inventaire complet des URL est dans [le sitemap](${DOMAINE}/sitemap.xml) ` +
     `et [le plan du site](${DOMAINE}/plan-du-site/).`,
   '',

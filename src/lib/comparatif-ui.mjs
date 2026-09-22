@@ -1,5 +1,5 @@
 /**
- * comparatif-ui.mjs — fragments HTML de /comparatif/.
+ * comparatif-ui.mjs — fragments HTML de /comparatif-batterie-electronique/.
  *
  * Un seul exemplaire du balisage, partagé par le rendu au build et par le
  * navigateur : ce qui est affiché avant execution du JS est exactement ce que

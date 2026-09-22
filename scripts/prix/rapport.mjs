@@ -74,11 +74,11 @@ const PLAFONDS = [...MAQUETTE_DE.keys()]
 /** « 1 substitution », « 3 substitutions » : ce site n'écrit pas « occurrence(s) ». */
 const pl = (n, mot, pluriel) => `${n} ${n > 1 ? (pluriel ?? mot + 's') : mot}`;
 
-/** `<SITE>/src/pages/guides/pack-complet/index.html` -> `/guides/pack-complet/`. */
+/** `<SITE>/src/pages/guides/pack-batterie-electronique-complet/index.html` -> `/guides/pack-batterie-electronique-complet/`. */
 const routeDe = (f) => '/' + relative(join(SITE, 'src', 'pages'), f).replace(/(index)?\.(html|astro)$/, '');
 
 /** Les pages que l'Aide-Mémoire §05 redate à chaque relevé de prix, et pas seulement au fond. */
-const SUIT_CHAQUE_RELEVE = /^\/(comparatif|guides\/(meilleure-)?batterie-moins-\d+-euros)\//;
+const SUIT_CHAQUE_RELEVE = /^\/(comparatif-batterie-electronique|guides\/batterie-electronique-moins-\d+-euros)\//;
 
 const LONGUE = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('fr-FR', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
 

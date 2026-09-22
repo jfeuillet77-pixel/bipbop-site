@@ -9,12 +9,12 @@ interface Props {
 const { currentPage = '', cta = 'comparatif' } = Astro.props;
 
 const CTA = {
-  comparatif: { label: 'Trouver ma batterie', href: '/comparatif/' },
+  comparatif: { label: 'Trouver ma batterie', href: '/comparatif-batterie-electronique/' },
   demarrer: { label: 'Par où commencer\u00a0?', href: '/guides/' },
 }[cta];
 
 const navItems = [
-  { label: 'Comparatif', href: '/comparatif/', key: 'comparatif' },
+  { label: 'Comparatif', href: '/comparatif-batterie-electronique/', key: 'comparatif' },
   { label: 'Avis', href: '/avis/', key: 'avis' },
   { label: 'Guides', href: '/guides/', key: 'guides' },
   { label: 'À propos', href: '/a-propos/', key: 'a-propos' },

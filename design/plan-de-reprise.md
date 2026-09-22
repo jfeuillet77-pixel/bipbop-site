@@ -29,11 +29,15 @@ Le chantier « tenir les prix à jour » est fermé. `scripts/prix/` tourne **ch
   Woodbrass retirée répond HTTP 200 sur une page de catégorie : on ne sait donc pas détecter une
   disparition chez eux comme on sait le faire chez Thomann et Donner. S'il existe un flux
   partenaire Woodbrass, le brancher ferme le dernier angle mort.
-- **Deux ruptures à resurveiller au relevé du 28/09** : Roland PDX-100 (`/guides/faire-evoluer-sa-batterie/`,
-  « sous 6-8 semaines ») et Alesis Nitro Multicore (`/guides/acheter-occasion/`, « actuellement
+- **Deux ruptures à resurveiller au relevé du 28/09** : Roland PDX-100 (`/guides/ameliorer-batterie-electronique/`,
+  « sous 6-8 semaines ») et Alesis Nitro Multicore (`/guides/acheter-batterie-electronique-occasion/`, « actuellement
   indisponible »). Si elles durent un deuxième relevé, la procédure justifie de basculer le lien
   vers Woodbrass — encore faut-il qu'il les ait, ce qui n'a pas pu être vérifié : leur moteur de
   recherche ne répond pas à une requête construite à la main.
+- **La regex `PLAFONDS` de `scripts/prix/rapport.mjs` est morte depuis sa création** (trouvée le
+  22/09) : elle attend « moins-de-300-euros » là où les routes écrivent « moins-300-euros », donc
+  le contrôle des plafonds des trois guides par budget n'a jamais rien vérifié. La réparer change
+  le comportement du rendez-vous du lundi — à trancher avant, pas pendant.
 - **La Donner BackBeat est épuisée** dans ses deux variantes depuis le 21/09, à 1 099,99 €. Si ça
   dure, c'est un candidat au retrait de l'Aide-Mémoire §04.
 - **22 pages affichent une date de relevé antérieure au 21/09** (§6 du rapport). L'Aide-Mémoire §05
@@ -59,7 +63,7 @@ l'instruction de tout re-porter, pages déjà publiées comprises.
 | Pages dépassant à 390 px | 8 | **0** |
 | Liens internes cassés | — | **0 sur 773** |
 
-Les deux contrôles sortent au vert. Une page reste hors de ce comptage, `/comparatif/` : seule page
+Les deux contrôles sortent au vert. Une page reste hors de ce comptage, `/comparatif-batterie-electronique/` : seule page
 dynamique du dossier, elle se maintient à la main en Astro.
 
 ## Ce qui reste, dans l'ordre
@@ -97,6 +101,11 @@ Trois gestes, faits ensemble (un seul des trois ne rouvre rien) :
 **Reste hors du dépôt, côté compte Google** : vérifier la propriété `bipbop.eu` dans Search Console
 et y soumettre `https://bipbop.eu/sitemap.xml`. Le site est ouvert, mais rien ne le dit à Google.
 
+**Depuis le 22/09, cette action est devenue urgente** : vingt URL publiées ont été renommées pour
+porter leur requête cible (journal du 22/09), les anciennes répondent en 301 depuis
+`public/_redirects` et le sitemap porte les nouvelles. Tant que Search Console ne l'a pas relu,
+Google continue de proposer les anciennes adresses.
+
 **Une seule ligne reste hors du dépôt, côté tableau de bord Netlify** : Forms → Notifications →
 `contact@bipbop.eu`. Le formulaire de contact fonctionne (vérifié en POST → 200 traité par le
 service de formulaires, pas par le fichier statique) et **aucune adresse e-mail n'est publiée dans
@@ -122,7 +131,7 @@ ligne « Publié » sans page dans `dist/` **fait échouer le build** (une URL m
 ne se voit jamais), et une page construite hors du plan est signalée sans être publiée — c'est la
 règle d'AGENTS.md sur les documents internes.
 
-`/plan-du-site/` est la **deuxième page écrite à la main** du dépôt, après `/comparatif/`. Elle
+`/plan-du-site/` est la **deuxième page écrite à la main** du dépôt, après `/comparatif-batterie-electronique/`. Elle
 est déclarée où il faut : `SANS_MAQUETTE` dans `scripts/fidelite.mjs`, `HORS_PLAN` dans la lib
 (`plan.json` se régénère depuis Claude Design, on ne peut pas y inscrire une route). Son lien en
 pied de page est une **greffe** (`grefferPlanDuSite` dans `scripts/greffes.mjs`) : les maquettes ne
@@ -194,7 +203,7 @@ node scripts/port.mjs --dry   # ce que le portage va écrire, avec ses avertisse
 npm run check                 # build (sitemap.xml inclus) + 7 contrôles mesurés dans Chrome
 npm run fidelite              # chaque page contre sa maquette, segment par segment
 npm run data                  # relance l'import si data/ du dossier Claude Design a bougé
-node scripts/captures.mjs /guides/pack-complet/   # rendu visuel
+node scripts/captures.mjs /guides/pack-batterie-electronique-complet/   # rendu visuel
 ```
 
 **Règle de travail qui découle du portage** (elle est dans `AGENTS.md`) : une page se change dans
