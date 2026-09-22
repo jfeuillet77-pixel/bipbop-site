@@ -26,7 +26,9 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
    d'abord `npm test`, puis le build, puis les 9 contrôles : il mesure réellement la largeur de
    défilement dans Chrome à 1024 / 900 / 768 / 390 px et relit le balisage de chaque page.
    `fidelite` compare chaque page à sa maquette segment par segment. Une page peut paraître
-   correcte et casser — `/guides/` a servi trois semaines avec ses sections hors du cadre.
+   correcte et casser — `/guides/` a servi neuf jours avec ses sections hors du cadre, du premier
+   portage le 13/09/2026 au signalement de Jordane le 22/09 (daté en repassant le contrôle 9 sur
+   chaque version du fichier dans git).
 
    `tests/` ne teste que le 9e contrôle, celui du balisage, parce que c'est le seul qui juge une
    structure plutôt que de comparer deux valeurs : son silence ressemble exactement à un site
