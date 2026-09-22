@@ -1,5 +1,47 @@
 # Journal BipBop
 
+## 22 septembre 2026 — Le sitemap n'est pas cassé, c'est sa ligne dans Search Console qui l'est
+
+Jordane : « Je n'arrive pas à soumettre le sitemap... J'ai ce problème depuis le début, depuis la
+publication du site. » Capture à l'appui : « Impossible de récupérer le sitemap », **Type : Inconnu,
+Dernière lecture : vide, Pages découvertes : 0**. Google ne l'a donc jamais récupéré une seule fois
+— ce n'est pas le rapport en retard qu'on avait diagnostiqué le 15/09.
+
+**Le serveur a été mis hors de cause, cette fois sous tous les angles.** `/sitemap.xml` répond 200
+en HTTP/1.1 **et** en HTTP/2, avec brotli, avec gzip, sans compression, en HEAD comme en GET,
+toujours `application/xml`, 5 223 octets, XML valide à 39 `<url>`, **aucun BOM ni espace avant
+`<?xml`** (vérifié en octets bruts). La même requête avec l'agent Googlebot renvoie le même 200 en
+0,19 s. `robots.txt` porte `Allow: /`. **Aucun DS au registre `.eu`** : le domaine n'est pas signé,
+donc aucune validation DNSSEC ne peut échouer chez le résolveur de Google — c'était l'hypothèse la
+plus sérieuse qui restait, elle tombe. **Aucun AAAA** : pas de piège dual-stack. `www` et `http`
+redirigent en 301 vers l'adresse canonique.
+
+**Ce qui reste, et qu'on ne peut pas mesurer d'ici** : l'état que Google garde pour cette
+adresse-là. Une ligne « Impossible de récupérer » née des échecs du 13/09 (le site était alors en
+`Disallow: /`) survit à la correction du serveur et à une simple re-soumission.
+
+**Le levier, c'est l'adresse.** Proposition de Jordane en voyant le sitemap de Marteline : publier
+un **index** plutôt qu'un fichier unique. C'est la bonne idée, pour une raison qu'il faut nommer :
+une URL neuve ouvre une ligne neuve dans Search Console, qui n'hérite d'aucun échec. Le format
+d'index n'a aucune vertu magique, c'est le changement d'adresse qui compte.
+
+`scripts/sitemap.mjs` écrit donc **trois fichiers pour une seule liste** :
+
+- `/sitemap-index.xml` — l'index, seule adresse déclarée dans `robots.txt` et à soumettre ;
+- `/sitemap-0.xml` — les 39 URL, vers lesquelles l'index pointe ;
+- `/sitemap.xml` — la même liste, **gardée en vie** : `llms.txt` la cite, et une adresse de sitemap
+  qui disparait serait une 404 de plus dans les rapports de Google.
+
+Aucune des deux nouvelles adresses n'a jamais été soumise : la chaîne complète est vierge.
+
+**Ce qui reste à faire, et qui ne se fait pas d'ici** : supprimer la ligne
+`https://bipbop.eu/sitemap.xml` dans Search Console, soumettre
+`https://bipbop.eu/sitemap-index.xml`. Et se rappeler qu'**un sitemap n'est pas nécessaire à
+l'indexation** : Google explore déjà le site, le levier immédiat est l'inspection d'URL page par
+page, pas le sitemap.
+
+`npm run check` : 8/8. `npm run fidelite` : 37/37.
+
 ## 22 septembre 2026 — Les URL disent enfin de quoi parlent les pages
 
 Demande de Jordane : « les urls actuelles sont vraiment catastrophiques, pas du tout optimisées

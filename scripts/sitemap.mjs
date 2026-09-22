@@ -18,6 +18,17 @@
  * source. Un rebuild qui ne change rien ne doit pas faire croire à Google que tout a changé.
  * Sans historique git disponible, la ligne est omise plutôt qu'inventée.
  *
+ * TROIS FICHIERS, une seule liste. Depuis le 22/09/2026, Search Console tient
+ * `/sitemap.xml` en « Impossible de récupérer le sitemap » alors que le fichier répond 200 en
+ * HTTP/1.1 comme en HTTP/2, avec et sans compression, XML valide, sans BOM — mesuré sous tous
+ * les angles. L'échec est dans l'état que Google garde pour CETTE adresse, pas sur le serveur.
+ * On publie donc la même liste à des adresses neuves, qui n'héritent d'aucun échec :
+ *
+ *   /sitemap-index.xml  l'index, la seule adresse déclarée dans robots.txt et soumise à Google
+ *   /sitemap-0.xml      la liste des URL, vers laquelle l'index pointe
+ *   /sitemap.xml        la même liste, gardée en vie : llms.txt la cite, et une adresse de
+ *                       sitemap qui disparait est une 404 de plus dans les rapports de Google
+ *
  *   node scripts/sitemap.mjs
  */
 import { writeFileSync, existsSync } from 'node:fs';
@@ -27,6 +38,8 @@ import { arborescence, orphelines, fichierPage, SITE, PAGES, DOMAINE } from '../
 
 const DIST = join(SITE, 'dist');
 const CHEMIN = join(DIST, 'sitemap.xml');
+const CHEMIN_LISTE = join(DIST, 'sitemap-0.xml');
+const CHEMIN_INDEX = join(DIST, 'sitemap-index.xml');
 
 if (!existsSync(DIST)) {
   console.error('Aucun dist/ — le sitemap se construit à la fin du build (« npm run build »).');
@@ -65,6 +78,9 @@ const LIGNES = [];
 const VUES = new Set();
 const problemes = [];
 let sansDate = 0;
+// `lastmod` de l'index : la plus récente des pages. Les dates de git sont ISO 8601 avec décalage,
+// donc comparables comme des chaînes tant qu'elles viennent toutes du même format (%cI).
+let PLUS_RECENTE = null;
 
 for (const section of sections) {
   for (const p of section.pages) {
@@ -75,6 +91,7 @@ for (const section of sections) {
     VUES.add(url);
     const date = derniereModif(p.route);
     if (!date) sansDate++;
+    else if (!PLUS_RECENTE || date > PLUS_RECENTE) PLUS_RECENTE = date;
     LIGNES.push(
       ['  <url>', `    <loc>${url}</loc>`, ...(date ? [`    <lastmod>${date}</lastmod>`] : []), '  </url>'].join('\n')
     );
@@ -95,13 +112,26 @@ if (problemes.length) {
   process.exit(1);
 }
 
+const xmlIndex = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  '  <sitemap>',
+  `    <loc>${DOMAINE}/sitemap-0.xml</loc>`,
+  ...(PLUS_RECENTE ? [`    <lastmod>${PLUS_RECENTE}</lastmod>`] : []),
+  '  </sitemap>',
+  '</sitemapindex>',
+  '',
+].join('\n');
+
 writeFileSync(CHEMIN, xml);
+writeFileSync(CHEMIN_LISTE, xml);
+writeFileSync(CHEMIN_INDEX, xmlIndex);
 
 /* ------------------------------------------------------------------ rendu */
 
 const oubliees = orphelines(DIST, pages);
 
-console.log(`\nsitemap.xml · ${pages.length} URL(s) · ${relative(SITE, CHEMIN)}`);
+console.log(`\nsitemap · ${pages.length} URL(s) · ${relative(SITE, CHEMIN_INDEX)} → ${relative(SITE, CHEMIN_LISTE)} (+ ${relative(SITE, CHEMIN)}, conservé)`);
 for (const section of sections) {
   console.log(`  ${section.titre.padEnd(22)} ${String(section.pages.length).padStart(2)}`);
 }
