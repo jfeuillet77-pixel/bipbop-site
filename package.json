@@ -21,10 +21,11 @@
     "prix:rapport": "node scripts/prix/rapport.mjs",
     "prix:semaine": "node scripts/prix/semaine.mjs",
     "prix:rendez-vous": "scripts/prix/installer-le-rendez-vous.sh",
-    "check": "npm run build && node scripts/verif.mjs",
+    "check": "npm run test && npm run build && node scripts/verif.mjs",
     "prebuild": "node scripts/import-data.mjs",
     "postbuild": "node scripts/sitemap.mjs && node scripts/llms.mjs",
-    "fidelite": "node scripts/fidelite.mjs"
+    "fidelite": "node scripts/fidelite.mjs",
+    "test": "node tests/balisage.test.mjs"
   },
   "dependencies": {
     "astro": "^7.3.2"

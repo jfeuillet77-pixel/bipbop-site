@@ -22,9 +22,16 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
    matche jamais rien. Un tableau de 4 colonnes ou plus **défile**, il ne se replie pas.
 4. **Publier une page a des conséquences sur 3 à 6 autres.** Les listes de l'`Aide-Memoire`
    §01 à §04 ne sont pas optionnelles : hubs, compteurs, maillage, comparatif, plan éditorial.
-5. **`npm run check` et `npm run fidelite` doivent passer** avant un commit. `check` mesure
-   réellement la largeur de défilement dans Chrome à 1024 / 900 / 768 / 390 px ; `fidelite`
-   compare chaque page à sa maquette segment par segment. Une page peut paraître correcte et casser.
+5. **`npm run check` et `npm run fidelite` doivent passer** avant un commit. `check` lance
+   d'abord `npm test`, puis le build, puis les 9 contrôles : il mesure réellement la largeur de
+   défilement dans Chrome à 1024 / 900 / 768 / 390 px et relit le balisage de chaque page.
+   `fidelite` compare chaque page à sa maquette segment par segment. Une page peut paraître
+   correcte et casser — `/guides/` a servi trois semaines avec ses sections hors du cadre.
+
+   `tests/` ne teste que le 9e contrôle, celui du balisage, parce que c'est le seul qui juge une
+   structure plutôt que de comparer deux valeurs : son silence ressemble exactement à un site
+   sain. `tests/cas/faux-amis.html` est le cas qui compte — ce que le contrôle doit laisser
+   passer. Ajouter un cas quand un défaut de mise en page passe en production.
 
 **Exceptions à la loi 1** : trois pages se maintiennent à la main, aucune maquette ne les contient.
 `/comparatif-batterie-electronique/` est la seule page dynamique du dossier (`DCLogic`, 42 liaisons `{{ }}`) — elle reste
