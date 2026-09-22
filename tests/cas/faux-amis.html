@@ -1,0 +1,29 @@
+<!-- Tout ce que le contrôle doit laisser passer. Un faux positif ici coûte plus cher qu'un
+     défaut manqué : il apprend à ignorer le contrôle.
+       · <p> et <li> sans fermeture : HTML les referme tout seul, le navigateur ne voit rien.
+       · un <svg> avec ses <title>, <a> et <path/> homonymes des balises du document.
+       · un <script> qui contient des chaînes ressemblant à des balises.
+       · des balises vides sans barre de fermeture : <img>, <br>, <meta>, <input>.
+       · une grille dont les enfants ne sont pas des cartes, suivie d'une carte : c'est une
+         mise en page ordinaire, pas une grille refermée trop tôt.
+       · un guillemet typographique dans un attribut, qui ne referme rien. -->
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>Faux amis</title></head>
+<body>
+<div style="max-width:1180px;margin:0 auto;background:#fdf6ec">
+<p style="font:400 16px 'Work Sans',sans-serif">Un paragraphe que personne ne referme
+<ul><li>un item<li>un autre</ul>
+<img src="/img.jpg" alt="Millenium 14&quot; Practice Pad">
+<br>
+<input type="email" name="courriel">
+<span style="width:34px;height:34px;display:block"><svg viewBox="0 -45 400 400" role="img"><title>BipBop</title><desc>La mascotte</desc><g fill="none"><path d="M200 72V49"/><circle cx="200" cy="35" r="16"/></g><a href="/"><rect x="46" y="78" width="308" height="206"/></a></svg></span>
+<script>var t = '<div style="x">' + "</div>"; document.write(t);</script>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px">
+<div style="font:700 13px 'Work Sans',sans-serif">56px</div>
+<div style="font:400 14px 'Work Sans',sans-serif">le reste</div>
+</div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;box-shadow:5px 5px 0 #241c14">
+<div style="padding:17px 19px 19px">Une carte seule après une grille qui ne contient pas de cartes.</div>
+</div>
+<div style="background:#241c14;border-radius:20px;padding:26px;color:#fdf6ec" title="L’encadré « aller plus loin »">Un encadré, pas une carte.</div>
+</div>
+</body></html>

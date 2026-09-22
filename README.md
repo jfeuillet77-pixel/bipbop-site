@@ -91,7 +91,8 @@ Règle d'écriture : `/section/slug/` avec barre oblique finale (règle S09), fi
 | `npm run prix:semaine` | **le rendez-vous du lundi, en une commande** : flux, relevé, rapport, prix, réécritures, portage, contrôles, commit et push |
 | `npm run prix:rendez-vous` | pose (ou retire, `--retirer`) la tâche launchd du lundi 8 h 17 |
 | `npm run prix` | le relevé à la demande, référence par référence en lisant les pages : pour revérifier une fiche ou quand un flux est indisponible (`releves/prix-<date>.jsonl`) |
-| `npm run check` | `build` + `verif` |
+| `npm test` | les cas de `tests/` : le contrôle du balisage passé sur des défauts connus, et sur ce qu'il doit laisser passer |
+| `npm run check` | `test` + `build` + `verif` |
 | `npm run preview` | prévisualiser le build |
 
 `scripts/verif.mjs` contrôle dans l'ordre : liens internes, véracité des compteurs, cohérence
