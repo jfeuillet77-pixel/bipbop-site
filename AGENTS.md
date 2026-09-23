@@ -132,7 +132,7 @@ notre vie » ; `retirerMentionsAffiliation()` de `scripts/greffes.mjs` les retir
 toutes les mentions à l'identique ; son champ `pour_reactiver` liste ce qu'il faut revoir en même
 temps. Le contrôle 7 fait échouer `check` si une page parle de commission pendant que c'est `false`.
 
-Aucun protocole de test inventé · aucune note chiffrée sans grille affichée · aucune signature
+Aucun protocole de test inventé · **jamais « tester » ni « testé »** : on dit « analysé » (Jordane, 23/09/2026), et pour un geste du lecteur « essai », « essayer », « vérifier » ; le contrôle 7 l'impose · aucune note chiffrée sans grille affichée · aucune signature
 individuelle · aucun article sponsorisé · ne jamais reprendre un **prix barré Donner** · ne
 jamais utiliser un **prix de bundle Thomann** comme prix du modèle · **ne jamais inventer une URL
 produit** · pas de virgule avant « et » ni avant « ou » · pas de tiret cadratin · tutoiement du
