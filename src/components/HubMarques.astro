@@ -1,0 +1,150 @@
+---
+/**
+ * HubMarques — la page mère /marques/ (23/09/2026).
+ *
+ * Même en-tête et même mise en page que les hubs de marque (HubMarque.astro). Le tableau des
+ * marques se calcule depuis src/data/modeles.json : nombre de modèles, fourchette de prix, part
+ * en peaux maillées, avis publiés. Le texte vient de INDEX_MARQUES (src/data/marques.mjs).
+ */
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BipbopAvatar from './mascotte/BipbopAvatar.astro';
+import { MODELES, RELEVE } from '../data/produits.mjs';
+import { avisPublie } from '../lib/avis-livres.mjs';
+import { rendre as rendreJetons, prixF, LIEN, dateMaj } from '../lib/jetons.mjs';
+import { MARQUES, INDEX_MARQUES as I } from '../data/marques.mjs';
+
+const rendre = (t) => rendreJetons(t, I.route);
+const HUB = Object.fromEntries(Object.values(MARQUES).map((m) => [m.marque, m.route]));
+
+// Une ligne par marque du catalogue, de la plus représentée à la moins représentée.
+const marques = Object.entries(Object.groupBy(MODELES, (m) => m.marque))
+  .map(([nom, ms]) => {
+    const tri = [...ms].sort((a, b) => a.prix - b.prix);
+    return {
+      nom,
+      nb: ms.length,
+      min: tri[0],
+      max: tri.at(-1),
+      mesh: ms.filter((m) => m.peaux === 'mesh').length,
+      avis: ms.filter((m) => avisPublie(m)).length,
+      hub: HUB[nom] ?? null,
+      texte: I.marques[nom],
+    };
+  })
+  .sort((a, b) => b.nb - a.nb || a.nom.localeCompare(b.nom));
+const sansTexte = marques.filter((m) => !m.texte).map((m) => m.nom);
+if (sansTexte.length) throw new Error(`HubMarques : aucune rédaction pour ${sansTexte.join(', ')} dans INDEX_MARQUES.marques`);
+
+const releve = new Date(RELEVE + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+const textes = [I.chapeau, ...I.reponse, ...Object.values(I.marques), ...I.sections.flatMap((s) => [...(s.texte ?? []), ...(s.liste ?? []), ...(s.apres ?? [])]), ...I.faq.flatMap((f) => [f.q, f.r])];
+const minutes = Math.max(3, Math.round(textes.join(' ').split(/\s+/).length / 200) + 2);
+const maj = dateMaj();
+
+const sommaire = [
+  { id: 'reponse', titre: 'La réponse courte' },
+  { id: 'tableau', titre: `Les ${marques.length} marques` },
+  { id: 'une-par-une', titre: 'Une par une' },
+  ...I.sections.map((s) => ({ id: s.id, titre: s.h2.replace(/\s*\?$/, '') })),
+  { id: 'questions', titre: 'Tes questions' },
+];
+
+const S = {
+  h2: "font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px",
+  h3: "font:700 21px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.015em;margin:0 0 8px",
+  p: "font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;max-width:720px;text-wrap:pretty",
+  li: "font:400 17px/1.65 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 12px;max-width:720px",
+  section: 'margin:0 0 44px;scroll-margin-top:20px',
+  cellule: 'padding:14px 16px',
+  // Colonnes fixes pour les chiffres : chaque ligne est sa propre grille, une fourchette longue
+  // (« 199,99 € à 1 099,99 € ») décalait sinon sa seule ligne.
+  grille: 'display:grid;grid-template-columns:minmax(110px,1fr) 90px 200px 100px 80px',
+};
+---
+
+<BaseLayout title={I.title} description={I.description} currentPage="avis">
+  <div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550"><a href="/" style="color:inherit;text-decoration:none">ACCUEIL</a> / MARQUES</div>
+
+  <div data-pad style="padding:20px 40px 32px;max-width:840px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font:700 12px 'Work Sans',sans-serif;letter-spacing:.04em;background:#0f7d76;color:#fff;border:2.5px solid #241c14;border-radius:9px;padding:6px 12px;margin-bottom:20px">LES MARQUES</div>
+    <h1 data-big="b" style="font:800 56px/1.02 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:pretty" set:html={rendre(I.h1)} />
+    <p style="font:400 20px/1.55 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 22px;max-width:700px;text-wrap:pretty" set:html={rendre(I.chapeau)} />
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div style="width:44px;height:44px;border-radius:50%;overflow:hidden;border:2.5px solid #241c14;background:#ffd166"><BipbopAvatar /></div>
+      <div style="font:500 14px 'Work Sans',sans-serif;color:#5a4c3e">Par <strong style="color:#241c14;font-weight:700">BipBop</strong></div>
+      <span style="color:#c9b9a3">·</span>
+      <div style="font:500 13px 'IBM Plex Mono',monospace;color:#786550">MIS À JOUR LE {maj} · {minutes} MIN</div>
+    </div>
+  </div>
+
+  <div data-rwd="sp" data-pad style="padding:0 40px 40px;display:grid;grid-template-columns:214px 1fr;gap:44px;align-items:start">
+    <div data-sticky style="position:sticky;top:20px;display:flex;flex-direction:column;gap:16px">
+      <div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:18px 18px 16px;box-shadow:4px 4px 0 #241c14">
+        <div style="font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#786550;margin-bottom:13px">AU PROGRAMME</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font:500 13.5px/1.35 'Work Sans',sans-serif">
+          {sommaire.map((e) => <a href={'#' + e.id} style="color:#241c14;text-decoration:none">{e.titre}</a>)}
+        </div>
+      </div>
+      <a href="/comparatif-batterie-electronique/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;border:2.5px solid #241c14;padding:12px 14px;border-radius:12px;box-shadow:4px 4px 0 #241c14">Toutes marques confondues</a>
+    </div>
+
+    <div style="min-width:0">
+      <div id="reponse" style="background:#241c14;color:#fdf6ec;border-radius:18px;padding:24px 26px;margin:0 0 44px;max-width:760px;scroll-margin-top:20px">
+        <div style="font:700 12px 'Work Sans',sans-serif;letter-spacing:.06em;color:#ffd166;margin-bottom:12px">LA RÉPONSE COURTE</div>
+        {I.reponse.map((r) => <p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#e0d5c8;margin:0 0 10px" set:html={rendre(r)} />)}
+      </div>
+
+      <section id="tableau" style={S.section}>
+        <h2 data-big="d" style={S.h2}>Les {marques.length} marques qu'on suit</h2>
+        <p style={S.p}>Pour chaque marque, les modèles vendus en France sous 1 600 € qu'on suit, leur fourchette de prix et ce qu'on en a déjà publié.</p>
+        <div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:14px;font:400 14.5px 'Work Sans',sans-serif">
+          <div data-rwd="tblrow" style={S.grille + ';background:#241c14;color:#fdf6ec;font-weight:600;font-size:13px'}>
+            <div style="padding:12px 16px">Marque</div><div style="padding:12px 16px">Modèles</div><div style="padding:12px 16px">Prix</div><div style="padding:12px 16px">Tout mesh</div><div style="padding:12px 16px">Avis</div>
+          </div>
+          {marques.map((m, i) => (
+            <div data-rwd="tblrow" style={S.grille + `;background:${i % 2 ? '#fdf6ec' : '#fff'};border-top:1.5px solid #e4d8c6;align-items:center`}>
+              <div style={S.cellule + ';font-weight:700'}>{m.hub ? <a href={m.hub} style={LIEN}>{m.nom}</a> : <a href={'#' + m.nom.toLowerCase()} style="color:inherit;text-decoration:none">{m.nom}</a>}</div>
+              <div style={S.cellule}>{m.nb}</div>
+              <div style={S.cellule + ';white-space:nowrap'}>{m.nb > 1 ? <>{prixF(m.min)} à {prixF(m.max)}</> : prixF(m.min)}</div>
+              <div style={S.cellule + ';color:#4a3d31'}>{m.mesh} sur {m.nb}</div>
+              <div style={S.cellule + ';color:#4a3d31'}>{m.avis || 'Aucun'}</div>
+            </div>
+          ))}
+        </div>
+        <p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:0">Prix relevés le {releve}. Le nom mène à la page de la marque quand elle existe.</p>
+      </section>
+
+      <section id="une-par-une" style={S.section}>
+        <h2 data-big="d" style={S.h2}>Les marques, une par une</h2>
+        {marques.map((m) => (
+          <div id={m.nom.toLowerCase()} style="margin:0 0 26px;scroll-margin-top:20px">
+            <h3 style={S.h3}>{m.nom}</h3>
+            <p style={S.p} set:html={rendre(m.texte)} />
+            {m.hub && <p style="font:600 15px 'Work Sans',sans-serif;margin:0"><a href={m.hub} style={LIEN}>Toute la gamme {m.nom}, modèle par modèle →</a></p>}
+          </div>
+        ))}
+      </section>
+
+      {I.sections.map((s) => (
+        <section id={s.id} style={S.section}>
+          <h2 data-big="d" style={S.h2} set:html={rendre(s.h2)} />
+          {(s.texte ?? []).map((t) => <p style={S.p} set:html={rendre(t)} />)}
+          {s.liste && <ul style="margin:0 0 16px;padding:0 0 0 22px">{s.liste.map((t) => <li style={S.li} set:html={rendre(t)} />)}</ul>}
+          {(s.apres ?? []).map((t) => <p style={S.p} set:html={rendre(t)} />)}
+        </section>
+      ))}
+
+      <section id="questions" style={S.section}>
+        <h2 data-big="d" style={S.h2}>Tes questions sur les marques</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:760px">
+          {I.faq.map((f) => (
+            <div style="background:#fff;border:2.5px solid #241c14;border-radius:14px;padding:18px 20px">
+              <h3 style="font:700 18px/1.3 'Work Sans',sans-serif;margin:0 0 8px" set:html={rendre(f.q)} />
+              <p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0" set:html={rendre(f.r)} />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+  <div style="height:52px"></div>
+</BaseLayout>

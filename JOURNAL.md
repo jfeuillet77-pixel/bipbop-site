@@ -1,5 +1,27 @@
 # Journal BipBop
 
+## 23 septembre 2026 (fin de nuit) — Page /marques/, hubs à 1 200 mots, « analysé », aperçu de grille
+
+**/marques/ plutôt que /avis/** pour les hubs de marque : aucune requête de marque ne contient
+« avis » (intention d'achat par marque, pas de verdict), `/avis/` est un gabarit à compteurs dont
+les pages sont des avis d'un modèle, et une quatrième marque arrive avec Roland. La page mère
+existe maintenant (P76), construite depuis la base ; le fil d'Ariane des hubs passe par elle.
+
+**Hubs à plus de 1 200 mots** (Jordane) : budget réel (accessoires cités par jeton, additionnés au
+build), connectique, défauts, questions. Yamaha 1 261, Alesis 1 295, /marques/ 1 265.
+
+**« Testé » banni** : « analysé » pour ce que fait le site, « essai », « essayer », « vérifier » pour
+les gestes du lecteur. Contrôle 7 ter ; `\b` de JavaScript coupait « déteste », d'où les
+frontières Unicode.
+
+**Grille de notation** : aucune n'existait. Une grille calculée sur les seules données ne retrouve
+pas les notes publiées (DTX432K 5,7 au lieu de 7,8) : les notes sont un jugement « pour un premier
+achat ». Aperçu d'une grille éditoriale en cinq critères sur la Nitro Max, local seulement (8,3 au
+lieu de 8,4) : captures dans `../apercus/`, patch dans le dépôt des maquettes. Décision attendue.
+
+**Erreurs trouvées** : Nitro Max annoncée à « 80 kits préréglés » (avis et duel), Thomann dit 32 et
+16 kits utilisateur ; corrigé.
+
 ## 23 septembre 2026 (nuit) — Affiliation muette, plan refondu, hubs Yamaha et Alesis
 
 **Affiliation** : plus aucune mention de commission tant que les liens ne portent pas

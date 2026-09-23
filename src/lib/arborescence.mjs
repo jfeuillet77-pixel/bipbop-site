@@ -15,7 +15,7 @@ import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { PLAN } from '../data/produits.mjs';
-import { MARQUES } from '../data/marques.mjs';
+import { MARQUES, INDEX_MARQUES } from '../data/marques.mjs';
 
 /**
  * Racine du dépôt. Pas `import.meta.url` : ce fichier est bundlé par Astro dès qu'une page
@@ -160,6 +160,7 @@ export function titrePublie(fichier) {
     // Un hub de marque tient son titre dans src/data/marques.mjs, pas dans la page.
     const hub = brut.match(/<HubMarque\s+cle="([a-z]+)"/);
     if (hub) return (MARQUES[hub[1]]?.title ?? '').trim();
+    if (/<HubMarques\b/.test(brut)) return INDEX_MARQUES.title.trim();
     return ((brut.match(/<(?:BaseLayout|Layout)[^>]*?\btitle="([^"]+)"/s) ?? [, ''])[1]).trim();
   }
   const tete = brut.split('</head>')[0];

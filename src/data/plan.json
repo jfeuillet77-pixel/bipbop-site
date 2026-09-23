@@ -1217,18 +1217,18 @@
  },
  {
   "id": "P76",
-  "lot": "Vague 2 - oct. 2026",
+  "lot": "Vague 1 - sept. 2026",
   "type": "Hub",
-  "titre": "Les marques",
+  "titre": "Batterie électronique : quelle marque choisir",
   "slug": "/marques",
   "permalien": "https://bipbop.eu/marques/",
   "fichier_maquette": "",
   "gabarit": "Hub",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "",
   "priorite": "Moyenne",
   "produits_lies": "",
   "maillage_sortant": "Les hubs de marque",
-  "notes": "À créer au 3e hub de marque. En attendant, le fil d Ariane des marques passe par /avis/."
+  "notes": "Publiée le 23/09/2026 avec les hubs Yamaha et Alesis (demande de Jordane : pas de dossier parent en 404). Page construite depuis modeles.json (HubMarques.astro)."
  }
 ]
