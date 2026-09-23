@@ -1,5 +1,26 @@
 # Journal BipBop
 
+## 23 septembre 2026 (nuit) — Affiliation muette, plan refondu, hubs Yamaha et Alesis
+
+**Affiliation** : plus aucune mention de commission tant que les liens ne portent pas
+d'identifiant BipBop (Jordane). Les maquettes gardent leurs mentions, une greffe les retire,
+`src/data/affiliation.json` les rallume d'un coup. Vérifié en ligne : 0 mention sur 39 pages.
+
+**Roland TD-07, TD-17, TD-1DMK** : Jordane a validé leur ajout, mais ni Thomann (flux complet,
+124 124 lignes) ni Woodbrass (collection Shopify, 14 Roland) ne les vendent encore. La TD313 remplace
+la TD-17KV2 et est déjà au catalogue. Pas d'ajout (M02, I07) ; le hub Roland les traitera.
+
+**Woodbrass a migré sur Shopify** : les fiches redirigent vers `/products/<nom>-<id>`, mais les
+trois images `woodbrass.com/images/…` renvoyaient 404 (Debut Kit, DM-110, DDX50), visibles cassées
+sur le guide enfant, le guide 300 € et le comparatif. Remplacées par le CDN Shopify. Le relevé du
+lundi lit toujours les prix : redirection suivie, JSON-LD présent.
+
+**Données corrigées d'après le flux Thomann** : DTX452K en caoutchouc (TP70S) et non en mesh ;
+Nitro Pro, Pro XL, Ultimate recomptées (8, 10, 9 pads au lieu de 10, 11, 12).
+
+**Plan éditorial refondu** (vagues 1 à 3, 13 pages nouvelles, 3 abandonnées), et **hubs Yamaha et
+Alesis publiés** : nouveau gabarit `HubMarque.astro`, texte dans `src/data/marques.mjs`.
+
 ## 23 septembre 2026 (soir) — Fin de Claude Design, chantier 4
 
 **Claude Design n'est plus utilisé** (Jordane). Les maquettes restent la source des pages, mais

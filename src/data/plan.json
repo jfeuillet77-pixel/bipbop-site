@@ -280,12 +280,12 @@
   "permalien": "https://bipbop.eu/guides/pad-mesh-ou-caoutchouc/",
   "fichier_maquette": "",
   "gabarit": "Guide",
-  "statut": "À produire",
+  "statut": "Abandonné",
   "requete_cible": "pad mesh ou caoutchouc",
   "priorite": "Haute",
   "produits_lies": "Millenium MPS-150X, Millenium HD-120",
   "maillage_sortant": "Comparatif, avis liés, Les bases",
-  "notes": ""
+  "notes": "Abandonné le 23/09/2026 : couvert par /les-bases/pad-mesh-batterie-electronique/ et par le comparatif."
  },
  {
   "id": "P19",
@@ -401,7 +401,7 @@
  },
  {
   "id": "P26",
-  "lot": "Lot 2 - 4 à 8 semaines",
+  "lot": "Vague 2 - oct. 2026",
   "type": "Hub",
   "titre": "Tous les duels",
   "slug": "/duels",
@@ -413,7 +413,7 @@
   "priorite": "Moyenne",
   "produits_lies": "",
   "maillage_sortant": "Duels, Avis",
-  "notes": "À créer quand il y aura 4 duels."
+  "notes": "Hub à créer au 4e duel (3 publiés). En attendant, /avis/ liste les duels."
  },
  {
   "id": "P27",
@@ -504,12 +504,12 @@
   "permalien": "https://bipbop.eu/guides/meilleure-batterie-electronique/",
   "fichier_maquette": "",
   "gabarit": "Guide",
-  "statut": "À produire",
+  "statut": "Abandonné",
   "requete_cible": "meilleure batterie electronique",
   "priorite": "Moyenne",
   "produits_lies": "Selon segment",
   "maillage_sortant": "Comparatif, avis liés",
-  "notes": ""
+  "notes": "Abandonné le 23/09/2026 : le comparatif répond à « meilleure batterie électronique » (170/mois) depuis son bloc de lecture. Une seconde page lui ferait concurrence."
  },
  {
   "id": "P33",
@@ -529,7 +529,7 @@
  },
  {
   "id": "P34",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Alesis Debut Kit",
   "slug": "/avis/alesis-debut-kit",
@@ -538,10 +538,10 @@
   "gabarit": "Avis",
   "statut": "À produire",
   "requete_cible": "alesis debut kit avis",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Alesis Debut Kit",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "Moins de 50/mois. Pour la règle D06."
  },
  {
   "id": "P35",
@@ -561,7 +561,7 @@
  },
  {
   "id": "P36",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Woodbrass DDX50-Mesh",
   "slug": "/avis/woodbrass-ddx50",
@@ -570,14 +570,14 @@
   "gabarit": "Avis",
   "statut": "À produire",
   "requete_cible": "woodbrass ddx50 avis",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Woodbrass DDX50-Mesh",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "Moins de 50/mois. Pour la règle D06."
  },
  {
   "id": "P37",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Alesis Nitro Pro",
   "slug": "/avis/alesis-nitro-pro",
@@ -589,11 +589,11 @@
   "priorite": "Moyenne",
   "produits_lies": "Alesis Nitro Pro",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "250/mois (nitro pro, pro xl). À écrire avec le hub Alesis en tête."
  },
  {
   "id": "P38",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Alesis Nitro Ultimate",
   "slug": "/avis/alesis-nitro-ultimate",
@@ -602,14 +602,14 @@
   "gabarit": "Avis",
   "statut": "À produire",
   "requete_cible": "alesis nitro ultimate avis",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Alesis Nitro Ultimate",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "50/mois."
  },
  {
   "id": "P39",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Millenium Rookie",
   "slug": "/avis/millenium-rookie",
@@ -618,14 +618,14 @@
   "gabarit": "Avis",
   "statut": "À produire",
   "requete_cible": "millenium rookie avis",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Millenium Rookie",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "Moins de 50/mois. Pour la règle D06."
  },
  {
   "id": "P40",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Yamaha DTX402K",
   "slug": "/avis/yamaha-dtx402k",
@@ -634,14 +634,14 @@
   "gabarit": "Avis",
   "statut": "À produire",
   "requete_cible": "yamaha dtx402k avis",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Yamaha DTX402K",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "Moins de 50/mois. Pour la règle D06, pas pour le trafic."
  },
  {
   "id": "P41",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Roland TD-02K",
   "slug": "/avis/roland-td-02k",
@@ -650,10 +650,10 @@
   "gabarit": "Avis",
   "statut": "À produire",
   "requete_cible": "roland td 02k avis",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Roland TD-02K",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "140/mois, dont « dtx402k vs td 02k » : penser au duel."
  },
  {
   "id": "P42",
@@ -673,7 +673,7 @@
  },
  {
   "id": "P43",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Donner DED-70",
   "slug": "/avis/donner-ded-70",
@@ -682,14 +682,14 @@
   "gabarit": "Avis",
   "statut": "À produire",
   "requete_cible": "donner ded 70 avis",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Donner DED-70",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "Moins de 50/mois. Pour la règle D06."
  },
  {
   "id": "P44",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Nux DM-110 Mesh",
   "slug": "/avis/nux-dm-110",
@@ -698,14 +698,14 @@
   "gabarit": "Avis",
   "statut": "À produire",
   "requete_cible": "nux dm 110 avis",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Nux DM-110 Mesh",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "160/mois (nux)."
  },
  {
   "id": "P45",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Avis",
   "titre": "Millenium MPS-1000",
   "slug": "/avis/millenium-mps-1000",
@@ -717,7 +717,7 @@
   "priorite": "Moyenne",
   "produits_lies": "Millenium MPS-1000",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": ""
+  "notes": "350/mois (millenium mps 1000). Le plus cherché des avis restants."
  },
  {
   "id": "P46",
@@ -753,7 +753,7 @@
  },
  {
   "id": "P48",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Duel",
   "titre": "Roland TD-02KV contre Yamaha DTX432K",
   "slug": "/duels/roland-td-02kv-vs-yamaha-dtx432k",
@@ -762,14 +762,14 @@
   "gabarit": "Duel",
   "statut": "À produire",
   "requete_cible": "roland td 02kv ou yamaha dtx432k",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Les deux modèles",
   "maillage_sortant": "Les deux avis, Comparatif",
-  "notes": ""
+  "notes": "Pas de volume mesuré. Fait passer /duels/ au seuil de 4."
  },
  {
   "id": "P49",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Duel",
   "titre": "Alesis Nitro Max contre Millenium MPS-750X",
   "slug": "/duels/alesis-nitro-max-vs-millenium-mps-750x",
@@ -778,30 +778,30 @@
   "gabarit": "Duel",
   "statut": "À produire",
   "requete_cible": "alesis nitro max ou millenium mps 750x",
-  "priorite": "Moyenne",
+  "priorite": "Basse",
   "produits_lies": "Les deux modèles",
   "maillage_sortant": "Les deux avis, Comparatif",
-  "notes": ""
+  "notes": "Pas de volume mesuré."
  },
  {
   "id": "P50",
-  "lot": "Lot 3 - 3 à 6 mois",
-  "type": "Duel",
-  "titre": "Thomann ou Woodbrass, où acheter",
-  "slug": "/duels/thomann-ou-woodbrass",
-  "permalien": "https://bipbop.eu/duels/thomann-ou-woodbrass/",
+  "lot": "Vague 3 - nov. 2026 et après",
+  "type": "Guide",
+  "titre": "Où acheter une batterie électronique",
+  "slug": "/guides/ou-acheter-batterie-electronique",
+  "permalien": "https://bipbop.eu/guides/ou-acheter-batterie-electronique/",
   "fichier_maquette": "",
-  "gabarit": "Duel",
+  "gabarit": "Guide",
   "statut": "À produire",
-  "requete_cible": "acheter batterie electronique thomann woodbrass",
+  "requete_cible": "thomann batterie electronique",
   "priorite": "Moyenne",
   "produits_lies": "Les deux modèles",
   "maillage_sortant": "Les deux avis, Comparatif",
-  "notes": ""
+  "notes": "420/mois (thomann, cultura), difficulté 31. Élargi le 23/09 : Thomann, Woodbrass, Donner, Cultura."
  },
  {
   "id": "P51",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Les bases",
   "titre": "C est quoi un module de batterie électronique",
   "slug": "/les-bases/module-batterie-electronique",
@@ -813,7 +813,7 @@
   "priorite": "Basse",
   "produits_lies": "Aucun ou accessoires",
   "maillage_sortant": "Guides, Comparatif",
-  "notes": "Aucun bouton d achat."
+  "notes": "160/mois (module batterie électronique)."
  },
  {
   "id": "P52",
@@ -833,7 +833,7 @@
  },
  {
   "id": "P53",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Les bases",
   "titre": "Les accessoires vraiment utiles",
   "slug": "/les-bases/accessoires-batterie-electronique",
@@ -842,10 +842,10 @@
   "gabarit": "Article informationnel",
   "statut": "À produire",
   "requete_cible": "accessoires batterie electronique",
-  "priorite": "Basse",
+  "priorite": "Moyenne",
   "produits_lies": "Aucun ou accessoires",
   "maillage_sortant": "Guides, Comparatif",
-  "notes": "Aucun bouton d achat."
+  "notes": "830/mois si l on y range « pad batterie électronique », « batterie électronique pad »."
  },
  {
   "id": "P54",
@@ -872,16 +872,16 @@
   "permalien": "https://bipbop.eu/les-bases/brancher-batterie-electronique-ordinateur/",
   "fichier_maquette": "",
   "gabarit": "Article informationnel",
-  "statut": "À produire",
+  "statut": "Abandonné",
   "requete_cible": "batterie electronique ordinateur midi",
   "priorite": "Basse",
   "produits_lies": "Aucun ou accessoires",
   "maillage_sortant": "Guides, Comparatif",
-  "notes": "Aucun bouton d achat."
+  "notes": "Abandonné le 23/09/2026 : même intention que le guide publié /guides/enregistrer-batterie-electronique-ordinateur/ (P63)."
  },
  {
   "id": "P56",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Les bases",
   "titre": "Entretenir ses pads mesh",
   "slug": "/les-bases/entretien-batterie-electronique",
@@ -893,11 +893,11 @@
   "priorite": "Basse",
   "produits_lies": "Aucun ou accessoires",
   "maillage_sortant": "Guides, Comparatif",
-  "notes": "Aucun bouton d achat."
+  "notes": "Pas de volume mesuré. Utile au hub /les-bases/."
  },
  {
   "id": "P57",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Les bases",
   "titre": "Revendre sa batterie électronique",
   "slug": "/les-bases/revendre-batterie-electronique",
@@ -909,11 +909,11 @@
   "priorite": "Basse",
   "produits_lies": "Aucun ou accessoires",
   "maillage_sortant": "Guides, Comparatif",
-  "notes": "Aucun bouton d achat."
+  "notes": "Pas de volume mesuré. Relier au guide occasion."
  },
  {
   "id": "P58",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Les bases",
   "titre": "Le vocabulaire de la batterie électronique en 20 mots",
   "slug": "/les-bases/vocabulaire-batterie-electronique",
@@ -925,7 +925,7 @@
   "priorite": "Basse",
   "produits_lies": "Aucun ou accessoires",
   "maillage_sortant": "Guides, Comparatif",
-  "notes": "Aucun bouton d achat."
+  "notes": "Pas de volume mesuré."
  },
  {
   "id": "P59",
@@ -945,7 +945,7 @@
  },
  {
   "id": "P60",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 3 - nov. 2026 et après",
   "type": "Les bases",
   "titre": "Pédale silencieuse, ça sert à quoi",
   "slug": "/les-bases/pedale-grosse-caisse-silencieuse",
@@ -957,11 +957,11 @@
   "priorite": "Basse",
   "produits_lies": "Aucun ou accessoires",
   "maillage_sortant": "Guides, Comparatif",
-  "notes": "Aucun bouton d achat."
+  "notes": "Pas de volume mesuré. Relier au guide appartement."
  },
  {
   "id": "P61",
-  "lot": "Lot 3 - 3 à 6 mois",
+  "lot": "Vague 2 - oct. 2026",
   "type": "Hub",
   "titre": "Les bases",
   "slug": "/les-bases",
@@ -973,7 +973,7 @@
   "priorite": "Moyenne",
   "produits_lies": "",
   "maillage_sortant": "Articles de la série",
-  "notes": "À créer quand il y aura 6 articles."
+  "notes": "Hub à créer : 7 articles publiés, seuil atteint. En attendant, /guides/ les liste. Accueillera le pilier « apprendre la batterie »."
  },
  {
   "id": "P62",
@@ -1022,5 +1022,213 @@
   "produits_lies": "Casque, support smartphone, modules trigger",
   "maillage_sortant": "Comparatif, Casque, Faire évoluer",
   "notes": "Sujet technique, peu traité en français."
+ },
+ {
+  "id": "P64",
+  "lot": "Vague 1 - sept. 2026",
+  "type": "Marque",
+  "titre": "Batterie électronique Yamaha",
+  "slug": "/marques/batterie-electronique-yamaha",
+  "permalien": "https://bipbop.eu/marques/batterie-electronique-yamaha/",
+  "fichier_maquette": "",
+  "gabarit": "Hub de marque",
+  "statut": "Publié",
+  "requete_cible": "yamaha batterie electronique",
+  "priorite": "Haute",
+  "produits_lies": "DTX402K, DTX432K, DTX452K, DTX6K2-X",
+  "maillage_sortant": "Avis DTX432K, comparatif, guides budget",
+  "notes": "4 450/mois, difficulté 16. Page Astro construite depuis modeles.json (src/pages/marques/). Les requêtes « yamaha dtx 125 » sont souvent une moto : hors sujet."
+ },
+ {
+  "id": "P65",
+  "lot": "Vague 1 - sept. 2026",
+  "type": "Marque",
+  "titre": "Batterie électronique Alesis",
+  "slug": "/marques/batterie-electronique-alesis",
+  "permalien": "https://bipbop.eu/marques/batterie-electronique-alesis/",
+  "fichier_maquette": "",
+  "gabarit": "Hub de marque",
+  "statut": "Publié",
+  "requete_cible": "batterie electronique alesis",
+  "priorite": "Haute",
+  "produits_lies": "Debut Kit, Turbo Mesh, Nitro Max, Nitro Pro, Pro XL, Ultimate, Strata Club",
+  "maillage_sortant": "Avis Nitro Max et Turbo Mesh, comparatif",
+  "notes": "2 390/mois, difficulté 14, plus 1 460 sur la Nitro Mesh Kit (arrêtée, remplacée par la Nitro Max) : une section du hub."
+ },
+ {
+  "id": "P66",
+  "lot": "Vague 1 - sept. 2026",
+  "type": "Guide",
+  "titre": "Pad d entraînement : lequel choisir",
+  "slug": "/guides/pad-entrainement-batterie",
+  "permalien": "https://bipbop.eu/guides/pad-entrainement-batterie/",
+  "fichier_maquette": "",
+  "gabarit": "Guide",
+  "statut": "À produire",
+  "requete_cible": "pad d entrainement batterie",
+  "priorite": "Haute",
+  "produits_lies": "5 pads de la sélection",
+  "maillage_sortant": "Casque, adulte débutant, apprendre",
+  "notes": "2 370/mois, difficulté 13. « pad batterie » (720) est ambigu : pad d entraînement ou pad de batterie électronique."
+ },
+ {
+  "id": "P67",
+  "lot": "Vague 1 - sept. 2026",
+  "type": "Guide",
+  "titre": "Quel ampli pour une batterie électronique",
+  "slug": "/guides/ampli-batterie-electronique",
+  "permalien": "https://bipbop.eu/guides/ampli-batterie-electronique/",
+  "fichier_maquette": "",
+  "gabarit": "Guide",
+  "statut": "À produire",
+  "requete_cible": "ampli batterie electronique",
+  "priorite": "Haute",
+  "produits_lies": "8 amplis de la sélection",
+  "maillage_sortant": "Pack complet, enregistrer",
+  "notes": "2 250/mois, difficulté 15 (ampli, enceinte, Roland PM-100)."
+ },
+ {
+  "id": "P68",
+  "lot": "Vague 1 - sept. 2026",
+  "type": "Guide",
+  "titre": "Combien coûte une batterie électronique",
+  "slug": "/guides/prix-batterie-electronique",
+  "permalien": "https://bipbop.eu/guides/prix-batterie-electronique/",
+  "fichier_maquette": "",
+  "gabarit": "Guide",
+  "statut": "À produire",
+  "requete_cible": "prix batterie electronique",
+  "priorite": "Haute",
+  "produits_lies": "Les 31 modèles",
+  "maillage_sortant": "Comparatif, guides budget, pack complet",
+  "notes": "860/mois, difficulté 18. Tous les chiffres lus dans modeles.json au build."
+ },
+ {
+  "id": "P69",
+  "lot": "Vague 1 - sept. 2026",
+  "type": "Les bases",
+  "titre": "Quelles baguettes pour une batterie électronique",
+  "slug": "/les-bases/baguettes-batterie-electronique",
+  "permalien": "https://bipbop.eu/les-bases/baguettes-batterie-electronique/",
+  "fichier_maquette": "",
+  "gabarit": "Article informationnel",
+  "statut": "À produire",
+  "requete_cible": "baguette pour batterie electronique",
+  "priorite": "Moyenne",
+  "produits_lies": "7 baguettes de la sélection",
+  "maillage_sortant": "Pad mesh, casque",
+  "notes": "610/mois, difficulté 16."
+ },
+ {
+  "id": "P70",
+  "lot": "Vague 1 - sept. 2026",
+  "type": "Duel",
+  "titre": "Millenium MPS-750X ou MPS-850",
+  "slug": "/duels/millenium-mps-750x-vs-mps-850",
+  "permalien": "https://bipbop.eu/duels/millenium-mps-750x-vs-mps-850/",
+  "fichier_maquette": "",
+  "gabarit": "Duel",
+  "statut": "À produire",
+  "requete_cible": "millenium mps-750x vs 850",
+  "priorite": "Moyenne",
+  "produits_lies": "MPS-750X, MPS-850",
+  "maillage_sortant": "Les deux avis",
+  "notes": "140/mois. Les deux avis existent : le plus rapide à produire. Remonte l avis MPS-850, le moins lié du site."
+ },
+ {
+  "id": "P71",
+  "lot": "Vague 2 - oct. 2026",
+  "type": "Marque",
+  "titre": "Batterie électronique Roland",
+  "slug": "/marques/batterie-electronique-roland",
+  "permalien": "https://bipbop.eu/marques/batterie-electronique-roland/",
+  "fichier_maquette": "",
+  "gabarit": "Hub de marque",
+  "statut": "À produire",
+  "requete_cible": "batterie electronique roland",
+  "priorite": "Haute",
+  "produits_lies": "TD-02K, TD-02KV, TD313",
+  "maillage_sortant": "Avis TD-02KV et TD313, guide occasion",
+  "notes": "2 960/mois, plus 2 510 sur TD-07, TD-17 et TD-1 : arrêtées en France (absentes de Thomann et Woodbrass le 23/09/2026). Une section les explique et renvoie vers la TD313 (remplaçante de la TD-17KV2) et l occasion."
+ },
+ {
+  "id": "P72",
+  "lot": "Vague 2 - oct. 2026",
+  "type": "Avis",
+  "titre": "Avis Roland TD313",
+  "slug": "/avis/roland-td313",
+  "permalien": "https://bipbop.eu/avis/roland-td313/",
+  "fichier_maquette": "",
+  "gabarit": "Avis",
+  "statut": "À produire",
+  "requete_cible": "roland td313 avis",
+  "priorite": "Haute",
+  "produits_lies": "Roland TD313",
+  "maillage_sortant": "Hub Roland, guide 1000 €",
+  "notes": "Remplaçante officielle de la TD-17KV2 (1 210/mois sur « td 17 »). Déjà au catalogue à 1 498 €."
+ },
+ {
+  "id": "P73",
+  "lot": "Vague 2 - oct. 2026",
+  "type": "Les bases",
+  "titre": "Apprendre la batterie : par où commencer",
+  "slug": "/les-bases/apprendre-la-batterie",
+  "permalien": "https://bipbop.eu/les-bases/apprendre-la-batterie/",
+  "fichier_maquette": "",
+  "gabarit": "Article informationnel",
+  "statut": "À produire",
+  "requete_cible": "apprendre la batterie",
+  "priorite": "Haute",
+  "produits_lies": "",
+  "maillage_sortant": "Seul ou prof, combien de temps, adulte débutant, enfant",
+  "notes": "2 230/mois, difficulté 19. Pilier : relier les quatre pages sans les cannibaliser."
+ },
+ {
+  "id": "P74",
+  "lot": "Vague 2 - oct. 2026",
+  "type": "Les bases",
+  "titre": "Réglages et sons de la Millenium MPS-750X",
+  "slug": "/les-bases/reglages-millenium-mps-750x",
+  "permalien": "https://bipbop.eu/les-bases/reglages-millenium-mps-750x/",
+  "fichier_maquette": "",
+  "gabarit": "Article informationnel",
+  "statut": "À produire",
+  "requete_cible": "changer les sons millenium mps-750x",
+  "priorite": "Moyenne",
+  "produits_lies": "Module MPS-750X de remplacement",
+  "maillage_sortant": "Avis MPS-750X",
+  "notes": "590/mois sur « changer les sons ». Les 3 × 1 900 anglais (settings, random hi hat, module upgrade) sont probablement mondiaux. Écrire depuis le manuel constructeur uniquement."
+ },
+ {
+  "id": "P75",
+  "lot": "Vague 2 - oct. 2026",
+  "type": "Marque",
+  "titre": "Batterie électronique Millenium",
+  "slug": "/marques/batterie-electronique-millenium",
+  "permalien": "https://bipbop.eu/marques/batterie-electronique-millenium/",
+  "fichier_maquette": "",
+  "gabarit": "Hub de marque",
+  "statut": "À produire",
+  "requete_cible": "batterie electronique millenium",
+  "priorite": "Moyenne",
+  "produits_lies": "9 modèles Millenium",
+  "maillage_sortant": "4 avis Millenium",
+  "notes": "1 020/mois, dispersés sur les noms de modèles. Surtout du maillage."
+ },
+ {
+  "id": "P76",
+  "lot": "Vague 2 - oct. 2026",
+  "type": "Hub",
+  "titre": "Les marques",
+  "slug": "/marques",
+  "permalien": "https://bipbop.eu/marques/",
+  "fichier_maquette": "",
+  "gabarit": "Hub",
+  "statut": "À produire",
+  "requete_cible": "",
+  "priorite": "Moyenne",
+  "produits_lies": "",
+  "maillage_sortant": "Les hubs de marque",
+  "notes": "À créer au 3e hub de marque. En attendant, le fil d Ariane des marques passe par /avis/."
  }
 ]

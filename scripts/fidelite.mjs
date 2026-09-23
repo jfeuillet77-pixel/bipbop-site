@@ -142,6 +142,9 @@ const resultats = [];
 
 for (const [route, fichier] of PAR_RACINE) {
   if (SANS_MAQUETTE.has(cle(route))) continue;
+  // Les hubs de marque se construisent depuis les données (src/components/HubMarque.astro,
+  // 23/09/2026) : aucune maquette à laquelle les comparer, comme le comparatif.
+  if (route.startsWith('/marques/')) continue;
   const c = cle(route);
   const maquette = MAQUETTE_DE.get(c) || MAQUETTE_DE.get(c.replace(/\.html$/, ''));
   if (!maquette) { resultats.push({ route, faute: 'aucune maquette référencée dans le plan éditorial' }); continue; }

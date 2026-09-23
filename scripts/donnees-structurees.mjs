@@ -48,6 +48,8 @@ const HUBS = {
   Guides: [{ route: '/guides/', nom: "Guides d'achat" }],
   Duels: [{ route: '/duels/', nom: 'Duels' }, { route: '/avis/', nom: 'Avis' }],
   Bases: [{ route: '/les-bases/', nom: 'Les bases' }, { route: '/guides/', nom: "Guides d'achat" }],
+  // /marques/ se crée au 3e hub de marque (plan P76) ; d'ici là, les marques passent par /avis/.
+  Marques: [{ route: '/marques/', nom: 'Marques' }, { route: '/avis/', nom: 'Avis' }],
 };
 
 /** Les types du plan qui sont des articles datés, et les pages qui ont un type schema.org à elles. */
@@ -92,6 +94,8 @@ function verdict(html, route) {
 /* ------------------------------------------------------------------ graphe */
 
 const url = (chemin) => new URL(chemin, DOMAINE).href;
+/** /marques/batterie-electronique-yamaha/ -> « yamaha » */
+const MARQUE_DE_ROUTE = (route) => route.replace(/\/+$/, '').split('-').at(-1);
 const ORGANISATION = {
   '@type': 'Organization',
   '@id': `${DOMAINE}/#organisation`,
@@ -196,6 +200,29 @@ function graphe(p, html, titre, description) {
       ...(dates.publiee ? { datePublished: dates.publiee } : {}),
       ...(dates.modifiee ? { dateModified: dates.modifiee } : {}),
     });
+  }
+  if (p.type === 'Marque') {
+    // Un hub de marque liste des produits : ItemList de Product (marque et prix du relevé).
+    page['@type'] = 'CollectionPage';
+    const marque = MARQUE_DE_ROUTE(p.route);
+    const produits = MODELES.filter((m) => m.marque.toLowerCase() === marque).sort((a, b) => a.prix - b.prix);
+    if (!produits.length) problemes.push(`${p.route} : aucun modèle de la marque « ${marque} » dans modeles.json`);
+    page.mainEntity = {
+      '@type': 'ItemList',
+      numberOfItems: produits.length,
+      itemListElement: produits.map((m, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'Product',
+          name: m.nom_complet,
+          brand: { '@type': 'Brand', name: m.marque },
+          ...(m.img ? { image: m.img } : {}),
+          ...(m.avis ? { url: url(m.avis) } : {}),
+          offers: { '@type': 'Offer', price: prixDe(m.prix).toFixed(2), priceCurrency: 'EUR', url: m.url },
+        },
+      })),
+    };
   }
   if (p.type === 'Avis') {
     const pr = produit(p, html, titre, dates);

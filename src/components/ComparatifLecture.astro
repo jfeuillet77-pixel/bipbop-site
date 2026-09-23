@@ -14,13 +14,14 @@
 import { MODELES, RELEVE, empreinteAffichable } from '../data/produits.mjs';
 import { avisPublie } from '../lib/avis-livres.mjs';
 import { ETAT_INITIAL, resultat } from '../lib/comparatif.mjs';
+import { MARQUES } from '../data/marques.mjs';
 
 // Le modèle que l'outil affiche au chargement : la même réponse, dite en texte. `top` porte déjà
 // son lien d'avis (null si l'avis n'est pas publié).
 const choix = resultat(ETAT_INITIAL).top;
 if (!choix) throw new Error("ComparatifLecture : l'état initial du comparatif ne donne aucun modèle");
 /** « l'Alesis », « la Millenium » : l'article suit la première lettre du nom. */
-const laOuL = (nom) => (/^[aeiouyhéèê]/i.test(nom) ? "l'" : 'la ');
+const laOuL = (nom) => (/^[aeiouéèê]/i.test(nom) ? "l'" : 'la ');
 const releve = new Date(RELEVE + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 
 /** Les tranches de la base, dans l'ordre des prix, avec le guide qui les traite. */
@@ -137,7 +138,9 @@ const S = {
   <h2 data-big="d" style={S.h2}>Les {total} batteries électroniques suivies</h2>
   <p style={S.p}>
     Prix relevés chez le marchand le {releve}, du moins cher au plus cher dans chaque tranche. Le nom mène à l'avis
-    complet quand il est publié.
+    complet quand il est publié. Par marque&nbsp;: {Object.values(MARQUES).map((m, i, t) => (
+      <>{i ? (i === t.length - 1 ? ' et ' : ', ') : ''}<a href={m.route} style={S.lien}>la gamme {m.marque}</a></>
+    ))}.
   </p>
   {tranches.map((t) => (
     <>
