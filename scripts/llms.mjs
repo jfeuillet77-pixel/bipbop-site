@@ -81,19 +81,24 @@ const legales = new Set(pages.filter((p) => p.type === 'Légal').map((p) => p.ro
 const LIGNES = [
   '# BipBop',
   '',
-  `> Guide d'achat des batteries électroniques, en français. ${NB_AVIS} kits testés un par un, ${MODELES.length} modèles suivis, prix relevés chez le marchand le ${dateReleve}.`,
+  `> Guide d'achat des batteries électroniques, en français. ${MODELES.length} modèles suivis, ${NB_AVIS} avis complets, prix relevés chez le marchand le ${dateReleve}.`,
   '',
   "BipBop est un site indépendant. Il aide un débutant, ou un musicien logé en appartement, à choisir sa batterie électronique sans payer une option dont il n'a pas besoin.",
   '',
   'Comment le site écrit :',
   '',
   `- **Un prix publié est un prix relevé**, pas un prix catalogue. Le dernier relevé date du ${dateReleve}, et il est affiché sur chaque page qui cite un prix.`,
-  `- **${MODELES.length} modèles sont suivis, ${NB_AVIS} ont un avis complet.** Un avis dit ce qui coince autant que ce qui va.`,
-  "- **Aucun lien affilié, aucun article sponsorisé.** BipBop n'a pas de programme d'affiliation : aucune commission ne guide un choix.",
-  "- **Une note n'existe que si la grille qui la produit est affichée sur la page.** Aucune valeur chiffrée invérifiable n'est publiée.",
+  // Ni « testés » ni « grille affichée » : /a-propos/ exclut de « prétendre avoir joué sur une
+  // batterie », et les avis publient un verdict sur 10 sans la grille qui le produit (constaté le
+  // 23/09). Le llms.txt ne promet que ce que les pages tiennent.
+  `- **${MODELES.length} modèles sont suivis, ${NB_AVIS} ont un avis complet.** Un avis dit ce qui coince autant que ce qui va, et se conclut par un verdict noté sur 10.`,
+  // Formulé pour rester vrai que l'affiliation soit active ou non : les pages annoncent une
+  // commission (pied de page, accueil, À propos) alors qu'aucun lien n'est tagué depuis le 13/09.
+  // Tant que Jordane n'a pas tranché, le llms.txt ne doit contredire ni les pages ni les faits.
+  "- **Aucun article sponsorisé, aucun classement acheté.** Un lien vers un marchand ne change ni le prix payé ni l'ordre des recommandations.",
   '',
   'Par où commencer : le [comparatif](https://bipbop.eu/comparatif-batterie-electronique/) pose trois questions (ton budget, la place dont tu disposes, ce que tu veux jouer) et sort deux modèles. ' +
-    `Toutes les pages listées ci-dessous sont publiées et indexables ; l'inventaire complet des URL est dans [le sitemap](${DOMAINE}/sitemap.xml) ` +
+    `Toutes les pages listées ci-dessous sont publiées et indexables ; l'inventaire complet des URL est dans [le sitemap](${DOMAINE}/sitemap-index.xml) ` +
     `et [le plan du site](${DOMAINE}/plan-du-site/).`,
   '',
 ];
