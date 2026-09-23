@@ -153,6 +153,8 @@ garde la fiche validée page par page) :
 - **Jamais de montant dans un title.** Le mot « Prix » oui (c'est une requête), `298 €` non : un
   prix publié dans un titre est faux dès le relevé suivant. Seules exceptions : les trois guides
   dont le budget EST la requête (« à moins de 300 € »).
+- **Un article fait au moins 1 200 mots** (Jordane, 23/09/2026) : guide, hub de marque, page de
+  fond. Du contenu utile (budget réel, connectique, défauts, questions), jamais du remplissage.
 - **Meta description entre 120 et 155**, avec le mot clé, un chiffre vérifiable et une raison de
   cliquer. Les montants, eux, vivent là.
 - Un avis porte « Avis » + le nom du modèle + « Prix » + l'année.
