@@ -28,7 +28,9 @@ export const ROUTES = new Map();
 for (const r of PLAN) {
   if (!r.fichier_maquette?.endsWith('.dc.html')) continue;
   const path = '/' + (r.permalien || '').replace(/^https?:\/\/[^/]+/, '').replace(/^\/|\/$/g, '');
-  ROUTES.set(r.fichier_maquette, path === '/' ? '/' : '/' + path + '/');
+  // `path` commence déjà par « / » : le préfixer encore donnait « //avis/… » (latent jusqu'au 23/09/2026,
+  // première utilisation de la table, par la greffe des grilles).
+  ROUTES.set(r.fichier_maquette, path === '/' ? '/' : path + '/');
 }
 /** Route d'un fichier maquette, ou null si le plan ne la connaît pas. */
 export const routeDeMaquette = (fichier) => ROUTES.get(fichier) ?? null;
