@@ -1,0 +1,157 @@
+---
+/**
+ * ComparatifLecture — le texte sous l'outil de /comparatif-batterie-electronique/.
+ *
+ * Chantier 4 de design/audit-seo-2026-09-23.md : la page clé du site ne servait que 283 mots,
+ * sans aucun H2, sur « quelle batterie électronique choisir » et « meilleure batterie
+ * électronique ». Ce bloc répond à ces requêtes en texte lisible sans JavaScript.
+ *
+ * Aucun chiffre n'est écrit à la main : comptes, fourchettes, prix et phrases de verdict sont lus
+ * dans src/data/modeles.json, que le relevé du lundi tient à jour. Un prix qui bouge, un modèle
+ * qui entre ou sort du catalogue, et ce texte suit sans réécriture. Les phrases de verdict sont
+ * celles de la base (champ « phrase »), déjà écrites pour le site.
+ */
+import { MODELES, RELEVE, empreinteAffichable } from '../data/produits.mjs';
+import { avisPublie } from '../lib/avis-livres.mjs';
+import { ETAT_INITIAL, resultat } from '../lib/comparatif.mjs';
+
+// Le modèle que l'outil affiche au chargement : la même réponse, dite en texte. `top` porte déjà
+// son lien d'avis (null si l'avis n'est pas publié).
+const choix = resultat(ETAT_INITIAL).top;
+if (!choix) throw new Error("ComparatifLecture : l'état initial du comparatif ne donne aucun modèle");
+/** « l'Alesis », « la Millenium » : l'article suit la première lettre du nom. */
+const laOuL = (nom) => (/^[aeiouyhéèê]/i.test(nom) ? "l'" : 'la ');
+const releve = new Date(RELEVE + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+
+/** Les tranches de la base, dans l'ordre des prix, avec le guide qui les traite. */
+const TRANCHES = [
+  { segment: 'Moins de 300 €', guide: '/guides/batterie-electronique-moins-300-euros/', libelle: 'le guide à moins de 300\u00a0€' },
+  { segment: '300 à 500 €', guide: '/guides/batterie-electronique-moins-500-euros/', libelle: 'le guide à moins de 500\u00a0€' },
+  { segment: '500 à 800 €', guide: '/guides/batterie-electronique-moins-1000-euros/', libelle: 'le guide à moins de 1\u00a0000\u00a0€' },
+  { segment: '800 à 1600 €', titre: '800 à 1 600 €', guide: '/guides/batterie-electronique-moins-1000-euros/', libelle: 'le guide à moins de 1\u00a0000\u00a0€' },
+];
+/** Même format que prixFrancais() de scripts/greffes.mjs (« 1 598 € », « 499,99 € ») : le champ
+    prixTexte de la base écrit encore certains milliers sans espace (« 1598 € »), contre la règle R04. */
+const prixCourt = (m) => {
+  const d = Number.isInteger(m.prix) ? 0 : 2;
+  return m.prix.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d }).replace(/[\u202F\u00A0]/g, ' ') + ' €';
+};
+const tranches = TRANCHES.map((t) => {
+  const modeles = MODELES.filter((m) => m.segment === t.segment).sort((a, b) => a.prix - b.prix);
+  return { ...t, modeles, tousMesh: modeles.filter((m) => m.peaux === 'mesh').length };
+}).filter((t) => t.modeles.length);
+const orphelins = MODELES.filter((m) => !TRANCHES.some((t) => t.segment === m.segment));
+if (orphelins.length) throw new Error(`ComparatifLecture : segment inconnu pour ${orphelins.map((m) => m.nom_complet).join(', ')}`);
+
+const total = MODELES.length;
+const mesh = MODELES.filter((m) => m.peaux === 'mesh').length;
+const mixte = MODELES.filter((m) => m.peaux === 'mixte').length;
+const caoutchouc = MODELES.filter((m) => m.peaux === 'caoutchouc').length;
+const bluetooth = MODELES.filter((m) => m.bluetooth).length;
+const mesures = MODELES.filter((m) => m.largeur).sort((a, b) => a.largeur - b.largeur);
+const plusEtroite = mesures[0];
+const plusLarge = mesures.at(-1);
+const cm = (m) => empreinteAffichable(m) ?? `${m.largeur} cm de large`;
+
+const S = {
+  bloc: 'margin:30px 40px 0;max-width:760px',
+  h2: "font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px",
+  h3: "font:700 20px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.015em;margin:26px 0 10px",
+  p: "font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;text-wrap:pretty",
+  lien: 'color:inherit;text-decoration:underline;text-underline-offset:3px',
+  ul: 'margin:0 0 8px;padding:0 0 0 20px',
+  li: "font:400 16px/1.6 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 8px",
+  nom: 'font-weight:600',
+  prix: 'font-weight:600;white-space:nowrap',
+  filet: 'height:2.5px;background:#241c14;margin:40px 40px 0;max-width:760px',
+};
+---
+
+<div data-mar style={S.filet}></div>
+
+<section data-mar style={S.bloc}>
+  <h2 data-big="d" style={S.h2}>Quelle batterie électronique choisir&nbsp;?</h2>
+  <p style={S.p}>
+    Si tu veux une seule réponse sans passer par les questions&nbsp;: {laOuL(choix.nom_complet)}{choix.avis ? <a href={choix.avis} style={S.lien}>{choix.nom_complet}</a> : choix.nom_complet} à{' '}
+    <span style={S.prix}>{prixCourt(choix)}</span>, prix relevé le {releve}. C'est celle que l'outil sort plus haut
+    pour le cas le plus fréquent&nbsp;: un budget entre 300 et 500 €, un coin de chambre et l'envie d'apprendre sans déranger.
+    {' '}{choix.phrase}
+  </p>
+  <p style={S.p}>
+    Les trois questions existent parce qu'aucune batterie n'est la meilleure pour tout le monde. On suit {total} modèles
+    de <span style={S.prix}>{prixCourt(tranches[0].modeles[0])}</span> à <span style={S.prix}>{prixCourt(tranches.at(-1).modeles.at(-1))}</span>&nbsp;; voilà ce que chaque réponse change.
+    Tu n'as jamais tenu une baguette&nbsp;? Le guide <a href="/guides/choisir-batterie-electronique-adulte-debutant/" style={S.lien}>batterie
+    électronique pour adulte débutant</a> part de zéro.
+  </p>
+</section>
+
+<section data-mar style={S.bloc}>
+  <h2 data-big="d" style={S.h2}>Ton budget&nbsp;: ce que chaque tranche achète</h2>
+  <ul style={S.ul}>
+    {tranches.map((t) => (
+      <li style={S.li}>
+        <span style={S.nom}>{t.titre ?? t.segment}</span>&nbsp;: {t.modeles.length} modèle{t.modeles.length > 1 ? 's' : ''} de{' '}
+        <span style={S.prix}>{prixCourt(t.modeles[0])}</span> à <span style={S.prix}>{prixCourt(t.modeles.at(-1))}</span>,
+        dont {t.tousMesh} en peaux maillées sur tous les fûts. Voir <a href={t.guide} style={S.lien}>{t.libelle}</a>.
+      </li>
+    ))}
+  </ul>
+  <p style={S.p}>
+    Le prix de la batterie n'est jamais le prix payé&nbsp;: un casque fermé, un siège et souvent un tapis s'ajoutent.
+    Le guide du <a href="/guides/pack-batterie-electronique-complet/" style={S.lien}>pack complet</a> fait le compte
+    avant que tu commandes.
+  </p>
+</section>
+
+<section data-mar style={S.bloc}>
+  <h2 data-big="d" style={S.h2}>La place&nbsp;: ce qu'il faut au sol et ce qui gêne</h2>
+  <p style={S.p}>
+    Sur les modèles dont le marchand publie la mesure, la plus compacte tient dans <span style={S.prix.replace('font-weight:600;', '')}>{cm(plusEtroite)}</span> ({plusEtroite.nom_complet})
+    et la plus large demande <span style={S.prix.replace('font-weight:600;', '')}>{cm(plusLarge)}</span> ({plusLarge.nom_complet}), siège non compris.
+  </p>
+  <p style={S.p}>
+    En appartement, le problème n'est pas le son, que tu entends au casque. C'est le choc des baguettes et de la pédale
+    qui passe dans le plancher. Le guide <a href="/guides/choisir-batterie-electronique-appartement/" style={S.lien}>batterie
+    électronique en appartement</a> classe les modèles sur ce point, et <a href="/les-bases/batterie-electronique-bruit-voisins/" style={S.lien}>installer
+    sa batterie sans déranger les voisins</a> dit quoi mettre dessous.
+  </p>
+</section>
+
+<section data-mar style={S.bloc}>
+  <h2 data-big="d" style={S.h2}>Ce que tu veux jouer&nbsp;: peaux maillées ou caoutchouc&nbsp;?</h2>
+  <p style={S.p}>
+    Sur les {total} modèles suivis, {mesh} ont des peaux maillées sur tous les fûts, {mixte} en mélangent et {caoutchouc} restent
+    en caoutchouc. Une peau maillée (on dit aussi «&nbsp;mesh&nbsp;») est une toile tendue comme une vraie peau de batterie&nbsp;:
+    elle rebondit plus naturellement sous la baguette et fait moins de bruit qu'un pad en caoutchouc.
+    Le détail est dans <a href="/les-bases/pad-mesh-batterie-electronique/" style={S.lien}>c'est quoi un pad mesh</a>.
+  </p>
+  <p style={S.p}>
+    Pour rejouer tes morceaux, regarde le Bluetooth&nbsp;: {bluetooth} modèles le proposent et te laissent jouer par-dessus
+    ta playlist sans câble. Pour jouer avec des potes, ce sont le nombre de pads et la richesse du module (le boîtier qui
+    produit les sons) qui comptent. Si tu hésites entre l'électronique et l'acoustique, commence par
+    <a href="/les-bases/batterie-electronique-ou-acoustique/" style={S.lien}>batterie électronique ou acoustique</a>.
+  </p>
+</section>
+
+<section data-mar style={S.bloc}>
+  <h2 data-big="d" style={S.h2}>Les {total} batteries électroniques suivies</h2>
+  <p style={S.p}>
+    Prix relevés chez le marchand le {releve}, du moins cher au plus cher dans chaque tranche. Le nom mène à l'avis
+    complet quand il est publié.
+  </p>
+  {tranches.map((t) => (
+    <>
+      <h3 style={S.h3}>{t.titre ?? t.segment}</h3>
+      <ul style={S.ul}>
+        {t.modeles.map((m) => (
+          <li style={S.li}>
+            {avisPublie(m)
+              ? <a href={avisPublie(m)} style={S.lien + ';' + S.nom}>{m.nom_complet}</a>
+              : <span style={S.nom}>{m.nom_complet}</span>}
+            {' '}· <span style={S.prix}>{prixCourt(m)}</span>&nbsp;: {m.phrase}
+          </li>
+        ))}
+      </ul>
+    </>
+  ))}
+</section>
