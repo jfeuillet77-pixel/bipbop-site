@@ -13,6 +13,7 @@
  */
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { PLAN } from '../data/produits.mjs';
 
 /**
@@ -117,6 +118,30 @@ export function fichierPage(dossier, route) {
     if (existsSync(join(base, nom))) return join(base, nom);
   }
   return null;
+}
+
+/**
+ * Dates d'une page selon git, lues sur son FICHIER SOURCE (celui de dist n'est pas versionné) :
+ * `modifiee`, le dernier commit, et `publiee`, le premier. `--follow` pour la première, parce que
+ * les slugs ont été renommés le 22/09/2026 : sans lui, chaque page serait « née » ce jour-là.
+ * Un rebuild qui ne change rien ne doit pas faire croire à Google que tout a changé, d'où git et
+ * pas l'horloge. %cI est ISO 8601 avec décalage : le format W3C des sitemaps et de schema.org.
+ * Sans git (build hors dépôt), les deux valent null : on omet la date plutôt que l'inventer.
+ */
+export function datesGit(route) {
+  const source = fichierPage(PAGES, route);
+  if (!source) return { publiee: null, modifiee: null };
+  const git = (...args) => {
+    try {
+      return execFileSync('git', ['log', ...args, '--format=%cI', '--', relative(SITE, source)], {
+        cwd: SITE,
+        stdio: ['ignore', 'pipe', 'ignore'],
+      }).toString().trim().split('\n').filter(Boolean);
+    } catch {
+      return [];
+    }
+  };
+  return { modifiee: git('-1')[0] ?? null, publiee: git('--follow').at(-1) ?? null };
 }
 
 /**

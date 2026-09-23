@@ -23,7 +23,7 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
 4. **Publier une page a des conséquences sur 3 à 6 autres.** Les listes de l'`Aide-Memoire`
    §01 à §04 ne sont pas optionnelles : hubs, compteurs, maillage, comparatif, plan éditorial.
 5. **`npm run check` et `npm run fidelite` doivent passer** avant un commit. `check` lance
-   d'abord `npm test`, puis le build, puis les 9 contrôles : il mesure réellement la largeur de
+   d'abord `npm test`, puis le build, puis les 10 contrôles : il mesure réellement la largeur de
    défilement dans Chrome à 1024 / 900 / 768 / 390 px et relit le balisage de chaque page.
    `fidelite` compare chaque page à sa maquette segment par segment. Une page peut paraître
    correcte et casser — `/guides/` a servi neuf jours avec ses sections hors du cadre, du premier
@@ -48,6 +48,13 @@ une route. Les liens qu'aucune maquette ne contient mais qu'on publie partout (�
 `scripts/greffes.mjs`, jamais par une édition des 37 pages, et `src/components/Footer.astro` porte
 les mêmes dans le même ordre pour les trois pages sans maquette. `404.html` se porte aussi (route
 sans permalien).
+
+**Le `<head>` social et structuré ne s'écrit dans aucune page.** `scripts/donnees-structurees.mjs`
+(`postbuild`, après le sitemap et le llms.txt) pose l'Open Graph et un JSON-LD sur les 39 pages de
+`dist/` : `Organization` et `WebSite`, `BreadcrumbList`, `Article` daté par git sur les guides,
+les bases et les duels, `Product` + `Review` sur les avis (note lue dans le verdict affiché, prix
+lu dans `modeles.json`), `ItemList` sur les hubs. L'image de partage `public/bipbop-partage.png`
+se régénère avec `npm run image-partage` si la mascotte change. Le contrôle 10 relit le résultat.
 
 ## Le rendez-vous du lundi : les prix
 

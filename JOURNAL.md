@@ -1,5 +1,24 @@
 # Journal BipBop
 
+## 23 septembre 2026 (après-midi) — Premier crawl Screaming Frog, audit SEO, données structurées
+
+**Audit** : `design/audit-seo-2026-09-23.md`, sept chantiers classés par rendement. Premier crawl
+Screaming Frog du site (43 URL) : aucune erreur, aucune redirection interne, 9 types d'avertissements
+mineurs. Indexation remontée à 36/39 depuis ce matin ; restent inconnus le guide occasion et la
+page tapis (590 et 480 recherches/mois), et la politique de confidentialité.
+
+**Chantier 1** : `sitemap-index.xml` resoumis par l'API. La suppression des lignes `llms.txt` et
+`sitemap.xml` et la demande d'indexation restent à faire à la main (l'API refuse ou n'a pas l'action).
+
+**Chantier 2, les données structurées** : il n'y en avait aucune, ni Open Graph. Posées en
+`postbuild` par `scripts/donnees-structurees.mjs`, dans `dist/` et pas dans les pages : 37 pages
+sont portées (loi 1), 3 passent par `BaseLayout`, et un seul point d'écriture les voit toutes.
+Les notes des avis sont lues dans le verdict affiché, les prix dans `modeles.json`, les dates dans
+git (`datesGit`, désormais partagé avec le sitemap, `--follow` pour traverser le renommage du 22/09).
+Le contrôle 10 de `verif.mjs` relit le résultat ; testé en retirant un bloc et en faussant un prix,
+les deux sont attrapés. Image de partage `public/bipbop-partage.png` (1200 × 630), rendue par
+`npm run image-partage`.
+
 ## 23 septembre 2026 — Le sitemap est lu, 33 pages sur 39 sont indexées
 
 Premier diagnostic fait depuis l'API Search Console (serveur MCP `gsc`), et plus sur captures.

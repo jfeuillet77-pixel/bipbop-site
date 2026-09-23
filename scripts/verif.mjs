@@ -466,7 +466,52 @@ for (const b of balisage) {
   for (const d of b.defauts) console.log(`        ${d}`);
 }
 
-const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length + seo.horsFormat.length + balisage.length;
+/* 10. Données structurées — posées par `scripts/donnees-structurees.mjs` en fin de build. Ce
+   contrôle relit le résultat au lieu de faire confiance au script : un seul bloc JSON-LD qui se
+   parse, les balises Open Graph au complet et d'accord avec le `<title>` et le canonical, et sur
+   un avis un Product dont le prix est celui de la base et la note, une note sur 10. Sans lui, un
+   portage qui avalerait le `</head>` ferait disparaître le balisage sans un signal : une page
+   sans JSON-LD s'affiche exactement comme une page qui en a. */
+
+const OG_REQUIS = ['og:type', 'og:url', 'og:title', 'og:description', 'og:image'];
+
+function defautsDeDonnees(html, ici) {
+  const d = [];
+  const blocs = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
+  if (blocs.length !== 1) return [`${blocs.length} bloc(s) JSON-LD, 1 attendu`];
+  let graphe;
+  try { graphe = JSON.parse(blocs[0][1])['@graph']; } catch (e) { return [`JSON-LD illisible : ${e.message}`]; }
+  if (!Array.isArray(graphe)) return ['JSON-LD sans @graph'];
+  const og = Object.fromEntries([...html.matchAll(/<meta property="(og:[a-z:_]+)" content="([^"]*)"/g)].map((m) => [m[1], m[2]]));
+  for (const cle of OG_REQUIS) if (!og[cle]) d.push(`${cle} absent`);
+  const canonical = (html.match(/<link rel="canonical" href="([^"]+)"/) ?? [])[1];
+  if (og['og:url'] && canonical && og['og:url'] !== canonical) d.push(`og:url ${og['og:url']} ≠ canonical ${canonical}`);
+  const title = (html.match(/<title>([^<]*)<\/title>/) ?? [])[1];
+  if (og['og:title'] && title && og['og:title'].replace(/&#39;/g, "'") !== title.replace(/&#39;/g, "'")) d.push('og:title ≠ <title>');
+  if (og['og:image'] && !existsSync(join(DIST, new URL(og['og:image']).pathname))) d.push(`og:image introuvable dans dist (${og['og:image']})`);
+
+  const modele = MODELES.find((m) => m.avis === ici);
+  if (modele) {
+    const produit = graphe.find((n) => n['@type'] === 'Product');
+    if (!produit) d.push('avis sans Product');
+    else {
+      if (Number(produit.offers?.price) !== prixDe(modele.prix)) d.push(`prix balisé ${produit.offers?.price} ≠ base ${prixDe(modele.prix)}`);
+      const note = produit.review?.reviewRating?.ratingValue;
+      if (!(note >= 0 && note <= 10)) d.push(`note balisée « ${note} » hors de 0-10`);
+    }
+  }
+  return d;
+}
+
+const donnees = pages
+  .filter((f) => route(f) !== '/404.html')
+  .map((f) => ({ page: route(f), defauts: defautsDeDonnees(lu(f), route(f)) }))
+  .filter((r) => r.defauts.length);
+titre(10, 'DONNÉES STRUCTURÉES');
+console.log(donnees.length ? `${donnees.length} PAGE(S) AU BALISAGE MANQUANT OU FAUX` : 'ras — chaque page porte un JSON-LD lisible et son Open Graph, chaque avis son prix et sa note');
+for (const b of donnees) console.log(`   ✗ ${b.page.padEnd(46)} ${b.defauts.join(' · ')}`);
+
+const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length + seo.horsFormat.length + balisage.length + donnees.length;
 console.log(`\n${L}`);
-console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 9 contrôles de fin de séance sont passés\n');
+console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 10 contrôles de fin de séance sont passés\n');
 process.exit(nbProblemes ? 1 : 0);

@@ -14,6 +14,8 @@
     "port": "node scripts/port.mjs",
     "sitemap": "node scripts/sitemap.mjs",
     "llms": "node scripts/llms.mjs",
+    "donnees": "node scripts/donnees-structurees.mjs",
+    "image-partage": "node scripts/image-partage.mjs",
     "verif": "node scripts/verif.mjs",
     "prix": "node scripts/releve-prix.mjs",
     "prix:flux": "node scripts/prix/telecharger-flux.mjs",
@@ -23,7 +25,7 @@
     "prix:rendez-vous": "scripts/prix/installer-le-rendez-vous.sh",
     "check": "npm run test && npm run build && node scripts/verif.mjs",
     "prebuild": "node scripts/import-data.mjs",
-    "postbuild": "node scripts/sitemap.mjs && node scripts/llms.mjs",
+    "postbuild": "node scripts/sitemap.mjs && node scripts/llms.mjs && node scripts/donnees-structurees.mjs",
     "fidelite": "node scripts/fidelite.mjs",
     "test": "node tests/balisage.test.mjs"
   },

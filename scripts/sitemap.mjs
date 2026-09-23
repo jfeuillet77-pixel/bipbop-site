@@ -33,8 +33,7 @@
  */
 import { writeFileSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
-import { execFileSync } from 'node:child_process';
-import { arborescence, orphelines, fichierPage, SITE, PAGES, DOMAINE } from '../src/lib/arborescence.mjs';
+import { arborescence, orphelines, datesGit, SITE, DOMAINE } from '../src/lib/arborescence.mjs';
 
 const DIST = join(SITE, 'dist');
 const CHEMIN = join(DIST, 'sitemap.xml');
@@ -47,30 +46,6 @@ if (!existsSync(DIST)) {
 }
 
 const { sections, pages } = arborescence(DIST);
-
-/* ------------------------------------------------- dernière modification, selon git */
-
-/**
- * Date de dernier commit du FICHIER SOURCE (et non du fichier copié dans dist, qui n'est pas
- * versionné). C'est la date réelle d'écriture de la page, y compris quand elle vient d'un
- * portage qui n'a rien changé.
- */
-function derniereModif(route) {
-  const source = fichierPage(PAGES, route);
-  if (!source) return null;
-  try {
-    const date = execFileSync('git', ['log', '-1', '--format=%cI', '--', relative(SITE, source)], {
-      cwd: SITE,
-      stdio: ['ignore', 'pipe', 'ignore'],
-    })
-      .toString()
-      .trim();
-    // %cI donne un horodatage ISO 8601 avec décalage, déjà au format W3C attendu par les sitemaps.
-    return date || null;
-  } catch {
-    return null; // pas de git (build sans dépôt) : lastmod sauté, URL publiée quand même.
-  }
-}
 
 /* ------------------------------------------------------------------ construction */
 
@@ -89,7 +64,8 @@ for (const section of sections) {
     if (VUES.has(url)) problemes.push(`${p.route} : URL déjà publiée plus haut (${url})`);
     if (/[<>&"]/.test(url)) problemes.push(`${p.route} : caractère interdit dans une URL de sitemap (${url})`);
     VUES.add(url);
-    const date = derniereModif(p.route);
+    // `lastmod` : le dernier commit du fichier source (`datesGit`, partagé avec les données structurées).
+    const date = datesGit(p.route).modifiee;
     if (!date) sansDate++;
     else if (!PLUS_RECENTE || date > PLUS_RECENTE) PLUS_RECENTE = date;
     LIGNES.push(
