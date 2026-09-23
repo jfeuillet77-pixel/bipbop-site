@@ -131,10 +131,12 @@ un autre site de Jordane. `urlPublique()` les retire au portage et à l'import ;
 `verif.mjs` fait échouer `npm run check` si un marqueur de traçage survit. Ne jamais « réparer » un
 lien affilié à la main dans une page : la maquette le ramènerait.
 
-**Grille de notation : à l'essai sur un seul avis** (Nitro Max, depuis le 23/09/2026), dans la
-carte « Le verdict » : cinq critères pour un premier achat, poids, note sur 10, une ligne de
-raison. La note du verdict EST la moyenne pondérée (8,3), jamais l'inverse. Jordane compare avant
-de généraliser ou de retirer ; en attendant, les autres avis gardent leur note sans grille.
+**Grilles de notation sur tous les avis** (Jordane, 23/09/2026). La note d'un avis ne s'écrit
+plus : `src/data/grilles.json` porte, par maquette d'avis, cinq critères notés avec leur raison et
+une ligne « Pour ton profil ». `grefferGrille()` pose la grille dans la carte « Le verdict » et la
+note partout où elle s'affiche (verdict, encart, hub Avis) : 6 + (moyenne pondérée − 5) × 0,8.
+Pas de note sous 6 sauf `"exception": true` pour un modèle vraiment mauvais (le portage échoue
+sinon). Un nouvel avis = une entrée dans `grilles.json`, notée selon le « bareme » du fichier.
 
 **Aucune mention d'affiliation non plus, tant qu'on n'est pas affilié** (Jordane, 23/09/2026). Les
 maquettes gardent leurs « Liens affiliés », « on touche une commission », « Comment on gagne

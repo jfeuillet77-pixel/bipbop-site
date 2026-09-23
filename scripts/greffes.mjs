@@ -540,10 +540,12 @@ import { rendre as rendreJetons } from '../src/lib/jetons.mjs';
 import { ROUTES } from '../src/data/produits.mjs';
 export { GRILLES };
 
-/** Moyenne pondérée, arrondie au dixième supérieur à partir de ,05 (en centièmes, sans flottant). */
+/** La note affichée : moyenne pondérée des critères, ramenée sur l'échelle de grilles.json
+    (6 + (moyenne − 5) × 0,8), arrondie au dixième à partir de ,05. Calcul en entiers : la moyenne
+    en centièmes vaut Σ note × poids, la note en millièmes 8 × Σ + 2000. */
 export function noteDeGrille(grille) {
   const centiemes = GRILLES.criteres.reduce((t, c) => t + grille[c.cle][0] * c.poids, 0);
-  return Math.floor((centiemes + 5) / 10) / 10;
+  return Math.floor((8 * centiemes + 2000 + 50) / 100) / 10;
 }
 const virgule = (n) => n.toFixed(1).replace('.', ',');
 
@@ -559,7 +561,11 @@ function blocGrille(grille, fichier) {
   return `<div data-grille style="border:2.5px solid #241c14;border-radius:14px;overflow:hidden;margin:0 0 22px;background:#fdf6ec">
 <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 14px;background:#241c14;color:#fdf6ec"><div style="font:700 12px 'Work Sans',sans-serif;letter-spacing:.06em;color:#ffd166">LA GRILLE : CINQ CRITÈRES POUR UN PREMIER ACHAT</div><div style="font:500 11.5px 'IBM Plex Mono',monospace;color:#c4b7a7">POIDS · NOTE /10</div></div>
 ${lignes}
-<div style="padding:12px 14px;border-top:2.5px solid #241c14;background:#fff;font:400 13.5px/1.5 'Work Sans',sans-serif;color:#3a2f26">La note du verdict est la moyenne de ces cinq critères, selon leur poids. Chaque note s'appuie sur la fiche technique et les mesures du marchand.</div>
+${grille.profil ? `<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px;border-top:2.5px solid #241c14;background:#ffd166">
+<div style="flex:1 1 280px"><div style="font:700 11.5px 'Work Sans',sans-serif;letter-spacing:.06em;color:#241c14;margin-bottom:4px">POUR TON PROFIL</div><div style="font:700 15px 'Work Sans',sans-serif;color:#241c14">${rendreJetons(grille.profil.pour, fichier)}</div><div style="font:400 13.5px/1.45 'Work Sans',sans-serif;color:#3a2f26;margin-top:3px">${rendreJetons(grille.profil.raison, fichier)}</div></div>
+<div style="flex:0 0 auto;font:800 22px 'Bricolage Grotesque',sans-serif;background:#241c14;color:#ffd166;border:2.5px solid #241c14;border-radius:11px;padding:5px 13px">${grille.profil.note}<span style="font-size:14px;font-weight:600">/10</span></div>
+</div>` : ''}
+<div style="padding:12px 14px;border-top:2.5px solid #241c14;background:#fff;font:400 13.5px/1.5 'Work Sans',sans-serif;color:#3a2f26">${GRILLES.echelle.phrase}</div>
 </div>
 `;
 }
@@ -583,6 +589,9 @@ function grefferGrille(corps, fichier, { sobre = false } = {}) {
     return { corps, notes };
   }
   const grille = GRILLES.avis[fichier];
+  // Règle de Jordane (23/09/2026) : pas de note globale sous 6/10, sauf modèle vraiment mauvais,
+  // déclaré comme tel dans sa grille (« exception »: true) : l'exception se décide, elle ne glisse pas.
+  if (noteDeGrille(grille) < 6 && !grille.exception) throw new Error(`${fichier} : note ${noteDeGrille(grille)} sous 6/10 sans « exception »: true dans src/data/grilles.json`);
   const note = virgule(noteDeGrille(grille));
   const i = corps.indexOf('<div id="verdict"');
   if (i < 0) throw new Error(`${fichier} : carte « Le verdict » introuvable — la grille ne sait pas où se poser`);

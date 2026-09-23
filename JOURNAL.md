@@ -1,5 +1,15 @@
 # Journal BipBop
 
+## 23 septembre 2026 (matin) — Grilles de notation sur les 9 avis
+
+Généralisées à la demande de Jordane, après un premier essai sur la Nitro Max. Une grille calculée
+sans retouche étalait les notes de 5,1 à 8,1 : les modèles de niche (TD-02KV, DTX432K) tombaient
+sous des modèles qu'on recommande moins. Décision (option B) : barème révisé (discrétion 25 %,
+planchers à 5), ligne « Pour ton profil » avec sa propre note, et échelle 6 + (moyenne − 5) × 0,8,
+plutôt que les +15 % proposés, qui poussaient le haut à 9,2. Notes : 6,6 à 8,4. La grille publiée
+le matin sur la Nitro Max notait sa discrétion 8 là où le barème commun donne 7 : corrigé.
+`ROUTES` de produits.mjs produisait « //avis/… », latent jusqu'à sa première utilisation.
+
 ## 23 septembre 2026 (aube) — Grille publiée sur la Nitro Max, prix insécables, contrôle 11
 
 **Grille de notation publiée sur un seul avis**, la Nitro Max, à la demande de Jordane, sans la
