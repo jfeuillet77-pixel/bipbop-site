@@ -25,7 +25,7 @@
     "prix:rendez-vous": "scripts/prix/installer-le-rendez-vous.sh",
     "check": "npm run test && npm run build && node scripts/verif.mjs",
     "prebuild": "node scripts/import-data.mjs",
-    "postbuild": "node scripts/sitemap.mjs && node scripts/llms.mjs && node scripts/donnees-structurees.mjs",
+    "postbuild": "node scripts/sitemap.mjs && node scripts/llms.mjs && node scripts/donnees-structurees.mjs && node scripts/typographie.mjs",
     "fidelite": "node scripts/fidelite.mjs",
     "test": "node tests/balisage.test.mjs"
   },

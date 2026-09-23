@@ -1,5 +1,18 @@
 # Journal BipBop
 
+## 23 septembre 2026 (aube) — Grille publiée sur la Nitro Max, prix insécables, contrôle 11
+
+**Grille de notation publiée sur un seul avis**, la Nitro Max, à la demande de Jordane, sans la
+ligne de calcul (« indigeste »). Elle donne 8,3 : la note du verdict, l'encart latéral, la carte du
+hub avis et le JSON-LD passent à 8,3. Les autres avis ne bougent pas.
+
+**Prix insécables** : `scripts/typographie.mjs` en postbuild, 846 prix sur 38 pages, corps seul.
+
+**Repasses systématiques** (Jordane) : contrôle 11, comptes en jetons dans `marques.mjs` (la page
+/marques/ écrivait « sept marques et 31 modèles » en dur), 14 liens de tableau vers les avis,
+« Toutes les marques » dans tous les pieds de page. La greffe du pied de page avait d'abord posé ce
+lien dans le corps d'À propos, qui a aussi un « Tous les avis » : bornée au <footer>.
+
 ## 23 septembre 2026 (fin de nuit) — Page /marques/, hubs à 1 200 mots, « analysé », aperçu de grille
 
 **/marques/ plutôt que /avis/** pour les hubs de marque : aucune requête de marque ne contient

@@ -35,10 +35,10 @@ export const MARQUES = {
     route: '/marques/batterie-electronique-yamaha/',
     title: 'Batterie électronique Yamaha : laquelle choisir en 2026 ?',
     description:
-      'Quatre batteries Yamaha comparées, de la DTX402K à la DTX6K2-X. Laquelle prendre, ce que le coaching vaut vraiment et quand passer à une autre marque.',
+      '{N:modeles:Yamaha} batteries Yamaha comparées, de la DTX402K à la DTX6K2-X. Laquelle prendre, ce que le coaching vaut vraiment et quand passer à une autre marque.',
     h1: 'Batterie électronique Yamaha : laquelle choisir ?',
     chapeau:
-      "Au même prix, Yamaha te donne moins de matériel que ses concurrents. Sa force est ailleurs : la méthode. Trois des quatre modèles qu'on suit partagent le même module d'apprentissage. Voilà lequel prendre et quand regarder ailleurs.",
+      "Au même prix, Yamaha te donne moins de matériel que ses concurrents. Sa force est ailleurs : la méthode. Trois des {n:modeles:Yamaha} modèles qu'on suit partagent le même module d'apprentissage. Voilà lequel prendre et quand regarder ailleurs.",
     reponse: [
       "**Tu doutes de t'y tenir** : la {avis:dtx432} à {prix:dtx432}, pour ses dix programmes de coaching. Une batterie sur laquelle on s'entraîne vaut mieux qu'une batterie mieux équipée qui prend la poussière.",
       "**Petit budget, en appartement** : la {avis:dtx402} à {prix:dtx402}, la seule de la sélection avec une pédale de grosse caisse sans batte.",
@@ -97,7 +97,7 @@ export const MARQUES = {
         id: 'ou-ailleurs',
         texte: [
           "Pour le prix de la {nom:dtx432} ({prix:dtx432}), on trouve huit pads en peau maillée chez Millenium avec la {avis:mps750x} ({prix:mps750x}). Chez Roland, la {avis:td02kv} ({prix:td02kv}) apporte une pédale sans batte et les sons de la marque. Ce que Yamaha vend en plus, c'est la pédagogie. Si tu sais déjà que tu vas t'y tenir, tu la paieras sans t'en servir.",
-          "Si c'est Alesis qui te fait hésiter, sa gamme Nitro met des peaux maillées sur tous les fûts dès {prix:nitromax}, avec le Bluetooth en plus. La [page Alesis](/marques/batterie-electronique-alesis/) compare ses sept modèles.",
+          "Si c'est Alesis qui te fait hésiter, sa gamme Nitro met des peaux maillées sur tous les fûts dès {prix:nitromax}, avec le Bluetooth en plus. La [page Alesis](/marques/batterie-electronique-alesis/) compare ses {n:modeles:Alesis} modèles.",
           "Pour comparer toutes les marques d'un coup, le [comparatif en trois questions](/comparatif-batterie-electronique/) sort deux modèles selon ton budget, ta place et ce que tu veux jouer.",
         ],
       },
@@ -109,7 +109,7 @@ export const MARQUES = {
       },
       {
         q: 'Y a-t-il une Yamaha en peaux maillées dans la sélection ?',
-        r: "Non. Sous 1 600 €, les quatre Yamaha qu'on suit sont en caoutchouc, avec une caisse claire en silicone sur la {nom:dtx6k2x}. Si le mesh compte pour toi, regarde la [gamme Alesis](/marques/batterie-electronique-alesis/) ou la {avis:mps150x}.",
+        r: "Non. Sous 1 600 €, les {n:modeles:Yamaha} Yamaha qu'on suit sont en caoutchouc, avec une caisse claire en silicone sur la {nom:dtx6k2x}. Si le mesh compte pour toi, regarde la [gamme Alesis](/marques/batterie-electronique-alesis/) ou la {avis:mps150x}.",
       },
       {
         q: 'DTX402K ou DTX432K : laquelle prendre ?',
@@ -135,10 +135,10 @@ export const MARQUES = {
     route: '/marques/batterie-electronique-alesis/',
     title: 'Batterie électronique Alesis : laquelle choisir en 2026 ?',
     description:
-      'Sept batteries Alesis comparées, du Debut Kit à la Strata Club, toutes en peaux maillées. Laquelle prendre et ce que la Nitro Max a changé.',
+      '{N:modeles:Alesis} batteries Alesis comparées, du Debut Kit à la Strata Club, toutes en peaux maillées. Laquelle prendre et ce que la Nitro Max a changé.',
     h1: 'Batterie électronique Alesis : laquelle choisir ?',
     chapeau:
-      "Alesis a mis la peau maillée à la portée des petits budgets : les sept modèles qu'on suit en ont tous, de {prix:debut} à {prix:strata}. La vraie question n'est pas « mesh ou pas », c'est où t'arrêter.",
+      "Alesis a mis la peau maillée à la portée des petits budgets : les {n:modeles:Alesis} modèles qu'on suit en ont tous, de {prix:debut} à {prix:strata}. La vraie question n'est pas « mesh ou pas », c'est où t'arrêter.",
     reponse: [
       "**Pour un premier achat** : la {avis:nitromax} à {prix:nitromax}. Mesh partout, un bon module et le Bluetooth.",
       "**Budget serré** : la {avis:turbo} à {prix:turbo}. Mais à ce prix, la {avis:mps150x} ({prix:mps150x}) offre des cymbales plus grandes.",
@@ -243,7 +243,7 @@ export const INDEX_MARQUES = {
     'Millenium, Alesis, Yamaha, Roland, Donner : ce que vaut chaque marque de batterie électronique, ses prix réels et celle qui colle à ton profil.',
   h1: 'Batterie électronique : quelle marque choisir ?',
   chapeau:
-    "Il n'y a pas de meilleure marque, il y a la bonne marque pour ton budget, ton logement et ta motivation. On suit sept marques et 31 modèles vendus en France : voilà ce que chacune fait bien, ce qu'elle fait moins bien et où l'acheter.",
+    "Il n'y a pas de meilleure marque, il y a la bonne marque pour ton budget, ton logement et ta motivation. On suit {n:marques} marques et {n:modeles} modèles vendus en France : voilà ce que chacune fait bien, ce qu'elle fait moins bien et où l'acheter.",
   reponse: [
     "**Petit budget, peaux maillées** : Millenium, avec la {avis:mps150x} à {prix:mps150x}.",
     "**Premier achat équilibré** : Alesis, avec la {avis:nitromax} à {prix:nitromax}.",
@@ -252,11 +252,11 @@ export const INDEX_MARQUES = {
   ],
   // Une entrée par marque du catalogue ; `hub` si une page dédiée existe.
   marques: {
-    Millenium: "La marque maison de Thomann. Il n'y a pas de distributeur à rémunérer entre l'usine et toi, d'où des prix bas pour beaucoup de matériel : la {avis:mps450} a des cymbales de 12 pouces à {prix:mps450}, là où la gamme Nitro d'Alesis reste à 10. Le revers : une Millenium se revend plus lentement d'occasion qu'une Alesis. Quatre de ses modèles ont un avis complet, de la {avis:mps150x} à la {avis:mps850}.",
+    Millenium: "La marque maison de Thomann. Il n'y a pas de distributeur à rémunérer entre l'usine et toi, d'où des prix bas pour beaucoup de matériel : la {avis:mps450} a des cymbales de 12 pouces à {prix:mps450}, là où la gamme Nitro d'Alesis reste à 10. Le revers : une Millenium se revend plus lentement d'occasion qu'une Alesis. {N:avis:Millenium} de ses modèles ont un avis complet, de la {avis:mps150x} à la {avis:mps850}.",
     Alesis: "La peau maillée à petit prix, sur tous les modèles qu'on suit. Le Bluetooth arrive dès la {avis:nitromax}, qu'on recommande à la majorité des débutants. Ses défauts : des cymbales de 10 pouces sur toute la gamme Nitro et des pads étroits sur la Turbo. Elle se revend bien, ce qui compte si tu n'es pas sûr de t'y tenir.",
-    Yamaha: "La méthode avant le matériel. Trois de ses quatre modèles partagent le module DTX402 et ses programmes de coaching, qui notent ta régularité. En échange, aucune Yamaha de la sélection n'a de peau maillée : les pads en caoutchouc rebondissent plus sec et font plus de bruit sous la baguette.",
-    Roland: "Sous 1 600 €, la sélection Roland tient en trois modèles : la {nom:td02k} ({prix:td02k}), la {avis:td02kv} ({prix:td02kv}), dont la pédale sans batte en fait la plus discrète en immeuble ancien. Au-dessus, la {nom:td313} ({prix:td313}). Les TD-07, TD-17 et TD-1DMK, encore très cherchées, ne se vendent plus neuves en France. La TD313 remplace la TD-17KV2.",
-    Donner: "Donner vend en direct, sur Donner Music, qui est le seul marchand de ses batteries dans notre sélection. Six modèles, de {prix:ded70} à {prix:backbeat}. La {avis:ded200x} est le kit le mieux fourni de sa tranche, mais le plus difficile à défendre face à la Nitro Max. Un réflexe à prendre : ignore les prix barrés du site Donner, ses remises affichées sont permanentes.",
+    Yamaha: "La méthode avant le matériel. Trois de ses {n:modeles:Yamaha} modèles partagent le module DTX402 et ses programmes de coaching, qui notent ta régularité. En échange, aucune Yamaha de la sélection n'a de peau maillée : les pads en caoutchouc rebondissent plus sec et font plus de bruit sous la baguette.",
+    Roland: "Sous 1 600 €, la sélection Roland tient en {n:modeles:Roland} modèles : la {nom:td02k} ({prix:td02k}), la {avis:td02kv} ({prix:td02kv}), dont la pédale sans batte en fait la plus discrète en immeuble ancien. Au-dessus, la {nom:td313} ({prix:td313}). Les TD-07, TD-17 et TD-1DMK, encore très cherchées, ne se vendent plus neuves en France. La TD313 remplace la TD-17KV2.",
+    Donner: "Donner vend en direct, sur Donner Music, qui est le seul marchand de ses batteries dans notre sélection. {N:modeles:Donner} modèles, de {prix:ded70} à {prix:backbeat}. La {avis:ded200x} est le kit le mieux fourni de sa tranche, mais le plus difficile à défendre face à la Nitro Max. Un réflexe à prendre : ignore les prix barrés du site Donner, ses remises affichées sont permanentes.",
     Nux: "Un seul modèle suivi, la {nom:dm110} ({prix:dm110}), en peaux maillées et vendue chez Woodbrass. On ne l'a pas encore analysée en détail : elle attend son avis.",
     Woodbrass: "Le revendeur français a sa propre batterie, la {nom:ddx50} ({prix:ddx50}), en peaux maillées. Comme la Nux, elle attend encore son avis.",
   },
@@ -280,7 +280,7 @@ export const INDEX_MARQUES = {
       h2: "Et les marques qu'on ne suit pas ?",
       id: 'hors-selection',
       texte: [
-        "Les marchands vendent bien plus que ces sept marques. Les Roland VAD aux fûts habillés de bois, les Yamaha DTX8 et DTX10, l'Alesis Strata Prime ou les batteries Efnote dépassent toutes 1 600 € : ce sont de très belles batteries, mais pas un premier achat. On s'arrête à ce plafond parce qu'au-delà, le lecteur n'est plus un débutant et nos conseils ne lui servent plus.",
+        "Les marchands vendent bien plus que ces {n:marques} marques. Les Roland VAD aux fûts habillés de bois, les Yamaha DTX8 et DTX10, l'Alesis Strata Prime ou les batteries Efnote dépassent toutes 1 600 € : ce sont de très belles batteries, mais pas un premier achat. On s'arrête à ce plafond parce qu'au-delà, le lecteur n'est plus un débutant et nos conseils ne lui servent plus.",
         "À l'autre bout, on écarte les batteries jouets et les kits sans marque vendus sur les places de marché : sans pièces détachées ni revente possible, une panne de pad les rend inutilisables. Si tu tombes sur une marque absente de cette page, pose-toi les trois questions ci-dessus. Et si tu veux qu'on l'analyse, [écris-nous](/contact/).",
       ],
     },

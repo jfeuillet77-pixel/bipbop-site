@@ -10,7 +10,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import BipbopAvatar from './mascotte/BipbopAvatar.astro';
 import { MODELES, RELEVE } from '../data/produits.mjs';
 import { avisPublie } from '../lib/avis-livres.mjs';
-import { rendre as rendreJetons, prixF, LIEN, dateMaj } from '../lib/jetons.mjs';
+import { rendre as rendreJetons, prixF, LIEN, dateMaj, rendreTexte } from '../lib/jetons.mjs';
 import { MARQUES, INDEX_MARQUES as I } from '../data/marques.mjs';
 
 const rendre = (t) => rendreJetons(t, I.route);
@@ -61,7 +61,7 @@ const S = {
 };
 ---
 
-<BaseLayout title={I.title} description={I.description} currentPage="avis">
+<BaseLayout title={rendreTexte(I.title)} description={rendreTexte(I.description)} currentPage="avis">
   <div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550"><a href="/" style="color:inherit;text-decoration:none">ACCUEIL</a> / MARQUES</div>
 
   <div data-pad style="padding:20px 40px 32px;max-width:840px">

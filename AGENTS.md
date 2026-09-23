@@ -30,6 +30,11 @@ craindre : `design/maillage-avis.py` et les copies `.avant-*` ne servent plus qu
    matche jamais rien. Un tableau de 4 colonnes ou plus **défile**, il ne se replie pas.
 4. **Publier une page a des conséquences sur 3 à 6 autres.** Les listes de l'`Aide-Memoire`
    §01 à §04 ne sont pas optionnelles : hubs, compteurs, maillage, comparatif, plan éditorial.
+   **La repasse est systématique** (Jordane, 23/09/2026) : après chaque publication, lire le
+   contrôle 11 de `npm run check`. Il bloque une page orpheline ou absente de son hub, et liste les
+   pages qui citent un modèle sans lien vers son avis. `python3 design/maillage-avis.py` pose les
+   liens de tableau et de première mention. Dans les textes construits (`marques.mjs`), aucun compte
+   écrit en dur : `{n:modeles}`, `{n:avis:Marque}`… se recalculent au build.
 5. **`npm run check` et `npm run fidelite` doivent passer** avant un commit. `check` lance
    d'abord `npm test`, puis le build, puis les 10 contrôles : il mesure réellement la largeur de
    défilement dans Chrome à 1024 / 900 / 768 / 390 px et relit le balisage de chaque page.
@@ -126,6 +131,11 @@ un autre site de Jordane. `urlPublique()` les retire au portage et à l'import ;
 `verif.mjs` fait échouer `npm run check` si un marqueur de traçage survit. Ne jamais « réparer » un
 lien affilié à la main dans une page : la maquette le ramènerait.
 
+**Grille de notation : à l'essai sur un seul avis** (Nitro Max, depuis le 23/09/2026), dans la
+carte « Le verdict » : cinq critères pour un premier achat, poids, note sur 10, une ligne de
+raison. La note du verdict EST la moyenne pondérée (8,3), jamais l'inverse. Jordane compare avant
+de généraliser ou de retirer ; en attendant, les autres avis gardent leur note sans grille.
+
 **Aucune mention d'affiliation non plus, tant qu'on n'est pas affilié** (Jordane, 23/09/2026). Les
 maquettes gardent leurs « Liens affiliés », « on touche une commission », « Comment on gagne
 notre vie » ; `retirerMentionsAffiliation()` de `scripts/greffes.mjs` les retire au portage, et
@@ -153,6 +163,8 @@ garde la fiche validée page par page) :
 - **Jamais de montant dans un title.** Le mot « Prix » oui (c'est une requête), `298 €` non : un
   prix publié dans un titre est faux dès le relevé suivant. Seules exceptions : les trois guides
   dont le budget EST la requête (« à moins de 300 € »).
+- **Un article fait au moins 1 200 mots** (Jordane, 23/09/2026) : guide, hub de marque, page de
+  fond. Du contenu utile (budget réel, connectique, défauts, questions), jamais du remplissage.
 - **Meta description entre 120 et 155**, avec le mot clé, un chiffre vérifiable et une raison de
   cliquer. Les montants, eux, vivent là.
 - Un avis porte « Avis » + le nom du modèle + « Prix » + l'année.
