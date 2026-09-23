@@ -57,6 +57,13 @@ une route. Les liens qu'aucune maquette ne contient mais qu'on publie partout (�
 les mêmes dans le même ordre pour les trois pages sans maquette. `404.html` se porte aussi (route
 sans permalien).
 
+**Les hubs de marque** (`/marques/batterie-electronique-<marque>/`, depuis le 23/09/2026) n'ont pas de
+maquette non plus : `src/components/HubMarque.astro` les construit depuis `modeles.json` (liste,
+prix, peaux, phrase) et `src/data/marques.mjs` (la rédaction, qui appelle les modèles par jeton :
+`{prix:id}`, `{nom:id}`, `{avis:id}`, jamais un prix en dur). `fidelite` les saute, `titrePublie()`
+lit leur titre dans `marques.mjs`. Un nouveau hub = une entrée dans `marques.mjs`, une page d'une
+ligne et sa ligne « Publié » au plan (type « Marque »).
+
 **Le `<head>` social et structuré ne s'écrit dans aucune page.** `scripts/donnees-structurees.mjs`
 (`postbuild`, après le sitemap et le llms.txt) pose l'Open Graph et un JSON-LD sur les 39 pages de
 `dist/` : `Organization` et `WebSite`, `BreadcrumbList`, `Article` daté par git sur les guides,

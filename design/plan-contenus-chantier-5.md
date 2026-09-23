@@ -5,6 +5,13 @@ a été rangée vers une page existante, une page du plan éditorial ou une page
 classement est fait par motifs, rejouable (script de travail, pas versionné) ; les volumes d'une
 cible sont la somme de ses requêtes. La difficulté est la moyenne pondérée par le volume (0 à 100).
 
+## Avancement
+
+- **23/09** : plan éditorial refondu dans `plan-editorial.csv` (vagues, P64 à P76). Hubs Yamaha
+  (P64) et Alesis (P65) publiés.
+- **Roland TD-07, TD-17, TD-1DMK** : plus vendues en France (ni Thomann ni Woodbrass, 23/09). Pas
+  ajoutées au catalogue ; le hub Roland (P71) les explique et renvoie vers la TD313 (P72).
+
 ## Où va la demande aujourd'hui
 
 | | Volume/mois | Part |

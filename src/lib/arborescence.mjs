@@ -15,6 +15,7 @@ import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join, dirname, relative } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { PLAN } from '../data/produits.mjs';
+import { MARQUES } from '../data/marques.mjs';
 
 /**
  * Racine du dépôt. Pas `import.meta.url` : ce fichier est bundlé par Astro dès qu'une page
@@ -77,7 +78,7 @@ function lignesAuPlan() {
 }
 
 /** Un hub se range dans la section de ce qu'il rassemble, pas dans « le point de départ ». */
-const HUB_DANS = { '/avis/': 'Avis', '/guides/': 'Guides' };
+const HUB_DANS = { '/avis/': 'Avis', '/guides/': 'Guides', '/marques/': 'Marques' };
 
 /** Type du plan -> section. Une ligne « Publié » dont le type n'est pas là fait échouer la
     lecture : elle disparaîtrait du plan du site et du sitemap sans un bruit. */
@@ -85,6 +86,7 @@ const SECTION_DU_TYPE = {
   'Accueil': 'Depart',
   'Page clé': 'Depart',
   'Avis': 'Avis',
+  'Marque': 'Marques',
   'Duel': 'Duels',
   'Guide': 'Guides',
   'Les bases': 'Bases',
@@ -96,6 +98,7 @@ const SECTION_DU_TYPE = {
 const SECTIONS = [
   { cle: 'Depart', titre: 'Le point de départ' },
   { cle: 'Avis', titre: 'Les avis' },
+  { cle: 'Marques', titre: 'Les marques' },
   { cle: 'Duels', titre: 'Les duels' },
   { cle: 'Guides', titre: "Les guides d'achat" },
   { cle: 'Bases', titre: 'Les bases' },
@@ -154,6 +157,9 @@ export function datesGit(route) {
 export function titrePublie(fichier) {
   const brut = readFileSync(fichier, 'utf8');
   if (fichier.endsWith('.astro')) {
+    // Un hub de marque tient son titre dans src/data/marques.mjs, pas dans la page.
+    const hub = brut.match(/<HubMarque\s+cle="([a-z]+)"/);
+    if (hub) return (MARQUES[hub[1]]?.title ?? '').trim();
     return ((brut.match(/<(?:BaseLayout|Layout)[^>]*?\btitle="([^"]+)"/s) ?? [, ''])[1]).trim();
   }
   const tete = brut.split('</head>')[0];

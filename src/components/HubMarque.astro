@@ -1,0 +1,173 @@
+---
+/**
+ * HubMarque — le gabarit des hubs de marque (/marques/batterie-electronique-<marque>/).
+ *
+ * Nouveau gabarit du 23/09/2026 (chantier 5, vague 1). Il reprend l'en-tête des guides
+ * (fil d'Ariane, badge, H1, chapeau, signature), leur sommaire collant et leurs tableaux qui
+ * défilent sur mobile (crochets data-rwd, loi 3). La liste des modèles vient de
+ * src/data/modeles.json, la rédaction de src/data/marques.mjs : aucun prix n'est écrit ici.
+ */
+import { execFileSync } from 'node:child_process';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BipbopAvatar from './mascotte/BipbopAvatar.astro';
+import { MODELES, RELEVE } from '../data/produits.mjs';
+import { avisPublie } from '../lib/avis-livres.mjs';
+import { MARQUES } from '../data/marques.mjs';
+
+interface Props { cle: keyof typeof MARQUES }
+const { cle } = Astro.props;
+const M = MARQUES[cle];
+if (!M) throw new Error(`HubMarque : marque inconnue « ${cle} »`);
+
+const PAR_ID = new Map(MODELES.map((m) => [m.id, m]));
+const modeles = MODELES.filter((m) => m.marque === M.marque).sort((a, b) => a.prix - b.prix);
+if (!modeles.length) throw new Error(`HubMarque : aucun modèle ${M.marque} dans modeles.json`);
+
+/** Même format que prixFrancais() de scripts/greffes.mjs. */
+const prixF = (m) => {
+  const d = Number.isInteger(m.prix) ? 0 : 2;
+  return m.prix.toLocaleString('fr-FR', { minimumFractionDigits: d, maximumFractionDigits: d }).replace(/[  ]/g, ' ') + ' €';
+};
+const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const LIEN = 'color:inherit;text-decoration:underline;text-underline-offset:3px';
+
+const modele = (id) => {
+  const m = PAR_ID.get(id);
+  if (!m) throw new Error(`HubMarque ${cle} : modèle « ${id} » absent de modeles.json`);
+  return m;
+};
+
+/** Jetons de src/data/marques.mjs -> HTML. Échoue sur un modèle inconnu plutôt que publier un trou. */
+function rendre(t) {
+  return t
+    // « la Alesis » -> « l'Alesis » : l'article suit le nom réel du modèle
+    .replace(/\b(la|le) \{(avis|nom):([a-z0-9]+)\}/g, (tout, art, k, id) =>
+      /^[aeiouéèê]/i.test(modele(id).nom_complet) ? `l'{${k}:${id}}` : tout)
+    .replace(/\{prix:([a-z0-9]+)\}/g, (_, id) => `<span style="white-space:nowrap">${prixF(modele(id))}</span>`)
+    .replace(/\{nom:([a-z0-9]+)\}/g, (_, id) => esc(modele(id).nom_complet))
+    .replace(/\{avis:([a-z0-9]+)\}/g, (_, id) => {
+      const m = modele(id);
+      const r = avisPublie(m);
+      return r ? `<a href="${r}" style="${LIEN}">${esc(m.nom_complet)}</a>` : esc(m.nom_complet);
+    })
+    .replace(/\[([^\]]+)\]\((\/[^)\s]*)\)/g, (_, txt, href) => `<a href="${href}" style="${LIEN}">${txt}</a>`)
+    .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+    // R03 : espace insécable avant les signes doubles, et dans les guillemets
+    .replace(/ ([:?!;])/g, '&nbsp;$1')
+    .replace(/« /g, '«&nbsp;').replace(/ »/g, '&nbsp;»');
+}
+
+const PEAUX = { mesh: 'Tout mesh', mixte: 'Mixte', caoutchouc: 'Caoutchouc' };
+const releve = new Date(RELEVE + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+const marchands = [...new Set(modeles.map((m) => m.marchand))].join(' et ');
+
+/** Mis à jour : le plus récent du dernier commit du texte et du dernier relevé de prix (M01). */
+function majDate() {
+  let git = null;
+  try {
+    git = execFileSync('git', ['log', '-1', '--format=%cs', '--', 'src/data/marques.mjs'], { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() || null;
+  } catch { /* build hors dépôt : on garde le relevé */ }
+  return [git, RELEVE].filter(Boolean).sort().at(-1);
+}
+const maj = new Date(majDate() + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
+
+const textes = [M.chapeau, ...M.reponse, ...M.sections.flatMap((s) => [...(s.texte ?? []), ...(s.liste ?? []), ...(s.apres ?? [])]), ...M.faq.flatMap((f) => [f.q, f.r])];
+const minutes = Math.max(3, Math.round(textes.join(' ').split(/\s+/).length / 200) + 2);
+
+const sommaire = [
+  { id: 'reponse', titre: 'La réponse courte' },
+  { id: 'modeles', titre: `Les ${modeles.length} modèles` },
+  ...M.sections.map((s) => ({ id: s.id, titre: s.h2.replace(/\s*:.*$/, '').replace(/\s*\?$/, '') })),
+  { id: 'questions', titre: 'Tes questions' },
+];
+
+const S = {
+  h2: "font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px",
+  h3: "font:700 18px/1.3 'Work Sans',sans-serif;margin:0 0 8px",
+  p: "font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;max-width:720px;text-wrap:pretty",
+  li: "font:400 17px/1.65 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 12px;max-width:720px",
+  section: 'margin:0 0 44px',
+  cellule: 'padding:15px 16px',
+  grille: 'display:grid;grid-template-columns:86px 1.4fr minmax(84px,.55fr) minmax(96px,.65fr) 1.6fr',
+};
+---
+
+<BaseLayout title={M.title} description={M.description} currentPage="avis">
+  <div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">ACCUEIL / MARQUES / {M.marque.toUpperCase()}</div>
+
+  <div data-pad style="padding:20px 40px 32px;max-width:840px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font:700 12px 'Work Sans',sans-serif;letter-spacing:.04em;background:#0f7d76;color:#fff;border:2.5px solid #241c14;border-radius:9px;padding:6px 12px;margin-bottom:20px">MARQUE</div>
+    <h1 data-big="b" style="font:800 56px/1.02 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:pretty" set:html={rendre(M.h1)} />
+    <p style="font:400 20px/1.55 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 22px;max-width:700px;text-wrap:pretty" set:html={rendre(M.chapeau)} />
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div style="width:44px;height:44px;border-radius:50%;overflow:hidden;border:2.5px solid #241c14;background:#ffd166"><BipbopAvatar /></div>
+      <div style="font:500 14px 'Work Sans',sans-serif;color:#5a4c3e">Par <strong style="color:#241c14;font-weight:700">BipBop</strong></div>
+      <span style="color:#c9b9a3">·</span>
+      <div style="font:500 13px 'IBM Plex Mono',monospace;color:#786550">MIS À JOUR LE {maj} · {minutes} MIN</div>
+    </div>
+  </div>
+
+  <div data-rwd="sp" data-pad style="padding:0 40px 40px;display:grid;grid-template-columns:214px 1fr;gap:44px;align-items:start">
+    <div data-sticky style="position:sticky;top:20px;display:flex;flex-direction:column;gap:16px">
+      <div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:18px 18px 16px;box-shadow:4px 4px 0 #241c14">
+        <div style="font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#786550;margin-bottom:13px">AU PROGRAMME</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font:500 13.5px/1.35 'Work Sans',sans-serif">
+          {sommaire.map((e) => <a href={'#' + e.id} style="color:#241c14;text-decoration:none">{e.titre}</a>)}
+        </div>
+      </div>
+      <a href="/comparatif-batterie-electronique/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;border:2.5px solid #241c14;padding:12px 14px;border-radius:12px;box-shadow:4px 4px 0 #241c14">Toutes marques confondues</a>
+    </div>
+
+    <div style="min-width:0">
+      <div id="reponse" style="background:#241c14;color:#fdf6ec;border-radius:18px;padding:24px 26px;margin:0 0 44px;max-width:760px;scroll-margin-top:20px">
+        <div style="font:700 12px 'Work Sans',sans-serif;letter-spacing:.06em;color:#ffd166;margin-bottom:12px">LA RÉPONSE COURTE</div>
+        {M.reponse.map((r) => <p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#e0d5c8;margin:0 0 10px" set:html={rendre(r)} />)}
+      </div>
+
+      <section id="modeles" style={S.section + ';scroll-margin-top:20px'}>
+        <h2 data-big="d" style={S.h2}>Les {modeles.length} batteries électroniques {M.marque} qu'on suit</h2>
+        <p style={S.p} set:html={rendre(`Classées du moins cher au plus cher. Le nom mène à l'avis complet quand il est publié.`)} />
+        <div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:14px;font:400 14.5px 'Work Sans',sans-serif">
+          <div data-rwd="tblrow" style={S.grille + ';background:#241c14;color:#fdf6ec;font-weight:600;font-size:13px'}>
+            <div style="padding:12px 16px"></div><div style="padding:12px 16px">Modèle</div><div style="padding:12px 16px">Prix</div><div style="padding:12px 16px">Peaux</div><div style="padding:12px 16px">En une phrase</div>
+          </div>
+          {modeles.map((m, i) => (
+            <div data-rwd="tblrow" style={S.grille + `;background:${i % 2 ? '#fdf6ec' : '#fff'};border-top:1.5px solid #e4d8c6;align-items:center`}>
+              <div style="padding:12px 0 12px 14px"><div style="width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff">{m.img && <img src={m.img} alt={m.nom_complet} width="58" height="46" loading="lazy" style="width:100%;height:100%;object-fit:contain;display:block" />}</div></div>
+              <div style={S.cellule + ';font-weight:700'}>
+                {avisPublie(m) ? <a href={avisPublie(m)} style={LIEN}>{m.nom_complet}</a> : m.nom_complet}
+                <div style="font:500 11px 'IBM Plex Mono',monospace;margin-top:4px"><a href={m.url} rel="sponsored noopener" target="_blank" style="color:#786550;text-decoration:none">CHEZ {m.marchand.toUpperCase()} ↗</a></div>
+              </div>
+              <div style={S.cellule + ';font-weight:600;white-space:nowrap'}>{prixF(m)}</div>
+              <div style={S.cellule + ';color:#4a3d31'}>{PEAUX[m.peaux] ?? m.peaux}</div>
+              <div style={S.cellule + ';color:#4a3d31'}>{m.phrase}</div>
+            </div>
+          ))}
+        </div>
+        <p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:0">Prix relevés chez {marchands} le {releve}. Ils bougent souvent, vérifie avant de commander.</p>
+      </section>
+
+      {M.sections.map((s) => (
+        <section id={s.id} style={S.section + ';scroll-margin-top:20px'}>
+          <h2 data-big="d" style={S.h2} set:html={rendre(s.h2)} />
+          {(s.texte ?? []).map((t) => <p style={S.p} set:html={rendre(t)} />)}
+          {s.liste && <ul style="margin:0 0 16px;padding:0 0 0 22px">{s.liste.map((t) => <li style={S.li} set:html={rendre(t)} />)}</ul>}
+          {(s.apres ?? []).map((t) => <p style={S.p} set:html={rendre(t)} />)}
+        </section>
+      ))}
+
+      <section id="questions" style={S.section + ';scroll-margin-top:20px'}>
+        <h2 data-big="d" style={S.h2} set:html={rendre(`Tes questions sur les batteries ${M.marque}`)} />
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:760px">
+          {M.faq.map((f) => (
+            <div style="background:#fff;border:2.5px solid #241c14;border-radius:14px;padding:18px 20px">
+              <h3 style={S.h3} set:html={rendre(f.q)} />
+              <p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0" set:html={rendre(f.r)} />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+  <div style="height:52px"></div>
+</BaseLayout>
