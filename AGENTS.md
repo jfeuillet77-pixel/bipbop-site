@@ -71,6 +71,15 @@ ligne et sa ligne « Publié » au plan (type « Marque »). La page mère `/mar
 `INDEX_MARQUES`) décrit toutes les marques du catalogue : une marque qui y entre sans paragraphe
 fait échouer le build. Les jetons se résolvent dans `src/lib/jetons.mjs`, partagé par les deux.
 
+**Une maquette peut écrire ses chiffres en jetons** (depuis le 23/09/2026, `Guide-Prix.dc.html`) :
+`{prix:id}`, `{c:prix:300-500}` (un compte en chiffres), `{n:peaux:mesh}` (en lettres),
+`{budget:id+casque}`… Les mêmes que `marques.mjs`, résolus un par un par `resoudreJetons()` de
+`scripts/greffes.mjs`, au portage comme dans `fidelite`. Le lundi réimporte la base puis re-porte :
+la page suit sans réécriture. Seuls les jetons se résolvent, pas le `[texte](/route/)` ni l'élision
+« la/l' » des textes construits : écrire les liens en `<a>` et les noms en clair. Le `<head>` n'est
+pas résolu, donc pas de montant dans la copie SEO d'une telle page. Ne pas lier `/suivi-des-prix/`
+dans le corps d'une maquette : `grefferLiensDuPied()` y verrait son propre lien déjà posé.
+
 **Le `<head>` social et structuré ne s'écrit dans aucune page.** `scripts/donnees-structurees.mjs`
 (`postbuild`, après le sitemap et le llms.txt) pose l'Open Graph et un JSON-LD sur les 39 pages de
 `dist/` : `Organization` et `WebSite`, `BreadcrumbList`, `Article` daté par git sur les guides,

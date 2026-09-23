@@ -9,6 +9,8 @@
  *   {acc:alias} {accprix:alias}       un accessoire de ACCESSOIRES_CITES : nom, prix
  *   {budget:id+alias+alias}           un modèle et des accessoires, additionnés
  *   {n:modeles} {n:avis:Marque}       un compte lu dans la base, en lettres jusqu'à seize ({N:…} : majuscule)
+ *   {n:prix:300-500} {n:peaux:mesh}   les modèles d'une fourchette de prix (borne haute exclue), d'un type de peaux
+ *   {c:…}                              le même compte, toujours en chiffres (tableaux)
  *   [texte](/route/)  **gras**        lien interne, gras
  *
  * Il échoue sur un modèle ou un accessoire inconnu plutôt que de publier un trou. Il pose aussi
@@ -49,6 +51,16 @@ const LETTRES = ['zéro', 'un', 'deux', 'trois', 'quatre', 'cinq', 'six', 'sept'
     base, en lettres jusqu'à seize, en chiffres au-delà. {N:…} met une majuscule. */
 function compte(expr, ou) {
   const [quoi, marque] = expr.split(':');
+  if (quoi === 'prix') {
+    const [bas, haut] = (marque ?? '').split('-').map(Number);
+    if (!(bas >= 0 && haut > bas)) throw new Error(`jetons${ou ? ' (' + ou + ')' : ''} : fourchette « ${marque} » illisible`);
+    return MODELES.filter((m) => m.prix >= bas && m.prix < haut).length;
+  }
+  if (quoi === 'peaux') {
+    const n = MODELES.filter((m) => m.peaux === marque).length;
+    if (!n) throw new Error(`jetons${ou ? ' (' + ou + ')' : ''} : aucun modèle aux peaux « ${marque} »`);
+    return n;
+  }
   const ms = marque ? MODELES.filter((m) => m.marque === marque) : MODELES;
   if (marque && !ms.length) throw new Error(`jetons${ou ? ' (' + ou + ')' : ''} : aucune marque « ${marque} » dans modeles.json`);
   if (quoi === 'modeles') return ms.length;
@@ -64,8 +76,9 @@ export function rendre(t, ou = '') {
   return t
     .replace(/\b(la|le) \{(avis|nom):([a-z0-9]+)\}/g, (tout, art, k, id) =>
       /^[aeiouéèê]/i.test(modele(id, ou).nom_complet) ? `l'{${k}:${id}}` : tout)
-    .replace(/\{n:([a-z]+(?::[A-Za-z]+)?)\}/g, (_, e) => enLettres(compte(e, ou)))
-    .replace(/\{N:([a-z]+(?::[A-Za-z]+)?)\}/g, (_, e) => { const t = enLettres(compte(e, ou)); return t[0].toUpperCase() + t.slice(1); })
+    .replace(/\{n:([a-z]+(?::[A-Za-z0-9-]+)?)\}/g, (_, e) => enLettres(compte(e, ou)))
+    .replace(/\{c:([a-z]+(?::[A-Za-z0-9-]+)?)\}/g, (_, e) => String(compte(e, ou)))
+    .replace(/\{N:([a-z]+(?::[A-Za-z0-9-]+)?)\}/g, (_, e) => { const t = enLettres(compte(e, ou)); return t[0].toUpperCase() + t.slice(1); })
     .replace(/\{ecart:([a-z0-9]+)-([a-z0-9]+)\}/g, (_, a, c) => nowrap(euros(modele(a, ou).prix - modele(c, ou).prix)))
     .replace(/\{budget:([a-z0-9+]+)\}/g, (_, e) => nowrap(euros(budget(e))))
     .replace(/\{accprix:([a-z]+)\}/g, (_, a) => nowrap(euros(accessoire(a, ou).prix)))
