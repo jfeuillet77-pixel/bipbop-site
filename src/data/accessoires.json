@@ -266,7 +266,7 @@
   "produit": "14\" Practice Pad",
   "prix": "11 €",
   "marchand": "Thomann",
-  "role": "Le pad d'entraînement à 11 €",
+  "role": "Sourdine pour caisse claire acoustique de 14 pouces, ne tient pas seul",
   "url": "https://www.thomann.fr/millenium_practice_pad.htm"
  },
  {
@@ -304,6 +304,24 @@
   "marchand": "Thomann",
   "role": "Pad avec métronome intégré",
   "url": "https://www.thomann.fr/millenium_r1_12_metronome_practice_pad.htm"
+ },
+ {
+  "cat": "Pads d'entraînement",
+  "marque": "Vic Firth",
+  "produit": "6\" VF Practice Pad",
+  "prix": "27 €",
+  "marchand": "Thomann",
+  "role": "Silicone, taraudage de 8 mm, le meilleur petit pad",
+  "url": "https://www.thomann.fr/vic_firth_6_vf_practice_pad.htm"
+ },
+ {
+  "cat": "Pads d'entraînement",
+  "marque": "Vic Firth",
+  "produit": "12\" VF Practice Pad",
+  "prix": "58 €",
+  "marchand": "Thomann",
+  "role": "Silicone sur 12 pouces, le toucher le plus proche d'une peau",
+  "url": "https://www.thomann.fr/vic_firth_12_vf_practice_pad.htm"
  },
  {
   "cat": "Pads de caisse claire et toms",

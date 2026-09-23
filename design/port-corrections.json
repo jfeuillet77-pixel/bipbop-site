@@ -251,12 +251,6 @@
       "pourquoi": "page modifiée par le relevé du 17/09"
     },
     {
-      "fichier": "A-Propos.dc.html",
-      "au": "<div style=\"font:800 30px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em\">126</div>",
-      "remplace": "<div style=\"font:800 30px/1 'Bricolage Grotesque',sans-serif;letter-spacing:-.03em\">125</div>",
-      "pourquoi": "la référence Sparedrum RYMP a quitté la base (fiche Woodbrass morte le 17/09/2026) : le compteur d'accessoires suit la base"
-    },
-    {
       "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
       "au": "Prends la Millenium. À prix identique, elle donne un pad de plus",
       "remplace": "Prends la Millenium. À onze euros de moins, elle donne un pad de plus",
