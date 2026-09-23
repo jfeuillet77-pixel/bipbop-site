@@ -133,3 +133,29 @@ publie l'empreinte avec siège et il le dit de façon visible partout où un chi
   grille explicite. La règle I02 (« aucune note chiffrée sans grille explicitée ») demande
   d'afficher ces échelles. **Reste à faire**, à arbitrer avec le design.
 - Une virgule avant « et » (règle R01) dans `Comparatif.dc.html`.
+
+## 10. Liens vers les avis, posés dans les maquettes locales (23/09/2026)
+
+**Ce qui a changé dans `Claude Design - MàJ/`, et que Claude Design ne sait pas.** 23 liens vers
+des avis et 1 lien redirigé, dans 10 maquettes (copie d'origine : `<fichier>.avant-maillage`,
+à côté). Chantier 3 de `design/audit-seo-2026-09-23.md` : les avis parus après les guides
+n'avaient jamais reçu leurs liens (Aide-Mémoire §01), et les tableaux comparatifs ne liaient
+que la Nitro Max.
+
+- 9 cellules « nom » de tableaux comparatifs : appartement (4), moins de 500 € (4), moins de
+  1 000 € (MPS-850) ;
+- 14 premières mentions dans une phrase : avis MPS-150X, avis TD-02KV, duel MPS-150X vs Turbo
+  Mesh, guides faire évoluer, moins de 300 €, moins de 500 €, pack complet ;
+- duel Nitro Max vs DED-200X : le lien connexe « Donner DED-200X » visait `/avis/`, il vise l'avis.
+
+**Si tu ré-exportes ces maquettes depuis Claude Design**, les liens disparaissent sans un signal
+(le contrôle de fidélité compare le site à la maquette, et la maquette n'en aura plus). Les
+reposer : `python3 design/maillage-avis.py --appliquer`, puis porter. Le mieux reste de les
+reporter dans Claude Design.
+
+Deux corrections de `port-corrections.json` ont suivi (Turbo à 309 € dans les guides moins de
+500 € et faire évoluer) : leur texte d'origine contient désormais le lien.
+
+**Vu en passant, non corrigé (copie à trancher)** : dans le duel Nitro Max vs DED-200X, deux
+boutons « Voir le prix chez Thomann » mènent l'un à l'avis Nitro Max, l'autre à la boutique
+Donner.

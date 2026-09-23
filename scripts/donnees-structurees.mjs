@@ -37,15 +37,17 @@ const LOGO = { chemin: '/bipbop-touch-180.png', largeur: 180, hauteur: 180 };
 const DEBUT = '<!--donnees-structurees-->';
 const FIN = '<!--/donnees-structurees-->';
 
-/** Le hub de chaque section, et le nom court qu'il porte dans un fil d'Ariane. Un hub n'entre
-    dans le fil que s'il est construit : `/duels/` et `/les-bases/` n'existent pas encore, et un
-    fil d'Ariane qui mène à une 404 est pire que pas de fil. Ils y entreront seuls le jour où
-    leur ligne du plan passera « Publié ». */
+/** Le hub de chaque section, et le nom court qu'il porte dans un fil d'Ariane, par ordre de
+    préférence : le premier qui est construit gagne. `/les-bases/` et `/duels/` n'existent pas
+    encore (le plan les crée à 6 articles et à 4 duels), mais leurs pages ont déjà un hub réel :
+    `/guides/` liste les 7 articles des bases, `/avis/` liste les duels dans son bloc de bas de
+    page. Le fil d'Ariane suit le chemin qu'un lecteur prend vraiment, et bascule seul vers le hub
+    dédié le jour où sa ligne du plan passe « Publié ». Jamais de fil vers une 404. */
 const HUBS = {
-  Avis: { route: '/avis/', nom: 'Avis' },
-  Guides: { route: '/guides/', nom: "Guides d'achat" },
-  Duels: { route: '/duels/', nom: 'Duels' },
-  Bases: { route: '/les-bases/', nom: 'Les bases' },
+  Avis: [{ route: '/avis/', nom: 'Avis' }],
+  Guides: [{ route: '/guides/', nom: "Guides d'achat" }],
+  Duels: [{ route: '/duels/', nom: 'Duels' }, { route: '/avis/', nom: 'Avis' }],
+  Bases: [{ route: '/les-bases/', nom: 'Les bases' }, { route: '/guides/', nom: "Guides d'achat" }],
 };
 
 /** Les types du plan qui sont des articles datés, et les pages qui ont un type schema.org à elles. */
@@ -109,9 +111,9 @@ const SITE_WEB = {
 const IMAGE_OBJET = { '@type': 'ImageObject', url: url(IMAGE.chemin), width: IMAGE.largeur, height: IMAGE.hauteur };
 
 function filAriane(p) {
-  const hub = HUBS[p.section];
+  const hub = (HUBS[p.section] ?? []).find((h) => construites.has(h.route));
   const etapes = [{ nom: 'Accueil', url: `${DOMAINE}/` }];
-  if (hub && hub.route !== p.route && construites.has(hub.route)) etapes.push({ nom: hub.nom, url: url(hub.route) });
+  if (hub && hub.route !== p.route) etapes.push({ nom: hub.nom, url: url(hub.route) });
   etapes.push({ nom: p.libelle, url: p.permalien });
   return {
     '@type': 'BreadcrumbList',
@@ -254,7 +256,7 @@ if (problemes.length) {
 
 const avis = pages.filter((p) => p.type === 'Avis').length;
 const articles = pages.filter((p) => ARTICLES.has(p.type)).length;
-const hubsAbsents = Object.values(HUBS).filter((h) => !construites.has(h.route)).map((h) => h.route);
+const relais = Object.values(HUBS).filter((h) => !construites.has(h[0].route)).map((h) => `${h[0].route} → ${h.find((x) => construites.has(x.route))?.route ?? 'aucun'}`);
 console.log(`\ndonnées structurées · ${posees} page(s) · ${avis} avis notés (prix du relevé du ${RELEVE}) · ${articles} articles datés`);
-if (hubsAbsents.length) console.log(`  fil d'Ariane sans hub pour ${hubsAbsents.join(', ')} : pas encore construits`);
+if (relais.length) console.log(`  fil d'Ariane par le hub réel, faute de hub dédié : ${relais.join(', ')}`);
 console.log('');

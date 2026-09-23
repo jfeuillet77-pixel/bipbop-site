@@ -1,5 +1,22 @@
 # Journal BipBop
 
+## 23 septembre 2026 (fin d'après-midi) — Maillage vers les avis, llms.txt fidèle, en-têtes
+
+**llms.txt** : il existait déjà. Corrigé sur trois affirmations que le site contredit
+(commission, grille des notes, « testés »), lien vers `sitemap-index.xml`, et
+`<link rel="describedby">` sur chaque page. Aucun moteur ne le lit comme sitemap : sa ligne dans
+Search Console produisait l'erreur « format non pris en charge », elle est supprimée.
+
+**En-têtes de sécurité** dans `netlify.toml` (nosniff, SAMEORIGIN, Referrer-Policy,
+Permissions-Policy). Pas de CSP tant que les images viennent de Thomann.
+
+**Maillage** : 47 mentions d'un modèle qui a un avis, sans lien vers lui. 23 liens posés dans les
+maquettes locales (décision de Jordane, contre un bloc « À lire aussi » ou un passage par Claude
+Design) et un lien redirigé. Premier rendu faux : l'encre fixe #241c14 rendait deux liens
+invisibles dans l'encadré sombre « Le conseil de BipBop » du pack complet ; les liens ajoutés
+héritent désormais de la couleur du texte. Le script est rangé dans `design/maillage-avis.py`
+pour survivre à un ré-export (`ecarts-maquettes.md` §10).
+
 ## 23 septembre 2026 (après-midi) — Premier crawl Screaming Frog, audit SEO, données structurées
 
 **Audit** : `design/audit-seo-2026-09-23.md`, sept chantiers classés par rendement. Premier crawl

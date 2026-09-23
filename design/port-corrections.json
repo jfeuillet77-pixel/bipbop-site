@@ -174,8 +174,8 @@
     },
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
-      "au": ">Alesis Turbo Mesh</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">298 €</div>",
-      "remplace": ">Alesis Turbo Mesh</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">309 €</div>",
+      "au": ">Alesis Turbo Mesh</a></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">298 €</div>",
+      "remplace": ">Alesis Turbo Mesh</a></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">309 €</div>",
       "pourquoi": "Turbo à 309 €"
     },
     {
@@ -204,8 +204,8 @@
     },
     {
       "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
-      "au": "Tu as une Alesis Turbo Mesh payée 298 €",
-      "remplace": "Tu as une Alesis Turbo Mesh payée 309 €",
+      "au": "Alesis Turbo Mesh</a> payée 298 €",
+      "remplace": "Alesis Turbo Mesh</a> payée 309 €",
       "pourquoi": "le exemple chiffré suit le prix d'achat ; la revente à 190 € et les 508 € après revente ne dépendent pas de ce montant"
     },
     {
