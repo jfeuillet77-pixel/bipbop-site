@@ -1,5 +1,14 @@
 # Journal BipBop
 
+## 23 septembre 2026 (soir, suite) — Guide P68 prix, des jetons dans une maquette
+
+« Tous les chiffres lus dans modeles.json » (plan) et « une maquette pour chaque page » (Jordane) :
+la maquette écrit ses prix et ses comptes en jetons, qu'une nouvelle greffe (`resoudreJetons()`)
+résout au portage et dans `fidelite`. `jetons.mjs` gagne les comptes par fourchette de prix et par
+peaux (`{n:prix:300-500}`, `{c:…}` en chiffres). 37 jetons, 1 300 mots résolus, 14 guides au hub.
+Limites notées dans AGENTS.md : pas de liens `[…](…)` ni d'élision, pas de lien vers
+/suivi-des-prix/ dans un corps (la greffe du pied s'y trompe), pas de montant dans le `<head>`.
+
 ## 23 septembre 2026 (soir, suite) — Guide P67 ampli, libellé de disponibilité Thomann
 
 Guide publié (1 470 mots), 13 guides au hub ; l'article casque renvoie enfin vers « l'article

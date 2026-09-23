@@ -425,6 +425,11 @@ export function appliquerGreffes(corps, fichier, options = {}) {
     corps = g.corps;
     notes.push(...g.notes);
   }
+  if (JETON.test(corps)) {
+    const g = resoudreJetons(corps, fichier);
+    corps = g.corps;
+    notes.push(...g.notes);
+  }
   const c = appliquerCorrections(corps, fichier, options);
   corps = c.corps;
   notes.push(...c.notes);
@@ -436,6 +441,21 @@ export function appliquerGreffes(corps, fichier, options = {}) {
   }
   const plan = grefferLiensDuPied(corps, options);
   return { corps: plan.corps, notes: [...notes, ...plan.notes] };
+}
+
+/* --------------------------- les jetons dans une maquette ---------------------------
+
+   Une maquette dont les chiffres doivent suivre la base (« Combien coûte une batterie
+   électronique », 23/09/2026) écrit ses prix et ses comptes en jetons : {prix:nitromax},
+   {n:prix:300-500}, {budget:mps150x+casque}… Les mêmes que les hubs de marque (src/lib/jetons.mjs).
+   Ils se résolvent ici, un par un, au portage et dans `fidelite` : le lundi réimporte la base
+   puis re-porte, la page suit sans réécriture. Un jeton inconnu fait échouer le portage. */
+
+const JETON = /\{(?:prix|nom|avis|ecart|budget|accprix|acc|n|N|c):[A-Za-z0-9+:-]+\}/;
+function resoudreJetons(corps, fichier) {
+  let n = 0;
+  const out = corps.replace(new RegExp(JETON.source, 'g'), (j) => { n++; return rendreJetons(j, fichier); });
+  return { corps: out, notes: [`${fichier} : ${n} jeton(s) résolu(s) depuis la base`] };
 }
 
 /* --------------------------- les mentions d'affiliation ---------------------------
