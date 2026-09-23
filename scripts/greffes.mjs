@@ -410,6 +410,11 @@ export function appliquerGreffes(corps, fichier, options = {}) {
     corps = g.corps;
     notes.push(...g.notes);
   }
+  if (fichier in GRILLES.avis || fichier === 'Avis.dc.html') {
+    const g = grefferGrille(corps, fichier, options);
+    corps = g.corps;
+    notes.push(...g.notes);
+  }
   if (fichier === 'Contact.dc.html') {
     const g = grefferContact(corps, options);
     corps = g.corps;
@@ -522,3 +527,86 @@ function retirerMentionsAffiliation(corps, fichier, { sobre = false } = {}) {
   return { corps, notes };
 }
 
+
+/* ------------------------------ les grilles de notation ------------------------------
+
+   La note d'un avis n'est plus choisie : c'est la moyenne pondérée de sa grille
+   (src/data/grilles.json, décision de Jordane du 23/09/2026). Cette greffe pose la grille dans la
+   carte « Le verdict », juste après son texte, et remplace la note partout où l'avis l'affiche
+   (badge du verdict, encart latéral), ainsi que la phrase « Note de X,X sur 10 » du hub Avis. */
+
+import GRILLES from '../src/data/grilles.json' with { type: 'json' };
+import { rendre as rendreJetons } from '../src/lib/jetons.mjs';
+import { ROUTES } from '../src/data/produits.mjs';
+export { GRILLES };
+
+/** La note affichée : moyenne pondérée des critères, ramenée sur l'échelle de grilles.json
+    (6 + (moyenne − 5) × 0,8), arrondie au dixième à partir de ,05. Calcul en entiers : la moyenne
+    en centièmes vaut Σ note × poids, la note en millièmes 8 × Σ + 2000. */
+export function noteDeGrille(grille) {
+  const centiemes = GRILLES.criteres.reduce((t, c) => t + grille[c.cle][0] * c.poids, 0);
+  return Math.floor((8 * centiemes + 2000 + 50) / 100) / 10;
+}
+const virgule = (n) => n.toFixed(1).replace('.', ',');
+
+function blocGrille(grille, fichier) {
+  const lignes = GRILLES.criteres.map((c) => {
+    const [note, raison] = grille[c.cle];
+    return `<div style="display:flex;flex-wrap:wrap;align-items:center;column-gap:10px;border-top:1.5px solid #e4d8c6;padding:0 0 4px">
+<div style="flex:1 1 280px;padding:12px 14px 6px"><div style="font:700 14.5px 'Work Sans',sans-serif;color:#241c14">${c.libelle}</div><div style="font:400 13px/1.45 'Work Sans',sans-serif;color:#5a4c3e;margin-top:3px">${rendreJetons(raison, fichier)}</div></div>
+<div style="flex:0 0 auto;padding:6px 0 6px 14px;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">${c.poids}&nbsp;%</div>
+<div style="flex:1 0 150px;max-width:190px;padding:6px 14px"><div style="display:flex;align-items:center;gap:8px"><div style="flex:1;height:9px;background:#efe6d8;border:1.5px solid #241c14;border-radius:6px;overflow:hidden"><div style="width:${note * 10}%;height:100%;background:#0f7d76"></div></div><div style="font:800 15px 'Bricolage Grotesque',sans-serif;min-width:30px;text-align:right">${note}</div></div></div>
+</div>`;
+  }).join('\n');
+  return `<div data-grille style="border:2.5px solid #241c14;border-radius:14px;overflow:hidden;margin:0 0 22px;background:#fdf6ec">
+<div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 14px;background:#241c14;color:#fdf6ec"><div style="font:700 12px 'Work Sans',sans-serif;letter-spacing:.06em;color:#ffd166">LA GRILLE : CINQ CRITÈRES POUR UN PREMIER ACHAT</div><div style="font:500 11.5px 'IBM Plex Mono',monospace;color:#c4b7a7">POIDS · NOTE /10</div></div>
+${lignes}
+${grille.profil ? `<div style="display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;padding:14px;border-top:2.5px solid #241c14;background:#ffd166">
+<div style="flex:1 1 280px"><div style="font:700 11.5px 'Work Sans',sans-serif;letter-spacing:.06em;color:#241c14;margin-bottom:4px">POUR TON PROFIL</div><div style="font:700 15px 'Work Sans',sans-serif;color:#241c14">${rendreJetons(grille.profil.pour, fichier)}</div><div style="font:400 13.5px/1.45 'Work Sans',sans-serif;color:#3a2f26;margin-top:3px">${rendreJetons(grille.profil.raison, fichier)}</div></div>
+<div style="flex:0 0 auto;font:800 22px 'Bricolage Grotesque',sans-serif;background:#241c14;color:#ffd166;border:2.5px solid #241c14;border-radius:11px;padding:5px 13px">${grille.profil.note}<span style="font-size:14px;font-weight:600">/10</span></div>
+</div>` : ''}
+<div style="padding:12px 14px;border-top:2.5px solid #241c14;background:#fff;font:400 13.5px/1.5 'Work Sans',sans-serif;color:#3a2f26">${GRILLES.echelle.phrase}</div>
+</div>
+`;
+}
+
+function grefferGrille(corps, fichier, { sobre = false } = {}) {
+  const notes = [];
+  if (fichier === 'Avis.dc.html') {
+    // « Note de X,X sur 10. » : la note de l'avis que la carte présente, lu dans le bouton
+    // « Lire l'avis complet » qui suit le texte.
+    let n = 0;
+    corps = corps.replace(/Note de \d,\d sur 10\./g, (tout, pos) => {
+      const lien = corps.slice(pos).match(/href="(Avis-[^"]+\.dc\.html|\/avis\/[a-z0-9-]+\/)"/)?.[1];
+      // Le lien peut déjà être une route : on retrouve sa maquette par la table du plan.
+      const fichierAvis = lien?.startsWith('/') ? [...ROUTES].find(([, r]) => r === lien)?.[0] : lien;
+      const g = fichierAvis && GRILLES.avis[fichierAvis];
+      if (!g) throw new Error(`Avis.dc.html : « ${tout} » sans avis noté en amont — la greffe des grilles ne sait pas de quel modèle il s'agit`);
+      n++;
+      return `Note de ${virgule(noteDeGrille(g))} sur 10.`;
+    });
+    if (n && !sobre) notes.push(`Avis.dc.html : ${n} note(s) du hub alignée(s) sur les grilles`);
+    return { corps, notes };
+  }
+  const grille = GRILLES.avis[fichier];
+  // Règle de Jordane (23/09/2026) : pas de note globale sous 6/10, sauf modèle vraiment mauvais,
+  // déclaré comme tel dans sa grille (« exception »: true) : l'exception se décide, elle ne glisse pas.
+  if (noteDeGrille(grille) < 6 && !grille.exception) throw new Error(`${fichier} : note ${noteDeGrille(grille)} sous 6/10 sans « exception »: true dans src/data/grilles.json`);
+  const note = virgule(noteDeGrille(grille));
+  const i = corps.indexOf('<div id="verdict"');
+  if (i < 0) throw new Error(`${fichier} : carte « Le verdict » introuvable — la grille ne sait pas où se poser`);
+  if (corps.includes('data-grille') || corps.includes('CINQ CRITÈRES POUR UN PREMIER ACHAT')) throw new Error(`${fichier} : une grille est déjà écrite dans la maquette — la retirer, c'est grilles.json qui la porte`);
+  const finTexte = corps.indexOf('</p>', i);
+  if (finTexte < 0) throw new Error(`${fichier} : texte du verdict introuvable`);
+  const ou = finTexte + '</p>'.length + (corps[finTexte + 4] === '\n' ? 1 : 0);
+  corps = corps.slice(0, ou) + blocGrille(grille, fichier) + corps.slice(ou);
+  // La note affichée : badge du verdict (« 8,4<span>/10</span> ») et encart latéral (« 8,4</div> »).
+  const avant = corps.match(/>(\d,\d)<span style="font-size:14px;font-weight:600">\/10<\/span>/);
+  if (!avant) throw new Error(`${fichier} : note du verdict introuvable`);
+  const ancienne = avant[1];
+  let remplacees = 0;
+  corps = corps.replace(new RegExp(`>${ancienne}(<span style="font-size:14px;font-weight:600">/10</span>|</div>)`, 'g'), (_, suite) => { remplacees++; return `>${note}${suite}`; });
+  if (remplacees < 2) throw new Error(`${fichier} : note ${ancienne} trouvée ${remplacees} fois, 2 attendues (verdict et encart)`);
+  if (!sobre) notes.push(`${fichier} : grille posée, note ${ancienne} → ${note}`);
+  return { corps, notes };
+}

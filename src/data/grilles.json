@@ -1,0 +1,296 @@
+{
+  "_": "Grilles de notation des avis (Jordane, 23/09/2026 : généralisées, option B). La note affichée découle de la grille : moyenne pondérée des cinq critères, ramenée sur l'échelle « note = 6 + (moyenne − 5) × 0,8 », arrondie au dixième. Une batterie de la sélection ne descend donc pas sous 6/10, sauf si ses critères passent sous 5 (modèle vraiment mauvais : c'est voulu, ça sert la crédibilité). scripts/greffes.mjs pose la grille, la ligne « Pour ton profil » et la note (verdict, encart, hub Avis). {prix:id} et {ecart:a-b} se recalculent au build.",
+  "criteres": [
+    {
+      "cle": "toucher",
+      "libelle": "Toucher de jeu",
+      "poids": 20
+    },
+    {
+      "cle": "discretion",
+      "libelle": "Discrétion",
+      "poids": 25
+    },
+    {
+      "cle": "module",
+      "libelle": "Module et apprentissage",
+      "poids": 20
+    },
+    {
+      "cle": "confort",
+      "libelle": "Confort et place",
+      "poids": 15
+    },
+    {
+      "cle": "prix",
+      "libelle": "Prix réel",
+      "poids": 20
+    }
+  ],
+  "bareme": {
+    "toucher": "10 : caisse claire de 12 pouces et toms de 10. 9 : tout mesh, caisse claire de 10 à deux zones. 8 : tout mesh, caisse claire de 10. 7 : mesh en 8 pouces. 6 : caisse claire mesh, toms en caoutchouc. 5 : tout caoutchouc. Sous 5 : réservé à un modèle vraiment mauvais.",
+    "discretion": "9 : pédale sans batte. 7 : fûts mesh et pédale à batte. 5 : pads en caoutchouc et pédale à batte.",
+    "module": "9 : programme de coaching. 8 : sons riches et Bluetooth ou leçons incluses. 7 : 400 sons ou plus. 6 : module correct, sans plus. 5 : module minimal.",
+    "confort": "De 5 à 9 : taille des cymbales et des pads, tenue du rack, emprise au sol.",
+    "prix": "De 5 à 9 : ce que vaut le prix pour un premier achat, carton compris, face aux modèles voisins."
+  },
+  "avis": {
+    "Avis-Alesis-Nitro-Max.dc.html": {
+      "id": "nitromax",
+      "toucher": [
+        9,
+        "Peaux maillées sur la caisse claire et les trois toms, caisse claire de 10 pouces à deux zones."
+      ],
+      "discretion": [
+        7,
+        "Les pads mesh sont discrets. La pédale à batte frappe le sol : un tapis règle l'essentiel."
+      ],
+      "module": [
+        8,
+        "440 sons, métronome, enregistreur et Bluetooth, 60 leçons incluses. Pas de programme de coaching."
+      ],
+      "confort": [
+        6,
+        "Cymbales de 10 pouces, un peu petites. 110 × 100 cm au sol."
+      ],
+      "prix": [
+        9,
+        "Tout mesh et le Bluetooth à {prix:nitromax}, casque en plus : le meilleur équilibre de sa tranche."
+      ],
+      "profil": {
+        "pour": "Premier achat, sans te prendre la tête",
+        "note": 9,
+        "raison": "Mesh partout, Bluetooth et un module qui tient la route : le compromis le plus sûr pour débuter."
+      }
+    },
+    "Avis-Millenium-MPS-150X.dc.html": {
+      "id": "mps150x",
+      "toucher": [
+        8,
+        "Tous les fûts en peau maillée, grosse caisse comprise, caisse claire de 10 pouces."
+      ],
+      "discretion": [
+        7,
+        "Le mesh étouffe la frappe. La pédale à batte descend dans le plancher."
+      ],
+      "module": [
+        5,
+        "108 sons, aucun coaching, aucun Bluetooth. La sortie MIDI sauve la mise."
+      ],
+      "confort": [
+        6,
+        "Crash et ride avec étouffement, mais 140 × 80 cm au sol, large pour un petit salon."
+      ],
+      "prix": [
+        9,
+        "Des peaux maillées partout pour {prix:mps150x} : le mesh au prix plancher."
+      ],
+      "profil": {
+        "pour": "Petit budget, peaux maillées",
+        "note": 9,
+        "raison": "Le mesh sur tous les fûts, grosse caisse comprise, au prix le plus bas de la sélection."
+      }
+    },
+    "Avis-Alesis-Turbo-Mesh.dc.html": {
+      "id": "turbo",
+      "toucher": [
+        7,
+        "Du mesh, mais quatre fûts de 8 pouces, le plus petit format du marché."
+      ],
+      "discretion": [
+        7,
+        "Fûts mesh discrets, charleston en caoutchouc qui claque, pédale à batte."
+      ],
+      "module": [
+        5,
+        "120 sons et une dizaine de kits, sans menu. On en fait vite le tour."
+      ],
+      "confort": [
+        5,
+        "Cymbales de 10 pouces qu'on rate en jouant vite, rack léger à resserrer."
+      ],
+      "prix": [
+        6,
+        "{prix:turbo} avec les baguettes, mais la MPS-150X offre plus pour moins cher."
+      ],
+      "profil": {
+        "pour": "Un cadeau dont tu ne sais pas s'il durera",
+        "note": 8,
+        "raison": "Le module le plus simple, sans menu, et une Alesis se revend en quelques jours si l'envie passe."
+      }
+    },
+    "Avis-Millenium-MPS-450.dc.html": {
+      "id": "mps450",
+      "toucher": [
+        9,
+        "Cinq pads mesh, caisse claire stéréo de 10 pouces : la peau et le cercle sonnent différemment."
+      ],
+      "discretion": [
+        7,
+        "Fûts mesh discrets. La pédale à batte frappe le sol, comme presque partout."
+      ],
+      "module": [
+        7,
+        "408 sons, 30 kits, deux entrées pour agrandir le kit, MIDI. Pas de Bluetooth."
+      ],
+      "confort": [
+        8,
+        "Crash et ride de 12 pouces avec étouffement, 120 × 80 cm au sol."
+      ],
+      "prix": [
+        9,
+        "Caisse claire stéréo et cymbales de 12 pouces à {prix:mps450}, baguettes fournies."
+      ],
+      "profil": {
+        "pour": "Tu veux agrandir ton kit plus tard",
+        "note": 9,
+        "raison": "Deux entrées libres pour ajouter un pad ou une cymbale le jour où tu en as besoin."
+      }
+    },
+    "Avis-Roland-TD-02KV.dc.html": {
+      "id": "td02kv",
+      "toucher": [
+        6,
+        "Caisse claire mesh à deux zones, mais trois toms en caoutchouc au rebond sec."
+      ],
+      "discretion": [
+        9,
+        "Pédale sans batte : rien ne frappe le plancher. La plus discrète de la sélection."
+      ],
+      "module": [
+        6,
+        "Seize kits aux sons Roland et cinq fonctions de coaching. Pas de Bluetooth intégré."
+      ],
+      "confort": [
+        6,
+        "La plus compacte du segment, 120 × 80 cm, mais des cymbales petites."
+      ],
+      "prix": [
+        5,
+        "{prix:td02kv} pour moins de matériel que la concurrence : le silence se paie."
+      ],
+      "profil": {
+        "pour": "Quelqu'un vit sous toi",
+        "note": 9,
+        "raison": "La pédale sans batte ne frappe rien : c'est la seule de la sélection qui épargne vraiment le plancher."
+      }
+    },
+    "Avis-Yamaha-DTX432K.dc.html": {
+      "id": "dtx432",
+      "toucher": [
+        5,
+        "Quatre pads de 7,5 pouces en caoutchouc, une zone chacun : secs et fatigants."
+      ],
+      "discretion": [
+        5,
+        "Le caoutchouc claque plus que le mesh et la pédale à batte frappe le sol."
+      ],
+      "module": [
+        9,
+        "Dix programmes de coaching et la meilleure application d'apprentissage du marché."
+      ],
+      "confort": [
+        5,
+        "Cymbales de 10 pouces et petits pads, mais 100 × 100 cm faciles à caser."
+      ],
+      "prix": [
+        5,
+        "{prix:dtx432} sans baguettes, ni siège, ni casque : on paie la méthode, pas le matériel."
+      ],
+      "profil": {
+        "pour": "Tu as peur d'abandonner",
+        "note": 9,
+        "raison": "Dix programmes de coaching notent ta régularité et montrent tes progrès : c'est la méthode qu'on achète."
+      }
+    },
+    "Avis-Millenium-MPS-750X.dc.html": {
+      "id": "mps750x",
+      "toucher": [
+        9,
+        "Huit pads tous en mesh, caisse claire de 10 pouces à deux zones."
+      ],
+      "discretion": [
+        7,
+        "Huit pads mesh, le meilleur cas pour les cloisons. La pédale à batte reste le point faible."
+      ],
+      "module": [
+        7,
+        "500 sons, enregistreur, MIDI et USB. Pas de Bluetooth."
+      ],
+      "confort": [
+        7,
+        "Cymbales de 12 pouces et rack qui ne bouge pas, mais 140 × 90 cm au sol."
+      ],
+      "prix": [
+        8,
+        "Huit pads mesh et des cymbales de 12 pouces pour {prix:mps750x}."
+      ],
+      "profil": {
+        "pour": "Tu as une vraie place pour jouer",
+        "note": 9,
+        "raison": "Huit pads mesh, des cymbales de 12 pouces et un rack qui ne bouge pas, si tu as 140 cm au sol."
+      }
+    },
+    "Avis-Donner-DED-200X.dc.html": {
+      "id": "ded200x",
+      "toucher": [
+        8,
+        "Cinq fûts en mesh, caisse claire de 10 pouces et un quatrième tom."
+      ],
+      "discretion": [
+        7,
+        "Fûts mesh discrets, quatre cymbales qui claquent un peu, pédale à batte."
+      ],
+      "module": [
+        6,
+        "Une trentaine de kits corrects, aux sons qui manquent de nuance. Pas de Bluetooth."
+      ],
+      "confort": [
+        7,
+        "Deux crashs, un ride et un rack rigide qui ne recule pas."
+      ],
+      "prix": [
+        6,
+        "{prix:ded200x}, soit {ecart:ded200x-nitromax} de plus que la Nitro Max, pour un module moins riche."
+      ],
+      "profil": {
+        "pour": "Tu veux le kit le plus fourni",
+        "note": 8,
+        "raison": "Neuf pads et un quatrième tom. En promotion sous 420 €, le nombre de pads devient un vrai argument."
+      }
+    },
+    "Avis-Millenium-MPS-850.dc.html": {
+      "id": "mps850",
+      "toucher": [
+        10,
+        "Caisse claire de 12 pouces et toms de 10 pouces en mesh : on arrête de viser."
+      ],
+      "discretion": [
+        7,
+        "Tout mesh, grosse caisse comprise, mais une pédale à batte comme toute la gamme."
+      ],
+      "module": [
+        7,
+        "Réglages fins pad par pad et entrées pour agrandir le kit. Pas de Bluetooth."
+      ],
+      "confort": [
+        8,
+        "Ride de 14 pouces et rack renforcé, mais 150 × 100 cm, le plus encombrant."
+      ],
+      "prix": [
+        6,
+        "{prix:mps850} : cent euros de plus que la MPS-750X pour du confort, pas des fonctions."
+      ],
+      "profil": {
+        "pour": "Tu joues déjà un peu",
+        "note": 9,
+        "raison": "Caisse claire de 12 pouces et toms de 10 : plus de confort de jeu pour qui sait déjà tenir un rythme."
+      }
+    }
+  },
+  "echelle": {
+    "plancher": 6,
+    "formule": "6 + (moyenne - 5) x 0,8",
+    "phrase": "La note du verdict part de la moyenne de ces critères, selon leur poids, ramenée sur une échelle où une batterie de notre sélection commence à 6. Chaque note s'appuie sur la fiche technique et les mesures du marchand."
+  }
+}
