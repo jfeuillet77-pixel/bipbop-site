@@ -1,4 +1,98 @@
-# Plan de reprise — état du chantier au 14 septembre 2026
+# Plan de reprise — état au 23 septembre 2026
+
+## Reprendre ici
+
+Session du 23/09/2026 : audit SEO complet, puis les chantiers 1 à 7 de
+`design/audit-seo-2026-09-23.md`. Tout est commité, `dev` est fusionnée dans `main`, en ligne.
+Le détail daté est dans `JOURNAL.md` ; les règles nouvelles sont dans `AGENTS.md`.
+
+### Ce qui a changé de fond
+
+- **Claude Design n'existe plus.** Claude écrit les maquettes de `../Claude Design - MàJ/`
+  directement, les commite dans leur **dépôt git local** (sans remote : `bipbop-site` est public et
+  les maquettes contiennent des documents internes et les identifiants d'un autre site), puis porte.
+- **Affiliation muette.** Aucune mention de commission tant que les liens ne portent pas
+  d'identifiant BipBop : interrupteur `src/data/affiliation.json` (`actif: false`), greffe
+  `retirerMentionsAffiliation()`, contrôle 7.
+- **Vocabulaire.** Jamais « tester / testé » : « analysé » ; « essai / vérifier » pour le lecteur.
+- **Grilles de notation sur les 9 avis** (`src/data/grilles.json`) : cinq critères, ligne « Pour
+  ton profil », note = 6 + (moyenne − 5) × 0,8, jamais sous 6 sans `"exception": true`. Un nouvel
+  avis = une entrée dans ce fichier, notée selon son « bareme ».
+- **Pages construites depuis les données** : comparatif (`ComparatifLecture.astro`), hubs de
+  marque (`HubMarque.astro`), page `/marques/` (`HubMarques.astro`). Texte dans
+  `src/data/marques.mjs`, prix, noms et comptes par jetons (`src/lib/jetons.mjs`).
+- **Nouveaux postbuild** : `donnees-structurees.mjs` (Open Graph + JSON-LD), `typographie.mjs`
+  (espaces insécables des prix). **Contrôles** : 10 (données structurées) et 11 (cohérence entre
+  pages : orpheline ou absente de son hub = échec ; modèles cités sans lien = liste à relire).
+- **Un article fait au moins 1 200 mots.** **La repasse après publication est systématique**
+  (contrôle 11, `design/maillage-avis.py`, comptes en jetons).
+
+### La suite, dans l'ordre
+
+Le plan éditorial fait foi : `../Claude Design - MàJ/data/plan-editorial.csv` (lots = vagues,
+volumes et raisons dans la colonne notes). Détail et chiffres : `design/plan-contenus-chantier-5.md`.
+
+1. **Vague 1, à finir** — dans cet ordre :
+   - P70 duel Millenium MPS-750X ou MPS-850 (140/mois ; les deux avis existent, remonte l'avis
+     MPS-850, le moins lié du site) ;
+   - P66 guide pad d'entraînement (2 370/mois ; 5 pads dans `selection-accessoires`) ;
+   - P67 guide ampli (2 250/mois ; 8 amplis dans la sélection) ;
+   - P68 guide « Combien coûte une batterie électronique » (860/mois ; tout depuis `modeles.json`) ;
+   - P69 les bases « Quelles baguettes » (610/mois ; 7 baguettes) ;
+   - un H2 « batterie silencieuse » dans le guide appartement (210/mois, pas de page dédiée).
+2. **Vague 2** : P71 hub Roland (même gabarit que Yamaha/Alesis ; section TD-07, TD-17, TD-1DMK
+   arrêtées en France, vérifié sur Thomann et Woodbrass le 23/09, la TD313 remplace la TD-17KV2) ;
+   P72 avis Roland TD313 ; P73 pilier « Apprendre la batterie » ; P74 réglages MPS-750X (volumes
+   anglais suspects, manuel constructeur seulement) ; P75 hub Millenium.
+3. **Vague 3** : les avis du plan (MPS-1000, Nitro Pro, Nux, TD-02K… pour la règle D06), hubs
+   `/duels/` (au 4e duel) et `/les-bases/`, les bases P51 à P60, P50 « où acheter ».
+
+**Comment produire une page** : un guide, un duel ou un avis se fait en maquette dans
+`../Claude Design - MàJ/` (cloner une maquette du même gabarit, loi 1), commit dans ce dépôt-là,
+ligne du plan passée à « Publié » avec son `fichier_maquette`, `node scripts/port.mjs`, puis
+`npm run check` et `npm run fidelite`. Un avis ajoute son entrée dans `src/data/grilles.json`. Un
+hub de marque = une entrée dans `marques.mjs` et une page d'une ligne. Toujours : 1 200 mots,
+faits sourcés (flux Thomann dans `releves/flux/`, fiches, avis publiés), repasse du contrôle 11,
+puis `main` (voir « Comment reprendre techniquement » plus bas).
+
+### Ce qui attend Jordane
+
+- **Identifiants d'affiliation BipBop** (Thomann, Woodbrass, Donner) : passer `actif` à `true`
+  dans `src/data/affiliation.json` et suivre son champ `pour_reactiver`.
+- **Nitro Max « recommandation nº1 »** sur `/avis/` alors que la MPS-450 la dépasse (8,4 contre
+  8,3) : laissée telle quelle en attendant sa décision.
+- **Avis MPS-750X** : « une pédale silencieuse Yamaha KU100 […] une soixantaine d'euros », la
+  sélection la donne à 88 €. Copie à trancher.
+- **Duel Nitro Max vs DED-200X** : deux boutons « Voir le prix chez Thomann » mènent l'un à l'avis
+  Nitro Max, l'autre à la boutique Donner.
+- **Demander l'indexation** (quota Search Console) : `/guides/acheter-batterie-electronique-occasion/`,
+  `/les-bases/tapis-batterie-electronique/`, puis les trois pages `/marques/`.
+- **Dépôt des maquettes** : un remote **privé** si Jordane veut une sauvegarde hors de sa machine.
+
+### À surveiller
+
+- **Lundi 28/09, relevé automatique** : premier lundi avec les grilles, la typographie et le
+  contrôle 11 dans `check`. Woodbrass a migré sur Shopify (fiches redirigées vers
+  `/products/<nom>-<id>`, JSON-LD présent) : vérifier que ses 24 références sont bien relevées
+  (`releves/journal.log`, `PRIX-SEMAINE.md`). Les deux ruptures PDX-100 et Nitro Multicore aussi.
+- **Vers le 21/10** : relire la Search Console sur les nouvelles URL (propriété `sc-domain:bipbop.eu`,
+  inspection par lots de 10) et relancer un crawl Screaming Frog (MCP `sf`).
+
+### Défauts connus, non corrigés
+
+- `prixTexte` de la base écrit encore certains milliers sans espace (« 1598 € ») ; les pages
+  construites formatent elles-mêmes, les autres affichent le champ.
+- Duel Nitro Max vs DED-200X : « 180 sons, 30 kits » pour la DED-200X, jamais vérifié au flux Donner.
+- Images produit chargées depuis `thomann.de` sans `width`/`height` ; pas de CSP tant qu'elles y
+  restent (chantier 6 de l'audit). Aucun auteur nommé (choix du site : « une seule voix »).
+- Contrôle 11 : six pages citent un modèle sans lien vers son avis (le plus souvent un lien vers
+  un duel, voulu).
+- « 11 guides et 6 articles » sur `/guides/` compte par gabarit : « Installer sa batterie sans
+  déranger » est un gabarit guide publié sous `/les-bases/`. Juste, mais surprenant.
+
+---
+
+## Archive — état au 14 septembre 2026
 
 **Objectif : publier la totalité des 38 pages de site désignées par Claude Design.**
 Il est atteint. Les 38 routes existent, sont buildées et passent les deux contrôles. **Le site est
@@ -200,7 +294,7 @@ cd bipbop-site
 git checkout dev && git pull
 npm ci
 node scripts/port.mjs --dry   # ce que le portage va écrire, avec ses avertissements
-npm run check                 # build (sitemap.xml inclus) + 7 contrôles mesurés dans Chrome
+npm run check                 # tests, build (postbuild compris) + les 11 contrôles de verif.mjs
 npm run fidelite              # chaque page contre sa maquette, segment par segment
 npm run data                  # relance l'import si data/ du dossier Claude Design a bougé
 node scripts/captures.mjs /guides/pack-batterie-electronique-complet/   # rendu visuel

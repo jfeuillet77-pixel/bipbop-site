@@ -9,6 +9,9 @@ cible sont la somme de ses requêtes. La difficulté est la moyenne pondérée p
 
 - **23/09** : plan éditorial refondu dans `plan-editorial.csv` (vagues, P64 à P76). Hubs Yamaha
   (P64) et Alesis (P65) publiés.
+- **23/09, suite** : page mère `/marques/` (P76) publiée ; les trois pages passent 1 200 mots.
+  Reste de la vague 1 : P70, P66, P67, P68, P69 et le H2 « batterie silencieuse » du guide
+  appartement (ordre dans `design/plan-de-reprise.md`).
 - **Roland TD-07, TD-17, TD-1DMK** : plus vendues en France (ni Thomann ni Woodbrass, 23/09). Pas
   ajoutées au catalogue ; le hub Roland (P71) les explique et renvoie vers la TD313 (P72).
 
