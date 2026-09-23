@@ -58,7 +58,10 @@ function segments(html) {
  * celle du pied de page venant plus loin. Page : entre <main> et </main>, sans ambiguïté.
  */
 const FIN_EN_TETE = ['Trouver ma batterie</a>', 'Par où commencer'];
-const DEBUT_PIED = ['<footer', 'LIENS AFFILI'];
+// Le pied commence à <footer>. « LIENS AFFILI » servait aussi de borne, mais la greffe
+// d'affiliation (scripts/greffes.mjs) retire ce texte de la page et pas de la maquette brute où
+// l'on cherche la borne : les deux côtés n'étaient plus coupés au même endroit (23/09/2026).
+const DEBUT_PIED = ['<footer'];
 
 function aprésEnTete(html, marqueurs) {
   let meilleur = -1, taille = 0;

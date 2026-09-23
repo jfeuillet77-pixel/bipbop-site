@@ -1,5 +1,8 @@
 ---
 import BipbopMarqueClaire from './mascotte/BipbopMarqueClaire.astro';
+// Même règle que la greffe des pages portées (scripts/greffes.mjs) : pas de mention de
+// commission tant qu'aucun lien ne porte d'identifiant BipBop.
+import AFFILIATION from '../data/affiliation.json';
 ---
 
 <footer class="footer" data-pad>
@@ -38,8 +41,8 @@ import BipbopMarqueClaire from './mascotte/BipbopMarqueClaire.astro';
   </div>
 
   <div class="footer-affiliation" data-mar>
-    <span class="footer-affiliation-label">LIENS AFFILIÉS</span>
-    <p>Les liens vers Thomann, Woodbrass et Donner Music nous rapportent une commission si tu achètes. Ton prix ne bouge pas. Les prix affichés sont relevés à la date de publication : vérifie toujours sur la fiche du marchand avant de commander.</p>
+    {AFFILIATION.actif && <span class="footer-affiliation-label">LIENS AFFILIÉS</span>}
+    <p>{AFFILIATION.actif && 'Les liens vers Thomann, Woodbrass et Donner Music nous rapportent une commission si tu achètes. Ton prix ne bouge pas. '}Les prix affichés sont relevés à la date de publication : vérifie toujours sur la fiche du marchand avant de commander.</p>
   </div>
 
   <div class="footer-copy">© 2026 BipBop. Tous droits réservés.</div>

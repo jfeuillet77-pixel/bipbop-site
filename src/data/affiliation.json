@@ -1,0 +1,5 @@
+{
+  "actif": false,
+  "decision": "2026-09-23, Jordane : « on attend que je sois vraiment affilié pour mentionner le fait que je le suis ». Aucun lien ne porte d'identifiant BipBop : toute mention de commission serait fausse.",
+  "pour_reactiver": "Passer « actif » à true le jour où les liens portent les identifiants BipBop (Thomann, Woodbrass, Donner). Les mentions reviennent seules au portage suivant, mot pour mot : c'est la maquette qui les porte. À revoir en même temps : PHRASES_LEGALES de scripts/greffes.mjs (politique de confidentialité, écrite pour « aucun lien affilié »), le contrôle 7 de scripts/verif.mjs, et le texte « rémunère notre travail à sa juste valeur » demandé par Jordane."
+}

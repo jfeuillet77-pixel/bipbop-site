@@ -117,6 +117,14 @@ un autre site de Jordane. `urlPublique()` les retire au portage et à l'import ;
 `verif.mjs` fait échouer `npm run check` si un marqueur de traçage survit. Ne jamais « réparer » un
 lien affilié à la main dans une page : la maquette le ramènerait.
 
+**Aucune mention d'affiliation non plus, tant qu'on n'est pas affilié** (Jordane, 23/09/2026). Les
+maquettes gardent leurs « Liens affiliés », « on touche une commission », « Comment on gagne
+notre vie » ; `retirerMentionsAffiliation()` de `scripts/greffes.mjs` les retire au portage, et
+`Footer.astro` et le comparatif les conditionnent. Un seul interrupteur : `src/data/affiliation.json`
+(`actif`). Le passer à `true` le jour où les liens portent les identifiants BipBop fait revenir
+toutes les mentions à l'identique ; son champ `pour_reactiver` liste ce qu'il faut revoir en même
+temps. Le contrôle 7 fait échouer `check` si une page parle de commission pendant que c'est `false`.
+
 Aucun protocole de test inventé · aucune note chiffrée sans grille affichée · aucune signature
 individuelle · aucun article sponsorisé · ne jamais reprendre un **prix barré Donner** · ne
 jamais utiliser un **prix de bundle Thomann** comme prix du modèle · **ne jamais inventer une URL
