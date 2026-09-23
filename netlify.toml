@@ -6,3 +6,21 @@
 # (Netlify sert automatiquement /404.html du dossier publié comme page d'erreur) et elle est
 # surtout nuisible — attrapée avant le gestionnaire de formulaires, elle renvoyait notre
 # page 404 à toute soumission du formulaire de contact, POST inclus.
+
+# En-têtes de sécurité, relevés absents sur les 43 URL par le crawl Screaming Frog du 23/09/2026
+# (design/audit-seo-2026-09-23.md, chantier 7). Sans risque pour le site tel qu'il est :
+#  - nosniff : tous les fichiers publiés sortent déjà avec le bon type (html, xml, txt, svg,
+#    png, ico, vérifiés en ligne le 23/09) ;
+#  - SAMEORIGIN : aucune page n'est faite pour être affichée dans le cadre d'un autre site ;
+#  - strict-origin-when-cross-origin : un marchand voit qu'on vient de bipbop.eu, pas de quelle
+#    page. C'est déjà le défaut des navigateurs récents ; l'écrire le rend vrai partout.
+# Pas de Content-Security-Policy : Google Fonts, les images Thomann et les styles en ligne des
+# maquettes portées imposeraient une politique si large qu'elle ne protégerait de rien. À
+# reprendre le jour où les images seront rapatriées (chantier 6).
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
