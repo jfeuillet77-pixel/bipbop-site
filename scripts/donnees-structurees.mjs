@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * donnees-structurees.mjs — Open Graph et JSON-LD dans le `<head>` de chaque page construite,
+ * donnees-structurees.mjs — Open Graph, JSON-LD et lien vers le llms.txt dans le `<head>` de chaque page construite,
  * écrits à la fin de chaque build (`postbuild`, après le sitemap et le llms.txt).
  *
  * Pourquoi dans `dist/` et pas dans les pages : 37 pages sur 40 sont portées mot pour mot depuis
@@ -233,6 +233,8 @@ for (const p of pages) {
     `<meta property="og:image:height" content="${IMAGE.hauteur}">`,
     `<meta property="og:image:alt" content="${attr(IMAGE.alt)}">`,
     '<meta name="twitter:card" content="summary_large_image">',
+    // Recommandé par llmstxt.org pour qu'un agent trouve le llms.txt depuis n'importe quelle page.
+    '<link rel="describedby" href="/llms.txt" type="text/markdown">',
     `<script type="application/ld+json">${json}</script>`,
     FIN,
     '',
