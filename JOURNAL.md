@@ -1,5 +1,23 @@
 # Journal BipBop
 
+## 23 septembre 2026 (soir) — Fin de Claude Design, chantier 4
+
+**Claude Design n'est plus utilisé** (Jordane). Les maquettes restent la source des pages, mais
+Claude les écrit directement. `Claude Design - MàJ/` a désormais son dépôt git local, sans remote :
+`bipbop-site` est public sur GitHub et les maquettes portent des documents internes et les
+identifiants partenaires d'un autre site. Règle ajoutée en tête d'`AGENTS.md`.
+
+**Comparatif** : 283 mots, aucun H2, pour la page « Critique » du plan. Un bloc de lecture sous
+l'outil (`ComparatifLecture.astro`) : la réponse courte (le modèle de l'état initial de l'outil),
+ce que chaque tranche achète, la place, mesh ou caoutchouc, puis les 31 modèles avec leur phrase
+de verdict. Tout est calculé depuis `modeles.json` : le lundi le tient à jour sans réécriture.
+Au passage : `prixTexte` écrit encore « 1598 € » sans espace (R04) ; le bloc formate lui-même.
+
+**Accueil et hubs** : titres de section passés en `<h2>` (style inchangé), ceux de l'accueil
+portent « batterie électronique ». Le lien « Je n'y connais vraiment rien » mène au guide adulte
+débutant au lieu de l'article pad mesh : c'est la page que Google teste sur « batterie
+électronique débutant », l'accueil ne la liait pas du tout.
+
 ## 23 septembre 2026 (fin d'après-midi) — Maillage vers les avis, llms.txt fidèle, en-têtes
 
 **llms.txt** : il existait déjà. Corrigé sur trois affirmations que le site contredit

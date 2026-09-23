@@ -5,11 +5,19 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
 `design/crochets-responsive.md` (comment rendre une page responsive ici),
 `design/ecarts-maquettes.md` (ce que la maquette contredit avec sa propre source).
 
+**Depuis le 23/09/2026, Claude Design n'est plus utilisé** (décision de Jordane). Le dossier
+`../Claude Design - MàJ/` garde son nom (six scripts le citent) mais c'est désormais Claude qui
+écrit les maquettes, directement dans ce dossier, puis les porte. Il a son **propre dépôt git,
+local et sans remote** : committer chaque modification de maquette là-bas, avec sa raison. Ne pas
+le verser dans ce dépôt-ci : `bipbop-site` est **public** sur GitHub, et les maquettes contiennent
+les documents internes et les identifiants partenaires d'un autre site. Plus de ré-export à
+craindre : `design/maillage-avis.py` et les copies `.avant-*` ne servent plus qu'à l'historique.
+
 ## Les cinq lois non négociables
 
 1. **On ne retape pas une maquette, on la porte.** `node scripts/port.mjs` écrit les 37 pages
    statiques depuis `../Claude Design - MàJ/<Page>.dc.html`, corps et `<style>` mot pour mot. Une
-   page se modifie dans Claude Design, puis se re-porte — jamais à la main dans `src/pages/` :
+   page se modifie dans sa maquette, puis se re-porte — jamais à la main dans `src/pages/` :
    l'édition serait écrasée au portage suivant. Écrire une page à la main, c'est créer les dérives
    que `npm run fidelite` aurait ensuite à réparer.
 2. **Un écart assumé avec la maquette se déclare, il ne se tape pas.** Prix faux, faute : une
