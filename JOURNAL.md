@@ -1,5 +1,12 @@
 # Journal BipBop
 
+## 23 septembre 2026 (soir, suite) — Les bases P69 baguettes
+
+Article publié (1 350 mots), 7 articles au hub. Consignes de matière sourcées au manuel Roland
+PD-140DS : bois ou plastique, balais nylon. La sélection présentait le Thomann SMB45 comme une
+« housse à baguettes » : c'est un sac à maillets de 190 mm, trop court pour une 5A (406 mm).
+Remplacé par la Millenium Eco Stick Bag à 5,90 €. Aucune page publiée ne le citait.
+
 ## 23 septembre 2026 (soir, suite) — Guide P68 prix, des jetons dans une maquette
 
 « Tous les chiffres lus dans modeles.json » (plan) et « une maquette pour chaque page » (Jordane) :
