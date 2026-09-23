@@ -1,5 +1,36 @@
 # Journal BipBop
 
+## 23 septembre 2026 — Le sitemap est lu, 33 pages sur 39 sont indexées
+
+Premier diagnostic fait depuis l'API Search Console (serveur MCP `gsc`), et plus sur captures.
+
+**Le sitemap est lu.** `sitemap-index.xml` : téléchargé le 22/09 à 07:56, statut « processed »,
+39 URL, 0 erreur, 0 avertissement. Le diagnostic du 22/09 (latence, pas ligne empoisonnée) est
+confirmé : l'index a été lu le jour même de sa soumission. `/sitemap.xml` reste « en attente »
+(jamais lu), `llms.txt` porte 1 erreur. Ces deux lignes sont à **supprimer à la main** dans
+Search Console : l'API refuse les suppressions (`GSC_ALLOW_DESTRUCTIVE` non posé).
+
+**Indexation, inspection URL par URL** : 33/39 « Submitted and indexed ». Les nouvelles URL du
+22/09 sont déjà recrawlées et indexées pour la plupart. Restent :
+
+- « Discovered, currently not indexed » : `/guides/acheter-batterie-electronique-occasion/`,
+  `/les-bases/batterie-electronique-ou-acoustique/` ;
+- « URL is unknown to Google » : `/les-bases/casque-batterie-electronique/`,
+  `/les-bases/tapis-batterie-electronique/`, `/les-bases/batterie-electronique-bruit-voisins/`,
+  `/politique-confidentialite/`.
+
+Aucune n'est orpheline (3 à 39 pages liantes) ni maigre (700 à 1 900 mots) : c'est le budget de
+crawl d'un site de dix jours. Levier : « Demander une indexation » dans l'inspection d'URL.
+
+**Mesuré en ligne** : 20/20 redirections en 301 directe vers une page en 200, canoniques
+auto-référentes sur les 39 pages, aucune meta robots, `www` en 301, live identique à `dist/`.
+
+**Trafic, 13 au 22/09** : 4 clics, 142 impressions, position moyenne 23,8. Les impressions
+portent encore sur les anciennes URL, en cours de bascule. La page qui en ramasse le plus
+(66) est l'ancien guide adulte débutant, sur « batterie électronique débutant » et variantes, en
+position 30 à 60 : c'est la requête à travailler. Pages déjà dans le top 10 sans clic :
+`/comparatif/` (2,9), `/guides/` (2), `/a-propos/` (4,2), les guides 300 € et 500 € (5,7 et 6,6).
+
 ## 22 septembre 2026 — Le sitemap n'est pas cassé, c'est sa ligne dans Search Console qui l'est
 
 Jordane : « Je n'arrive pas à soumettre le sitemap... J'ai ce problème depuis le début, depuis la
