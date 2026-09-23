@@ -413,7 +413,7 @@
   "priorite": "Moyenne",
   "produits_lies": "",
   "maillage_sortant": "Duels, Avis",
-  "notes": "Hub à créer au 4e duel (3 publiés). En attendant, /avis/ liste les duels."
+  "notes": "Hub à créer au 4e duel : seuil atteint le 23/09/2026 avec P70 (4 publiés). En attendant, /avis/ liste les duels."
  },
  {
   "id": "P27",
@@ -1126,9 +1126,9 @@
   "titre": "Millenium MPS-750X ou MPS-850",
   "slug": "/duels/millenium-mps-750x-vs-mps-850",
   "permalien": "https://bipbop.eu/duels/millenium-mps-750x-vs-mps-850/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Duel-Millenium-MPS-750X-vs-MPS-850.dc.html",
   "gabarit": "Duel",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "millenium mps-750x vs 850",
   "priorite": "Moyenne",
   "produits_lies": "MPS-750X, MPS-850",
