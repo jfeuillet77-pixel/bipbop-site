@@ -1,5 +1,16 @@
 # Journal BipBop
 
+## 23 septembre 2026 (soir, suite) — Guide P66 pad d'entraînement, le pad à 11 € n'en est pas un
+
+Guide publié (1 600 mots, gabarit de « Quel casque »), 12 guides au hub. En lisant la fiche Thomann
+du Millenium 14" Practice Pad (11 €) : c'est une sourdine à ventouses pour caisse claire acoustique
+de 14 pouces, qui ne tient pas seule. Six pages le conseillaient comme premier pad à qui n'a pas
+encore de batterie : remplacé par le Thomann Sticky (12,90 €, autonome), lien vers le guide. Deux
+Vic Firth entrent dans la sélection (suivis le lundi). La carte « BIENTÔT » du hub annonçait P18,
+abandonné au plan : retirée. /a-propos/ : 127 accessoires, écrit dans la maquette (la correction de
+portage 126 → 125 est supprimée). Le contrôle 9 a attrapé deux `alt` coupés par un guillemet de
+pouce : le générateur de maquettes échappe désormais ses attributs.
+
 ## 23 septembre 2026 (soir, reprise) — Duel P70 MPS-750X ou MPS-850, fiches Millenium recalées
 
 **Première page neuve écrite en maquette depuis la fin de Claude Design** : le duel est un clone
