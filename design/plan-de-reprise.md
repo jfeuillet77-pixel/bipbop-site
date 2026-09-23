@@ -1,9 +1,11 @@
-# Plan de reprise — état au 23 septembre 2026
+# Plan de reprise — état au 23 septembre 2026 (soir)
 
 ## Reprendre ici
 
 Session du 23/09/2026 : audit SEO complet, puis les chantiers 1 à 7 de
-`design/audit-seo-2026-09-23.md`. Tout est commité, `dev` est fusionnée dans `main`, en ligne.
+`design/audit-seo-2026-09-23.md`. Le soir, **la vague 1 du chantier 5 est finie** : P70, P66, P67,
+P68, P69 et le H2 « batterie silencieuse », chacun en maquette, porté, contrôlé et en ligne. Tout
+est commité, `dev` est fusionnée dans `main`.
 Le détail daté est dans `JOURNAL.md` ; les règles nouvelles sont dans `AGENTS.md`.
 
 ### Ce qui a changé de fond
@@ -32,20 +34,15 @@ Le détail daté est dans `JOURNAL.md` ; les règles nouvelles sont dans `AGENTS
 Le plan éditorial fait foi : `../Claude Design - MàJ/data/plan-editorial.csv` (lots = vagues,
 volumes et raisons dans la colonne notes). Détail et chiffres : `design/plan-contenus-chantier-5.md`.
 
-1. **Vague 1, à finir** — dans cet ordre :
-   - P70 duel Millenium MPS-750X ou MPS-850 (140/mois ; les deux avis existent, remonte l'avis
-     MPS-850, le moins lié du site) ;
-   - P66 guide pad d'entraînement (2 370/mois ; 5 pads dans `selection-accessoires`) ;
-   - P67 guide ampli (2 250/mois ; 8 amplis dans la sélection) ;
-   - P68 guide « Combien coûte une batterie électronique » (860/mois ; tout depuis `modeles.json`) ;
-   - P69 les bases « Quelles baguettes » (610/mois ; 7 baguettes) ;
-   - un H2 « batterie silencieuse » dans le guide appartement (210/mois, pas de page dédiée).
+1. **Vague 1 : faite le 23/09 au soir.** Publiés : duel MPS-750X ou MPS-850, guides pad
+   d'entraînement, ampli, prix (chiffres en jetons, voir AGENTS.md), les bases baguettes, H2
+   « Une batterie silencieuse, ça existe ? » du guide appartement. Détail dans `JOURNAL.md`.
 2. **Vague 2** : P71 hub Roland (même gabarit que Yamaha/Alesis ; section TD-07, TD-17, TD-1DMK
    arrêtées en France, vérifié sur Thomann et Woodbrass le 23/09, la TD313 remplace la TD-17KV2) ;
    P72 avis Roland TD313 ; P73 pilier « Apprendre la batterie » ; P74 réglages MPS-750X (volumes
    anglais suspects, manuel constructeur seulement) ; P75 hub Millenium.
 3. **Vague 3** : les avis du plan (MPS-1000, Nitro Pro, Nux, TD-02K… pour la règle D06), hubs
-   `/duels/` (au 4e duel) et `/les-bases/`, les bases P51 à P60, P50 « où acheter ».
+   `/duels/` (**seuil atteint** : 4 duels depuis P70 ; P26 est au plan en vague 2, à avancer ?) et `/les-bases/`, les bases P51 à P60, P50 « où acheter ».
 
 **Comment produire une page** : un guide, un duel ou un avis se fait en maquette dans
 `../Claude Design - MàJ/` (cloner une maquette du même gabarit, loi 1), commit dans ce dépôt-là,
@@ -68,6 +65,17 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 - **Demander l'indexation** (quota Search Console) : `/guides/acheter-batterie-electronique-occasion/`,
   `/les-bases/tapis-batterie-electronique/`, puis les trois pages `/marques/`.
 - **Dépôt des maquettes** : un remote **privé** si Jordane veut une sauvegarde hors de sa machine.
+- **Avis MPS-850 : la thèse a changé** (23/09 soir). Son argument central, « caisse claire de
+  12 pouces », était faux (10" au flux et sur la fiche). Faits corrigés, note 8,0 → 7,8, verdict
+  réécrit sur les vrais atouts (MIDI DIN, import WAV, dix pads). À relire.
+- **Hub `/duels/` (P26)** : le seuil du quatrième duel est atteint.
+- **Guide appartement, checklist 03** : « des baguettes en nylon plutôt qu'en bois : moins de
+  claquement ». Aucune source ; le manuel Roland accepte les deux. Laissée telle quelle.
+- **Guide appartement, budget** : casque 50 €, tapis 40 €, mousse 55 €, siège 60 € et « +50 % »
+  ne correspondent à aucune référence de la sélection (casque 26 €, tapis 59 €, siège 44 €).
+- **Nitro Max contre TD-02KV** : « trois pads de plus chez Alesis » (hub /avis/) ; la base
+  donne 8 contre 6. Pas revérifié au flux.
+- **Strata Club** : `bluetooth: true` dans la base, le flux Thomann n'en parle pas.
 
 ### À surveiller
 
@@ -85,8 +93,12 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 - Duel Nitro Max vs DED-200X : « 180 sons, 30 kits » pour la DED-200X, jamais vérifié au flux Donner.
 - Images produit chargées depuis `thomann.de` sans `width`/`height` ; pas de CSP tant qu'elles y
   restent (chantier 6 de l'audit). Aucun auteur nommé (choix du site : « une seule voix »).
-- Contrôle 11 : six pages citent un modèle sans lien vers son avis (le plus souvent un lien vers
+- Contrôle 11 : sept pages citent un modèle sans lien vers son avis (le plus souvent un lien vers
   un duel, voulu).
+- Duel MPS-150X contre Turbo Mesh : « module de rechange à 98 € » ; la sélection et le guide
+  « faire évoluer » disent 89 € (MPS-150 Drum Module).
+- Les contrôles ne voient pas un texte resté brut dans une page (code de générateur, jeton non
+  résolu) : seule la capture l'a montré le 23/09. Relire la capture de chaque page neuve.
 - « 11 guides et 6 articles » sur `/guides/` compte par gabarit : « Installer sa batterie sans
   déranger » est un gabarit guide publié sous `/les-bases/`. Juste, mais surprenant.
 
@@ -305,9 +317,7 @@ Claude Design, puis `node scripts/port.mjs`. Rien ne se retape dans `src/pages/`
 manuelle y est écrasée au portage suivant. Un écart qu'on veut garder (prix, faute) s'inscrit dans
 `design/port-corrections.json`, avec sa raison.
 
-Le dossier `Claude Design - MàJ/` **n'est dans aucun dépôt git** : les corrections apportées à
-`data/modeles.json` (version 2, empreintes relevées) et `data/plan-editorial.csv` (2 lignes
-reconstruites) n'ont d'autre filet que les copies `.avant-phase0` posées à côté. Si tu ré-exportes
-le dossier depuis Claude Design, **relis `design/ecarts-maquettes.md` avant de réimporter** : il
-garde la trace de ce qui avait été corrigé ici et qui disparaîtrait. Les sources Astro retirées par
+Le dossier `Claude Design - MàJ/` a son **propre dépôt git, local et sans remote** depuis le
+23/09/2026 (fin de Claude Design) : chaque modification de maquette s'y commite avec sa raison.
+Il n'y a plus de ré-export ; `design/ecarts-maquettes.md` garde l'historique des divergences. Les sources Astro retirées par
 le portage sont dans `design/port-seche/` (et dans l'historique git).

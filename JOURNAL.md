@@ -1,5 +1,12 @@
 # Journal BipBop
 
+## 23 septembre 2026 (soir, fin) — H2 « batterie silencieuse », vague 1 terminée
+
+Section ajoutée au guide appartement, avec son entrée au sommaire. Le tableau des quatre modèles
+publiait des largeurs sans source (MPS-150X 0,90 m, TD-02KV 0,95 m) contre 140 × 80 et 120 × 80 cm
+chez Thomann : colonne « Au sol » sourcée. « Tous ont des peaux mesh » et « pas de mesh sous 250 € »
+corrigés. Plan de reprise à jour : ce qui attend Jordane, défauts connus.
+
 ## 23 septembre 2026 (soir, suite) — Les bases P69 baguettes
 
 Article publié (1 350 mots), 7 articles au hub. Consignes de matière sourcées au manuel Roland
