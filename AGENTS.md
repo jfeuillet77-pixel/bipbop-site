@@ -62,7 +62,9 @@ maquette non plus : `src/components/HubMarque.astro` les construit depuis `model
 prix, peaux, phrase) et `src/data/marques.mjs` (la rédaction, qui appelle les modèles par jeton :
 `{prix:id}`, `{nom:id}`, `{avis:id}`, jamais un prix en dur). `fidelite` les saute, `titrePublie()`
 lit leur titre dans `marques.mjs`. Un nouveau hub = une entrée dans `marques.mjs`, une page d'une
-ligne et sa ligne « Publié » au plan (type « Marque »).
+ligne et sa ligne « Publié » au plan (type « Marque »). La page mère `/marques/` (`HubMarques.astro`, texte dans
+`INDEX_MARQUES`) décrit toutes les marques du catalogue : une marque qui y entre sans paragraphe
+fait échouer le build. Les jetons se résolvent dans `src/lib/jetons.mjs`, partagé par les deux.
 
 **Le `<head>` social et structuré ne s'écrit dans aucune page.** `scripts/donnees-structurees.mjs`
 (`postbuild`, après le sitemap et le llms.txt) pose l'Open Graph et un JSON-LD sur les 39 pages de
