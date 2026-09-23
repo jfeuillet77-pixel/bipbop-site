@@ -416,6 +416,102 @@ export function appliquerGreffes(corps, fichier, options = {}) {
   const c = appliquerCorrections(corps, fichier, options);
   corps = c.corps;
   notes.push(...c.notes);
+  // Après les greffes légales et les corrections, qui réécrivent déjà certaines de ces phrases.
+  if (!AFFILIATION.actif) {
+    const g = retirerMentionsAffiliation(corps, fichier, options);
+    corps = g.corps;
+    notes.push(...g.notes);
+  }
   const plan = grefferLiensDuPied(corps, options);
   return { corps: plan.corps, notes: [...notes, ...plan.notes] };
 }
+
+/* --------------------------- les mentions d'affiliation ---------------------------
+
+   Les maquettes annoncent partout une commission (« Liens affiliés », « on touche une
+   commission », « Comment on gagne notre vie »). Aucun lien ne porte d'identifiant BipBop :
+   décision de Jordane du 23/09/2026, on ne dit pas qu'on est affilié tant qu'on ne l'est pas.
+   La maquette garde ses mentions ; c'est cette greffe qui les retire, tant que
+   `src/data/affiliation.json` dit « actif: false ». Le jour où il passe à true, elles reviennent
+   à l'identique au portage suivant, sans rien réécrire.
+
+   On retire la phrase d'affiliation, pas l'élément qui la porte quand il dit autre chose
+   (« Les prix affichés sont relevés… », « Photos produits fournies par Thomann »). À la fin, plus
+   aucune trace ne doit rester : sinon le portage échoue et la nouvelle formulation se voit. */
+
+import AFFILIATION from '../src/data/affiliation.json' with { type: 'json' };
+export { AFFILIATION };
+
+/** Ce qui peut rester : la politique de confidentialité dit justement qu'il n'y a pas d'affiliation. */
+const AFFILIATION_PERMISE = /Le site ne porte aucun identifiant d'affiliation/g;
+export const TRACE_AFFILIATION = /affili|commission/i;
+
+/** Bornes du plus petit élément <tag> qui contient la position i. */
+function elementAutour(corps, i, tag = 'div') {
+  const re = new RegExp(`<(/?)${tag}\\b[^>]*>`, 'g');
+  const pile = [];
+  let m;
+  while ((m = re.exec(corps))) {
+    if (!m[1]) pile.push(m.index);
+    else {
+      const debut = pile.pop();
+      const fin = m.index + m[0].length;
+      if (debut <= i && i < fin) return [debut, fin];
+    }
+  }
+  return null;
+}
+
+const RETRAITS = [
+  // pied de page : l'étiquette, puis la phrase ; « Les prix affichés sont relevés… » reste
+  { quoi: 'étiquette LIENS AFFILIÉS', motif: /<span[^>]*>LIENS AFFILIÉS<\/span>\s*/g, par: '' },
+  // un encadré qui ne disait que ça (guide appartement) : l'encadré part avec, sinon il reste une boîte vide
+  { quoi: 'encadré qui ne contenait que la phrase', motif: /<div\b[^>]*>\s*<span>Les liens vers [^<.]*? nous rapportent une commission si tu achètes\.\s*Ton prix ne bouge pas\.<\/span>\s*<\/div>\s*/g, par: '' },
+  { quoi: 'phrase « nous rapportent une commission »', motif: /Les liens vers [^<.]*? nous rapportent une commission si tu achètes\.\s*Ton prix ne bouge pas\.\s*/g, par: '' },
+  // notes sous les boutons et sous les tableaux, quand elles ne disent rien d'autre
+  { quoi: 'note « Lien affilié » seule', motif: /<(div|p|span)\b[^>]*>Liens? affiliés?(?:\.|,| ·) (?:On touche une commission, ton prix ne bouge pas|ton prix ne (?:change|bouge) pas)\.?<\/\1>\s*/g, par: '' },
+  // la même, en tête d'une note qui continue sur la date du relevé
+  { quoi: 'préfixe « Liens affiliés » avant la date du relevé', motif: /Liens? affiliés?\. On touche une commission, ton prix ne bouge pas\.\s*/g, par: '' },
+  { quoi: 'suffixe « Liens affiliés » après la date du relevé', motif: /\s*Liens affiliés, ton prix ne bouge pas\./g, par: '' },
+  // un <span> vidé par la phrase retirée ne sert plus à rien
+  { quoi: 'span vidé', motif: /<span>\s*<\/span>\s*/g, par: '' },
+];
+
+function retirerMentionsAffiliation(corps, fichier, { sobre = false } = {}) {
+  const notes = [];
+  let n = 0;
+  if (fichier === 'Accueil.dc.html') {
+    // l'encart « Comment on gagne notre vie » entier : mascotte, texte et bouton « Notre méthode »
+    const i = corps.indexOf('Comment on gagne notre vie');
+    let b = i >= 0 && elementAutour(corps, i);
+    while (b && !corps.slice(b[0], b[1]).includes('Notre méthode')) b = elementAutour(corps, b[0] - 1);
+    if (!b) throw new Error(`${fichier} : encart « Comment on gagne notre vie » introuvable — la maquette a bougé`);
+    corps = corps.slice(0, b[0]) + corps.slice(b[1]).replace(/^\s*\n/, '\n');
+    n++;
+  }
+  if (fichier === 'A-Propos.dc.html') {
+    // la section jusqu'au titre suivant : les deux paragraphes parlent de l'affiliation
+    const m = corps.match(/<h2\b[^>]*>Comment on gagne notre vie<\/h2>[\s\S]*?(?=<h2\b)/);
+    if (!m) throw new Error(`${fichier} : section « Comment on gagne notre vie » introuvable — la maquette a bougé`);
+    corps = corps.replace(m[0], '');
+    n++;
+  }
+  if (fichier === 'Mentions-Legales.dc.html') {
+    const m = corps.match(/<h2\b[^>]*>Liens d'affiliation<\/h2>\s*<p\b[^>]*>[\s\S]*?<\/p>/);
+    if (!m) throw new Error(`${fichier} : section « Liens d'affiliation » introuvable — la maquette a bougé`);
+    corps = corps.replace(m[0], '');
+    n++;
+  }
+  if (fichier === 'Politique-Confidentialite.dc.html') {
+    corps = retirerLigne(corps, 'Affiliation', fichier);
+    n++;
+  }
+  for (const r of RETRAITS) {
+    corps = corps.replace(r.motif, () => { n++; return r.par; });
+  }
+  const reste = corps.replace(AFFILIATION_PERMISE, '').match(new RegExp(`[^<>]{0,60}(?:${TRACE_AFFILIATION.source})[^<>]{0,60}`, 'i'));
+  if (reste) throw new Error(`${fichier} : mention d'affiliation non retirée « …${reste[0].trim()}… » — ajouter son motif à RETRAITS de scripts/greffes.mjs`);
+  if (n && !sobre) notes.push(`${fichier} : ${n} mention(s) d'affiliation retirée(s) (affiliation inactive, src/data/affiliation.json)`);
+  return { corps, notes };
+}
+

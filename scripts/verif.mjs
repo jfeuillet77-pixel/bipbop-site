@@ -17,6 +17,7 @@ import { join, relative, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MODELES, ACCESSOIRES, PLAN, nomCourt, prixDe } from '../src/data/produits.mjs';
 import { defautsDeBalisage } from './balisage.mjs';
+import AFFILIATION from '../src/data/affiliation.json' with { type: 'json' };
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 /** Réglable : permet de passer au crible les maquettes elles-mêmes, pas seulement le site built. */
@@ -401,9 +402,29 @@ function verifLiensAffilies() {
 }
 
 const affilies = verifLiensAffilies();
+
+/* 7 bis. Les mentions : tant que src/data/affiliation.json dit « actif: false », aucune page ne
+   dit qu'on touche une commission (décision de Jordane du 23/09/2026). La greffe les retire des
+   pages portées ; ce contrôle relit le texte visible pour qu'une maquette ou un composant qui en
+   ajouterait une ne passe pas. */
+const MENTIONS_PERMISES = /Le site ne porte aucun identifiant d'affiliation/g;
+function verifMentionsAffiliation() {
+  if (AFFILIATION.actif) return [];
+  const trouvees = [];
+  for (const f of pages) {
+    const texte = lu(f).replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ').replace(MENTIONS_PERMISES, '');
+    const m = texte.match(/[^.]{0,50}(?:affili|commission)[^.]{0,50}/i);
+    if (m) trouvees.push({ page: route(f), extrait: m[0].replace(/\s+/g, ' ').trim() });
+  }
+  return trouvees;
+}
+const mentions = verifMentionsAffiliation();
+
 titre(7, 'LIENS AFFILIÉS');
 console.log(affilies.length ? `${affilies.length} MARQUEUR(S) DE TRAÇAGE DANS LE BUILD — aucun lien affilié ne se publie` : 'ras — aucun lien traquant dans les 38 routes ni dans la base');
 for (const a of affilies.slice(0, 12)) console.log(`   ✗ ${a.fichier} : ${a.n}× ${a.pourquoi}`);
+console.log(mentions.length ? `${mentions.length} PAGE(S) ANNONCENT UNE COMMISSION alors que l'affiliation est inactive (src/data/affiliation.json)` : (AFFILIATION.actif ? 'mentions : affiliation active, non contrôlées ici' : 'ras — aucune page ne parle de commission tant que l\'affiliation est inactive'));
+for (const m of mentions.slice(0, 12)) console.log(`   ✗ ${m.page.padEnd(46)} « …${m.extrait}… »`);
 
 /* 8. Longueurs SEO — la règle du projet : title entre 50 et 60 caractères, meta description
    entre 120 et 155. Une passe de copie retouche des dizaines de metas sans que personne les
@@ -511,7 +532,7 @@ titre(10, 'DONNÉES STRUCTURÉES');
 console.log(donnees.length ? `${donnees.length} PAGE(S) AU BALISAGE MANQUANT OU FAUX` : 'ras — chaque page porte un JSON-LD lisible et son Open Graph, chaque avis son prix et sa note');
 for (const b of donnees) console.log(`   ✗ ${b.page.padEnd(46)} ${b.defauts.join(' · ')}`);
 
-const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length + seo.horsFormat.length + balisage.length + donnees.length;
+const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length + mentions.length + seo.horsFormat.length + balisage.length + donnees.length;
 console.log(`\n${L}`);
 console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 10 contrôles de fin de séance sont passés\n');
 process.exit(nbProblemes ? 1 : 0);

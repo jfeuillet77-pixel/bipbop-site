@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import BipbopAvatar from '../../components/mascotte/BipbopAvatar.astro';
 import ComparatifLecture from '../../components/ComparatifLecture.astro';
+import AFFILIATION from '../../data/affiliation.json';
 import { ETAT_INITIAL, resultat } from '../../lib/comparatif.mjs';
 import { questionsHTML, resultatHTML } from '../../lib/comparatif-ui.mjs';
 import base from '../../data/modeles.json';
@@ -39,7 +40,7 @@ const RELEVE = new Date(base.releve + 'T12:00:00Z').toLocaleDateString('fr-FR', 
   <div id="zone-resultat" set:html={resultatHTML(vue)} />
 
   <div data-mar style="margin:0 40px 8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:400 14px/1.5 'Work Sans',sans-serif;color:#786550">
-    <span>Prix relevés chez Thomann, Woodbrass et Donner Music le {RELEVE}. Liens affiliés : on touche une commission, ton prix ne bouge pas.</span>
+    <span>Prix relevés chez Thomann, Woodbrass et Donner Music le {RELEVE}.{AFFILIATION.actif && ' Liens affiliés : on touche une commission, ton prix ne bouge pas.'}</span>
   </div>
   <ComparatifLecture />
   <div style="height:52px"></div>
