@@ -1,5 +1,17 @@
 # Journal BipBop
 
+## 23 septembre 2026 (soir, suite) — Guide P67 ampli, libellé de disponibilité Thomann
+
+Guide publié (1 470 mots), 13 guides au hub ; l'article casque renvoie enfin vers « l'article
+dédié » qu'il promettait. Le Donner DDA-20SE était « le moins cher du lot » dans la sélection
+(129,99 € contre 98 € pour le Nitro Amp) : rôle corrigé.
+
+**Relevé du lundi** : `lireThomann()` prenait « actuellement indisponible » n'importe où dans la
+page. Le relevé du 21/09 donnait ce libellé à 105 références en stock. Sans effet sur les décisions
+(la rupture se lit dans `availability`), mais une rupture avec délai pouvait être lue
+« indisponible » et devenir actionnable. Désormais : pas de libellé pour une fiche en stock, et le
+délai annoncé passe avant le texte générique.
+
 ## 23 septembre 2026 (soir, suite) — Guide P66 pad d'entraînement, le pad à 11 € n'en est pas un
 
 Guide publié (1 600 mots, gabarit de « Quel casque »), 12 guides au hub. En lisant la fiche Thomann

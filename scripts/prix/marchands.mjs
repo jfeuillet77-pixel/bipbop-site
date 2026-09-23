@@ -212,7 +212,11 @@ export function lireThomann(html) {
     html.match(/"item_name":"([^"]+)"/)?.[1] ??
     html.match(/property="og:title"\s+content="([^"]+)"/i)?.[1] ?? '';
   const dispo = (html.match(/itemprop="availability"\s+href="[^"]*?\/(\w+)"/i) ?? [])[1] ?? '';
-  const libelle = ((html.match(/(Disponible sous [^<]{2,24}|actuellement indisponible)/i) ?? [])[1] ?? '')
+  // « actuellement indisponible » figure aussi sur des fiches en stock, hors du bloc d'achat : le
+  // relevé du 21/09 l'attribuait à 105 références InStock. Une fiche en stock n'a donc pas de
+  // libellé, et un délai annoncé passe avant ce texte générique.
+  const trouve = (re) => (html.match(re) ?? [])[1];
+  const libelle = (dispo === 'InStock' ? '' : trouve(/(Disponible sous [^<]{2,24})/i) ?? trouve(/(actuellement indisponible)/i) ?? '')
     .replace(/\s+/g, ' ').trim();   // le HTML met des retours à la ligne et douze espaces dedans
   if (!price && !dispo) return null;
   return { price: price ? money(price[1]) : null, name: nom.trim(), availability: dispo, dispoLisible: libelle };
