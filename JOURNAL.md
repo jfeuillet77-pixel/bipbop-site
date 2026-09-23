@@ -1,5 +1,25 @@
 # Journal BipBop
 
+## 23 septembre 2026 (soir, reprise) — Duel P70 MPS-750X ou MPS-850, fiches Millenium recalées
+
+**Première page neuve écrite en maquette depuis la fin de Claude Design** : le duel est un clone
+du gabarit MPS-150X contre Turbo Mesh, 1 900 mots, faits lus dans le flux Thomann et sur les fiches
+du 23/09. Title et description écrits dans le `<head>` porté (58 et 145 caractères).
+
+**En le préparant, les deux avis se sont révélés faux sur leurs arguments centraux.** MPS-850 :
+caisse claire de 10 pouces (l'avis disait 12, « le vrai argument de ce modèle »), toms 8 et 10,
+quatre cymbales de 12 (pas de ride 14), 140 × 80 cm (pas 150 × 100), dix pads (pas neuf), MIDI
+DIN et import WAV, aucune entrée libre. MPS-750X : charleston 13, ride 14, 697 sons (pas 500),
+Bluetooth (la base et l'avis disaient non), USB MIDI sans prise DIN ni sortie séparée, autant de
+pads que la Nitro Max (l'avis disait deux de plus). Le « BipBop dit » de la MPS-850 inversait le
+calcul du pack d'extension. Corrigés dans les maquettes, grilles recalculées (750X 8,1 → 8,2,
+850 8,0 → 7,8). Base : Bluetooth vrai pour MPS-350, 750X et 750X Pro. Guide moins de 1 000 € :
+Nitro Pro XL (10) et Ultimate (9) inversées. Deux guides donnaient 500 sons au module 750X.
+
+**Hub /avis/** : quatrième duel, grille des duels en 2 × 2. Le seuil de P26 (hub /duels/ au
+quatrième duel) est atteint. La capture à 1 200 px a montré du code de générateur laissé en clair
+dans un encart ; aucun des 11 contrôles ne l'avait vu.
+
 ## 23 septembre 2026 (matin) — Grilles de notation sur les 9 avis
 
 Généralisées à la demande de Jordane, après un premier essai sur la Nitro Max. Une grille calculée

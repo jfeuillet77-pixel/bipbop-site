@@ -214,21 +214,21 @@
         "Huit pads mesh, le meilleur cas pour les cloisons. La pédale à batte reste le point faible."
       ],
       "module": [
-        7,
-        "500 sons, enregistreur, MIDI et USB. Pas de Bluetooth."
+        8,
+        "697 sons, Bluetooth et USB MIDI. Pas de prise MIDI à cinq broches."
       ],
       "confort": [
         7,
-        "Cymbales de 12 pouces et rack qui ne bouge pas, mais 140 × 90 cm au sol."
+        "Charleston de 13 pouces, ride de 14 et rack qui ne bouge pas, mais 140 × 80 cm au sol."
       ],
       "prix": [
         8,
-        "Huit pads mesh et des cymbales de 12 pouces pour {prix:mps750x}."
+        "Huit pads mesh, des cymbales de 12 à 14 pouces et le Bluetooth pour {prix:mps750x}."
       ],
       "profil": {
         "pour": "Tu as une vraie place pour jouer",
         "note": 9,
-        "raison": "Huit pads mesh, des cymbales de 12 pouces et un rack qui ne bouge pas, si tu as 140 cm au sol."
+        "raison": "Huit pads mesh, des cymbales de 12 à 14 pouces et un rack qui ne bouge pas, si tu as 140 cm au sol."
       }
     },
     "Avis-Donner-DED-200X.dc.html": {
@@ -262,8 +262,8 @@
     "Avis-Millenium-MPS-850.dc.html": {
       "id": "mps850",
       "toucher": [
-        10,
-        "Caisse claire de 12 pouces et toms de 10 pouces en mesh : on arrête de viser."
+        9,
+        "Tout mesh, caisse claire de 10 pouces à deux zones, quatre toms dont deux de 8 pouces."
       ],
       "discretion": [
         7,
@@ -271,20 +271,20 @@
       ],
       "module": [
         7,
-        "Réglages fins pad par pad et entrées pour agrandir le kit. Pas de Bluetooth."
+        "550 sons, MIDI In et Out, import de sons WAV. Pas de Bluetooth."
       ],
       "confort": [
-        8,
-        "Ride de 14 pouces et rack renforcé, mais 150 × 100 cm, le plus encombrant."
+        7,
+        "Quatre cymbales de 12 pouces et un rack en aluminium, sur 140 × 80 cm."
       ],
       "prix": [
         6,
-        "{prix:mps850} : cent euros de plus que la MPS-750X pour du confort, pas des fonctions."
+        "{prix:mps850} : la MPS-750X et son pack d'extension donnent aussi dix pads pour vingt-cinq euros de plus."
       ],
       "profil": {
         "pour": "Tu joues déjà un peu",
         "note": 9,
-        "raison": "Caisse claire de 12 pouces et toms de 10 : plus de confort de jeu pour qui sait déjà tenir un rythme."
+        "raison": "Quatre toms, deux crashs et un module qui parle MIDI : plus d'équipement pour qui sait déjà tenir un rythme."
       }
     }
   },
