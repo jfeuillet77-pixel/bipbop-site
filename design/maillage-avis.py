@@ -88,7 +88,9 @@ for src in SOURCES:
         rapport.append(dict(page=src, cible=cible, ancre=m.group(2) + (m.group(3) or ''), ou='tableau'))
         return f'{m.group(1)}<a href="{cible}" style="{STYLE}">{m.group(2)}{m.group(3) or ""}</a>{m.group(4)}'
 
-    neuf = re.sub(r'(<div style="padding:15px 16px;font-weight:[67]00">)(' + '|'.join(map(re.escape, NOM_VERS_AVIS)) + r')( Mesh| Kit)?(</div>|<div)', cellule, neuf)
+    # Deux gabarits de tableau : comparatifs des guides (15px) et « Face à la concurrence » des
+    # avis ou prix d'occasion (14px), avec ou sans white-space, nom seul dans la cellule.
+    neuf = re.sub(r'(<div style="padding:1[45]px 16px;font-weight:[67]00(?:;[^"]*)?">)(' + '|'.join(map(re.escape, NOM_VERS_AVIS)) + r')( Mesh| Kit| V-Drums)?(</div>|<div)', cellule, neuf)
 
     # 2. Lien connexe écrit vers le hub faute d'avis à l'époque : il vise maintenant l'avis.
     avant = neuf

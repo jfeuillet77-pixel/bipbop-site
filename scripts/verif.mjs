@@ -17,6 +17,7 @@ import { join, relative, dirname, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { MODELES, ACCESSOIRES, PLAN, nomCourt, prixDe } from '../src/data/produits.mjs';
 import { defautsDeBalisage } from './balisage.mjs';
+import { arborescence } from '../src/lib/arborescence.mjs';
 import AFFILIATION from '../src/data/affiliation.json' with { type: 'json' };
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -546,7 +547,43 @@ titre(10, 'DONNÉES STRUCTURÉES');
 console.log(donnees.length ? `${donnees.length} PAGE(S) AU BALISAGE MANQUANT OU FAUX` : 'ras — chaque page porte un JSON-LD lisible et son Open Graph, chaque avis son prix et sa note');
 for (const b of donnees) console.log(`   ✗ ${b.page.padEnd(46)} ${b.defauts.join(' · ')}`);
 
-const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length + mentions.length + vocabulaire.length + seo.horsFormat.length + balisage.length + donnees.length;
+/* 11. Cohérence entre pages — publier une page a des conséquences sur les autres (loi 4). Ce
+   contrôle fait la repasse que Jordane demande à chaque publication (23/09/2026) :
+   - bloquant : une page publiée qu'aucune autre page ne lie (hors plan du site), ou que son hub
+     ne liste pas ;
+   - signalé : un modèle qui a un avis, cité dans une page sans lien vers cet avis. Tous ne se
+     lient pas (un tableau, une énumération), mais la liste dit où regarder après une publication. */
+
+const HUB_DE_SECTION = { Avis: '/avis/', Duels: '/avis/', Guides: '/guides/', Bases: '/guides/', Marques: '/marques/' };
+const { pages: publiees } = arborescence(DIST);
+const fichierDe = new Map(fichiers.map((f) => [route(f), f]));
+const liensDe = new Map(fichiers.map((f) => [route(f), new Set([...lu(f).matchAll(/href="(\/[^"#?]*)"/g)].map((m) => m[1]))]));
+const coherence = { orphelines: [], horsHub: [], mentions: [] };
+for (const p of publiees) {
+  if (p.route === '/' || p.section === 'Site') continue;
+  const sources = [...liensDe].filter(([r, ls]) => r !== p.route && r !== '/plan-du-site/' && ls.has(p.route)).map(([r]) => r);
+  if (!sources.length) coherence.orphelines.push(p.route);
+  const hub = HUB_DE_SECTION[p.section];
+  if (hub && hub !== p.route && fichierDe.has(hub) && !liensDe.get(hub).has(p.route)) coherence.horsHub.push(`${p.route} (absente de ${hub})`);
+}
+const AVEC_AVIS = MODELES.filter((m) => m.avis && fichierDe.has(m.avis));
+for (const [r, f] of fichierDe) {
+  if (r === '/404.html' || r === '/plan-du-site/') continue;
+  const texte = lu(f).replace(/<(script|style)[^>]*>[\s\S]*?<\/\1>/g, ' ').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ');
+  const manquants = AVEC_AVIS.filter((m) => m.avis !== r && !liensDe.get(r).has(m.avis) && texte.includes(`${m.marque} ${m.modele}`.replace(/ Mesh$| Kit$/, '')));
+  if (manquants.length) coherence.mentions.push(`${r} : ${manquants.map((m) => m.modele.replace(/ Mesh$| Kit$/, '')).join(', ')}`);
+}
+titre(11, 'COHÉRENCE ENTRE PAGES');
+const bloquants = coherence.orphelines.length + coherence.horsHub.length;
+console.log(bloquants ? `${bloquants} PAGE(S) MAL RACCROCHÉE(S) au reste du site` : `ras — les ${publiees.length} pages publiées sont liées ailleurs que dans le plan du site et listées par leur hub`);
+for (const o of coherence.orphelines) console.log(`   ✗ ${o} : aucune page ne la lie, hors plan du site`);
+for (const h of coherence.horsHub) console.log(`   ✗ ${h}`);
+if (coherence.mentions.length) {
+  console.log(`   · à relire après une publication : ${coherence.mentions.length} page(s) citent un modèle sans lien vers son avis`);
+  for (const m of coherence.mentions.slice(0, 12)) console.log(`       ${m}`);
+}
+
+const nbProblemes = liens.casses.length + compteurs.length + prix.length + (nav.size > 1 ? 1 : 0) + responsive.filter((r) => r.defauts.length).length + fuites.length + affilies.length + mentions.length + vocabulaire.length + seo.horsFormat.length + balisage.length + donnees.length + bloquants;
 console.log(`\n${L}`);
-console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 10 contrôles de fin de séance sont passés\n');
+console.log(nbProblemes ? `✗ ${nbProblemes} problème(s) à corriger avant publication\n` : '✓ les 11 contrôles de fin de séance sont passés\n');
 process.exit(nbProblemes ? 1 : 0);

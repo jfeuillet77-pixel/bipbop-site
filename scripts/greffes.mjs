@@ -389,7 +389,14 @@ export function grefferLiensDuPied(corps, { sobre = false } = {}) {
     .map(({ route, libelle }) => `<a href="${route}" style="${STYLE_LIEN_PIED}" style-hover="color:#ffd166">${libelle}</a>`)
     .join('');
   corps = corps.replace(DERNIER_LIEN_LEGAL, DERNIER_LIEN_LEGAL + ajout);
-  if (!sobre) notes.push(`pied de page : liens ${LIENS_GREFFES.map((l) => `« ${l.libelle} »`).join(' et ')} greffés après « Politique de confidentialité » — la maquette ne les contient pas`);
+  // Colonne « TROUVER » : le hub des marques (23/09/2026) après « Tous les avis », au même style.
+  // Dans le <footer> seulement : À propos a aussi un « Tous les avis » dans son corps.
+  const pied = corps.indexOf('<footer');
+  const avis = pied >= 0 && corps.slice(pied).match(/<a href="(?:Avis\.dc\.html|\/avis\/)" style="([^"]*)"( style-hover="[^"]*")?>Tous les avis<\/a>/);
+  if (!avis) throw new Error('pied de page : lien « Tous les avis » introuvable dans le <footer>, la greffe des marques ne sait pas où se poser');
+  const ou = pied + avis.index + avis[0].length;
+  corps = corps.slice(0, ou) + `<a href="/marques/" style="${avis[1]}"${avis[2] ?? ''}>Toutes les marques</a>` + corps.slice(ou);
+  if (!sobre) notes.push(`pied de page : liens ${LIENS_GREFFES.map((l) => `« ${l.libelle} »`).join(' et ')} greffés après « Politique de confidentialité », « Toutes les marques » après « Tous les avis » — la maquette ne les contient pas`);
   return { corps, notes, greffe: true };
 }
 

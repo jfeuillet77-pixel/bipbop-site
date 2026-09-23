@@ -192,8 +192,8 @@
     },
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
-      "au": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div>",
-      "remplace": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap\">309 €</div>",
+      "au": ">Alesis Turbo Mesh</a></div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div>",
+      "remplace": ">Alesis Turbo Mesh</a></div><div style=\"padding:14px 16px;white-space:nowrap\">309 €</div>",
       "pourquoi": "colonne « Neuf » du tableau"
     },
     {
@@ -216,8 +216,8 @@
     },
     {
       "fichier": "Avis-Millenium-MPS-150X.dc.html",
-      "au": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">298 €</div>",
-      "remplace": ">Alesis Turbo Mesh</div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">309 €</div>",
+      "au": ">Alesis Turbo Mesh</a></div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">298 €</div>",
+      "remplace": ">Alesis Turbo Mesh</a></div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">309 €</div>",
       "pourquoi": "Turbo à 309 €"
     },
     {
