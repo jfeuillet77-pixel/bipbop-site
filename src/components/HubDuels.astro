@@ -1,0 +1,185 @@
+---
+/**
+ * HubDuels — la page /duels/ (24/09/2026, plan P26, créée au quatrième duel).
+ *
+ * Même en-tête et même mise en page que /marques/ (HubMarques.astro). La liste des duels se lit
+ * dans le plan éditorial : chaque ligne « Duel » au statut « Publié » y entre seule, rangée du
+ * moins cher au plus cher, et les lignes « À produire » font la section « Les prochains duels ».
+ * Les phrases et le gagnant de chaque duel viennent de src/data/duels.mjs : un duel publié sans
+ * entrée là fait échouer le build. Prix et écarts en jetons, recalculés à chaque relevé.
+ */
+import { execFileSync } from 'node:child_process';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BipbopAvatar from './mascotte/BipbopAvatar.astro';
+import { PLAN, RELEVE } from '../data/produits.mjs';
+import { rendre as rendreJetons, modele, prixF, LIEN, rendreTexte } from '../lib/jetons.mjs';
+import { avisPublie } from '../lib/avis-livres.mjs';
+import { DUELS, INDEX_DUELS as I } from '../data/duels.mjs';
+
+const rendre = (t) => rendreJetons(t, I.route);
+const routeDe = (slug) => `/${String(slug).replace(/^\/+|\/+$/g, '')}/`;
+
+const lignes = PLAN.filter((r) => r.type === 'Duel');
+const publies = lignes.filter((r) => r.statut === 'Publié').map((r) => ({ route: routeDe(r.slug), titre: r.titre }));
+const sansTexte = publies.filter((d) => !DUELS[d.route]).map((d) => d.route);
+if (sansTexte.length) throw new Error(`HubDuels : aucune entrée dans src/data/duels.mjs pour ${sansTexte.join(', ')}`);
+const enTrop = Object.keys(DUELS).filter((r) => !publies.some((d) => d.route === r));
+if (enTrop.length) throw new Error(`HubDuels : ${enTrop.join(', ')} décrit dans duels.mjs mais pas « Publié » au plan`);
+
+const duels = publies
+  .map((d) => {
+    const e = DUELS[d.route];
+    const a = modele(e.a, I.route);
+    const b = modele(e.b, I.route);
+    return { ...d, ...e, ma: a, mb: b, bas: Math.min(a.prix, b.prix) };
+  })
+  .sort((x, y) => x.bas - y.bas || x.route.localeCompare(y.route));
+const aVenir = lignes.filter((r) => r.statut !== 'Publié').map((r) => r.titre);
+
+// Les modèles et les duels où ils apparaissent : l'entrée par modèle.
+const parModele = new Map();
+for (const d of duels) for (const m of [d.ma, d.mb]) parModele.set(m.id, { m, duels: [...(parModele.get(m.id)?.duels ?? []), d] });
+const modeles = [...parModele.values()].sort((x, y) => x.m.prix - y.m.prix);
+
+const nom = (m) => {
+  const r = avisPublie(m);
+  return r ? `<a href="${r}" style="${LIEN}">${m.nom_complet}</a>` : m.nom_complet;
+};
+// « Prends la Millenium », « Prends l'Alesis » : la même élision que les textes à jetons.
+const la = (m) => (/^[aeiouéèê]/i.test(m.nom_complet) ? `l'${m.nom_complet}` : `la ${m.nom_complet}`);
+
+const releve = new Date(RELEVE + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+let git = null;
+try {
+  git = execFileSync('git', ['log', '-1', '--format=%cs', '--', 'src/data/duels.mjs'], { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim() || null;
+} catch { /* build hors dépôt : on garde le relevé */ }
+const maj = new Date([git, RELEVE].filter(Boolean).sort().at(-1) + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
+
+const textes = [I.chapeau, ...I.reponse, ...duels.flatMap((d) => [d.resume, d.pourA, d.pourB]), ...I.sections.flatMap((s) => [...(s.texte ?? []), ...(s.liste ?? [])]), I.avenir.texte, I.avenir.apres, ...I.faq.flatMap((f) => [f.q, f.r])];
+const minutes = Math.max(3, Math.round(textes.join(' ').split(/\s+/).length / 200) + 2);
+
+const sommaire = [
+  { id: 'reponse', titre: 'La réponse courte' },
+  { id: 'duels', titre: `Les ${duels.length} duels` },
+  { id: 'par-modele', titre: 'Par modèle' },
+  ...I.sections.map((s) => ({ id: s.id, titre: s.h2 })),
+  ...(aVenir.length ? [{ id: I.avenir.id, titre: I.avenir.h2 }] : []),
+  { id: 'questions', titre: 'Tes questions' },
+];
+
+const S = {
+  h2: "font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:0 0 16px;scroll-margin-top:20px",
+  h3: "font:700 21px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.015em;margin:0 0 10px",
+  p: "font:400 17px/1.72 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 16px;max-width:720px;text-wrap:pretty",
+  li: "font:400 17px/1.65 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 12px;max-width:720px",
+  section: 'margin:0 0 44px;scroll-margin-top:20px',
+  cellule: 'padding:14px 16px',
+  grille: 'display:grid;grid-template-columns:minmax(150px,1fr) 100px minmax(200px,1.4fr)',
+};
+---
+
+<BaseLayout title={rendreTexte(I.title)} description={rendreTexte(I.description.replace('{nb}', String(duels.length)))} currentPage="avis">
+  <div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550"><a href="/" style="color:inherit;text-decoration:none">ACCUEIL</a> / DUELS</div>
+
+  <div data-pad style="padding:20px 40px 32px;max-width:840px">
+    <div style="display:inline-flex;align-items:center;gap:8px;font:700 12px 'Work Sans',sans-serif;letter-spacing:.04em;background:#241c14;color:#ffd166;border:2.5px solid #241c14;border-radius:9px;padding:6px 12px;margin-bottom:20px">LES DUELS</div>
+    <h1 data-big="b" style="font:800 56px/1.02 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:pretty" set:html={rendre(I.h1)} />
+    <p style="font:400 20px/1.55 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 22px;max-width:700px;text-wrap:pretty" set:html={rendre(I.chapeau)} />
+    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div style="width:44px;height:44px;border-radius:50%;overflow:hidden;border:2.5px solid #241c14;background:#ffd166"><BipbopAvatar /></div>
+      <div style="font:500 14px 'Work Sans',sans-serif;color:#5a4c3e">Par <strong style="color:#241c14;font-weight:700">BipBop</strong></div>
+      <span style="color:#c9b9a3">·</span>
+      <div style="font:500 13px 'IBM Plex Mono',monospace;color:#786550">MIS À JOUR LE {maj} · {minutes} MIN</div>
+    </div>
+  </div>
+
+  <div data-rwd="sp" data-pad style="padding:0 40px 40px;display:grid;grid-template-columns:214px 1fr;gap:44px;align-items:start">
+    <div data-sticky style="position:sticky;top:20px;display:flex;flex-direction:column;gap:16px">
+      <div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:18px 18px 16px;box-shadow:4px 4px 0 #241c14">
+        <div style="font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.08em;color:#786550;margin-bottom:13px">AU PROGRAMME</div>
+        <div style="display:flex;flex-direction:column;gap:10px;font:500 13.5px/1.35 'Work Sans',sans-serif">
+          {sommaire.map((e) => <a href={'#' + e.id} style="color:#241c14;text-decoration:none">{e.titre}</a>)}
+        </div>
+      </div>
+      <a href="/avis/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;border:2.5px solid #241c14;padding:12px 14px;border-radius:12px;box-shadow:4px 4px 0 #241c14">Tous les avis</a>
+    </div>
+
+    <div style="min-width:0">
+      <div id="reponse" style="background:#241c14;color:#fdf6ec;border-radius:18px;padding:24px 26px;margin:0 0 44px;max-width:760px;scroll-margin-top:20px">
+        <div style="font:700 12px 'Work Sans',sans-serif;letter-spacing:.06em;color:#ffd166;margin-bottom:12px">LA RÉPONSE COURTE</div>
+        {I.reponse.map((r) => <p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#e0d5c8;margin:0 0 10px" set:html={rendre(r)} />)}
+      </div>
+
+      <section id="duels" style={S.section}>
+        <h2 data-big="d" style={S.h2}>Les {duels.length} duels publiés</h2>
+        <p style={S.p}>Du moins cher au plus cher. Chaque duel compare les deux kits critère par critère et finit par un verdict.</p>
+        <div style="display:flex;flex-direction:column;gap:18px;max-width:760px">
+          {duels.map((d) => (
+            <div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:5px 5px 0 #241c14">
+              <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 10px">
+                <span style="font:700 11px 'Work Sans',sans-serif;letter-spacing:.05em;padding:4px 9px;border-radius:7px;border:2px solid #241c14;background:#ffd166">VS</span>
+                <span style="font:500 12px 'IBM Plex Mono',monospace;color:#786550">{d.gagnant ? `GAGNANTE : ${(d.gagnant === d.a ? d.ma : d.mb).nom_complet.toUpperCase()}` : 'SELON TA SITUATION'}</span>
+              </div>
+              <h3 style={S.h3}><a href={d.route} style="color:#241c14;text-decoration:underline;text-underline-offset:4px">{d.titre}</a></h3>
+              <p style="font:500 14.5px/1.5 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 10px" set:html={`${nom(d.ma)} <span style="white-space:nowrap">${prixF(d.ma)}</span> · ${nom(d.mb)} <span style="white-space:nowrap">${prixF(d.mb)}</span>`} />
+              <p style="font:400 16px/1.62 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 12px;text-wrap:pretty" set:html={rendre(d.resume)} />
+              <ul style="margin:0 0 14px;padding:0 0 0 20px;font:400 15px/1.55 'Work Sans',sans-serif;color:#4a3d31">
+                <li style="margin:0 0 6px" set:html={`<strong>Prends ${la(d.ma)}</strong> si ${rendre(d.pourA)}`} />
+                <li set:html={`<strong>Prends ${la(d.mb)}</strong> si ${rendre(d.pourB)}`} />
+              </ul>
+              <a href={d.route} style="display:inline-block;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#fff;background:#d2431f;border:2.5px solid #241c14;padding:10px 16px;border-radius:11px;box-shadow:3px 3px 0 #241c14">Lire le duel</a>
+            </div>
+          ))}
+        </div>
+        <p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:14px 0 0">Prix relevés le {releve}. Le nom d'un modèle mène à son avis complet.</p>
+      </section>
+
+      <section id="par-modele" style={S.section}>
+        <h2 data-big="d" style={S.h2}>Les duels, modèle par modèle</h2>
+        <p style={S.p}>Tu as déjà un modèle en tête ? Voilà contre qui on l'a mis.</p>
+        <div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:14px;font:400 14.5px 'Work Sans',sans-serif">
+          <div data-rwd="tblrow" style={S.grille + ';background:#241c14;color:#fdf6ec;font-weight:600;font-size:13px'}>
+            <div style="padding:12px 16px">Modèle</div><div style="padding:12px 16px">Prix</div><div style="padding:12px 16px">Face à</div>
+          </div>
+          {modeles.map(({ m, duels: ds }, i) => (
+            <div data-rwd="tblrow" style={S.grille + `;background:${i % 2 ? '#fdf6ec' : '#fff'};border-top:1.5px solid #e4d8c6;align-items:center`}>
+              <div style={S.cellule + ';font-weight:700'} set:html={nom(m)} />
+              <div style={S.cellule + ';white-space:nowrap'}>{prixF(m)}</div>
+              <div style={S.cellule + ';color:#4a3d31'} set:html={ds.map((d) => { const o = d.ma.id === m.id ? d.mb : d.ma; return `<a href="${d.route}" style="${LIEN}">${o.nom_complet}</a>`; }).join(', ')} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {I.sections.map((s) => (
+        <section id={s.id} style={S.section}>
+          <h2 data-big="d" style={S.h2} set:html={rendre(s.h2)} />
+          {(s.texte ?? []).map((t) => <p style={S.p} set:html={rendre(t)} />)}
+          {s.liste && <ul style="margin:0 0 16px;padding:0 0 0 22px">{s.liste.map((t) => <li style={S.li} set:html={rendre(t)} />)}</ul>}
+        </section>
+      ))}
+
+      {aVenir.length > 0 && (
+        <section id={I.avenir.id} style={S.section}>
+          <h2 data-big="d" style={S.h2}>{I.avenir.h2}</h2>
+          <p style={S.p} set:html={rendre(I.avenir.texte)} />
+          <ul style="margin:0 0 16px;padding:0 0 0 22px">{aVenir.map((t) => <li style={S.li}>{t}</li>)}</ul>
+          <p style={S.p} set:html={rendre(I.avenir.apres)} />
+        </section>
+      )}
+
+      <section id="questions" style={S.section}>
+        <h2 data-big="d" style={S.h2}>Tes questions sur les duels</h2>
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:760px">
+          {I.faq.map((f) => (
+            <div style="background:#fff;border:2.5px solid #241c14;border-radius:14px;padding:18px 20px">
+              <h3 style="font:700 18px/1.3 'Work Sans',sans-serif;margin:0 0 8px" set:html={rendre(f.q)} />
+              <p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0" set:html={rendre(f.r)} />
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
+  <div style="height:52px"></div>
+</BaseLayout>

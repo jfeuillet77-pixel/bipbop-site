@@ -27,6 +27,11 @@ export const ACCESSOIRES_CITES = {
   siege: { marque: 'Millenium', produit: 'MDT4 Drum Throne Round' },
   tapis: { marque: 'Thomann', produit: 'E-Drum Rug Black 120' },
   baguettes: { marque: 'Millenium', produit: '7A Maple Wood' },
+  patins: { marque: 'Roland', produit: 'NE-1 Noise Eater' },
+  plateau: { marque: 'Roland', produit: 'NE-10 Noise Eater' },
+  ku: { marque: 'Yamaha', produit: 'KU100 Silent Kick Pedal' },
+  kt: { marque: 'Roland', produit: 'KT-9 Kick Trigger Pedal' },
+  modulemps: { marque: 'Millenium', produit: 'MPS-150 Drum Module' },
 };
 
 export const MARQUES = {
@@ -96,7 +101,7 @@ export const MARQUES = {
         h2: 'Yamaha ou une autre marque ?',
         id: 'ou-ailleurs',
         texte: [
-          "Pour le prix de la {nom:dtx432} ({prix:dtx432}), on trouve huit pads en peau maillée chez Millenium avec la {avis:mps750x} ({prix:mps750x}). Chez Roland, la {avis:td02kv} ({prix:td02kv}) apporte une pédale sans batte et les sons de la marque. Ce que Yamaha vend en plus, c'est la pédagogie. Si tu sais déjà que tu vas t'y tenir, tu la paieras sans t'en servir.",
+          "Pour le prix de la {nom:dtx432} ({prix:dtx432}), on trouve cinq fûts en peau maillée chez Millenium avec la {avis:mps750x} ({prix:mps750x}). Chez Roland, la {avis:td02kv} ({prix:td02kv}) apporte une pédale sans batte et les sons de la marque. Ce que Yamaha vend en plus, c'est la pédagogie. Si tu sais déjà que tu vas t'y tenir, tu la paieras sans t'en servir.",
           "Si c'est Alesis qui te fait hésiter, sa gamme Nitro met des peaux maillées sur tous les fûts dès {prix:nitromax}, avec le Bluetooth en plus. La [page Alesis](/marques/batterie-electronique-alesis/) compare ses {n:modeles:Alesis} modèles.",
           "Pour comparer toutes les marques d'un coup, le [comparatif en trois questions](/comparatif-batterie-electronique/) sort deux modèles selon ton budget, ta place et ce que tu veux jouer.",
         ],
@@ -140,7 +145,7 @@ export const MARQUES = {
     chapeau:
       "Alesis a mis la peau maillée à la portée des petits budgets : les {n:modeles:Alesis} modèles qu'on suit en ont tous, de {prix:debut} à {prix:strata}. La vraie question n'est pas « mesh ou pas », c'est où t'arrêter.",
     reponse: [
-      "**Pour un premier achat** : la {avis:nitromax} à {prix:nitromax}. Mesh partout, un bon module et le Bluetooth.",
+      "**Pour un premier achat** : la {avis:nitromax} à {prix:nitromax}. Mesh sur tous les fûts, un bon module et le Bluetooth.",
       "**Budget serré** : la {avis:turbo} à {prix:turbo}. Mais à ce prix, la {avis:mps150x} ({prix:mps150x}) offre des cymbales plus grandes.",
       "**Pour un enfant** : le {nom:debut} à {prix:debut}, le seul kit format enfant avec des peaux maillées.",
     ],
@@ -163,7 +168,7 @@ export const MARQUES = {
         h2: 'Et la Nitro Mesh Kit ?',
         id: 'nitro-mesh',
         texte: [
-          "C'est l'ancienne Nitro, celle que beaucoup cherchent encore. La Nitro Max l'a remplacée : même principe, peaux maillées partout, avec une caisse claire plus grande et le Bluetooth en plus. La Nitro Mesh Kit ne se vend plus neuve en France : ni Thomann ni Woodbrass ne la proposent (vérifié le 23 septembre 2026).",
+          "C'est l'ancienne Nitro, celle que beaucoup cherchent encore. La Nitro Max l'a remplacée : même principe, peaux maillées sur tous les fûts, avec une caisse claire plus grande et le Bluetooth en plus. La Nitro Mesh Kit ne se vend plus neuve en France : ni Thomann ni Woodbrass ne la proposent (vérifié le 23 septembre 2026).",
           "D'occasion, elle reste un bon achat si le prix suit. Le [guide de l'occasion](/guides/acheter-batterie-electronique-occasion/) liste les six points à vérifier avant de payer.",
         ],
       },
@@ -304,7 +309,7 @@ export const INDEX_MARQUES = {
     },
     {
       q: 'Roland vaut-il son prix pour débuter ?',
-      r: "Pour le son et le silence, oui : la {avis:td02kv} est la seule qu'on recommande en immeuble ancien, grâce à sa pédale sans batte. Pour le toucher, moins : au même prix, la {avis:mps750x} de Millenium a des peaux maillées sur tous ses pads.",
+      r: "Pour le son et le silence, oui : la {avis:td02kv} est la seule qu'on recommande en immeuble ancien, grâce à sa pédale sans batte. Pour le toucher, moins : au même prix, la {avis:mps750x} a des peaux maillées sur ses cinq fûts, la Roland sur sa seule caisse claire.",
     },
     {
       q: 'Faut-il rester sur la même marque pour faire évoluer sa batterie ?',

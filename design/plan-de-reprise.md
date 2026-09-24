@@ -1,12 +1,17 @@
-# Plan de reprise — état au 23 septembre 2026 (soir)
+# Plan de reprise — état au 24 septembre 2026
 
 ## Reprendre ici
 
-Session du 23/09/2026 : audit SEO complet, puis les chantiers 1 à 7 de
-`design/audit-seo-2026-09-23.md`. Le soir, **la vague 1 du chantier 5 est finie** : P70, P66, P67,
-P68, P69 et le H2 « batterie silencieuse », chacun en maquette, porté, contrôlé et en ligne. Tout
-est commité, `dev` est fusionnée dans `main`.
-Le détail daté est dans `JOURNAL.md` ; les règles nouvelles sont dans `AGENTS.md`.
+Session du 24/09/2026 : suite de l'audit du 23/09 (`design/audit-seo-2026-09-23.md`). **Hub
+`/duels/` publié** (P26, construit depuis les données), **MPS-450 recommandation nº1** de `/avis/`,
+et une passe de corrections factuelles sur 14 maquettes (voir `JOURNAL.md` du 24/09). Tout est
+commité, `dev` est fusionnée dans `main`.
+Le 23/09 : audit SEO, chantiers 1 à 7, vague 1 du chantier 5. Règles nouvelles dans `AGENTS.md`.
+
+**Consigne de Jordane (24/09)** : une erreur qui se tranche en lisant la source (prix, compte,
+fiche, lien qui mène au mauvais endroit, conseil sans appui) se corrige sans demander, même si
+ça réécrit une phrase. Ne remonter que les choix de ligne éditoriale. **Priorité : autorité et
+trafic** ; l'affiliation attend un à deux mois.
 
 ### Ce qui a changé de fond
 
@@ -21,8 +26,10 @@ Le détail daté est dans `JOURNAL.md` ; les règles nouvelles sont dans `AGENTS
   ton profil », note = 6 + (moyenne − 5) × 0,8, jamais sous 6 sans `"exception": true`. Un nouvel
   avis = une entrée dans ce fichier, notée selon son « bareme ».
 - **Pages construites depuis les données** : comparatif (`ComparatifLecture.astro`), hubs de
-  marque (`HubMarque.astro`), page `/marques/` (`HubMarques.astro`). Texte dans
-  `src/data/marques.mjs`, prix, noms et comptes par jetons (`src/lib/jetons.mjs`).
+  marque (`HubMarque.astro`), page `/marques/` (`HubMarques.astro`), hub `/duels/`
+  (`HubDuels.astro`, 24/09). Texte dans `src/data/marques.mjs` et `src/data/duels.mjs`, prix,
+  noms et comptes par jetons (`src/lib/jetons.mjs`). **Un duel publié = aussi une entrée dans
+  `duels.mjs`** (deux modèles, gagnant, trois phrases), sinon le build échoue.
 - **Nouveaux postbuild** : `donnees-structurees.mjs` (Open Graph + JSON-LD), `typographie.mjs`
   (espaces insécables des prix). **Contrôles** : 10 (données structurées) et 11 (cohérence entre
   pages : orpheline ou absente de son hub = échec ; modèles cités sans lien = liste à relire).
@@ -41,8 +48,9 @@ volumes et raisons dans la colonne notes). Détail et chiffres : `design/plan-co
    arrêtées en France, vérifié sur Thomann et Woodbrass le 23/09, la TD313 remplace la TD-17KV2) ;
    P72 avis Roland TD313 ; P73 pilier « Apprendre la batterie » ; P74 réglages MPS-750X (volumes
    anglais suspects, manuel constructeur seulement) ; P75 hub Millenium.
-3. **Vague 3** : les avis du plan (MPS-1000, Nitro Pro, Nux, TD-02K… pour la règle D06), hubs
-   `/duels/` (**seuil atteint** : 4 duels depuis P70 ; P26 est au plan en vague 2, à avancer ?) et `/les-bases/`, les bases P51 à P60, P50 « où acheter ».
+3. **Vague 3** : les avis du plan (MPS-1000, Nitro Pro, Nux, TD-02K… pour la règle D06), hub
+   `/les-bases/`, les bases P51 à P60, P50 « où acheter », duels P48 et P49 (ils apparaissent
+   déjà sur `/duels/` dans « Les prochains duels »). `/duels/` est publié depuis le 24/09.
 
 **Comment produire une page** : un guide, un duel ou un avis se fait en maquette dans
 `../Claude Design - MàJ/` (cloner une maquette du même gabarit, loi 1), commit dans ce dépôt-là,
@@ -54,28 +62,18 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 
 ### Ce qui attend Jordane
 
-- **Identifiants d'affiliation BipBop** (Thomann, Woodbrass, Donner) : passer `actif` à `true`
-  dans `src/data/affiliation.json` et suivre son champ `pour_reactiver`.
-- **Nitro Max « recommandation nº1 »** sur `/avis/` alors que la MPS-450 la dépasse (8,4 contre
-  8,3) : laissée telle quelle en attendant sa décision.
-- **Avis MPS-750X** : « une pédale silencieuse Yamaha KU100 […] une soixantaine d'euros », la
-  sélection la donne à 88 €. Copie à trancher.
-- **Duel Nitro Max vs DED-200X** : deux boutons « Voir le prix chez Thomann » mènent l'un à l'avis
-  Nitro Max, l'autre à la boutique Donner.
-- **Demander l'indexation** (quota Search Console) : `/guides/acheter-batterie-electronique-occasion/`,
-  `/les-bases/tapis-batterie-electronique/`, puis les trois pages `/marques/`.
-- **Dépôt des maquettes** : un remote **privé** si Jordane veut une sauvegarde hors de sa machine.
-- **Avis MPS-850 : la thèse a changé** (23/09 soir). Son argument central, « caisse claire de
-  12 pouces », était faux (10" au flux et sur la fiche). Faits corrigés, note 8,0 → 7,8, verdict
-  réécrit sur les vrais atouts (MIDI DIN, import WAV, dix pads). À relire.
-- **Hub `/duels/` (P26)** : le seuil du quatrième duel est atteint.
-- **Guide appartement, checklist 03** : « des baguettes en nylon plutôt qu'en bois : moins de
-  claquement ». Aucune source ; le manuel Roland accepte les deux. Laissée telle quelle.
-- **Guide appartement, budget** : casque 50 €, tapis 40 €, mousse 55 €, siège 60 € et « +50 % »
-  ne correspondent à aucune référence de la sélection (casque 26 €, tapis 59 €, siège 44 €).
-- **Nitro Max contre TD-02KV** : « trois pads de plus chez Alesis » (hub /avis/) ; la base
-  donne 8 contre 6. Pas revérifié au flux.
-- **Strata Club** : `bluetooth: true` dans la base, le flux Thomann n'en parle pas.
+- **Demander l'indexation** (quota Search Console dépassé le 24/09, à refaire le 25) :
+  `/duels/` d'abord, puis `/guides/acheter-batterie-electronique-occasion/`,
+  `/les-bases/tapis-batterie-electronique/` et les trois pages `/marques/`.
+- **Remote privé pour les maquettes** : accord de Jordane le 24/09. `gh` n'est pas installé :
+  créer un dépôt **privé** vide sur github.com (par exemple `bipbop-maquettes`), puis
+  `git remote add origin git@github.com:jfeuillet77-pixel/bipbop-maquettes.git && git push -u origin HEAD`
+  dans `../Claude Design - MàJ/` (la clé SSH du poste pousse déjà `bipbop-site`).
+- **Identifiants d'affiliation BipBop** : dans un à deux mois (Jordane, 24/09). Passer `actif` à
+  `true` dans `src/data/affiliation.json` et suivre son champ `pour_reactiver`.
+- **Avis MPS-850 : la thèse a changé** (23/09 soir) : faits corrigés, note 8,0 → 7,8. À relire.
+- **Auteur nommé** (chantier 6) : question posée le 24/09. AGENTS.md interdit toute signature
+  individuelle ; seul Jordane peut lever cette règle.
 
 ### À surveiller
 
@@ -88,19 +86,22 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 
 ### Défauts connus, non corrigés
 
-- `prixTexte` de la base écrit encore certains milliers sans espace (« 1598 € ») ; les pages
-  construites formatent elles-mêmes, les autres affichent le champ.
-- Duel Nitro Max vs DED-200X : « 180 sons, 30 kits » pour la DED-200X, jamais vérifié au flux Donner.
+- `prixTexte` de la base écrit encore certains milliers sans espace (« 1598 € ») : invisible sur le
+  site (relu le 24/09, aucune page ne l'affiche ainsi), laissé tel quel parce que le contrôle 3
+  compare les pages à ce champ.
 - Images produit chargées depuis `thomann.de` sans `width`/`height` ; pas de CSP tant qu'elles y
   restent (chantier 6 de l'audit). Aucun auteur nommé (choix du site : « une seule voix »).
-- Contrôle 11 : sept pages citent un modèle sans lien vers son avis (le plus souvent un lien vers
+- Contrôle 11 : huit pages citent un modèle sans lien vers son avis (le plus souvent un lien vers
   un duel, voulu).
-- Duel MPS-150X contre Turbo Mesh : « module de rechange à 98 € » ; la sélection et le guide
-  « faire évoluer » disent 89 € (MPS-150 Drum Module).
 - Les contrôles ne voient pas un texte resté brut dans une page (code de générateur, jeton non
   résolu) : seule la capture l'a montré le 23/09. Relire la capture de chaque page neuve.
 - « 11 guides et 6 articles » sur `/guides/` compte par gabarit : « Installer sa batterie sans
   déranger » est un gabarit guide publié sous `/les-bases/`. Juste, mais surprenant.
+- Duel Nitro Max vs TD-02KV : « Revente à trois ans 250 à 290 € / 330 à 380 € » et décotes de 25 et
+  35 % sans source. Nitro Max : « prévoir 150 € de plus », le calcul de la sélection donne 129 €.
+- DED-200X : la fiche Donner liste dans le « lot pour débutant » un tabouret, des baguettes et un
+  casque, pour une variante qu'elle ne précise pas. L'avis dit « baguettes et clé fournies » ; pas
+  revérifié sur la variante à 499,99 €.
 
 ---
 

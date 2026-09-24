@@ -1,5 +1,35 @@
 # Journal BipBop
 
+## 24 septembre 2026 — Hub /duels/, MPS-450 en tête de /avis/, corrections factuelles
+
+Décisions de Jordane : P26 en priorité, MPS-450 recommandation nº1, et les erreurs évidentes se
+corrigent sans demander.
+
+- **Hub `/duels/`** (P26) construit comme `/marques/` : `HubDuels.astro` lit les duels
+  « Publié » au plan, `src/data/duels.mjs` porte leurs phrases (1 400 mots, prix en jetons).
+  Section « Duels » dans l'arborescence, JSON-LD `ItemList` et fil d'Ariane des 4 duels par
+  `/duels/`, contrôle 11 rattaché au nouveau hub, « Tous les duels » au pied de page (greffe et
+  `Footer.astro`) et sous le bloc duels de `/avis/`.
+- **`/avis/`** : MPS-450 (8,4) en recommandation nº1 à la place de la Nitro Max (8,3), qui passe
+  dans la grille ; son avis devient « le choix Bluetooth ». « Notre recommandation générale »
+  retiré des tableaux MPS-150X et DTX432K.
+- **« Huit pads en mesh »** (Nitro Max, MPS-750X, 11 maquettes et `marques.mjs`) : faux. Cinq fûts
+  en mesh, cymbales en caoutchouc (flux Thomann).
+- **TD-02KV** : 7 pads et 3 cymbales, ride comprise. Le duel contre la Nitro Max décrivait 5 pads
+  et 2 cymbales (la configuration d'aucun des deux kits Roland) ; cartes, tableau, FAQ et
+  décompte réécrits, base td02k/td02kv 6 → 7.
+- **DED-200X** (fiche Donner, 24/09) : caisse claire 8" et 3 toms (l'avis disait 10" et quatre
+  toms), 450 sons et 31 kits (le duel disait 180 et 30). Duel Nitro Max vs DED-200X : bouton
+  Thomann qui menait à l'avis, bouton Donner libellé Thomann, ligne d'encombrement sans source
+  retirée.
+- **Guide appartement** : budget en jetons de la sélection (577 € au lieu de 614), chiffre clé
+  « +50 % » sans source remplacé par le surcoût calculé, checklist 03 alignée sur l'article
+  baguettes (rods), « meilleur prix mesh » de la DED-200X remplacé par « le plus fourni ».
+- **Avis MPS-750X** : KU100 à 88 € en jeton (« une soixantaine »), avec la KT-9 en alternative.
+  **Duel MPS-150X vs Turbo Mesh** : module de rechange 89 € en jeton (98 €).
+- Vérifié sans correction : Strata Club Bluetooth 5.0 (fiches B&H, Sweetwater), le flux Thomann
+  ne le dit simplement pas.
+
 ## 23 septembre 2026 (soir, fin) — H2 « batterie silencieuse », vague 1 terminée
 
 Section ajoutée au guide appartement, avec son entrée au sommaire. Le tableau des quatre modèles

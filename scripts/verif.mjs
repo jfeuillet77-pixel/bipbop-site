@@ -554,7 +554,7 @@ for (const b of donnees) console.log(`   ✗ ${b.page.padEnd(46)} ${b.defauts.jo
    - signalé : un modèle qui a un avis, cité dans une page sans lien vers cet avis. Tous ne se
      lient pas (un tableau, une énumération), mais la liste dit où regarder après une publication. */
 
-const HUB_DE_SECTION = { Avis: '/avis/', Duels: '/avis/', Guides: '/guides/', Bases: '/guides/', Marques: '/marques/' };
+const HUB_DE_SECTION = { Avis: '/avis/', Duels: '/duels/', Guides: '/guides/', Bases: '/guides/', Marques: '/marques/' };
 const { pages: publiees } = arborescence(DIST);
 const fichierDe = new Map(fichiers.map((f) => [route(f), f]));
 const liensDe = new Map(fichiers.map((f) => [route(f), new Set([...lu(f).matchAll(/href="(\/[^"#?]*)"/g)].map((m) => m[1]))]));

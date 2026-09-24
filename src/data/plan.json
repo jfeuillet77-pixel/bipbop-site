@@ -401,19 +401,19 @@
  },
  {
   "id": "P26",
-  "lot": "Vague 2 - oct. 2026",
+  "lot": "Vague 1 - sept. 2026",
   "type": "Hub",
   "titre": "Tous les duels",
   "slug": "/duels",
   "permalien": "https://bipbop.eu/duels/",
   "fichier_maquette": "",
   "gabarit": "Hub",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "",
   "priorite": "Moyenne",
   "produits_lies": "",
   "maillage_sortant": "Duels, Avis",
-  "notes": "Hub à créer au 4e duel : seuil atteint le 23/09/2026 avec P70 (4 publiés). En attendant, /avis/ liste les duels."
+  "notes": "Publié le 24/09/2026 (demande de Jordane), construit depuis le plan et src/data/duels.mjs (HubDuels.astro) : un duel passé Publié y entre seul, avec son entrée dans duels.mjs."
  },
  {
   "id": "P27",
@@ -765,7 +765,7 @@
   "priorite": "Basse",
   "produits_lies": "Les deux modèles",
   "maillage_sortant": "Les deux avis, Comparatif",
-  "notes": "Pas de volume mesuré. Fait passer /duels/ au seuil de 4."
+  "notes": "Pas de volume mesuré."
  },
  {
   "id": "P49",

@@ -16,6 +16,7 @@ import { join, dirname, relative } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { PLAN } from '../data/produits.mjs';
 import { MARQUES, INDEX_MARQUES } from '../data/marques.mjs';
+import { INDEX_DUELS } from '../data/duels.mjs';
 
 /**
  * Racine du dépôt. Pas `import.meta.url` : ce fichier est bundlé par Astro dès qu'une page
@@ -78,7 +79,7 @@ function lignesAuPlan() {
 }
 
 /** Un hub se range dans la section de ce qu'il rassemble, pas dans « le point de départ ». */
-const HUB_DANS = { '/avis/': 'Avis', '/guides/': 'Guides', '/marques/': 'Marques' };
+const HUB_DANS = { '/avis/': 'Avis', '/guides/': 'Guides', '/marques/': 'Marques', '/duels/': 'Duels' };
 
 /** Type du plan -> section. Une ligne « Publié » dont le type n'est pas là fait échouer la
     lecture : elle disparaîtrait du plan du site et du sitemap sans un bruit. */
@@ -161,6 +162,7 @@ export function titrePublie(fichier) {
     const hub = brut.match(/<HubMarque\s+cle="([a-z]+)"/);
     if (hub) return (MARQUES[hub[1]]?.title ?? '').trim();
     if (/<HubMarques\b/.test(brut)) return INDEX_MARQUES.title.trim();
+    if (/<HubDuels\b/.test(brut)) return INDEX_DUELS.title.trim();
     return ((brut.match(/<(?:BaseLayout|Layout)[^>]*?\btitle="([^"]+)"/s) ?? [, ''])[1]).trim();
   }
   const tete = brut.split('</head>')[0];
