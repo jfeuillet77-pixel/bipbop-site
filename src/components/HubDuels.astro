@@ -117,8 +117,16 @@ const S = {
           {duels.map((d) => (
             <div style="background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:5px 5px 0 #241c14">
               <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 10px">
-                <span style="font:700 11px 'Work Sans',sans-serif;letter-spacing:.05em;padding:4px 9px;border-radius:7px;border:2px solid #241c14;background:#ffd166">VS</span>
                 <span style="font:500 12px 'IBM Plex Mono',monospace;color:#786550">{d.gagnant ? `GAGNANTE : ${(d.gagnant === d.a ? d.ma : d.mb).nom_complet.toUpperCase()}` : 'SELON TA SITUATION'}</span>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:center;margin:4px 0 16px">
+                {[d.ma, null, d.mb].map((m) => m ? (
+                  <a href={avisPublie(m) ?? d.route} style="display:block;height:150px;border:2.5px solid #241c14;border-radius:14px;overflow:hidden;background:#fff">
+                    <img src={m.img} alt={m.nom_complet} width="300" height="150" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:contain;display:block;padding:8px;box-sizing:border-box" />
+                  </a>
+                ) : (
+                  <span style="font:800 18px 'Bricolage Grotesque',sans-serif;padding:8px 10px;border-radius:10px;border:2.5px solid #241c14;background:#ffd166">VS</span>
+                ))}
               </div>
               <h3 style={S.h3}><a href={d.route} style="color:#241c14;text-decoration:underline;text-underline-offset:4px">{d.titre}</a></h3>
               <p style="font:500 14.5px/1.5 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 10px" set:html={`${nom(d.ma)} <span style="white-space:nowrap">${prixF(d.ma)}</span> · ${nom(d.mb)} <span style="white-space:nowrap">${prixF(d.mb)}</span>`} />
