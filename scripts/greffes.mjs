@@ -452,7 +452,7 @@ export function appliquerGreffes(corps, fichier, options = {}) {
    Ils se résolvent ici, un par un, au portage et dans `fidelite` : le lundi réimporte la base
    puis re-porte, la page suit sans réécriture. Un jeton inconnu fait échouer le portage. */
 
-const JETON = /\{(?:prix|nom|avis|ecart|budget|accprix|acc|n|N|c):[A-Za-z0-9+:-]+\}/;
+const JETON = /\{(?:prix|nom|avis|ecart|diff|budget|accprix|acc|n|N|c):[A-Za-z0-9+:-]+\}/;
 function resoudreJetons(corps, fichier) {
   let n = 0;
   const out = corps.replace(new RegExp(JETON.source, 'g'), (j) => { n++; return rendreJetons(j, fichier); });

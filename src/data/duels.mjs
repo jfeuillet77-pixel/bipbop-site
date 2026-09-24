@@ -27,7 +27,7 @@ export const DUELS = {
     b: 'ded200x',
     gagnant: 'nitromax',
     resume:
-      "L'Alesis gagne assez nettement : {ecart:ded200x-nitromax} de moins, des sons tirés de la bibliothèque BFD et le Bluetooth. La Donner aligne une deuxième crash et un rack plus rigide.",
+      "L'Alesis gagne : {diff:ded200x-nitromax+casque+siege} de moins une fois équipée du casque et du siège que la Donner fournit, des sons tirés de la bibliothèque BFD et le Bluetooth. La Donner aligne une deuxième crash, un rack plus rigide et un carton complet.",
     pourA: 'tu veux jouer sur ta playlist dès le premier soir.',
     pourB: 'tu veux neuf pads dès le départ, idéalement pendant une promotion Donner.',
   },
@@ -77,7 +77,7 @@ export const INDEX_DUELS = {
       ],
       liste: [
         "**Le prix réel**, pas le prix barré. Chez Donner, un ancien prix rayé s'affiche presque toujours : on ne le reprend jamais.",
-        "**Les peaux**, maillées ou en caoutchouc, et sur quels pads. Les cymbales ne sont maillées sur aucune batterie de ces duels : un kit dit « tout mesh » l'est sur ses fûts.",
+        "**Les peaux** : maillées ou en caoutchouc, sur quels pads. Les cymbales ne sont maillées sur aucune batterie de ces duels : un kit dit « tout mesh » l'est sur ses fûts.",
         "**La taille de la caisse claire**, parce que c'est le pad qu'on frappe le plus. À 10 pouces les deux baguettes tiennent dessus, à 8 pouces il faut viser.",
         "**La pédale de grosse caisse.** Avec une batte, elle cogne dans le sol. Sans batte, elle ne cogne dans rien. En appartement, c'est souvent le seul critère qui compte.",
         "**Le module** : la qualité des sons plus que leur nombre, le Bluetooth et les entrées libres pour agrandir le kit un jour.",

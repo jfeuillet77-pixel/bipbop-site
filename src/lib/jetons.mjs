@@ -8,6 +8,7 @@
  *   {ecart:a-b}                       l'écart de prix entre deux modèles
  *   {acc:alias} {accprix:alias}       un accessoire de ACCESSOIRES_CITES : nom, prix
  *   {budget:id+alias+alias}           un modèle et des accessoires, additionnés
+ *   {diff:id-id+alias}                l'écart entre deux budgets (24/09/2026) : « équipement compris »
  *   {n:modeles} {n:avis:Marque}       un compte lu dans la base, en lettres jusqu'à seize ({N:…} : majuscule)
  *   {n:prix:300-500} {n:peaux:mesh}   les modèles d'une fourchette de prix (borne haute exclue), d'un type de peaux
  *   {c:…}                              le même compte, toujours en chiffres (tableaux)
@@ -80,6 +81,11 @@ export function rendre(t, ou = '') {
     .replace(/\{c:([a-z]+(?::[A-Za-z0-9-]+)?)\}/g, (_, e) => String(compte(e, ou)))
     .replace(/\{N:([a-z]+(?::[A-Za-z0-9-]+)?)\}/g, (_, e) => { const t = enLettres(compte(e, ou)); return t[0].toUpperCase() + t.slice(1); })
     .replace(/\{ecart:([a-z0-9]+)-([a-z0-9]+)\}/g, (_, a, c) => nowrap(euros(modele(a, ou).prix - modele(c, ou).prix)))
+    .replace(/\{diff:([a-z0-9+]+)-([a-z0-9+]+)\}/g, (_, a, b) => {
+      const d = budget(a) - budget(b);
+      if (d <= 0) throw new Error(`jetons${ou ? ' (' + ou + ')' : ''} : {diff:${a}-${b}} vaut ${euros(d)}, la phrase qui le cite ne tient plus`);
+      return nowrap(euros(d));
+    })
     .replace(/\{budget:([a-z0-9+]+)\}/g, (_, e) => nowrap(euros(budget(e))))
     .replace(/\{accprix:([a-z]+)\}/g, (_, a) => nowrap(euros(accessoire(a, ou).prix)))
     .replace(/\{acc:([a-z]+)\}/g, (_, a) => esc(accessoire(a, ou).nom))

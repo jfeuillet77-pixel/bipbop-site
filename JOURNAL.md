@@ -1,5 +1,27 @@
 # Journal BipBop
 
+## 24 septembre 2026 (suite) — Audit des boutons, DED-200X équipée, revente, À propos
+
+- **Audit des liens** (libellé contre destination, sur tout `dist/`) : 6 boutons faux. Accueil :
+  les 3 « Voir le prix » menaient à un avis ou au hub, 2 « L'avis » au hub `/avis/` au lieu de
+  l'avis du modèle. Guide appartement : « 409 € · voir le prix » menait à l'avis. Aucun lien de
+  texte vers le mauvais modèle, aucune photo produit décalée, liens NE-1/NE-10 présents au flux.
+- **DED-200X** : la fiche Donner (version 499,99 €) livre casque, tabouret, câbles et baguettes.
+  L'avis comptait un casque et un siège en plus (629 €), le duel expliquait les 91 € d'écart
+  par le casque et le tapis. Équipées pareil, l'écart est de 20,99 €. Avis, duel, hubs et
+  `marques.mjs` réécrits ; grille selon le barème (toucher 7 pour la caisse claire de 8",
+  module 7 pour 450 sons, prix 7 carton compris) : 7,4 → 7,6. Nouveau jeton `{diff:a-b}`,
+  qui fait échouer le build si l'écart change de signe.
+- **Revente** : les chiffres « à trois ans » et les décotes de 25/35 % n'avaient pas de source.
+  Remplacés par des prix demandés datés (fin septembre 2026) : TD-02KV 300 à 420 €, Nitro Max
+  300 à 460 €, Turbo Mesh 160 à 320 €, MPS-150X 150 à 250 €. « La Roland se revend nettement
+  mieux » ne tient pas : ligne à égalité. Nitro Max « 250 € après deux ans » corrigé sur
+  quatre pages. « Prévoir 150 € » → 129 € en jeton.
+- **À propos** (décision de Jordane : voix de marque) : sections « Comment on analyse une
+  batterie », « D'où viennent les chiffres », « Personne ne paie pour être ici » (425 mots).
+  « Il ne fait pas : publier sans relecture humaine » était faux depuis le relevé automatique :
+  remplacé.
+
 ## 24 septembre 2026 — Hub /duels/, MPS-450 en tête de /avis/, corrections factuelles
 
 Décisions de Jordane : P26 en priorité, MPS-450 recommandation nº1, et les erreurs évidentes se
