@@ -72,9 +72,6 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 - **Identifiants d'affiliation BipBop** : dans un à deux mois (Jordane, 24/09). Passer `actif` à
   `true` dans `src/data/affiliation.json` et suivre son champ `pour_reactiver`.
 - **Avis MPS-850 : la thèse a changé** (23/09 soir) : faits corrigés, note 8,0 → 7,8. À relire.
-- **À propos, l'équipe** : Jordane a choisi la voix de marque (24/09). Les paragraphes « une équipe
-  de passionnés », « certains jouent depuis quinze ans » et le constat « on est plusieurs dans
-  l'équipe » viennent de Claude Design et ne sont pas vérifiés : question posée à Jordane.
 
 ### À surveiller
 
@@ -99,9 +96,8 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 - « 11 guides et 6 articles » sur `/guides/` compte par gabarit : « Installer sa batterie sans
   déranger » est un gabarit guide publié sous `/les-bases/`. Juste, mais surprenant.
 - Prix d'occasion : relevés à la main le 24/09 (annonces), à rafraîchir tous les trois mois environ.
-- Guide enfant (« Alesis Debut autour de 150 € après deux ans »), guide faire évoluer (« revendable
-  autour de 190 € », « perd 15 % par an ») et guide occasion (fourchettes) : chiffres de revente
-  non vérifiés contre des annonces.
+- Les prix d'occasion cités (avis, duels, guides adulte, enfant, occasion, moins de 500 €) sont des
+  annonces de fin septembre 2026 : les relever à nouveau vers fin décembre.
 
 ---
 

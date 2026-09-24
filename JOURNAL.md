@@ -1,5 +1,21 @@
 # Journal BipBop
 
+## 24 septembre 2026 (fin) — Photos du hub duels, équipe réelle, revente des guides
+
+- **`/duels/`** : chaque carte montre les deux kits face à face (photo de la base, `width` et
+  `height` posés, lien vers l'avis), demande de Jordane.
+- **À propos** : Jordane confirme deux amis, batteurs et passionnés de numérique, pages rédigées
+  par le robot d'analyse. « Une équipe de passionnés », « certains jouent depuis quinze ans » et
+  « on est plusieurs dans l'équipe » remplacés par ça ; le robot « rédige les pages selon nos
+  règles », les humains fixent la ligne, choisissent la recommandation nº1 et corrigent.
+- **Revente, suite** (annonces de fin septembre) : guide occasion, colonne « Bon prix » refondée
+  sur la règle des 30 % sous le neuf, que le guide énonce lui-même. TD-02KV 330-380 → 300-350 €,
+  DTX432K 320-370 → 280-340 €, annonces citées modèle par modèle, « pièces disponibles dix ans »
+  et « le modèle le plus courant » retirés (sans source). Guide enfant : l'Alesis Debut garde à
+  peu près la moitié de son prix (100 à 170 € demandés), moins qu'une MPS-150X ; « argument réel
+  en faveur de l'Alesis » retiré. Guide faire évoluer : « perd 15 % par an » retiré ; les 190 €
+  de la Turbo Mesh tombent dans les annonces (160 à 320 €), gardés.
+
 ## 24 septembre 2026 (suite) — Audit des boutons, DED-200X équipée, revente, À propos
 
 - **Audit des liens** (libellé contre destination, sur tout `dist/`) : 6 boutons faux. Accueil :
