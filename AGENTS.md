@@ -71,6 +71,13 @@ ligne et sa ligne « Publié » au plan (type « Marque »). La page mère `/mar
 `INDEX_MARQUES`) décrit toutes les marques du catalogue : une marque qui y entre sans paragraphe
 fait échouer le build. Les jetons se résolvent dans `src/lib/jetons.mjs`, partagé par les deux.
 
+**Le hub `/duels/`** (24/09/2026, plan P26) se construit aussi : `src/components/HubDuels.astro`
+lit les lignes « Duel » du plan (les « Publié » en cartes, les autres en « Les prochains duels »)
+et `src/data/duels.mjs` (deux modèles, gagnant ou `null`, un résumé et deux « Prends… si »).
+**Publier un duel = aussi une entrée dans `duels.mjs`** : un duel publié sans entrée, ou une
+entrée sans duel publié, fait échouer le build. `fidelite` le saute. « Tous les duels » est
+greffé au pied de page à côté de « Toutes les marques », et `Footer.astro` porte le même.
+
 **Une maquette peut écrire ses chiffres en jetons** (depuis le 23/09/2026, `Guide-Prix.dc.html`) :
 `{prix:id}`, `{c:prix:300-500}` (un compte en chiffres), `{n:peaux:mesh}` (en lettres),
 `{budget:id+casque}`… Les mêmes que `marques.mjs`, résolus un par un par `resoudreJetons()` de
