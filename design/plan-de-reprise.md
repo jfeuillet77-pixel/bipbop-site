@@ -72,8 +72,9 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 - **Identifiants d'affiliation BipBop** : dans un à deux mois (Jordane, 24/09). Passer `actif` à
   `true` dans `src/data/affiliation.json` et suivre son champ `pour_reactiver`.
 - **Avis MPS-850 : la thèse a changé** (23/09 soir) : faits corrigés, note 8,0 → 7,8. À relire.
-- **Auteur nommé** (chantier 6) : question posée le 24/09. AGENTS.md interdit toute signature
-  individuelle ; seul Jordane peut lever cette règle.
+- **À propos, l'équipe** : Jordane a choisi la voix de marque (24/09). Les paragraphes « une équipe
+  de passionnés », « certains jouent depuis quinze ans » et le constat « on est plusieurs dans
+  l'équipe » viennent de Claude Design et ne sont pas vérifiés : question posée à Jordane.
 
 ### À surveiller
 
@@ -97,11 +98,10 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
   résolu) : seule la capture l'a montré le 23/09. Relire la capture de chaque page neuve.
 - « 11 guides et 6 articles » sur `/guides/` compte par gabarit : « Installer sa batterie sans
   déranger » est un gabarit guide publié sous `/les-bases/`. Juste, mais surprenant.
-- Duel Nitro Max vs TD-02KV : « Revente à trois ans 250 à 290 € / 330 à 380 € » et décotes de 25 et
-  35 % sans source. Nitro Max : « prévoir 150 € de plus », le calcul de la sélection donne 129 €.
-- DED-200X : la fiche Donner liste dans le « lot pour débutant » un tabouret, des baguettes et un
-  casque, pour une variante qu'elle ne précise pas. L'avis dit « baguettes et clé fournies » ; pas
-  revérifié sur la variante à 499,99 €.
+- Prix d'occasion : relevés à la main le 24/09 (annonces), à rafraîchir tous les trois mois environ.
+- Guide enfant (« Alesis Debut autour de 150 € après deux ans »), guide faire évoluer (« revendable
+  autour de 190 € », « perd 15 % par an ») et guide occasion (fourchettes) : chiffres de revente
+  non vérifiés contre des annonces.
 
 ---
 

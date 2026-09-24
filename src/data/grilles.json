@@ -234,29 +234,29 @@
     "Avis-Donner-DED-200X.dc.html": {
       "id": "ded200x",
       "toucher": [
-        8,
-        "Cinq fûts en mesh, caisse claire de 10 pouces et un quatrième tom."
+        7,
+        "Cinq fûts en mesh, mais une caisse claire et des toms de 8 pouces (fiche Donner)."
       ],
       "discretion": [
         7,
         "Fûts mesh discrets, quatre cymbales qui claquent un peu, pédale à batte."
       ],
       "module": [
-        6,
-        "Une trentaine de kits corrects, aux sons qui manquent de nuance. Pas de Bluetooth."
+        7,
+        "450 sons et 31 kits, aux sons qui manquent de nuance. Pas de Bluetooth."
       ],
       "confort": [
         7,
-        "Deux crashs, un ride et un rack rigide qui ne recule pas."
+        "Deux crashs, une ride et un rack rigide qui ne recule pas. Cymbales de 10 pouces."
       ],
       "prix": [
-        6,
-        "{prix:ded200x}, soit {ecart:ded200x-nitromax} de plus que la Nitro Max, pour un module moins riche."
+        7,
+        "{prix:ded200x} casque et tabouret compris : équipement égal, {diff:ded200x-nitromax+casque+siege} de plus que la Nitro Max."
       ],
       "profil": {
         "pour": "Tu veux le kit le plus fourni",
         "note": 8,
-        "raison": "Neuf pads et un quatrième tom. En promotion sous 420 €, le nombre de pads devient un vrai argument."
+        "raison": "Neuf pads, une deuxième crash, casque et tabouret dans le carton. En promotion sous 420 €, elle devient une affaire."
       }
     },
     "Avis-Millenium-MPS-850.dc.html": {
