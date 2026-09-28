@@ -1,5 +1,50 @@
 # Journal BipBop
 
+## 28 septembre 2026 — Relevé du lundi : aucun prix ne bouge, deux ruptures non tranchées
+
+**Les prix.** 158 sur 158 relevés, aucun écart n'atteint le seuil de 5 €. Sous le seuil :
+Alesis Strike Amp 8 MK2 290 → 289 €, Roland BT-1 125 → 129 €. Aucune phrase à réécrire, aucune
+entrée de prix ajoutée à `design/port-corrections.json`, rien retouché dans `prix-reperes.json`.
+
+**Les dates de relevé.** L'Aide-Mémoire §05 date les guides par budget à chaque relevé, et le
+rapport signalait `/guides/batterie-electronique-moins-1000-euros/` bloqué au 12 septembre. Les
+trois guides par budget affichent maintenant « relevés le 28 septembre 2026 » : moins de 1 000 €
+(nouvelle entrée), moins de 300 € et moins de 500 € (les entrées du 17/09 prennent la nouvelle
+date). Le rapport ne voyait pas ces deux derniers, restés au 17 : il cherche « relevés chez » et
+leur phrase dit « relevés le ». Aucune date de publication (« 17 SEPT. 2026 · 8 MIN ») ni
+« MIS À JOUR » n'a bougé : aucun texte n'a changé. Le comparatif suit `base.releve` tout seul.
+Les autres pages en retard dans le rapport ne suivent que le fond : laissées telles quelles.
+
+**Deux ruptures non tranchées.** Le rapport en marque deux « à traiter » : liées depuis une page
+publiée et en rupture depuis deux relevés.
+- Roland PDX-100 10" (215 €, Thomann « disponible sous 5-7 semaines »), liée dans le tableau
+  d'upgrades de `/guides/ameliorer-batterie-electronique/`.
+- Alesis Nitro Multicore (89 €, Thomann « actuellement indisponible », sans date), liée dans le
+  tableau des pièces détachées de `/guides/acheter-batterie-electronique-occasion/`.
+
+La procédure dit de basculer vers Woodbrass s'il a la référence, et de retirer sinon. **Cette
+session n'avait pas d'accès au web** (recherche et lecture de pages refusées) : je n'ai pas pu
+savoir si Woodbrass les vend, à quel prix et en stock. Inventer une URL est interdit, retirer
+sans avoir vérifié aussi. Donc rien retiré, rien basculé : les deux lignes pointent toujours
+vers Thomann, qui affiche les deux fiches avec leur prix. Deux choses tempèrent l'urgence : ce sont
+des accessoires listés à titre indicatif, pas des recommandations d'achat de kit, et la PDX-100 a
+une date de retour annoncée. La Nitro Multicore sans date est la plus fragile.
+**À faire à la main** : chercher les deux chez Woodbrass ; si l'une y est en stock, entrée
+`marchand` + `url` dans `prix-reperes.json` et correction du lien dans `port-corrections.json`
+(comme la KU100, la BT-1 et la TM-1 du 18/09), la date du relevé de la page suit. Sinon, retirer
+la ligne du tableau (§04).
+
+**Pour mémoire, la MPS-750X Pro.** Le rapport la range parmi les ruptures « que rien ne lie ».
+C'est vrai des liens, pas des mentions : ce kit du catalogue (749 €, Thomann « disponible sous 5-7
+semaines », deux relevés) n'est pas celui de `/avis/millenium-mps-750x/`, mais il est **cité sans
+lien** dans le tableau du guide moins de 1 000 € (ligne non recommandée, « correcte, sans plus »),
+dans l'encart « Et la MPS-750X Pro à 749 € ? » du duel MPS-750X ou MPS-850 et dans la liste
+d'attente de `/avis/`. Aucune de ces phrases ne la conseille et la date de retour est annoncée :
+rien touché. Si elle passe « actuellement indisponible » sans date, c'est elle qu'il faudra
+relire en premier. Piste pour `scripts/prix/rapport.mjs` : chercher aussi les **noms**, pas
+seulement les URL, pour qu'une rupture citée sans lien ne passe plus pour invisible. Les dix autres
+ruptures sont des accessoires qu'aucune page publiée ne lie.
+
 ## 24 septembre 2026 (fin) — Photos du hub duels, équipe réelle, revente des guides
 
 - **`/duels/`** : chaque carte montre les deux kits face à face (photo de la base, `width` et
