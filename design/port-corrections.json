@@ -157,8 +157,8 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Sept modèles disponibles en France sous 300 €. Les deux lignes surlignées sont celles qu'on recommande. Prix relevés le 11 septembre 2026.",
-      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 17 septembre 2026.",
-      "pourquoi": "une seule ligne recommandée reste dans le tableau"
+      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 28 septembre 2026.",
+      "pourquoi": "une seule ligne recommandée reste dans le tableau. Date du relevé : l'Aide-Mémoire §05 date les guides par budget à chaque relevé, et celui du 28/09/2026 a confirmé les six prix (aucun écart au seuil de 5 €)"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
@@ -187,8 +187,14 @@
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
       "au": "relevés le 11 septembre 2026",
-      "remplace": "relevés le 17 septembre 2026",
-      "pourquoi": "page modifiée par le relevé du 17/09"
+      "remplace": "relevés le 28 septembre 2026",
+      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 28/09/2026 a confirmé les prix du tableau (aucun écart au seuil de 5 €)"
+    },
+    {
+      "fichier": "Guide-Moins-De-1000-Euros.dc.html",
+      "au": "Prix relevés chez Thomann le 12 septembre 2026.",
+      "remplace": "Prix relevés chez Thomann le 28 septembre 2026.",
+      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 28/09/2026 a confirmé les neuf prix du tableau (aucun écart au seuil de 5 €). La date de publication de l'en-tête ne bouge pas : le texte n'a pas changé"
     },
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
