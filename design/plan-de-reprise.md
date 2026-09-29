@@ -44,10 +44,9 @@ volumes et raisons dans la colonne notes). Détail et chiffres : `design/plan-co
 1. **Vague 1 : faite le 23/09 au soir.** Publiés : duel MPS-750X ou MPS-850, guides pad
    d'entraînement, ampli, prix (chiffres en jetons, voir AGENTS.md), les bases baguettes, H2
    « Une batterie silencieuse, ça existe ? » du guide appartement. Détail dans `JOURNAL.md`.
-2. **Vague 2** : P71 hub Roland (même gabarit que Yamaha/Alesis ; section TD-07, TD-17, TD-1DMK
-   arrêtées en France, vérifié sur Thomann et Woodbrass le 23/09, la TD313 remplace la TD-17KV2) ;
-   P72 avis Roland TD313 ; P73 pilier « Apprendre la batterie » ; P74 réglages MPS-750X (volumes
-   anglais suspects, manuel constructeur seulement) ; P75 hub Millenium.
+2. **Vague 2 : P71 à P74 publiés le 29/09** (hub Roland, avis TD313, pilier « apprendre la
+   batterie », réglages MPS-750X ; détail dans `JOURNAL.md`). Restent P75 hub Millenium (une entrée
+   dans `marques.mjs`) et P61 hub `/les-bases/` (11 articles désormais).
 3. **Vague 3** : les avis du plan (MPS-1000, Nitro Pro, Nux, TD-02K… pour la règle D06), hub
    `/les-bases/`, les bases P51 à P60, P50 « où acheter », duels P48 et P49 (ils apparaissent
    déjà sur `/duels/` dans « Les prochains duels »). `/duels/` est publié depuis le 24/09.
@@ -62,9 +61,10 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 
 ### Ce qui attend Jordane
 
-- **Demander l'indexation** (quota Search Console dépassé le 24/09, à refaire le 25) :
-  `/duels/` d'abord, puis `/guides/acheter-batterie-electronique-occasion/`,
-  `/les-bases/tapis-batterie-electronique/` et les trois pages `/marques/`.
+- **Demander l'indexation** (relevé du 29/09 : 12 URL sur 48 non indexées, l'accueil pas recrawlé
+  depuis le 14/09). Par 10 par jour : l'accueil, `/duels/`, les pages `/marques/` (Roland comprise),
+  le guide occasion, le duel MPS-750X ou MPS-850, les guides pad, ampli, prix, puis les bases tapis
+  et baguettes et les quatre pages du 29/09.
 - **Remote privé pour les maquettes** : accord de Jordane le 24/09. `gh` n'est pas installé :
   créer un dépôt **privé** vide sur github.com (par exemple `bipbop-maquettes`), puis
   `git remote add origin git@github.com:jfeuillet77-pixel/bipbop-maquettes.git && git push -u origin HEAD`

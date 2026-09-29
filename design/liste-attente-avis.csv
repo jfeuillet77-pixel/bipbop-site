@@ -1,5 +1,5 @@
 # Hub /avis/ — liste d'attente des modèles sans avis publié.
-# Les 22 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
+# Les 21 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
 # cle     = nom_complet de src/data/modeles.json — c'est elle qui joint la base ; prix et segment
 #           en sont lus, ils ne se saisissent pas ici.
 # affiche = le libellé tel que la maquette l'écrit dans la colonne « Modèle » (il diffère de la base :
@@ -29,5 +29,4 @@ Donner DED-200 Pro;Donner DED-200 Pro;La DED-200X avec un module enrichi et le B
 Alesis Nitro Pro XL;Alesis Nitro Pro XL;La Nitro Pro avec un tom et une cymbale de plus;rédigée
 Millenium MPS-750X Pro;Millenium MPS-750X Pro;La MPS-750X avec le module le plus complet de la marque;rédigée
 Donner BackBeat;Donner BackBeat;Le haut de gamme Donner, avec un module tactile;rédigée
-Roland TD313;Roland TD313;La vitrine Roland : le meilleur module et la meilleure réponse;rédigée
 Alesis Strata Club;Alesis Strata Club;Le haut de gamme Alesis : module tactile et cymbales larges;rédigée

@@ -32,6 +32,8 @@ export const ACCESSOIRES_CITES = {
   ku: { marque: 'Yamaha', produit: 'KU100 Silent Kick Pedal' },
   kt: { marque: 'Roland', produit: 'KT-9 Kick Trigger Pedal' },
   modulemps: { marque: 'Millenium', produit: 'MPS-150 Drum Module' },
+  pedale: { marque: 'Millenium', produit: 'PD-122 Pro Bass Drum Pedal' },
+  baguettesvf: { marque: 'Vic Firth', produit: '5A Nova Natural' },
 };
 
 export const MARQUES = {
@@ -46,7 +48,7 @@ export const MARQUES = {
       "Au même prix, Yamaha te donne moins de matériel que ses concurrents. Sa force est ailleurs : la méthode. Trois des {n:modeles:Yamaha} modèles qu'on suit partagent le même module d'apprentissage. Voilà lequel prendre et quand regarder ailleurs.",
     reponse: [
       "**Tu doutes de t'y tenir** : la {avis:dtx432} à {prix:dtx432}, pour ses dix programmes de coaching. Une batterie sur laquelle on s'entraîne vaut mieux qu'une batterie mieux équipée qui prend la poussière.",
-      "**Petit budget, en appartement** : la {avis:dtx402} à {prix:dtx402}, la seule de la sélection avec une pédale de grosse caisse sans batte.",
+      "**Petit budget, en appartement** : la {avis:dtx402} à {prix:dtx402}, avec une pédale de grosse caisse sans batte comme les Roland TD-02.",
       "**Tu sais déjà que tu vas t'y tenir** : à ce prix, prends plutôt des peaux maillées, comme la {avis:nitromax} à {prix:nitromax}.",
     ],
     sections: [
@@ -235,6 +237,116 @@ export const MARQUES = {
       },
     ],
   },
+  roland: {
+    marque: 'Roland',
+    route: '/marques/batterie-electronique-roland/',
+    title: 'Batterie électronique Roland : laquelle choisir en 2026 ?',
+    description:
+      'Les {n:modeles:Roland} Roland vendues neuves chez Thomann, de la TD-02K à la TD313. Laquelle prendre, et ce que sont devenues les TD-07 et TD-17.',
+    h1: 'Batterie électronique Roland : laquelle choisir ?',
+    chapeau:
+      "Roland a inventé la peau maillée pour batterie électronique en 1997, et c'est la marque que tout le monde cherche en premier. Sous 1 600 €, la gamme vendue neuve chez Thomann et Woodbrass tient pourtant en {n:modeles:Roland} modèles, de {prix:td02k} à {prix:td313}. Voilà lequel prendre, et où sont passées les TD-07 et TD-17.",
+    reponse: [
+      "**Quelqu'un vit sous toi** : la {avis:td02kv} à {prix:td02kv}. Sa pédale de grosse caisse ne frappe rien, et sa caisse claire est en peau maillée.",
+      "**Petit budget, même silence** : la {nom:td02k} à {prix:td02k}. Même module, même pédale sans batte, mais une caisse claire sans peau maillée.",
+      "**Tu joues déjà et tu veux enregistrer** : la {avis:td313} à {prix:td313}, pédale de grosse caisse et siège en plus.",
+    ],
+    sections: [
+      {
+        h2: 'La gamme Roland sous 1 600 €',
+        id: 'gamme',
+        texte: [
+          "Roland range ses batteries en séries. Les TD-02 sont l'entrée de gamme, avec un petit module et des pads compacts. La série 3, annoncée en octobre 2025, commence avec la TD313 et son module V31. Tout le reste de la gamme vendue chez Thomann dépasse 1 600 €, à partir de la TD316.",
+        ],
+        liste: [
+          "**{nom:td02k}** ({prix:td02k}) : le module TD-02 et ses seize kits, quatre pads PD-4 pour la caisse claire et les toms, trois cymbales CY-5. La pédale de grosse caisse KT-1 n'a pas de batte : elle ne frappe rien, un capteur lit l'appui. Rack à trois pieds.",
+          "**{avis:td02kv}** ({prix:td02kv}) : la même, avec une caisse claire PDX-8 en peau maillée à deux zones et un rack à quatre pieds, plus large. Les toms restent des PD-4.",
+          "**{avis:td313}** ({prix:td313}) : un autre monde. Caisse claire de 12 pouces, trois toms en mesh à deux zones, une ride de 14 pouces à trois zones et le module V31 : plus de 1 000 sons et l'enregistrement sur ordinateur piste par piste. Livrée sans pédale de grosse caisse ni siège.",
+        ],
+        apres: [
+          "Entre les deux TD-02 et la TD313, Roland ne propose plus rien de neuf chez nos marchands. C'est là qu'étaient les TD-07 et TD-17.",
+        ],
+      },
+      {
+        h2: 'Où sont passées les TD-07, TD-17 et TD-1DMK ?',
+        id: 'td07-td17',
+        texte: [
+          "Ce sont les Roland les plus cherchées, et on ne les trouve plus neuves chez Thomann ni chez Woodbrass : elles ont disparu de leurs catalogues, vérifié le 29 septembre 2026. Roland n'a pas annoncé leur arrêt pour autant. Seule la TD-1DMK est marquée « arrêtée » sur son site, où les TD-07 et TD-17KV2 figurent encore. Certains autres revendeurs en affichent toujours : si tu en trouves une neuve, vérifie le prix face à la TD313.",
+          "La série 3, annoncée par Roland le 16 octobre 2025, a pris leur place dans les rayons. Roland ne dit pas quel modèle en remplace un autre, mais la fiche de la {nom:td313} reprend une bonne partie de la TD-17KV2 : même caisse claire PDX-12, même grosse caisse KD-10, mêmes crash et ride, même charleston CY-5 avec sa pédale FD-9, même rack. Ce qui change : le module V31 et les toms, en mesh à deux zones.",
+          "D'occasion, ces modèles restent de bons achats si le prix suit. La cote d'Audiofanzine, calculée sur les ventes de son site, situe la TD-17KV2 autour de 1 100 €, la TD-07KV autour de 640 € et la TD-1DMK autour de 430 €. Le [guide de l'occasion](/guides/acheter-batterie-electronique-occasion/) liste les six points à vérifier avant de payer.",
+        ],
+      },
+      {
+        h2: 'TD-02K ou TD-02KV ?',
+        id: 'td02',
+        texte: [
+          "C'est la question que tout le monde se pose, et la réponse tient en une pièce : la caisse claire. Les deux ont le même module, les mêmes cymbales, la même pédale de grosse caisse KT-1 sans batte et le même contrôleur de charleston FD-1, que Roland présente comme conçus pour limiter le bruit transmis aux autres pièces.",
+          "La {avis:td02kv} coûte {ecart:td02kv-td02k} de plus pour une caisse claire PDX-8 en peau maillée à deux zones : la peau et le cercle déclenchent deux sons. C'est le pad que tu frappes le plus, et celui où le mesh se sent le plus. Son rack à quatre pieds est aussi plus large. La {nom:td02k} garde une caisse claire PD-4 comme ses toms, à une seule zone.",
+          "Si ton budget s'arrête à {prix:td02k}, la {nom:td02k} te donne l'essentiel : le silence de la pédale et les sons Roland. Si tu peux ajouter la différence, prends la {avis:td02kv}. Tu passeras des heures sur cette caisse claire.",
+        ],
+      },
+      {
+        h2: "Le budget réel d'une Roland",
+        id: 'budget',
+        texte: [
+          "Aucune Roland de la sélection n'arrive prête à jouer. Thomann vend d'ailleurs les TD-02 en pack avec siège, casque et baguettes. Pour une {nom:td02kv}, ajoute au minimum :",
+        ],
+        liste: [
+          "un casque fermé, comme le {acc:casque} ({accprix:casque}) ;",
+          "un siège réglable en hauteur, comme le {acc:siege} ({accprix:siege}) ;",
+          "une paire de baguettes, par exemple les {acc:baguettesvf} ({accprix:baguettesvf}).",
+        ],
+        apres: [
+          "Soit {budget:td02kv+casque+siege+baguettesvf} pour une {nom:td02kv} prête à jouer, et {budget:td02k+casque+siege+baguettesvf} pour une {nom:td02k}. Grâce à la pédale sans batte, le tapis devient moins indispensable qu'avec une pédale classique : il sert surtout à empêcher le rack de glisser.",
+          "La {nom:td313} demande en plus une pédale de grosse caisse, comme la {acc:pedale} ({accprix:pedale}). Avec siège, casque et baguettes, elle revient à {budget:td313+pedale+siege+casque+baguettesvf}. Le [guide du pack complet](/guides/pack-batterie-electronique-complet/) détaille chaque poste.",
+        ],
+      },
+      {
+        h2: 'Brancher une Roland : casque, musique, ordinateur',
+        id: 'brancher',
+        texte: [
+          "Les TD-02 n'ont pas de Bluetooth intégré : pour jouer par-dessus ta musique sans câble, il faut l'adaptateur BOSS BT-DUAL, vendu à part. Avec un câble, l'entrée audio du module fait la même chose gratuitement.",
+          "La {nom:td313} va beaucoup plus loin. Son port USB-C transmet le son et le MIDI : en mode Roland, il envoie jusqu'à 30 pistes à l'ordinateur, chaque élément du kit sur la sienne. Elle a le Bluetooth pour la musique, le Wi-Fi pour télécharger des sons Roland et une application, V-Drums Play, pour changer de kit depuis ton téléphone.",
+          "Pour enregistrer ton jeu, le [guide dédié](/guides/enregistrer-batterie-electronique-ordinateur/) explique la différence entre l'audio et le MIDI.",
+        ],
+      },
+      {
+        h2: 'Roland ou une autre marque ?',
+        id: 'ou-ailleurs',
+        texte: [
+          "Pour le prix de la {nom:td02kv}, Millenium donne cinq fûts en peau maillée avec la {avis:mps750x} ({prix:mps750x}). Alesis met du mesh partout dès {prix:nitromax} avec la {avis:nitromax}, Bluetooth compris. Ce que Roland vend en plus, c'est la pédale sans batte : si personne ne vit sous toi, tu la paieras sans en profiter. Le [duel Nitro Max contre TD-02KV](/duels/alesis-nitro-max-vs-roland-td-02kv/) fait le calcul.",
+          "Les Roland ne sont pas les seules à proposer une pédale sans batte : la Yamaha DTX402K en a une aussi, pour moins cher. La [page Yamaha](/marques/batterie-electronique-yamaha/) la compare aux autres DTX.",
+          "Pour comparer toutes les marques d'un coup, le [comparatif en trois questions](/comparatif-batterie-electronique/) sort deux modèles selon ton budget, ta place et ce que tu veux jouer.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Quelle batterie Roland pour débuter ?',
+        r: "La {avis:td02kv} si quelqu'un vit sous toi : sa pédale sans batte ne frappe pas le plancher. La {nom:td02k} si le budget est serré, avec la même pédale. Pour un premier achat, la {nom:td313} est surdimensionnée.",
+      },
+      {
+        q: 'La Roland TD-17 est-elle encore vendue ?',
+        r: "Plus chez Thomann ni chez Woodbrass, où elle a disparu du catalogue. Roland ne l'a pas officiellement arrêtée et certains revendeurs l'affichent encore. La {avis:td313}, qui reprend sa caisse claire, sa grosse caisse et ses cymbales, est la Roland la plus proche en neuf chez nos marchands.",
+      },
+      {
+        q: 'Les batteries Roland ont-elles des peaux maillées ?',
+        r: "Pas toutes. Sur les TD-02, seule la caisse claire de la {nom:td02kv} est en mesh ; les toms sont des pads PD-4. La {nom:td313} a des peaux maillées sur la caisse claire et les trois toms. Le détail est dans [c'est quoi un pad mesh](/les-bases/pad-mesh-batterie-electronique/).",
+      },
+      {
+        q: 'Une Roland TD-02 est-elle vraiment silencieuse ?',
+        r: "Sa pédale de grosse caisse ne frappe rien, ce qui supprime le bruit le plus gênant pour le voisin du dessous. Les pads restent audibles dans la pièce sous la baguette. Le [guide appartement](/guides/choisir-batterie-electronique-appartement/) compare les solutions et [jouer sans déranger](/les-bases/batterie-electronique-bruit-voisins/) les classe par efficacité.",
+      },
+      {
+        q: 'Quelle place faut-il pour une Roland ?',
+        r: "Thomann annonce 120 × 80 cm pour les deux TD-02. Roland donne des mesures siège compris : 100 × 110 cm pour la {nom:td02k}, 120 × 110 cm pour la {nom:td02kv} et 140 × 110 cm pour la {nom:td313}.",
+      },
+      {
+        q: 'TD313 ou TD316 ?',
+        r: "Même module V31. La TD316 ajoute une deuxième crash, une caisse claire à trois capteurs et une vraie charleston sur pied, pour environ 2 000 € chez Thomann : au-dessus du plafond de 1 600 € qu'on se fixe pour un premier achat. L'[avis TD313](/avis/roland-td313/) détaille la différence.",
+      },
+    ],
+  },
 };
 
 /**
@@ -260,7 +372,7 @@ export const INDEX_MARQUES = {
     Millenium: "La marque maison de Thomann. Il n'y a pas de distributeur à rémunérer entre l'usine et toi, d'où des prix bas pour beaucoup de matériel : la {avis:mps450} a des cymbales de 12 pouces à {prix:mps450}, là où la gamme Nitro d'Alesis reste à 10. Le revers : une Millenium se revend plus lentement d'occasion qu'une Alesis. {N:avis:Millenium} de ses modèles ont un avis complet, de la {avis:mps150x} à la {avis:mps850}.",
     Alesis: "La peau maillée à petit prix, sur tous les modèles qu'on suit. Le Bluetooth arrive dès la {avis:nitromax}, qu'on recommande à la majorité des débutants. Ses défauts : des cymbales de 10 pouces sur toute la gamme Nitro et des pads étroits sur la Turbo. Elle se revend bien, ce qui compte si tu n'es pas sûr de t'y tenir.",
     Yamaha: "La méthode avant le matériel. Trois de ses {n:modeles:Yamaha} modèles partagent le module DTX402 et ses programmes de coaching, qui notent ta régularité. En échange, aucune Yamaha de la sélection n'a de peau maillée : les pads en caoutchouc rebondissent plus sec et font plus de bruit sous la baguette.",
-    Roland: "Sous 1 600 €, la sélection Roland tient en {n:modeles:Roland} modèles : la {nom:td02k} ({prix:td02k}), la {avis:td02kv} ({prix:td02kv}), dont la pédale sans batte en fait la plus discrète en immeuble ancien. Au-dessus, la {nom:td313} ({prix:td313}). Les TD-07, TD-17 et TD-1DMK, encore très cherchées, ne se vendent plus neuves en France. La TD313 remplace la TD-17KV2.",
+    Roland: "Sous 1 600 €, la sélection Roland tient en {n:modeles:Roland} modèles : la {nom:td02k} ({prix:td02k}) et la {avis:td02kv} ({prix:td02kv}), qui partagent une pédale de grosse caisse sans batte, la meilleure réponse en immeuble ancien. Au-dessus, la {avis:td313} ({prix:td313}). Les TD-07, TD-17 et TD-1DMK, encore très cherchées, ne sont plus vendues chez Thomann ni chez Woodbrass : la série 3 de Roland a pris leur place.",
     Donner: "Donner vend en direct, sur Donner Music, qui est le seul marchand de ses batteries dans notre sélection. {N:modeles:Donner} modèles, de {prix:ded70} à {prix:backbeat}. La {avis:ded200x} est le kit le mieux fourni de sa tranche, casque et tabouret compris ; face à la Nitro Max, c'est son module qui la dessert. Un réflexe à prendre : ignore les prix barrés du site Donner, ses remises affichées sont permanentes.",
     Nux: "Un seul modèle suivi, la {nom:dm110} ({prix:dm110}), en peaux maillées et vendue chez Woodbrass. On ne l'a pas encore analysée en détail : elle attend son avis.",
     Woodbrass: "Le revendeur français a sa propre batterie, la {nom:ddx50} ({prix:ddx50}), en peaux maillées. Comme la Nux, elle attend encore son avis.",
@@ -309,11 +421,11 @@ export const INDEX_MARQUES = {
     },
     {
       q: 'Roland vaut-il son prix pour débuter ?',
-      r: "Pour le son et le silence, oui : la {avis:td02kv} est la seule qu'on recommande en immeuble ancien, grâce à sa pédale sans batte. Pour le toucher, moins : au même prix, la {avis:mps750x} a des peaux maillées sur ses cinq fûts, la Roland sur sa seule caisse claire.",
+      r: "Pour le son et le silence, oui : la {avis:td02kv} est celle qu'on recommande en immeuble ancien, grâce à sa pédale sans batte, que partage la {nom:td02k}. Pour le toucher, moins : au même prix, la {avis:mps750x} a des peaux maillées sur ses cinq fûts, la Roland sur sa seule caisse claire.",
     },
     {
       q: 'Faut-il rester sur la même marque pour faire évoluer sa batterie ?',
-      r: "Ce n'est pas obligatoire, mais c'est plus simple. Millenium vend ses modules séparément : on peut passer du module d'une {nom:mps150x} à celui d'une {nom:mps750x} en gardant les pads et le faisceau. Entre marques, un pad supplémentaire se branche sur une entrée libre du module, quand il en a une. Le [guide pour faire évoluer sa batterie](/guides/ameliorer-batterie-electronique/) dit quand un ajout vaut le coup et quand il vaut mieux changer de kit.",
+      r: "Ce n'est pas obligatoire, mais c'est plus simple. Millenium vend ses modules séparément, mais Thomann ne publie aucune compatibilité entre les modules d'une gamme et les pads d'une autre : chaque modèle a son propre faisceau. Le module identique au tien reste la pièce de rechange la plus sûre. Entre marques, un pad supplémentaire se branche sur une entrée libre du module, quand il en a une. Le [guide pour faire évoluer sa batterie](/guides/ameliorer-batterie-electronique/) dit quand un ajout vaut le coup et quand il vaut mieux changer de kit.",
     },
     {
       q: 'Une batterie de marque se revend-elle mieux ?',

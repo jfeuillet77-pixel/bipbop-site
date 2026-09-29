@@ -1,5 +1,38 @@
 # Journal BipBop
 
+## 29 septembre 2026 (suite) — Vague 2 : hub Roland, avis TD313, pilier « apprendre », réglages MPS-750X
+
+**Publiés** (faits relevés le jour même par quatre recherches sourcées : sites Roland, notice
+Millenium V8 de mai 2026, flux Thomann, Woodbrass, PAS, Drumeo, Modern Drummer) :
+- P71 `/marques/batterie-electronique-roland/` (1 800 mots, `marques.mjs`).
+- P72 `/avis/roland-td313/` (1 400 mots, grille 7,9 : toucher 9, discrétion 7, module 9, confort 7,
+  prix 5). Prix en jetons, budget réel avec la pédale Millenium PD-122 Pro, entrée dans la sélection.
+- P73 `/les-bases/apprendre-la-batterie/` (1 950 mots), relié depuis « combien de temps »,
+  « seul ou prof » et le guide pad.
+- P74 `/les-bases/reglages-millenium-mps-750x/` (1 850 mots), relié depuis l'avis MPS-750X.
+  La notice V8 précède le firmware 4.38 (réglages de charleston remaniés) : encadré dans l'article.
+
+**Corrigé en chemin** :
+- **TD-02K et TD-02KV ont la même pédale sans batte KT-1** (fiches Roland lues le 29/09). Le site
+  présentait la TD-02KV comme « la seule » : quatre phrases corrigées (avis TD-02KV, avis DED-200X,
+  guide 500 €, hub Avis) et `marques.mjs` (Yamaha, Roland, FAQ). La DTX402K a aussi une pédale sans
+  batte (KU100). La recommandation appartement reste la TD-02KV (caisse claire en mesh).
+- **Roland n'a pas arrêté les TD-07 ni les TD-17** : seule la TD-1DMK est marquée arrêtée. Elles
+  ont disparu de Thomann et Woodbrass. Aucune page ne dit plus « arrêtées en France » ni que la TD313
+  « remplace » la TD-17KV2 (seuls des revendeurs l'écrivent).
+- **Modules Millenium** : « les pads de la MPS-150X sont compatibles avec le module MPS-750X, le
+  faisceau aussi » (guide faire évoluer, `marques.mjs`) n'avait aucune source ; Thomann ne publie
+  aucune compatibilité et chaque kit a son faisceau. Réécrit. Rôle du module MPS-750X à 198 € dans
+  la sélection : « module de rechange », pas « monter en gamme ».
+- Base : TD313 à 3 cymbales (pas 4), 140 × 110 cm siège compris (Roland), discrétion 4 (pédale à
+  batte), phrase « vitrine Roland » remplacée (c'est l'entrée de la série 3). TD-02KV : « le plus
+  discret du marché » retiré.
+- Guide enfant : « Onze euros » pour le pad à 12,90 €, et 280 € puis 270 € d'économie. Page seul ou
+  prof : « 15 à 25 € par mois » contre « 300 à 700 € l'an » dans la même page ; plateforme « autour
+  de 15 € » contre 30 $ chez Drumeo.
+- Hub Avis : « Vingt-trois au programme » contre 22 dans le badge ; « écrits par l'équipe » (hub Avis
+  et hub Guides) alors que le robot rédige. /a-propos/ : 128 accessoires.
+
 ## 29 septembre 2026 — Relecture Search Console, trois meta descriptions fausses
 
 **Indexation.** 36 des 48 URL du sitemap sont indexées. Pas indexées : les sept pages

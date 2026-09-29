@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Changer de kit, remplacer le son d’un pad, calmer une charleston qui sonne seule : les réglages de la Millenium MPS-750X pas à pas, tirés de sa notice.">
+<link rel="apple-touch-icon" href="/bipbop-touch-180.png">
+<link rel="canonical" href="https://bipbop.eu/les-bases/reglages-millenium-mps-750x/">
+<title>Millenium MPS-750X : changer les sons et régler le module</title>
+<link rel="icon" type="image/svg+xml" href="/bipbop-marque.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#efe6d8;font-family:'Work Sans',system-ui,sans-serif}
+a{color:#d2431f}a:hover{color:#b93a19}
+</style>
+<!--responsive--><style>
+/* Adaptation aux petits ecrans. Rien ne change au-dela de 1080px. */
+@media (max-width:1080px){
+  html{--rwd:on}
+  [data-rwd="tbl"],*:has(>[data-rwd="tblrow"]){overflow-x:auto!important;scrollbar-width:thin}
+  [data-rwd="tblrow"]{min-width:620px}
+  [data-rwd="sp"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c4"],[data-rwd="c5"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  [data-sticky]{position:static!important;top:auto!important}
+  [data-hdr] a{white-space:nowrap}
+  [data-pad]{padding-left:26px!important;padding-right:26px!important}
+  [data-mar]{margin-left:26px!important;margin-right:26px!important}
+  img{max-width:100%}
+  pre{max-width:100%}
+}
+@media (max-width:860px){
+  [data-rwd="sp2"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c3"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  [data-pad]{padding-left:18px!important;padding-right:18px!important}
+  [data-mar]{margin-left:18px!important;margin-right:18px!important}
+  [data-hdr]{flex-wrap:wrap!important;row-gap:12px!important}
+  [data-nav]{flex-wrap:wrap!important;gap:16px!important}
+  [data-big="a"]{font-size:76px!important}
+  [data-big="b"]{font-size:34px!important;line-height:1.06!important}
+  [data-big="c"]{font-size:27px!important;line-height:1.1!important}
+  [data-big="d"]{font-size:23px!important;line-height:1.14!important}
+}
+@media (max-width:620px){
+  [data-rwd="c3"],[data-rwd="c4"],[data-rwd="c5"],[data-rwd="mini"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="mini"]{justify-items:start!important;row-gap:12px!important}
+  [data-rwd="tblrow"]{min-width:540px}
+  [data-pad]{padding-left:14px!important;padding-right:14px!important}
+  [data-mar]{margin-left:14px!important;margin-right:14px!important}
+  [data-big="a"]{font-size:58px!important}
+  [data-big="b"]{font-size:29px!important}
+  [data-big="c"]{font-size:24px!important}
+  [data-big="d"]{font-size:21px!important}
+}
+
+@media (max-width:1080px){
+  [data-rwd="foot"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px!important}
+}
+@media (max-width:620px){
+  [data-rwd="foot"]{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+}
+
+@media (max-width:620px){
+  [data-rwd="def"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="def"]>div:nth-child(-n+2){display:none}
+}
+</style>
+
+<script>
+(function(){var K='bipbop-consent';
+function go(){var el=document.getElementById('cookie-banner');if(!el)return false;
+if(!localStorage.getItem(K)){el.style.display='flex';}
+el.addEventListener('click',function(e){var b=e.target.closest('[data-consent]');if(!b)return;
+try{localStorage.setItem(K,b.getAttribute('data-consent'));}catch(err){}el.style.display='none';});
+return true;}
+var t=setInterval(function(){if(go())clearInterval(t);},150);setTimeout(function(){clearInterval(t);},20000);})();
+</script>
+</head>
+<body>
+<div style="max-width:1180px;margin:0 auto;background:#fdf6ec;font-family:'Work Sans',system-ui,sans-serif;color:#241c14">
+
+<div data-pad data-hdr style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 40px;background:#fdf6ec;border-bottom:2.5px solid #241c14">
+<a href="/" style="display:flex;align-items:center;gap:11px;text-decoration:none;color:#241c14">
+<span style="width:34px;height:34px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 20px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</a>
+<div data-nav style="display:flex;gap:24px;font:500 14px 'Work Sans',sans-serif">
+<a href="/comparatif-batterie-electronique/" style="color:#241c14;text-decoration:none">Comparatif</a><a href="/avis/" style="color:#241c14;text-decoration:none">Avis</a><a href="/guides/" style="color:#241c14;font-weight:700;text-decoration:underline;text-decoration-thickness:2.5px;text-underline-offset:5px;text-decoration-color:#d2431f">Guides</a><a href="/a-propos/" style="color:#241c14;text-decoration:none">À propos</a>
+</div>
+<a href="/comparatif-batterie-electronique/" style="font:700 13px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;border:2.5px solid #241c14;padding:9px 15px;border-radius:10px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Trouver ma batterie</a>
+</div>
+<div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">ACCUEIL / LES BASES / RÉGLAGES MPS-750X</div>
+
+<div data-pad style="max-width:820px;margin:0 auto;padding:20px 40px 0">
+<div style="display:inline-flex;align-items:center;gap:8px;font:700 12px 'Work Sans',sans-serif;letter-spacing:.04em;background:#0f7d76;color:#fff;border:2.5px solid #241c14;border-radius:9px;padding:6px 12px;margin-bottom:20px">LES BASES</div>
+<h1 data-big="b" style="font:800 52px/1.03 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:pretty">Millenium MPS-750X&nbsp;: changer les sons et régler le module</h1>
+<p style="font:400 20px/1.55 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 22px;text-wrap:pretty">Changer de kit, remplacer le son d'un pad, calmer une charleston qui sonne toute seule : les réglages qui comptent, pas à pas, tirés de la notice du fabricant.</p>
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:26px;border-bottom:2.5px solid #241c14">
+<div style="width:40px;height:40px;border-radius:50%;overflow:hidden;border:2.5px solid #241c14;background:#ffd166"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></div>
+<div style="font:500 14px 'Work Sans',sans-serif;color:#5a4c3e">Par <strong style="color:#241c14;font-weight:700">BipBop</strong></div>
+<span style="color:#c9b9a3">·</span>
+<div style="font:500 13px 'IBM Plex Mono',monospace;color:#786550">29 SEPT. 2026 · 9 MIN</div>
+</div>
+</div>
+
+<div data-pad style="max-width:820px;margin:0 auto;padding:0 40px">
+<div style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:20px;padding:24px 26px;margin:30px 0 34px">
+<div style="font:800 21px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;color:#0f5f5a;margin-bottom:14px">À retenir</div>
+<div style="display:flex;flex-direction:column;gap:11px;font:400 16.5px/1.55 'Work Sans',sans-serif;color:#264c49">
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">01</span><span>Changer de kit : [KIT], puis la molette. Changer le son d'un pad : [EDIT], tu frappes le pad, tu choisis le son. La sauvegarde se propose quand tu quittes avec [EXIT].</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">02</span><span>Le module contient 697 sons et 20 kits d'usine, plus 20 emplacements pour tes propres kits. Les kits d'usine ne s'effacent pas.</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">03</span><span>Une charleston qui sonne toute seule se règle dans [SETUP], menu ADVANCED : calibrage de la pédale, points d'ouverture et de fermeture, Chick Time. Mets aussi le module à jour.</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">04</span><span>Tout vient de la notice Millenium du module (version de mai 2026) et des notes de mise à jour publiées avec le firmware 4.38.</span></div>
+</div>
+</div>
+<h2 id="module" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Ce que contient le module</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le module de la <a href="/avis/millenium-mps-750x/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">MPS-750X</a> est plus riche qu'il n'y paraît : <strong>697 sons</strong>, <strong>20 kits d'usine</strong> et <strong>20 kits utilisateur</strong>, 55 morceaux d'accompagnement, un métronome et un enregistreur de 15 morceaux. Il ajoute une réverbération, une distorsion, un compresseur et un égaliseur à quatre bandes. La notice précise que les kits utilisateur sont au départ des copies des kits d'usine, et que seuls eux peuvent être modifiés ou effacés : tu ne peux pas abîmer les réglages d'origine.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Les 697 sons se rangent en sept familles. C'est dans cette liste que tu pioches quand tu changes le son d'un pad :</p>
+<div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:20px;font:400 15.5px 'Work Sans',sans-serif">
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.4fr) minmax(110px,.8fr) minmax(110px,.8fr);background:#241c14;color:#fdf6ec;font-weight:600;font-size:13px">
+<div style="padding:12px 16px">Famille</div><div style="padding:12px 16px">Numéros</div><div style="padding:12px 16px">Nombre de sons</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.4fr) minmax(110px,.8fr) minmax(110px,.8fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Grosse caisse (KICK)</div><div style="padding:14px 16px;color:#4a3d31">001 à 072</div><div style="padding:14px 16px;color:#4a3d31">72</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.4fr) minmax(110px,.8fr) minmax(110px,.8fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Caisse claire (SNARE)</div><div style="padding:14px 16px;color:#4a3d31">073 à 212</div><div style="padding:14px 16px;color:#4a3d31">140</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.4fr) minmax(110px,.8fr) minmax(110px,.8fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Toms (TOM)</div><div style="padding:14px 16px;color:#4a3d31">213 à 393</div><div style="padding:14px 16px;color:#4a3d31">181</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.4fr) minmax(110px,.8fr) minmax(110px,.8fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Ride (RIDE)</div><div style="padding:14px 16px;color:#4a3d31">394 à 451</div><div style="padding:14px 16px;color:#4a3d31">58</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.4fr) minmax(110px,.8fr) minmax(110px,.8fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Crash, splash et china (CRASH)</div><div style="padding:14px 16px;color:#4a3d31">452 à 532</div><div style="padding:14px 16px;color:#4a3d31">81</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.4fr) minmax(110px,.8fr) minmax(110px,.8fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Charleston (HI-HAT)</div><div style="padding:14px 16px;color:#4a3d31">533 à 647</div><div style="padding:14px 16px;color:#4a3d31">115</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.4fr) minmax(110px,.8fr) minmax(110px,.8fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Percussions</div><div style="padding:14px 16px;color:#4a3d31">648 à 697</div><div style="padding:14px 16px;color:#4a3d31">50</div>
+</div>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:0 0 34px">D'après la liste des sons de la notice Millenium du module MPS-750X (version 8, mai 2026).</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Les vingt kits d'usine couvrent les styles attendus, de 001 Studio à 020 Bluebay, en passant par Funk, Jazz, Metal, Rock, Latin ou Brush pour les balais. Commence par les parcourir tous avant de modifier quoi que ce soit : c'est la façon la plus rapide de savoir quels sons tu aimes.</p>
+<h2 id="kit" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Changer de kit</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">C'est le réglage le plus simple, et celui qui transforme le plus le son d'un coup. Appuie sur <strong>[KIT]</strong> : l'écran affiche le numéro et le nom du kit en cours. Tourne ensuite la molette, ou appuie sur <strong>[–]</strong> et <strong>[+]</strong>, pour passer au suivant. Le changement est immédiat, tu peux frapper les pads pour écouter chaque kit.</p>
+<h2 id="son" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Changer le son d'un pad, pas à pas</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Tu aimes un kit mais sa caisse claire te gêne ? Tu peux remplacer ce seul son. La notice décrit la procédure en six étapes :</p>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:10px">
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #d2431f">
+<div style="width:44px;height:44px;border-radius:50%;background:#d2431f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">1</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Entre en mode édition</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Choisis le kit à modifier, puis appuie sur <strong>[EDIT]</strong>.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #0f7d76">
+<div style="width:44px;height:44px;border-radius:50%;background:#0f7d76;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">2</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Désigne le pad</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Frappe le pad à changer, ou appuie plusieurs fois sur <strong>[DRUM]</strong> jusqu'à ce que l'écran l'affiche. Sur un pad à deux zones, comme la caisse claire, choisis aussi la zone : la peau et le cercle ont chacun leur son.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#241c14;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">3</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Choisis la famille puis le son</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Passe d'un menu à l'autre avec <strong>[PAGE DOWN]</strong> et <strong>[PAGE UP]</strong>. VOICE TYPE choisit la famille (grosse caisse, caisse claire, toms…), VOICE le son lui-même. Tourne la molette et frappe le pad à chaque cran pour écouter.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #a3401f">
+<div style="width:44px;height:44px;border-radius:50%;background:#a3401f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">4</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Règle le reste</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Toujours avec [PAGE DOWN] et [PAGE UP] : VOLUME, REVERB pour la réverbération, PITCH pour accorder le son plus grave ou plus aigu, PAN pour le placer à gauche ou à droite dans le casque.</p></div>
+</div>
+</div>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Pour garder ton travail, appuie sur <strong>[EXIT]</strong> : le module propose de sauvegarder. Choisis un emplacement avec [–] et [+], puis valide avec <strong>[ENTER]</strong>. Attention, la notice prévient que les données déjà présentes à cet emplacement sont écrasées. [EXIT] à ce moment-là annule la sauvegarde. Il n'y a pas de procédure séparée : c'est toujours en quittant l'édition qu'on sauvegarde.</p>
+<div style="display:flex;gap:16px;align-items:flex-start;background:#241c14;border-radius:20px;padding:24px 26px;margin:34px 0;color:#fdf6ec">
+<div style="width:54px;height:54px;flex:none;border-radius:50%;overflow:hidden;border:2.5px solid #ffd166;background:#ffd166">None</div>
+<div>
+<div style="font:700 15px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:7px">Le conseil de BipBop</div>
+<p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#e0d5c8;margin:0">Garde les vingt kits d'usine intacts et travaille sur des copies. Note sur un papier les trois ou quatre sons que tu changes le plus souvent, avec leur numéro dans la liste. La prochaine fois, tu iras directement au bon son au lieu de faire défiler 140 caisses claires.</p>
+</div>
+</div>
+<h2 id="faders" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Les six faders&nbsp;: volume par famille et effets</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Sous l'écran, six faders règlent le mélange en direct. Le bouton <strong>[ALTER]</strong> les fait changer de rôle, une LED indique lequel est actif :</p>
+<div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:20px;font:400 15.5px 'Work Sans',sans-serif">
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(90px,.4fr) minmax(260px,2fr);background:#241c14;color:#fdf6ec;font-weight:600;font-size:13px">
+<div style="padding:12px 16px">Mode</div><div style="padding:12px 16px">Ce que font les faders</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(90px,.4fr) minmax(260px,2fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">VOL</div><div style="padding:14px 16px;color:#4a3d31">Le volume de chaque famille : grosse caisse, caisse claire, toms, ride, crashs, charleston. Le réglage à toucher en premier si la grosse caisse couvre tout.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(90px,.4fr) minmax(260px,2fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">FX</div><div style="padding:14px 16px;color:#4a3d31">S1 règle la réverbération, S2 le compresseur, S3 à S6 les quatre bandes de l'égaliseur.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(90px,.4fr) minmax(260px,2fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">MIDI</div><div style="padding:14px 16px;color:#4a3d31">Chaque fader envoie une commande à un logiciel sur ordinateur, dont la fonction se règle dans le logiciel.</div>
+</div>
+</div>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Une particularité surprend tout le monde la première fois : quand tu changes de mode, un fader ne réagit plus tant que tu ne l'as pas ramené à la position qu'il avait dans l'autre mode. Si un fader semble mort, c'est presque toujours ça. Le menu FADER MODE de [SETUP] permet aussi de garder les positions à l'extinction ou de verrouiller les faders.</p>
+<h2 id="charleston" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">La charleston qui sonne toute seule</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">C'est le souci le plus cherché sur ce kit. La notice ne parle pas de ce problème en tant que tel, mais elle décrit les réglages qui gouvernent la pédale et les déclenchements parasites. Ils sont tous dans <strong>[SETUP]</strong>, menu <strong>ADVANCED</strong>, qui règle pad par pad la façon dont le module lit tes frappes.</p>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:10px">
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #d2431f">
+<div style="width:44px;height:44px;border-radius:50%;background:#d2431f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">1</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Recalibre la pédale</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Le réglage Calib. apprend au module la course de ta pédale. Lance-le avec [ENTER], enfonce la pédale à fond et valide, puis relâche-la lentement et valide. La notice conseille de ne pas choisir de valeurs trop extrêmes.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #0f7d76">
+<div style="width:44px;height:44px;border-radius:50%;background:#0f7d76;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">2</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Ajuste les points d'ouverture et de fermeture</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Open Point fixe le moment où la charleston s'ouvre, Close Point celui où elle se ferme. Pour agrandir la zone à demi ouverte, monte Open Point et baisse Close Point.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#241c14;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">3</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Allonge le Chick Time</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">C'est un temps pendant lequel le module ignore un nouveau son après un appui sur la pédale. La notice le présente comme le réglage qui évite une frappe involontaire due à un contact.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #a3401f">
+<div style="width:44px;height:44px;border-radius:50%;background:#a3401f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">4</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Traite les vibrations</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">SenseTime fixe l'intervalle minimum entre deux sons d'un même pad, pour éviter les doublons dus aux vibrations. Xtalk règle la diaphonie, quand frapper un pad en fait sonner un autre à travers le rack : lance la procédure avec [ENTER] et frappe le pad au maximum jusqu'à ce que l'écran affiche OK.</p></div>
+</div>
+</div>
+<div style="background:#faeae5;border:2.5px solid #241c14;border-radius:20px;padding:22px 26px;margin:30px 0">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#a3401f;margin-bottom:8px">⚠ Ton module n'a peut-être pas les mêmes menus que la notice</div>
+<p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#5b3226;margin:0">La notice date de mai 2026. Le firmware 4.38, publié par Millenium en août 2026 sur la fiche Thomann du kit, a remanié les réglages de la charleston : Pedal Vel. et Splash Time disparaissent, la pédale gagne Sensitivity et Headroom, et le calibrage se fait désormais avec [–] pour le point de fermeture et [+] pour le point d'ouverture. Les notes de mise à jour demandent de réinitialiser les réglages (Settings) après l'installation. Plusieurs versions précédentes corrigeaient déjà des déclenchements ratés ou parasites de la charleston : un module jamais mis à jour mérite de l'être avant tout autre réglage.</p>
+</div>
+<h2 id="firmware" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Mettre à jour le module</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Pour connaître ta version, maintiens [–] et [+] pendant l'allumage, quand l'écran affiche Initializing : le numéro apparaît en haut à gauche. Pour mettre à jour, branche le module à l'ordinateur en USB, allume-le en maintenant [–] et [+] : l'écran affiche UPGRADE. Ouvre ensuite le logiciel Firmware Upgrade Tool fourni par Millenium, choisis le module dans les listes d'entrée et de sortie, glisse le fichier de mise à jour, lance Update et attends le message de fin avant d'éteindre.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">La notice indique que le logiciel ne fonctionne que sous Windows. Le fichier de mise à jour publié sur la fiche Thomann contient pourtant aussi une version pour Mac. Dans les deux cas, ne débranche rien pendant l'opération.</p>
+<h2 id="reset" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Revenir aux réglages d'usine</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Si tu t'es perdu dans les réglages, <strong>[SETUP]</strong> puis le menu <strong>RESET</strong> propose plusieurs remises à zéro. Kits remet les kits aux réglages d'usine, Settings les réglages du module, Xtalk remet la diaphonie au minimum et All remet tout à l'usine. Valide avec [ENTER], puis redémarre le module.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Deux précautions. La notice de mai 2026 et celle de 2023 ne décrivent pas l'option Songs de la même façon : l'une parle des kits utilisateur, l'autre des morceaux enregistrés. Dans le doute, considère que tes kits et tes enregistrements peuvent disparaître, et ne lance pas All sans avoir noté tes réglages. Les notes de version signalent aussi une remise à zéro complète en maintenant [SETUP] et [MODE] à l'allumage.</p>
+<h2 id="ordinateur" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Brancher le module à un ordinateur</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le port USB transmet le MIDI, c'est-à-dire tes frappes, pas le son. Branché à un ordinateur, le module pilote un logiciel de batterie ou une application d'apprentissage. Il n'a pas de prise MIDI à cinq broches. Dans [SETUP], le réglage LOCAL sur OFF fait passer le module en mode MIDI : il n'envoie plus que les frappes, avec moins de latence. Le réglage Note Send, dans ADVANCED, choisit la note envoyée par chaque pad.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">La notice ne donne pas la table des notes par défaut. Le plus simple est de frapper chaque pad en regardant ce que ton logiciel reçoit, puis d'ajuster Note Send ou le logiciel. Notre guide pour <a href="/guides/enregistrer-batterie-electronique-ordinateur/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">enregistrer sa batterie électronique</a> explique les deux façons de faire, audio et MIDI.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Millenium publie aussi un éditeur de kits pour ordinateur, le Kit Editor, qui modifie et nomme les kits puis les renvoie au module. Son mode d'emploi prévient d'un piège : importer tous les kits d'un coup écrase les kits d'usine, et une remise à zéro ne les restaure pas. Exporte d'abord tes kits, n'importe que ceux que tu as modifiés.</p>
+<h2 id="upgrade" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Changer de module&nbsp;: le vrai upgrade</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le module MPS-750X se vend seul chez Thomann, à 198 € le 29 septembre 2026. C'est exactement le même que celui du kit : il sert de pièce de rechange si le tien tombe en panne, pas de montée en gamme. Il est livré sans le câble multibroche ni l'alimentation, à acheter à part.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Pour un module plus riche, Millenium vend le module de la MPS-1000. Thomann ne publie en revanche aucune compatibilité entre ce module et les pads de la 750X. Le kit relie ses pads au module par un seul câble terminé par une prise à 25 broches, et il ne reste que deux entrées jack libres. Un autre module demanderait donc soit un câble compatible, soit un recâblage pad par pad. Avant d'acheter, pose la question au service client Thomann, fiche de ton kit à l'appui. Notre guide pour <a href="/guides/ameliorer-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">faire évoluer sa batterie</a> dit quand un ajout vaut la dépense et quand il vaut mieux changer de kit.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Les deux entrées libres, EXT1 et EXT2, servent en revanche à agrandir le kit sans rien changer d'autre : un quatrième tom ou une deuxième crash. C'est ce que fait le pack d'extension de la gamme, dont on parle dans l'avis de la <a href="/avis/millenium-mps-750x/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">MPS-750X</a> et dans le <a href="/duels/millenium-mps-750x-vs-mps-850/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">duel face à la MPS-850</a>.</p>
+<div style="display:flex;align-items:center;gap:14px;margin:44px 0 20px">
+<div data-big="d" style="font:800 28px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em">Pour aller plus loin</div>
+<div style="flex:1;height:2.5px;background:#241c14"></div>
+</div>
+<div data-rwd="c3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px">
+<a href="/avis/millenium-mps-750x/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #241c14">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#d2431f;color:#ffffff;border:2px solid #241c14;border-radius:7px;padding:4px 9px">AVIS</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Millenium MPS-750X : l'avis</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Ce qu'elle vaut, ses défauts et son budget réel.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+<a href="/duels/millenium-mps-750x-vs-mps-850/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #0f7d76">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#241c14;color:#ffd166;border:2px solid #241c14;border-radius:7px;padding:4px 9px">DUEL</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">MPS-750X ou MPS-850</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Cent euros pour deux pads de plus : le duel.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+<a href="/guides/enregistrer-batterie-electronique-ordinateur/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #d2431f;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #d2431f">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#ffd166;color:#241c14;border:2px solid #241c14;border-radius:7px;padding:4px 9px">GUIDE</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Enregistrer sa batterie</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Audio ou MIDI, brancher le module à l'ordinateur.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+</div>
+<p style="font:400 14px/1.6 'Work Sans',sans-serif;color:#786550;margin:0 0 10px">Cet article fait partie de la série « les bases » : des explications sans produit à vendre, écrites pour que le reste du site devienne compréhensible.</p>
+</div>
+
+<div style="height:52px"></div>
+<footer data-pad style="background:#241c14;color:#fdf6ec;padding:48px 40px 26px">
+<div data-rwd="foot" style="display:grid;grid-template-columns:1.7fr 1fr 1.1fr 1.2fr;gap:40px;padding-bottom:34px;border-bottom:1px solid #4a3d31">
+<div>
+<div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+<span style="width:32px;height:32px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée claire</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#fdf6ec" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</div>
+<p style="font:400 15px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 16px;max-width:300px">Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>
+<div style="display:inline-block;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#ffd166;border:1px solid #4a3d31;border-radius:8px;padding:7px 11px">MIS À JOUR EN SEPT. 2026</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">TROUVER</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/comparatif-batterie-electronique/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Le comparatif</a><a href="/guides/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les guides</a><a href="/avis/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les avis</a><a href="/marques/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Toutes les marques</a><a href="/duels/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les duels</a>
+</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">LE SITE</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/a-propos/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">À propos</a><a href="/contact/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Contact</a><a href="/mentions-legales/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Mentions légales</a><a href="/politique-confidentialite/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Politique de confidentialité</a><a href="/plan-du-site/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Plan du site</a><a href="/suivi-des-prix/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Suivi des prix</a>
+</div>
+</div>
+<div style="background:#302519;border-radius:16px;padding:20px;align-self:start">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:8px">Pas encore décidé ?</div>
+<p style="font:400 14px/1.55 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 14px">Trois questions, deux modèles en face. Trente secondes.</p>
+<a href="/comparatif-batterie-electronique/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:11px;border-radius:11px" style-hover="background:#ffdd8c">Trouver ma batterie</a>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:14px;padding:22px 0 20px;border-bottom:1px solid #4a3d31">
+<p style="font:400 14px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0;max-width:840px">Les prix affichés sont relevés à la date de publication : vérifie toujours sur la fiche du marchand avant de commander.</p>
+</div>
+<div style="padding-top:20px;font:400 13.5px 'Work Sans',sans-serif;color:#a8998a">© 2026 BipBop. Tous droits réservés.</div>
+</footer>
+</div>
+
+<div id="cookie-banner" data-pad style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#241c14;border-top:3px solid #ffd166;padding:18px 40px;align-items:center;justify-content:center;gap:32px;font-family:'Work Sans',system-ui,sans-serif;box-shadow:0 -6px 24px rgba(36,28,20,.28)">
+<div style="flex:1;max-width:760px">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:6px">Une question de cookies, vite réglée</div>
+<p style="font:400 14.5px/1.55 'Work Sans',sans-serif;color:#d6cabb;margin:0">On mesure l'audience pour savoir quelles pages t'aident vraiment. Pas de publicité, pas de revente de données. Tu peux refuser, le site marche exactement pareil. <a href="/politique-confidentialite/" style="color:#ffd166;text-decoration:underline;text-underline-offset:3px">Notre politique de confidentialité</a>.</p>
+</div>
+<div style="display:flex;gap:12px;flex:none">
+<button type="button" data-consent="refuse" style="font:700 14.5px 'Work Sans',sans-serif;color:#fdf6ec;background:transparent;border:2.5px solid #8a7866;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Refuser</button>
+<button type="button" data-consent="accept" style="font:700 14.5px 'Work Sans',sans-serif;color:#241c14;background:#ffd166;border:2.5px solid #ffd166;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Accepter</button>
+</div>
+</div>
+</body>
+</html>
