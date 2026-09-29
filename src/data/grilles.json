@@ -286,6 +286,34 @@
         "note": 9,
         "raison": "Quatre toms, deux crashs et un module qui parle MIDI : plus d'équipement pour qui sait déjà tenir un rythme."
       }
+    },
+    "Avis-Roland-TD313.dc.html": {
+      "id": "td313",
+      "toucher": [
+        9,
+        "Caisse claire mesh de 12 pouces à deux zones, trois toms mesh à deux zones de 8 et 10 pouces."
+      ],
+      "discretion": [
+        7,
+        "Fûts en mesh et pédale de charleston FD-9 revue pour moins résonner, mais une pédale de grosse caisse à batte."
+      ],
+      "module": [
+        9,
+        "Module V31 : plus de 1 000 sons, mode Coach, import de sons et enregistrement USB sur 30 pistes."
+      ],
+      "confort": [
+        7,
+        "Ride de 14 pouces à trois zones, mais une seule crash et une charleston fixe, sur 140 × 110 cm siège compris."
+      ],
+      "prix": [
+        5,
+        "{prix:td313} sans pédale de grosse caisse ni siège : bien trop pour découvrir l'instrument."
+      ],
+      "profil": {
+        "pour": "Tu joues déjà et tu enregistres",
+        "note": 9,
+        "raison": "Le module envoie chaque élément du kit sur sa piste à l'ordinateur, et la caisse claire de 12 pouces encaisse des années de jeu."
+      }
     }
   },
   "echelle": {

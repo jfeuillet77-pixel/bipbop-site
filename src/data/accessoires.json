@@ -603,6 +603,15 @@
   "url": "https://fr.donnermusic.com/products/donner-hhcb-12-separater-hi-hat"
  },
  {
+  "cat": "Charleston et pédales",
+  "marque": "Millenium",
+  "produit": "PD-122 Pro Bass Drum Pedal",
+  "prix": "59 €",
+  "marchand": "Thomann",
+  "role": "Pédale de grosse caisse simple, pour les kits livrés sans",
+  "url": "https://www.thomann.fr/millenium_pd122_pro_serie_fussmaschine.htm"
+ },
+ {
   "cat": "Pads de grosse caisse",
   "marque": "Millenium",
   "produit": "E-Drum Kick Bass Pad",
@@ -1031,7 +1040,7 @@
   "produit": "MPS-750X E-Drum Module",
   "prix": "198 €",
   "marchand": "Thomann",
-  "role": "Monter en gamme sans changer de kit",
+  "role": "Module de rechange, identique à celui de la MPS-750X",
   "url": "https://www.thomann.fr/millenium_mps_750x_e_drum_module.htm"
  },
  {

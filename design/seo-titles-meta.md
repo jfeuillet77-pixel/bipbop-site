@@ -618,3 +618,14 @@ Aucune page modifiée, aucun commit. Les `<h1>` des pages sont laissés tels que
 Open Graph (`og:title`, `og:description`) n'existent pas sur les pages portées : c'est le
 reste-à-faire de l'ouverture SEO avec Search Console, et elles devraient reprendre ces mêmes
 chaînes. Dis-moi si tu veux que je les prépare en même temps que l'application.
+
+## Pages publiées le 29/09/2026
+
+| Route | Title | Car. |
+|---|---|---|
+| `/marques/batterie-electronique-roland/` | Batterie électronique Roland : laquelle choisir en 2026 ? | 57 |
+| `/avis/roland-td313/` | Que vaut la Roland TD313 ? Avis, prix et verdict 2026 | 53 |
+| `/les-bases/apprendre-la-batterie/` | Apprendre la batterie : par où commencer quand on débute ? | 58 |
+| `/les-bases/reglages-millenium-mps-750x/` | Millenium MPS-750X : changer les sons et régler le module | 57 |
+
+Pas de montant dans la copie SEO de l'avis TD313 : ses prix sont en jetons (le `<head>` ne se résout pas).

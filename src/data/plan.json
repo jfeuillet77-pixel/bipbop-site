@@ -1144,12 +1144,12 @@
   "permalien": "https://bipbop.eu/marques/batterie-electronique-roland/",
   "fichier_maquette": "",
   "gabarit": "Hub de marque",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "batterie electronique roland",
   "priorite": "Haute",
   "produits_lies": "TD-02K, TD-02KV, TD313",
   "maillage_sortant": "Avis TD-02KV et TD313, guide occasion",
-  "notes": "2 960/mois, plus 2 510 sur TD-07, TD-17 et TD-1 : arrêtées en France (absentes de Thomann et Woodbrass le 23/09/2026). Une section les explique et renvoie vers la TD313 (remplaçante de la TD-17KV2) et l occasion."
+  "notes": "2 960/mois, plus 2 510 sur TD-07, TD-17 et TD-1 : arrêtées en France (absentes de Thomann et Woodbrass le 23/09/2026). Une section les explique et renvoie vers la TD313 (remplaçante de la TD-17KV2) et l occasion. Publié le 29/09/2026 (marques.mjs) : TD-07, TD-17 et TD-1DMK absentes de Thomann et Woodbrass, mais seule la TD-1DMK est marquée arrêtée par Roland ; aucun remplacement annoncé par Roland."
  },
  {
   "id": "P72",
@@ -1158,14 +1158,14 @@
   "titre": "Avis Roland TD313",
   "slug": "/avis/roland-td313",
   "permalien": "https://bipbop.eu/avis/roland-td313/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Avis-Roland-TD313.dc.html",
   "gabarit": "Avis",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "roland td313 avis",
   "priorite": "Haute",
   "produits_lies": "Roland TD313",
   "maillage_sortant": "Hub Roland, guide 1000 €",
-  "notes": "Remplaçante officielle de la TD-17KV2 (1 210/mois sur « td 17 »). Déjà au catalogue à 1 498 €."
+  "notes": "Remplaçante officielle de la TD-17KV2 (1 210/mois sur « td 17 »). Déjà au catalogue à 1 498 €. Publié le 29/09/2026. Roland ne dit pas qu'elle remplace la TD-17KV2 (seuls des revendeurs le disent) : l'avis constate les composants repris."
  },
  {
   "id": "P73",
@@ -1174,14 +1174,14 @@
   "titre": "Apprendre la batterie : par où commencer",
   "slug": "/les-bases/apprendre-la-batterie",
   "permalien": "https://bipbop.eu/les-bases/apprendre-la-batterie/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Les-Bases-Apprendre-La-Batterie.dc.html",
   "gabarit": "Article informationnel",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "apprendre la batterie",
   "priorite": "Haute",
   "produits_lies": "",
   "maillage_sortant": "Seul ou prof, combien de temps, adulte débutant, enfant",
-  "notes": "2 230/mois, difficulté 19. Pilier : relier les quatre pages sans les cannibaliser."
+  "notes": "2 230/mois, difficulté 19. Pilier : relier les quatre pages sans les cannibaliser. Publié le 29/09/2026 (1 950 mots)."
  },
  {
   "id": "P74",
@@ -1190,14 +1190,14 @@
   "titre": "Réglages et sons de la Millenium MPS-750X",
   "slug": "/les-bases/reglages-millenium-mps-750x",
   "permalien": "https://bipbop.eu/les-bases/reglages-millenium-mps-750x/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Les-Bases-Reglages-MPS-750X.dc.html",
   "gabarit": "Article informationnel",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "changer les sons millenium mps-750x",
   "priorite": "Moyenne",
   "produits_lies": "Module MPS-750X de remplacement",
   "maillage_sortant": "Avis MPS-750X",
-  "notes": "590/mois sur « changer les sons ». Les 3 × 1 900 anglais (settings, random hi hat, module upgrade) sont probablement mondiaux. Écrire depuis le manuel constructeur uniquement."
+  "notes": "590/mois sur « changer les sons ». Les 3 × 1 900 anglais (settings, random hi hat, module upgrade) sont probablement mondiaux. Écrire depuis le manuel constructeur uniquement. Publié le 29/09/2026 : notice V8 (mai 2026) et notes du firmware 4.38."
  },
  {
   "id": "P75",
