@@ -2,6 +2,13 @@
 
 **BipBop · 14 septembre 2026 · 2ᵉ passe après tes deux remarques, validée et appliquée le jour même.**
 
+**Révision du 29/09/2026** (relecture Search Console, validée par Jordane) : accueil sans le
+« laquelle choisir » qu'il disputait au comparatif, guide adulte recentré sur « batterie
+électronique débutant » (740 recherches/mois, H1 aligné dans la maquette), guide 1 000 € aligné sur
+ses sœurs à 300 et 500 €, duel MPS-150X ou Turbo Mesh aligné sur les autres duels, « prix » en
+minuscule dans les deux « Que vaut », et trois metas qui contredisaient leur page (/avis/,
+/guides/, /a-propos/). Les copies ci-dessous sont celles du 29/09.
+
 Les 39 copies ci-dessous sont **en ligne** sur bipbop.eu depuis le 14/09/2026. Cette fiche garde la trace de ce qui a été proposé, validé et à quoi ça ressemblait avant — elle est la source de la règle, pas une proposition en attente.
 
 Corrections intégrées depuis la première fiche : **plus aucune mention de la marque dans les
@@ -51,11 +58,11 @@ sont des débuts de phrase, pas des metas.
 
 | Route | Title proposé | Long. |
 |---|---|---|
-| `/` | Batterie électronique : laquelle choisir pour 2026 ? | 52 |
+| `/` | Avis et comparatif de batteries électroniques en 2026 | 53 |
 | `/comparatif-batterie-electronique/` | Quelle batterie électronique choisir ? Comparatif 2026 | 54 |
 | `/avis/` | Avis batterie électronique : les modèles testés en 2026 | 55 |
-| `/avis/alesis-nitro-max/` | Que vaut l’Alesis Nitro Max Mesh ? Avis et Prix 2026 | 52 |
-| `/avis/alesis-turbo-mesh/` | Que vaut l’Alesis Turbo Mesh Kit ? Avis et Prix 2026 | 52 |
+| `/avis/alesis-nitro-max/` | Que vaut l’Alesis Nitro Max Mesh ? Avis et prix 2026 | 52 |
+| `/avis/alesis-turbo-mesh/` | Que vaut l’Alesis Turbo Mesh Kit ? Avis et prix 2026 | 52 |
 | `/avis/donner-ded-200x/` | Que vaut la Donner DED-200X ? Notre avis et prix 2026 | 53 |
 | `/avis/millenium-mps-150x/` | Millenium MPS-150X Mesh : avis complet et prix 2026 | 51 |
 | `/avis/millenium-mps-450/` | Millenium MPS-450 : avis complet, prix et verdict 2026 | 54 |
@@ -64,15 +71,15 @@ sont des débuts de phrase, pas des metas.
 | `/avis/roland-td-02kv/` | Que vaut la Roland TD-02KV ? Avis, prix et verdict 2026 | 55 |
 | `/avis/yamaha-dtx432k/` | Yamaha DTX432K : avis complet, prix et verdict 2026 | 51 |
 | `/duels/alesis-nitro-max-vs-donner-ded-200x/` | Alesis Nitro Max ou Donner DED-200X : laquelle choisir ? | 56 |
-| `/duels/millenium-mps-150x-vs-alesis-turbo-mesh/` | Millenium MPS-150X ou Alesis Turbo Mesh : notre avis | 52 |
+| `/duels/millenium-mps-150x-vs-alesis-turbo-mesh/` | Millenium MPS-150X ou Alesis Turbo Mesh : laquelle choisir ? | 60 |
 | `/duels/alesis-nitro-max-vs-roland-td-02kv/` | Alesis Nitro Max ou Roland TD-02KV : laquelle choisir ? | 55 |
 | `/guides/` | Guides d’achat batterie électronique : nos réponses 2026 | 56 |
 | `/guides/choisir-batterie-electronique-appartement/` | Quelle batterie électronique choisir en appartement ? | 53 |
 | `/guides/choisir-batterie-electronique-enfant/` | Batterie électronique pour enfant : quel modèle choisir ? | 57 |
-| `/guides/choisir-batterie-electronique-adulte-debutant/` | Adulte débutant : quelle batterie électronique choisir ? | 56 |
+| `/guides/choisir-batterie-electronique-adulte-debutant/` | Batterie électronique débutant : laquelle choisir en 2026 ? | 59 |
 | `/guides/batterie-electronique-moins-300-euros/` | Meilleure batterie électronique à moins de 300 € en 2026 | 56 — *montant = la requête, §À trancher 2* |
 | `/guides/batterie-electronique-moins-500-euros/` | Meilleure batterie électronique à moins de 500 € en 2026 | 56 — *montant = la requête, §À trancher 2* |
-| `/guides/batterie-electronique-moins-1000-euros/` | Quelle batterie électronique à moins de 1 000 € choisir ? | 57 — *montant = la requête, §À trancher 2* |
+| `/guides/batterie-electronique-moins-1000-euros/` | Meilleure batterie électronique à moins de 1 000 € en 2026 | 58 — *montant = la requête, §À trancher 2* |
 | `/guides/pack-batterie-electronique-complet/` | Batterie électronique : comment composer le pack complet ? | 58 |
 | `/guides/acheter-batterie-electronique-occasion/` | Batterie électronique d’occasion : le guide des pièges 2026 | 59 |
 | `/guides/enregistrer-batterie-electronique-ordinateur/` | Enregistrer sa batterie électronique sur un ordinateur | 54 |
@@ -95,7 +102,7 @@ sont des débuts de phrase, pas des metas.
 Toutes contiennent « Avis », le nom du modèle, « Prix » et l'année. Deux tournures, selon ce que
 l'article a à vendre :
 
-- **« Que vaut {modèle} ? Avis et Prix 2026 »** quand l'article porte un contre-pied (la Nitro Max
+- **« Que vaut {modèle} ? Avis et prix 2026 »** quand l'article porte un contre-pied (la Nitro Max
   recommandée sans être la moins chère, la TD-02KV conseillée en immeuble ancien alors qu'elle a
   moins de mesh, la DED-200X suréquipée mais trop chère, la Turbo Mesh décevante à prix égal). La
   question est cliquable parce que c'est littéralement la question du lecteur.
@@ -109,7 +116,7 @@ pas la même contrainte qu'un `<title>`.
 
 #### `/` — mot clé : batterie électronique · 2 400/mois
 
-**Title (52)** — Batterie électronique : laquelle choisir pour 2026 ?
+**Title (53)** — Avis et comparatif de batteries électroniques en 2026
 
 **Meta (148)** — Neuf modèles testés, prix vérifiés chaque semaine chez le marchand et un comparatif en trois questions pour te dire lequel acheter selon ton budget.
 
@@ -135,7 +142,7 @@ pas la même contrainte qu'un `<title>`.
 
 **Title (55)** — Avis batterie électronique : les modèles testés en 2026
 
-**Meta (149)** — Un avis par modèle testé : le prix réel vérifié chez le marchand, ce qui cloche et à qui la batterie convient. Neuf publiés, d’autres chaque semaine.
+**Meta (146)** — Un avis par modèle analysé : le prix réel vérifié chez le marchand, ce qui cloche, à qui la batterie convient et une grille de notation détaillée.
 
 *Actuel — title 41 : « Tous nos avis, modèle par modèle — BipBop »*
 *Actuel — meta 109 : « Dix-neuf avis au programme, un par batterie qu'on estime valoir le coup d'être considérée. Trois sont écrits. »*
@@ -144,7 +151,7 @@ pas la même contrainte qu'un `<title>`.
 
 #### `/avis/alesis-nitro-max/` — mot clé : alesis nitro max · 590/mois
 
-**Title (52)** — Que vaut l’Alesis Nitro Max Mesh ? Avis et Prix 2026
+**Title (52)** — Que vaut l’Alesis Nitro Max Mesh ? Avis et prix 2026
 
 **Meta (151)** — Huit pads en peau maillée, le Bluetooth, un module qui tient la route et 409 € à sortir. Avis complet sur l’Alesis Nitro Max Mesh, ses défauts compris.
 
@@ -155,7 +162,7 @@ pas la même contrainte qu'un `<title>`.
 
 #### `/avis/alesis-turbo-mesh/` — mot clé : alesis turbo mesh kit · 390/mois
 
-**Title (52)** — Que vaut l’Alesis Turbo Mesh Kit ? Avis et Prix 2026
+**Title (52)** — Que vaut l’Alesis Turbo Mesh Kit ? Avis et prix 2026
 
 **Meta (152)** — Avis complet de l’Alesis Turbo Mesh Kit à 298 € : quatre fûts en mesh, un module volontairement simple et ce que la MPS-150X offre en plus au même prix.
 
@@ -256,7 +263,7 @@ pas la même contrainte qu'un `<title>`.
 
 #### `/duels/millenium-mps-150x-vs-alesis-turbo-mesh/` — mot clé : mps 150x vs turbo mesh
 
-**Title (52)** — Millenium MPS-150X ou Alesis Turbo Mesh : notre avis
+**Title (60)** — Millenium MPS-150X ou Alesis Turbo Mesh : laquelle choisir ?
 
 **Meta (145)** — Le même prix au centime près et le même argument : la batterie en peaux maillées la moins chère du marché. Comparatif des deux kits, pad par pad.
 
@@ -282,7 +289,7 @@ pas la même contrainte qu'un `<title>`.
 
 **Title (56)** — Guides d’achat batterie électronique : nos réponses 2026
 
-**Meta (148)** — Dix-sept guides et articles, un par situation : budget, appartement, âge du joueur, matériel à ajouter après le kit. La réponse est en haut de page.
+**Meta (152)** — Un guide par situation : budget, appartement, âge du joueur, matériel à ajouter après le kit. Chaque fois, la réponse est donnée dès le haut de la page.
 
 *Actuel — title 44 : « Une question, un guide, une réponse — BipBop »*
 *Actuel — meta 143 : « Chaque guide répond à une seule question, celle que tu tapes dans Google à 23 h. Un tableau, deux ou trois modèles recommandés, le budget réel. »*
@@ -313,7 +320,7 @@ pas la même contrainte qu'un `<title>`.
 
 #### `/guides/choisir-batterie-electronique-adulte-debutant/` — mot clé : batterie électronique débutant · 480/mois
 
-**Title (56)** — Adulte débutant : quelle batterie électronique choisir ?
+**Title (59)** — Batterie électronique débutant : laquelle choisir en 2026 ?
 
 **Meta (140)** — Tu n’as jamais tenu une baguette, tu as trente-cinq ans et un salon. Quatre modèles testés, les quatre erreurs classiques et le budget réel.
 
@@ -346,7 +353,7 @@ pas la même contrainte qu'un `<title>`.
 
 #### `/guides/batterie-electronique-moins-1000-euros/` — mot clé : prix batterie electronique · 260/mois
 
-**Title (57)** — Quelle batterie électronique à moins de 1 000 € choisir ?
+**Title (58)** — Meilleure batterie électronique à moins de 1 000 € en 2026
 
 **Meta (153)** — Ici on paie le plus cher pour le moins de différence. Neuf modèles comparés, ce que 500 € de plus achètent réellement et les trois cas où ça se justifie.
 
@@ -484,7 +491,7 @@ pas la même contrainte qu'un `<title>`.
 
 **Title (55)** — Qui écrit les avis de BipBop et comment on les fabrique
 
-**Meta (150)** — Un robot tient les prix, une équipe écrit les avis. Comment on choisit les modèles, comment on gagne notre vie et ce qu’on ne fera jamais sur ce site.
+**Meta (155)** — Un robot relève les prix et rédige les pages, deux batteurs lui écrivent ses règles. Comment on choisit les modèles et ce qu’on ne fera jamais sur ce site.
 
 *Actuel — title 17 : « À propos — BipBop »*
 *Actuel — meta 67 : « Qui est derrière BipBop, comment on gagne notre vie, nos promesses. »*
@@ -566,7 +573,7 @@ compter les titles hors plage dans `dist/`. Le plan du site et le sitemap se ré
 mêmes titres, et leurs libellés restent lisibles (vérifié sur les trois duels et les neuf avis).
 
 **2. Trois titles gardent un montant, dis-moi si tu les veux secs :** « Meilleure batterie électronique à moins de 300 € en 2026 »,
-« Meilleure batterie électronique à moins de 500 € en 2026 » et « Quelle batterie électronique à moins de 1 000 € choisir ? ». Ce ne sont pas des prix affichés, ce sont
+« Meilleure batterie électronique à moins de 500 € en 2026 » et « Meilleure batterie électronique à moins de 1 000 € en 2026 ». Ce ne sont pas des prix affichés, ce sont
 les requêtes elles-mêmes (« batterie électronique moins de 500 » se tape avec le budget) et la
 page entière est ce budget : les retirer laisserait trois pages sans identité. Si tu préfères la
 règle absolue, les versions sans montant sont prêtes à être écrites (« Quelle batterie
