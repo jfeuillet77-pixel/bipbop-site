@@ -1,5 +1,17 @@
 # Journal BipBop
 
+## 29 septembre 2026 — Relecture Search Console, trois meta descriptions fausses
+
+**Indexation.** 36 des 48 URL du sitemap sont indexées. Pas indexées : les sept pages
+publiées depuis le 23/09 (`/duels/`, trois `/marques/`, duel MPS-750X ou MPS-850, guides pad,
+ampli, prix, occasion, bases tapis et baguettes) et `/politique-confidentialite/`. Les 301 des
+anciennes URL répondent tous. L'accueil n'a pas été recrawlé depuis le 14/09.
+
+**Corrigé.** Trois meta descriptions contredisaient la page : `/a-propos/` (« une équipe écrit les
+avis », alors que le robot rédige), `/plan-du-site/` (« Trente-sept pages » pour 47, désormais
+calculé depuis `publiees.length`) et `/guides/` (« Dix-sept guides » pour 21, le compte est retiré
+pour ne plus vieillir). `check` et `fidelite` passent.
+
 ## 28 septembre 2026 — Relevé du lundi : aucun prix ne bouge, deux ruptures non tranchées
 
 **Les prix.** 158 sur 158 relevés, aucun écart n'atteint le seuil de 5 €. Sous le seuil :
