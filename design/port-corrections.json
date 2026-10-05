@@ -157,8 +157,8 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Sept modèles disponibles en France sous 300 €. Les deux lignes surlignées sont celles qu'on recommande. Prix relevés le 11 septembre 2026.",
-      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 28 septembre 2026.",
-      "pourquoi": "une seule ligne recommandée reste dans le tableau. Date du relevé : l'Aide-Mémoire §05 date les guides par budget à chaque relevé, et celui du 28/09/2026 a confirmé les six prix (aucun écart au seuil de 5 €)"
+      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 5 octobre 2026.",
+      "pourquoi": "une seule ligne recommandée reste dans le tableau depuis la sortie de la Turbo Mesh. Date du relevé : l'Aide-Mémoire §05 date les guides par budget à chaque relevé, celui du 05/10/2026 a fait passer l'Alesis Debut Kit de 279 à 227 € chez Woodbrass"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
@@ -187,14 +187,14 @@
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
       "au": "relevés le 11 septembre 2026",
-      "remplace": "relevés le 28 septembre 2026",
-      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 28/09/2026 a confirmé les prix du tableau (aucun écart au seuil de 5 €)"
+      "remplace": "relevés le 5 octobre 2026",
+      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 05/10/2026 a fait passer la Yamaha DTX402K de 369 à 346 € chez Thomann"
     },
     {
       "fichier": "Guide-Moins-De-1000-Euros.dc.html",
       "au": "Prix relevés chez Thomann le 12 septembre 2026.",
-      "remplace": "Prix relevés chez Thomann le 28 septembre 2026.",
-      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 28/09/2026 a confirmé les neuf prix du tableau (aucun écart au seuil de 5 €). La date de publication de l'en-tête ne bouge pas : le texte n'a pas changé"
+      "remplace": "Prix relevés chez Thomann le 5 octobre 2026.",
+      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 05/10/2026 a confirmé les neuf prix du tableau (aucun n'est dans les six mouvements du jour). La date de publication de l'en-tête ne bouge pas : le texte n'a pas changé"
     },
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
@@ -253,8 +253,8 @@
     {
       "fichier": "Avis.dc.html",
       "au": "relevés chez Thomann, Woodbrass et Donner Music le 13 septembre 2026",
-      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 17 septembre 2026",
-      "pourquoi": "page modifiée par le relevé du 17/09"
+      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 5 octobre 2026",
+      "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 05/10/2026 y change trois lignes (Debut Kit 227 €, DTX402K 346 €, DDX50-Mesh 386,10 €)"
     },
     {
       "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
@@ -295,14 +295,14 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": ">11 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "remplace": ">17 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+      "remplace": ">5 OCT. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 05/10/2026 (Alesis Debut Kit à 227 €)"
     },
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
       "au": ">11 SEPT. 2026 · 9 MIN DE LECTURE</div>",
-      "remplace": ">17 SEPT. 2026 · 9 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+      "remplace": ">5 OCT. 2026 · 9 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 05/10/2026 (DTX402K à 346 €, ligne déplacée dans le tableau)"
     },
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
@@ -363,6 +363,72 @@
       "au": "Les cinq autres, on explique pourquoi on les écarte.",
       "remplace": "Les quatre autres, on explique pourquoi on les écarte.",
       "pourquoi": "six modèles moins le choix moins l'alternative contrainte = quatre ; c'était une faute de compte de moi, pas du design"
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": "Prends l'Alesis Debut Kit à 279 €",
+      "remplace": "Prends l'Alesis Debut Kit à 227 €",
+      "pourquoi": "Relevé du 05/10/2026 : Alesis Debut Kit à 227 € chez Woodbrass (279 € auparavant), par la page produit."
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": "letter-spacing:-.02em\">279 €</span>",
+      "remplace": "letter-spacing:-.02em\">227 €</span>",
+      "pourquoi": "même relevé, carte « Notre choix »"
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": "<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">279 €</div>",
+      "remplace": "<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">227 €</div>",
+      "pourquoi": "même relevé, tableau des trois modèles (l'ordre du moins cher au plus cher tient : Rookie 179 €, Debut 227 €, MPS-150X 298 €)"
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": "ALESIS · 279 € CHEZ WOODBRASS",
+      "remplace": "ALESIS · 227 € CHEZ WOODBRASS",
+      "pourquoi": "même relevé, fiche du Debut Kit"
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": "<span>Alesis Debut Kit</span><span style=\"font-weight:600\">279 €</span>",
+      "remplace": "<span>Alesis Debut Kit</span><span style=\"font-weight:600\">227 €</span>",
+      "pourquoi": "même relevé, ligne du panier"
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": "<span>Le panier complet</span><span>405 €</span>",
+      "remplace": "<span>Le panier complet</span><span>353 €</span>",
+      "pourquoi": "total recalculé : 227 + 39 (MDTJR) + 26 (HD 150) + 2,22 (7A) + 59 (E-Drum Rug 120) = 353,22 €. Les quatre accessoires n'ont pas bougé au relevé du 05/10/2026. Le rapport ne voyait pas ce total, qui n'écrit pas 279 €"
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": "entre 100 et 170 € (annonces relevées fin septembre 2026), à peu près la moitié du prix du neuf. La revente amortit l'achat sans le rembourser : si l'enfant arrête, compte en récupérer la moitié.",
+      "remplace": "entre 100 et 170 € (annonces relevées fin septembre 2026), soit un peu plus de la moitié du prix du neuf. La revente amortit l'achat sans le rembourser : si l'enfant arrête, compte en récupérer la moitié, car l'occasion finit par suivre le neuf quand il baisse.",
+      "pourquoi": "100 à 170 € faisaient environ la moitié de 279 € (36 à 61 %), ils font 44 à 75 % de 227 €. « À peu près la moitié du prix du neuf » devenait faux ; l'estimation prudente « compte en récupérer la moitié » reste, avec sa raison"
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": "de celui de Woodbrass, relevés le 11 septembre 2026.",
+      "remplace": "de celui de Woodbrass, relevés le 5 octobre 2026.",
+      "pourquoi": "la page est modifiée par le relevé du 05/10/2026 : la date du relevé de ses prix suit"
+    },
+    {
+      "fichier": "Guide-Enfant.dc.html",
+      "au": ">11 SEPT. 2026 · 8 MIN DE LECTURE</div>",
+      "remplace": ">5 OCT. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 05/10/2026 (Debut Kit à 227 €, panier à 353 €)"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "Alesis Debut Kit<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">FORMAT ENFANT</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">279 €</div>",
+      "remplace": "Alesis Debut Kit<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">FORMAT ENFANT</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">227 €</div>",
+      "pourquoi": "Relevé du 05/10/2026 : Alesis Debut Kit à 227 € chez Woodbrass (279 € auparavant), par la page produit. L'ordre du tableau tient : la Debut reste après la DED-80 à 219,99 €"
+    },
+    {
+      "fichier": "Guide-Moins-De-500-Euros.dc.html",
+      "au": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/557719.jpg\" alt=\"Roland TD-02K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Roland TD-02K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">349 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">16 kits</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Les sons Roland sans le mesh. On préfère mettre 149 € de plus.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/443798.jpg\" alt=\"Yamaha DTX402K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Yamaha DTX402K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">369 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">287 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">L'application Yamaha est la meilleure du marché, les pads non.</div>",
+      "remplace": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/443798.jpg\" alt=\"Yamaha DTX402K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Yamaha DTX402K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">346 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">287 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">L'application Yamaha est la meilleure du marché, les pads non.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/557719.jpg\" alt=\"Roland TD-02K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Roland TD-02K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">349 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">16 kits</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Les sons Roland sans le mesh. On préfère mettre 149 € de plus.</div>",
+      "pourquoi": "Relevé du 05/10/2026 : Yamaha DTX402K à 346 € chez Thomann (369 € auparavant). Elle passe sous la Roland TD-02K à 349 € et le tableau se dit « classé du moins cher au plus cher » : les deux lignes échangent leur contenu, les fonds alternés restent en place"
     }
   ]
 }

@@ -2,6 +2,127 @@
  "_": "L'historique publié des relevés de prix, source unique de /suivi-des-prix/. Écrit par scripts/prix/publier.mjs à chaque relevé, jamais à la main. Contrairement à releves/, il ne s'élague pas : c'est la trace du travail.",
  "releves": [
   {
+   "date": "2026-10-05",
+   "controlees": 159,
+   "lues": 159,
+   "seuil": 5,
+   "mouvements": [
+    {
+     "nom": "Alesis Debut Kit",
+     "marchand": "Woodbrass",
+     "famille": "Batterie",
+     "avant": "279 €",
+     "apres": "227 €",
+     "ecart": -52,
+     "pct": -18.6,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Woodbrass DDX50-Mesh",
+     "marchand": "Woodbrass",
+     "famille": "Batterie",
+     "avant": "429 €",
+     "apres": "386,10 €",
+     "ecart": -42.9,
+     "pct": -10,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Yamaha DTX402K",
+     "marchand": "Thomann",
+     "famille": "Batterie",
+     "avant": "369 €",
+     "apres": "346 €",
+     "ecart": -23,
+     "pct": -6.2,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Meinl Tapis 150 x 160 cm",
+     "marchand": "Woodbrass",
+     "famille": "Tapis et isolation",
+     "avant": "105 €",
+     "apres": "115 €",
+     "ecart": 10,
+     "pct": 9.5,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Roland TDM-20",
+     "marchand": "Woodbrass",
+     "famille": "Tapis et isolation",
+     "avant": "208 €",
+     "apres": "217 €",
+     "ecart": 9,
+     "pct": 4.3,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Roland RT-30K Kick Trigger",
+     "marchand": "Thomann",
+     "famille": "Triggers et hybride",
+     "avant": "93 €",
+     "apres": "98 €",
+     "ecart": 5,
+     "pct": 5.4,
+     "changeDeTranche": null
+    }
+   ],
+   "ruptures": [
+    {
+     "nom": "Millenium MPS-750X Pro",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 4-5 semaines"
+    },
+    {
+     "nom": "Yamaha DTX6K2-X",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Behringer DH100",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 5-7 semaines"
+    },
+    {
+     "nom": "Roland PDX-6 8\" Mesh",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PDX-100 10\" V-Pad",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 4-5 semaines"
+    },
+    {
+     "nom": "Yamaha PCY-100 10\" 3 zones",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 8-10 semaines"
+    },
+    {
+     "nom": "Alesis Nitro Multicore",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PM-03 Monitor System",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Protection Racket E-Drum Kit Bag 28x16",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 7-9 semaines"
+    },
+    {
+     "nom": "Tama TDK05 Drum Tuning Key",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 2-3 semaines"
+    }
+   ],
+   "disparues": []
+  },
+  {
    "date": "2026-09-28",
    "controlees": 158,
    "lues": 158,
