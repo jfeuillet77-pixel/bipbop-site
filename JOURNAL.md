@@ -1,5 +1,60 @@
 # Journal BipBop
 
+## 5 octobre 2026 — Relevé du lundi : trois kits baissent, le panier enfant tombe à 353 €
+
+**Les prix.** 159 références contrôlées, six au-dessus du seuil. Trois kits, déjà écrits par le
+script dans `prix-reperes.json` : Alesis Debut Kit 279 → 227 € (Woodbrass), Yamaha DTX402K
+369 → 346 € (Thomann, page produit, flux périmé), Woodbrass DDX50-Mesh 429 → 386,10 €. Aucun ne
+change de tranche. Trois accessoires que le script avait **retenus** faute d'entrée à leur nom :
+tapis Meinl 150 x 160 cm 105 → 115 €, Roland TDM-20 208 → 217 €, Roland RT-30K 93 → 98 €. Aucun
+n'est en rupture et le lien ne change pas : j'ai créé leurs trois entrées dans
+`prix-reperes.json`, avec la preuve du relevé. Attention, le rapport disait pour eux « `npm run data`
+suffira » : c'est faux tant que l'entrée n'existe pas, il faudrait qu'il le signale.
+
+**Ce qui a été réécrit** (`port-corrections.json`, 11 entrées nouvelles, 6 retouchées) :
+- **Guide enfant** : le Debut Kit à 227 € à ses cinq endroits. Le **panier complet passe de 405 à
+  353 €** (227 + 39 + 26 + 2,22 + 59, les quatre accessoires n'ont pas bougé) : le rapport ne voyait
+  pas ce total, qui n'écrit pas 279 €. La revente aussi : « entre 100 et 170 €, à peu près la
+  moitié du prix du neuf » était juste à 279 €, c'est 44 à 75 % de 227 €. Devenu « un peu plus de
+  la moitié du prix du neuf » ; le conseil prudent « compte en récupérer la moitié » reste, avec sa
+  raison (l'occasion suit le neuf quand il baisse).
+- **Guide moins de 500 €** : la DTX402K à 346 € passe sous la Roland TD-02K à 349 €, et le tableau
+  se dit « classé du moins cher au plus cher ». Les deux lignes échangent leur contenu, les fonds
+  alternés restent en place. Les phrases des deux lignes restent vraies.
+- **Guide moins de 300 €** : le Debut à 227 €, l'ordre du tableau tient (après la DED-80 à 219,99 €).
+- **Hub Avis** : les trois prix de la liste d'attente suivent tout seuls (le tableau se reconstruit
+  depuis la base). Les deux lignes que le rapport marquait « à réécrire » ne l'étaient pas : il a lu
+  « Moins de 300 € » et « 300 à 500 € » de la colonne Segment comme un raisonnement. Leurs phrases
+  tiennent : la DTX402K reste la Yamaha la moins chère, la DDX50 a encore baissé.
+- **Guide prix** et hubs de marque : en jetons, ils suivent sans réécriture.
+
+**Les dates.** En-tête « 5 OCT. 2026 » sur les trois guides réellement modifiés (enfant, 300, 500).
+« Relevés le 5 octobre 2026 » sous les tableaux du guide enfant, des trois guides par budget
+(Aide-Mémoire §05, le guide 1 000 € n'a aucun prix qui bouge) et du hub Avis (sa phrase date la
+liste d'attente). Aucune meta description ne citait 279, 369, 429 ou 405 € : aucune touchée.
+
+**Pas tranché.**
+- **Les deux ruptures, troisième relevé.** Roland PDX-100 (Thomann « sous 4-5 semaines ») et
+  Alesis Nitro Multicore (« actuellement indisponible », sans date). La recherche web est encore
+  refusée à cette session : je n'ai pas pu voir si Woodbrass les a. Rien basculé, rien retiré. La
+  Multicore, sans date depuis trois semaines, est mûre pour un retrait de la ligne du guide
+  occasion (§04) si Woodbrass ne l'a pas : **à vérifier à la main**.
+- **Yamaha DTX6K2-X** passe « actuellement indisponible » (premier relevé). Elle n'est liée nulle
+  part mais elle est citée à 1 199 € dans la liste d'attente du hub Avis : à relire si ça dure.
+- **Le Debut Kit à -18,6 %** ressemble à une promotion Woodbrass. Si le prix remonte, les 11
+  corrections du jour se relisent dans l'autre sens (panier, revente).
+- **Le casque du Debut Kit.** `marques.mjs` écrit que Woodbrass le livre avec un casque, et le
+  panier du guide enfant ajoute un the t.bone HD 150 à 26 €. L'un des deux a tort. Sans accès à la
+  fiche, je n'ai rien changé.
+- **Le badge « MIS À JOUR EN SEPT. 2026 »** du pied de page est le même sur les 45 pages et dans
+  `Footer.astro`. Le changer sur trois pages seulement rendrait le pied incohérent ; le passer en
+  octobre partout relève d'une décision de Jordane, pas du relevé.
+
+`npm run data`, `npm run port`, `npm run check` (11 contrôles) et `npm run fidelite` (45/45)
+passent. Pistes pour `scripts/prix/rapport.mjs` : signaler les totaux de panier qui contiennent le
+prix d'un modèle, les tableaux « classés du moins cher au plus cher » dont l'ordre casse, ne plus
+lire la colonne Segment comme une comparaison, et dire « retenu » pour un accessoire sans entrée.
+
 ## 29 septembre 2026 (suite) — Vague 2 : hub Roland, avis TD313, pilier « apprendre », réglages MPS-750X
 
 **Publiés** (faits relevés le jour même par quatre recherches sourcées : sites Roland, notice

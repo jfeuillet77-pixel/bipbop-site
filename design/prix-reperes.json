@@ -1,8 +1,8 @@
 {
   "_commentaire": "Prix et références contrôlés sur le web après coup, enregistrés côté dépôt. « Claude Design - MàJ/data/ » reste la source d'auteur : ce fichier ne la dément que lorsqu'un relevé en ligne a tranché depuis. scripts/import-data.mjs l'applique à chaque import, une entrée sans correspondance fait échouer l'import. Chaque entrée porte sa date et sa preuve.",
-  "_releve": "2026-09-28",
+  "_releve": "2026-10-05",
   "base": {
-    "releve": "2026-09-28",
+    "releve": "2026-10-05",
     "version": 3
   },
   "_base": "La date d'en-tête est celle du relevé des prix (17/09) — c'est elle que le comparatif et le hub affichent sous leurs tableaux. Les bascules de marchand du 18/09 ne changent aucun prix de modèle.",
@@ -28,6 +28,27 @@
       "segment": "800 à 1600 €",
       "url": "https://fr.donnermusic.com/products/donner-backbeat-batteries-electroniques",
       "pourquoi": "Relevé du 21/09/2026. L'adresse publiée (« offre-exclusive-donner-backbeat-batterie-electronique ») ne répond plus : elle redirige vers l'accueil Donner, ce qu'un HTTP 200 cachait. La fiche vit maintenant sous « donner-backbeat-batteries-electroniques », à 1099,99 € et non 899,99 € : la page retirée était une offre promotionnelle. Le lien et le prix changent ensemble, sinon le prix affiché ne vient plus du marchand vers lequel pointe le lien. Le prix barré de 1499,99 € n'est pas repris (règle I05). Attention : les deux variantes sont données en stock par le flux Impact et épuisées par la fiche Shopify — c'est la fiche qui fait foi, à revoir au relevé suivant."
+    },
+    {
+      "id": "debut",
+      "prix": 227,
+      "prixTexte": "227 €",
+      "segment": "Moins de 300 €",
+      "pourquoi": "Woodbrass à 227 € relevé le 05/10/2026 (279 € auparavant), par la page produit."
+    },
+    {
+      "id": "dtx402",
+      "prix": 346,
+      "prixTexte": "346 €",
+      "segment": "300 à 500 €",
+      "pourquoi": "Thomann à 346 € relevé le 05/10/2026 (369 € auparavant), par la page produit."
+    },
+    {
+      "id": "ddx50",
+      "prix": 386.1,
+      "prixTexte": "386,10 €",
+      "segment": "300 à 500 €",
+      "pourquoi": "Woodbrass à 386,10 € relevé le 05/10/2026 (429 € auparavant), par la page produit."
     }
   ],
   "accessoires": [
@@ -59,6 +80,24 @@
       "marchand": "Woodbrass",
       "url": "https://www.woodbrass.com/modules-roland-tm-1-trigger-module-hybride-drum-p294495.html",
       "pourquoi": "Thomann « actuellement indisponible » sans date le 17/09/2026, et la référence porte le badge NOTRE SÉLECTION sur /guides/enregistrer-batterie-electronique-ordinateur/. Woodbrass En stock à 198 €, le même prix, revérifié le 18/09/2026. Attention : ne pas confondre avec leur « Pack TM-1 + RT-30K + RT30H » à 369 €, lui hors stock."
+    },
+    {
+      "marque": "Meinl",
+      "produit": "Tapis 150 x 160 cm",
+      "prix": "115 €",
+      "pourquoi": "Woodbrass à 115 € relevé le 05/10/2026 (105 € auparavant), par la page produit. Entrée créée par la session du lundi : le script retient un accessoire sans entrée. Le relevé ne le signale pas en rupture, même lien : seul le prix change. Il reste moins cher que le Roland TDM-20 (217 €), son rôle « alternative moins chère au Roland » tient."
+    },
+    {
+      "marque": "Roland",
+      "produit": "TDM-20",
+      "prix": "217 €",
+      "pourquoi": "Woodbrass à 217 € relevé le 05/10/2026 (208 € auparavant), par la page produit. Entrée créée par la session du lundi : le script retient un accessoire sans entrée. Aucune maquette n'écrit son prix."
+    },
+    {
+      "marque": "Roland",
+      "produit": "RT-30K Kick Trigger",
+      "prix": "98 €",
+      "pourquoi": "Thomann à 98 € relevé le 05/10/2026 (93 € auparavant), par la page produit (flux périmé). Entrée créée par la session du lundi : le script retient un accessoire sans entrée. Aucune maquette n'écrit son prix."
     }
   ],
   "retires": [
