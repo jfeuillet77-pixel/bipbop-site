@@ -167,6 +167,11 @@ const signe = (n) => (n > 0 ? `+${n}` : `${n}`);
             {r.ruptures.map((x) => `${x.nom} (${x.etat})`).join(' · ')}
           </p>
         )}
+        {r.remarque && (
+          <p class="releve-note">
+            <strong>À savoir :</strong> {r.remarque}
+          </p>
+        )}
         {r.disparues.length > 0 && (
           <p class="releve-note">
             <strong>Sorties du catalogue :</strong> {r.disparues.map((x) => x.nom).join(' · ')}

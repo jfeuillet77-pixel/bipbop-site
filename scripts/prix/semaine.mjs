@@ -57,6 +57,20 @@ if (saleAuDepart) {
   for (const l of saleAuDepart.split('\n').slice(0, 12)) dire(`      ${l}`);
 }
 
+// Depuis le 07/10/2026, une routine cloud publie deux pages par jour : elle pousse sur `dev` et
+// `main` du site, et sur le dépôt privé des maquettes. Partir d'un poste en retard, c'est porter
+// des maquettes sans les pages neuves (le portage les effacerait) et voir son push refusé. On se
+// met donc à niveau d'abord, en avance rapide seulement : un poste qui a divergé ne livrera pas,
+// et `git status` le dira.
+if (!saleAuDepart) {
+  for (const [nom, cwd, br] of [['site', SITE, branche], ['maquettes', MAQUETTES, null]]) {
+    const avecRemote = spawnSync('git', ['remote'], { encoding: 'utf8', cwd }).stdout?.trim();
+    if (!avecRemote) continue;
+    const r = spawnSync('git', ['pull', '--ff-only', 'origin', ...(br ? [br] : [])], { encoding: 'utf8', cwd });
+    dire(`  mise à niveau ${nom} : ${r.status === 0 ? 'ok' : `échec (${(r.stderr ?? '').trim().split('\n').pop()})`}`);
+  }
+}
+
 /* ------------------------------------- les étapes mécaniques ------------------------------------- */
 
 function etape(nom, cmd, args, { fatal = true, timeout = 1800000 } = {}) {

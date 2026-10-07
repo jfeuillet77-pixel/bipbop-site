@@ -132,12 +132,29 @@ export function fichierPage(dossier, route) {
  * pas l'horloge. %cI est ISO 8601 avec décalage : le format W3C des sitemaps et de schema.org.
  * Sans git (build hors dépôt), les deux valent null : on omet la date plutôt que l'inventer.
  */
+/**
+ * Les pages CONSTRUITES changent quand leurs données changent, pas leur fichier : `/duels/` gagne
+ * une carte quand `duels.mjs` gagne une entrée, un hub de marque change de prix au relevé du lundi.
+ * Lire git sur le seul `index.astro` les laissait datées du jour de leur création, et IndexNow
+ * (qui compare les lastmod) ne les signalait jamais. Leur `modifiee` est donc le dernier commit
+ * du fichier OU de ses données — les données qu'elles affichent, pas celles qu'elles traversent :
+ * `plan.json` change à chaque publication et daterait `/duels/` tous les jours pour rien.
+ */
+const DONNEES_DE = [
+  [/^\/duels\/$/, ['src/components/HubDuels.astro', 'src/data/duels.mjs', 'src/data/modeles.json']],
+  [/^\/marques\/$/, ['src/components/HubMarques.astro', 'src/data/marques.mjs', 'src/data/modeles.json']],
+  [/^\/marques\/.+/, ['src/components/HubMarque.astro', 'src/data/marques.mjs', 'src/data/modeles.json']],
+  [/^\/suivi-des-prix\/$/, ['src/data/historique-prix.json']],
+  [/^\/comparatif-batterie-electronique\/$/, ['src/data/modeles.json']],
+];
+
 export function datesGit(route) {
   const source = fichierPage(PAGES, route);
   if (!source) return { publiee: null, modifiee: null };
-  const git = (...args) => {
+  const donnees = DONNEES_DE.find(([motif]) => motif.test(route))?.[1] ?? [];
+  const git = (args, fichiers = [relative(SITE, source)]) => {
     try {
-      return execFileSync('git', ['log', ...args, '--format=%cI', '--', relative(SITE, source)], {
+      return execFileSync('git', ['log', ...args, '--format=%cI', '--', ...fichiers], {
         cwd: SITE,
         stdio: ['ignore', 'pipe', 'ignore'],
       }).toString().trim().split('\n').filter(Boolean);
@@ -145,7 +162,12 @@ export function datesGit(route) {
       return [];
     }
   };
-  return { modifiee: git('-1')[0] ?? null, publiee: git('--follow').at(-1) ?? null };
+  // `git log -1` sur plusieurs chemins rend le plus récent des commits qui touchent l'un d'eux.
+  // `--follow` n'accepte qu'un chemin : la naissance reste celle du fichier de la page.
+  return {
+    modifiee: git(['-1'], [relative(SITE, source), ...donnees])[0] ?? null,
+    publiee: git(['--follow']).at(-1) ?? null,
+  };
 }
 
 /**

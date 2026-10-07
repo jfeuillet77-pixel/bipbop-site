@@ -1,5 +1,9 @@
 #!/usr/bin/env node
-// Usage : node scripts/prix/archiver-flux.mjs
+// Usage : node scripts/prix/archiver-flux.mjs [--rayon <fichier.json>]
+//
+//   --rayon  écrit aussi le rayon du jour, en clair, dans ce fichier. C'est ce que fait le workflow
+//            GitHub `extrait-rayon` (src/data/rayon.json) : la routine cloud qui publie les pages
+//            n'a pas accès aux flux, elle lit les prix du rayon dans le dépôt.
 //
 // L'archive quotidienne des prix du rayon batterie électronique : la matière du baromètre des
 // prix (décidé le 07/10/2026). Le relevé du lundi ne suit que les 159 références vers lesquelles
@@ -30,6 +34,8 @@ const SITE = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const FLUX = join(SITE, 'releves', 'flux');
 const ARCHIVE = join(SITE, 'releves', 'archive');
 const DATE = new Date().toISOString().slice(0, 10);
+const argv = process.argv.slice(2);
+const RAYON_JSON = argv.includes('--rayon') ? argv[argv.indexOf('--rayon') + 1] : null;
 
 const env = (() => {
   const f = join(SITE, '.env');
@@ -101,6 +107,15 @@ const cible = join(ARCHIVE, `${DATE}.json.gz`);
 writeFileSync(cible, gzipSync(JSON.stringify(instantane)));
 console.log(`  ✓ archive du ${DATE} : ${thomann.length} lignes Thomann, ${donner.length} lignes Donner → ${cible}`);
 
+if (RAYON_JSON) {
+  const tri = (a, b) => String(a.id).localeCompare(String(b.id), 'fr', { numeric: true });
+  writeFileSync(RAYON_JSON, JSON.stringify({
+    _: "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
+    ...instantane, thomann: [...thomann].sort(tri), donner: [...donner].sort(tri),
+  }, null, 1) + '\n');
+  console.log(`  ✓ rayon du jour écrit dans ${RAYON_JSON}`);
+}
+
 if (env.ARCHIVE_COPIE) {
   try {
     mkdirSync(env.ARCHIVE_COPIE, { recursive: true });
@@ -109,4 +124,11 @@ if (env.ARCHIVE_COPIE) {
   } catch (e) {
     console.error(`  ⚠ copie impossible dans ${env.ARCHIVE_COPIE} : ${e.message}`);
   }
+}
+
+// Sur le Mac (pas dans le workflow GitHub, qui écrit le rayon) : le passage quotidien signale
+// aussi à Bing les pages publiées ou modifiées depuis la veille par la routine cloud, qui n'a pas
+// d'accès réseau pour le faire elle-même. Non fatal : l'archive est faite.
+if (!RAYON_JSON) {
+  spawnSync(process.execPath, [join(SITE, 'scripts', 'indexnow.mjs')], { stdio: 'inherit', cwd: SITE });
 }
