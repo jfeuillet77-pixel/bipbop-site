@@ -93,17 +93,18 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 - **Bing Webmaster Tools** (07/10) : bing.com/webmasters, se connecter avec le compte Google,
   « Importer depuis Google Search Console », cocher bipbop.eu. Le sitemap et la vérification
   suivent seuls. IndexNow est déjà branché.
-- **Routine « page du jour »** (07/10) : à choisir entre une routine locale (launchd + `claude -p`,
-  comme le lundi) et une routine cloud comme Marteline, qui suppose le remote privé des maquettes
-  ci-dessous. Le script local est écrit, hors dépôt, en attente.
+- **Routine cloud, deux pages par jour** (Jordane, 07/10) : procédure `ROUTINE-PUBLICATION.md`.
+  Elle attend deux gestes de Jordane : créer le dépôt privé des maquettes (commande ci-dessous) et
+  poser les secrets des flux pour le workflow `extrait-rayon` (`gh secret set -f .env` dans
+  `bipbop-site`). La création du dépôt et l'envoi des maquettes ont été refusés à Claude par le
+  garde-fou du mode auto (données d'un autre site dans les maquettes).
 - **Demander l'indexation** (relevé du 29/09 : 12 URL sur 48 non indexées, l'accueil pas recrawlé
   depuis le 14/09). Par 10 par jour : l'accueil, `/duels/`, les pages `/marques/` (Roland comprise),
   le guide occasion, le duel MPS-750X ou MPS-850, les guides pad, ampli, prix, puis les bases tapis
   et baguettes et les quatre pages du 29/09.
-- **Remote privé pour les maquettes** : accord de Jordane le 24/09. `gh` n'est pas installé :
-  créer un dépôt **privé** vide sur github.com (par exemple `bipbop-maquettes`), puis
-  `git remote add origin git@github.com:jfeuillet77-pixel/bipbop-maquettes.git && git push -u origin HEAD`
-  dans `../Claude Design - MàJ/` (la clé SSH du poste pousse déjà `bipbop-site`).
+- **Remote privé pour les maquettes** : accord de Jordane le 24/09, confirmé le 07/10. `gh` est
+  installé et connecté : dans `../Claude Design - MàJ/`,
+  `gh repo create jfeuillet77-pixel/bipbop-maquettes --private --source . --remote origin --push`.
 - **Identifiants d'affiliation BipBop** : dans un à deux mois (Jordane, 24/09). Passer `actif` à
   `true` dans `src/data/affiliation.json` et suivre son champ `pour_reactiver`.
 - **Avis MPS-850 : la thèse a changé** (23/09 soir) : faits corrigés, note 8,0 → 7,8. À relire.
