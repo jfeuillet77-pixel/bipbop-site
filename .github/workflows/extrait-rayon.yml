@@ -5,7 +5,11 @@
 # portent un jeton d'espace partenaire : elles vivent dans les secrets du dépôt, jamais dans un
 # fichier. Le fichier écrit ne garde aucun identifiant affilié (scripts/prix/archiver-flux.mjs).
 #
-# Commit sur `dev` seulement : Netlify déploie `main`, et le rayon n'est pas une page.
+# Il écrit aussi l'instantané compact du jour, src/data/barometre/AAAA-MM-JJ.json (environ 35 Ko) :
+# la série du baromètre des prix (/barometre/), que la page lit au build.
+#
+# Commit sur `dev` seulement : Netlify déploie `main` ; la routine cloud de publication fusionne
+# `dev` dans `main` deux fois par jour, et le baromètre suit.
 name: extrait-rayon
 
 on:
@@ -35,12 +39,12 @@ jobs:
         env:
           THOMANN_FEED_URL: ${{ secrets.THOMANN_FEED_URL }}
           DONNER_FEED_URL: ${{ secrets.DONNER_FEED_URL }}
-        run: node scripts/prix/archiver-flux.mjs --rayon src/data/rayon.json
+        run: node scripts/prix/archiver-flux.mjs --rayon src/data/rayon.json --barometre src/data/barometre
       - name: Commit sur dev
         run: |
           git config user.name "bipbop-rayon"
           git config user.email "actions@users.noreply.github.com"
-          git add src/data/rayon.json
+          git add src/data/rayon.json src/data/barometre
           if git diff --cached --quiet; then echo "rayon inchangé"; exit 0; fi
           git commit -m "chore(rayon): extrait du $(date -u +%F)"
           for i in 1 2 3; do git pull --rebase origin dev && git push origin HEAD:dev && exit 0; sleep 20; done

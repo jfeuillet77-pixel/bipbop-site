@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 // Usage : node scripts/prix/archiver-flux.mjs [--rayon <fichier.json>]
 //
+//   --barometre <dossier>  écrit aussi l'instantané compact du jour, <dossier>/AAAA-MM-JJ.json : la
+//            série du baromètre des prix (/barometre/), versionnée (scripts/prix/barometre-instantane.mjs).
 //   --rayon  écrit aussi le rayon du jour, en clair, dans ce fichier. C'est ce que fait le workflow
 //            GitHub `extrait-rayon` (src/data/rayon.json) : la routine cloud qui publie les pages
 //            n'a pas accès aux flux, elle lit les prix du rayon dans le dépôt.
@@ -36,6 +38,7 @@ const ARCHIVE = join(SITE, 'releves', 'archive');
 const DATE = new Date().toISOString().slice(0, 10);
 const argv = process.argv.slice(2);
 const RAYON_JSON = argv.includes('--rayon') ? argv[argv.indexOf('--rayon') + 1] : null;
+const BAROMETRE = argv.includes('--barometre') ? argv[argv.indexOf('--barometre') + 1] : null;
 
 const env = (() => {
   const f = join(SITE, '.env');
@@ -111,6 +114,14 @@ mkdirSync(ARCHIVE, { recursive: true });
 const cible = join(ARCHIVE, `${DATE}.json.gz`);
 writeFileSync(cible, gzipSync(JSON.stringify(instantane)));
 console.log(`  ✓ archive du ${DATE} : ${thomann.length} lignes Thomann, ${donner.length} lignes Donner → ${cible}`);
+
+if (BAROMETRE) {
+  const { compacter, serialiser } = await import('./barometre-instantane.mjs');
+  mkdirSync(BAROMETRE, { recursive: true });
+  const f = join(BAROMETRE, `${DATE}.json`);
+  writeFileSync(f, serialiser(compacter(instantane)));
+  console.log(`  ✓ instantané du baromètre écrit dans ${f}`);
+}
 
 if (RAYON_JSON) {
   const tri = (a, b) => String(a.id).localeCompare(String(b.id), 'fr', { numeric: true });

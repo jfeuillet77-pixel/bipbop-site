@@ -17,7 +17,10 @@ Décisions de Jordane le 07/10 :
 - **Liens entrants** : Jordane s'en occupe (Les Clés de la musique, Marteline, forums). Stratégie
   et plan dans `../Claude Design - MàJ/strategie/liens-et-communautes.md` (dépôt privé).
   **Déploiement à partir du lundi 12/10** (une alerte macOS le rappelle ce jour-là à 9 h 03).
-- **Baromètre des prix** inspiré de Skoqo : plan dans `../Claude Design - MàJ/strategie/barometre-prix.md`.
+- **Baromètre des prix** : `/barometre/` en ligne depuis le 07/10 au soir (série quotidienne dans
+  `src/data/barometre/`, écrite par le workflow `extrait-rayon`). Reste pour l'édition du 02/11 :
+  éditions figées et PDF, textes de l'édition, page presse (voir
+  `../Claude Design - MàJ/strategie/barometre-prix.md`, « Où on en est »).
   L'archive quotidienne du rayon tourne depuis le 07/10 (`scripts/prix/archiver-flux.mjs`,
   launchd `eu.bipbop.prix-archive` à 7 h 23, copie dans `~/Mon Drive/bipbop/archive-prix/`).
 - **Bing** : IndexNow branché (`scripts/indexnow.mjs`, clé dans `public/`), appelé par le lundi

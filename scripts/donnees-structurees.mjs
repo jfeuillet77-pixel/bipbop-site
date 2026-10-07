@@ -29,6 +29,7 @@ import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { arborescence, fichierPage, datesGit, SITE, DOMAINE } from '../src/lib/arborescence.mjs';
 import { MODELES, RELEVE, prixDe } from '../src/data/produits.mjs';
+import { instantanes } from '../src/lib/barometre.mjs';
 
 const DIST = join(SITE, 'dist');
 const MARQUE = 'BipBop';
@@ -185,6 +186,23 @@ function graphe(p, html, titre, description) {
       numberOfItems: membres.length,
       itemListElement: membres.map((x, i) => ({ '@type': 'ListItem', position: i + 1, url: x.permalien, name: x.libelle })),
     };
+  }
+  if (p.route === '/barometre/') {
+    // Le baromètre publie une série de données : un Dataset, avec sa couverture temporelle et
+    // le JSON téléchargeable. Aucune licence déclarée : Jordane n'en a pas choisi.
+    const dates = instantanes().map((x) => x.date);
+    noeuds.push({
+      '@type': 'Dataset',
+      '@id': `${p.permalien}#donnees`,
+      name: 'Baromètre BipBop des prix des batteries électroniques',
+      description: "Prix des batteries électroniques complètes vendues chez Thomann (hors lots) et Donner, relevés chaque jour depuis les flux des deux marchands : médiane, répartition par gamme de prix et par marque, écart entre prix barré et prix demandé chez Donner.",
+      url: p.permalien,
+      inLanguage: 'fr-FR',
+      creator: REF_ORGANISATION,
+      temporalCoverage: `${dates[0]}/${dates.at(-1)}`,
+      ...(dates.length ? { dateModified: dates.at(-1) } : {}),
+      distribution: { '@type': 'DataDownload', encodingFormat: 'application/json', contentUrl: url('/barometre/donnees.json') },
+    });
   }
   if (ARTICLES.has(p.type)) {
     noeuds.push({
