@@ -1,5 +1,31 @@
 # Journal BipBop
 
+## 7 octobre 2026 (nuit) — Le baromètre des prix est en ligne
+
+**La page.** `/barometre/`, construite sans maquette comme `/suivi-des-prix/` (SANS_MAQUETTE,
+HORS_PLAN, DONNEES_DE), depuis les instantanés quotidiens de `src/data/barometre/` et les calculs
+de `src/lib/barometre.mjs`. Quatre chiffres clés, gammes de prix, médiane par marque (trois
+batteries au moins), prix barrés Donner mesurés et jamais présentés comme des prix, évolution à
+références constantes (visible dès le deuxième relevé), méthode et limites, « Citer ce
+baromètre », `/barometre/donnees.json`, JSON-LD Dataset. Liens depuis `/suivi-des-prix/` et le
+guide prix (maquette).
+
+**Le périmètre**, dit sur la page : batteries complètes Thomann HORS LOTS (66 des 154 références
+du 07/10 sont des « Bundle », kit plus siège ou casque) et fiches batterie Donner (une batterie
+publiée deux fois compte une fois, à son prix le plus bas). Classification de Thomann, donc les
+Aerodrums et une Startone à 55 € comptent. Woodbrass absent (pas de flux).
+
+**Les données s'accumulent dans le dépôt** : le workflow `extrait-rayon` écrit chaque matin
+`src/data/barometre/AAAA-MM-JJ.json` (35 Ko, `archiver-flux.mjs --barometre`, format dans
+`scripts/prix/barometre-instantane.mjs`). Le 07/10 a été versé depuis l'archive locale.
+
+**Chiffres du 07/10** : 99 batteries, médiane 1 589 €, 26 % sous 500 €, 45 % au-dessus de
+2 000 € (surtout Efnote, Roland et Yamaha), 9 marques. Les 11 batteries Donner affichent un prix
+barré, 30 % au-dessus du prix demandé en médiane.
+
+**Pas de lien dans le pied de page** : `grefferLiensDuPied()` lève une erreur si un lien greffé au
+pied existe déjà dans le corps de la page, et le guide prix cite le baromètre. À trancher.
+
 ## 7 octobre 2026 (soir) — Passe de maillage vers les cinq réceptrices
 
 **24 liens de texte** posés dans 14 maquettes, plus deux dans l'intro du comparatif, selon

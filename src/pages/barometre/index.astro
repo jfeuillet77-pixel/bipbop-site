@@ -1,0 +1,393 @@
+---
+/**
+ * Baromètre des prix des batteries électroniques (07/10/2026). Quatrième page écrite à la main,
+ * comme /suivi-des-prix/ : aucune maquette ne la contient, `scripts/port.mjs` ne la touche pas.
+ * Déclarée dans `SANS_MAQUETTE` de scripts/fidelite.mjs, `HORS_PLAN` et `DONNEES_DE` de
+ * src/lib/arborescence.mjs (sa date est celle du dernier instantané).
+ *
+ * Aucun chiffre écrit à la main : tout vient des instantanés quotidiens de src/data/barometre/
+ * (workflow extrait-rayon), calculés par src/lib/barometre.mjs. Les mêmes chiffres sont servis
+ * en JSON par /barometre/donnees.json.
+ *
+ * La règle qu'elle doit tenir, comme le suivi des prix : ne rien dire que la série ne montre pas.
+ * Tant qu'il n'y a qu'un relevé, elle donne l'état du rayon et le dit ; l'évolution n'apparait
+ * qu'à partir de deux dates, à références constantes.
+ */
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { instantanes, chiffres, evolution, kits, MIN_MARQUE } from '../../lib/barometre.mjs';
+
+const liste = instantanes();
+const dernier = liste.at(-1);
+const c = chiffres(dernier);
+const evo = evolution(liste);
+const premier = liste[0].date;
+
+const jour = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' }).replace(/^1 /, '1er ');
+const jourCourt = (d) => new Date(d + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'short' }).replace(/^1 /, '1er ');
+/** 1 589 €, 199,99 € : l'espace des milliers et celle avant € deviennent insécables au postbuild. */
+const euros = (v) => `${Number.isInteger(v) ? v.toLocaleString('fr-FR') : v.toLocaleString('fr-FR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })} €`.replace(/ /g, ' ');
+const pluriel = (n, mot, pl = mot + 's') => `${n} ${n > 1 ? pl : mot}`;
+
+const gMax = c.gammes.at(-1);
+const marquesHaut = (() => {
+  const compte = {};
+  for (const k of kits(dernier).filter((x) => x.prix >= 2000)) compte[k.marque] = (compte[k.marque] ?? 0) + 1;
+  return Object.entries(compte).sort((a, b) => b[1] - a[1]).slice(0, 3).map(([m]) => m);
+})();
+const moinsChere = c.parMarque[0];
+const plusChere = c.parMarque.at(-1);
+const maxGamme = Math.max(...c.gammes.map((g) => g.n));
+const maxMarque = Math.max(...c.parMarque.map((m) => m.mediane));
+
+const kpis = [
+  { valeur: String(c.n), mot: 'batteries suivies chaque jour' },
+  { valeur: euros(c.mediane), mot: 'prix médian du rayon' },
+  { valeur: `${c.sous500.pct} %`, mot: 'des batteries sous 500 €' },
+  { valeur: String(c.marques), mot: 'marques' },
+];
+
+/* La courbe d'évolution : médiane à références constantes, une valeur par jour. */
+const L = 640, H = 220, M = { g: 56, d: 16, h: 16, b: 30 };
+const courbe = evo && (() => {
+  const v = evo.points.map((p) => p.mediane);
+  const lo = Math.min(...v), hi = Math.max(...v);
+  const pad = Math.max(10, (hi - lo) * 0.2);
+  const y0 = lo - pad, y1 = hi + pad;
+  const x = (i) => M.g + (i * (L - M.g - M.d)) / Math.max(1, evo.points.length - 1);
+  const y = (val) => M.h + ((y1 - val) * (H - M.h - M.b)) / (y1 - y0);
+  return {
+    chemin: evo.points.map((p, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(p.mediane).toFixed(1)}`).join(' '),
+    points: evo.points.map((p, i) => ({ ...p, x: x(i), y: y(p.mediane) })),
+    graduations: [y0 + pad, (y0 + y1) / 2, y1 - pad].map((val) => ({ val: Math.round(val), y: y(val) })),
+  };
+})();
+---
+
+<BaseLayout
+  title="Baromètre des prix des batteries électroniques au quotidien"
+  description={`Le prix de ${c.n} batteries électroniques relevé chaque jour chez Thomann et Donner : médiane, gammes, marques et prix barrés. Données ouvertes.`}
+  currentPage=""
+>
+  <div data-pad class="tete">
+    <div class="surtitre">BAROMÈTRE DES PRIX</div>
+    <h1 data-big="b" class="titre">Combien coûte une batterie électronique, relevé chaque jour.</h1>
+    <p class="chapeau">
+      Chaque matin, on relève le prix de toutes les batteries électroniques complètes vendues chez
+      Thomann et Donner, pas seulement celles qu'on conseille. Cette page dit ce que coûte le rayon,
+      gamme par gamme et marque par marque, et comment ça bouge. Les chiffres se recalculent à
+      chaque relevé : aucun n'est écrit à la main.
+    </p>
+  </div>
+
+  <div data-rwd="sp" data-pad data-mar class="dernier">
+    <div>
+      <div class="dernier-etiquette">RELEVÉ DU</div>
+      <div class="dernier-date">{jour(c.date)}</div>
+    </div>
+    <div data-rwd="c4" class="chiffres">
+      {kpis.map((k) => (
+        <div class="chiffre">
+          <span class="chiffre-valeur">{k.valeur}</span>
+          <span class="chiffre-mot">{k.mot}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <section data-mar class="section">
+    <div class="section-tete">
+      <h2 class="section-titre">Par gamme de prix</h2>
+      <span class="section-filet" aria-hidden="true"></span>
+    </div>
+    <p class="texte">
+      Sur les {c.n} batteries du rayon, <strong>{gMax.n} coûtent plus de 2 000 €</strong> ({gMax.pct} %),
+      surtout des {marquesHaut.join(', ').replace(/, ([^,]*)$/, ' et $1')} : c'est ce haut de gamme qui
+      porte la médiane à {euros(c.mediane)}. Un premier achat a pourtant le choix :
+      {' '}{pluriel(c.sous500.n, 'batterie')} sous 500 €, dont {c.gammes[0].n} sous 300 €.
+    </p>
+    <figure class="figure">
+      <figcaption>Nombre de batteries par gamme de prix, relevé du {jour(c.date)}</figcaption>
+      <div class="barres">
+        {c.gammes.map((g) => (
+          <div class="barre-ligne" tabindex="0" data-tip={`${g.libelle} : ${pluriel(g.n, 'batterie')}, ${g.pct} % du rayon`}>
+            <span class="barre-libelle">{g.libelle}</span>
+            <span class="barre-piste">
+              <span class="barre" style={`width:calc((100% - 96px) * ${(g.n / maxGamme).toFixed(4)})`}></span>
+              <b>{g.n}</b>
+            </span>
+          </div>
+        ))}
+      </div>
+      <details class="donnees">
+        <summary>Voir les données</summary>
+        <div data-rwd="tbl" class="tableau">
+          <div data-rwd="tblrow" class="ligne l3 ligne-entete"><div>Gamme</div><div class="num">Batteries</div><div class="num">Part</div></div>
+          {c.gammes.map((g) => (
+            <div data-rwd="tblrow" class="ligne l3"><div>{g.libelle}</div><div class="num">{g.n}</div><div class="num">{g.pct} %</div></div>
+          ))}
+        </div>
+      </details>
+    </figure>
+  </section>
+
+  <section data-mar class="section">
+    <div class="section-tete">
+      <h2 class="section-titre">Par marque</h2>
+      <span class="section-filet" aria-hidden="true"></span>
+    </div>
+    <p class="texte">
+      De {moinsChere.marque} à {plusChere.marque}, la médiane passe de <strong>{euros(moinsChere.mediane)}</strong> à
+      {' '}<strong>{euros(plusChere.mediane)}</strong>. Une médiane cache des écarts : chez chaque marque,
+      la batterie la moins chère et la plus chère sont dans le tableau.
+    </p>
+    <figure class="figure">
+      <figcaption>Prix médian par marque, marques d'au moins {MIN_MARQUE} batteries</figcaption>
+      <div class="barres">
+        {c.parMarque.map((m) => (
+          <div class="barre-ligne" tabindex="0" data-tip={`${m.marque} : médiane ${euros(m.mediane)}, de ${euros(m.min)} à ${euros(m.max)} (${pluriel(m.n, 'batterie')})`}>
+            <span class="barre-libelle">{m.marque}<small>{pluriel(m.n, 'batterie')}</small></span>
+            <span class="barre-piste">
+              <span class="barre" style={`width:max(3px, calc((100% - 96px) * ${(m.mediane / maxMarque).toFixed(4)}))`}></span>
+              <b>{euros(m.mediane)}</b>
+            </span>
+          </div>
+        ))}
+      </div>
+      {c.petitesMarques.length > 0 && (
+        <p class="note">
+          Moins de {MIN_MARQUE} batteries, pas de médiane : {c.petitesMarques.map((m) => `${m.marque} (${pluriel(m.n, 'batterie')}, ${euros(m.min)}${m.n > 1 ? ` à ${euros(m.max)}` : ''})`).join(', ')}.
+        </p>
+      )}
+      <details class="donnees">
+        <summary>Voir les données</summary>
+        <div data-rwd="tbl" class="tableau">
+          <div data-rwd="tblrow" class="ligne l5 ligne-entete"><div>Marque</div><div class="num">Batteries</div><div class="num">Médiane</div><div class="num">La moins chère</div><div class="num">La plus chère</div></div>
+          {c.parMarque.map((m) => (
+            <div data-rwd="tblrow" class="ligne l5"><div>{m.marque}</div><div class="num">{m.n}</div><div class="num">{euros(m.mediane)}</div><div class="num">{euros(m.min)}</div><div class="num">{euros(m.max)}</div></div>
+          ))}
+        </div>
+      </details>
+    </figure>
+  </section>
+
+  <section data-mar class="section">
+    <div class="section-tete">
+      <h2 class="section-titre">Les prix barrés chez Donner</h2>
+      <span class="section-filet" aria-hidden="true"></span>
+    </div>
+    <p class="texte">
+      Ce jour-là, <strong>{c.barresDonner.n} des {c.barresDonner.sur} batteries Donner</strong> affichaient un prix
+      barré au-dessus du prix demandé. En médiane, le prix demandé était {c.barresDonner.ecartMedian} % plus bas que
+      le prix barré. Un prix barré n'est pas un prix : on ne l'utilise jamais ailleurs sur le site,
+      ici on le mesure. La série quotidienne dira, jour après jour, si ces prix barrés ont été
+      pratiqués.
+    </p>
+    <div data-rwd="tbl" class="tableau">
+      <div data-rwd="tblrow" class="ligne l4 ligne-entete"><div>Batterie Donner</div><div class="num">Prix demandé</div><div class="num">Prix barré affiché</div><div class="num">Écart</div></div>
+      {c.barres.map((b) => (
+        <div data-rwd="tblrow" class="ligne l4"><div class="nom">{b.modele}</div><div class="num fort">{euros(b.prix)}</div><div class="num barre-txt">{euros(b.prixBarre)}</div><div class="num">{b.ecart} %</div></div>
+      ))}
+    </div>
+  </section>
+
+  <section data-mar class="section">
+    <div class="section-tete">
+      <h2 class="section-titre">Évolution</h2>
+      <span class="section-filet" aria-hidden="true"></span>
+    </div>
+    {evo ? (
+      <>
+        <p class="texte">
+          Médiane des {evo.references} batteries présentes à chaque relevé depuis le {jour(evo.depuis)} :
+          comparer toujours les mêmes références évite qu'une batterie qui entre ou sort du catalogue
+          fasse bouger la médiane sans qu'aucun prix n'ait changé.
+        </p>
+        <figure class="figure">
+          <figcaption>Prix médian à références constantes, par jour de relevé</figcaption>
+          <svg class="courbe" viewBox={`0 0 ${L} ${H}`} role="img" aria-label={`Prix médian à références constantes, du ${jour(evo.depuis)} au ${jour(c.date)}`}>
+            {courbe.graduations.map((g) => (
+              <g>
+                <line x1={M.g} x2={L - M.d} y1={g.y} y2={g.y} class="grille" />
+                <text x={M.g - 8} y={g.y + 4} class="axe" text-anchor="end">{euros(g.val)}</text>
+              </g>
+            ))}
+            <path d={courbe.chemin} class="trait" />
+            {courbe.points.map((p, i) => (
+              <g class="point" tabindex="0">
+                <title>{`${jour(p.date)} : ${euros(p.mediane)}${i ? `, ${pluriel(p.changes, 'prix modifié', 'prix modifiés')}` : ''}`}</title>
+                <circle cx={p.x} cy={p.y} r="12" class="cible" />
+                <circle cx={p.x} cy={p.y} r="4.5" class="rond" />
+              </g>
+            ))}
+            <text x={M.g} y={H - 8} class="axe">{jourCourt(evo.depuis)}</text>
+            <text x={L - M.d} y={H - 8} class="axe" text-anchor="end">{jourCourt(c.date)}</text>
+          </svg>
+          <details class="donnees">
+            <summary>Voir les données</summary>
+            <div data-rwd="tbl" class="tableau">
+              <div data-rwd="tblrow" class="ligne l4 ligne-entete"><div>Relevé</div><div class="num">Médiane</div><div class="num">Baisses</div><div class="num">Hausses</div></div>
+              {[...evo.points].reverse().map((p) => (
+                <div data-rwd="tblrow" class="ligne l4"><div>{jour(p.date)}</div><div class="num">{euros(p.mediane)}</div><div class="num">{p.baisses}</div><div class="num">{p.hausses}</div></div>
+              ))}
+            </div>
+          </details>
+        </figure>
+      </>
+    ) : (
+      <p class="texte">
+        La série commence le <strong>{jour(premier)}</strong> et s'allonge d'un relevé chaque matin. Dès
+        le deuxième, cette section montrera comment la médiane évolue, calculée sur les seules
+        batteries présentes à chaque relevé : une batterie qui entre ou sort du catalogue ne doit
+        pas faire bouger la courbe sans qu'aucun prix n'ait changé.
+      </p>
+    )}
+  </section>
+
+  <section data-mar class="section">
+    <div class="section-tete">
+      <h2 class="section-titre">Méthode et limites</h2>
+      <span class="section-filet" aria-hidden="true"></span>
+    </div>
+    <div data-rwd="c4" class="methode">
+      <div class="carte">
+        <div class="carte-titre">Deux marchands, tout leur rayon</div>
+        <p>
+          Thomann et Donner publient leur catalogue dans un flux que l'on télécharge chaque matin.
+          On y prend toutes les batteries électroniques complètes, celles qu'on conseille comme les
+          autres : {c.nThomann} chez Thomann, {c.nDonner} chez Donner.
+        </p>
+      </div>
+      <div class="carte">
+        <div class="carte-titre">La batterie seule, pas le lot</div>
+        <p>
+          Un lot ajoute un siège, un casque ou des baguettes au kit. Les {c.lotsExclus} lots du rayon
+          Thomann sont écartés, et une batterie Donner proposée deux fois compte une fois, à son prix
+          le plus bas.
+        </p>
+      </div>
+      <div class="carte">
+        <div class="carte-titre">Un relevé par jour, sans tri</div>
+        <p>
+          Le relevé tourne tout seul et chaque instantané est gardé, daté. Prix TTC affichés ce
+          matin-là, médianes arrondies à l'euro. Un jour sans relevé reste un trou dans la série :
+          on ne le comble pas.
+        </p>
+      </div>
+      <div class="carte">
+        <div class="carte-titre">Ce qu'il ne dit pas</div>
+        <p>
+          Ce n'est pas tout le marché : Woodbrass n'a pas de flux, il n'y figure pas, ni les autres
+          boutiques. Ce sont des prix demandés, pas des ventes. Et la classification des
+          batteries est celle de Thomann.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div data-rwd="sp2" data-mar class="bas">
+    <div>
+      <h2 class="bas-titre">Citer ce baromètre</h2>
+      <p>
+        Reprends les chiffres librement, en citant la source et la date du relevé :
+      </p>
+      <p class="citation">Baromètre BipBop des prix des batteries électroniques, relevé du {jour(c.date)}, bipbop.eu/barometre/</p>
+      <p>
+        Les chiffres du jour et toute la série sont en JSON : <a href="/barometre/donnees.json">/barometre/donnees.json</a>.
+      </p>
+    </div>
+    <div>
+      <h2 class="bas-titre">Et pour acheter ?</h2>
+      <p>
+        Le baromètre regarde tout le rayon. Pour savoir <a href="/guides/prix-batterie-electronique/">combien coûte vraiment une batterie électronique</a>{' '}
+        quand on débute, casque et siège compris, lis notre guide. Le prix des batteries qu'on
+        conseille est relevé à part, chaque lundi, dans le <a href="/suivi-des-prix/">suivi des prix</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .tete { padding: 46px 40px 30px; }
+  .surtitre { font: 500 11.5px var(--font-mono); letter-spacing: 0.08em; color: var(--texte-mono); margin-bottom: 14px; }
+  .titre { font: 800 52px/1.04 var(--font-titres); letter-spacing: -0.03em; max-width: 820px; text-wrap: pretty; }
+  .chapeau { font: 400 18px/1.55 var(--font-texte); color: var(--texte-secondaire); max-width: 660px; margin-top: 18px; text-wrap: pretty; }
+
+  .dernier {
+    margin: 8px 40px 0; background: var(--color-turquoise-clair); border-radius: var(--radius-lg);
+    padding: 24px 32px; display: grid; grid-template-columns: auto 1fr; gap: 28px 40px; align-items: center;
+  }
+  .dernier-etiquette { font: 500 11.5px var(--font-mono); letter-spacing: 0.08em; color: var(--color-turquoise-clair-texte); margin-bottom: 6px; }
+  .dernier-date { font: 800 24px/1.15 var(--font-titres); letter-spacing: -0.02em; color: var(--color-turquoise-fonce); }
+  .chiffres { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+  .chiffre { display: flex; flex-direction: column; gap: 2px; }
+  .chiffre-valeur { font: 800 30px/1 var(--font-titres); letter-spacing: -0.03em; color: var(--color-turquoise-fonce); white-space: nowrap; }
+  .chiffre-mot { font: 400 13.5px/1.35 var(--font-texte); color: var(--color-turquoise-clair-texte); }
+
+  .section { margin: 40px 40px 8px; }
+  .section-tete { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+  .section-titre { font: 800 26px var(--font-titres); letter-spacing: -0.02em; white-space: nowrap; }
+  .section-filet { flex: 1; min-width: 40px; height: var(--border-epais); background: var(--color-encre); }
+  .texte { font: 400 16px/1.65 var(--font-texte); color: var(--texte-principal); max-width: 720px; margin-bottom: 18px; }
+  .texte a, .bas a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+
+  /* Une seule série par graphique : une seule teinte, pas de légende, la valeur au bout de la barre.
+     La barre la plus longue s'arrête 96 px avant le bord : sa valeur doit tenir à côté d'elle. */
+  .figure { background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: var(--radius-md); padding: 18px 20px 14px; box-shadow: 4px 4px 0 var(--color-encre); max-width: 860px; }
+  .figure figcaption { font: 600 12px var(--font-mono); letter-spacing: 0.04em; color: var(--texte-mono); margin-bottom: 14px; }
+  .barres { display: flex; flex-direction: column; gap: 2px; }
+  .barre-ligne { display: grid; grid-template-columns: minmax(0, 150px) minmax(0, 1fr); align-items: center; gap: 12px; padding: 6px 0; position: relative; outline: none; border-radius: 6px; }
+  .barre-ligne:hover, .barre-ligne:focus-visible { background: var(--color-turquoise-clair); }
+  .barre-libelle { font: 500 14px/1.25 var(--font-texte); color: var(--texte-principal); }
+  .barre-libelle small { display: block; font: 400 12px var(--font-texte); color: var(--texte-mono); }
+  .barre-piste { display: flex; align-items: center; gap: 8px; min-width: 0; }
+  .barre { height: 18px; background: var(--color-turquoise); border-radius: 0 4px 4px 0; flex: none; }
+  .barre-piste b { font: 600 13.5px var(--font-texte); color: var(--texte-principal); white-space: nowrap; }
+  [data-tip]:hover::after, [data-tip]:focus-visible::after {
+    content: attr(data-tip); position: absolute; left: 150px; bottom: calc(100% + 4px); z-index: 2;
+    background: var(--color-encre); color: #fff; font: 500 12.5px/1.4 var(--font-texte);
+    padding: 6px 10px; border-radius: 8px; max-width: 320px; pointer-events: none;
+  }
+  .note { font: 400 13px/1.5 var(--font-texte); color: var(--texte-secondaire); margin-top: 10px; }
+
+  .donnees { margin-top: 12px; }
+  .donnees summary { font: 600 13px var(--font-texte); color: var(--color-turquoise-fonce); cursor: pointer; }
+  .donnees .tableau { margin-top: 10px; }
+
+  /* Quatre colonnes ou plus : le tableau défile, il ne se replie pas (loi 3). */
+  .tableau { border: var(--border-epais) solid var(--color-encre); border-radius: var(--radius-md); overflow: hidden; max-width: 860px; }
+  .ligne { display: grid; background: #fff; border-bottom: var(--border-fin) solid var(--color-sable-clair); }
+  .ligne:last-child { border-bottom: 0; }
+  .l3 { grid-template-columns: 2fr 1fr 1fr; }
+  .l4 { grid-template-columns: 2fr 1fr 1fr 0.8fr; }
+  .l5 { grid-template-columns: 1.4fr 0.8fr 1fr 1fr 1fr; }
+  .ligne > div { padding: 10px 14px; font: 400 14.5px/1.4 var(--font-texte); min-width: 0; }
+  .ligne-entete { background: var(--color-sable); }
+  .ligne-entete > div { font: 600 11.5px var(--font-mono); letter-spacing: 0.06em; color: var(--texte-mono); text-transform: uppercase; }
+  .num { text-align: right; white-space: nowrap; }
+  .nom, .fort { font-weight: 600; }
+  .barre-txt { color: var(--texte-mono); text-decoration: line-through; }
+
+  .courbe { width: 100%; height: auto; display: block; }
+  .courbe .grille { stroke: var(--color-sable-clair); stroke-width: 1; }
+  .courbe .axe { font: 500 11px var(--font-mono); fill: var(--texte-mono); }
+  .courbe .trait { fill: none; stroke: var(--color-turquoise); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .courbe .rond { fill: var(--color-turquoise); stroke: #fff; stroke-width: 2; }
+  .courbe .cible { fill: transparent; }
+  .courbe .point:hover .rond, .courbe .point:focus-visible .rond { r: 6; }
+
+  .methode { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+  .carte { background: #fff; border: var(--border-epais) solid var(--color-encre); border-radius: var(--radius-md); padding: 18px 20px 20px; box-shadow: 4px 4px 0 var(--color-encre); }
+  .carte-titre { font: 700 16px/1.25 var(--font-titres); letter-spacing: -0.015em; margin-bottom: 9px; }
+  .carte p { font: 400 14px/1.55 var(--font-texte); color: var(--texte-carte); }
+
+  .bas { margin: 40px 40px 52px; background: var(--color-rouge-clair); border-radius: var(--radius-lg); padding: 26px 40px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 28px 40px; }
+  .bas-titre { font: 800 22px var(--font-titres); letter-spacing: -0.02em; margin-bottom: 8px; }
+  .bas p { font: 400 15.5px/1.6 var(--font-texte); color: var(--color-rouge-clair-texte-fonce); margin-bottom: 8px; }
+  .bas .citation { font: 500 14px/1.5 var(--font-mono); background: #fff; border-radius: var(--radius-sm); padding: 10px 14px; color: var(--color-encre); }
+
+  @media (max-width: 620px) {
+    .barre-ligne { grid-template-columns: minmax(0, 104px) minmax(0, 1fr); gap: 8px; }
+    [data-tip]:hover::after, [data-tip]:focus-visible::after { left: 0; }
+    .chiffre-valeur { font-size: 26px; }
+  }
+</style>

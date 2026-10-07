@@ -50,6 +50,7 @@ export const DOMAINE = 'https://bipbop.eu';
 export const HORS_PLAN = [
   { route: '/plan-du-site/', type: 'Institutionnel' },
   { route: '/suivi-des-prix/', type: 'Institutionnel' },
+  { route: '/barometre/', type: 'Institutionnel' },
 ];
 
 /** Les deux pages qui ne sont pas une route indexable. */
@@ -145,6 +146,8 @@ const DONNEES_DE = [
   [/^\/marques\/$/, ['src/components/HubMarques.astro', 'src/data/marques.mjs', 'src/data/modeles.json']],
   [/^\/marques\/.+/, ['src/components/HubMarque.astro', 'src/data/marques.mjs', 'src/data/modeles.json']],
   [/^\/suivi-des-prix\/$/, ['src/data/historique-prix.json']],
+  // Un instantané par jour (workflow extrait-rayon) : la page change chaque matin, et le dit.
+  [/^\/barometre\/$/, ['src/data/barometre', 'src/lib/barometre.mjs']],
   [/^\/comparatif-batterie-electronique\/$/, ['src/data/modeles.json']],
 ];
 

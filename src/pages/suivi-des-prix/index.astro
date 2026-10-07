@@ -190,6 +190,10 @@ const signe = (n) => (n > 0 ? `+${n}` : `${n}`);
         c'est lui qui fait foi, pas nous. Si tu en vois un qui ne colle pas,{' '}
         <a href="/contact/">dis-le-nous</a> et on corrige.
       </p>
+      <p>
+        Cette page suit les batteries qu'on conseille. Pour tout le rayon, jour après jour, vois le
+        {' '}<a href="/barometre/">baromètre des prix des batteries électroniques</a>.
+      </p>
     </div>
   </div>
 </BaseLayout>
@@ -441,6 +445,10 @@ const signe = (n) => (n > 0 ? `+${n}` : `${n}`);
     font: 800 22px var(--font-titres);
     letter-spacing: -0.02em;
     margin-bottom: 8px;
+  }
+
+.bas p + p {
+    margin-top: 10px;
   }
 
   .bas p {
