@@ -13,6 +13,9 @@
 //               30 s, jusqu'à 10 min, tant qu'il ne montre rien de neuf.
 //   --tout      signale toutes les URL du sitemap (premier branchement).
 //   --essai     dit ce qui partirait, n'envoie rien.
+//   --recentes H  ne regarde que les URL dont le lastmod a moins de H heures, sans mémoire : c'est
+//               le mode de la routine cloud, qui repart chaque fois d'un poste vierge et
+//               signalerait sinon tout le sitemap à chaque passage.
 //
 // La clé est publique par construction : public/<clé>.txt doit répondre 200 avec la clé pour
 // que Bing accepte l'envoi. Elle ne donne aucun accès à rien.
@@ -29,6 +32,7 @@ const argv = process.argv.slice(2);
 const ATTENDRE = argv.includes('--attendre');
 const TOUT = argv.includes('--tout');
 const ESSAI = argv.includes('--essai');
+const RECENTES = argv.includes('--recentes') ? Number(argv[argv.indexOf('--recentes') + 1]) : null;
 
 const fichierCle = readdirSync(join(SITE, 'public')).find((f) => /^[0-9a-f]{32}\.txt$/.test(f));
 if (!fichierCle) { console.error('Aucune clé IndexNow dans public/ (fichier <32 hex>.txt).'); process.exit(2); }
@@ -44,7 +48,8 @@ async function lireSitemap() {
     .map(([, loc, lastmod]) => ({ loc, lastmod: lastmod ?? '' }));
 }
 
-const aSignaler = (urls) => urls.filter((u) => TOUT || deja[u.loc] !== u.lastmod);
+const aSignaler = (urls) => urls.filter((u) => TOUT
+  || (RECENTES ? Date.now() - Date.parse(u.lastmod) < RECENTES * 3600000 : deja[u.loc] !== u.lastmod));
 
 let urls = await lireSitemap();
 let neuves = aSignaler(urls);

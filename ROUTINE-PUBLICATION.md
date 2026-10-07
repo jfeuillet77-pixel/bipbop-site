@@ -14,7 +14,7 @@ fichier, pas le prompt de la routine.
 | Heure de Paris | Quoi | Où |
 |---|---|---|
 | 6 h 17 (4 h 17 UTC) tous les jours | Rayon du jour → `src/data/rayon.json` (sur `dev`) | `.github/workflows/extrait-rayon.yml` |
-| 7 h 23 tous les jours | Archive du rayon (baromètre), IndexNow | launchd sur le Mac, `scripts/prix/archiver-flux.mjs` |
+| 7 h 23 tous les jours | Archive du rayon (baromètre), IndexNow en rattrapage | launchd sur le Mac, `scripts/prix/archiver-flux.mjs` |
 | 8 h 17 le lundi | Relevé des prix et réécritures | launchd sur le Mac, `scripts/prix/semaine.mjs` |
 | **10 h 37 et 17 h 37** (8 h 37 et 15 h 37 UTC) | **Une page neuve par passage** (ce fichier) ; le passage de 17 h 37 rafraîchit aussi une page ancienne | routine cloud |
 
@@ -27,9 +27,14 @@ tôt à Paris (9 h 37 et 16 h 37). Rien ne chevauche le lundi.
    Les scripts attendent les maquettes dans `../Claude Design - MàJ` : depuis `bipbop-site`,
    `ln -sfn "$(cd ../bipbop-maquettes && pwd)" "../Claude Design - MàJ"` (adapter si le clone est
    ailleurs : `ls ..`).
-2. Dans `bipbop-site` : `git fetch origin && git checkout dev && git merge --ff-only origin/dev`.
-   Dans les maquettes : `git checkout main && git merge --ff-only origin/main`.
-3. `npm ci`, puis `npm run data`.
+2. Le clone du cloud est superficiel et ne porte que `main` (diagnostic du 07/10). Dans
+   `bipbop-site` : `git fetch --unshallow origin; git fetch origin dev main && git checkout -B dev origin/dev`
+   (l'historique complet compte : les dates des pages viennent de git). Dans les maquettes :
+   `git fetch --unshallow origin; git fetch origin main && git checkout -B main origin/main`.
+3. `export CHROME="$(ls -d /opt/pw-browsers/chromium-*/chrome-linux/chrome | tail -1)"` : les
+   contrôles et les captures lancent ce Chromium (diagnostic du 07/10/2026 : présent dans
+   l'environnement, réseau sortant ouvert vers npm, thomann.fr et bipbop.eu). Puis `npm ci` et
+   `npm run data`.
 4. **Deux pages par jour, pas plus.** `git log origin/dev --since=midnight --format=%s | grep -c '^feat(page)'`
    doit valoir 0 au passage du matin, 1 au plus à celui de l'après-midi. Sinon, s'arrêter.
 5. Lire en entier `CLAUDE.md` (les cinq lois et les interdits : il fait foi), la section
@@ -65,6 +70,9 @@ Seules sources autorisées, toutes dans les dépôts :
 - Les maquettes publiées et `../Claude Design - MàJ/data/` (fiches, sélections, guide-agent.csv).
 - Connaissances établies (technique MIDI, pédagogie, acoustique) en faits généraux, sans chiffre
   inventé.
+- **La fiche produit du marchand**, lue avec `curl` quand le rayon ne suffit pas (caractéristiques,
+  disponibilité). Une page à la fois, jamais plus de dix par passage : Thomann renvoie 429 si l'on
+  enchaîne. Ce qu'on y lit se date (« fiche Thomann lue le JJ/MM ») dans le journal.
 
 **Liens marchands** : uniquement des URL déjà présentes dans `modeles.json`, `prix-reperes.json`
 ou le champ `url` de `rayon.json` (Thomann, sans paramètre). Jamais `offid`, `affid`, `clickfire`,
@@ -135,8 +143,10 @@ les deux dépôts, rien n'est publié, l'expliquer dans le compte rendu.
    `feat(page): <id> <titre>` (le compteur de l'étape 0 le lit), le résumé du journal en corps, et
    pour dernière ligne `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`. Puis
    `git pull --rebase origin dev && git push origin dev`.
-4. Mise en ligne : `git checkout main && git merge --ff-only origin/main && git merge --no-ff dev -m "Merge branch 'dev' — page <id>" && git push origin main && git checkout dev`.
+4. Mise en ligne : `git fetch origin main && git checkout -B main origin/main && git merge --no-ff dev -m "Merge branch 'dev' — page <id>" && git push origin main && git checkout dev`.
    Si `main` a divergé : ne rien forcer, le dire dans le compte rendu.
+   Puis `node scripts/indexnow.mjs --attendre --recentes 3` : Bing apprend la page dès que Netlify l'a mise en
+   ligne. Non bloquant (l'archive quotidienne du Mac le refait le lendemain matin).
 5. Un conflit sur `JOURNAL.md` se résout en gardant les deux entrées ; sur `src/data/rayon.json`
    ou `historique-prix.json`, en gardant la version distante, puis relancer `npm run check`.
 
