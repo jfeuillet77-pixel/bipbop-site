@@ -128,8 +128,11 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
   compare les pages à ce champ.
 - Images produit chargées depuis `thomann.de` sans `width`/`height` ; pas de CSP tant qu'elles y
   restent (chantier 6 de l'audit). Aucun auteur nommé (choix du site : « une seule voix »).
-- Contrôle 11 : huit pages citent un modèle sans lien vers son avis (le plus souvent un lien vers
-  un duel, voulu).
+- Contrôle 11 (repasse du 07/10 au soir, 11 → 8 pages) : les huit restantes sont voulues ou des
+  faux positifs. Cinq lient le modèle vers un duel qui l'oppose (tableau de l'avis Nitro Max, liens
+  connexes de trois duels, hub Alesis « deux duels : face à… »). /guides/ et /les-bases/ nomment
+  « Régler une Millenium MPS-750X », la carte de l'article de réglages. /suivi-des-prix/ cite la
+  MPS-750X **Pro**, un autre modèle : le contrôle compare des chaînes et ne fait pas la différence.
 - Les contrôles ne voient pas un texte resté brut dans une page (code de générateur, jeton non
   résolu) : seule la capture l'a montré le 23/09. Relire la capture de chaque page neuve.
 - « 11 guides et 6 articles » sur `/guides/` compte par gabarit : « Installer sa batterie sans

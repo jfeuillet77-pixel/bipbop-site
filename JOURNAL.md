@@ -1,5 +1,14 @@
 # Journal BipBop
 
+
+## 7 octobre 2026, nuit — Liens vers les avis (contrôle 11 : 11 → 8 pages)
+
+`/duels/` lie dans « Les prochains duels » les modèles qui ont un avis et ne sont pas déjà liés
+plus haut (MPS-450, DTX432K, TD313 : `HubDuels.astro`). Le guide prix lie l'avis TD313 dans son
+tableau des paliers, le guide « Faire évoluer » l'avis Nitro Max dans la ligne du pack
+d'extension. Les huit pages restantes sont voulues ou des faux positifs (détail dans « Défauts
+connus » de `design/plan-de-reprise.md`).
+
 ## 7 octobre 2026 (nuit) — Le baromètre des prix est en ligne
 
 **La page.** `/barometre/`, construite sans maquette comme `/suivi-des-prix/` (SANS_MAQUETTE,

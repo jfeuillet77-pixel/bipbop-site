@@ -11,7 +11,7 @@
 import { execFileSync } from 'node:child_process';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import BipbopAvatar from './mascotte/BipbopAvatar.astro';
-import { PLAN, RELEVE } from '../data/produits.mjs';
+import { PLAN, RELEVE, MODELES } from '../data/produits.mjs';
 import { rendre as rendreJetons, modele, prixF, LIEN, rendreTexte } from '../lib/jetons.mjs';
 import { avisPublie } from '../lib/avis-livres.mjs';
 import { DUELS, INDEX_DUELS as I } from '../data/duels.mjs';
@@ -47,6 +47,25 @@ const nom = (m) => {
 };
 // « Prends la Millenium », « Prends l'Alesis » : la même élision que les textes à jetons.
 const la = (m) => (/^[aeiouéèê]/i.test(m.nom_complet) ? `l'${m.nom_complet}` : `la ${m.nom_complet}`);
+
+// « Les prochains duels » : un modèle qui a déjà son avis s'y lie, une fois par page (le contrôle
+// 11 signalait ces noms cités sans lien). Un avis déjà lié plus haut, par la liste des modèles, ne
+// l'est pas une deuxième fois.
+const echappe = (t) => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const dejaLies = new Set(modeles.map(({ m }) => avisPublie(m)).filter(Boolean));
+const aLier = MODELES
+  .map((m) => ({ route: avisPublie(m), nom: `${m.marque} ${m.modele}`.replace(/ Mesh$| Kit$/, '') }))
+  .filter((x) => x.route && !dejaLies.has(x.route))
+  .sort((x, y) => y.nom.length - x.nom.length);
+const aVenirHtml = aVenir.map((t) => {
+  let h = echappe(t);
+  for (const x of aLier) {
+    if (dejaLies.has(x.route) || !h.includes(x.nom)) continue;
+    h = h.replace(x.nom, `<a href="${x.route}" style="${LIEN}">${x.nom}</a>`);
+    dejaLies.add(x.route);
+  }
+  return h;
+});
 
 const releve = new Date(RELEVE + 'T12:00:00Z').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
 let git = null;
@@ -171,7 +190,7 @@ const S = {
         <section id={I.avenir.id} style={S.section}>
           <h2 data-big="d" style={S.h2}>{I.avenir.h2}</h2>
           <p style={S.p} set:html={rendre(I.avenir.texte)} />
-          <ul style="margin:0 0 16px;padding:0 0 0 22px">{aVenir.map((t) => <li style={S.li}>{t}</li>)}</ul>
+          <ul style="margin:0 0 16px;padding:0 0 0 22px">{aVenirHtml.map((h) => <li style={S.li} set:html={h} />)}</ul>
           <p style={S.p} set:html={rendre(I.avenir.apres)} />
         </section>
       )}
