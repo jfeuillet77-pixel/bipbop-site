@@ -519,7 +519,7 @@ export const INDEX_MARQUES = {
       h2: "Et les marques qu'on ne suit pas ?",
       id: 'hors-selection',
       texte: [
-        "Les marchands vendent bien plus que ces {n:marques} marques. Les Roland VAD aux fûts habillés de bois, les Yamaha DTX8 et DTX10, l'Alesis Strata Prime ou les batteries Efnote dépassent toutes 1 600 € : ce sont de très belles batteries, mais pas un premier achat. On s'arrête à ce plafond parce qu'au-delà, le lecteur n'est plus un débutant et nos conseils ne lui servent plus.",
+        "Les marchands vendent bien plus que ces {n:marques} marques. Les Roland VAD aux fûts habillés de bois, les Yamaha DTX8 et DTX10, l'Alesis Strata Prime ou les batteries Efnote dépassent toutes 1 600 € : ce sont de très belles batteries, mais pas un premier achat. Nos sélections restent sous ce plafond, celui d'un premier kit. Les modèles plus chers, on les analyse un par un pour ceux qui montent en gamme.",
         "À l'autre bout, on écarte les batteries jouets et les kits sans marque vendus sur les places de marché : sans pièces détachées ni revente possible, une panne de pad les rend inutilisables. Si tu tombes sur une marque absente de cette page, pose-toi les trois questions ci-dessus. Et si tu veux qu'on l'analyse, [écris-nous](/contact/).",
       ],
     },
