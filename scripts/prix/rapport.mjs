@@ -253,7 +253,7 @@ if (!bougent.length) {
 dire();
 
 /* 2 — le travail, référence par référence */
-if (bougent.length) exige(`${pl(bougent.length, 'prix')} au-dessus du seuil de ${rel.seuil} €`);
+if (bougent.length) exige(`${pl(bougent.length, 'prix', 'prix')} au-dessus du seuil de ${rel.seuil} €`);
 if (disparues.length) exige(`${pl(disparues.length, 'référence disparue')} du catalogue`);
 if (illisibles.length) exige(`${pl(illisibles.length, 'référence')} dont le prix n'a pas pu être lu`);
 
