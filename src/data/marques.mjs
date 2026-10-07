@@ -217,7 +217,7 @@ export const MARQUES = {
     faq: [
       {
         q: 'Alesis ou Millenium, laquelle choisir ?',
-        r: "À budget égal, Millenium donne souvent un peu plus de matériel et Alesis se revend plus vite d'occasion. Le [duel MPS-150X contre Turbo Mesh](/duels/millenium-mps-150x-vs-alesis-turbo-mesh/) détaille l'écart.",
+        r: "À budget égal, Millenium donne souvent un peu plus de matériel et Alesis se revend plus vite d'occasion. Le [duel MPS-150X contre Turbo Mesh](/duels/millenium-mps-150x-vs-alesis-turbo-mesh/) détaille l'écart, et la [page Millenium](/marques/batterie-electronique-millenium/) passe toute la gamme en revue.",
       },
       {
         q: 'Nitro Max ou Nitro Pro ?',
@@ -314,7 +314,7 @@ export const MARQUES = {
         h2: 'Roland ou une autre marque ?',
         id: 'ou-ailleurs',
         texte: [
-          "Pour le prix de la {nom:td02kv}, Millenium donne cinq fûts en peau maillée avec la {avis:mps750x} ({prix:mps750x}). Alesis met du mesh partout dès {prix:nitromax} avec la {avis:nitromax}, Bluetooth compris. Ce que Roland vend en plus, c'est la pédale sans batte : si personne ne vit sous toi, tu la paieras sans en profiter. Le [duel Nitro Max contre TD-02KV](/duels/alesis-nitro-max-vs-roland-td-02kv/) fait le calcul.",
+          "Pour le prix de la {nom:td02kv}, Millenium donne cinq fûts en peau maillée avec la {avis:mps750x} ({prix:mps750x}) : la [page Millenium](/marques/batterie-electronique-millenium/) compare toute sa gamme. Alesis met du mesh partout dès {prix:nitromax} avec la {avis:nitromax}, Bluetooth compris. Ce que Roland vend en plus, c'est la pédale sans batte : si personne ne vit sous toi, tu la paieras sans en profiter. Le [duel Nitro Max contre TD-02KV](/duels/alesis-nitro-max-vs-roland-td-02kv/) fait le calcul.",
           "Les Roland ne sont pas les seules à proposer une pédale sans batte : la Yamaha DTX402K en a une aussi, pour moins cher. La [page Yamaha](/marques/batterie-electronique-yamaha/) la compare aux autres DTX.",
           "Pour comparer toutes les marques d'un coup, le [comparatif en trois questions](/comparatif-batterie-electronique/) sort deux modèles selon ton budget, ta place et ce que tu veux jouer.",
         ],
@@ -344,6 +344,128 @@ export const MARQUES = {
       {
         q: 'TD313 ou TD316 ?',
         r: "Même module V31. La TD316 ajoute une deuxième crash, une caisse claire à trois capteurs et une vraie charleston sur pied, pour environ 2 000 € chez Thomann : au-dessus du plafond de 1 600 € qu'on se fixe pour un premier achat. L'[avis TD313](/avis/roland-td313/) détaille la différence.",
+      },
+    ],
+  },
+  millenium: {
+    marque: 'Millenium',
+    route: '/marques/batterie-electronique-millenium/',
+    title: 'Batterie électronique Millenium : laquelle choisir en 2026 ?',
+    description:
+      '{N:modeles:Millenium} batteries Millenium comparées, de la Rookie à la MPS-1000. Laquelle prendre, ce que vaut la marque maison de Thomann et ses limites.',
+    h1: 'Batterie électronique Millenium : laquelle choisir ?',
+    chapeau:
+      "Millenium est la marque maison de Thomann : pas de distributeur entre l'usine et toi, d'où des kits très fournis pour leur prix. On suit {n:modeles:Millenium} modèles, de {prix:rookie} à {prix:mps1000}, la gamme la plus large de notre sélection. Voilà lequel prendre selon ton budget et ce que la marque fait moins bien.",
+    reponse: [
+      "**Petit budget, peaux maillées** : la {avis:mps150x} à {prix:mps150x}. Caisse claire, toms et grosse caisse en mesh ; le module est le strict minimum.",
+      "**Le meilleur équilibre** : la {avis:mps450} à {prix:mps450}, pour sa caisse claire à deux zones, ses cymbales de 12 pouces et un module qui ne te freinera pas.",
+      "**Tu sais que tu vas t'y tenir** : la {avis:mps750x} à {prix:mps750x}, avec trois toms de 10 pouces, une ride de 14 et le Bluetooth.",
+    ],
+    sections: [
+      {
+        h2: 'La gamme Millenium, modèle par modèle',
+        id: 'gamme',
+        texte: [
+          "Millenium range ses batteries en trois familles : deux kits pour enfants, la série MPS qui couvre l'essentiel des débutants puis deux modèles au look acoustique, avec de vrais fûts en bois habillés de peaux maillées. Les configurations ci-dessous viennent des fiches Thomann.",
+        ],
+        liste: [
+          "**{nom:rookie}** ({prix:rookie}) : pensée pour les enfants dès 3 ans selon Thomann, 100 × 50 cm au sol, un rack réglable de 57 à 80 cm de haut. Caisse claire et trois toms de 7 pouces en peau maillée, trois cymbales de 8 pouces et deux contrôleurs au pied pour la grosse caisse et la charleston. Elle s'alimente en USB-C, même sur une batterie externe.",
+          "**{nom:hd120}** ({prix:hd120}) : des pads de 7 pouces en caoutchouc et trois cymbales de 9 pouces, mais c'est le seul kit Millenium de la sélection livré avec un siège, un casque et des baguettes.",
+          "**{avis:mps150x}** ({prix:mps150x}) : le ticket d'entrée du mesh. Caisse claire de 10 pouces, trois toms et une grosse caisse de 8 pouces, tous en peau maillée. Le module se limite à 108 sons et dix kits, sans Bluetooth.",
+          "**{nom:mps350}** ({prix:mps350}) : peaux maillées, caisse claire de 8 pouces à deux zones, toms de 7 pouces, un module de 500 sons avec le Bluetooth et une entrée pour une cymbale de plus. On ne l'a pas encore analysée en détail.",
+          "**{avis:mps450}** ({prix:mps450}) : caisse claire de 10 pouces à deux zones, crash et ride de 12 pouces avec étouffement, 408 sons et deux entrées pour agrandir le kit. Pas de Bluetooth. 120 × 80 cm au sol.",
+          "**{avis:mps750x}** ({prix:mps750x}) : cinq fûts en peau maillée, trois toms de 10 pouces à deux zones, une charleston de 13 pouces, une ride de 14 pouces à trois zones, 697 sons et le Bluetooth. 140 × 80 cm au sol.",
+          "**{avis:mps850}** ({prix:mps850}) : dix pads, quatre toms dont deux de 8 pouces, deux crashs de 12 pouces, des prises MIDI à cinq broches et l'import de tes propres sons en WAV. Pas de Bluetooth ni aucune entrée libre.",
+          "**{nom:mps750pro}** ({prix:mps750pro}) : le module de la MPS-750X dans un kit au look acoustique. Fûts en bois, grosse caisse de 18 pouces, caisse claire de 13, toms de 10, 12 et 14 pouces, crash de 15 et ride de 18 pouces, avec pieds de cymbale, pied de caisse claire et pédales.",
+          "**{nom:mps1000}** ({prix:mps1000}) : le haut de notre sélection. Même format acoustique avec une grosse caisse de 20 pouces et deux crashs de 15 pouces. Son module de 820 sons a un écran couleur, huit sorties séparées et l'import d'échantillons.",
+        ],
+        apres: [
+          "Au-dessus, Millenium vend aussi une MPS-1500 Hybrid-X construite autour d'un pad multi-percussion. Elle sort de notre sélection : c'est un instrument de scène, pas un premier kit.",
+        ],
+      },
+      {
+        h2: 'MPS-150X, MPS-450 ou MPS-750X ?',
+        id: 'trois-mps',
+        texte: [
+          "C'est là que se joue presque tout. Les trois ont une caisse claire de 10 pouces. Leurs toms comme leur grosse caisse sont en peau maillée. Ce qui change, c'est le module, les cymbales et la place qu'elles prennent.",
+          "De la {nom:mps150x} à la {avis:mps450}, {ecart:mps450-mps150x} de plus achètent une caisse claire à deux zones, où la peau et le cercle déclenchent deux sons, des cymbales plus grandes et un module de 408 sons au lieu de 108. Elle prend même moins de place : 120 cm de large au lieu de 140.",
+          "De la {nom:mps450} à la {avis:mps750x}, encore {ecart:mps750x-mps450} : trois toms de 10 pouces au lieu de 8, tous à deux zones, une charleston de 13 pouces, une ride de 14 pouces à trois zones et le Bluetooth pour jouer sur ta musique sans câble. C'est le kit qui te suivra le plus longtemps, à condition d'avoir 140 cm de large.",
+          "Notre conseil : si tu débutes et que le budget compte, la {nom:mps450} est le palier où le module cesse d'être une limite. La {nom:mps750x} se justifie si tu sais que tu vas continuer. Le [duel MPS-750X ou MPS-850](/duels/millenium-mps-750x-vs-mps-850/) explique pourquoi il vaut mieux s'arrêter là que monter à la {nom:mps850}.",
+        ],
+      },
+      {
+        h2: 'Pour un enfant : Rookie, HD-120 ou MPS-150X ?',
+        id: 'enfant',
+        texte: [
+          "La {nom:rookie} est faite pour les plus petits : Thomann l'annonce dès 3 ans et son rack ne monte pas au-delà de 80 cm. Elle a des peaux maillées sur la caisse claire et les toms, ce qui est rare à ce prix. Son module reste très simple : 68 sons et 12 kits.",
+          "La {nom:hd120} coûte {ecart:hd120-rookie} de plus et revient au caoutchouc, mais elle arrive avec un siège, un casque et des baguettes. Pour un cadeau qu'on veut prêt à jouer le jour même, c'est le carton le plus complet de la gamme.",
+          "Vers dix ans, passe directement à la {avis:mps150x} : une vraie batterie de débutant, qui suivra jusqu'à l'adolescence. Pour [choisir le kit d'un enfant](/guides/choisir-batterie-electronique-enfant/), le guide dédié donne les âges et les hauteurs modèle par modèle.",
+        ],
+      },
+      {
+        h2: 'MPS-750X Pro et MPS-1000 : le look acoustique',
+        id: 'acoustique',
+        texte: [
+          "Ces deux-là ressemblent à une batterie acoustique : des fûts en bois de vraie taille, une grosse caisse de 18 ou 20 pouces, des cymbales de 15 et 18 pouces jouables sur toute leur surface. Elles prennent la place d'une acoustique : c'est voulu.",
+          "La {nom:mps750pro} reprend le module de la {nom:mps750x} : mêmes 697 sons, même Bluetooth. Tu paies {ecart:mps750pro-mps750x} de plus pour le format et le hardware. La {nom:mps1000} change de module : 820 sons, 40 kits préréglés et 40 à toi, un écran couleur, l'import d'échantillons et huit sorties séparées pour enregistrer chaque élément sur sa piste.",
+          "Pour un premier achat, c'est trop. Pour un batteur qui vient de l'acoustique et veut retrouver ses repères au casque, c'est la gamme à regarder, à côté de la {avis:td313} que compare la [page Roland](/marques/batterie-electronique-roland/).",
+        ],
+      },
+      {
+        h2: "Le budget réel d'une Millenium",
+        id: 'budget',
+        texte: [
+          "Seule la {nom:hd120} arrive prête à jouer. La {nom:mps150x} est livrée sans baguettes, sans siège et sans casque. La {nom:mps450} et la {nom:mps750x} ont leurs baguettes dans le carton, pas le reste. Il faut donc ajouter :",
+        ],
+        liste: [
+          "un casque fermé, comme le {acc:casque} ({accprix:casque}) ;",
+          "un siège réglable en hauteur, comme le {acc:siege} ({accprix:siege}) ;",
+          "pour la {nom:mps150x}, une paire de baguettes, par exemple les {acc:baguettes} ({accprix:baguettes}).",
+        ],
+        apres: [
+          "Soit {budget:mps150x+casque+siege+baguettes} pour une {nom:mps150x} prête à jouer, {budget:mps450+casque+siege} pour une {nom:mps450} et {budget:mps750x+casque+siege} pour une {nom:mps750x}. Le [guide du pack complet](/guides/pack-batterie-electronique-complet/) détaille chaque poste. [Combien coûte une batterie électronique](/guides/prix-batterie-electronique/) compare les tranches de prix.",
+        ],
+      },
+      {
+        h2: 'Ce que Millenium fait moins bien',
+        id: 'limites',
+        texte: [
+          "**La pédale de grosse caisse.** Les Millenium de la série MPS sont livrées avec une pédale à batte qui frappe un pad : c'est ce choc qui descend dans le plancher, pas le son. Si quelqu'un vit sous toi, regarde plutôt la {avis:td02kv} et sa pédale sans batte. Sinon, prévois un tapis comme le {acc:tapis} ({accprix:tapis}). [Jouer sans déranger](/les-bases/batterie-electronique-bruit-voisins/) classe les solutions par efficacité.",
+          "**La revente.** Une Millenium d'occasion met plus longtemps à trouver preneur qu'une Alesis. Si tu n'es pas sûr de t'y tenir, c'est un vrai critère : le [guide de l'occasion](/guides/acheter-batterie-electronique-occasion/) dit ce qui se revend.",
+          "**Les modules d'entrée de gamme.** 108 sons sur la {nom:mps150x}, c'est le minimum. Thomann vend le module seul, comme le {acc:modulemps} ({accprix:modulemps}), mais ne publie aucune compatibilité entre les modules d'une gamme et les pads d'une autre : le module identique au tien reste la pièce de rechange la plus sûre.",
+          "Un conseil d'entretien que Thomann donne sur ses fiches : tourne la batte de la pédale côté plastique noir. Le côté feutre use la peau maillée de la grosse caisse beaucoup plus vite.",
+        ],
+      },
+      {
+        h2: 'Millenium ou une autre marque ?',
+        id: 'ou-ailleurs',
+        texte: [
+          "À budget égal, Millenium donne plus de matériel. Ce que les autres vendent en plus est ailleurs : Alesis une meilleure revente et le Bluetooth de la {avis:nitromax} ({prix:nitromax}), Roland la pédale sans batte de la {avis:td02kv}, Yamaha les programmes de coaching de la {avis:dtx432}.",
+          "Les duels font le calcul modèle contre modèle : [MPS-150X contre Turbo Mesh](/duels/millenium-mps-150x-vs-alesis-turbo-mesh/) sous 300 €, [MPS-750X contre MPS-850](/duels/millenium-mps-750x-vs-mps-850/) au-dessus. Pour tout comparer d'un coup, le [comparatif des batteries électroniques](/comparatif-batterie-electronique/) sort deux modèles en trois questions.",
+          "Et si ton premier kit est une Millenium, le réglage du module compte autant que le choix : [régler une Millenium MPS-750X](/les-bases/reglages-millenium-mps-750x/) explique comment changer les sons et calmer une charleston qui sonne toute seule.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Millenium, est-ce une bonne marque ?',
+        r: "Pour le matériel à prix donné, oui : c'est la marque maison de Thomann, sans distributeur entre l'usine et toi. Ses pièces détachées se trouvent chez Thomann. Ses limites sont le module des premiers prix et une revente plus lente que celle d'une Alesis.",
+      },
+      {
+        q: 'Quelle Millenium pour débuter ?',
+        r: "La {avis:mps450} si ton budget atteint {prix:mps450} : caisse claire à deux zones, cymbales de 12 pouces et un module qui ne te limitera pas avant longtemps. Sinon la {avis:mps150x} à {prix:mps150x}, pour le toucher du mesh sans dépasser 300 €. Si tu n'as jamais joué, notre guide pour [choisir une batterie électronique quand on débute](/guides/choisir-batterie-electronique-adulte-debutant/) compare aussi les autres marques.",
+      },
+      {
+        q: 'MPS-750X ou MPS-850 ?',
+        r: "La {avis:mps750x} pour la plupart des gens : toms plus grands, charleston et ride plus grandes, plus de sons et le Bluetooth, pour {ecart:mps850-mps750x} de moins. La {avis:mps850} si tu branches ta batterie sur du matériel MIDI sans ordinateur ou si tu veux importer tes propres sons. Le [duel](/duels/millenium-mps-750x-vs-mps-850/) détaille tout.",
+      },
+      {
+        q: 'Peut-on agrandir une Millenium ?',
+        r: "La {nom:mps450} et la {nom:mps750x} ont deux entrées libres pour des pads supplémentaires, la {nom:mps350} une entrée pour une cymbale. Sur la {nom:mps850}, les deux entrées de réserve sont déjà prises. Le [guide pour faire évoluer sa batterie](/guides/ameliorer-batterie-electronique/) dit quand un ajout vaut le coup.",
+      },
+      {
+        q: 'Une Millenium dérange-t-elle les voisins ?',
+        r: "Comme toute batterie à pédale à batte : le son reste dans ton casque, mais le choc de la pédale descend dans le plancher. Un tapis épais réduit le problème. Le [guide appartement](/guides/choisir-batterie-electronique-appartement/) compare les solutions.",
       },
     ],
   },

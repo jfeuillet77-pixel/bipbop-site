@@ -629,3 +629,14 @@ chaînes. Dis-moi si tu veux que je les prépare en même temps que l'applicatio
 | `/les-bases/reglages-millenium-mps-750x/` | Millenium MPS-750X : changer les sons et régler le module | 57 |
 
 Pas de montant dans la copie SEO de l'avis TD313 : ses prix sont en jetons (le `<head>` ne se résout pas).
+
+## Pages publiées le 07/10/2026
+
+| Route | Title | Car. |
+|---|---|---|
+| `/les-bases/` | Les bases de la batterie électronique pour bien débuter | 55 |
+| `/marques/batterie-electronique-millenium/` | Batterie électronique Millenium : laquelle choisir en 2026 ? | 60 |
+
+Meta de `/les-bases/` (153) : « Les bases de la batterie électronique en 10 articles : apprendre,
+comprendre le matériel, casque, tapis, baguettes et bruit. Et dans quel ordre les lire. » Celle du
+hub Millenium vit dans `src/data/marques.mjs` (137 caractères une fois le compte résolu).
