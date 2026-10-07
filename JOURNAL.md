@@ -1,5 +1,23 @@
 # Journal BipBop
 
+## 7 octobre 2026 (soir) — Passe de maillage vers les cinq réceptrices
+
+**24 liens de texte** posés dans 14 maquettes, plus deux dans l'intro du comparatif, selon
+`design/strategie-maillage.md` : une phrase ajoutée en fin de paragraphe, ancre de la liste, un
+seul lien par page vers une même réceptrice. Comptes du corps des pages (navigation et pied
+exclus, `design/compter-maillage.py`) : R1 adulte débutant 11 → 15, R2 enfant 9 → 14, R4 occasion
+9 → 16, R5 prix 3 → 12. Règle 4 : le guide adulte renvoie au guide enfant et inversement, le
+comparatif aux deux.
+
+Pages touchées : guides adulte débutant, enfant, occasion, pack complet, moins de 300, 500 et
+1 000 €, avis MPS-150X, Nitro Max et Turbo Mesh, les bases « apprendre la batterie »,
+« électronique ou acoustique », « seul ou prof », « quel casque », comparatif.
+
+**Corrigé en passant** : dans le comparatif, « commence par » et le lien « batterie électronique
+ou acoustique » étaient collés à l'affichage (« commence parbatterie… ») : Astro mange le saut de
+ligne avant un `<a>`. `{' '}` ajouté dans `ComparatifLecture.astro`. Aucun autre lien collé sur
+les 54 pages.
+
 ## 7 octobre 2026 — Pages du jour : hub « Les bases » (P61) et hub Millenium (P75)
 
 **P61, `/les-bases/`.** Maquette `Les-Bases.dc.html`, clonée du hub Guides : les 10 articles en
