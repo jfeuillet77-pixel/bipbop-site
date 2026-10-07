@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  L'archive quotidienne des prix du rayon batterie électronique (baromètre des prix, 07/10/2026) :
+  télécharge les deux flux et garde le rayon dans releves/archive/AAAA-MM-JJ.json.gz, copié dans
+  ARCHIVE_COPIE. Aucune session Claude, aucun commit : de la donnée seulement.
+
+  7 h 23, avant le relevé du lundi (8 h 17) : le lundi réutilise ce catalogue, qui a moins de 12 h.
+
+  Pose : scripts/prix/installer-le-rendez-vous.sh --archive (gabarit, __DEPOT__ écrit à la pose).
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>eu.bipbop.prix-archive</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/bin/node</string>
+    <string>scripts/prix/archiver-flux.mjs</string>
+  </array>
+  <key>WorkingDirectory</key>
+  <string>__DEPOT__</string>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>__HOME__/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key><integer>7</integer>
+    <key>Minute</key><integer>23</integer>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>__DEPOT__/releves/archive.log</string>
+  <key>StandardErrorPath</key>
+  <string>__DEPOT__/releves/archive.log</string>
+  <key>RunAtLoad</key>
+  <false/>
+  <key>ProcessType</key>
+  <string>Background</string>
+</dict>
+</plist>

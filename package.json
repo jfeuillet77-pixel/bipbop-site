@@ -27,6 +27,7 @@
     "prebuild": "node scripts/import-data.mjs",
     "postbuild": "node scripts/sitemap.mjs && node scripts/llms.mjs && node scripts/donnees-structurees.mjs && node scripts/typographie.mjs",
     "fidelite": "node scripts/fidelite.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
     "test": "node tests/balisage.test.mjs"
   },
   "dependencies": {

@@ -2,6 +2,35 @@
 
 ## Reprendre ici
 
+### Session du 07/10/2026 : coup d'accélérateur
+
+Search Console au 07/10 (28 jours) : 7 clics, 415 impressions, position moyenne 22 ; impressions
+en baisse depuis le 30/09 (30 par jour → 5 à 10), sans doute le contrecoup des slugs du 22/09 et
+des titles du 29/09. **Ne plus toucher ni slug ni title avant la relecture du 21/10.**
+Décisions de Jordane le 07/10 :
+
+- **Une page publiée par jour**, backlog enrichi (guides transactionnels, duels, avis, comparatifs
+  thématiques), sans cannibalisation. La mise en place d'une routine automatique est en attente
+  (voir « Ce qui attend Jordane »). D'ici là, une page par session.
+- **Maillage vers cinq pages réceptrices** : `design/strategie-maillage.md`. Toute page neuve s'y
+  réfère. R5 (`/guides/prix-batterie-electronique/`) n'a que 3 liens entrants : priorité.
+- **Liens entrants** : Jordane s'en occupe (Les Clés de la musique, Marteline, forums). Stratégie
+  et plan dans `../Claude Design - MàJ/strategie/liens-et-communautes.md` (dépôt privé).
+  **Déploiement à partir du lundi 12/10** (une alerte macOS le rappelle ce jour-là à 9 h 03).
+- **Baromètre des prix** inspiré de Skoqo : plan dans `../Claude Design - MàJ/strategie/barometre-prix.md`.
+  L'archive quotidienne du rayon tourne depuis le 07/10 (`scripts/prix/archiver-flux.mjs`,
+  launchd `eu.bipbop.prix-archive` à 7 h 23, copie dans `~/Mon Drive/bipbop/archive-prix/`).
+- **Bing** : IndexNow branché (`scripts/indexnow.mjs`, clé dans `public/`), appelé par le lundi
+  après la mise en ligne. Bing Webmaster Tools : à importer depuis la Search Console (Jordane).
+
+Corrigé le 07/10 : **les prix Thomann des relevés du 28/09 et du 05/10 venaient du catalogue du
+23/09** (le 28/09, un flux de 4,7 jours était « gardé » ; le 05/10, son téléchargement a expiré
+et l'ancien a servi sans un mot). `telecharger-flux.mjs` ne réutilise plus qu'un flux de moins de
+12 h, fait trois essais, et arrête le relevé plutôt que de dater du jour un catalogue de plus de
+deux jours. L'historique publié de `/suivi-des-prix/` n'a pas été réécrit pour ces deux dates.
+Le P02 du plan (accueil) vise désormais « batterie electronique » : « débutant » est la requête
+du guide adulte débutant.
+
 Session du 24/09/2026 : suite de l'audit du 23/09 (`design/audit-seo-2026-09-23.md`). **Hub
 `/duels/` publié** (P26, construit depuis les données), **MPS-450 recommandation nº1** de `/avis/`,
 et une passe de corrections factuelles sur 14 maquettes (voir `JOURNAL.md` du 24/09). Tout est
@@ -61,6 +90,12 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
 
 ### Ce qui attend Jordane
 
+- **Bing Webmaster Tools** (07/10) : bing.com/webmasters, se connecter avec le compte Google,
+  « Importer depuis Google Search Console », cocher bipbop.eu. Le sitemap et la vérification
+  suivent seuls. IndexNow est déjà branché.
+- **Routine « page du jour »** (07/10) : à choisir entre une routine locale (launchd + `claude -p`,
+  comme le lundi) et une routine cloud comme Marteline, qui suppose le remote privé des maquettes
+  ci-dessous. Le script local est écrit, hors dépôt, en attente.
 - **Demander l'indexation** (relevé du 29/09 : 12 URL sur 48 non indexées, l'accueil pas recrawlé
   depuis le 14/09). Par 10 par jour : l'accueil, `/duels/`, les pages `/marques/` (Roland comprise),
   le guide occasion, le duel MPS-750X ou MPS-850, les guides pad, ampli, prix, puis les bases tapis

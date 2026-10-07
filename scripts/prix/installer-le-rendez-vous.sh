@@ -5,6 +5,7 @@
 #   scripts/prix/installer-le-rendez-vous.sh --retirer  décharge et supprime
 #   scripts/prix/installer-le-rendez-vous.sh --essai    lance tout de suite, une fois
 #   scripts/prix/installer-le-rendez-vous.sh --etat     dit s'il est posé et quand il a tourné
+#   scripts/prix/installer-le-rendez-vous.sh --archive  pose aussi l'archive quotidienne du rayon (7 h 23)
 #
 # launchd est le cron de macOS. Il rattrape un rendez-vous manqué au réveil de la machine : si
 # l'ordinateur est éteint le lundi matin, le relevé part dès qu'il rouvre. Il ne part pas du tout
@@ -16,6 +17,14 @@ ETIQUETTE="eu.bipbop.prix-semaine"
 CIBLE="$HOME/Library/LaunchAgents/$ETIQUETTE.plist"
 
 case "${1:-}" in
+  --archive)
+    A="eu.bipbop.prix-archive"; CA="$HOME/Library/LaunchAgents/$A.plist"
+    mkdir -p "$HOME/Library/LaunchAgents" "$DEPOT/releves"
+    sed -e "s|__DEPOT__|$DEPOT|g" -e "s|__HOME__|$HOME|g" "$DEPOT/scripts/prix/$A.plist" > "$CA"
+    launchctl bootout "gui/$UID/$A" 2>/dev/null || true
+    launchctl bootstrap "gui/$UID" "$CA"
+    echo "Archive quotidienne posée : chaque jour à 7 h 23, dans $DEPOT"
+    ;;
   --retirer)
     launchctl bootout "gui/$UID/$ETIQUETTE" 2>/dev/null || true
     rm -f "$CIBLE"

@@ -225,6 +225,9 @@ function mettreEnLigne(sujet) {
     return;
   }
   dire(`  ✓ ${branche} fusionnée dans ${DEPLOIE} et poussée — Netlify déploie.`);
+  // Bing (et la recherche de ChatGPT et Copilot qu'il nourrit) apprend la mise à jour tout de
+  // suite au lieu d'attendre son prochain passage. Non fatal : le site est déjà en ligne.
+  etape('IndexNow', process.execPath, ['scripts/indexnow.mjs', '--attendre'], { fatal: false, timeout: 900000 });
 }
 
 dire(`\n--- livraison ---`);

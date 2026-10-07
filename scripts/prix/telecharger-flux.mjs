@@ -13,6 +13,15 @@
 //   - l'en-tête et le nombre de lignes sont vérifiés avant de remplacer quoi que ce soit ;
 //   - la version précédente est gardée, pour pouvoir revenir en arrière.
 //
+// Et deux autres, depuis le 07/10/2026 : le relevé du 28/09 a gardé un catalogue Thomann du 23/09
+// (« téléchargé il y a 4,7 jours, on le garde ») et celui du 05/10 l'a gardé encore, son
+// téléchargement ayant expiré une fois. Deux lundis de prix Thomann vieux de deux semaines, sans
+// un mot dans le rapport. Donc :
+//   - un flux n'est réutilisé que s'il a moins de 12 heures (une relance le même matin) ;
+//   - trois essais avant de renoncer, et si l'on renonce avec un catalogue de plus de deux jours,
+//     le relevé s'arrête : un prix daté du jour qui vient d'un fichier vieux de deux semaines est
+//     exactement ce que /suivi-des-prix/ promet de ne pas faire.
+//
 // Ce que chaque flux sait dire, parce que ce n'est pas le même : Thomann donne un prix et
 // AUCUNE disponibilité (9 colonnes, pas de stock) — c'est la page produit qui la porte, et
 // c'est le piège n°3 de la procédure. Donner donne le prix ET le stock, mais une ligne par
@@ -60,6 +69,7 @@ const FLUX = [
 
 mkdirSync(DOSSIER, { recursive: true });
 let manquants = 0, echecs = 0;
+const perimes = [];
 
 for (const f of FLUX) {
   if (!f.url) {
@@ -69,7 +79,7 @@ for (const f of FLUX) {
   }
   if (!FORCER && existsSync(f.cible)) {
     const jours = (Date.now() - statSync(f.cible).mtimeMs) / 86400000;
-    if (jours < 6) {
+    if (jours < 0.5) {
       console.log(`  · ${f.nom} : téléchargé il y a ${jours.toFixed(1)} jour(s), on le garde (--forcer pour refaire).`);
       continue;
     }
@@ -77,13 +87,22 @@ for (const f of FLUX) {
 
   const provisoire = `${f.cible}.en-cours`;
   const debut = Date.now();
-  let brut;
-  try {
-    const r = await fetch(f.url, { signal: AbortSignal.timeout(600000) });
-    if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    brut = Buffer.from(await r.arrayBuffer());
-  } catch (e) {
-    console.error(`  ✗ ${f.nom} : ${e.message}. L'ancien catalogue reste en place.`);
+  let brut, erreur;
+  for (let essai = 1; essai <= 3 && !brut; essai++) {
+    try {
+      const r = await fetch(f.url, { signal: AbortSignal.timeout(600000) });
+      if (!r.ok) throw new Error(`HTTP ${r.status}`);
+      brut = Buffer.from(await r.arrayBuffer());
+    } catch (e) {
+      erreur = e;
+      console.log(`  · ${f.nom} : essai ${essai} sur 3 en échec (${e.message}).`);
+      if (essai < 3) await new Promise((ok) => setTimeout(ok, 60000));
+    }
+  }
+  if (!brut) {
+    const age = existsSync(f.cible) ? (Date.now() - statSync(f.cible).mtimeMs) / 86400000 : Infinity;
+    console.error(`  ✗ ${f.nom} : ${erreur.message}. L'ancien catalogue reste en place (${Number.isFinite(age) ? `${age.toFixed(1)} jour(s)` : 'aucun'}).`);
+    if (age > 2) perimes.push(f.nom);
     echecs++;
     continue;
   }
@@ -110,6 +129,10 @@ for (const f of FLUX) {
 // si : ce n'est plus un relevé, c'est un scraping complet qui va se faire jeter par Thomann.
 if (echecs === FLUX.length) {
   console.error('  ✗ Aucun flux n\'a pu être téléchargé. Le relevé ne partira pas sur une base saine.');
+  process.exit(1);
+}
+if (perimes.length) {
+  console.error(`  ✗ ${perimes.join(' et ')} : pas de catalogue de moins de deux jours. Le relevé ne partira pas avec des prix périmés datés d'aujourd'hui.`);
   process.exit(1);
 }
 if (manquants) console.log(`  ${manquants} flux sans adresse : renseigner le .env de la racine.`);

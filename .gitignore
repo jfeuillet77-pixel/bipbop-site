@@ -32,3 +32,12 @@ releves/flux/
 # journaux du rendez-vous hebdomadaire des prix
 releves/journal.log
 releves/launchd.log
+
+# ce qu'IndexNow a déjà signalé à Bing, et les échecs de la page du jour : état local du poste
+releves/indexnow.json
+releves/pages-echecs.json
+releves/pages.log
+
+# archive quotidienne des prix du rayon (baromètre) : hors dépôt, copiée dans ARCHIVE_COPIE
+releves/archive/
+releves/archive.log
