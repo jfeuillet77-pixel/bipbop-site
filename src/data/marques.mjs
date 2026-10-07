@@ -149,7 +149,7 @@ export const MARQUES = {
     reponse: [
       "**Pour un premier achat** : la {avis:nitromax} à {prix:nitromax}. Mesh sur tous les fûts, un bon module et le Bluetooth.",
       "**Budget serré** : la {avis:turbo} à {prix:turbo}. Mais à ce prix, la {avis:mps150x} ({prix:mps150x}) offre des cymbales plus grandes.",
-      "**Pour un enfant** : le {nom:debut} à {prix:debut}, le seul kit format enfant avec des peaux maillées.",
+      "**Pour un enfant** : le {nom:debut} à {prix:debut}, un format enfant avec quatre fûts en peau maillée.",
     ],
     sections: [
       {
