@@ -61,18 +61,25 @@ la requête ou une variante proche, la quatrième est descriptive.
 5. Pas de lien depuis le pied de page ou la navigation vers une réceptrice : un lien répété sur
    toutes les pages pèse moins qu'un lien de texte, et le pied de page appartient aux greffes.
 
-## Où on en est (build du 07/10/2026)
+## Où on en est (passe de maillage du 07/10/2026, soir)
 
-Pages de `dist/` qui contiennent au moins un lien vers chaque réceptrice :
+Pages de `dist/` dont le **corps** (navigation et pied de page exclus) contient au moins un lien
+vers chaque réceptrice. Les comptes du matin du 07/10 incluaient la navigation : ceux-ci les
+remplacent.
 
-| R1 adulte débutant | R2 enfant | R3 comparatif | R4 occasion | R5 prix |
-|---|---|---|---|---|
-| 10 | 8 | 52 (navigation) | 9 | **3** |
+| | R1 adulte débutant | R2 enfant | R3 comparatif | R4 occasion | R5 prix |
+|---|---|---|---|---|---|
+| avant la passe | 11 | 9 | 43 | 9 | 3 |
+| après la passe | **15** | **14** | 43 | **16** | **12** |
 
-R3 est dans la navigation de toutes les pages : son compte ne dit rien des liens de texte, il
-n'est pas prioritaire. **R5 passe en premier** dans les prochaines pages et repasses, puis R2.
+24 liens posés dans 14 maquettes et un dans le comparatif (règle 4 : R1 ↔ R2, R3 → R1 et R2,
+R5 → R4 existait). R5 reste la moins servie : la routine la favorise dans ses liens sortants.
 
 ## Compter
+
+Le compte qui fait foi exclut la navigation et le pied de page :
+`npm run build && python3 design/compter-maillage.py dist v`. La boucle ci-dessous, plus grossière,
+compte aussi la navigation :
 
 ```bash
 npm run build
