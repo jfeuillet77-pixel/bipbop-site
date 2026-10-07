@@ -80,6 +80,11 @@ function lignes(fichier, sep, garder = null) {
 const prix = (s) => (s ? Number(String(s).replace(/[^\d,.]/g, '').replace(',', '.')) || null : null);
 const propre = (u) => (u || '').split('?')[0];
 
+if (!existsSync(join(FLUX, 'catalogue-thomann.csv'))) {
+  console.error('  ✗ aucun catalogue Thomann : adresse de flux absente (THOMANN_FEED_URL, dans le .env ou les secrets du dépôt).');
+  process.exit(1);
+}
+
 const RAYON = /Batteries Electroniques|pour Batteries Electroniques/;
 const thomann = lignes(join(FLUX, 'catalogue-thomann.csv'), ';', RAYON)
   .filter((r) => RAYON.test(r.CategoryTree))

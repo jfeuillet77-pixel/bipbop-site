@@ -79,7 +79,7 @@ function lignesAuPlan() {
 }
 
 /** Un hub se range dans la section de ce qu'il rassemble, pas dans « le point de départ ». */
-const HUB_DANS = { '/avis/': 'Avis', '/guides/': 'Guides', '/marques/': 'Marques', '/duels/': 'Duels' };
+const HUB_DANS = { '/avis/': 'Avis', '/guides/': 'Guides', '/marques/': 'Marques', '/duels/': 'Duels', '/les-bases/': 'Bases' };
 
 /** Type du plan -> section. Une ligne « Publié » dont le type n'est pas là fait échouer la
     lecture : elle disparaîtrait du plan du site et du sitemap sans un bruit. */

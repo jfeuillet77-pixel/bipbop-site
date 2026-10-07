@@ -1,5 +1,32 @@
 # Journal BipBop
 
+## 7 octobre 2026 — Pages du jour : hub « Les bases » (P61) et hub Millenium (P75)
+
+**P61, `/les-bases/`.** Maquette `Les-Bases.dc.html`, clonée du hub Guides : les 10 articles en
+quatre familles (apprendre, matériel, s'équiper, jouer sans déranger), un encart vers la
+réceptrice R1 et un « dans quel ordre les lire » qui lie neuf articles, le guide enfant et
+`/guides/`. Le fil d'Ariane visible des neuf articles « Les bases » lie maintenant le hub, et
+`/guides/` y renvoie. `HUB_DANS` (arborescence) et `HUB_DE_SECTION` (contrôle 11) rangent les
+articles sous `/les-bases/` : leur BreadcrumbList passe par le hub réel.
+
+**P75, `/marques/batterie-electronique-millenium/`.** Entrée `millenium` de `marques.mjs`, page
+d'une ligne. Faits : configurations des fiches Thomann (flux du 07/10), avis MPS-150X, 450, 750X
+et 850, duel MPS-750X ou MPS-850, FAQ de `/marques/`. Liens entrants : `/marques/` (automatique),
+hubs Roland et Alesis, duel MPS-750X ou MPS-850, réglages MPS-750X. Liens vers R1, R2 et R5.
+
+**Corrigé en passant : la Millenium Rookie a des peaux maillées.** Le flux Thomann (23/09 comme
+07/10) donne caisse claire et trois toms de 7 pouces en peau maillée et 68 sons ; la base disait
+caoutchouc, le guide à moins de 300 € « Caoutchouc, 108 sons », le guide enfant « Caoutchouc ».
+Conséquences réécrites : l'Alesis Debut n'est plus « le seul kit à format réduit qui a des peaux
+maillées » (guide enfant, quatre endroits ; phrase de la base ; réponse courte du hub Alesis), et
+« le moins cher d'entre eux, l'Alesis Debut » du guide prix devient la Rookie, format enfant, le
+mesh adulte commençant à la MPS-150X. Le comparatif ne bouge pas (la Rookie n'entre dans aucun
+trio, vérifié sur les 27 combinaisons). Le choix de la Debut comme « notre choix » enfant reste
+tel quel : c'est un choix éditorial.
+
+**À trancher.** Le hub Roland (FAQ TD316) et `/marques/` (« On s'arrête à ce plafond ») parlent
+encore du plafond de 1 600 €, levé le 07/10 (règle D05).
+
 ## 7 octobre 2026 — Coup d'accélérateur : deux pages par jour, IndexNow, rayon du jour
 
 **Décisions de Jordane.** Deux pages publiées par jour par une routine cloud (procédure :
