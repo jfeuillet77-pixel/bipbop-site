@@ -1,0 +1,47 @@
+# Le rayon batterie électronique du jour, pour la routine cloud qui publie les pages (07/10/2026).
+#
+# La routine n'a pas accès aux flux marchands : elle lit les prix du rayon dans src/data/rayon.json,
+# que ce workflow réécrit chaque matin depuis les flux Thomann et Donner. Les adresses des flux
+# portent un jeton d'espace partenaire : elles vivent dans les secrets du dépôt, jamais dans un
+# fichier. Le fichier écrit ne garde aucun identifiant affilié (scripts/prix/archiver-flux.mjs).
+#
+# Commit sur `dev` seulement : Netlify déploie `main`, et le rayon n'est pas une page.
+name: extrait-rayon
+
+on:
+  schedule:
+    - cron: '17 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: extrait-rayon
+  cancel-in-progress: false
+
+jobs:
+  rayon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Flux et rayon du jour
+        env:
+          THOMANN_FEED_URL: ${{ secrets.THOMANN_FEED_URL }}
+          DONNER_FEED_URL: ${{ secrets.DONNER_FEED_URL }}
+        run: node scripts/prix/archiver-flux.mjs --rayon src/data/rayon.json
+      - name: Commit sur dev
+        run: |
+          git config user.name "bipbop-rayon"
+          git config user.email "actions@users.noreply.github.com"
+          git add src/data/rayon.json
+          if git diff --cached --quiet; then echo "rayon inchangé"; exit 0; fi
+          git commit -m "chore(rayon): extrait du $(date -u +%F)"
+          for i in 1 2 3; do git pull --rebase origin dev && git push origin HEAD:dev && exit 0; sleep 20; done
+          exit 1

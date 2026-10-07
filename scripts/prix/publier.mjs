@@ -69,7 +69,8 @@ if (i >= 0) {
   const deja = hist.releves[i].mouvements ?? [];
   const nouveaux = entree.mouvements.filter((m) => !deja.some((d) => d.nom === m.nom && d.marchand === m.marchand));
   entree.mouvements = [...deja, ...nouveaux].sort((a, b) => Math.abs(b.ecart) - Math.abs(a.ecart));
-  hist.releves[i] = entree;
+  // Une remarque écrite après coup sur ce relevé (07/10/2026 : catalogue Thomann périmé) survit.
+  hist.releves[i] = hist.releves[i].remarque ? { ...entree, remarque: hist.releves[i].remarque } : entree;
 } else hist.releves.push(entree);
 hist.releves.sort((a, b) => b.date.localeCompare(a.date));   // le plus récent en tête
 

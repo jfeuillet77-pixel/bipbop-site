@@ -2254,5 +2254,53 @@
   "produits_lies": "Selon segment",
   "maillage_sortant": "Guide occasion, Revendre sa batterie, Guide prix",
   "notes": "Rang 64. Volume : 20/mois (location batterie électronique 20). Non-cannibalisation : Plus proche : P31 occasion et P57 revendre prévu. Ici le coût d une location face à un achat revendu au bout d un an. Page réceptrice : Guide occasion (P31)."
+ },
+ {
+  "id": "P164",
+  "lot": "Vague 6",
+  "type": "Avis",
+  "titre": "Roland TD316",
+  "slug": "/avis/roland-td316",
+  "permalien": "https://bipbop.eu/avis/roland-td316/",
+  "fichier_maquette": "",
+  "gabarit": "Avis",
+  "statut": "À produire",
+  "requete_cible": "roland td316 avis",
+  "priorite": "Moyenne",
+  "produits_lies": "Roland TD316 (à ajouter à modeles.json)",
+  "maillage_sortant": "Hub Roland, Avis TD313, Guide moins de 1000 €, Comparatif",
+  "notes": "Ajouté le 07/10/2026 : plafond D05 levé par Jordane. Volume : 160/mois (roland td316 90, roland td 316 70). Non-cannibalisation : plus proche P72 avis TD313 (autre module, 3 cymbales) ; le TD316 est le palier au-dessus, l avis dit pour qui l écart de prix se justifie. Page réceptrice : hub Roland."
+ },
+ {
+  "id": "P165",
+  "lot": "Vague 6",
+  "type": "Avis",
+  "titre": "Alesis Strata Core",
+  "slug": "/avis/alesis-strata-core",
+  "permalien": "https://bipbop.eu/avis/alesis-strata-core/",
+  "fichier_maquette": "",
+  "gabarit": "Avis",
+  "statut": "À produire",
+  "requete_cible": "alesis strata core avis",
+  "priorite": "Moyenne",
+  "produits_lies": "Alesis Strata Core (à ajouter à modeles.json)",
+  "maillage_sortant": "Hub Alesis, Avis Strata Club (P154), Comparatif",
+  "notes": "Ajouté le 07/10/2026 : plafond D05 levé par Jordane. Volume : 130/mois (alesis strata core 90, alesis strata core e drum kit 40). Non-cannibalisation : plus proche P154 avis Strata Club (module à écran tactile, autre gamme de prix) ; l avis Core tranche entre les deux. Page réceptrice : hub Alesis."
+ },
+ {
+  "id": "P166",
+  "lot": "Vague 7",
+  "type": "Duel",
+  "titre": "Roland TD316 contre Alesis Strata Core",
+  "slug": "/duels/roland-td316-vs-alesis-strata-core",
+  "permalien": "https://bipbop.eu/duels/roland-td316-vs-alesis-strata-core/",
+  "fichier_maquette": "",
+  "gabarit": "Duel",
+  "statut": "À produire",
+  "requete_cible": "roland td316 ou alesis strata core",
+  "priorite": "Basse",
+  "produits_lies": "Roland TD316, Alesis Strata Core",
+  "maillage_sortant": "Les deux avis, Hub Roland, Hub Alesis",
+  "notes": "Ajouté le 07/10/2026 : plafond D05 levé. Volume inconnu pour la paire. Non-cannibalisation : aucun duel au-delà de 1 600 € ; à publier après P164 et P165 (duels.mjs appelle les deux modèles par leur identifiant). Page réceptrice : Comparatif."
  }
 ]

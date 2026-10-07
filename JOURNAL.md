@@ -1,5 +1,27 @@
 # Journal BipBop
 
+## 7 octobre 2026 — Coup d'accélérateur : deux pages par jour, IndexNow, rayon du jour
+
+**Décisions de Jordane.** Deux pages publiées par jour par une routine cloud (procédure :
+`ROUTINE-PUBLICATION.md`), maillage vers cinq réceptrices (`design/strategie-maillage.md`),
+baromètre des prix (édition « avant le Black Friday » le 02/11, édition presse le 07/12), plafond
+de 1 600 € levé (règle D05 réécrite, avis TD316 et Strata Core au plan). 67 pages ajoutées au plan
+(P100 à P166).
+
+**Le flux Thomann périmé.** Les relevés du 28/09 et du 05/10 ont daté du jour des prix Thomann
+tirés du catalogue du 23/09 (« gardé » à 4,7 jours, puis téléchargement expiré). Corrigé dans
+`telecharger-flux.mjs` (12 h au plus, trois essais, arrêt au-delà de deux jours). Les deux relevés
+portent désormais une remarque sur `/suivi-des-prix/` : champ `remarque` de
+`historique-prix.json`, écrit à la main, et que `publier.mjs` conserve.
+
+**Dates des pages construites.** `/duels/`, `/marques/`, les hubs de marque, `/suivi-des-prix/` et
+le comparatif prennent pour `lastmod` le dernier commit de leurs données (`DONNEES_DE` dans
+`src/lib/arborescence.mjs`) : IndexNow ne les voyait jamais changer.
+
+**Pour la routine cloud**, qui n'a pas les flux : `src/data/rayon.json` (488 lignes Thomann, 33
+Donner, réécrit chaque matin par le workflow `extrait-rayon`), `scripts/pages/prochaine.mjs` (la
+file), et le lundi se met à niveau des deux dépôts avant de commencer.
+
 ## 5 octobre 2026 — Relevé du lundi : trois kits baissent, le panier enfant tombe à 353 €
 
 **Les prix.** 159 références contrôlées, six au-dessus du seuil. Trois kits, déjà écrits par le
