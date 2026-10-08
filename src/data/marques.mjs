@@ -32,6 +32,7 @@ export const ACCESSOIRES_CITES = {
   ku: { marque: 'Yamaha', produit: 'KU100 Silent Kick Pedal' },
   kt: { marque: 'Roland', produit: 'KT-9 Kick Trigger Pedal' },
   modulemps: { marque: 'Millenium', produit: 'MPS-150 Drum Module' },
+  padmesh: { marque: 'Millenium', produit: 'MPS-850 08" Mesh Head Pad' },
   pedale: { marque: 'Millenium', produit: 'PD-122 Pro Bass Drum Pedal' },
   baguettesvf: { marque: 'Vic Firth', produit: '5A Nova Natural' },
 };
@@ -371,6 +372,7 @@ export const MARQUES = {
         liste: [
           "**{nom:rookie}** ({prix:rookie}) : pensée pour les enfants dès 3 ans selon Thomann, 100 × 50 cm au sol, un rack réglable de 57 à 80 cm de haut. Caisse claire et trois toms de 7 pouces en peau maillée, trois cymbales de 8 pouces et deux contrôleurs au pied pour la grosse caisse et la charleston. Elle s'alimente en USB-C, même sur une batterie externe.",
           "**{nom:hd120}** ({prix:hd120}) : des pads de 7 pouces en caoutchouc et trois cymbales de 9 pouces, mais c'est le seul kit Millenium de la sélection livré avec un siège, un casque et des baguettes.",
+          "**{nom:mps150}** ({prix:mps150}) : l'entrée de la série MPS. Le module de la MPS-150X, une caisse claire et trois toms de 8 pouces, mais tous les pads de fûts en caoutchouc. Elle prend moins de place : 110 × 80 cm au sol au lieu de 140 × 80. Le [duel MPS-150 contre MPS-150X](/duels/millenium-mps-150-vs-mps-150x/) dit si le mesh vaut l'écart.",
           "**{avis:mps150x}** ({prix:mps150x}) : le ticket d'entrée du mesh. Caisse claire de 10 pouces, trois toms et une grosse caisse de 8 pouces, tous en peau maillée. Le module se limite à 108 sons et dix kits, sans Bluetooth.",
           "**{nom:mps350}** ({prix:mps350}) : peaux maillées, caisse claire de 8 pouces à deux zones, toms de 7 pouces, un module de 500 sons avec le Bluetooth et une entrée pour une cymbale de plus. On ne l'a pas encore analysée en détail.",
           "**{avis:mps450}** ({prix:mps450}) : caisse claire de 10 pouces à deux zones, crash et ride de 12 pouces avec étouffement, 408 sons et deux entrées pour agrandir le kit. Pas de Bluetooth. 120 × 80 cm au sol.",

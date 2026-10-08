@@ -1,5 +1,23 @@
 # Journal BipBop
 
+## 8 octobre 2026 (routine de 10 h 37) — P102, duel Millenium MPS-150 contre MPS-150X
+
+**La page.** `/duels/millenium-mps-150-vs-mps-150x/` (maquette `Duel-Millenium-MPS-150-vs-MPS-150X.dc.html`,
+clonée du duel MPS-750X ou MPS-850), gagnante la MPS-150X ; prix et écart en jetons, entrée dans
+`duels.mjs`. **La MPS-150 entre dans la base** (`mps150`, 249 €, caoutchouc, 110 × 80 cm) : rayon du
+07/10 et fiches Thomann MPS-150 et MPS-150X lues le 08/10 (pads, module identique de 108 sons,
+étouffement de la crash seule sur la MPS-150, 18,2 kg). Nouvel accessoire cité `padmesh`
+(pad maillé 8 pouces MPS-850, 66 €). Liste d'attente du hub Avis : une ligne rédigée de plus (22).
+**Maillage.** Sortants : guide prix (R5, premier tiers), adulte débutant (R1), enfant (R2), avis
+MPS-150X, Turbo Mesh et MPS-450, pad mesh, tapis, ampli, pack complet, page Millenium, comparatif.
+Entrants : avis MPS-150X, duel MPS-150X contre Turbo Mesh, pad mesh, hub Millenium (liste de la gamme).
+**Corrigé en passant.** Pad mesh : « pas de mesh sous 250 € » et « mesh dès 298 € » démentis par la
+base (Rookie, Debut) ; « Neuf modèles passés en revue » devient `{N:avis}` ; date passée en octobre.
+Guide prix, palier sous 300 € : « sept pads, deux exceptions en peaux maillées » faux (trois kits
+mesh, la MPS-150 a huit pads). À propos : « 31 modèles suivis » écrit en dur, passé en `{c:modeles}`.
+**À trancher.** Le guide moins de 300 € ne liste pas la MPS-150 (six modèles depuis la sortie de la
+Turbo Mesh) : l'y ajouter est un choix de ligne éditoriale.
+
 ## 8 octobre 2026 — Guide occasion : plus de fourchettes d'occasion
 
 Décision de Jordane : retirer les fourchettes. Le tableau « Le juste prix, modèle par modèle » perd
