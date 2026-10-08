@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-10-07",
+ "date": "2026-10-08",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -458,7 +458,7 @@
    "id": "306560",
    "marque": "Yamaha",
    "modele": "RHH-135 Hi-Hat E-Drum B-Stock",
-   "prix": 259,
+   "prix": 235,
    "categorie": "Batteries Electroniques > Pads de Charleston",
    "url": "https://www.thomann.fr/yamaha_rhh_135_hi_hat_e_drumb_stock.htm"
   },
@@ -1146,7 +1146,7 @@
    "id": "453120",
    "marque": "Millenium",
    "modele": "MPS-850 08\" Mesh Head  B-Stock",
-   "prix": 50,
+   "prix": 55,
    "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
    "url": "https://www.thomann.fr/millenium_mps_850_08_mesh_head_b_stock.htm"
   },
@@ -1277,14 +1277,6 @@
    "prix": 459,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_450_e_drum_set_bundle.htm"
-  },
-  {
-   "id": "470082",
-   "marque": "Alesis",
-   "modele": "Strike MultiPad B-Stock",
-   "prix": 515,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/alesis_strike_multipad_b_stock.htm"
   },
   {
    "id": "470437",
@@ -2114,7 +2106,7 @@
    "id": "544981",
    "marque": "Roland",
    "modele": "16\" CY-16R-T Cymbal Pa B-Stock",
-   "prix": 349,
+   "prix": 325,
    "categorie": "Batteries Electroniques > Pads de Cymbale",
    "url": "https://www.thomann.fr/roland_16_cy_16r_t_cymbal_pa_b_stock.htm"
   },
@@ -2130,7 +2122,7 @@
    "id": "546013",
    "marque": "Millenium",
    "modele": "CR-18 18\" Ride Cymbal  B-Stock",
-   "prix": 103,
+   "prix": 102,
    "categorie": "Batteries Electroniques > Pads de Cymbale",
    "url": "https://www.thomann.fr/millenium_cr_18_18_ride_cymbal_b_stock.htm"
   },
