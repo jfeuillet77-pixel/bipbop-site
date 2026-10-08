@@ -1,5 +1,14 @@
 # Journal BipBop
 
+## 8 octobre 2026 — Guide occasion : plus de fourchettes d'occasion
+
+Décision de Jordane : retirer les fourchettes. Le tableau « Le juste prix, modèle par modèle » perd
+sa colonne « Bon prix » et les « Annonces de X à Y € » ; il garde le prix du neuf (corrigé chaque
+lundi) et ce qu'il faut regarder sur chaque modèle. La règle reste écrite : au moins 30 % sous le
+prix du neuf du jour. La note de bas de tableau ne cite plus d'annonces. Page datée du 8 octobre
+(`port-corrections.json` et badge « MIS À JOUR EN OCT. 2026 »). Les autres prix d'occasion du site
+(avis, duels, guides adulte, enfant, moins de 500 €) restent, à trancher avant fin décembre.
+
 
 ## 7 octobre 2026, nuit — Liens vers les avis (contrôle 11 : 11 → 8 pages)
 
