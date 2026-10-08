@@ -13,6 +13,15 @@
  */
 
 export const DUELS = {
+  '/duels/millenium-mps-150-vs-mps-150x/': {
+    a: 'mps150x',
+    b: 'mps150',
+    gagnant: 'mps150x',
+    resume:
+      "La MPS-150X gagne : pour {ecart:mps150x-mps150} de plus, la peau maillée sur les cinq fûts et une caisse claire de 10 pouces au lieu de 8, avec le même module. La MPS-150 garde le caoutchouc et prend trente centimètres de moins en largeur.",
+    pourA: "tu veux apprendre sur un toucher proche d'une vraie batterie.",
+    pourB: 'ta pièce ne laisse que 110 cm de large.',
+  },
   '/duels/millenium-mps-150x-vs-alesis-turbo-mesh/': {
     a: 'mps150x',
     b: 'turbo',
