@@ -137,9 +137,12 @@ puis `main` (voir « Comment reprendre techniquement » plus bas).
   résolu) : seule la capture l'a montré le 23/09. Relire la capture de chaque page neuve.
 - « 11 guides et 6 articles » sur `/guides/` compte par gabarit : « Installer sa batterie sans
   déranger » est un gabarit guide publié sous `/les-bases/`. Juste, mais surprenant.
-- Prix d'occasion : relevés à la main le 24/09 (annonces), à rafraîchir tous les trois mois environ.
-- Les prix d'occasion cités (avis, duels, guides adulte, enfant, occasion, moins de 500 €) sont des
-  annonces de fin septembre 2026 : les relever à nouveau vers fin décembre.
+- **Prix d'occasion** : le 08/10/2026, Jordane a choisi de retirer les fourchettes du guide occasion
+  (la règle des 30 % sous le prix du neuf du jour reste, sans montant d'occasion) et de ne plus
+  produire de guides d'occasion par modèle : aucune source d'annonces lisible sans contourner un
+  anti-robot. Restent des prix d'occasion relevés fin septembre dans les avis, les duels et les
+  guides adulte, enfant et moins de 500 € (revente) : à trancher par Jordane avant fin décembre ;
+  d'ici là, ni la routine ni une séance n'y touchent.
 
 ---
 
