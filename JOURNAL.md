@@ -1,5 +1,25 @@
 # Journal BipBop
 
+## 8 octobre 2026 (routine de 17 h 37) — P104, guide batterie électronique Bluetooth
+
+**La page.** `/guides/batterie-electronique-bluetooth/` (maquette `Guide-Bluetooth.dc.html`, clonée du guide
+ampli, ≈ 2 000 mots) : à quoi sert le Bluetooth d'un module, ce qu'il ne fait pas (sens unique,
+pas d'enregistrement, pas de casque sans fil), les 12 kits Bluetooth de la base en tableau (prix en
+jetons), le câble mini-jack comme alternative, verdict par profil. Sources : `modeles.json` (champ
+`bluetooth`), rayon du 08/10, avis publiés, fiches lues le 08/10 (Thomann : Nitro Max, MPS-750X,
+MPS-350, MPS-1000, Nitro Pro, Strata Club, TD313, MPS-750X Pro ; Donner : DED-200 Pro, BackBeat).
+La fiche Nitro Max dit « recevoir un signal audio, pas en envoyer ». Carte au hub Guides (15 guides,
+6 en « Par type de matériel », daté du 8 oct.).
+**Maillage.** Sortants : comparatif (R3), adulte débutant (R1), guide prix (R5), enregistrer, ampli,
+casque, moins de 500 et 1 000 €, deux duels, neuf avis. Entrants : guide enregistrer, avis Nitro Max,
+guide ampli, avis DTX432K.
+**Rafraîchie.** `/avis/yamaha-dtx432k/` (lastmod le plus ancien) : prix du kit, des trois concurrents
+et du budget revérifiés (rien n'a bougé), liens vers le guide Bluetooth et « apprendre la batterie »,
+mention du relevé et badge passés en octobre.
+**À trancher.** L'avis TD313 annonce « le Bluetooth pour la musique et le MIDI » ; la fiche Thomann
+lue le 08/10 ne parle que d'audio Bluetooth. Le guide n'affirme rien sur le MIDI sans fil.
+`design/maillage-avis.py` a un chemin macOS en dur (lancé ici depuis une copie au bon chemin).
+
 ## 8 octobre 2026 (routine de 10 h 37) — P102, duel Millenium MPS-150 contre MPS-150X
 
 **La page.** `/duels/millenium-mps-150-vs-mps-150x/` (maquette `Duel-Millenium-MPS-150-vs-MPS-150X.dc.html`,
