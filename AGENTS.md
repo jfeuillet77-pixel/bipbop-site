@@ -8,7 +8,9 @@ quelles questions attendent Jordane), `README.md` (règle de fidélité),
 **Depuis le 23/09/2026, Claude Design n'est plus utilisé** (décision de Jordane). Le dossier
 `../Claude Design - MàJ/` garde son nom (six scripts le citent) mais c'est désormais Claude qui
 écrit les maquettes, directement dans ce dossier, puis les porte. Il a son **propre dépôt git,
-local et sans remote** : committer chaque modification de maquette là-bas, avec sa raison. Ne pas
+privé** (`bipbop-maquettes` sur GitHub), que la routine cloud alimente aussi : **`git pull` avant
+de toucher une maquette ou de porter**, sinon le portage réécrit les pages avec d'anciennes
+versions (09/10/2026). Committer chaque modification de maquette là-bas, avec sa raison, puis `git push`. Ne pas
 le verser dans ce dépôt-ci : `bipbop-site` est **public** sur GitHub, et les maquettes contiennent
 les documents internes et les identifiants partenaires d'un autre site. Plus de ré-export à
 craindre : `design/maillage-avis.py` et les copies `.avant-*` ne servent plus qu'à l'historique.
