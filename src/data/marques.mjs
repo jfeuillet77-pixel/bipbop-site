@@ -33,6 +33,8 @@ export const ACCESSOIRES_CITES = {
   kt: { marque: 'Roland', produit: 'KT-9 Kick Trigger Pedal' },
   modulemps: { marque: 'Millenium', produit: 'MPS-150 Drum Module' },
   padmesh: { marque: 'Millenium', produit: 'MPS-850 08" Mesh Head Pad' },
+  padcymbale: { marque: 'Millenium', produit: 'MPS-450 12" Mono Cymbal Pad' },
+  extnitro: { marque: 'Alesis', produit: 'Nitro Max Expansion Pack' },
   pedale: { marque: 'Millenium', produit: 'PD-122 Pro Bass Drum Pedal' },
   baguettesvf: { marque: 'Vic Firth', produit: '5A Nova Natural' },
 };
@@ -211,7 +213,7 @@ export const MARQUES = {
         id: 'ou-s-arreter',
         texte: [
           "Pour apprendre, la {avis:nitromax} suffit largement : c'est celle qu'on recommande à la majorité des débutants. Au-dessus, la {nom:nitropro} coûte {prix:nitropro} pour un rack plus solide et des toms à deux zones. C'est utile si tu joues déjà, beaucoup moins si tu découvres.",
-          "Si tu hésites avec une autre marque, la {avis:nitromax} a deux duels : face à la [Roland TD-02KV](/duels/alesis-nitro-max-vs-roland-td-02kv/) et face à la [Donner DED-200X](/duels/alesis-nitro-max-vs-donner-ded-200x/).",
+          "Si tu hésites avec une autre marque, la {avis:nitromax} a trois duels : face à la [Millenium MPS-450](/duels/millenium-mps-450-vs-alesis-nitro-max/), face à la [Roland TD-02KV](/duels/alesis-nitro-max-vs-roland-td-02kv/) et face à la [Donner DED-200X](/duels/alesis-nitro-max-vs-donner-ded-200x/).",
         ],
       },
     ],

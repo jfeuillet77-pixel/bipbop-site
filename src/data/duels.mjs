@@ -13,6 +13,15 @@
  */
 
 export const DUELS = {
+  '/duels/millenium-mps-450-vs-alesis-nitro-max/': {
+    a: 'mps450',
+    b: 'nitromax',
+    gagnant: 'mps450',
+    resume:
+      "La MPS-450 gagne : la même caisse claire et les mêmes toms en peau maillée, mais des cymbales de 12 pouces qui s'étouffent toutes les deux, deux entrées libres et les baguettes, pour {ecart:nitromax-mps450} de moins. La Nitro Max garde le Bluetooth, un module plus riche et une meilleure revente.",
+    pourA: 'tu veux plus de matériel pour moins cher.',
+    pourB: 'tu joueras chaque soir sur la musique de ton téléphone.',
+  },
   '/duels/millenium-mps-150-vs-mps-150x/': {
     a: 'mps150x',
     b: 'mps150',

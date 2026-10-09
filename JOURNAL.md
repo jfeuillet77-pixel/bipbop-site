@@ -1,5 +1,25 @@
 # Journal BipBop
 
+## 9 octobre 2026 (routine de 10 h 37) — P105, duel Millenium MPS-450 contre Alesis Nitro Max
+
+**La page.** `/duels/millenium-mps-450-vs-alesis-nitro-max/` (maquette `Duel-Millenium-MPS-450-vs-Alesis-Nitro-Max.dc.html`,
+clonée du duel MPS-150 contre MPS-150X), gagnante la MPS-450 (comme la recommandation nº1 de `/avis/`) ; prix,
+écart et budgets en jetons, entrée dans `duels.mjs`. Sources : `modeles.json`, rayon du 08/10 (398 et 409 €),
+fiches Thomann lues le 09/10 (MPS-450, Nitro Max, Nitro Max Expansion Pack) : même caisse claire 10 pouces à
+deux zones et mêmes toms 3 × 8 pouces ; crash et ride 12 pouces avec étouffement contre 10 pouces (crash seule) ;
+la fiche Nitro Max ne donne ni la taille du pad de grosse caisse, ni de baguettes, ni de surface au sol (non
+tranchés). Accessoires cités nouveaux : `padcymbale` (MPS-450 12" Mono Cymbal Pad, 45 €), `extnitro` (89 €).
+**Maillage.** Sortants : adulte débutant (R1, premier tiers), guide prix (R5), enfant (R2), occasion (R4),
+comparatif (R3), moins de 500 €, Bluetooth, enregistrer, ampli, pad mesh, tapis, appartement, deux duels,
+cinq avis, pages Millenium et Alesis. Entrants : avis MPS-450, avis Nitro Max, guide moins de 500 €, hub Alesis
+(« deux duels » devenu « trois duels »).
+**Corrigé en passant.** Avis MPS-450, « BipBop dit » : « une cymbale Millenium à 24,90 € » était le prix du pad
+9 pouces de la HD-120 ; remplacé par le pad 12 pouces de la MPS-450 en jeton (45 €).
+**Piège noté.** Un alias d'accessoire avec un chiffre (`cymbale450`) n'est pas résolu par `jetons.mjs`
+(`[a-z]+`) et passe tous les contrôles en texte brut : seule la capture l'a montré. Alias en lettres seules.
+**À trancher.** Le guide moins de 500 € garde la Nitro Max en « Notre choix » et l'avis MPS-450 dit « on continue
+de recommander la Nitro Max en premier », alors que `/avis/` (24/09) et ce duel mettent la MPS-450 devant.
+
 ## 8 octobre 2026 (routine de 17 h 37) — P104, guide batterie électronique Bluetooth
 
 **La page.** `/guides/batterie-electronique-bluetooth/` (maquette `Guide-Bluetooth.dc.html`, clonée du guide
