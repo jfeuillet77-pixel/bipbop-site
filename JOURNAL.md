@@ -1,5 +1,26 @@
 # Journal BipBop
 
+## 9 octobre 2026 (routine de 17 h 37) — P107, guide Black Friday
+
+**La page.** `/guides/black-friday-batterie-electronique/` (maquette `Guide-Black-Friday.dc.html`, clonée du guide
+Bluetooth, ≈ 2 000 mots) : date du Black Friday 2026 (27/11, Cyber Monday 30/11), ce que nos relevés montrent du 17/09
+au 05/10 (27 kits sur 31 sans mouvement, Debut −52 € et DDX50-Mesh −10 % chez Woodbrass, DTX402K −23 €, BackBeat
++200 €), le baromètre (8 des 537 références changées entre le 07 et le 09/10), quatre pièges (prix barré : 11 batteries
+Donner sur 11 au baromètre ; pack ; déstockage ; B-Stock), le prix à battre de huit kits en jetons, méthode, verdict
+par profil. Sources : `historique-prix.json`, `releves/`, rayon et baromètre du 09/10, fiches Thomann lues le 09/10
+(Nitro Max : bandeau « Les Cyber Deals approchent », garantie 3 ans ; Nitro Max B-Stock du rayon : 404 l'après-midi).
+Carte au hub Guides (16 guides, « Par budget » à 5, daté du 9 oct.).
+**Maillage.** Sortants : guide prix (R5, premier tiers), comparatif (R3), enfant (R2), occasion (R4), adulte débutant
+(carte), baromètre, pack complet, moins de 300 et 500 €, sept avis. Entrants : guide prix (« Quand les prix bougent »),
+moins de 500 € (question « attendre »), pack complet, avis MPS-850.
+**Rafraîchie.** `/avis/millenium-mps-850/` (lastmod le plus ancien) : prix du kit, des quatre concurrents, de
+l'extension MPS-750X et des quatre accessoires revérifiés contre la base et le rayon du 09/10 (rien n'a bougé) ; liens
+vers le guide Bluetooth et le guide Black Friday ; mention du relevé et badge passés en octobre.
+**À trancher.** Guide prix (carte « Le plus de matériel ») et guide Bluetooth présentent la MPS-750X comme le plus de
+matériel sous 500 € : la DED-200X (499,99 €) a 9 pads et 4 cymbales contre 8 et 3. La page neuve ne le dit pas.
+La page devra être relue en novembre avec les relevés du Black Friday (le H2 « Quand les prix bougent » du guide prix
+y renvoie déjà).
+
 ## 9 octobre 2026 (routine de 10 h 37) — P105, duel Millenium MPS-450 contre Alesis Nitro Max
 
 **La page.** `/duels/millenium-mps-450-vs-alesis-nitro-max/` (maquette `Duel-Millenium-MPS-450-vs-Alesis-Nitro-Max.dc.html`,
