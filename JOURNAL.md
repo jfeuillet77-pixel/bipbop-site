@@ -1,5 +1,24 @@
 # Journal BipBop
 
+## 10 octobre 2026 (routine de 10 h 37) — P108, avis Millenium HD-120
+
+**La page.** `/avis/millenium-hd-120/` (maquette `Avis-Millenium-HD-120.dc.html`, clonée de l'avis TD313, ≈ 1 900 mots
+utiles) : le carton complet (siège, casque, baguettes, deux pédales), le caoutchouc et les pads de 7 pouces, le module
+(12 kits, métronome, aux, MIDI USB), la grosse caisse en contrôleur sans batte, le budget réel (278 €),
+HD-120 ou Rookie, ce que disent les acheteurs. Grille dans `grilles.json` : 7,2 (5 / 8 / 5 / 6 / 8), profil « un enfant,
+un cadeau prêt à jouer ». Sources : `modeles.json` et `prix-reperes.json` (relevé du 05/10), rayon du 09/10 (219 €
+inchangé), fiche Thomann lue le 10/10 (12 kits, pads 7" et cymbales 9" à une zone, contrôleurs de grosse caisse et de
+charleston, 100 × 60 cm, 20 kg, siège, casque et baguettes inclus, au catalogue depuis juillet 2019, 4,4/5 pour 324
+évaluations), page Millenium et guide enfant pour la Rookie et la Debut. Carte au hub Avis (11 publiés, 21 en attente).
+**Maillage.** Sortants : enfant (R2, premier tiers), adulte débutant (R1), prix (R5), occasion (R4), moins de 300 €,
+MPS-150X, TD-02KV, duel MPS-150, pad mesh, casque, tapis, jouer sans déranger, enregistrer, page Millenium.
+Entrants : guide moins de 300 € (tableau), guide enfant (« Le budget réel »), duel MPS-150 contre MPS-150X, page
+Millenium (`{avis:hd120}`), comparatif (par la base). `maillage-avis.py` a aussi lié la MPS-850 dans le duel MPS-150.
+**Corrigé en passant.** Guide moins de 300 €, ligne HD-120 : « sans avantage décisif » contredisait la fiche (siège,
+casque et baguettes fournis) ; hub Avis : « vingt et un en préparation » suit le compte réel de la liste d'attente.
+**À trancher.** Le guide moins de 300 € donne « 120 sons » à la HD-120 : la fiche Thomann du 10/10 ne donne que
+12 kits, aucun nombre de sons. Laissé tel quel faute de source contraire ; la page neuve n'avance aucun chiffre.
+
 ## 9 octobre 2026 (routine de 17 h 37) — P107, guide Black Friday
 
 **La page.** `/guides/black-friday-batterie-electronique/` (maquette `Guide-Black-Friday.dc.html`, clonée du guide

@@ -314,6 +314,34 @@
         "note": 9,
         "raison": "Le module envoie chaque élément du kit sur sa piste à l'ordinateur, et la caisse claire de 12 pouces encaisse des années de jeu."
       }
+    },
+    "Avis-Millenium-HD-120.dc.html": {
+      "id": "hd120",
+      "toucher": [
+        5,
+        "Tout en caoutchouc, à une seule zone, sur des pads de 7 pouces."
+      ],
+      "discretion": [
+        8,
+        "Grosse caisse en contrôleur sans batte : rien ne frappe le plancher. Le caoutchouc claque plus que du mesh dans la pièce."
+      ],
+      "module": [
+        5,
+        "Douze kits, un métronome et le MIDI par USB. Ni Bluetooth ni application."
+      ],
+      "confort": [
+        6,
+        "100 × 60 cm au sol, 20 kg et un siège fourni, mais des pads de 7 pouces et des cymbales de 9 pouces, petits pour un adulte."
+      ],
+      "prix": [
+        8,
+        "Siège, casque et baguettes dans le carton pour {prix:hd120} : il ne reste qu'un tapis à prévoir."
+      ],
+      "profil": {
+        "pour": "Un enfant, un cadeau prêt à jouer",
+        "note": 8,
+        "raison": "Tout est dans le carton et la grosse caisse épargne le plancher : elle se monte et se joue le jour même."
+      }
     }
   },
   "echelle": {
