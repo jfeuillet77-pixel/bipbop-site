@@ -1,5 +1,5 @@
 # Hub /avis/ — liste d'attente des modèles sans avis publié.
-# Les 22 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
+# Les 21 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
 # cle     = nom_complet de src/data/modeles.json — c'est elle qui joint la base ; prix et segment
 #           en sont lus, ils ne se saisissent pas ici.
 # affiche = le libellé tel que la maquette l'écrit dans la colonne « Modèle » (il diffère de la base :
@@ -10,7 +10,6 @@
 # L'ordre suit celui de la maquette ; les lignes rédigées se placent en fin de leur segment.
 cle;affiche;phrase;source
 Millenium Rookie E-Drum Set;Millenium Rookie;Le plancher de prix. Guide enfant;maquette
-Millenium HD-120 E-Drum Set;Millenium HD-120;Pads caoutchouc, le premier kit complet;maquette
 Alesis Debut Kit;Alesis Debut Kit;Format réduit, pensé pour les 7 à 12 ans;maquette
 Donner DED-80;Donner DED-80;Pliable, pour les très petits espaces;maquette
 Donner DED-70;Donner DED-70;Des fûts en mesh sous 200 €, un module dépouillé;rédigée
