@@ -1,5 +1,28 @@
 # Journal BipBop
 
+## 10 octobre 2026 (routine de 17 h 37) — P109, guide des pads de batterie électronique
+
+**La page.** `/guides/pad-batterie-electronique/` (maquette `Guide-Pads.dc.html`, clonée du guide Bluetooth, ≈ 2 100 mots) :
+un pad est un capteur qui demande une entrée libre (MPS-450 deux, MPS-750X EXT1/EXT2, DTX432K une, MPS-850 aucune), ce
+qu'on lit sur une fiche (diamètre, zones, surface, ce qui est fourni), dix pads de la sélection en tableau (prix en jetons
+`{accprix:…}`, neuf alias nouveaux dans `ACCESSOIRES_CITES`), extension officielle ou pad à l'unité, la caisse claire
+d'abord, mélanger les marques, verdict par profil. Sources : `accessoires.json`, rayon du 10/10 (les dix prix concordent),
+avis et duels publiés pour les entrées libres, fiches Thomann lues le 10/10 (MPS-850 8", MPS-500/750 10", Nitro Max
+Expansion Pack, PT-10, PS-13, PD-8, PD-8H, PDX-6, PDX-100, TP70S) : tailles, zones, surfaces, contenu ; PD-8 et PDX-100
+sous 3-4 semaines, TP70S sous 4-5 semaines, PDX-6 indisponible. Carte au hub Guides (17 guides, « Par type de matériel » à 7).
+**Maillage.** Sortants : faire évoluer (réceptrice du plan, premier tiers), guide prix (R5), comparatif (R3), pad mesh,
+enregistrer, pad d'entraînement, sept avis. Entrants : faire évoluer (carte « caisse claire plus large »), pad mesh,
+duel MPS-450 contre Nitro Max. `maillage-avis.py` : rien à poser (chemin du Mac codé en dur, lancé sur une copie).
+**Rafraîchie.** `/les-bases/batterie-electronique-bruit-voisins/` (lastmod le plus ancien) : dix prix revérifiés contre la
+base, rien n'a bougé. **Corrigé en passant** : les cartes NE-1 et NE-10 pointaient vers des fiches Thomann absentes de la
+base, alors que leur prix vient de Woodbrass ; liens passés aux URL Woodbrass de `accessoires.json`, mention « relevés
+chez Thomann et Woodbrass, revérifiés le 10 octobre », badge en octobre. Lien ajouté vers la page Roland (TD-02 et
+pédale sans batte).
+**À trancher.** Ajouter des alias à `marques.mjs` avance la date « MIS À JOUR » des hubs de marque sans que leur texte
+change (`dateMaj()` lit le dernier commit du fichier) : déplacer `ACCESSOIRES_CITES` dans un fichier à part ?
+Le guide « faire évoluer » affirme qu'un pad Roland sur un module Alesis « fonctionnera en mono, sans le cercle » :
+aucune fiche lue ne le dit, la page neuve ne le reprend pas.
+
 ## 10 octobre 2026 (routine de 10 h 37) — P108, avis Millenium HD-120
 
 **La page.** `/avis/millenium-hd-120/` (maquette `Avis-Millenium-HD-120.dc.html`, clonée de l'avis TD313, ≈ 1 900 mots
