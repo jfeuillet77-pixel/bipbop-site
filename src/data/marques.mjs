@@ -37,6 +37,15 @@ export const ACCESSOIRES_CITES = {
   extnitro: { marque: 'Alesis', produit: 'Nitro Max Expansion Pack' },
   pedale: { marque: 'Millenium', produit: 'PD-122 Pro Bass Drum Pedal' },
   baguettesvf: { marque: 'Vic Firth', produit: '5A Nova Natural' },
+  padmps: { marque: 'Millenium', produit: 'MPS-500/750 10" Mesh Head Pad' },
+  extmps: { marque: 'Millenium', produit: 'MPS-750X Expansion Pack' },
+  tompt: { marque: 'Millenium', produit: 'PT-10 Tompad' },
+  claireps: { marque: 'Millenium', produit: 'PS-13 Snare Pad' },
+  padroland: { marque: 'Roland', produit: 'PD-8' },
+  padrolandh: { marque: 'Roland', produit: 'PD-8H 8" V-Pad' },
+  pdxsix: { marque: 'Roland', produit: 'PDX-6 8" Mesh' },
+  pdxcent: { marque: 'Roland', produit: 'PDX-100 10" V-Pad' },
+  tpyamaha: { marque: 'Yamaha', produit: 'TP70S 7,5 pouces 3 zones' },
 };
 
 export const MARQUES = {
