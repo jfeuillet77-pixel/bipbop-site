@@ -1,5 +1,5 @@
 # Hub /avis/ — liste d'attente des modèles sans avis publié.
-# Les 21 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
+# Les 20 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
 # cle     = nom_complet de src/data/modeles.json — c'est elle qui joint la base ; prix et segment
 #           en sont lus, ils ne se saisissent pas ici.
 # affiche = le libellé tel que la maquette l'écrit dans la colonne « Modèle » (il diffère de la base :
@@ -19,7 +19,6 @@ Millenium MPS-350;Millenium MPS-350;Entre la MPS-150X et la MPS-450;maquette
 Yamaha DTX402K;Yamaha DTX402K;La Yamaha la moins chère;maquette
 Nux DM-110 Mesh Kit;Nux DM-110 Mesh;Outsider mesh distribué par Woodbrass;maquette
 Woodbrass DDX50-Mesh;Woodbrass DDX50-Mesh;Pads de 10 pouces au meilleur prix;maquette
-Alesis Nitro Pro;Alesis Nitro Pro;La marche au-dessus de la Nitro Max;maquette
 Donner DED-300X;Donner DED-300X;Cinq fûts mesh et module évolué;maquette
 Alesis Nitro Ultimate;Alesis Nitro Ultimate;Le plafond de la cible;maquette
 Yamaha DTX6K2-X;Yamaha DTX6K2-X;La première vraie intermédiaire;maquette

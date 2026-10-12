@@ -582,9 +582,9 @@
   "titre": "Alesis Nitro Pro",
   "slug": "/avis/alesis-nitro-pro",
   "permalien": "https://bipbop.eu/avis/alesis-nitro-pro/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Avis-Alesis-Nitro-Pro.dc.html",
   "gabarit": "Avis",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "alesis nitro pro avis",
   "priorite": "Moyenne",
   "produits_lies": "Alesis Nitro Pro",
@@ -1405,7 +1405,7 @@
   "priorite": "Haute",
   "produits_lies": "Alesis Nitro Max, Alesis Nitro Max Expansion Pack",
   "maillage_sortant": "Avis Nitro Max, Enregistrer sa batterie, Batterie électronique Bluetooth",
-  "notes": "Rang 11. Volume : 200/mois (alesis nitro max manual 20, kit manual pdf 20, module 20, drum module 20, sound 20, midi 20, bfd player 20, drumeo edition 20, montage 20…). Non-cannibalisation : Plus proche : P06 avis Nitro Max (faut-il l acheter). Ici le propriétaire : kits, BFD Player, Drumeo, MIDI, réinitialisation. Même partage que P35 avis MPS-750X et P74 réglages MPS-750X. Écrire depuis la notice Alesis uniquement. Page réceptrice : Avis Nitro Max (P06)."
+  "notes": "Rang 11. Volume : 200/mois (alesis nitro max manual 20, kit manual pdf 20, module 20, drum module 20, sound 20, midi 20, bfd player 20, drumeo edition 20, montage 20…). Non-cannibalisation : Plus proche : P06 avis Nitro Max (faut-il l acheter). Ici le propriétaire : kits, BFD Player, Drumeo, MIDI, réinitialisation. Même partage que P35 avis MPS-750X et P74 réglages MPS-750X. Écrire depuis la notice Alesis uniquement. Page réceptrice : Avis Nitro Max (P06). Routine du 12/10/2026 : la notice Alesis n est dans aucun des deux dépôts, la page demande une source à télécharger et à relire en séance. [session locale]"
  },
  {
   "id": "P111",
@@ -1421,7 +1421,7 @@
   "priorite": "Haute",
   "produits_lies": "Alesis Turbo Mesh Kit, Alesis Nitro Max",
   "maillage_sortant": "Les deux avis, Hub Alesis, Guide moins de 300 €, Guide moins de 500 €",
-  "notes": "Rang 12. Volume : volume inconnu (aucune requête « vs » du CSV) ; les deux avis existent. Non-cannibalisation : Plus proche : P65 hub Alesis, H2 « Où s arrêter dans la gamme ? » (survol de six modèles) et P47 (MPS-150X contre Turbo Mesh). Ici le palier précis de 100 € entre les deux Alesis les plus vendues. Le H2 du hub renvoie au duel. Page réceptrice : Avis Nitro Max (P06)."
+  "notes": "Rang 12. Volume : volume inconnu (aucune requête « vs » du CSV) ; les deux avis existent. Non-cannibalisation : Plus proche : P65 hub Alesis, H2 « Où s arrêter dans la gamme ? » (survol de six modèles) et P47 (MPS-150X contre Turbo Mesh). Ici le palier précis de 100 € entre les deux Alesis les plus vendues. Le H2 du hub renvoie au duel. Page réceptrice : Avis Nitro Max (P06). Routine du 12/10/2026 : la Turbo Mesh a quitté le flux Thomann et sa fiche répond 404 (relevé du 12/10) ; un duel sur un kit introuvable attend la décision de Jordane sur son retrait et son remplaçant (JOURNAL du 12/10). [session locale]"
  },
  {
   "id": "P112",

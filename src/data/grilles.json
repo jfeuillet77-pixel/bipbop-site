@@ -342,6 +342,34 @@
         "note": 8,
         "raison": "Tout est dans le carton et la grosse caisse épargne le plancher : elle se monte et se joue le jour même."
       }
+    },
+    "Avis-Alesis-Nitro-Pro.dc.html": {
+      "id": "nitropro",
+      "toucher": [
+        9,
+        "Tout mesh, caisse claire de 10 pouces et trois toms de 8 pouces, tous à deux zones."
+      ],
+      "discretion": [
+        7,
+        "Fûts en mesh, mais une pédale à batte qui frappe le sol. La grosse caisse accepte même une double pédale."
+      ],
+      "module": [
+        8,
+        "Plus de 500 sons BFD, Bluetooth, métronome, séquenceur et 90 jours de Drumeo. Pas de programme de coaching."
+      ],
+      "confort": [
+        7,
+        "Rack en acier réglable plus haut que celui de la Nitro Max, mais des cymbales de 10 pouces."
+      ],
+      "prix": [
+        6,
+        "{prix:nitropro} sans siège ni casque : la Nitro Max apprend la même chose pour {ecart:nitropro-nitromax} de moins."
+      ],
+      "profil": {
+        "pour": "Tu joues déjà et tu frappes fort",
+        "note": 8,
+        "raison": "Le rack en acier et les toms à deux zones corrigent ce qui lâche en premier sur une Nitro Max."
+      }
     }
   },
   "echelle": {
