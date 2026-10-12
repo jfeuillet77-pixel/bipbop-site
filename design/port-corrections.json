@@ -157,8 +157,8 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Sept modèles disponibles en France sous 300 €. Les deux lignes surlignées sont celles qu'on recommande. Prix relevés le 11 septembre 2026.",
-      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 5 octobre 2026.",
-      "pourquoi": "une seule ligne recommandée reste dans le tableau depuis la sortie de la Turbo Mesh. Date du relevé : l'Aide-Mémoire §05 date les guides par budget à chaque relevé, celui du 05/10/2026 a fait passer l'Alesis Debut Kit de 279 à 227 € chez Woodbrass"
+      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 12 octobre 2026.",
+      "pourquoi": "une seule ligne recommandée reste dans le tableau depuis la sortie de la Turbo Mesh. Date du relevé : l'Aide-Mémoire §05 date les guides par budget à chaque relevé, celui du 12/10/2026 a fait remonter l'Alesis Debut Kit de 227 à 240 € chez Woodbrass"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
@@ -193,8 +193,8 @@
     {
       "fichier": "Guide-Moins-De-1000-Euros.dc.html",
       "au": "Prix relevés chez Thomann le 12 septembre 2026.",
-      "remplace": "Prix relevés chez Thomann le 5 octobre 2026.",
-      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 05/10/2026 a confirmé les neuf prix du tableau (aucun n'est dans les six mouvements du jour). La date de publication de l'en-tête ne bouge pas : le texte n'a pas changé"
+      "remplace": "Prix relevés chez Thomann le 12 octobre 2026.",
+      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 12/10/2026 a confirmé les neuf prix du tableau (aucun n'est dans les quatre mouvements du jour ni dans les ruptures). La date de publication de l'en-tête ne bouge pas : le texte n'a pas changé"
     },
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
@@ -253,8 +253,8 @@
     {
       "fichier": "Avis.dc.html",
       "au": "relevés chez Thomann, Woodbrass et Donner Music le 13 septembre 2026",
-      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 5 octobre 2026",
-      "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 05/10/2026 y change trois lignes (Debut Kit 227 €, DTX402K 346 €, DDX50-Mesh 386,10 €)"
+      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 12 octobre 2026",
+      "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 12/10/2026 y change deux lignes (Debut Kit 240 €, DDX50-Mesh 429 €). Leurs phrases tiennent : le Debut reste un format réduit, la DDX50 revient au prix qu'elle avait avant le 05/10"
     },
     {
       "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
@@ -295,8 +295,8 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": ">11 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "remplace": ">5 OCT. 2026 · 8 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 05/10/2026 (Alesis Debut Kit à 227 €)"
+      "remplace": ">12 OCT. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 12/10/2026 (Alesis Debut Kit à 240 €)"
     },
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
@@ -332,7 +332,19 @@
       "fichier": "Guide-Enregistrer-Sa-Batterie.dc.html",
       "au": "<a href=\"https://www.thomann.fr/roland_bt_1_bar_trigger_pad.htm\"",
       "remplace": "<a href=\"https://www.woodbrass.com/pads-accessoires-roland-bt-1-bar-trigger-pad-p150567.html\"",
-      "pourquoi": "Roland BT-1 : Thomann « disponible sous 7-9 semaines » le 17/09/2026. Woodbrass En stock à 125 €, le même prix, revérifié le 18/09/2026."
+      "pourquoi": "Roland BT-1 : Thomann « disponible sous 7-9 semaines » le 17/09/2026. Woodbrass En stock à 125 €, le même prix, revérifié le 18/09/2026. Woodbrass le passe à 132 € au relevé du 12/10/2026 : le lien reste, le prix suit (entrée suivante)."
+    },
+    {
+      "fichier": "Guide-Enregistrer-Sa-Batterie.dc.html",
+      "au": "Un pad supplémentaire à clipser, utile pour les percussions</div></div>\n<div style=\"padding:12px 16px;font:600 15px 'Work Sans',sans-serif;white-space:nowrap;text-align:right\">125 €</div>",
+      "remplace": "Un pad supplémentaire à clipser, utile pour les percussions</div></div>\n<div style=\"padding:12px 16px;font:600 15px 'Work Sans',sans-serif;white-space:nowrap;text-align:right\">132 €</div>",
+      "pourquoi": "Relevé du 12/10/2026 : Roland BT-1 à 132 € chez Woodbrass (125 € auparavant). 125 € est aussi le prix du pack MPS-750X et du Roland FD-8 : seule cette ligne parle du BT-1, aucune phrase du guide n'en tire un raisonnement"
+    },
+    {
+      "fichier": "Guide-Enregistrer-Sa-Batterie.dc.html",
+      "au": ">12 SEPT. 2026 · 9 MIN DE LECTURE</div>",
+      "remplace": ">12 OCT. 2026 · 9 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 12/10/2026 (Roland BT-1 à 132 €)"
     },
     {
       "fichier": "Guide-Enregistrer-Sa-Batterie.dc.html",
@@ -343,8 +355,8 @@
     {
       "fichier": "Guide-Enregistrer-Sa-Batterie.dc.html",
       "au": "Prix relevés chez Thomann le 12 septembre 2026.",
-      "remplace": "Prix relevés chez Thomann et Woodbrass le 18 septembre 2026.",
-      "pourquoi": "deux des lignes du tableau pointent désormais chez Woodbrass"
+      "remplace": "Prix relevés chez Thomann et Woodbrass le 12 octobre 2026.",
+      "pourquoi": "deux des lignes du tableau pointent chez Woodbrass depuis le 18/09/2026. Le relevé du 12/10/2026 change le prix du BT-1 : la date suit"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
@@ -367,62 +379,62 @@
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": "Prends l'Alesis Debut Kit à 279 €",
-      "remplace": "Prends l'Alesis Debut Kit à 227 €",
-      "pourquoi": "Relevé du 05/10/2026 : Alesis Debut Kit à 227 € chez Woodbrass (279 € auparavant), par la page produit."
+      "remplace": "Prends l'Alesis Debut Kit à 240 €",
+      "pourquoi": "Relevé du 12/10/2026 : Alesis Debut Kit à 240 € chez Woodbrass, par la page produit (227 € au 05/10, 279 € auparavant)."
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": "letter-spacing:-.02em\">279 €</span>",
-      "remplace": "letter-spacing:-.02em\">227 €</span>",
+      "remplace": "letter-spacing:-.02em\">240 €</span>",
       "pourquoi": "même relevé, carte « Notre choix »"
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": "<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">279 €</div>",
-      "remplace": "<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">227 €</div>",
-      "pourquoi": "même relevé, tableau des trois modèles (l'ordre du moins cher au plus cher tient : Rookie 179 €, Debut 227 €, MPS-150X 298 €)"
+      "remplace": "<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">240 €</div>",
+      "pourquoi": "même relevé, tableau des trois modèles (l'ordre du moins cher au plus cher tient : Rookie 179 €, Debut 240 €, MPS-150X 298 €)"
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": "ALESIS · 279 € CHEZ WOODBRASS",
-      "remplace": "ALESIS · 227 € CHEZ WOODBRASS",
+      "remplace": "ALESIS · 240 € CHEZ WOODBRASS",
       "pourquoi": "même relevé, fiche du Debut Kit"
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": "<span>Alesis Debut Kit</span><span style=\"font-weight:600\">279 €</span>",
-      "remplace": "<span>Alesis Debut Kit</span><span style=\"font-weight:600\">227 €</span>",
+      "remplace": "<span>Alesis Debut Kit</span><span style=\"font-weight:600\">240 €</span>",
       "pourquoi": "même relevé, ligne du panier"
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": "<span>Le panier complet</span><span>405 €</span>",
-      "remplace": "<span>Le panier complet</span><span>353 €</span>",
-      "pourquoi": "total recalculé : 227 + 39 (MDTJR) + 26 (HD 150) + 2,22 (7A) + 59 (E-Drum Rug 120) = 353,22 €. Les quatre accessoires n'ont pas bougé au relevé du 05/10/2026. Le rapport ne voyait pas ce total, qui n'écrit pas 279 €"
+      "remplace": "<span>Le panier complet</span><span>366 €</span>",
+      "pourquoi": "total recalculé : 240 + 39 (MDTJR) + 26 (HD 150) + 2,22 (7A) + 59 (E-Drum Rug 120) = 366,22 €. Les quatre accessoires n'ont pas bougé au relevé du 12/10/2026 (353 € au 05/10, 405 € dans la maquette)"
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": "entre 100 et 170 € (annonces relevées fin septembre 2026), à peu près la moitié du prix du neuf. La revente amortit l'achat sans le rembourser : si l'enfant arrête, compte en récupérer la moitié.",
       "remplace": "entre 100 et 170 € (annonces relevées fin septembre 2026), soit un peu plus de la moitié du prix du neuf. La revente amortit l'achat sans le rembourser : si l'enfant arrête, compte en récupérer la moitié, car l'occasion finit par suivre le neuf quand il baisse.",
-      "pourquoi": "100 à 170 € faisaient environ la moitié de 279 € (36 à 61 %), ils font 44 à 75 % de 227 €. « À peu près la moitié du prix du neuf » devenait faux ; l'estimation prudente « compte en récupérer la moitié » reste, avec sa raison"
+      "pourquoi": "100 à 170 € faisaient environ la moitié de 279 € (36 à 61 %). À 240 € (relevé du 12/10/2026) ils en font 42 à 71 %, 56 % au milieu de la fourchette : « un peu plus de la moitié » reste juste, comme à 227 €. L'estimation prudente « compte en récupérer la moitié » reste, avec sa raison"
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": "de celui de Woodbrass, relevés le 11 septembre 2026.",
-      "remplace": "de celui de Woodbrass, relevés le 5 octobre 2026.",
-      "pourquoi": "la page est modifiée par le relevé du 05/10/2026 : la date du relevé de ses prix suit"
+      "remplace": "de celui de Woodbrass, relevés le 12 octobre 2026.",
+      "pourquoi": "la page est modifiée par le relevé du 12/10/2026 : la date du relevé de ses prix suit"
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": ">11 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "remplace": ">5 OCT. 2026 · 8 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 05/10/2026 (Debut Kit à 227 €, panier à 353 €)"
+      "remplace": ">12 OCT. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 12/10/2026 (Debut Kit à 240 €, panier à 366 €)"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Alesis Debut Kit<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">FORMAT ENFANT</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">279 €</div>",
-      "remplace": "Alesis Debut Kit<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">FORMAT ENFANT</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">227 €</div>",
-      "pourquoi": "Relevé du 05/10/2026 : Alesis Debut Kit à 227 € chez Woodbrass (279 € auparavant), par la page produit. L'ordre du tableau tient : la Debut reste après la DED-80 à 219,99 €"
+      "remplace": "Alesis Debut Kit<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">FORMAT ENFANT</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">240 €</div>",
+      "pourquoi": "Relevé du 12/10/2026 : Alesis Debut Kit à 240 € chez Woodbrass, par la page produit (227 € au 05/10, 279 € auparavant). L'ordre du tableau tient : la Debut reste entre la DED-80 à 219,99 € et la MPS-150X à 298 €"
     },
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",

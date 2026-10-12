@@ -1,5 +1,77 @@
 # Journal BipBop
 
+## 12 octobre 2026 — Relevé du lundi : les deux baisses Woodbrass du 5 octobre s'effacent, la Turbo Mesh disparaît
+
+**Les prix.** 160 références contrôlées, quatre au-dessus du seuil, toutes chez Woodbrass, déjà
+écrites par le script dans `prix-reperes.json` : Alesis Debut Kit 227 → 240 €, Woodbrass
+DDX50-Mesh 386,10 → 429 € (exactement son prix d'avant le 5 octobre), tapis Meinl 150 x 160 cm
+115 → 105 €, Roland BT-1 125 → 132 €. Aucun ne change de tranche. Je n'ai pas touché
+`prix-reperes.json`. À noter : le script a réécrit le `pourquoi` du BT-1 et du tapis Meinl en ne
+gardant que le dernier relevé. La raison du lien Woodbrass du BT-1 (rupture Thomann du 17/09) et
+la phrase « il reste moins cher que le Roland TDM-20 » du tapis ont disparu de ce fichier. La
+première survit dans `port-corrections.json`, la seconde reste vraie à 105 €.
+
+**Ce qui a été réécrit** (`port-corrections.json`, 2 entrées nouvelles, 16 retouchées) :
+- **Guide enfant** : le Debut Kit à 240 € à ses cinq endroits. Le **panier complet passe de 353 à
+  366 €** (240 + 39 + 26 + 2,22 + 59, les quatre accessoires n'ont pas bougé). L'ordre du tableau
+  tient (Rookie 179, Debut 240, MPS-150X 298). La revente « un peu plus de la moitié du prix du
+  neuf » reste juste : 100 à 170 € font 42 à 71 % de 240 €, 56 % au milieu. Phrase inchangée, raison
+  mise à jour.
+- **Guide moins de 300 €** : le Debut à 240 €, toujours entre la DED-80 (219,99 €) et la MPS-150X
+  (298 €).
+- **Guide enregistrer** : le BT-1 à 132 €. Le rapport marquait « à réécrire » cinq phrases sous ce
+  montant (avis MPS-850, duel MPS-750X contre MPS-850, guide occasion) : **aucune ne parle du BT-1**.
+  Elles parlent du pack d'extension MPS-750X ou du Roland FD-8, tous deux toujours à 125 €. Rien
+  touché dans ces pages, les « cent euros de moins » et le verdict du duel tiennent. Même chose
+  pour les « substitutions mécaniques » de l'avis MPS-750X, du guide améliorer et du guide pads :
+  c'est le pack, pas le BT-1. Le seul BT-1 publié est la ligne du guide enregistrer.
+- **Hub Avis**, avis HD-120, guide prix, hubs de marque : en base ou en jetons, ils suivent seuls.
+  Les deux phrases de la liste d'attente (Debut, DDX50) restent vraies.
+- **Guide Black Friday** : il cite la baisse du Debut et de la DDX50 « le 5 octobre ». C'est daté,
+  donc toujours vrai, je n'ai rien changé. Mais les deux baisses se sont annulées en une semaine :
+  c'est exactement la thèse du guide. Une ligne « remonté le 12 octobre » dans son tableau le
+  renforcerait. C'est un ajout de fond, je le laisse à Jordane (dans la maquette).
+
+**Les dates.** En-tête « 12 OCT. 2026 » sur les trois pages réellement modifiées (enfant, moins de
+300 €, enregistrer). « Relevés le 12 octobre 2026 » sous les tableaux du guide enfant, du guide
+enregistrer, du hub Avis et des guides moins de 300 € et moins de 1 000 € (Aide-Mémoire §05).
+**Pas le guide moins de 500 €**, resté au 5 octobre exprès : son tableau publie la Turbo Mesh à
+309 €, et la fiche ne répond plus (voir plus bas). Le dater d'aujourd'hui certifierait un prix qui
+n'existe plus. Aucune meta description ne citait 227, 353, 386,10 ou 125 € : aucune touchée.
+
+**Pas tranché.**
+- **Alesis Turbo Mesh Kit, disparue de Thomann** (absente du flux, fiche en HTTP 404, aucun autre
+  produit du même nom au catalogue). Je n'ai **rien retiré**, pour deux raisons. L'accès web est
+  refusé à cette session : je n'ai pas pu voir si Woodbrass ou un autre marchand l'a encore. Et le
+  dépôt n'a aucun mécanisme pour retirer un **modèle** : `prix-reperes.json` ne sait retirer
+  que des accessoires (`retires`). La Turbo vit dans `modeles.json` (comparatif, hub Alesis,
+  JSON-LD), `duels.mjs` (duel MPS-150X contre Turbo), `grilles.json`, `marques.mjs` (`{nom:turbo}`),
+  et en dur dans six maquettes : son avis, l'avis MPS-150X, le hub Avis, les guides moins de
+  500 €, occasion et améliorer. Un retrait à moitié fait (un bandeau sur l'avis pendant que le
+  comparatif la recommande à 309 €) serait pire que rien. **Ce qu'il faut décider** : le
+  remplaçant (l'Aide-Mémoire veut un successeur, Alesis n'en annonce pas ; la MPS-150X à 298 €,
+  qui gagne déjà le duel, est la candidate naturelle), puis un champ « retiré » côté modèles.
+  **En attendant, le comparatif, le hub Alesis et quatre guides lient une fiche Thomann morte.**
+  Le comparatif affichera en plus « relevé le 12 octobre » au-dessus de cette ligne : la date de
+  base vient du script, pas de moi.
+- **Les deux ruptures, quatrième relevé.** Roland PDX-100 (Thomann « sous 3-4 semaines », guides
+  améliorer et pads) et Alesis Nitro Multicore (« actuellement indisponible » sans date depuis un
+  mois, guide occasion). Toujours sans accès web : pas de bascule possible vers Woodbrass, pas de
+  retrait à l'aveugle. La Multicore est désormais un cas clair de §04 si Woodbrass ne l'a pas.
+  **À vérifier à la main, c'est la troisième semaine que je l'écris.**
+- **Le dépôt des maquettes** : je n'ai pas pu lancer `git pull` dans `../Claude Design - MàJ/`
+  (commande refusée à cette session). Le portage a tourné sur la copie locale ; si la routine
+  cloud a poussé depuis, le portage suivant reprendra la bonne version.
+
+Pistes pour `scripts/prix/rapport.mjs` : quand un montant est partagé, ne pas classer « à
+réécrire » les phrases d'un autre modèle (ici cinq faux positifs sur le pack MPS-750X), et
+chercher les prix posés par `port-corrections.json` (il disait « aucune maquette n'écrit 227 € »
+alors que trois pages le publiaient par correction). Pour `relever.mjs` : garder l'historique du
+`pourquoi` d'un accessoire au lieu de l'écraser.
+
+`npm run data` et `npm run port` passent. Je n'ai lancé ni `check` ni `fidelite` : c'est le
+script de livraison qui les lance.
+
 ## 10 octobre 2026 (routine de 17 h 37) — P109, guide des pads de batterie électronique
 
 **La page.** `/guides/pad-batterie-electronique/` (maquette `Guide-Pads.dc.html`, clonée du guide Bluetooth, ≈ 2 100 mots) :
