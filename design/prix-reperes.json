@@ -1,8 +1,8 @@
 {
   "_commentaire": "Prix et références contrôlés sur le web après coup, enregistrés côté dépôt. « Claude Design - MàJ/data/ » reste la source d'auteur : ce fichier ne la dément que lorsqu'un relevé en ligne a tranché depuis. scripts/import-data.mjs l'applique à chaque import, une entrée sans correspondance fait échouer l'import. Chaque entrée porte sa date et sa preuve.",
-  "_releve": "2026-10-05",
+  "_releve": "2026-10-12",
   "base": {
-    "releve": "2026-10-05",
+    "releve": "2026-10-12",
     "version": 3
   },
   "_base": "La date d'en-tête est celle du relevé des prix (17/09) — c'est elle que le comparatif et le hub affichent sous leurs tableaux. Les bascules de marchand du 18/09 ne changent aucun prix de modèle.",
@@ -31,10 +31,10 @@
     },
     {
       "id": "debut",
-      "prix": 227,
-      "prixTexte": "227 €",
+      "prix": 240,
+      "prixTexte": "240 €",
       "segment": "Moins de 300 €",
-      "pourquoi": "Woodbrass à 227 € relevé le 05/10/2026 (279 € auparavant), par la page produit."
+      "pourquoi": "Woodbrass à 240 € relevé le 12/10/2026 (227 € auparavant), par la page produit."
     },
     {
       "id": "dtx402",
@@ -45,10 +45,10 @@
     },
     {
       "id": "ddx50",
-      "prix": 386.1,
-      "prixTexte": "386,10 €",
+      "prix": 429,
+      "prixTexte": "429 €",
       "segment": "300 à 500 €",
-      "pourquoi": "Woodbrass à 386,10 € relevé le 05/10/2026 (429 € auparavant), par la page produit."
+      "pourquoi": "Woodbrass à 429 € relevé le 12/10/2026 (386,10 € auparavant), par la page produit."
     }
   ],
   "accessoires": [
@@ -72,7 +72,8 @@
       "produit": "BT-1 Bar Trigger Pad",
       "marchand": "Woodbrass",
       "url": "https://www.woodbrass.com/pads-accessoires-roland-bt-1-bar-trigger-pad-p150567.html",
-      "pourquoi": "Thomann en rupture annoncée « sous 7-9 semaines » le 17/09/2026 ; Woodbrass En stock à 125 €, le même prix, revérifié le 18/09/2026."
+      "pourquoi": "Woodbrass à 132 € relevé le 12/10/2026 (125 € auparavant).",
+      "prix": "132 €"
     },
     {
       "marque": "Roland",
@@ -84,8 +85,8 @@
     {
       "marque": "Meinl",
       "produit": "Tapis 150 x 160 cm",
-      "prix": "115 €",
-      "pourquoi": "Woodbrass à 115 € relevé le 05/10/2026 (105 € auparavant), par la page produit. Entrée créée par la session du lundi : le script retient un accessoire sans entrée. Le relevé ne le signale pas en rupture, même lien : seul le prix change. Il reste moins cher que le Roland TDM-20 (217 €), son rôle « alternative moins chère au Roland » tient."
+      "prix": "105 €",
+      "pourquoi": "Woodbrass à 105 € relevé le 12/10/2026 (115 € auparavant)."
     },
     {
       "marque": "Roland",

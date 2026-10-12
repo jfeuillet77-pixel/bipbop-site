@@ -2,6 +2,122 @@
  "_": "L'historique publié des relevés de prix, source unique de /suivi-des-prix/. Écrit par scripts/prix/publier.mjs à chaque relevé, jamais à la main. Contrairement à releves/, il ne s'élague pas : c'est la trace du travail.",
  "releves": [
   {
+   "date": "2026-10-12",
+   "controlees": 160,
+   "lues": 159,
+   "seuil": 5,
+   "mouvements": [
+    {
+     "nom": "Woodbrass DDX50-Mesh",
+     "marchand": "Woodbrass",
+     "famille": "Batterie",
+     "avant": "386,10 €",
+     "apres": "429 €",
+     "ecart": 42.9,
+     "pct": 11.1,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Alesis Debut Kit",
+     "marchand": "Woodbrass",
+     "famille": "Batterie",
+     "avant": "227 €",
+     "apres": "240 €",
+     "ecart": 13,
+     "pct": 5.7,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Meinl Tapis 150 x 160 cm",
+     "marchand": "Woodbrass",
+     "famille": "Tapis et isolation",
+     "avant": "115 €",
+     "apres": "105 €",
+     "ecart": -10,
+     "pct": -8.7,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Roland BT-1 Bar Trigger Pad",
+     "marchand": "Woodbrass",
+     "famille": "Triggers et hybride",
+     "avant": "125 €",
+     "apres": "132 €",
+     "ecart": 7,
+     "pct": 5.6,
+     "changeDeTranche": null
+    }
+   ],
+   "ruptures": [
+    {
+     "nom": "Yamaha DTX452K",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 2-3 semaines"
+    },
+    {
+     "nom": "Yamaha DTX6K2-X",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Behringer DH100",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 4-5 semaines"
+    },
+    {
+     "nom": "Pearl D-50 Drum Throne",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 2-3 semaines"
+    },
+    {
+     "nom": "Roland PD-8",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 3-4 semaines"
+    },
+    {
+     "nom": "Roland PDX-6 8\" Mesh",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PDX-100 10\" V-Pad",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 3-4 semaines"
+    },
+    {
+     "nom": "Yamaha PCY-100 10\" 3 zones",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 7-9 semaines"
+    },
+    {
+     "nom": "Alesis Nitro Multicore",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PM-03 Monitor System",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Thomann Cover Millenium NonaPad",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Protection Racket E-Drum Kit Bag 28x16",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 6-8 semaines"
+    }
+   ],
+   "disparues": [
+    {
+     "nom": "Alesis Turbo Mesh Kit",
+     "marchand": "Thomann"
+    }
+   ]
+  },
+  {
    "date": "2026-10-05",
    "controlees": 159,
    "lues": 159,
