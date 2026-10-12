@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-10-11",
+ "date": "2026-10-12",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -381,6 +381,14 @@
    "prix": 919,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/roland_spd_30_bk_octapad_bundle.htm"
+  },
+  {
+   "id": "285368",
+   "marque": "Yamaha",
+   "modele": "DTX-Multi 12 B-Stock",
+   "prix": 449,
+   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
+   "url": "https://www.thomann.fr/yamaha_dtx_multi_12_b_stock.htm"
   },
   {
    "id": "287652",
@@ -959,14 +967,6 @@
    "url": "https://www.thomann.fr/millenium_mps_150x_e_drum_mesh_bundle.htm"
   },
   {
-   "id": "424953",
-   "marque": "Roland",
-   "modele": "SPD::ONE Wav B-Stock",
-   "prix": 298,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_spdone_wav_b_stock.htm"
-  },
-  {
    "id": "426092",
    "marque": "Yamaha",
    "modele": "EAD10 Drum Module",
@@ -1111,14 +1111,6 @@
    "url": "https://www.thomann.fr/roland_spdone_electro_b_stock.htm"
   },
   {
-   "id": "444277",
-   "marque": "Millenium",
-   "modele": "MPS-850 E-Drum Set B-Stock",
-   "prix": 555,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_850_e_drum_set_b_stock.htm"
-  },
-  {
    "id": "445689",
    "marque": "Millenium",
    "modele": "MPS-850 Drum Module",
@@ -1181,14 +1173,6 @@
    "prix": 398,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_450_e_drum_set.htm"
-  },
-  {
-   "id": "455688",
-   "marque": "Millenium",
-   "modele": "MPS-850 10\" Mesh Head  B-Stock",
-   "prix": 73,
-   "categorie": "Batteries Electroniques > Pads de Caisse Claire",
-   "url": "https://www.thomann.fr/millenium_mps_850_10_mesh_head_b_stock.htm"
   },
   {
    "id": "455902",
@@ -1285,14 +1269,6 @@
    "prix": 459,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_450_e_drum_set_bundle.htm"
-  },
-  {
-   "id": "470082",
-   "marque": "Alesis",
-   "modele": "Strike MultiPad B-Stock",
-   "prix": 515,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/alesis_strike_multipad_b_stock.htm"
   },
   {
    "id": "470437",
@@ -2127,18 +2103,10 @@
    "url": "https://www.thomann.fr/thomann_cover_yamaha_dtx_multi_12.htm"
   },
   {
-   "id": "544981",
-   "marque": "Roland",
-   "modele": "16\" CY-16R-T Cymbal Pa B-Stock",
-   "prix": 325,
-   "categorie": "Batteries Electroniques > Pads de Cymbale",
-   "url": "https://www.thomann.fr/roland_16_cy_16r_t_cymbal_pa_b_stock.htm"
-  },
-  {
    "id": "545259",
    "marque": "Millenium",
    "modele": "MPS-1000 E-Drum Module B-Stock",
-   "prix": 325,
+   "prix": 365,
    "categorie": "Batteries Electroniques > Modules de Sons",
    "url": "https://www.thomann.fr/millenium_mps_1000_e_drum_module_b_stock.htm"
   },
@@ -2786,7 +2754,7 @@
    "id": "578293",
    "marque": "Millenium",
    "modele": "CH-13X 13\" Hi-Hat Pad B-Stock",
-   "prix": 93,
+   "prix": 99,
    "categorie": "Batteries Electroniques > Pads de Charleston",
    "url": "https://www.thomann.fr/millenium_ch_13x_13_hi_hat_pad_b_stock.htm"
   },
@@ -2805,6 +2773,14 @@
    "prix": 32,
    "categorie": "Hardware pour Batterie & Percussions > Hardware pour Batteries Electroniques",
    "url": "https://www.thomann.fr/sequenz_mp_1.htm"
+  },
+  {
+   "id": "579513",
+   "marque": "Millenium",
+   "modele": "PS-13 13\"x05\" Snare PW B-Stock",
+   "prix": 119,
+   "categorie": "Batteries Electroniques > Pads de Caisse Claire",
+   "url": "https://www.thomann.fr/millenium_ps_13_13x05_snare_pw_b_stock.htm"
   },
   {
    "id": "579895",
@@ -3663,28 +3639,12 @@
    "url": "https://www.thomann.fr/roland_rsh_10_drums_smartphone_holder.htm"
   },
   {
-   "id": "630522",
-   "marque": "Alesis",
-   "modele": "Nitro Ultimate Drum Ki B-Stock",
-   "prix": 739,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/alesis_nitro_ultimate_drum_ki_b_stock.htm"
-  },
-  {
    "id": "630636",
    "marque": "Millenium",
    "modele": "MPS-350 E-Drum Bundle",
    "prix": 398,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_350_e_drum_bundle.htm"
-  },
-  {
-   "id": "630907",
-   "marque": "Aerodrums",
-   "modele": "Air Percussion Set 2 B-Stock",
-   "prix": 679,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/aerodrums_air_percussion_set_2_b_stock.htm"
   },
   {
    "id": "631566",
