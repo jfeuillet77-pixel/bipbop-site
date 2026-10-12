@@ -1,5 +1,32 @@
 # Journal BipBop
 
+## 12 octobre 2026 (routine de 17 h 37) — P37, avis Alesis Nitro Pro
+
+**La page.** `/avis/alesis-nitro-pro/` (maquette `Avis-Alesis-Nitro-Pro.dc.html`, clonée de l'avis HD-120, ≈ 2 000 mots
+utiles) : ce que les 289 € d'écart avec la Nitro Max achètent (toms à deux zones, rack en acier, grosse
+caisse pour double pédale), Pro ou Pro XL, le module BFD, les voisins, le budget réel (827 €), Pro ou MPS-850, ce que disent
+les acheteurs. Grille dans `grilles.json` : 7,9 (9 / 7 / 8 / 7 / 6), profil « tu joues déjà et tu frappes fort ». Sources :
+base et relevé du 12/10, rayon du 12/10 (698 € inchangé), fiches Thomann lues le 12/10 (Nitro Pro : pads, rack acier, 36 kits
+et 16 utilisateur, plus de 500 sons, au catalogue depuis septembre 2024, 4,6/5 pour 16 évaluations, disponible ; Nitro Max :
+rack aluminium, toms à une zone, 440 sons ; Pro XL : quatre toms, trois cymbales, plus de 551 sons). Hub Avis : carte, 12 publiés.
+**Sauté.** P110 (réglages Nitro Max) : la notice Alesis n'est dans aucun dépôt. P111 (duel Turbo Mesh contre Nitro Max) : la
+Turbo a quitté Thomann le 12/10. Les deux passent en « [session locale] » dans le plan.
+**Maillage.** Sortants : guide moins de 1 000 € (page du plan, premier tiers), adulte débutant (R1), prix (R5), occasion (R4),
+comparatif, avis Nitro Max et MPS-850, page Alesis, faire évoluer, Bluetooth, enregistrer, apprendre, tapis, casque, jouer sans
+déranger, duel MPS-750X contre MPS-850. Entrants : avis Nitro Max (phrase), guide moins de 1 000 €, page Alesis
+(`{avis:nitropro}`), duel Nitro Max contre DED-200X ; `maillage-avis.py` a lié les tableaux des guides moins de 1 000 € et
+Bluetooth et la première mention du guide améliorer.
+**Corrigé en passant.** Guide moins de 1 000 € : la Nitro Pro y avait un « rack en fonte », des « cymbales 3 zones » et une
+« charleston sur pied à deux plateaux ». La fiche Thomann dit rack en acier, deux cymbales avec étouffement, un pad de
+charleston de 10 pouces : carte, tableau (Pro et Pro XL « Acier »), encart « Notre choix » et alternative corrigés.
+**Rafraîchie.** `/duels/alesis-nitro-max-vs-donner-ded-200x/` (lastmod le plus ancien hors pages légales et contact) : prix
+revérifiés (409 € et 499,99 €, rayon du 12/10), compte des critères juste (4, 3, 2). « L'Alesis est en rupture, ce qui arrive
+souvent » n'avait aucune source (Nitro Max disponible le 12/10) : devenu « le jour où tu commandes ». Pack d'extension en
+jeton, liens vers le duel MPS-450 contre Nitro Max et l'avis Nitro Pro, badge en octobre.
+**À trancher.** Le même guide moins de 1 000 € donne « Fonte » au rack de la Nitro Ultimate et de la MPS-1000, et ses
+paragraphes généraux promettent des cymbales à trois zones et une charleston sur pied au-delà de 500 € : aucune fiche lue
+ne le confirme. Laissé tel quel, à relire avec les fiches de ces deux modèles.
+
 ## 12 octobre 2026 — Relevé du lundi : les deux baisses Woodbrass du 5 octobre s'effacent, la Turbo Mesh disparaît
 
 **Les prix.** 160 références contrôlées, quatre au-dessus du seuil, toutes chez Woodbrass, déjà

@@ -37,6 +37,7 @@ AVIS = {
     'Avis-Millenium-MPS-850.dc.html': ('Millenium MPS-850', r'(?:Millenium )?MPS-850(?!\d)'),
     'Avis-Roland-TD313.dc.html': ('Roland TD313', r'(?:Roland )?TD313'),
     'Avis-Millenium-HD-120.dc.html': ('Millenium HD-120', r'(?:Millenium )?HD-120(?! ?(?:E-Drum Set Bundle|9|Multicore))'),
+    'Avis-Alesis-Nitro-Pro.dc.html': ('Alesis Nitro Pro', r'(?:Alesis )?Nitro Pro(?! ?(?:XL|Drum Kit Bundle))'),
 }
 NOM_VERS_AVIS = {nom: c for c, (nom, _) in AVIS.items()}
 SOURCES = sorted(glob.glob('Guide-*.dc.html') + glob.glob('Les-Bases-*.dc.html') + glob.glob('Duel-*.dc.html') + glob.glob('Avis-*.dc.html'))

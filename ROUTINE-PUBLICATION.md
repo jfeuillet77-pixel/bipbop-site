@@ -1,6 +1,7 @@
-# Routine de publication : deux pages par jour
+# Routine de publication : une page par jour
 
-Décidé par Jordane le 07/10/2026 : **deux pages publiées par jour**, prises dans le plan éditorial,
+Décidé par Jordane le 07/10/2026, ramené à **une page publiée par jour** le 12/10/2026 (quota
+hebdomadaire du compte Claude atteint le 10/10), prise dans le plan éditorial,
 **mises en ligne sans relecture humaine**, avec un maillage interne soigné et un site qui reste
 frais. Il n'y a pas de filet : les contrôles ci-dessous sont la relecture. Un contrôle qui échoue
 et qu'on ne sait pas corriger = **on ne publie pas ce passage-là**. On n'affaiblit jamais un
@@ -16,10 +17,10 @@ fichier, pas le prompt de la routine.
 | 6 h 17 (4 h 17 UTC) tous les jours | Rayon du jour → `src/data/rayon.json` (sur `dev`) | `.github/workflows/extrait-rayon.yml` |
 | 7 h 23 tous les jours | Archive du rayon (baromètre), IndexNow en rattrapage | launchd sur le Mac, `scripts/prix/archiver-flux.mjs` |
 | 8 h 17 le lundi | Relevé des prix et réécritures | launchd sur le Mac, `scripts/prix/semaine.mjs` |
-| **10 h 37 et 17 h 37** (8 h 37 et 15 h 37 UTC) | **Une page neuve par passage** (ce fichier) ; le passage de 17 h 37 rafraîchit aussi une page ancienne | routine cloud |
+| **17 h 37** (15 h 37 UTC) | **Une page neuve** (ce fichier) et le rafraîchissement d'une page ancienne | routine cloud |
 
 Les heures UTC ne suivent pas le changement d'heure : à partir du 25/10, tout part une heure plus
-tôt à Paris (9 h 37 et 16 h 37). Rien ne chevauche le lundi.
+tôt à Paris (16 h 37). Rien ne chevauche le lundi.
 
 ## Étape 0 : se mettre en place
 
@@ -35,8 +36,8 @@ tôt à Paris (9 h 37 et 16 h 37). Rien ne chevauche le lundi.
    contrôles et les captures lancent ce Chromium (diagnostic du 07/10/2026 : présent dans
    l'environnement, réseau sortant ouvert vers npm, thomann.fr et bipbop.eu). Puis `npm ci` et
    `npm run data`.
-4. **Deux pages par jour, pas plus.** `git log origin/dev --since=midnight --format=%s | grep -c '^feat(page)'`
-   doit valoir 0 au passage du matin, 1 au plus à celui de l'après-midi. Sinon, s'arrêter.
+4. **Une page par jour, pas plus.** `git log origin/dev --since=midnight --format=%s | grep -c '^feat(page)'`
+   doit valoir 0. Sinon, s'arrêter.
 5. Lire en entier `CLAUDE.md` (les cinq lois et les interdits : il fait foi), la section
    « Reprendre ici » de `design/plan-de-reprise.md`, `design/strategie-maillage.md`, les deux
    dernières entrées de `JOURNAL.md`, et dans les maquettes `Aide-Memoire-Mises-A-Jour.dc.html`
