@@ -1,5 +1,30 @@
 # Journal BipBop
 
+## 13 octobre 2026 (routine de 17 h 37) — P45, avis Millenium MPS-1000
+
+**La page.** `/avis/millenium-mps-1000/` (maquette `Avis-Millenium-MPS-1000.dc.html`, clonée de l'avis Nitro Pro, ≈ 2 800 mots) :
+le format acoustique (fûts en bois, grosse caisse de 20 pouces, caisse claire de 13, ride de 18), le module (820 sons, huit sorties,
+import d'échantillons, Bluetooth, pas de MIDI DIN), MPS-1000 ou MPS-750X Pro, ou MPS-850, face à la TD313 et à la DTX6K2-X, budget réel
+(1 128 €), avis des acheteurs. Grille : 8,1 (10 / 7 / 8 / 7 / 6), profil « tu viens de l'acoustique ou tu joues sur scène ». Sources : base
+et relevé du 12/10, rayon du 13/10 (999 € inchangé), fiches Thomann lues le 13/10 : MPS-1000 (pas de rack mais des pieds, 9 pads, 4,4/5
+pour 373 évaluations, disponible, au catalogue depuis septembre 2021), MPS-1000 D2 NT (configuration 1 tom + 2 toms basses, même prix),
+MPS-750X Pro (module MPS-750X, 697 sons, aucune sortie séparée, deux entrées libres), Nitro Ultimate (rack en acier). Hub Avis : carte, 13 publiés.
+**Maillage.** Sortants : R1, R5 (premier tiers), R4, R3, avis MPS-850, MPS-750X et TD313, page Millenium, duel MPS-750X contre MPS-850,
+enregistrer, Bluetooth, apprendre, tapis, jouer sans déranger, pack complet, casque. Entrants : avis MPS-850 et TD313 (phrases), guide prix,
+et par `maillage-avis.py` l'avis HD-120, le duel MPS-750X contre MPS-850, les guides Bluetooth et moins de 1 000 €, page Millenium (`{avis:mps1000}`).
+**Corrigé en passant.** Base : la MPS-1000 a 9 pads, pas 10 (guide Bluetooth et guide moins de 1 000 € aussi). Guide moins de 1 000 € : rack
+« Fonte » faux pour la MPS-1000 (aucun rack, des pieds) et pour la Nitro Ultimate (acier) : le « à trancher » d'hier est réglé pour ces
+deux modèles. La MPS-750X Pro était décrite avec « le module le plus complet de la marque » ou « le module Pro » (liste d'attente, base,
+guide Bluetooth) : c'est le module de la MPS-750X. Avis TD313 : virgule avant « et » retirée.
+**Rafraîchi.** `/duels/alesis-nitro-max-vs-roland-td-02kv/` (lastmod du 24/09, ex aequo avec le guide appartement) : prix revérifiés (409 et
+498 €, rayon du 13/10), extension et écart en jetons. Faux retirés : « la seule du segment » et « le seul modèle sous 500 € » sans batte
+(TD-02K et DTX402K en ont une aussi), « neuf débutants sur dix » et « une bonne moitié de nos lecteurs » (chiffres sans source). La ligne
+« Occasion » du tableau était cassée depuis le 24/09 (texte mangé par le shell, deux cellules au lieu de quatre) : rétablie avec les
+fourchettes que la FAQ de la même page donne déjà, aucun prix d'occasion nouveau. Liens vers l'avis Nitro Pro et le duel MPS-450 contre Nitro Max.
+**À trancher.** La MPS-1500 Hybrid-X (1 398 € au rayon) est un Millenium au-dessus de la MPS-1000 : « le module le plus complet de la gamme »
+(phrase de la base) et « le haut de notre sélection » (page Millenium) restent vrais pour notre sélection seulement. Le guide appartement
+reste à rafraîchir (même lastmod).
+
 ## 12 octobre 2026 (routine de 17 h 37) — P37, avis Alesis Nitro Pro
 
 **La page.** `/avis/alesis-nitro-pro/` (maquette `Avis-Alesis-Nitro-Pro.dc.html`, clonée de l'avis HD-120, ≈ 2 000 mots

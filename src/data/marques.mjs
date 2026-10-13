@@ -390,7 +390,7 @@ export const MARQUES = {
           "**{avis:mps750x}** ({prix:mps750x}) : cinq fûts en peau maillée, trois toms de 10 pouces à deux zones, une charleston de 13 pouces, une ride de 14 pouces à trois zones, 697 sons et le Bluetooth. 140 × 80 cm au sol.",
           "**{avis:mps850}** ({prix:mps850}) : dix pads, quatre toms dont deux de 8 pouces, deux crashs de 12 pouces, des prises MIDI à cinq broches et l'import de tes propres sons en WAV. Pas de Bluetooth ni aucune entrée libre.",
           "**{nom:mps750pro}** ({prix:mps750pro}) : le module de la MPS-750X dans un kit au look acoustique. Fûts en bois, grosse caisse de 18 pouces, caisse claire de 13, toms de 10, 12 et 14 pouces, crash de 15 et ride de 18 pouces, avec pieds de cymbale, pied de caisse claire et pédales.",
-          "**{nom:mps1000}** ({prix:mps1000}) : le haut de notre sélection. Même format acoustique avec une grosse caisse de 20 pouces et deux crashs de 15 pouces. Son module de 820 sons a un écran couleur, huit sorties séparées et l'import d'échantillons.",
+          "**{avis:mps1000}** ({prix:mps1000}) : le haut de notre sélection. Même format acoustique avec une grosse caisse de 20 pouces et deux crashs de 15 pouces. Son module de 820 sons a un écran couleur, huit sorties séparées et l'import d'échantillons.",
         ],
         apres: [
           "Au-dessus, Millenium vend aussi une MPS-1500 Hybrid-X construite autour d'un pad multi-percussion. Elle sort de notre sélection : c'est un instrument de scène, pas un premier kit.",
