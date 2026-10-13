@@ -370,6 +370,34 @@
         "note": 8,
         "raison": "Le rack en acier et les toms à deux zones corrigent ce qui lâche en premier sur une Nitro Max."
       }
+    },
+    "Avis-Millenium-MPS-1000.dc.html": {
+      "id": "mps1000",
+      "toucher": [
+        10,
+        "Tout mesh sur des fûts en bois de vraie taille : caisse claire de 13 pouces, toms de 10, 12 et 14 pouces, tous à deux zones."
+      ],
+      "discretion": [
+        7,
+        "Peaux maillées et cymbales douces, mais une vraie grosse caisse de 20 pouces frappée par une batte."
+      ],
+      "module": [
+        8,
+        "820 sons, Bluetooth, huit sorties séparées et import de tes échantillons. Pas de programme de coaching."
+      ],
+      "confort": [
+        7,
+        "Deux crashs de 15 pouces et une ride de 18, mais des pieds jugés légers et la place d'une batterie acoustique."
+      ],
+      "prix": [
+        6,
+        "{prix:mps1000} sans siège ni casque : beaucoup pour apprendre, mais moins cher que les kits Roland et Yamaha au-dessus."
+      ],
+      "profil": {
+        "pour": "Tu viens de l'acoustique ou tu joues sur scène",
+        "note": 9,
+        "raison": "Les dimensions d'une vraie batterie et huit sorties pour la sono, pour bien moins que les grandes marques."
+      }
     }
   },
   "echelle": {
