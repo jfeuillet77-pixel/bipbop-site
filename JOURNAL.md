@@ -1,5 +1,28 @@
 # Journal BipBop
 
+## 14 octobre 2026 (routine de 17 h 37) — P50, où acheter une batterie électronique
+
+**La page.** `/guides/ou-acheter-batterie-electronique/` (maquette `Guide-Ou-Acheter.dc.html`, clonée du guide Black Friday, ≈ 2 700 mots) :
+Thomann, Woodbrass et Donner Music marchand par marchand, tableau côte à côte, magasin ou en ligne, cinq vérifications avant de payer,
+verdict par profil, questions. Carte au hub Guides (« Par budget », 18 guides). Sources : base et relevé du 12/10, rayon du 14/10 (153
+batteries complètes neuves chez Thomann hors B-Stock, 2 en B-Stock ; 32 références Donner toutes à prix barré, 32 sur 33 le 07/10 au
+baromètre), fiches lues le 14/10 : Thomann MPS-450 (garantie 3 ans, 30 jours satisfait ou remboursé, port offert dès 69 €, Klarna, Millenium
+marque propre, « meilleur prix sur 30 jours » de la DTX402K à 369 €), Woodbrass DDX50-Mesh (Thouaré-sur-Loire, magasin Paris 19e, garantie
+3 ans sur l'article, 30 jours, livraison gratuite dès 69 €, Alma jusqu'à 24 fois), Donner DED-200X (livraison gratuite, 30 jours, garantie 2 ans).
+Title : « Où acheter une batterie électronique : Thomann ou ailleurs ? ». Aucun nom d'enseigne non relevée (Cultura) : rien ne la source.
+**Maillage.** Sortants : R5 (premier tiers), R3, R1, R2, R4, avis MPS-450 et DED-200X, faire évoluer, pack complet, Black Friday,
+baromètre, moins de 500 €. Entrants : guide prix, pack complet, avis DED-200X (phrases), guide appartement (rafraîchi). `maillage-avis.py`
+ne tourne pas en cloud (chemin du Mac écrit en dur) : inutile ici, le contrôle 11 ne signale aucune citation nouvelle sans lien.
+**Corrigé en passant.** Image de la Woodbrass DDX50-Mesh en 404 dans la base (`data/modeles.json` des maquettes) : remplacée par celle
+du JSON-LD de sa fiche Woodbrass (vérifiée 200). Les 31 autres images répondent.
+**Rafraîchi.** `/guides/choisir-batterie-electronique-appartement/` (lastmod du 24/09) : prix revérifiés (inchangés) et passés en jetons
+(cartes, tableau, encart). Faux retirés : « sous 250 €, seules deux Donner ont du mesh » (la Rookie et l'Alesis Debut sont en mesh partout) et
+« le mesh divise le bruit de frappe par deux » (chiffre sans source). « Vos questions » devient « Tes questions » (tutoiement). Liens vers
+le guide Bluetooth et le guide où acheter. Date au 14/10.
+**À trancher.** Le guide appartement garde la Nitro Max en « Notre choix » alors que la MPS-450 est la recommandation nº1 du site depuis
+le 24/09 ; ses phrases « le siège se dérègle en trois semaines » (kits à 199 € des places de marché) et « carré d'environ 1,40 m » pour
+un kit de 90 cm plus 40 cm n'ont pas de source. Laissé tel quel, choix de ligne éditoriale.
+
 ## 13 octobre 2026 (routine de 17 h 37) — P45, avis Millenium MPS-1000
 
 **La page.** `/avis/millenium-mps-1000/` (maquette `Avis-Millenium-MPS-1000.dc.html`, clonée de l'avis Nitro Pro, ≈ 2 800 mots) :
