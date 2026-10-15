@@ -1,5 +1,29 @@
 # Journal BipBop
 
+## 15 octobre 2026 (routine de 17 h 37) — P53, les accessoires vraiment utiles
+
+**La page.** `/les-bases/accessoires-batterie-electronique/` (maquette `Les-Bases-Accessoires.dc.html`, clonée de « Quelles baguettes », ≈ 2 100 mots) :
+ce que le carton contient déjà, les trois achats du premier jour (casque, siège, tapis : `{budget:casque+siege+tapis}`), les baguettes de réserve,
+ce qui attend un besoin (voisin, ampli, pads, pad d'entraînement), dix accessoires en tableau, ce qu'on te vend pour rien, les petites pièces
+(clé, face de la batte, faisceau), panier par situation, questions. Prix tous en jetons, alias existants seulement (`marques.mjs` non touché).
+Cartes au hub Les bases (« S'équiper » à 4, 11 articles) et au hub Guides (10 articles). Sources : `accessoires.json` et relevé du 12/10, rayon du
+15/10 (prix des kits cités inchangés), fiches Thomann lues le 15/10 : MPS-150X, MPS-450, Nitro Max (rack et pédale inclus, ni siège ni casque,
+sortie casque en mini-jack 3,5 mm ; paire de baguettes dans la livraison de la MPS-450 ; support d'appareil intégré sur la Nitro Max ; face plastique
+de la batte recommandée pour la peau maillée sur la MPS-150X).
+**Maillage.** Sortants : R1 et R5 (premier tiers), R2, R3, casque, tapis, baguettes, jouer sans déranger, ampli, pads, faire évoluer, pad
+d'entraînement, pack complet, apprendre la batterie, avis MPS-150X, MPS-450, Nitro Max et MPS-750X. Entrants : hub Les bases (carte et « Dans quel ordre
+les lire »), hub Guides, pack complet, casque, avis TD-02KV (phrases). Contrôle 11 : « MPS-850 » signalé sur la page neuve, faux positif (le pad
+Millenium MPS-850 de 8 pouces, pas la batterie).
+**Corrigé en passant.** Pack complet : « Alesis en met dans le carton, Millenium non » (baguettes) contredit par la fiche MPS-450, remplacé par
+« regarde le contenu de la livraison ». Casque : « la plupart des modules ont une grosse prise jack » faux pour les trois fiches lues (mini-jack
+3,5 mm), carte réécrite (« La bonne prise »).
+**Rafraîchi.** `/avis/roland-td-02kv/` (lastmod du 29/09) : prix revérifiés (inchangés, rayon du 15/10) et passés en jetons (texte, budget, tableau,
+encart). Faux retirés : « la plus compacte de sa catégorie / du segment » (Turbo Mesh 110 × 80 cm dans la même tranche, MPS-450 à 120 × 80 cm aussi),
+« personne d'autre ne vend à ce prix » une pédale sans batte (DTX402K), « le rapport matériel/prix le plus faible de notre sélection » (l'avis DTX432K
+dit la même chose de lui), le Boss BT-Dual « 100 € de plus » sans source. Liens vers le guide Bluetooth et la page neuve. Badge en octobre.
+**À trancher.** L'avis TD-02KV dit encore « une catégorie au-dessus » pour les sons Roland et « Roland précise que les pédales sont optimisées pour un
+jeu à faible volume » sans source citée ; l'accueil et deux avis (MPS-750X, TD-02KV) restaient datés du 29/09 : l'avis MPS-750X est le prochain à rafraîchir.
+
 ## 14 octobre 2026 (routine de 17 h 37) — P50, où acheter une batterie électronique
 
 **La page.** `/guides/ou-acheter-batterie-electronique/` (maquette `Guide-Ou-Acheter.dc.html`, clonée du guide Black Friday, ≈ 2 700 mots) :
