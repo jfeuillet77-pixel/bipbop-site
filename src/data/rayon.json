@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-10-14",
+ "date": "2026-10-15",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -330,7 +330,7 @@
    "id": "272606",
    "marque": "Pearl",
    "modele": "THMP-1 Throne Thumper",
-   "prix": 659,
+   "prix": 666,
    "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
    "url": "https://www.thomann.fr/pearl_thmp_1_throne_thumper.htm"
   },
@@ -397,14 +397,6 @@
    "prix": 139,
    "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
    "url": "https://www.thomann.fr/millenium_dm_30_drum_monitor_b_stock_2.htm"
-  },
-  {
-   "id": "288672",
-   "marque": "Roland",
-   "modele": "FD-8 V-Drum Hi-Hat Con B-Stock",
-   "prix": 109,
-   "categorie": "Batteries Electroniques > Pads de Charleston",
-   "url": "https://www.thomann.fr/roland_fd_8_v_drum_hi_hat_con_b_stock_2.htm"
   },
   {
    "id": "290813",
@@ -589,6 +581,14 @@
    "prix": 129,
    "categorie": "Batteries Electroniques > Pads de Cymbale",
    "url": "https://www.thomann.fr/yamaha_pcy_100_10_3_zone_cymbal_pad.htm"
+  },
+  {
+   "id": "342271",
+   "marque": "Roland",
+   "modele": "TM-2 Trigger Module B-Stock",
+   "prix": 222,
+   "categorie": "Batteries Electroniques > Modules de Sons",
+   "url": "https://www.thomann.fr/roland_tm_2_trigger_module_b_stock.htm"
   },
   {
    "id": "343002",
@@ -981,14 +981,6 @@
    "prix": 369,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_150x_e_drum_mesh_bundle.htm"
-  },
-  {
-   "id": "423501",
-   "marque": "Roland",
-   "modele": "SPD::ONE Kick B-Stock",
-   "prix": 249,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_spdone_kick_b_stock.htm"
   },
   {
    "id": "426092",
@@ -1466,7 +1458,7 @@
    "id": "507011",
    "marque": "Millenium",
    "modele": "MPS-750X Hi-Hat Pad B-Stock",
-   "prix": 83,
+   "prix": 82,
    "categorie": "Batteries Electroniques > Pads de Charleston",
    "url": "https://www.thomann.fr/millenium_mps_750x_hi_hat_pad_b_stock.htm"
   },
@@ -2055,14 +2047,6 @@
    "url": "https://www.thomann.fr/roland_td_1dmk_multicore_b_stock.htm"
   },
   {
-   "id": "540276",
-   "marque": "Millenium",
-   "modele": "NonaPad B-Stock",
-   "prix": 169,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/millenium_nonapad_b_stock.htm"
-  },
-  {
    "id": "542521",
    "marque": "Alesis",
    "modele": "Nitro Multicore",
@@ -2130,7 +2114,7 @@
    "id": "545259",
    "marque": "Millenium",
    "modele": "MPS-1000 E-Drum Module B-Stock",
-   "prix": 325,
+   "prix": 365,
    "categorie": "Batteries Electroniques > Modules de Sons",
    "url": "https://www.thomann.fr/millenium_mps_1000_e_drum_module_b_stock.htm"
   },
@@ -3402,7 +3386,7 @@
    "id": "620189",
    "marque": "Roland",
    "modele": "MN-10 Mood Pan",
-   "prix": 629,
+   "prix": 599,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/roland_mn_10_mood_pan.htm"
   },
@@ -3474,7 +3458,7 @@
    "id": "626124",
    "marque": "Roland",
    "modele": "MN-10 Mood Pan Bundle",
-   "prix": 649,
+   "prix": 629,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/roland_mn_10_mood_pan_bundle.htm"
   },
@@ -3677,6 +3661,14 @@
    "prix": 398,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_350_e_drum_bundle.htm"
+  },
+  {
+   "id": "630765",
+   "marque": "Millenium",
+   "modele": "MPS-350 E-Drum Set B-Stock",
+   "prix": 322,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/millenium_mps_350_e_drum_set_b_stock.htm"
   },
   {
    "id": "631566",
