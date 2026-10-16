@@ -1,5 +1,29 @@
 # Journal BipBop
 
+## 16 octobre 2026 (routine de 17 h 37) — P112, protéger ses oreilles à la batterie
+
+**La page.** `/les-bases/casque-anti-bruit-batterie/` (maquette `Les-Bases-Proteger-Oreilles.dc.html`, clonée de « Les accessoires », ≈ 1 900 mots) :
+électronique ou acoustique (pas le même danger), comment l'oreille s'use (3 dB, seuils de 80 et 85 dB(A) du Code du travail, étude de 2025 et seuil
+de l'Assurance maladie repris de l'article « apprendre la batterie »), les trois familles de protections, lire l'atténuation, trois casques de batteur
+en tableau (prix en jetons, alias `casquevf`, `casquedrumeo`, `casquealesis` ajoutés à `ACCESSOIRES_CITES`), habitudes au casque, acoustique et
+répétition, profils, questions. Title : « Casque anti bruit batterie : protéger ses oreilles en jouant ». Cartes aux hubs Les bases (« S'équiper » à 5,
+12 articles) et Guides (11 articles). Sources : `accessoires.json`, rayon du 16/10 (aucun casque ni bouchon dedans), fiches lues le 16/10 : Thomann
+Vic Firth SIH3 (25 dB, 340 g, 32 Ω, mini-jack et adaptateur 6,3 mm, 92 €) et Drumeo Headphones (fermé, 295 g, câble 3 m, adaptateur inclus, aucune
+atténuation chiffrée, 77 €), Woodbrass Alesis DRP100 (fermé, 32 Ω, jack 3,5 mm, adaptateur 6,35 mm non fourni, aucune atténuation chiffrée, 53 €).
+**Bouchons sans marque ni prix** : Alpine, Vibes et Knops (notes du plan) ne sont dans aucun fichier du dépôt ; ils attendent une session locale (ajout à
+`selection-accessoires.csv` depuis le flux Thomann).
+**Maillage.** Sortants : R1 (premier tiers), R2, casque (réceptrice de la page), électronique ou acoustique, apprendre la batterie, ampli, jouer sans
+déranger. Entrants (phrases) : casque, électronique ou acoustique, apprendre la batterie, jouer sans déranger ; plus les deux hubs.
+**Corrigé en passant.** Jouer sans déranger : « le SIH3 à 92 € est le plus isolant du catalogue » sans source (deux des trois fiches ne chiffrent rien),
+remplacé par « le seul des trois casques de batteur de notre sélection dont la fiche chiffre l'isolation, 25 dB », prix en jeton.
+**Rafraîchi.** `/avis/millenium-mps-750x/` (lastmod du 29/09) : prix revérifiés (inchangés, rayon du 16/10) et passés en jetons (chapeau, budget,
+tableau, encart, écarts). Faux retirés : « le kit le mieux fourni du marché français » et « le plus de matériel à 498 € » (la DED-200X à 499,99 € a
+9 pads et 4 cymbales dans la base), « toutes les batteries de cette tranche sauf la TD-02KV » ont une pédale à batte (la DTX402K et la TD-02K non plus),
+« aucun caoutchouc, rare à ce prix » (Nitro Max, MPS-450, DDX50 en mesh moins cher), « la plus encombrante sous 500 € » (empreinte inconnue pour neuf
+kits), « sur les modèles à 300 € le crash recule » sans source. Badge de tête « Cinq fûts en mesh ». Liens vers le guide des pads et les accessoires.
+**À trancher.** L'avis MPS-750X garde « la marque maison de Thomann se revend mal » et « la cote de revente » (occasion, en attente de Jordane) ;
+le guide casque garde ses prix écrits en dur (inchangés au relevé). Prochaine page à rafraîchir : l'accueil (lastmod du 29/09).
+
 ## 15 octobre 2026 (routine de 17 h 37) — P53, les accessoires vraiment utiles
 
 **La page.** `/les-bases/accessoires-batterie-electronique/` (maquette `Les-Bases-Accessoires.dc.html`, clonée de « Quelles baguettes », ≈ 2 100 mots) :

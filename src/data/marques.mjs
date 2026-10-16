@@ -46,6 +46,9 @@ export const ACCESSOIRES_CITES = {
   pdxsix: { marque: 'Roland', produit: 'PDX-6 8" Mesh' },
   pdxcent: { marque: 'Roland', produit: 'PDX-100 10" V-Pad' },
   tpyamaha: { marque: 'Yamaha', produit: 'TP70S 7,5 pouces 3 zones' },
+  casquevf: { marque: 'Vic Firth', produit: 'SIH3 Headphones' },
+  casquedrumeo: { marque: 'Drumeo', produit: 'Headphones' },
+  casquealesis: { marque: 'Alesis', produit: 'DRP100' },
 };
 
 export const MARQUES = {
