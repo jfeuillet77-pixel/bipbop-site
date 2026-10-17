@@ -1,5 +1,28 @@
 # Journal BipBop
 
+## 17 octobre 2026 (routine de 17 h 37) — P114, cadeau pour batteur
+
+**La page.** `/guides/cadeau-batteur/` (maquette `Guide-Cadeau-Batteur.dc.html`, clonée de « Où acheter », ≈ 2 000 mots) : trois questions avant
+de choisir (acoustique ou électronique, ce qu'il a déjà, ce qui dépend du kit), idées sous 20, 50 et 100 €, tableau de douze idées (4 colonnes, défile),
+trois cartes (Vic Firth 5A Nova, Millenium R1, Tama HT10S), cadeaux qui dépendent du kit, ce qu'on évite d'offrir, enfant, quand commander, verdict,
+questions. Aucune batterie conseillée. Prix tous en jetons : 18 alias ajoutés à `ACCESSOIRES_CITES` (`marques.mjs`). Title sans montant (meta non plus :
+le `<head>` n'est pas résolu). Carte au hub Guides, « Par situation » (6, 19 guides). Sources : `accessoires.json` et relevé du 12/10 (le rayon du 16/10
+ne contient ni baguettes, ni pads d'entraînement, ni casques, ni sièges), faits des pages publiées (baguettes, pad, casque, oreilles, où acheter),
+fiches Thomann lues le 17/10 : Vic Firth 5A Nova (hickory, 406 mm), Eco Stick Bag (Cordura), FY-2 (bambou), Vic Firth 6" (silicone, MDF), R1, Tama
+HT10S (assise de 50 mm, 400 à 590 mm) : prix conformes à la base, toutes disponibles immédiatement.
+**Maillage.** Sortants : Accessoires (réceptrice, premier tiers), R2, R1, baguettes, pad d'entraînement, casque, oreilles, ampli, faire évoluer, Black
+Friday, seul ou prof. Entrants (phrases) : accessoires, baguettes, pad d'entraînement, Black Friday ; plus le hub Guides.
+**Rafraîchi.** L'accueil (lastmod du 29/09) : « votre robot batteur » → « ton » (vouvoiement), « 31 modèles » → `{c:modeles}` (32), prix des trois
+cartes en jetons (inchangés), « Nitro Max Mesh » → « Nitro Max » (le nom du modèle), « Neuf personnes sur dix » retiré (chiffre sans source), « un tapis
+épais à 40 € règle 80 % du problème » remplacé (aucun tapis à 40 € dans la sélection, 80 % sans source) par le tapis de référence en jeton et un lien
+vers « jouer sans déranger », « tu la remplaceras au bout de deux ans » remplacé par un lien vers « faire évoluer ». MAJ et pied de page en octobre.
+**Corrigé en passant.** Avis MPS-150X : badge « LE MESH LE MOINS CHER » faux (Alesis Debut à 240 € et Millenium Rookie à 179 €, en mesh, kits enfant)
+→ « TOUS LES FÛTS EN MESH », et « ticket d'entrée du mesh » précisé « pour un adulte ».
+**À trancher.** L'accueil met encore la Nitro Max en « choix sûr » alors que `/avis/` fait de la MPS-450 la recommandation nº1, et garde « une Roland
+se revend bien » (revente, sans source, comme l'avis MPS-750X) : choix de ligne, laissés à Jordane. Le titre H1 de l'avis MPS-150X écrit « 298 € » en dur.
+Rayon du 16/10 : Alesis Nitro Max Expansion Pack à 98 €, la base dit 89 € (relevé du 12/10) : le lundi le reprendra. Prochaine page à rafraîchir hors
+légales : `/plan-du-site/` est construite, donc le premier lastmod du 07/10 (tapis, combien de temps…).
+
 ## 16 octobre 2026 (routine de 17 h 37) — P112, protéger ses oreilles à la batterie
 
 **La page.** `/les-bases/casque-anti-bruit-batterie/` (maquette `Les-Bases-Proteger-Oreilles.dc.html`, clonée de « Les accessoires », ≈ 1 900 mots) :
