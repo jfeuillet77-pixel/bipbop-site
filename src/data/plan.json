@@ -1485,7 +1485,7 @@
   "priorite": "Moyenne",
   "produits_lies": "Dante Agostini Méthode de batterie 0 à 4, Hudson Music Groove Essentials (flux Thomann, à ajouter aux accessoires)",
   "maillage_sortant": "Apprendre la batterie, Apprendre seul ou avec un professeur, Combien de temps",
-  "notes": "Rang 16. Volume : 220/mois (methode pour apprendre la batterie 40, apprendre la batterie pour les nuls 40, meilleur livre pour apprendre la batterie 20, livre pour apprendre la batterie 20, apprendre la batterie pdf 20…). Non-cannibalisation : Plus proche : P73 pilier, H2 « Seul, avec une appli, un livre ou un prof », et P54 seul ou prof. Ils comparent des formules ; ici on compare des titres précis, par niveau. P73 renvoie ici depuis son H2. Page réceptrice : Apprendre la batterie (P73)."
+  "notes": "Rang 16. Volume : 220/mois (methode pour apprendre la batterie 40, apprendre la batterie pour les nuls 40, meilleur livre pour apprendre la batterie 20, livre pour apprendre la batterie 20, apprendre la batterie pdf 20…). Non-cannibalisation : Plus proche : P73 pilier, H2 « Seul, avec une appli, un livre ou un prof », et P54 seul ou prof. Ils comparent des formules ; ici on compare des titres précis, par niveau. P73 renvoie ici depuis son H2. Page réceptrice : Apprendre la batterie (P73). [session locale]"
  },
  {
   "id": "P116",
@@ -1501,7 +1501,7 @@
   "priorite": "Moyenne",
   "produits_lies": "Aucun ou abonnements fournis avec les kits (Drumeo, Melodics)",
   "maillage_sortant": "Apprendre la batterie, Apprendre seul ou avec un professeur, Enregistrer sa batterie",
-  "notes": "Rang 17. Volume : 190/mois (apprendre la batterie en ligne 30, application pour apprendre la batterie 20, logiciel pour apprendre la batterie 20, tuto apprendre la batterie 20, apprendre la batterie gratuitement 20…). Non-cannibalisation : Plus proche : P73 et P54 (mêmes H2 que la page livres). Ici les applis et plateformes nommées, gratuites ou non, et celles offertes avec un kit. Ne reprend pas les livres (page voisine). Page réceptrice : Apprendre la batterie (P73)."
+  "notes": "Rang 17. Volume : 190/mois (apprendre la batterie en ligne 30, application pour apprendre la batterie 20, logiciel pour apprendre la batterie 20, tuto apprendre la batterie 20, apprendre la batterie gratuitement 20…). Non-cannibalisation : Plus proche : P73 et P54 (mêmes H2 que la page livres). Ici les applis et plateformes nommées, gratuites ou non, et celles offertes avec un kit. Ne reprend pas les livres (page voisine). Page réceptrice : Apprendre la batterie (P73). [session locale]"
  },
  {
   "id": "P117",
@@ -1510,9 +1510,9 @@
   "titre": "Batterie électronique compacte : la place qu il faut, modèle par modèle",
   "slug": "/guides/batterie-electronique-compacte",
   "permalien": "https://bipbop.eu/guides/batterie-electronique-compacte/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Guide-Batterie-Compacte.dc.html",
   "gabarit": "Guide",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "batterie electronique compacte",
   "priorite": "Moyenne",
   "produits_lies": "Les 31 modèles (empreinte au sol de modeles.json) : Millenium Rookie, Alesis Debut, Millenium MPS-150X, Alesis Nitro Max…",

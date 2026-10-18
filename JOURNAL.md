@@ -1,5 +1,26 @@
 # Journal BipBop
 
+## 18 octobre 2026 (routine de 17 h 37) — P117, batterie électronique compacte
+
+**La page.** `/guides/batterie-electronique-compacte/` (maquette `Guide-Batterie-Compacte.dc.html`, clonée du guide Bluetooth, ≈ 2 300 mots) : ce que mesure
+une fiche (« Surface au sol requise », siège non compris sauf TD313), les quatorze kits mesurés de la base classés par surface (tableau 4 colonnes,
+défile, prix en jetons), la place du batteur (repères de 40 cm du guide appartement et de 20 cm de la page tapis), ce qui rend un kit plus petit, les
+kits sans surface (on ne devine pas), choix par situation, verdict, questions. Title « Batterie électronique compacte : la place qu'il faut » (52), meta
+sans montant. Carte au hub Guides, « Par situation » (7, 20 guides). Sources : `modeles.json` (14 empreintes sourcées), rayon du 18/10, avis et duels
+publiés ; dix fiches Thomann lues le 18/10 : MPS-450 (env. 120 × 80 cm, confirmé) ; Nitro Max, Nitro Pro, Nitro Pro XL, Nitro Ultimate, Strata Club,
+MPS-350, MPS-750X Pro, MPS-1000, DTX402K : aucune surface au sol, toutes disponibles immédiatement.
+**Passées.** P115 (livres) et P116 (applis) marquées « [session locale] » : aucun titre, aucune offre ni aucun prix dans les dépôts.
+**Maillage.** Sortants : guide appartement (réceptrice, premier tiers), R1, R2, R3, R5, tapis, sans déranger, faire évoluer, duel MPS-150/150X, duel
+MPS-450/Nitro Max, huit avis. Entrants (phrases) : guide appartement, duel MPS-150 contre MPS-150X, avis TD-02KV, page tapis ; plus le hub Guides.
+**Rafraîchi.** `/les-bases/tapis-batterie-electronique/` (lastmod du 07/10) : prix revérifiés (inchangés) et passés en jetons (alias `tapisonstage`,
+`tapisefnote`, `tapisrockbag`, `isolant` ajoutés à `ACCESSOIRES_CITES`), « Trois tapis » → « Quatre » (le tableau en a quatre), empreinte « 140 × 90 cm
+pour un kit à huit pads » fausse remplacée par les surfaces Thomann de la base, tailles de tapis sans source retirées, « 60 % d'un tapis » et « le retour le
+plus fréquent qu'on reçoit » (expérience inventée) retirés, « le seul conçu pour une batterie électronique » et « le plus épais » adoucis. Liens vers
+le guide compact et « sans déranger ». Pied de page en octobre.
+**Corrigé en passant.** Avis TD-02KV : « là où une Nitro Max demande un vrai bout de pièce » (aucune surface publiée pour la Nitro Max) → 20 cm de moins
+que la MPS-150X. Avis Turbo Mesh : « la MPS-150X donne une meilleure emprise au sol » faux (140 × 80 contre 110 × 80) → « une caisse claire de 10 pouces ».
+**À trancher.** `design/maillage-avis.py` a un chemin du Mac en dur : il ne tourne pas en cloud. Prochaine page à rafraîchir hors légales : combien de temps (07/10).
+
 ## 17 octobre 2026 (routine de 17 h 37) — P114, cadeau pour batteur
 
 **La page.** `/guides/cadeau-batteur/` (maquette `Guide-Cadeau-Batteur.dc.html`, clonée de « Où acheter », ≈ 2 000 mots) : trois questions avant
