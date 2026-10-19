@@ -1,5 +1,55 @@
 # Journal BipBop
 
+## 19 octobre 2026 — Relevé du lundi : l'Expansion Pack Nitro Max passe à 98 €, la Turbo Mesh toujours absente
+
+**Le prix.** Un seul mouvement au-dessus du seuil : Alesis Nitro Max Expansion Pack, 89 → 98 € chez Thomann (flux),
+déjà vu à 98 € au rayon du 14/10. Le script le retenait faute d'entrée : ajoutée à `accessoires` de
+`design/prix-reperes.json`. 89 € est partagé avec la Nitro Multicore et le module MPS-150 : chaque ligne relue.
+
+**Ce que le rapport classait mal.** Le guide occasion (3 « mécaniques ») ne parle que de la **Multicore**, toujours à
+89 € : rien touché. Dans « faire évoluer », la phrase marquée « à réécrire » (ligne 172, « faisceau complet 89 € ») et
+« câbles neufs, 16 à 89 € » sont aussi la Multicore, et le 89 € du tableau des modules est le module MPS-150 : rien
+touché. À l'inverse, le rapport **ne voit pas** une phrase fausse parce que le prix y est en jeton : le duel Nitro Max
+contre DED-200X disait que la Nitro Max plus son pack revient « pour un total encore inférieur » à la Donner. 409 + 98 =
+507 € contre 499,99 € : c'est faux depuis aujourd'hui.
+
+**Réécrit (`design/port-corrections.json`).**
+- Duel Nitro Max contre DED-200X, FAQ : « pour un total encore inférieur » → « pour sept euros de plus, mais sans le
+  casque ni le tabouret que la Donner livre ». Le verdict compare les deux kits équipés d'un casque et d'un siège, pas
+  le pack : il tient. En-tête « 19 OCT. 2026 ».
+- Guide moins de 1 000 € : ligne du pack à 98 €, total du panier « alternative » 627 → 636 € (409 + 98 + 59 + 26 + 44,
+  les quatre autres confirmés aujourd'hui), « soixante-et-onze euros de moins que la Nitro Pro » → « soixante-deux ». La
+  conclusion tient. En-tête « 19 OCT. 2026 », « Prix relevés le 19 octobre » (§05, les neuf prix du tableau confirmés).
+- Guide faire évoluer : « L'extension officielle de ta gamme, 89 à 125 € » → « 98 à 125 € », ligne du pack à 98 €.
+  En-tête et « Prix relevés » au 19 octobre (les sept autres prix du tableau confirmés par le relevé). J'ai modifié les
+  entrées de date existantes (17/09, 12/10) plutôt que d'en empiler de nouvelles.
+
+**Suivent seuls (jetons).** Duels Nitro Max contre TD-02KV et MPS-450 contre Nitro Max, guide des pads, avis Nitro Pro
+(« pour 507 €, soit 191 € de moins que la Nitro Pro », toujours vrai). Phrases relues, aucune ne raisonne sur un écart
+devenu faux. Dates non touchées : rien de fond n'y change. Aucune meta description ne citait 89 €, 627 € ou 71 € pour
+le pack (la meta du guide occasion cite « une pièce à 89 € » : la Multicore, vraie) : `seo-titles-meta.md` non touché.
+
+**Pas tranché.**
+- **Alesis Turbo Mesh Kit, deuxième relevé sans fiche** (absente du flux, HTTP 404). Rien retiré, pour les raisons du
+  12/10, toujours valables : l'accès web (WebFetch) est encore refusé à cette session, donc impossible de voir si
+  Woodbrass ou un autre marchand l'a ; et le dépôt n'a toujours aucun mécanisme pour retirer un **modèle**. Un retrait
+  à moitié ferait pire que rien. Le comparatif, le hub Alesis, son avis, le duel MPS-150X contre Turbo et quatre
+  guides lient donc toujours une fiche morte, pour la deuxième semaine. **À décider par Jordane** : le successeur
+  (la MPS-150X, qui gagne déjà le duel, reste la candidate) et un champ « retiré » côté `modeles.json`. Le guide
+  « faire évoluer » garde son exemple « une Turbo Mesh payée 309 € » : un kit déjà acheté, l'exemple reste lisible,
+  mais il sera à revoir avec le retrait.
+- **Alesis Nitro Multicore**, « actuellement indisponible » sans date (quatre relevés selon le rapport, déjà signalée le 12/10), liée depuis le guide occasion
+  (tableau et deux phrases, meta comprise). Le cas §04 est mûr, mais sans accès web je n'ai pas pu vérifier Woodbrass :
+  pas de bascule, pas de retrait. **À vérifier à la main.**
+- Les neuf autres ruptures ne sont liées depuis aucune page publiée : rien à faire.
+- Je n'ai pas pu lancer `git pull` dans le dépôt des maquettes (commande non autorisée à cette session) : le portage a
+  tourné sur la copie locale.
+
+Piste pour `scripts/prix/rapport.mjs` : chercher aussi les phrases où un jeton `{accprix:…}` côtoie un comparatif
+(« total », « moins cher », « inférieur ») ; elles changent de sens sans qu'aucun montant écrit ne bouge.
+
+`npm run data` et `npm run port` passent. Ni `check` ni `fidelite` lancés : c'est le script de livraison qui les lance.
+
 ## 18 octobre 2026 (routine de 17 h 37) — P117, batterie électronique compacte
 
 **La page.** `/guides/batterie-electronique-compacte/` (maquette `Guide-Batterie-Compacte.dc.html`, clonée du guide Bluetooth, ≈ 2 300 mots) : ce que mesure
