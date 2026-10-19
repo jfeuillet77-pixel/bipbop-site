@@ -1,8 +1,8 @@
 {
   "_commentaire": "Prix et références contrôlés sur le web après coup, enregistrés côté dépôt. « Claude Design - MàJ/data/ » reste la source d'auteur : ce fichier ne la dément que lorsqu'un relevé en ligne a tranché depuis. scripts/import-data.mjs l'applique à chaque import, une entrée sans correspondance fait échouer l'import. Chaque entrée porte sa date et sa preuve.",
-  "_releve": "2026-10-12",
+  "_releve": "2026-10-19",
   "base": {
-    "releve": "2026-10-12",
+    "releve": "2026-10-19",
     "version": 3
   },
   "_base": "La date d'en-tête est celle du relevé des prix (17/09) — c'est elle que le comparatif et le hub affichent sous leurs tableaux. Les bascules de marchand du 18/09 ne changent aucun prix de modèle.",
@@ -99,6 +99,12 @@
       "produit": "RT-30K Kick Trigger",
       "prix": "98 €",
       "pourquoi": "Thomann à 98 € relevé le 05/10/2026 (93 € auparavant), par la page produit (flux périmé). Entrée créée par la session du lundi : le script retient un accessoire sans entrée. Aucune maquette n'écrit son prix."
+    },
+    {
+      "marque": "Alesis",
+      "produit": "Nitro Max Expansion Pack",
+      "prix": "98 €",
+      "pourquoi": "Thomann à 98 € relevé le 19/10/2026 par le flux marchand (89 € auparavant), déjà vu à 98 € au rayon du 14/10. Entrée créée par la session du lundi : le script retient un accessoire sans entrée. Les pages en jeton {accprix:extnitro} suivent seules ; les guides « faire évoluer » et « moins de 1 000 € » l'écrivent en dur et sont corrigés par design/port-corrections.json."
     }
   ],
   "retires": [

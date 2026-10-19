@@ -193,8 +193,8 @@
     {
       "fichier": "Guide-Moins-De-1000-Euros.dc.html",
       "au": "Prix relevés chez Thomann le 12 septembre 2026.",
-      "remplace": "Prix relevés chez Thomann le 12 octobre 2026.",
-      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 12/10/2026 a confirmé les neuf prix du tableau (aucun n'est dans les quatre mouvements du jour ni dans les ruptures). La date de publication de l'en-tête ne bouge pas : le texte n'a pas changé"
+      "remplace": "Prix relevés chez Thomann le 19 octobre 2026.",
+      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 19/10/2026 a confirmé les neuf prix du tableau et ceux du panier « alternative » (Nitro Max 409 €, tapis 59 €, casque 26 €, siège 44 €), seul l'Expansion Pack bouge (89 → 98 €). Le 12/10 avait déjà tout confirmé"
     },
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
@@ -217,8 +217,8 @@
     {
       "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
       "au": "relevés chez Thomann le 12 septembre 2026",
-      "remplace": "relevés chez Thomann le 17 septembre 2026",
-      "pourquoi": "page modifiée par le relevé du 17/09"
+      "remplace": "relevés chez Thomann le 19 octobre 2026",
+      "pourquoi": "page modifiée par le relevé du 19/10/2026 (Expansion Pack Nitro Max à 98 €) ; les sept autres prix du tableau sont confirmés par le même relevé. Modifiée auparavant par celui du 17/09"
     },
     {
       "fichier": "Avis-Millenium-MPS-150X.dc.html",
@@ -313,8 +313,8 @@
     {
       "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
       "au": ">12 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "remplace": ">17 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
+      "remplace": ">19 OCT. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 19/10/2026 (Expansion Pack Nitro Max à 98 €), et avant lui par celui du 17/09"
     },
     {
       "fichier": "Guide-Pack-Complet.dc.html",
@@ -441,6 +441,54 @@
       "au": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/557719.jpg\" alt=\"Roland TD-02K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Roland TD-02K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">349 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">16 kits</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Les sons Roland sans le mesh. On préfère mettre 149 € de plus.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/443798.jpg\" alt=\"Yamaha DTX402K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Yamaha DTX402K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">369 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">287 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">L'application Yamaha est la meilleure du marché, les pads non.</div>",
       "remplace": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/443798.jpg\" alt=\"Yamaha DTX402K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Yamaha DTX402K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">346 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">287 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">L'application Yamaha est la meilleure du marché, les pads non.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/557719.jpg\" alt=\"Roland TD-02K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Roland TD-02K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">349 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">16 kits</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Les sons Roland sans le mesh. On préfère mettre 149 € de plus.</div>",
       "pourquoi": "Relevé du 05/10/2026 : Yamaha DTX402K à 346 € chez Thomann (369 € auparavant). Elle passe sous la Roland TD-02K à 349 € et le tableau se dit « classé du moins cher au plus cher » : les deux lignes échangent leur contenu, les fonds alternés restent en place"
+    },
+    {
+      "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
+      "au": "L'extension officielle de ta gamme, 89 à 125 €",
+      "remplace": "L'extension officielle de ta gamme, 98 à 125 €",
+      "pourquoi": "Relevé du 19/10/2026 : Alesis Nitro Max Expansion Pack à 98 € chez Thomann, par le flux (89 € auparavant). La borne haute est le pack MPS-750X, toujours à 125 €. Le « faisceau complet 89 € » et les « câbles neufs, 16 à 89 € » de la même section parlent de l'Alesis Nitro Multicore, toujours à 89 € : non touchés"
+    },
+    {
+      "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
+      "au": ", bras et câbles compris</div></div>\n<div style=\"padding:12px 16px;font:600 15px 'Work Sans',sans-serif;white-space:nowrap;text-align:right\">89 €</div>",
+      "remplace": ", bras et câbles compris</div></div>\n<div style=\"padding:12px 16px;font:600 15px 'Work Sans',sans-serif;white-space:nowrap;text-align:right\">98 €</div>",
+      "pourquoi": "même relevé, ligne « Pack extension Alesis Nitro Max » du tableau. L'autre 89 € du tableau des modules est le module MPS-150, inchangé"
+    },
+    {
+      "fichier": "Guide-Moins-De-1000-Euros.dc.html",
+      "au": "on passe à dix pads</div></div>\n<div style=\"padding:12px 16px;font:600 15px 'Work Sans',sans-serif;white-space:nowrap;text-align:right\">89 €</div>",
+      "remplace": "on passe à dix pads</div></div>\n<div style=\"padding:12px 16px;font:600 15px 'Work Sans',sans-serif;white-space:nowrap;text-align:right\">98 €</div>",
+      "pourquoi": "Relevé du 19/10/2026 : Alesis Nitro Max Expansion Pack à 98 € chez Thomann, par le flux (89 € auparavant)"
+    },
+    {
+      "fichier": "Guide-Moins-De-1000-Euros.dc.html",
+      "au": "<span>Le total</span><span>627 €</span>",
+      "remplace": "<span>Le total</span><span>636 €</span>",
+      "pourquoi": "même relevé : 409 + 98 + 59 + 26 + 44 = 636 €, les quatre autres prix du panier confirmés le 19/10"
+    },
+    {
+      "fichier": "Guide-Moins-De-1000-Euros.dc.html",
+      "au": "Pour soixante-et-onze euros de moins que la Nitro Pro,",
+      "remplace": "Pour soixante-deux euros de moins que la Nitro Pro,",
+      "pourquoi": "même relevé : la Nitro Pro reste à 698 €, le panier passe à 636 €, l'écart tombe de 71 à 62 €. La conclusion tient (dix pads au lieu de huit, moins cher)"
+    },
+    {
+      "fichier": "Guide-Moins-De-1000-Euros.dc.html",
+      "au": ">12 SEPT. 2026 · 9 MIN DE LECTURE</div>",
+      "remplace": ">19 OCT. 2026 · 9 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : le texte a changé au relevé du 19/10/2026 (Expansion Pack à 98 €, panier à 636 €, écart avec la Nitro Pro réécrit)"
+    },
+    {
+      "fichier": "Duel-Alesis-Nitro-Max-vs-Donner-DED-200.dc.html",
+      "au": "Elle rattrape alors la Donner en nombre de pads, pour un total encore inférieur.",
+      "remplace": "Elle rattrape alors la Donner en nombre de pads pour sept euros de plus, mais sans le casque ni le tabouret que la Donner livre.",
+      "pourquoi": "Relevé du 19/10/2026 : Expansion Pack à 98 € (89 € auparavant). Nitro Max 409 € + pack 98 € = 507 € contre 499,99 € pour la DED-200X : le total n'est plus inférieur. Le prix du pack est un jeton ({accprix:extnitro}) et suit seul, mais cette phrase en tire une comparaison que le rapport ne voit pas. Le verdict ne repose pas sur le pack (il compare les deux kits équipés d'un casque et d'un siège) : il tient. À relire si le pack redescend sous 91 €"
+    },
+    {
+      "fichier": "Duel-Alesis-Nitro-Max-vs-Donner-DED-200.dc.html",
+      "au": ">11 SEPT. 2026 · 5 MIN</div>",
+      "remplace": ">19 OCT. 2026 · 5 MIN</div>",
+      "pourquoi": "date rafraîchie : une réponse de la FAQ réécrite au relevé du 19/10/2026"
     }
   ]
 }

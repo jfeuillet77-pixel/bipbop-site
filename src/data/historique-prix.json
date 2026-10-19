@@ -2,6 +2,82 @@
  "_": "L'historique publié des relevés de prix, source unique de /suivi-des-prix/. Écrit par scripts/prix/publier.mjs à chaque relevé, jamais à la main. Contrairement à releves/, il ne s'élague pas : c'est la trace du travail.",
  "releves": [
   {
+   "date": "2026-10-19",
+   "controlees": 160,
+   "lues": 159,
+   "seuil": 5,
+   "mouvements": [
+    {
+     "nom": "Alesis Nitro Max Expansion Pack",
+     "marchand": "Thomann",
+     "famille": "Pads de caisse claire et toms",
+     "avant": "89 €",
+     "apres": "98 €",
+     "ecart": 9,
+     "pct": 10.1,
+     "changeDeTranche": null
+    }
+   ],
+   "ruptures": [
+    {
+     "nom": "Behringer DH100",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 3-4 semaines"
+    },
+    {
+     "nom": "Pearl D-50 Drum Throne",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PDX-6 8\" Mesh",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Yamaha PCY-100 10\" 3 zones",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 6-8 semaines"
+    },
+    {
+     "nom": "Alesis Nitro Multicore",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland PM-03 Monitor System",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Yamaha DT50K Kick Trigger",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 3-4 semaines"
+    },
+    {
+     "nom": "Roland RT-30K Kick Trigger",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Protection Racket E-Drum Kit Bag 28x16",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 5-7 semaines"
+    },
+    {
+     "nom": "Tama TDK05 Drum Tuning Key",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    }
+   ],
+   "disparues": [
+    {
+     "nom": "Alesis Turbo Mesh Kit",
+     "marchand": "Thomann"
+    }
+   ]
+  },
+  {
    "date": "2026-10-12",
    "controlees": 160,
    "lues": 159,
