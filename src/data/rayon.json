@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-10-18",
+ "date": "2026-10-19",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -535,14 +535,6 @@
    "url": "https://www.thomann.fr/millenium_mps_250_500_750_12_crash_pad.htm"
   },
   {
-   "id": "336999",
-   "marque": "Yamaha",
-   "modele": "KP-65A B-Stock",
-   "prix": 66,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/yamaha_kp_65a_b_stock.htm"
-  },
-  {
    "id": "339752",
    "marque": "Alesis",
    "modele": "Samplepad Pro",
@@ -981,14 +973,6 @@
    "prix": 598,
    "categorie": "Batteries Electroniques > Modules de Sons",
    "url": "https://www.thomann.fr/yamaha_ead10_drum_module.htm"
-  },
-  {
-   "id": "426621",
-   "marque": "Yamaha",
-   "modele": "EAD10 Drum Module B-Stock",
-   "prix": 515,
-   "categorie": "Batteries Electroniques > Modules de Sons",
-   "url": "https://www.thomann.fr/yamaha_ead10_drum_module_b_stock.htm"
   },
   {
    "id": "428224",
@@ -2794,7 +2778,7 @@
    "id": "579513",
    "marque": "Millenium",
    "modele": "PS-13 13\"x05\" Snare PW B-Stock",
-   "prix": 119,
+   "prix": 88,
    "categorie": "Batteries Electroniques > Pads de Caisse Claire",
    "url": "https://www.thomann.fr/millenium_ps_13_13x05_snare_pw_b_stock.htm"
   },
@@ -3653,14 +3637,6 @@
    "prix": 49,
    "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
    "url": "https://www.thomann.fr/roland_rsh_10_drums_smartphone_holder.htm"
-  },
-  {
-   "id": "629301",
-   "marque": "Alesis",
-   "modele": "Nitro Amp Pro B-Stock",
-   "prix": 139,
-   "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
-   "url": "https://www.thomann.fr/alesis_nitro_amp_pro_b_stock.htm"
   },
   {
    "id": "630636",
