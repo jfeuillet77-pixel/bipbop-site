@@ -441,7 +441,31 @@ export function appliquerGreffes(corps, fichier, options = {}) {
     notes.push(...g.notes);
   }
   const plan = grefferLiensDuPied(corps, options);
-  return { corps: plan.corps, notes: [...notes, ...plan.notes] };
+  const date = grefferDateDuPied(plan.corps, options);
+  return { corps: date.corps, notes: [...notes, ...plan.notes, ...date.notes] };
+}
+
+/* --------------------------- la date du pied de page ---------------------------
+
+   Chaque maquette écrit « MIS À JOUR EN SEPT. 2026 » ou « OCT. 2026 » dans son pied, au mois
+   où elle a été écrite : 37 pages affichaient encore septembre le 19/10/2026 (signalé par
+   Jordane). Le site entier est revu chaque lundi par le relevé des prix : le badge prend le mois
+   de ce relevé (`releve` de modeles.json), le même que `src/components/Footer.astro`. */
+
+const MOIS_COURTS = ['JANV.', 'FÉVR.', 'MARS', 'AVR.', 'MAI', 'JUIN', 'JUIL.', 'AOÛT', 'SEPT.', 'OCT.', 'NOV.', 'DÉC.'];
+export function moisDuReleve(iso = RELEVE) {
+  const [annee, mois] = String(iso).split('-');
+  const m = MOIS_COURTS[Number(mois) - 1];
+  if (!m) throw new Error(`date du relevé illisible : « ${iso} »`);
+  return `${m} ${annee}`;
+}
+const BADGE_DATE = /MIS À JOUR EN [A-ZÉÛ]+\.? \d{4}/g;
+export function grefferDateDuPied(corps, { sobre = false } = {}) {
+  const pied = corps.indexOf('<footer');
+  if (pied < 0) return { corps, notes: [] };
+  const voulu = `MIS À JOUR EN ${moisDuReleve()}`;
+  const fin = corps.slice(pied).replace(BADGE_DATE, voulu);
+  return { corps: corps.slice(0, pied) + fin, notes: sobre ? [] : [`pied de page : « ${voulu} », mois du dernier relevé`] };
 }
 
 /* --------------------------- les jetons dans une maquette ---------------------------
@@ -558,7 +582,7 @@ function retirerMentionsAffiliation(corps, fichier, { sobre = false } = {}) {
 
 import GRILLES from '../src/data/grilles.json' with { type: 'json' };
 import { rendre as rendreJetons } from '../src/lib/jetons.mjs';
-import { ROUTES } from '../src/data/produits.mjs';
+import { ROUTES, RELEVE } from '../src/data/produits.mjs';
 export { GRILLES };
 
 /** La note affichée : moyenne pondérée des critères, ramenée sur l'échelle de grilles.json

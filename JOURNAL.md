@@ -1,5 +1,31 @@
 # Journal BipBop
 
+## 19 octobre 2026 (séance avec Jordane) — P49 duel Nitro Max ou MPS-750X, P167 guide métal, date du pied de page
+
+**Pourquoi.** Une lectrice a écrit par le formulaire (débuter au métal en appartement, 500 €, hésitation entre Nitro
+Max, MPS-450, MPS-750X et DDX50-Mesh). Aucune page ne répondait : Jordane a demandé de combler le trou. Deux pages le
+même jour, à sa demande (la routine de 17 h 37 verra deux `feat(page)` et ne publiera rien ce soir).
+
+**P49, `/duels/alesis-nitro-max-vs-millenium-mps-750x/`.** Gagnant MPS-750X « si tu sais que tu vas continuer », Nitro
+Max pour qui découvre. Sources : fiches Thomann de la MPS-750X et de la Nitro Max lues le 19/10 par `curl` (toms 10" à
+deux zones contre 8" à une zone, charleston 13/10, crash 12/10, ride 14 à trois zones contre 10 sans étouffement, rack
+aluminium quatre colonnes de la Nitro Max, grosse caisse 8" de la MPS-750X, baguettes fournies), avis publiés, prix en
+jetons. Entrée dans `duels.mjs`. Liens entrants : avis MPS-750X, avis Nitro Max, duel MPS-450 contre Nitro Max.
+
+**P167 (ligne neuve), `/guides/batterie-electronique-metal/`.** Volume non mesuré. Compatibilité double pédale lue dans
+le catalogue Thomann du 19/10 (`releves/flux/`) pour chaque modèle de la base : déclarée sur la MPS-350, la Nitro Pro,
+la Nitro Pro XL et la Nitro Ultimate seulement ; TD313 d'après notre avis (KD-10). Donner et Woodbrass non relevés, le
+tableau le dit. Carte au hub Guides (21 guides, « Par situation » 8). Liens entrants : duel P49, avis Nitro Pro, avis
+MPS-750X. Réceptrice R1 dans le premier tiers. P121 (double pédale, à produire) devra renvoyer ici.
+
+**Pied de page.** Signalé par Jordane : 37 maquettes et `Footer.astro` affichaient « MIS À JOUR EN SEPT. 2026 ». Le
+badge vient maintenant du mois du dernier relevé (`grefferDateDuPied()` et `moisDuReleve()` de `scripts/greffes.mjs`,
+repris par `Footer.astro`). Les maquettes gardent leur texte : la greffe le réécrit à chaque portage.
+
+**À trancher.** Le duel MPS-750X contre MPS-850 écrit ses prix en dur (498, 598, 125, 409 €) au lieu de jetons : juste
+aujourd'hui, à passer en jetons au prochain rafraîchissement. La DDX50-Mesh (Woodbrass) n'a toujours pas d'avis alors
+que la lectrice l'avait dans sa liste.
+
 ## 19 octobre 2026 — Relevé du lundi : l'Expansion Pack Nitro Max passe à 98 €, la Turbo Mesh toujours absente
 
 **Le prix.** Un seul mouvement au-dessus du seuil : Alesis Nitro Max Expansion Pack, 89 → 98 € chez Thomann (flux),
