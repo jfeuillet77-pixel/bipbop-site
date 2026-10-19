@@ -58,6 +58,15 @@ export const DUELS = {
     pourA: 'tu vis en maison ou au rez-de-chaussée sur dalle.',
     pourB: "quelqu'un vit sous ton plancher ou si tu joues surtout le soir.",
   },
+  '/duels/alesis-nitro-max-vs-millenium-mps-750x/': {
+    a: 'nitromax',
+    b: 'mps750x',
+    gagnant: 'mps750x',
+    resume:
+      "La MPS-750X gagne si tu sais que tu vas continuer : pour {ecart:mps750x-nitromax} de plus, des toms de 10 pouces à deux zones, une charleston de 13 pouces, une ride de 14 et un rack qui ne bouge pas. La Nitro Max garde le prix, l'enregistreur, les leçons et la revente.",
+    pourA: "tu découvres l'instrument et que tu n'es pas sûr de continuer.",
+    pourB: 'tu as déjà joué et que tu veux une batterie pour plusieurs années.',
+  },
   '/duels/millenium-mps-750x-vs-mps-850/': {
     a: 'mps750x',
     b: 'mps850',

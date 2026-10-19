@@ -774,9 +774,9 @@
   "titre": "Alesis Nitro Max contre Millenium MPS-750X",
   "slug": "/duels/alesis-nitro-max-vs-millenium-mps-750x",
   "permalien": "https://bipbop.eu/duels/alesis-nitro-max-vs-millenium-mps-750x/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Duel-Alesis-Nitro-Max-vs-Millenium-MPS-750X.dc.html",
   "gabarit": "Duel",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "alesis nitro max ou millenium mps 750x",
   "priorite": "Basse",
   "produits_lies": "Les deux modèles",
@@ -2302,5 +2302,21 @@
   "produits_lies": "Roland TD316, Alesis Strata Core",
   "maillage_sortant": "Les deux avis, Hub Roland, Hub Alesis",
   "notes": "Ajouté le 07/10/2026 : plafond D05 levé. Volume inconnu pour la paire. Non-cannibalisation : aucun duel au-delà de 1 600 € ; à publier après P164 et P165 (duels.mjs appelle les deux modèles par leur identifiant). Page réceptrice : Comparatif."
+ },
+ {
+  "id": "P167",
+  "lot": "Vague 6",
+  "type": "Guide",
+  "titre": "Batterie électronique pour le métal : la grosse caisse, les toms et le rack d abord",
+  "slug": "/guides/batterie-electronique-metal",
+  "permalien": "https://bipbop.eu/guides/batterie-electronique-metal/",
+  "fichier_maquette": "Guide-Batterie-Metal.dc.html",
+  "gabarit": "Guide",
+  "statut": "Publié",
+  "requete_cible": "batterie electronique metal",
+  "priorite": "Moyenne",
+  "produits_lies": "Millenium MPS-450, MPS-350, MPS-750X, MPS-850, MPS-1000, Alesis Nitro Max, Nitro Pro, Nitro Pro XL, Nitro Ultimate, Roland TD-02KV, TD313",
+  "maillage_sortant": "Duel Nitro Max ou MPS-750X, Avis Nitro Pro, Guide appartement, Guide adulte débutant",
+  "notes": "Ajouté le 19/10/2026 à la demande de Jordane, après le message d une lectrice (débuter au métal en appartement, 500 €). Volume non mesuré (aucune requête métal dans Mots-clés SEO.csv). Non-cannibalisation : Plus proche : P121 double pédale (à produire), qui garde la question technique de la pédale et des pads de grosse caisse ; ici le choix d un kit pour un style. P121 devra renvoyer ici. Page réceptrice : Guide adulte débutant (R1)."
  }
 ]

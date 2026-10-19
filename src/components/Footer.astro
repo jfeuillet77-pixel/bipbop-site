@@ -3,6 +3,8 @@ import BipbopMarqueClaire from './mascotte/BipbopMarqueClaire.astro';
 // Même règle que la greffe des pages portées (scripts/greffes.mjs) : pas de mention de
 // commission tant qu'aucun lien ne porte d'identifiant BipBop.
 import AFFILIATION from '../data/affiliation.json';
+// Le badge prend le mois du dernier relevé des prix, comme la greffe des pages portées.
+import { moisDuReleve } from '../../scripts/greffes.mjs';
 ---
 
 <footer class="footer" data-pad>
@@ -13,7 +15,7 @@ import AFFILIATION from '../data/affiliation.json';
         <span class="logo-text">BipBop</span>
       </div>
       <p class="footer-desc">Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>
-      <span class="footer-badge">MIS À JOUR EN SEPT. 2026</span>
+      <span class="footer-badge">MIS À JOUR EN {moisDuReleve()}</span>
     </div>
 
     <div class="footer-col">
