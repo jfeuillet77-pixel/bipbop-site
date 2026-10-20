@@ -10,7 +10,9 @@
  *    références du 07/10/2026 sont des lots).
  *  - Donner : les fiches produit (pas leurs variantes) qui sont des batteries, pas les tabourets,
  *    enceintes, pupitres ou contrôleurs du même flux. Une même batterie publiée deux fois (une
- *    « offre exclusive ») compte une fois, à son prix le plus bas.
+ *    « offre exclusive ») compte une fois, à son prix le plus bas. Une fiche « 【Boîte ouverte】 »
+ *    (retour client revendu moins cher, apparue au flux du 20/10/2026 pour la DED-80) n'est pas
+ *    un prix du neuf : elle ne compte pas.
  *  - Le prix barré Donner est MESURÉ (écart au prix demandé), jamais présenté comme un prix.
  *
  * Lu avec fs depuis la racine du dépôt, comme src/lib/arborescence.mjs : la page s'exécute au
@@ -42,6 +44,7 @@ export function instantanes() {
 
 const LOT = /bundle/i;
 const PAS_UNE_BATTERIE = /tabouret|enceinte|table de|pupitre|contr[ôo]leur|si[èe]ge|casque/i;
+const PAS_NEUVE = /bo[iî]te ouverte/i;
 
 /** « Donner DED-80 Batterie électronique adaptée… » → « Donner DED-80 ». */
 function nomDonner(nom) {
@@ -58,7 +61,7 @@ export function kits(inst) {
     .map(([id, marque, modele, , prix]) => ({ id: `t${id}`, marchand: 'Thomann', marque, modele, prix }));
   const parModele = new Map();
   for (const [id, nom, prix, prixBarre, , parent] of inst.donner) {
-    if (parent || !/batterie|beat go/i.test(nom) || PAS_UNE_BATTERIE.test(nom) || !prix) continue;
+    if (parent || !/batterie|beat go/i.test(nom) || PAS_UNE_BATTERIE.test(nom) || PAS_NEUVE.test(nom) || !prix) continue;
     const cle = cleDonner(nom);
     const deja = parModele.get(cle);
     if (!deja || prix < deja.prix) {

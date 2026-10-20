@@ -22,6 +22,15 @@ export const DUELS = {
     pourA: 'tu veux plus de matériel pour moins cher.',
     pourB: 'tu joueras chaque soir sur la musique de ton téléphone.',
   },
+  '/duels/millenium-mps-150x-vs-mps-450/': {
+    a: 'mps450',
+    b: 'mps150x',
+    gagnant: 'mps450',
+    resume:
+      "La MPS-450 gagne : les mêmes fûts en peau maillée, mais une caisse claire à deux zones, un module de 408 sons, deux entrées pour agrandir le kit et vingt centimètres de moins en largeur, pour {ecart:mps450-mps150x} de plus. La MPS-150X garde le prix, sous les 300 €.",
+    pourA: 'tu sais que tu vas jouer plus de quelques mois.',
+    pourB: "ton budget s'arrête à 300 €, accessoires à part.",
+  },
   '/duels/millenium-mps-150-vs-mps-150x/': {
     a: 'mps150x',
     b: 'mps150',
