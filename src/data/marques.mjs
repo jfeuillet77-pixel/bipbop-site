@@ -71,6 +71,12 @@ export const ACCESSOIRES_CITES = {
   siegejunior: { marque: 'Millenium', produit: 'MDTJR Drum Throne Round' },
   siegetama: { marque: 'Tama', produit: 'HT10S Drum Throne' },
   nitroamp: { marque: 'Alesis', produit: 'Nitro Amp' },
+  cablev: { marque: 'Roland', produit: 'V-Drum Cable 3,5 m' },
+  multiclamp: { marque: 'Millenium', produit: 'E-Drum Multi-Clamp' },
+  hhmps: { marque: 'Millenium', produit: 'Hi-Hat Controller' },
+  multicoreroland: { marque: 'Roland', produit: 'V-Drum Multicore' },
+  multicorenitro: { marque: 'Alesis', produit: 'Nitro Multicore' },
+  hhroland: { marque: 'Roland', produit: 'FD-8' },
 };
 
 export const MARQUES = {

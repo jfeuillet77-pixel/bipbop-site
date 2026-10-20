@@ -1,5 +1,13 @@
 # Journal BipBop
 
+## 20 octobre 2026 (routine de 17 h 37) — P118, duel MPS-150X contre MPS-450
+
+**La page.** `/duels/millenium-mps-150x-vs-mps-450/` (maquette `Duel-Millenium-MPS-150X-vs-MPS-450.dc.html`, clonée du duel MPS-150 contre MPS-150X). Gagnant MPS-450 : mêmes fûts mesh, caisse claire à deux zones, 408 sons et 30 kits contre 108 et 10, deux entrées trigger, baguettes, 120 contre 140 cm de large ; MPS-150X pour un budget plafonné à 300 €. Prix en jetons, entrée dans `duels.mjs`. Title « Millenium MPS-150X ou MPS-450 : quel kit mesh choisir ? » (55), meta 145. Sources : fiches Thomann des deux kits lues le 20/10 (disponibles immédiatement, 298 et 398 €), rayon du 20/10, avis et duels publiés. La fiche de la MPS-150X ne donne pas la taille de ses cymbales : le tableau le dit (« non comparable »).
+**Maillage.** Sortants : guide moins de 300 € (réceptrice du plan, premier tiers), R5 prix (premier tiers), R1, moins de 500 €, deux avis, deux duels, hub Millenium, pad mesh, compacte, tapis, sans déranger, faire évoluer, enregistrer. Entrants (phrases) : guide moins de 300 €, avis MPS-450, avis MPS-150X, duel MPS-150 contre MPS-150X ; plus le hub Duels.
+**Rafraîchi.** `/guides/acheter-batterie-electronique-occasion/` (lastmod du 08/10 ; `/plan-du-site/`, plus vieux, est construit) : 13 prix revérifiés au rayon du 20/10 (inchangés) et passés en jetons (alias `cablev`, `multiclamp`, `hhmps`, `multicoreroland`, `multicorenitro`, `hhroland` dans `ACCESSOIRES_CITES`), « relevés le 17 septembre » remplacé par « au dernier relevé du lundi », deux corrections de `port-corrections.json` devenues inutiles retirées, « autour de 15 à 20 % de remise » (reconditionné, sans source) retiré. Liens vers le guide des pads et le guide Black Friday. Date au 20 OCT.
+**Corrigé en passant.** `/barometre/` publiait la DED-80 à 189,99 € : une fiche « 【Boîte ouverte】 » apparue au flux Donner du 20/10 l'emportait sur le neuf (219,99 €) parce que `nomDonner()` retire le crochet. `src/lib/barometre.mjs` écarte maintenant ces fiches (`PAS_NEUVE`) ; le contrôle 3 bloquait `check`.
+**À trancher.** Un alias d'accessoire avec un chiffre (`fd8`) ne se résout pas au portage et passe tous les contrôles : seule la capture l'a montré. Les avis MPS-450 et MPS-150X affirment des cymbales plus grandes sur la MPS-450 que sur la MPS-150X ; la fiche de la MPS-150X ne publie pas leur taille, à revérifier en séance.
+
 ## 19 octobre 2026 (séance avec Jordane) — P49 duel Nitro Max ou MPS-750X, P167 guide métal, date du pied de page
 
 **Pourquoi.** Une lectrice a écrit par le formulaire (débuter au métal en appartement, 500 €, hésitation entre Nitro

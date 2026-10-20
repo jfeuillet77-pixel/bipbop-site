@@ -197,18 +197,6 @@
       "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 19/10/2026 a confirmé les neuf prix du tableau et ceux du panier « alternative » (Nitro Max 409 €, tapis 59 €, casque 26 €, siège 44 €), seul l'Expansion Pack bouge (89 → 98 €). Le 12/10 avait déjà tout confirmé"
     },
     {
-      "fichier": "Guide-Acheter-Occasion.dc.html",
-      "au": ">Alesis Turbo Mesh</a></div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div>",
-      "remplace": ">Alesis Turbo Mesh</a></div><div style=\"padding:14px 16px;white-space:nowrap\">309 €</div>",
-      "pourquoi": "colonne « Neuf » du tableau"
-    },
-    {
-      "fichier": "Guide-Acheter-Occasion.dc.html",
-      "au": "relevés chez Thomann le 12 septembre 2026",
-      "remplace": "relevés chez Thomann le 17 septembre 2026",
-      "pourquoi": "page modifiée par le relevé du 17/09"
-    },
-    {
       "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
       "au": "Alesis Turbo Mesh</a> payée 298 €",
       "remplace": "Alesis Turbo Mesh</a> payée 309 €",
@@ -307,8 +295,8 @@
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
       "au": ">12 SEPT. 2026 · 9 MIN DE LECTURE</div>",
-      "remplace": ">8 OCT. 2026 · 9 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : fourchettes d occasion retirées le 08/10/2026 (décision de Jordane)"
+      "remplace": ">20 OCT. 2026 · 9 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : prix passés en jetons et revérifiés au rayon du 20/10/2026, chiffre du reconditionné sans source retiré, liens vers les guides des pads et du Black Friday (routine du 20/10). Avant : fourchettes d occasion retirées le 08/10/2026 (décision de Jordane)"
     },
     {
       "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
