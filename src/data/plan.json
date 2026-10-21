@@ -1555,17 +1555,17 @@
   "id": "P120",
   "lot": "Vague 6",
   "type": "Guide",
-  "titre": "Agrandir sa Nitro Max ou sa Nitro Mesh : pad, tom et cymbale en plus",
+  "titre": "Agrandir sa Nitro Max : un tom, une cymbale et ce que le module accepte",
   "slug": "/guides/agrandir-alesis-nitro-max",
   "permalien": "https://bipbop.eu/guides/agrandir-alesis-nitro-max/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Guide-Agrandir-Nitro-Max.dc.html",
   "gabarit": "Guide",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "alesis nitro max expansion",
   "priorite": "Moyenne",
   "produits_lies": "Alesis Nitro Max Expansion Pack, Millenium MPS-850 12 pouces Ride, Millenium Rack Clamp",
   "maillage_sortant": "Avis Nitro Max, Faire évoluer sa batterie, Cymbale électronique, Réglages Nitro Max",
-  "notes": "Rang 21. Volume : 150/mois (alesis nitro max expansion 30, nitro max expansion pack 20, extension 20, nitro mesh expansion pack 20, nitro mesh expansion 20, nitro mesh expanded 20, nitro mesh kit cymbal 20). Non-cannibalisation : Plus proche : P62 faire évoluer (méthode générale, toutes marques) et P06 avis Nitro Max. Ici un modèle, un pack, les entrées libres du module : la page que P62 cite en exemple. Page réceptrice : Faire évoluer sa batterie (P62)."
+  "notes": "Rang 21. Volume : 150/mois (alesis nitro max expansion 30, nitro max expansion pack 20, extension 20, nitro mesh expansion pack 20, nitro mesh expansion 20, nitro mesh expanded 20, nitro mesh kit cymbal 20). Non-cannibalisation : Plus proche : P62 faire évoluer (méthode générale, toutes marques) et P06 avis Nitro Max. Ici un modèle, un pack, les entrées libres du module : la page que P62 cite en exemple. Page réceptrice : Faire évoluer sa batterie (P62). Publié le 21/10/2026 (routine) : la Nitro Mesh n'a ni fiche ni ligne dans la base, elle est traitée en méthode (prise libre, manuel) sans compatibilité affirmée."
  },
  {
   "id": "P121",
