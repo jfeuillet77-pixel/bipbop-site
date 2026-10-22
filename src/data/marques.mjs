@@ -77,6 +77,11 @@ export const ACCESSOIRES_CITES = {
   multicoreroland: { marque: 'Roland', produit: 'V-Drum Multicore' },
   multicorenitro: { marque: 'Alesis', produit: 'Nitro Multicore' },
   hhroland: { marque: 'Roland', produit: 'FD-8' },
+  kickbass: { marque: 'Millenium', produit: 'E-Drum Kick Bass Pad' },
+  kickmps: { marque: 'Millenium', produit: 'MPS-850 08" Mesh Kick Pad' },
+  kickyamaha: { marque: 'Yamaha', produit: 'KP-65A' },
+  kdsept: { marque: 'Roland', produit: 'KD-7 Kick Controller' },
+  kddix: { marque: 'Roland', produit: 'KD-10 Kick Pad' },
 };
 
 export const MARQUES = {

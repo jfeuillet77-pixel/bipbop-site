@@ -1571,17 +1571,17 @@
   "id": "P121",
   "lot": "Vague 6",
   "type": "Guide",
-  "titre": "Double pédale sur batterie électronique : quels kits l acceptent",
+  "titre": "Double pédale sur batterie électronique : quels kits l acceptent et comment la monter",
   "slug": "/guides/double-pedale-batterie-electronique",
   "permalien": "https://bipbop.eu/guides/double-pedale-batterie-electronique/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Guide-Double-Pedale.dc.html",
   "gabarit": "Guide",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "batterie electronique double pedale",
   "priorite": "Moyenne",
   "produits_lies": "Pad de grosse caisse du catalogue (Millenium MPS-850 Kick, Yamaha KP-65A, Roland KD-10) ; doubles pédales Tama HP30TW, Pearl P-532 (flux Thomann, à ajouter)",
   "maillage_sortant": "Pad de grosse caisse, Faire évoluer sa batterie, Comparatif, Avis Nitro Max",
-  "notes": "Rang 22. Volume : 150/mois (e drums double bass pedal 30, e drum double pedal 20, batterie électronique double grosse caisse 20, alesis nitro max double pedal 20, nitro max kit double pedal 20, nitro mesh kit double pedal 20, e drum kick pedal 20). Non-cannibalisation : Plus proche : P60 pédale silencieuse prévue (pédale sans batte pour le voisinage). Ici la double pédale et la pédale classique sur pad : largeur du pad, réglages du module. P60 ne traite pas la double pédale. Page réceptrice : Comparatif (P01)."
+  "notes": "Rang 22. Volume : 150/mois (e drums double bass pedal 30, e drum double pedal 20, batterie électronique double grosse caisse 20, alesis nitro max double pedal 20, nitro max kit double pedal 20, nitro mesh kit double pedal 20, e drum kick pedal 20). Non-cannibalisation : Plus proche : P60 pédale silencieuse prévue (pédale sans batte pour le voisinage). Ici la double pédale et la pédale classique sur pad : largeur du pad, réglages du module. P60 ne traite pas la double pédale. Page réceptrice : Comparatif (P01). Publié le 22/10/2026 (routine) : P167 métal garde le choix du kit pour ce style, ici le pad, les pads vendus seuls, le montage et les réglages. Aucune double pédale citée : aucune n est dans la base ni dans les relevés."
  },
  {
   "id": "P122",
