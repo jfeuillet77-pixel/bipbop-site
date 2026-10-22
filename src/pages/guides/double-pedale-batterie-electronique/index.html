@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Double pédale sur batterie électronique : cinq kits de notre base l'acceptent sur le papier. Lesquels, quel pad changer sinon et comment régler le module.">
+<link rel="apple-touch-icon" href="/bipbop-touch-180.png">
+<link rel="canonical" href="https://bipbop.eu/guides/double-pedale-batterie-electronique/">
+<title>Double pédale sur batterie électronique : quels kits ?</title>
+<link rel="icon" type="image/svg+xml" href="/bipbop-marque.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#efe6d8;font-family:'Work Sans',system-ui,sans-serif}
+a{color:#d2431f}a:hover{color:#b93a19}
+</style>
+<!--responsive--><style>
+/* Adaptation aux petits ecrans. Rien ne change au-dela de 1080px. */
+@media (max-width:1080px){
+  html{--rwd:on}
+  [data-rwd="tbl"],*:has(>[data-rwd="tblrow"]){overflow-x:auto!important;scrollbar-width:thin}
+  [data-rwd="tblrow"]{min-width:620px}
+  [data-rwd="sp"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c4"],[data-rwd="c5"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  [data-sticky]{position:static!important;top:auto!important}
+  [data-hdr] a{white-space:nowrap}
+  [data-pad]{padding-left:26px!important;padding-right:26px!important}
+  [data-mar]{margin-left:26px!important;margin-right:26px!important}
+  img{max-width:100%}
+  pre{max-width:100%}
+}
+@media (max-width:860px){
+  [data-rwd="sp2"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c3"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  [data-pad]{padding-left:18px!important;padding-right:18px!important}
+  [data-mar]{margin-left:18px!important;margin-right:18px!important}
+  [data-hdr]{flex-wrap:wrap!important;row-gap:12px!important}
+  [data-nav]{flex-wrap:wrap!important;gap:16px!important}
+  [data-big="a"]{font-size:76px!important}
+  [data-big="b"]{font-size:34px!important;line-height:1.06!important}
+  [data-big="c"]{font-size:27px!important;line-height:1.1!important}
+  [data-big="d"]{font-size:23px!important;line-height:1.14!important}
+}
+@media (max-width:620px){
+  [data-rwd="c3"],[data-rwd="c4"],[data-rwd="c5"],[data-rwd="mini"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="mini"]{justify-items:start!important;row-gap:12px!important}
+  [data-rwd="tblrow"]{min-width:540px}
+  [data-pad]{padding-left:14px!important;padding-right:14px!important}
+  [data-mar]{margin-left:14px!important;margin-right:14px!important}
+  [data-big="a"]{font-size:58px!important}
+  [data-big="b"]{font-size:29px!important}
+  [data-big="c"]{font-size:24px!important}
+  [data-big="d"]{font-size:21px!important}
+}
+
+@media (max-width:1080px){
+  [data-rwd="foot"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px!important}
+}
+@media (max-width:620px){
+  [data-rwd="foot"]{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+}
+
+@media (max-width:620px){
+  [data-rwd="def"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="def"]>div:nth-child(-n+2){display:none}
+}
+</style>
+
+<script>
+(function(){var K='bipbop-consent';
+function go(){var el=document.getElementById('cookie-banner');if(!el)return false;
+if(!localStorage.getItem(K)){el.style.display='flex';}
+el.addEventListener('click',function(e){var b=e.target.closest('[data-consent]');if(!b)return;
+try{localStorage.setItem(K,b.getAttribute('data-consent'));}catch(err){}el.style.display='none';});
+return true;}
+var t=setInterval(function(){if(go())clearInterval(t);},150);setTimeout(function(){clearInterval(t);},20000);})();
+</script>
+</head>
+<body>
+<div style="max-width:1180px;margin:0 auto;background:#fdf6ec;font-family:'Work Sans',system-ui,sans-serif;color:#241c14">
+
+<div data-pad data-hdr style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 40px;background:#fdf6ec;border-bottom:2.5px solid #241c14">
+<a href="/" style="display:flex;align-items:center;gap:11px;text-decoration:none;color:#241c14">
+<span style="width:34px;height:34px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 20px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</a>
+<div data-nav style="display:flex;gap:24px;font:500 14px 'Work Sans',sans-serif">
+<a href="/comparatif-batterie-electronique/" style="color:#241c14;text-decoration:none">Comparatif</a><a href="/avis/" style="color:#241c14;text-decoration:none">Avis</a><a href="/guides/" style="color:#241c14;font-weight:700;text-decoration:underline;text-decoration-thickness:2.5px;text-underline-offset:5px;text-decoration-color:#d2431f">Guides</a><a href="/a-propos/" style="color:#241c14;text-decoration:none">À propos</a>
+</div>
+<a href="/comparatif-batterie-electronique/" style="font:700 13px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;border:2.5px solid #241c14;padding:9px 15px;border-radius:10px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Trouver ma batterie</a>
+</div>
+<div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">ACCUEIL / GUIDES / DOUBLE PÉDALE SUR BATTERIE ÉLECTRONIQUE</div>
+
+<div data-pad style="max-width:820px;margin:0 auto;padding:20px 40px 0">
+<div style="display:inline-flex;align-items:center;gap:8px;font:700 12px 'Work Sans',sans-serif;letter-spacing:.04em;background:#ffd166;color:#241c14;border:2.5px solid #241c14;border-radius:9px;padding:6px 12px;margin-bottom:20px">GUIDE</div>
+<h1 data-big="b" style="font:800 52px/1.03 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:pretty">Double pédale sur batterie électronique&nbsp;: quels kits l'acceptent et comment la monter</h1>
+<p style="font:400 20px/1.55 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 22px;text-wrap:pretty">Une double pédale se monte sur une batterie électronique comme sur une acoustique, à une condition&nbsp;: un pad de grosse caisse prêt à recevoir deux battes. Les kits de notre base qui l'acceptent, les pads à acheter si le tien ne le fait pas, le montage et les réglages du module.</p>
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:26px;border-bottom:2.5px solid #241c14">
+<div style="width:40px;height:40px;border-radius:50%;overflow:hidden;border:2.5px solid #241c14;background:#ffd166"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></div>
+<div style="font:500 14px 'Work Sans',sans-serif;color:#5a4c3e">Par <strong style="color:#241c14;font-weight:700">BipBop</strong></div>
+<span style="color:#c9b9a3">·</span>
+<div style="font:500 13px 'IBM Plex Mono',monospace;color:#786550">22 OCT. 2026 · 10 MIN</div>
+</div>
+</div>
+
+<div data-pad style="max-width:820px;margin:0 auto;padding:0 40px">
+<div style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:20px;padding:24px 26px;margin:30px 0 34px">
+<div style="font:800 21px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;color:#0f5f5a;margin-bottom:14px">À retenir</div>
+<div style="display:flex;flex-direction:column;gap:11px;font:400 16.5px/1.55 'Work Sans',sans-serif;color:#264c49">
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">01</span><span>Une double pédale n'a rien d'électronique&nbsp;: c'est une pédale classique à deux battes. Le module ne voit qu'un capteur, celui du pad de grosse caisse.</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">02</span><span>Toute la question est le pad. Parmi les kits de notre base vendus chez Thomann, quatre ont une grosse caisse déclarée compatible&nbsp;: la Millenium MPS-350 et les Alesis Nitro Pro, Nitro Pro XL et Nitro Ultimate. Le KD-10 de la Roland TD313 l'est aussi, selon Roland.</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">03</span><span>Ton kit n'est pas déclaré&nbsp;? Thomann vend des pads de grosse caisse seuls qui le sont, comme le Millenium E-Drum Kick Bass Pad à <span style="white-space:nowrap">44 €</span>. Vérifie d'abord qu'il se branche sur ton module.</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">04</span><span>Les kits à pédale sans batte, comme la Roland TD-02KV, n'acceptent pas de double pédale. En appartement, deux battes font deux fois plus de coups dans le plancher.</span></div>
+</div>
+</div>
+
+<h2 id="principe" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Comment marche une double pédale sur un kit électronique</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Une double pédale, ce sont deux pédales reliées par un arbre de transmission. La principale se fixe sur la grosse caisse et porte deux battes. La seconde se pose à gauche, à la place habituelle de la pédale de charleston. Elle actionne la deuxième batte à distance. Pied droit, pied gauche&nbsp;: les deux battes frappent la même surface, l'une après l'autre.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Sur une batterie électronique, rien ne change du côté de la pédale. C'est la même que sur une acoustique et elle ne se branche nulle part. Le module ne sait même pas qu'il y a deux battes&nbsp;: il reçoit les coups d'un seul capteur, celui du pad de grosse caisse. Il joue le même son pour chacun. Tout se joue donc sur deux pièces. Le pad doit offrir assez de place et de solidité à deux battes. Le module doit lire des coups très rapprochés sans en perdre.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Aucun kit de notre base n'est livré avec une double pédale. Ceux qui ont une batte arrivent avec une pédale simple, qui servira de rechange. Si tu n'as pas encore choisi ton kit, notre <a href="/comparatif-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">comparatif des batteries électroniques</a> met les 32 modèles de la base côte à côte. Ce guide-ci dit lesquels acceptent une double pédale. Il dit aussi quoi faire si le tien ne le promet pas.</p>
+<h2 id="pad" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Ce que le pad de grosse caisse doit avoir</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Trois choses. La troisième est la seule que tu peux vérifier avant d'acheter.</p>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:10px">
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #d2431f">
+<div style="width:44px;height:44px;border-radius:50%;background:#d2431f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">1</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Assez de largeur</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Deux battes côte à côte frappent à quelques centimètres l'une de l'autre. Sur un pad de 8 pouces, une vingtaine de centimètres de diamètre, elles tombent loin du centre. Or un pad lit souvent un coup excentré plus faiblement qu'un coup au milieu&nbsp;: une batte sonne fort, l'autre moins.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #0f7d76">
+<div style="width:44px;height:44px;border-radius:50%;background:#0f7d76;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">2</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Une fixation solide</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">La pédale se pince sur le cadre du pad. Avec deux battes, le pad reçoit deux fois plus de coups. S'il est léger, il avance sur le sol pendant que tu joues. Un tapis qui accroche le retient. Des pointes d'ancrage aussi, s'il en a.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#241c14;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">3</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Une compatibilité écrite</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Thomann indique sur ses fiches si un pad «&nbsp;convient aux doubles pédales&nbsp;». «&nbsp;Non déclarée&nbsp;» ne veut pas dire interdite&nbsp;: la fiche ne le promet pas, c'est tout. Mais c'est la seule information que tu peux lire avant de payer.</p></div>
+</div>
+</div>
+<div style="display:flex;gap:16px;align-items:flex-start;background:#241c14;border-radius:20px;padding:24px 26px;margin:34px 0;color:#fdf6ec">
+<div style="width:54px;height:54px;flex:none;border-radius:50%;overflow:hidden;border:2.5px solid #ffd166;background:#ffd166"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></div>
+<div>
+<div style="font:700 15px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:7px">Le conseil de BipBop</div>
+<p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#e0d5c8;margin:0">Avant de commander une double pédale, lis la fiche de ton pad de grosse caisse, pas celle de la pédale. Une double pédale de batterie acoustique fait l'affaire. C'est le pad qui dit oui ou non.</p>
+</div>
+</div>
+
+<h2 id="kits" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Les kits de notre base qui l'acceptent</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Voici ce que disent les fiches des kits de notre base qui reviennent le plus dans nos guides. La dernière colonne dit ce que tu fais, selon la réponse.</p>
+<div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:20px;font:400 15.5px 'Work Sans',sans-serif">
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#241c14;color:#fdf6ec;font-weight:600;font-size:13px">
+<div style="padding:12px 16px">Modèle</div><div style="padding:12px 16px">Prix</div><div style="padding:12px 16px">Double pédale</div><div style="padding:12px 16px">Ce que tu fais</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Millenium MPS-350</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">349 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px"><strong>Déclarée compatible</strong>, pad de 8 pouces</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Ajoute la double pédale</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600"><a href="/avis/alesis-nitro-pro/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Alesis Nitro Pro</a></div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">698 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px"><strong>Déclarée compatible</strong>, pad de 8 pouces</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Ajoute la double pédale</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Alesis Nitro Pro XL</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">729 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px"><strong>Déclarée compatible</strong></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Ajoute la double pédale</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Alesis Nitro Ultimate</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">799 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px"><strong>Déclarée compatible</strong></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Ajoute la double pédale</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600"><a href="/avis/roland-td313/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Roland TD313</a></div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">1 498 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Pad KD-10, simple ou double selon Roland</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Ajoute la double pédale</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600"><a href="/avis/millenium-mps-450/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Millenium MPS-450</a></div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">398 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Non déclarée</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Demande au marchand ou change de pad</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600"><a href="/avis/alesis-nitro-max/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Alesis Nitro Max</a></div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">409 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Non déclarée, taille du pad non précisée</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Demande au marchand ou change de pad</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600"><a href="/avis/millenium-mps-750x/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Millenium MPS-750X</a></div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">498 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Non déclarée, pad mesh de 8 pouces</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Demande au marchand ou change de pad</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600"><a href="/avis/millenium-mps-850/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Millenium MPS-850</a></div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">598 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Non déclarée</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Regarde le pad MPS-850 vendu seul</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600"><a href="/avis/millenium-mps-1000/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Millenium MPS-1000</a></div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">999 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Non mentionnée, fût de 20 pouces</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Demande au marchand</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600"><a href="/avis/roland-td-02kv/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Roland TD-02KV</a></div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">498 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Pédale sans batte</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Impossible&nbsp;: rien à frapper</div>
+</div>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:0 0 30px">Fiches Thomann lues le 22 octobre 2026 pour la MPS-350, la Nitro Pro et la MPS-750X, descriptions du catalogue Thomann du 19 octobre pour les autres, prix du dernier relevé. La TD313 s'appuie sur la fiche technique Roland reprise dans notre avis. Les kits vendus chez Donner et Woodbrass n'y sont pas&nbsp;: leurs fiches n'ont pas été relevées sur ce point.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Parmi les kits de notre base vendus chez Thomann, la moins chère dont la fiche déclare la double pédale est la Millenium MPS-350, à <span style="white-space:nowrap">349 €</span>. Sa grosse caisse est prête pour deux battes. Ses trois toms de 7 pouces le sont moins pour les breaks rapides qui vont souvent avec. Si tu vises le rock rapide ou le métal, notre guide de la <a href="/guides/batterie-electronique-metal/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">batterie électronique pour le métal</a> dit pourquoi les toms et le rack comptent autant que la grosse caisse.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Chez Alesis, la frontière passe entre la Nitro Max et la Nitro Pro. Pour <span style="white-space:nowrap">289 €</span> de plus, la Nitro Pro ajoute la grosse caisse déclarée compatible, un rack en acier et des toms à deux zones. La Nitro Pro XL et la Nitro Ultimate gardent la même grosse caisse et ajoutent des pads.</p>
+<h2 id="solutions" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Ton kit n'est pas déclaré&nbsp;: trois solutions</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty"><strong>Demander au marchand.</strong> La première ne coûte rien. Une fiche muette ne veut pas dire que le pad refuse deux battes. Pose la question avec le nom exact du kit et garde la réponse écrite.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty"><strong>Changer de pad.</strong> La deuxième&nbsp;: remplacer le pad de grosse caisse par un pad vendu seul, déclaré compatible. Le module reste le même, la prise grosse caisse aussi. Le tableau reprend les pads de notre sélection et ce qu'en disent leurs fiches.</p>
+<div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:20px;font:400 15.5px 'Work Sans',sans-serif">
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#241c14;color:#fdf6ec;font-weight:600;font-size:13px">
+<div style="padding:12px 16px">Pad</div><div style="padding:12px 16px">Prix</div><div style="padding:12px 16px">Double pédale</div><div style="padding:12px 16px">À savoir</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Millenium E-Drum Kick Bass Pad</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">44 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px"><strong>Déclarée compatible</strong></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Pad mono, câble fourni</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Millenium MPS-850 8" mesh</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">59 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px"><strong>Déclarée compatible</strong></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Peau maillée, annoncé pour la MPS-850</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Yamaha KP-65A</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">77 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px"><strong>Déclarée compatible</strong></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Surface en caoutchouc, annoncé pour les DTX</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Roland KD-7</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">169 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Non</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Contrôleur compact, pour une batte</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(96px,.55fr) minmax(150px,1fr) minmax(170px,1.1fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Roland KD-10</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">219 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px"><strong>Déclarée compatible</strong></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Peau maillée, celui de la TD313</div>
+</div>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:0 0 30px">Fiches Thomann lues le 22 octobre 2026, prix du dernier relevé.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Un pad vendu seul ne promet pas de se brancher sur tous les modules. Avant de commander, ouvre le manuel du tien&nbsp;: quelle prise attend l'entrée grosse caisse&nbsp;? Accepte-t-elle un pad d'une autre marque&nbsp;? Notre <a href="/guides/pad-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">guide des pads de batterie électronique</a> explique comment lire ces entrées.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Un cas à part&nbsp;: Thomann vend seul un pad de grosse caisse mesh de 8 pouces annoncé pour la Millenium MPS-850. Sa fiche le déclare compatible double pédale. Celle du kit complet ne le dit pas. Rien sur les deux fiches ne permet d'affirmer que c'est la même pièce&nbsp;: si tu as une MPS-850, demande au marchand avant de racheter un pad.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty"><strong>Changer de kit.</strong> La troisième vaut si tu n'as pas encore acheté. Ou si ton kit a d'autres limites. Prends directement un kit déclaré. Notre guide pour <a href="/guides/ameliorer-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">faire évoluer sa batterie électronique</a> fait le calcul&nbsp;: améliorer coûte parfois plus cher que changer.</p>
+<h2 id="nitromax" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">La Nitro Max et la double pédale</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">C'est une question qui revient souvent pour ce kit. La fiche Thomann de l'Alesis Nitro Max ne déclare pas sa grosse caisse compatible et ne donne même pas la taille du pad. On ne peut donc rien te promettre. Trois options, dans l'ordre&nbsp;: demander au marchand avec ta référence exacte&nbsp;; remplacer le pad par un pad déclaré, après avoir vérifié qu'il se branche sur le module de la Nitro Max&nbsp;; ou, si tu n'as pas encore acheté, prendre la Nitro Pro pour <span style="white-space:nowrap">289 €</span> de plus.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Si tu comptes aussi ajouter un tom ou une cymbale, notre guide pour <a href="/guides/agrandir-alesis-nitro-max/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">agrandir sa Nitro Max</a> dit ce que son module accepte.</p>
+<h2 id="sansbatte" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Les pédales sans batte&nbsp;: pas de double pédale</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">La Roland TD-02KV et les pédales sans batte comme la Roland KT-9 (<span style="white-space:nowrap">229 €</span>) ou la Yamaha KU100 (<span style="white-space:nowrap">88 €</span>) remplacent la pédale et le pad par un seul objet&nbsp;: une pédale qui déclenche le son sans rien frapper. Il n'y a pas de surface où poser deux battes, donc pas de double pédale à monter. C'est leur force en appartement et leur limite pour le jeu à deux pieds.</p>
+<h2 id="montage" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Monter la double pédale</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le montage suit le même ordre que sur une acoustique. Quatre étapes, à faire kit éteint.</p>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:10px">
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #d2431f">
+<div style="width:44px;height:44px;border-radius:50%;background:#d2431f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">1</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Place la pédale principale</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Pince-la sur le cadre du pad de grosse caisse et centre-la&nbsp;: les deux battes doivent tomber à égale distance du milieu du pad, pas l'une au centre et l'autre au bord.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #0f7d76">
+<div style="width:44px;height:44px;border-radius:50%;background:#0f7d76;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">2</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Pose la pédale secondaire</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">À gauche, là où se trouve d'habitude la pédale de charleston. Relie les deux pédales par l'arbre de transmission, le plus droit possible&nbsp;: un angle fort rend la batte gauche moins précise.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#241c14;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">3</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Décale le charleston</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">La pédale de charleston part plus à gauche. Sur beaucoup de kits d'entrée de gamme, c'est un contrôleur posé au sol, facile à déplacer. Mesure la place avant d'acheter&nbsp;: notre guide de la <a href="/guides/batterie-electronique-compacte/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">batterie électronique compacte</a> donne l'encombrement des kits mesurés.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #d2431f">
+<div style="width:44px;height:44px;border-radius:50%;background:#d2431f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">4</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Règle les deux battes à l'identique</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Même angle, même tension de ressort, même distance au pad. Une batte qui frappe plus loin du centre sonnera plus faible sur beaucoup de pads, quel que soit le réglage du module. Sur un pad en peau maillée, regarde aussi la face des battes&nbsp;: la fiche Thomann de la MPS-850 conseille la face en plastique, le feutre usant la maille plus vite.</p></div>
+</div>
+</div>
+<h2 id="reglages" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Régler le module pour deux battes</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Une double pédale envoie au module des coups plus rapprochés qu'une pédale simple. Trois réglages comptent, sous des noms qui changent d'une marque à l'autre&nbsp;: ouvre le manuel de ton module.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty"><strong>Le temps de masquage</strong> (retrigger ou mask time) empêche qu'un même coup sonne deux fois. Trop long, il avale le deuxième coup d'un doublé&nbsp;: c'est le premier réglage à revoir si des notes manquent. Sur la MPS-750X, il s'appelle SenseTime. Nos <a href="/les-bases/reglages-millenium-mps-750x/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">réglages de la MPS-750X</a> donnent le chemin dans les menus.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty"><strong>La sensibilité</strong> de l'entrée grosse caisse&nbsp;: si une batte sonne plus faible que l'autre, revois d'abord leur réglage mécanique, puis monte un peu la sensibilité. <strong>Le seuil</strong> fixe le coup le plus faible que le module accepte&nbsp;: assez haut pour ignorer les vibrations du rack, assez bas pour garder tes coups légers.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Change un réglage à la fois. Joue des doublés lents au métronome, puis accélère. Écoute si chaque coup sort au même volume. Un coup qui disparaît au-dessus d'un certain tempo, c'est souvent le masquage.</p>
+<h2 id="bruit" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Le bruit&nbsp;: deux battes, deux fois plus de coups</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Sur un kit électronique, ce n'est pas le son qui dérange les voisins, c'est le choc. Chaque coup de batte frappe un pad posé au sol et descend dans le plancher. Une double pédale double ces coups. Et le jeu à deux pieds se joue souvent vite.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Si quelqu'un vit sous toi, un tapis épais est le minimum. Un plateau isolant comme le Roland NE-10 Noise Eater (<span style="white-space:nowrap">138 €</span>) se pose sous le pad de grosse caisse et sa pédale&nbsp;: vérifie ses dimensions avant, la pédale secondaire risque de déborder. Notre article pour <a href="/les-bases/batterie-electronique-bruit-voisins/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">installer sa batterie sans déranger</a> détaille le montage.</p>
+<h2 id="budget" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Le budget</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Les doubles pédales ne figurent pas encore dans nos relevés de prix. On ne t'en donne donc pas de montant qu'on ne pourrait pas tenir à jour&nbsp;: regarde-le sur la fiche du marchand et ajoute-le au reste.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le reste, c'est le kit, le casque, le siège et souvent le tapis. Pour une Nitro Pro, compte <span style="white-space:nowrap">827 €</span> avec un casque the t.bone HD 150, un siège Millenium MDT4 Drum Throne Round et un tapis Thomann E-Drum Rug Black 120, avant la double pédale. Pour une MPS-350, <span style="white-space:nowrap">478 €</span> avec les mêmes. Notre page sur <a href="/guides/prix-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">le vrai prix d'une batterie électronique</a> fait le compte poste par poste.</p>
+<h2 id="apprendre" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Apprendre la double pédale</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">La double pédale vient après une pédale simple bien tenue. Commence lentement, au métronome du module&nbsp;: pied droit seul, pied gauche seul, puis les deux en alternance. Monte le tempo quand le passage est régulier, pas avant. Le pied gauche, qui ne faisait que tenir le charleston, a tout à apprendre.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Notre article pour <a href="/les-bases/apprendre-la-batterie/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">apprendre la batterie</a> donne un ordre de progression. La question <a href="/les-bases/apprendre-batterie-seul/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">seul ou avec un prof</a> se pose d'autant plus que la technique du pied se corrige mieux quand quelqu'un la regarde.</p>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:20px;padding:24px 26px;margin:30px 0 34px;box-shadow:6px 6px 0 #0f7d76">
+<div style="font:800 21px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:14px">Notre verdict</div>
+<div style="display:flex;flex-direction:column;gap:11px;font:400 16.5px/1.55 'Work Sans',sans-serif;color:#3a2f26">
+<div><strong>Tu achètes ton premier kit et tu veux la double pédale&nbsp;:</strong> l'Alesis Nitro Pro, à <span style="white-space:nowrap">698 €</span>. Grosse caisse déclarée compatible, rack en acier, toms à deux zones.</div>
+<div><strong>Ton budget s'arrête vers 350 €&nbsp;:</strong> la Millenium MPS-350, à <span style="white-space:nowrap">349 €</span>. La grosse caisse est prête, les toms de 7 pouces seront la première limite.</div>
+<div><strong>Tu as déjà un kit non déclaré&nbsp;:</strong> demande au marchand. Sinon, remplace le pad par un pad déclaré qui se branche sur ton module, comme le Millenium MPS-850 08" Mesh Kick Pad à <span style="white-space:nowrap">59 €</span>.</div>
+<div><strong>Tu vises le haut de gamme&nbsp;:</strong> la Roland TD313, à <span style="white-space:nowrap">1 498 €</span>, dont le KD-10 accepte une double pédale selon Roland.</div>
+<div><strong>Un voisin juste dessous&nbsp;:</strong> réfléchis avant. La double pédale double les chocs dans le plancher et les kits sans batte, les plus discrets, ne l'acceptent pas.</div>
+</div>
+</div>
+
+<h2 id="questions" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Les questions fréquentes</h2>
+<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:38px">
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Peut-on mettre une double pédale sur n'importe quelle batterie électronique&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Non. Il faut un pad de grosse caisse à frapper, assez large et solide pour deux battes. Les kits à pédale sans batte n'en ont pas. Beaucoup de fiches ne disent rien&nbsp;: demande au marchand avant d'acheter.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Faut-il une double pédale spéciale pour l'électronique&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Non. C'est une pédale de batterie acoustique ordinaire, qui ne se branche pas. Ce qui compte, c'est que le pad accepte sa fixation et deux battes.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Mon module rate des coups à la double pédale, que faire&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Baisse d'abord le temps de masquage de l'entrée grosse caisse&nbsp;: c'est lui qui avale les coups rapprochés. Vérifie ensuite que les deux battes frappent à la même distance du centre, puis ajuste la sensibilité.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Faut-il une double pédale pour débuter&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Non. Beaucoup de morceaux se jouent à une pédale et la double s'apprend après. Si tu débutes tout juste, notre guide pour <a href="/guides/choisir-batterie-electronique-adulte-debutant/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">choisir une batterie électronique quand on débute</a> passe avant celui-ci. Choisis seulement un kit dont la grosse caisse ne te fermera pas la porte.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">La double pédale fait-elle plus de bruit au casque&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Pas dans le casque&nbsp;: le module joue le même son. Dans la pièce et chez les voisins, oui, parce que les battes frappent deux fois plus souvent le pad posé au sol.</p></div>
+</div>
+
+<div style="display:flex;align-items:center;gap:14px;margin:44px 0 20px">
+<div data-big="d" style="font:800 28px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em">Pour aller plus loin</div>
+<div style="flex:1;height:2.5px;background:#241c14"></div>
+</div>
+<div data-rwd="c3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px">
+<a href="/guides/batterie-electronique-metal/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #241c14">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#ffd166;color:#241c14;border:2px solid #241c14;border-radius:7px;padding:4px 9px">GUIDE</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Batterie pour le métal</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">La grosse caisse, les toms et le rack&nbsp;: ce que ce style demande, budget par budget.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+<a href="/avis/alesis-nitro-pro/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #d2431f;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #d2431f">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#d2431f;color:#ffffff;border:2px solid #241c14;border-radius:7px;padding:4px 9px">AVIS</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Alesis Nitro Pro</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Rack en acier et grosse caisse prête pour la double pédale.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+<a href="/guides/ameliorer-batterie-electronique/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #0f7d76">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#ffd166;color:#241c14;border:2px solid #241c14;border-radius:7px;padding:4px 9px">GUIDE</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Faire évoluer sa batterie</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Améliorer ou changer de kit&nbsp;: le calcul qui tranche.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+</div>
+<p style="font:400 14px/1.6 'Work Sans',sans-serif;color:#786550;margin:0 0 10px">Les kits cités sont vendus chez Thomann, au prix du dernier relevé, comme les pads du second tableau. La compatibilité double pédale vient des fiches Thomann lues le 22 octobre 2026 et des descriptions du catalogue Thomann du 19 octobre.</p>
+</div>
+<div style="height:52px"></div>
+<footer data-pad style="background:#241c14;color:#fdf6ec;padding:48px 40px 26px">
+<div data-rwd="foot" style="display:grid;grid-template-columns:1.7fr 1fr 1.1fr 1.2fr;gap:40px;padding-bottom:34px;border-bottom:1px solid #4a3d31">
+<div>
+<div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+<span style="width:32px;height:32px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée claire</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#fdf6ec" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</div>
+<p style="font:400 15px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 16px;max-width:300px">Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>
+<div style="display:inline-block;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#ffd166;border:1px solid #4a3d31;border-radius:8px;padding:7px 11px">MIS À JOUR EN OCT. 2026</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">TROUVER</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/comparatif-batterie-electronique/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Le comparatif</a><a href="/guides/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les guides</a><a href="/avis/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les avis</a><a href="/marques/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Toutes les marques</a><a href="/duels/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les duels</a>
+</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">LE SITE</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/a-propos/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">À propos</a><a href="/contact/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Contact</a><a href="/mentions-legales/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Mentions légales</a><a href="/politique-confidentialite/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Politique de confidentialité</a><a href="/plan-du-site/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Plan du site</a><a href="/suivi-des-prix/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Suivi des prix</a>
+</div>
+</div>
+<div style="background:#302519;border-radius:16px;padding:20px;align-self:start">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:8px">Pas encore décidé ?</div>
+<p style="font:400 14px/1.55 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 14px">Trois questions, deux modèles en face. Trente secondes.</p>
+<a href="/comparatif-batterie-electronique/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:11px;border-radius:11px" style-hover="background:#ffdd8c">Trouver ma batterie</a>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:14px;padding:22px 0 20px;border-bottom:1px solid #4a3d31">
+<p style="font:400 14px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0;max-width:840px">Les prix affichés sont relevés à la date de publication : vérifie toujours sur la fiche du marchand avant de commander.</p>
+</div>
+<div style="padding-top:20px;font:400 13.5px 'Work Sans',sans-serif;color:#a8998a">© 2026 BipBop. Tous droits réservés.</div>
+</footer>
+</div>
+
+<div id="cookie-banner" data-pad style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#241c14;border-top:3px solid #ffd166;padding:18px 40px;align-items:center;justify-content:center;gap:32px;font-family:'Work Sans',system-ui,sans-serif;box-shadow:0 -6px 24px rgba(36,28,20,.28)">
+<div style="flex:1;max-width:760px">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:6px">Une question de cookies, vite réglée</div>
+<p style="font:400 14.5px/1.55 'Work Sans',sans-serif;color:#d6cabb;margin:0">On mesure l'audience pour savoir quelles pages t'aident vraiment. Pas de publicité, pas de revente de données. Tu peux refuser, le site marche exactement pareil. <a href="/politique-confidentialite/" style="color:#ffd166;text-decoration:underline;text-underline-offset:3px">Notre politique de confidentialité</a>.</p>
+</div>
+<div style="display:flex;gap:12px;flex:none">
+<button type="button" data-consent="refuse" style="font:700 14.5px 'Work Sans',sans-serif;color:#fdf6ec;background:transparent;border:2.5px solid #8a7866;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Refuser</button>
+<button type="button" data-consent="accept" style="font:700 14.5px 'Work Sans',sans-serif;color:#241c14;background:#ffd166;border:2.5px solid #ffd166;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Accepter</button>
+</div>
+</div>
+</body>
+</html>
