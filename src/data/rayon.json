@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-10-25",
+ "date": "2026-10-26",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -423,14 +423,6 @@
    "url": "https://www.thomann.fr/gewa_sps_drum_rack_bag_mds_12.htm"
   },
   {
-   "id": "295366",
-   "marque": "Millenium",
-   "modele": "Hi-Hat Controller B-Stock",
-   "prix": 23.6,
-   "categorie": "Batteries Electroniques > Pads de Charleston",
-   "url": "https://www.thomann.fr/millenium_hi_hat_controller_b_stock.htm"
-  },
-  {
    "id": "295724",
    "marque": "Gibraltar",
    "modele": "SC-GEMC Electronic Mounting",
@@ -450,7 +442,7 @@
    "id": "302706",
    "marque": "Yamaha",
    "modele": "KU100 Silent Kick Peda B-Stock",
-   "prix": 75,
+   "prix": 81,
    "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
    "url": "https://www.thomann.fr/yamaha_ku100_silent_kick_peda_b_stock.htm"
   },
@@ -706,7 +698,7 @@
    "id": "382279",
    "marque": "Aerodrums",
    "modele": "Air Percussion Set",
-   "prix": 210,
+   "prix": 209,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/aerodrums_air_percussion_set.htm"
   },
@@ -967,14 +959,6 @@
    "url": "https://www.thomann.fr/roland_spd_one_wav.htm"
   },
   {
-   "id": "417509",
-   "marque": "Yamaha",
-   "modele": "DD-75 B-Stock",
-   "prix": 225,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/yamaha_dd_75_b_stock.htm"
-  },
-  {
    "id": "419792",
    "marque": "Millenium",
    "modele": "MPS-150X E-Drum Mesh Bundle",
@@ -989,14 +973,6 @@
    "prix": 298,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/roland_spdone_wav_b_stock.htm"
-  },
-  {
-   "id": "425652",
-   "marque": "Roland",
-   "modele": "SPD::ONE Percussion B-Stock",
-   "prix": 239,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_spdone_percussion_b_stock.htm"
   },
   {
    "id": "426092",
@@ -1042,7 +1018,7 @@
    "id": "432278",
    "marque": "Millenium",
    "modele": "Percussion Pad Stand B-Stock",
-   "prix": 64,
+   "prix": 54,
    "categorie": "Hardware pour Batterie & Percussions > Hardware pour Batteries Electroniques",
    "url": "https://www.thomann.fr/millenium_percussion_pad_stand_b_stock.htm"
   },
@@ -1373,14 +1349,6 @@
    "prix": 649,
    "categorie": "Batteries Electroniques > Pads de Caisse Claire",
    "url": "https://www.thomann.fr/roland_14_x13_pda140f_ms_floor_tom.htm"
-  },
-  {
-   "id": "484226",
-   "marque": "Millenium",
-   "modele": "MPS-450 E-Drum Set B-Stock",
-   "prix": 349,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_450_e_drum_set_b_stock_484226.htm"
   },
   {
    "id": "489091",
@@ -3695,14 +3663,6 @@
    "url": "https://www.thomann.fr/efnote_efd_t1180_bo_11x08_tom_tom.htm"
   },
   {
-   "id": "634098",
-   "marque": "Roland",
-   "modele": "TD316 V-Drum Kit B-Stock",
-   "prix": 1829,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/roland_td316_v_drum_kit_b_stock.htm"
-  },
-  {
    "id": "635822",
    "marque": "Yamaha",
    "modele": "EAD50 Drum Module",
@@ -4059,7 +4019,7 @@
   {
    "id": "7786764075232",
    "nom": "Donner DED-200X Batterie Électronique【Version mise à niveau disponible】",
-   "prix": 499.99,
+   "prix": 529.99,
    "prixBarre": 599.99,
    "stock": "Y",
    "parent": ""
@@ -4067,7 +4027,7 @@
   {
    "id": "8231822950624",
    "nom": "Donner BackBeat Batterie Electronique",
-   "prix": 1099.99,
+   "prix": 1199.99,
    "prixBarre": 1499.99,
    "stock": "Y",
    "parent": ""
@@ -4083,7 +4043,7 @@
   {
    "id": "8843194925280",
    "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents",
-   "prix": 199.99,
+   "prix": 219.99,
    "prixBarre": 459.99,
    "stock": "Y",
    "parent": ""
@@ -4091,7 +4051,7 @@
   {
    "id": "9255429406944",
    "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied",
-   "prix": 72.99,
+   "prix": 79.99,
    "prixBarre": 129.99,
    "stock": "Y",
    "parent": ""
@@ -4099,7 +4059,7 @@
   {
    "id": "9273475367136",
    "nom": "Donner DED-200 Pro Batterie électronique",
-   "prix": 599.99,
+   "prix": 659.99,
    "prixBarre": 899.99,
    "stock": "Y",
    "parent": ""
@@ -4107,15 +4067,15 @@
   {
    "id": "9649002316000",
    "nom": "Donner BackBeat Pro Batterie électronique",
-   "prix": 1099.99,
-   "prixBarre": 1717.99,
+   "prix": 1169.99,
+   "prixBarre": 1843.99,
    "stock": "Y",
    "parent": ""
   },
   {
    "id": "43220848378080",
    "nom": "Donner DED-200X Batterie Électronique【Version mise à niveau disponible】 - DED-200X",
-   "prix": 499.99,
+   "prix": 529.99,
    "prixBarre": 599.99,
    "stock": "Y",
    "parent": "7786764075232"
@@ -4123,7 +4083,7 @@
   {
    "id": "44706337652960",
    "nom": "Donner DED-200 Max Batteries Electroniques",
-   "prix": 499.99,
+   "prix": 539.99,
    "prixBarre": 899.99,
    "stock": "Y",
    "parent": ""
@@ -4139,7 +4099,7 @@
   {
    "id": "46518429712608",
    "nom": "Donner BackBeat Batterie Electronique - BackBeat",
-   "prix": 1099.99,
+   "prix": 1199.99,
    "prixBarre": 1499.99,
    "stock": "Y",
    "parent": "8231822950624"
@@ -4147,7 +4107,7 @@
   {
    "id": "46518429745376",
    "nom": "Donner BackBeat Batterie Electronique - BackBeat + Tabouret de batterie DT-50",
-   "prix": 1114.99,
+   "prix": 1272.98,
    "prixBarre": 1999.99,
    "stock": "Y",
    "parent": "8231822950624"
@@ -4155,7 +4115,7 @@
   {
    "id": "46776412930272",
    "nom": "Donner DED-300X Batterie Electronique",
-   "prix": 539.99,
+   "prix": 599.99,
    "prixBarre": 899.99,
    "stock": "Y",
    "parent": ""
@@ -4187,7 +4147,7 @@
   {
    "id": "48042422698208",
    "nom": "Donner DED-70L Batterie électronique Avec Lumière LED",
-   "prix": 269.99,
+   "prix": 249.99,
    "prixBarre": 369.99,
    "stock": "Y",
    "parent": ""
@@ -4195,7 +4155,7 @@
   {
    "id": "48119712022752",
    "nom": "Donner Beat Go Kit de batterie électronique portable",
-   "prix": 289.99,
+   "prix": 269.99,
    "prixBarre": 369.99,
    "stock": "Y",
    "parent": ""
@@ -4211,7 +4171,7 @@
   {
    "id": "48873083437280",
    "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Contrôleur de cymbale Charleston",
-   "prix": 72.99,
+   "prix": 79.99,
    "prixBarre": 129.99,
    "stock": "N",
    "parent": "9255429406944"
@@ -4219,7 +4179,7 @@
   {
    "id": "48873083470048",
    "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Pied",
-   "prix": 92.99,
+   "prix": 99.99,
    "prixBarre": 139.99,
    "stock": "N",
    "parent": "9255429406944"
@@ -4227,7 +4187,7 @@
   {
    "id": "48873083502816",
    "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Contrôleur de cymbale Charleston + Pied",
-   "prix": 165.99,
+   "prix": 179.98,
    "prixBarre": 269.98,
    "stock": "Y",
    "parent": "9255429406944"
@@ -4235,7 +4195,7 @@
   {
    "id": "48935230275808",
    "nom": "Donner DED-200 Pro Batterie électronique - DED-200Pro",
-   "prix": 599.99,
+   "prix": 659.99,
    "prixBarre": 899.99,
    "stock": "Y",
    "parent": "9273475367136"
@@ -4259,7 +4219,7 @@
   {
    "id": "51327404114144",
    "nom": "Donner BackBeat Pro Batterie électronique - BackBeat Pro",
-   "prix": 1099.99,
+   "prix": 1199.99,
    "prixBarre": 1717.99,
    "stock": "Y",
    "parent": "9649002316000"
@@ -4299,7 +4259,7 @@
   {
    "id": "54882227945696",
    "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents - DED-70",
-   "prix": 199.99,
+   "prix": 219.99,
    "prixBarre": 459.99,
    "stock": "Y",
    "parent": "8843194925280"
