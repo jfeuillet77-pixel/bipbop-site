@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-11-01",
+ "date": "2026-11-02",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -381,14 +381,6 @@
    "prix": 939,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/roland_spd_30_bk_octapad_bundle.htm"
-  },
-  {
-   "id": "287652",
-   "marque": "Millenium",
-   "modele": "DM-30 Drum Monitor B-Stock",
-   "prix": 139,
-   "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
-   "url": "https://www.thomann.fr/millenium_dm_30_drum_monitor_b_stock_2.htm"
   },
   {
    "id": "290813",
@@ -775,14 +767,6 @@
    "url": "https://www.thomann.fr/millenium_mps_750_cymbal_arm.htm"
   },
   {
-   "id": "394724",
-   "marque": "Roland",
-   "modele": "FD-9 Hi-Hat Controller B-Stock",
-   "prix": 199,
-   "categorie": "Batteries Electroniques > Pads de Charleston",
-   "url": "https://www.thomann.fr/roland_fd_9_hi_hat_controller_b_stock.htm"
-  },
-  {
    "id": "397031",
    "marque": "2box",
    "modele": "Rubber Ring for Trigger Pads",
@@ -959,14 +943,6 @@
    "url": "https://www.thomann.fr/millenium_mps_150x_e_drum_mesh_bundle.htm"
   },
   {
-   "id": "423501",
-   "marque": "Roland",
-   "modele": "SPD::ONE Kick B-Stock",
-   "prix": 249,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_spdone_kick_b_stock.htm"
-  },
-  {
    "id": "424953",
    "marque": "Roland",
    "modele": "SPD::ONE Wav B-Stock",
@@ -1119,14 +1095,6 @@
    "url": "https://www.thomann.fr/yamaha_dtx432k_e_drum_set_bundle.htm"
   },
   {
-   "id": "444121",
-   "marque": "Roland",
-   "modele": "VH-10 10\" V-Drum Hi-Ha B-Stock",
-   "prix": 299,
-   "categorie": "Batteries Electroniques > Pads de Charleston",
-   "url": "https://www.thomann.fr/roland_vh_10_10_v_drum_hi_ha_b_stock.htm"
-  },
-  {
    "id": "445689",
    "marque": "Millenium",
    "modele": "MPS-850 Drum Module",
@@ -1186,7 +1154,7 @@
    "id": "455902",
    "marque": "Millenium",
    "modele": "MPS-850 Drum Module B-Stock",
-   "prix": 159,
+   "prix": 185,
    "categorie": "Batteries Electroniques > Modules de Sons",
    "url": "https://www.thomann.fr/millenium_mps_850_drum_module_b_stock.htm"
   },
@@ -1221,14 +1189,6 @@
    "prix": 219,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_hd_120_e_drum_set.htm"
-  },
-  {
-   "id": "462224",
-   "marque": "Millenium",
-   "modele": "MPS-250/500/750 12\" Cr B-Stock",
-   "prix": 38,
-   "categorie": "Batteries Electroniques > Pads de Cymbale",
-   "url": "https://www.thomann.fr/millenium_mps_250_500_750_12_cr_b_stock.htm"
   },
   {
    "id": "463796",
@@ -1442,7 +1402,7 @@
    "id": "507011",
    "marque": "Millenium",
    "modele": "MPS-750X Hi-Hat Pad B-Stock",
-   "prix": 83,
+   "prix": 82,
    "categorie": "Batteries Electroniques > Pads de Charleston",
    "url": "https://www.thomann.fr/millenium_mps_750x_hi_hat_pad_b_stock.htm"
   },
@@ -2685,14 +2645,6 @@
    "prix": 409,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/alesis_nitro_max_kit.htm"
-  },
-  {
-   "id": "575978",
-   "marque": "Yamaha",
-   "modele": "FGDP-30 Finger Drum Pa B-Stock",
-   "prix": 129,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/yamaha_fgdp_30_finger_drum_pa_b_stock.htm"
   },
   {
    "id": "576319",
@@ -4051,7 +4003,7 @@
   {
    "id": "8759874093280",
    "nom": "Donner DED-80 Batterie électronique adaptée aux adolescents",
-   "prix": 219.99,
+   "prix": 239.99,
    "prixBarre": 309.99,
    "stock": "Y",
    "parent": ""
@@ -4147,7 +4099,7 @@
   {
    "id": "47888193716448",
    "nom": "Donner DED-80 Batterie électronique adaptée aux adolescents - Noir",
-   "prix": 219.99,
+   "prix": 239.99,
    "prixBarre": 309.99,
    "stock": "Y",
    "parent": "8759874093280"
@@ -4155,7 +4107,7 @@
   {
    "id": "47888193749216",
    "nom": "Donner DED-80 Batterie électronique adaptée aux adolescents - Blanc",
-   "prix": 219.99,
+   "prix": 239.99,
    "prixBarre": 309.99,
    "stock": "Y",
    "parent": "8759874093280"
