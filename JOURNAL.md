@@ -1,5 +1,12 @@
 # Journal BipBop
 
+## 3 novembre 2026 (routine de 16 h 37) — P122, batterie électronique pour un ado
+
+**La page.** `/guides/choisir-batterie-electronique-ado/` (maquette `Guide-Ado.dc.html`, clonée du guide métal). Un ado (12 à 17 ans) joue sur un kit d'adulte mais dans une chambre, sur sa musique et avec le budget des parents : quatre critères (mesh, Bluetooth ou câble, place au sol, évolutivité), tableau de cinq kits (MPS-150X, MPS-450, Nitro Max, TD-02KV, MPS-750X), budgets, bruit dans la maison, vrai budget en jetons, apprendre, verdict, FAQ. Non-cannibalisation : le guide enfant s'arrête à 12 ans, le guide adulte vise le salon d'un adulte. Sources : avis publiés, `modeles.json` (empreintes Thomann du 13/09), relevé du 3/11 (délai TD-02KV de 5 à 7 semaines), rayon du 02/11 (prix inchangés). Aucune fiche marchand lue. La DED-70 du plan n'est pas citée : la base, le guide moins de 300 € et le journal se contredisent sur ses peaux. Title « Batterie électronique pour un ado : quel kit choisir ? » (54), meta 152. Carte au hub Guides (24 guides, « Par situation » 9).
+**Maillage.** Sortants : R2 enfant (réceptrice du plan, premier paragraphe), R1, R3, R5, R4, cinq avis, deux duels, moins de 500 €, compacte, sans déranger, tapis, casque, oreilles, apprendre, seul ou prof, combien de temps, pad, ampli, enregistrer, métal, Bluetooth, faire évoluer. Entrants (phrases) : guide enfant, guide adulte débutant, avis MPS-450, pad mesh.
+**Rafraîchi.** `/les-bases/pad-mesh-batterie-electronique/` (dernière modification réelle le 13/10 ; le `lastmod` du sitemap vaut le 3/11 partout, le relevé du matin ayant changé la date du pied de page des 71 pages). Corrigé : « un pad mesh de complément coûte entre 60 et 90 € » (vrai chez Millenium seulement : 66 et 79 €, Roland PDX-6 à 198 €), réécrit en jetons ; « entre 350 et 500 €, la question ne se pose plus » (la DTX432K et la TD-02KV y gardent des toms en caoutchouc). Lien vers la page neuve. Date d'en-tête au 3 NOV.
+**À trancher.** `phrase` de la DED-70 dans la base (« à moins de 200 € ») et « tout en caoutchouc » du guide moins de 300 € contre `peaux: mixte` : à revoir en séance. Le choix de la page à rafraîchir par `lastmod` ne marche plus un jour de relevé : la routine devrait lire la date git hors commits de relevé.
+
 ## 3 novembre 2026 — Relevé du lundi : six Donner montent, la DED-200X quitte les « moins de 500 € », le Debut revient à 279 €
 
 **Les prix.** 160 références contrôlées, neuf au-dessus du seuil, toutes déjà écrites par le script dans
