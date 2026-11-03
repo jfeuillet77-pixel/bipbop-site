@@ -18,6 +18,7 @@ import { join, dirname, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import plan from '../src/data/plan.json' with { type: 'json' };
 import { appliquerGreffes, urlPublique } from './greffes.mjs';
+import { routeDeMaquette } from '../src/data/produits.mjs';
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), '..');
 const MAQUETTES = join(SITE, '..', 'Claude Design - MàJ');
@@ -81,6 +82,14 @@ function corpsMaquette(html) {
   // Sans ce même nettoyage ici, une correction dont l'ancre traverse un lien marchand n'est
   // jamais retrouvée par ce script. Les segments comparés sont du texte pur : l'attribut, lui,
   // n'entre nulle part dans la comparaison.
+  // Même raison pour les liens internes (étape 3 de port.mjs) : une correction dont l'ancre
+  // traverse « Avis-Donner-DED-200X.dc.html » est écrite avec « /avis/donner-ded-200x/ », comme
+  // le portage la voit. Sans cette traduction, elle passait au portage et cassait ici
+  // (relevé du 03/11/2026). Un lien que le plan ne connaît pas reste tel quel.
+  corps = corps.replace(/href="(\.\/)?([^"]+?\.dc\.html)([^"]*)"/g, (tout, _pt, source, reste) => {
+    const route = routeDeMaquette(source);
+    return route ? `href="${route}${reste}"` : tout;
+  });
   corps = corps.replace(/href="(https?:\/\/[^"]+)"/g, (tout, brut) => {
     const propre = urlPublique(brut.replace(/&amp;/g, '&'));
     return propre === null ? tout : `href="${propre.replace(/&/g, '&amp;')}"`;

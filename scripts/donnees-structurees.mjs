@@ -25,7 +25,7 @@
  *
  *   node scripts/donnees-structurees.mjs
  */
-import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import { arborescence, fichierPage, datesGit, SITE, DOMAINE } from '../src/lib/arborescence.mjs';
 import { MODELES, RELEVE, prixDe } from '../src/data/produits.mjs';
@@ -56,6 +56,32 @@ const HUBS = {
 /** Les types du plan qui sont des articles datés, et les pages qui ont un type schema.org à elles. */
 const ARTICLES = new Set(['Guide', 'Les bases', 'Duel']);
 const TYPE_DE_PAGE = { '/a-propos/': 'AboutPage', '/contact/': 'ContactPage' };
+
+/** La disponibilité d'un modèle, lue dans le dernier relevé du lundi (`releves/prix-AAAA-MM-JJ.json`) :
+    Thomann ne la met pas dans son flux, le relevé l'a lue sur la fiche. Seules les valeurs que
+    schema.org connaît passent ; une dispo inconnue (page illisible, modèle disparu) n'est pas
+    déclarée, jamais supposée « en stock ». */
+const DISPOS_SCHEMA = new Set(['InStock', 'OutOfStock', 'PreOrder', 'BackOrder', 'LimitedAvailability', 'SoldOut', 'Discontinued', 'InStoreOnly', 'OnlineOnly', 'PreSale']);
+const RELEVES = join(SITE, 'releves');
+const dernierReleve = existsSync(RELEVES)
+  ? readdirSync(RELEVES).filter((f) => /^prix-\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort().at(-1)
+  : undefined;
+const DISPO = new Map(
+  dernierReleve
+    ? JSON.parse(readFileSync(join(RELEVES, dernierReleve), 'utf8')).refs
+        .filter((r) => r.source === 'modeles' && DISPOS_SCHEMA.has(r.dispo))
+        .map((r) => [r.id, r.dispo])
+    : [],
+);
+/** L'offre d'un modèle chez son marchand : prix du relevé et, si on la connaît, sa disponibilité. */
+const offre = (m) => ({
+  '@type': 'Offer',
+  price: prixDe(m.prix).toFixed(2),
+  priceCurrency: 'EUR',
+  ...(DISPO.has(m.id) ? { availability: `https://schema.org/${DISPO.get(m.id)}` } : {}),
+  url: m.url,
+  seller: { '@type': 'Organization', name: m.marchand },
+});
 
 if (!existsSync(DIST)) {
   console.error('Aucun dist/ — les données structurées se posent à la fin du build (« npm run build »).');
@@ -127,7 +153,7 @@ function filAriane(p) {
   };
 }
 
-function produit(p, html, titre, dates) {
+function produit(p, html, titre, description, dates) {
   const m = MODELES.find((x) => x.avis === p.route);
   if (!m) { problemes.push(`${p.route} : avis publié sans modèle dans src/data/modeles.json (champ « avis »)`); return null; }
   const note = verdict(html, p.route);
@@ -136,15 +162,14 @@ function produit(p, html, titre, dates) {
     '@type': 'Product',
     '@id': `${p.permalien}#produit`,
     name: m.nom_complet,
+    // La phrase du modèle (celle des cartes et du comparatif) ; à défaut, la description de l'avis.
+    description: m.phrase || description,
     brand: { '@type': 'Brand', name: m.marque },
     ...(m.img ? { image: m.img } : {}),
-    offers: {
-      '@type': 'Offer',
-      price: prixDe(m.prix).toFixed(2),
-      priceCurrency: 'EUR',
-      url: m.url,
-      seller: { '@type': 'Organization', name: m.marchand },
-    },
+    // Ni `shippingDetails` ni `hasMerchantReturnPolicy` : BipBop ne vend rien, ces conditions
+    // sont celles du marchand et aucune source tenue à jour ne nous les donne. Google les
+    // signale comme « non critiques » ; les inventer serait publier un balisage faux.
+    offers: offre(m),
     review: {
       '@type': 'Review',
       name: titre,
@@ -236,14 +261,15 @@ function graphe(p, html, titre, description) {
           name: m.nom_complet,
           brand: { '@type': 'Brand', name: m.marque },
           ...(m.img ? { image: m.img } : {}),
+          ...(m.phrase ? { description: m.phrase } : {}),
           ...(m.avis ? { url: url(m.avis) } : {}),
-          offers: { '@type': 'Offer', price: prixDe(m.prix).toFixed(2), priceCurrency: 'EUR', url: m.url },
+          offers: offre(m),
         },
       })),
     };
   }
   if (p.type === 'Avis') {
-    const pr = produit(p, html, titre, dates);
+    const pr = produit(p, html, titre, description, dates);
     if (pr) { noeuds.push(pr); page.mainEntity = { '@id': pr['@id'] }; }
   }
   return { '@context': 'https://schema.org', '@graph': noeuds };
@@ -302,6 +328,6 @@ if (problemes.length) {
 const avis = pages.filter((p) => p.type === 'Avis').length;
 const articles = pages.filter((p) => ARTICLES.has(p.type)).length;
 const relais = Object.values(HUBS).filter((h) => !construites.has(h[0].route)).map((h) => `${h[0].route} → ${h.find((x) => construites.has(x.route))?.route ?? 'aucun'}`);
-console.log(`\ndonnées structurées · ${posees} page(s) · ${avis} avis notés (prix du relevé du ${RELEVE}) · ${articles} articles datés`);
+console.log(`\ndonnées structurées · ${posees} page(s) · ${avis} avis notés (prix du relevé du ${RELEVE}, disponibilité de ${dernierReleve ?? 'aucun relevé'} : ${DISPO.size} modèle(s)) · ${articles} articles datés`);
 if (relais.length) console.log(`  fil d'Ariane par le hub réel, faute de hub dédié : ${relais.join(', ')}`);
 console.log('');

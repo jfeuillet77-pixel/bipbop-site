@@ -157,8 +157,8 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Sept modèles disponibles en France sous 300 €. Les deux lignes surlignées sont celles qu'on recommande. Prix relevés le 11 septembre 2026.",
-      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 12 octobre 2026.",
-      "pourquoi": "une seule ligne recommandée reste dans le tableau depuis la sortie de la Turbo Mesh. Date du relevé : l'Aide-Mémoire §05 date les guides par budget à chaque relevé, celui du 12/10/2026 a fait remonter l'Alesis Debut Kit de 227 à 240 € chez Woodbrass"
+      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 3 novembre 2026.",
+      "pourquoi": "une seule ligne recommandée reste dans le tableau depuis la sortie de la Turbo Mesh. Date du relevé : l'Aide-Mémoire §05 date les guides par budget à chaque relevé. Celui du 03/11/2026 fait monter la DED-70 (219,99 €), la DED-80 (239,99 €) et l'Alesis Debut Kit (279 €) ; Rookie, HD-120 et MPS-150X confirmés"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
@@ -187,14 +187,14 @@
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
       "au": "relevés le 11 septembre 2026",
-      "remplace": "relevés le 5 octobre 2026",
-      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 05/10/2026 a fait passer la Yamaha DTX402K de 369 à 346 € chez Thomann"
+      "remplace": "relevés le 3 novembre 2026. L'Alesis Turbo Mesh n'y figure plus depuis le 12 octobre : sa ligne garde son dernier prix connu",
+      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 03/11/2026 fait passer la Roland TD-02K de 349 à 333 € chez Thomann. Les 12/10 et 19/10, la date était restée au 05/10 pour ne pas certifier le prix de la Turbo Mesh, absente du catalogue Thomann et en 404 depuis le 12/10. Plutôt que de laisser vieillir la date de huit prix vrais, la phrase dit maintenant ce qu'il en est de la neuvième. La ligne n'est pas retirée : le retrait d'un modèle attend la décision de Jordane (voir JOURNAL du 12/10)"
     },
     {
       "fichier": "Guide-Moins-De-1000-Euros.dc.html",
       "au": "Prix relevés chez Thomann le 12 septembre 2026.",
-      "remplace": "Prix relevés chez Thomann le 19 octobre 2026.",
-      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 19/10/2026 a confirmé les neuf prix du tableau et ceux du panier « alternative » (Nitro Max 409 €, tapis 59 €, casque 26 €, siège 44 €), seul l'Expansion Pack bouge (89 → 98 €). Le 12/10 avait déjà tout confirmé"
+      "remplace": "Prix relevés chez Thomann le 3 novembre 2026.",
+      "pourquoi": "Aide-Mémoire §05 : un guide par budget se date à chaque relevé. Celui du 03/11/2026 confirme les neuf prix du tableau et le panier « alternative » (aucun de ces modèles ni accessoires ne bouge au-delà du seuil de 5 €) ; date d'en-tête non touchée, le texte ne change pas. Celui du 19/10/2026 a confirmé les neuf prix du tableau et ceux du panier « alternative » (Nitro Max 409 €, tapis 59 €, casque 26 €, siège 44 €), seul l'Expansion Pack bouge (89 → 98 €). Le 12/10 avait déjà tout confirmé"
     },
     {
       "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
@@ -241,8 +241,8 @@
     {
       "fichier": "Avis.dc.html",
       "au": "relevés chez Thomann, Woodbrass et Donner Music le 13 septembre 2026",
-      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 12 octobre 2026",
-      "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 12/10/2026 y change deux lignes (Debut Kit 240 €, DDX50-Mesh 429 €). Leurs phrases tiennent : le Debut reste un format réduit, la DDX50 revient au prix qu'elle avait avant le 05/10"
+      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 3 novembre 2026",
+      "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 03/11/2026 y change sept lignes (Debut 279 €, DED-80 239,99 €, DED-70 219,99 €, TD-02K 333 €, DED-300X 599,99 €, DED-200 Pro 659,99 €, BackBeat 1 199,99 €). La phrase de la DED-70 (« sous 200 € ») est réécrite dans liste-attente-avis.csv, les six autres tiennent. Avant : relevé du 12/10/2026"
     },
     {
       "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
@@ -283,14 +283,14 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": ">11 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "remplace": ">12 OCT. 2026 · 8 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 12/10/2026 (Alesis Debut Kit à 240 €)"
+      "remplace": ">3 NOV. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 03/11/2026 (DED-70 à 219,99 €, plus « moins de 200 € », lignes DED-70 et HD-120 échangées ; DED-80 à 239,99 € ; Debut revenue à 279 €). Avant : relevé du 12/10/2026"
     },
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
       "au": ">11 SEPT. 2026 · 9 MIN DE LECTURE</div>",
-      "remplace": ">5 OCT. 2026 · 9 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 05/10/2026 (DTX402K à 346 €, ligne déplacée dans le tableau)"
+      "remplace": ">3 NOV. 2026 · 9 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 03/11/2026 (TD-02K à 333 €, écart avec la TD-02KV réécrit ; DED-200X à 529,99 €, sortie du budget). Avant : relevé du 05/10/2026 (DTX402K à 346 €)"
     },
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
@@ -349,14 +349,32 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Moins de 200 €. Tout en caoutchouc, mais ça se joue vraiment.",
-      "remplace": "Moins de 200 €. Les quatre fûts en peau maillée, les trois cymbales en caoutchouc.",
-      "pourquoi": "la fiche Donner du DED-70 annonce 4 têtes double couche « 6,5\" Mesh » (caisse claire + 3 toms) et 3 cymbales en caoutchouc 9\" — vérifié le 18/09/2026 ; la carte disait « tout en caoutchouc »"
+      "remplace": "À peine plus de 200 €. Les quatre fûts en peau maillée, les trois cymbales en caoutchouc.",
+      "pourquoi": "la fiche Donner du DED-70 annonce 4 têtes double couche « 6,5\" Mesh » (caisse claire + 3 toms) et 3 cymbales en caoutchouc 9\" — vérifié le 18/09/2026 ; la carte disait « tout en caoutchouc ». Relevé du 03/11/2026 : DED-70 à 219,99 € chez Donner Music (199,99 € auparavant), « Moins de 200 € » devient faux"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
-      "au": ">199,99 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>",
-      "remplace": ">199,99 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Mesh (fûts)</div>",
-      "pourquoi": "colonne Peaux de la ligne DED-70 : mesh sur les quatre fûts, caoutchouc sur les seules cymbales (fiche Donner vérifiée le 18/09/2026)"
+      "au": ">199,99 €</span>",
+      "remplace": ">219,99 €</span>",
+      "pourquoi": "Relevé du 03/11/2026 : Donner DED-70 à 219,99 € chez Donner Music, par le flux (199,99 € auparavant). Carte « Si 300 € est trop »"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "la Donner DED-70 à moins de 200 € reste jouable",
+      "remplace": "la Donner DED-70, à peine plus de 200 €, reste jouable",
+      "pourquoi": "Relevé du 03/11/2026 : DED-70 à 219,99 € (199,99 € auparavant), elle n'est plus « à moins de 200 € ». Le conseil tient (fûts en peau maillée, toujours sous 250 €). Pas de montant écrit en dur : la carte et le tableau donnent le prix"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "Donner DED-80</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">219,99 €</div>",
+      "remplace": "Donner DED-80</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">239,99 €</div>",
+      "pourquoi": "Relevé du 03/11/2026 : Donner DED-80 à 239,99 € chez Donner Music, par le flux (219,99 € auparavant). Sa place dans le tableau tient : entre la DED-70 (219,99 €) et l'Alesis Debut (279 €)"
+    },
+    {
+      "fichier": "Guide-Moins-De-300-Euros.dc.html",
+      "au": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://cdn.shopify.com/s/files/1/0612/3120/2528/files/BatterieelectroniqueDonnerDED-70aveccasquesiegedebatterie_1.jpg?v=1741598803\" alt=\"Donner DED-70\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Donner DED-70<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">SI LE BUDGET SERRE</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">199,99 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">180 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Moins de 200 € et ça se joue. Le rack est léger, les pads claquent.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/461227.jpg\" alt=\"Millenium HD-120\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\"><a href=\"/avis/millenium-hd-120/\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px\">Millenium HD-120</a></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">219 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">120 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Vingt euros de plus que la Donner, mais siège, casque et baguettes dans le carton.</div>",
+      "remplace": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/461227.jpg\" alt=\"Millenium HD-120\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\"><a href=\"/avis/millenium-hd-120/\" style=\"color:inherit;text-decoration:underline;text-underline-offset:3px\">Millenium HD-120</a></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">219 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">120 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Le prix de la DED-70, avec siège, casque et baguettes dans le carton. Mais tout en caoutchouc.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://cdn.shopify.com/s/files/1/0612/3120/2528/files/BatterieelectroniqueDonnerDED-70aveccasquesiegedebatterie_1.jpg?v=1741598803\" alt=\"Donner DED-70\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Donner DED-70<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">SI LE BUDGET SERRE</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">219,99 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Mesh (fûts)</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">180 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">À peine plus de 200 € et ça se joue. Le rack est léger, les pads claquent.</div>",
+      "pourquoi": "Relevé du 03/11/2026 : Donner DED-70 à 219,99 € chez Donner Music, par le flux (199,99 € auparavant). Elle passe au-dessus de la Millenium HD-120 (219 €, inchangée) : les deux lignes échangent leur contenu pour que le tableau reste du moins cher au plus cher, les fonds alternés restent en place. « Vingt euros de plus que la Donner » devient « le prix de la DED-70 » (99 centimes d'écart), « Moins de 200 € » devient « À peine plus de 200 € ». La colonne Peaux de la DED-70 garde la correction du 18/09/2026 (mesh sur les quatre fûts, caoutchouc sur les cymbales, fiche Donner), reprise ici. Le badge « Si le budget serre » reste à la DED-70 : à un euro de la HD-120, elle garde les fûts en peau maillée que la HD-120 n'a pas"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
@@ -366,69 +384,21 @@
     },
     {
       "fichier": "Guide-Enfant.dc.html",
-      "au": "Prends l'Alesis Debut Kit à 279 €",
-      "remplace": "Prends l'Alesis Debut Kit à 240 €",
-      "pourquoi": "Relevé du 12/10/2026 : Alesis Debut Kit à 240 € chez Woodbrass, par la page produit (227 € au 05/10, 279 € auparavant)."
-    },
-    {
-      "fichier": "Guide-Enfant.dc.html",
-      "au": "letter-spacing:-.02em\">279 €</span>",
-      "remplace": "letter-spacing:-.02em\">240 €</span>",
-      "pourquoi": "même relevé, carte « Notre choix »"
-    },
-    {
-      "fichier": "Guide-Enfant.dc.html",
-      "au": "<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">279 €</div>",
-      "remplace": "<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">240 €</div>",
-      "pourquoi": "même relevé, tableau des trois modèles (l'ordre du moins cher au plus cher tient : Rookie 179 €, Debut 240 €, MPS-150X 298 €)"
-    },
-    {
-      "fichier": "Guide-Enfant.dc.html",
-      "au": "ALESIS · 279 € CHEZ WOODBRASS",
-      "remplace": "ALESIS · 240 € CHEZ WOODBRASS",
-      "pourquoi": "même relevé, fiche du Debut Kit"
-    },
-    {
-      "fichier": "Guide-Enfant.dc.html",
-      "au": "<span>Alesis Debut Kit</span><span style=\"font-weight:600\">279 €</span>",
-      "remplace": "<span>Alesis Debut Kit</span><span style=\"font-weight:600\">240 €</span>",
-      "pourquoi": "même relevé, ligne du panier"
-    },
-    {
-      "fichier": "Guide-Enfant.dc.html",
-      "au": "<span>Le panier complet</span><span>405 €</span>",
-      "remplace": "<span>Le panier complet</span><span>366 €</span>",
-      "pourquoi": "total recalculé : 240 + 39 (MDTJR) + 26 (HD 150) + 2,22 (7A) + 59 (E-Drum Rug 120) = 366,22 €. Les quatre accessoires n'ont pas bougé au relevé du 12/10/2026 (353 € au 05/10, 405 € dans la maquette)"
-    },
-    {
-      "fichier": "Guide-Enfant.dc.html",
-      "au": "entre 100 et 170 € (annonces relevées fin septembre 2026), à peu près la moitié du prix du neuf. La revente amortit l'achat sans le rembourser : si l'enfant arrête, compte en récupérer la moitié.",
-      "remplace": "entre 100 et 170 € (annonces relevées fin septembre 2026), soit un peu plus de la moitié du prix du neuf. La revente amortit l'achat sans le rembourser : si l'enfant arrête, compte en récupérer la moitié, car l'occasion finit par suivre le neuf quand il baisse.",
-      "pourquoi": "100 à 170 € faisaient environ la moitié de 279 € (36 à 61 %). À 240 € (relevé du 12/10/2026) ils en font 42 à 71 %, 56 % au milieu de la fourchette : « un peu plus de la moitié » reste juste, comme à 227 €. L'estimation prudente « compte en récupérer la moitié » reste, avec sa raison"
-    },
-    {
-      "fichier": "Guide-Enfant.dc.html",
       "au": "de celui de Woodbrass, relevés le 11 septembre 2026.",
-      "remplace": "de celui de Woodbrass, relevés le 12 octobre 2026.",
-      "pourquoi": "la page est modifiée par le relevé du 12/10/2026 : la date du relevé de ses prix suit"
+      "remplace": "de celui de Woodbrass, relevés le 3 novembre 2026.",
+      "pourquoi": "Relevé du 03/11/2026 : l'Alesis Debut Kit remonte à 279 € chez Woodbrass (240 € au 12/10, 227 € au 05/10), soit exactement le prix que la maquette écrit. Les sept corrections du 12/10 (le Debut à 240 € à cinq endroits, le panier à 366 €, la phrase de revente) sont retirées : la maquette redit vrai. Panier : 279 + 39 (MDTJR) + 26 (HD 150) + 2,22 (7A) + 59 (E-Drum Rug 120) = 405,22 €, les « 405 € » de la maquette, accessoires inchangés au relevé. Revente : 100 à 170 € font 36 à 61 % de 279 €, 48 % au milieu, « à peu près la moitié » redevient le mot juste. L'ordre du tableau tient (Rookie 179, Debut 279, MPS-150X 298). La date du relevé suit"
     },
     {
       "fichier": "Guide-Enfant.dc.html",
       "au": ">11 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "remplace": ">12 OCT. 2026 · 8 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 12/10/2026 (Debut Kit à 240 €, panier à 366 €)"
-    },
-    {
-      "fichier": "Guide-Moins-De-300-Euros.dc.html",
-      "au": "Alesis Debut Kit<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">FORMAT ENFANT</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">279 €</div>",
-      "remplace": "Alesis Debut Kit<div style=\"font:500 11px 'IBM Plex Mono',monospace;color:#5a4c3e;margin-top:3px\">FORMAT ENFANT</div></div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">240 €</div>",
-      "pourquoi": "Relevé du 12/10/2026 : Alesis Debut Kit à 240 € chez Woodbrass, par la page produit (227 € au 05/10, 279 € auparavant). L'ordre du tableau tient : la Debut reste entre la DED-80 à 219,99 € et la MPS-150X à 298 €"
+      "remplace": ">3 NOV. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 03/11/2026 (Debut Kit revenu à 279 €, panier à 405 €). Avant : relevé du 12/10/2026"
     },
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
       "au": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/557719.jpg\" alt=\"Roland TD-02K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Roland TD-02K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">349 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">16 kits</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Les sons Roland sans le mesh. On préfère mettre 149 € de plus.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/443798.jpg\" alt=\"Yamaha DTX402K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Yamaha DTX402K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">369 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">287 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">L'application Yamaha est la meilleure du marché, les pads non.</div>",
-      "remplace": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/443798.jpg\" alt=\"Yamaha DTX402K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Yamaha DTX402K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">346 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">287 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">L'application Yamaha est la meilleure du marché, les pads non.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/557719.jpg\" alt=\"Roland TD-02K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Roland TD-02K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">349 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">16 kits</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Les sons Roland sans le mesh. On préfère mettre 149 € de plus.</div>",
-      "pourquoi": "Relevé du 05/10/2026 : Yamaha DTX402K à 346 € chez Thomann (369 € auparavant). Elle passe sous la Roland TD-02K à 349 € et le tableau se dit « classé du moins cher au plus cher » : les deux lignes échangent leur contenu, les fonds alternés restent en place"
+      "remplace": "<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/557719.jpg\" alt=\"Roland TD-02K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Roland TD-02K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">333 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">16 kits</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Les sons Roland sans le mesh. On préfère mettre 165 € de plus.</div>\n</div>\n<div data-rwd=\"tblrow\" style=\"display:grid;grid-template-columns:86px 1.3fr minmax(84px,.55fr) minmax(96px,.7fr) minmax(104px,.8fr) 1.5fr;background:#fff;border-bottom:1.5px solid #e4d8c6;align-items:center\">\n<div style=\"padding:12px 0 12px 14px\"><div style=\"width:58px;height:46px;border:2px solid #241c14;border-radius:8px;overflow:hidden;background:#fff\"><img src=\"https://www.thomann.de/prodbilder/443798.jpg\" alt=\"Yamaha DTX402K\" style=\"width:100%;height:100%;object-fit:contain;display:block\"></div></div>\n<div style=\"padding:15px 16px;font-weight:600\">Yamaha DTX402K</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">346 €</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">Caoutchouc</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">287 sons</div>\n<div style=\"padding:15px 16px;color:#4a3d31\">L'application Yamaha est la meilleure du marché, les pads non.</div>",
+      "pourquoi": "Relevé du 03/11/2026 : Roland TD-02K à 333 € chez Thomann, par le flux (349 € auparavant). Elle repasse sous la Yamaha DTX402K (346 € depuis le 05/10/2026) : l'ordre de la maquette, TD-02K puis DTX402K, redevient celui du « moins cher au plus cher », et l'échange de lignes posé le 05/10 n'a plus lieu d'être. Restent les deux prix, et l'écart avec la TD-02KV (498 €, inchangée) : « On préfère mettre 149 € de plus » devient 165 €. 349 € est aussi le prix de la MPS-350 et de la Nux DM-110, absentes de ce tableau"
     },
     {
       "fichier": "Guide-Faire-Evoluer-Sa-Batterie.dc.html",
@@ -469,14 +439,164 @@
     {
       "fichier": "Duel-Alesis-Nitro-Max-vs-Donner-DED-200.dc.html",
       "au": "Elle rattrape alors la Donner en nombre de pads, pour un total encore inférieur.",
-      "remplace": "Elle rattrape alors la Donner en nombre de pads pour sept euros de plus, mais sans le casque ni le tabouret que la Donner livre.",
-      "pourquoi": "Relevé du 19/10/2026 : Expansion Pack à 98 € (89 € auparavant). Nitro Max 409 € + pack 98 € = 507 € contre 499,99 € pour la DED-200X : le total n'est plus inférieur. Le prix du pack est un jeton ({accprix:extnitro}) et suit seul, mais cette phrase en tire une comparaison que le rapport ne voit pas. Le verdict ne repose pas sur le pack (il compare les deux kits équipés d'un casque et d'un siège) : il tient. À relire si le pack redescend sous 91 €"
+      "remplace": "Elle rattrape alors la Donner en nombre de pads pour vingt-trois euros de moins, mais sans le casque ni le tabouret que la Donner livre.",
+      "pourquoi": "Relevé du 03/11/2026 : DED-200X à 529,99 € (499,99 € auparavant). Nitro Max 409 € + pack 98 € = 507 € contre 529,99 € : la Nitro Max agrandie redevient moins chère, de 22,99 €. Le 19/10, avec la Donner à 499,99 €, c'était sept euros de plus. La réserve sur le casque et le tabouret reste : avec eux (26 + 44 €), l'Alesis agrandie revient à 577 €. Le prix du pack est un jeton ({accprix:extnitro}) et suit seul, la comparaison écrite en lettres non : à relire si l'un des trois prix bouge"
     },
     {
       "fichier": "Duel-Alesis-Nitro-Max-vs-Donner-DED-200.dc.html",
       "au": ">11 SEPT. 2026 · 5 MIN</div>",
-      "remplace": ">19 OCT. 2026 · 5 MIN</div>",
-      "pourquoi": "date rafraîchie : une réponse de la FAQ réécrite au relevé du 19/10/2026"
+      "remplace": ">3 NOV. 2026 · 5 MIN</div>",
+      "pourquoi": "date rafraîchie : le relevé du 03/11/2026 (DED-200X à 529,99 €) change l'écart du chapeau, les deux prix du rail et du tableau, et une réponse de la FAQ. Avant : FAQ réécrite au relevé du 19/10/2026"
+    },
+    {
+      "fichier": "Duel-Alesis-Nitro-Max-vs-Donner-DED-200.dc.html",
+      "au": "Quatre-vingt-onze euros d'écart affiché, bien moins une fois équipées,",
+      "remplace": "Cent vingt et un euros d'écart affiché, bien moins une fois équipées,",
+      "pourquoi": "Relevé du 03/11/2026 : DED-200X à 529,99 € chez Donner Music, par le flux (499,99 € auparavant), Nitro Max inchangée à 409 €. L'écart affiché passe de 90,99 à 120,99 €. Une fois les deux kits équipés d'un casque et d'un siège (26 + 44 €), il passe de 20,99 à 50,99 € : « bien moins » reste vrai. Le verdict (l'Alesis gagne, moins chère même équipée) sort renforcé, il n'y a rien à relire"
+    },
+    {
+      "fichier": "Duel-Alesis-Nitro-Max-vs-Donner-DED-200.dc.html",
+      "au": "letter-spacing:-.02em\">499,99 €</span>",
+      "remplace": "letter-spacing:-.02em\">529,99 €</span>",
+      "pourquoi": "même relevé, prix du rail de la Donner"
+    },
+    {
+      "fichier": "Duel-Alesis-Nitro-Max-vs-Donner-DED-200.dc.html",
+      "au": "white-space:nowrap\">499,99 €</div>",
+      "remplace": "white-space:nowrap\">529,99 €</div>",
+      "pourquoi": "même relevé, ligne Prix du tableau (l'avantage reste à l'Alesis)"
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": "Quatre-vingt-onze euros d'écart affiché, bien moins une fois équipées.",
+      "remplace": "Cent vingt et un euros d'écart affiché, bien moins une fois équipées.",
+      "pourquoi": "Relevé du 03/11/2026 : DED-200X à 529,99 € (499,99 € auparavant), Nitro Max à 409 € : 120,99 € d'écart affiché, 50,99 € une fois les deux kits équipés. Carte du duel au hub"
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": ">DONNER · 499,99 €</div>",
+      "remplace": ">DONNER · 529,99 €</div>",
+      "pourquoi": "Relevé du 03/11/2026 : Donner DED-200X à 529,99 € chez Donner Music, par le flux (499,99 € auparavant). Carte d'avis publiée. Elle reste avant la Nitro Pro (698 €) dans l'ordre des cartes"
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": "Cinq fûts et quatre cymbales, le kit le plus fourni sous 500 €",
+      "remplace": "Cinq fûts et quatre cymbales, le kit le plus fourni autour de 500 €",
+      "pourquoi": "même relevé : à 529,99 €, la DED-200X n'est plus sous 500 €. Autour de 500 € (Nitro Max, MPS-750X, TD-02KV, DTX432K, DDX50), elle reste la seule à neuf pads et quatre cymbales ; la DED-300X (599,99 €) et la MPS-850 (598 €) sont plus loin"
+    },
+    {
+      "fichier": "Avis.dc.html",
+      "au": "white-space:nowrap\">300 à 500 €</span>\n<a href=\"/avis/donner-ded-200x/\"",
+      "remplace": "white-space:nowrap\">500 à 800 €</span>\n<a href=\"/avis/donner-ded-200x/\"",
+      "pourquoi": "même relevé : la DED-200X franchit la borne des 500 €, sa tranche passe de « 300 à 500 € » à « 500 à 800 € » (segment de prix-reperes.json). L'étiquette de la carte suit, sinon elle annonce un prix qui ne contient plus le modèle"
+    },
+    {
+      "fichier": "Avis-Alesis-Nitro-Max.dc.html",
+      "au": ">Donner DED-200X</a></div><div style=\"padding:14px 16px;white-space:nowrap\">499,99 €</div>",
+      "remplace": ">Donner DED-200X</a></div><div style=\"padding:14px 16px;white-space:nowrap\">529,99 €</div>",
+      "pourquoi": "Relevé du 03/11/2026 : DED-200X à 529,99 € chez Donner Music (499,99 € auparavant). Substitution seule : la phrase de la ligne (« un module plus pauvre et {ecart:ded200x-nitromax} de plus ») suit par jeton et reste vraie. Date de la page non touchée : rien de fond n'y change"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "499,99 €, casque, tabouret et baguettes compris",
+      "remplace": "529,99 €, casque, tabouret et baguettes compris",
+      "pourquoi": "Relevé du 03/11/2026 : Donner DED-200X à 529,99 € chez Donner Music, par le flux (499,99 € auparavant). « Le vrai budget »"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "<span>Donner DED-200X</span><span style=\"font-weight:600\">499,99 €</span>",
+      "remplace": "<span>Donner DED-200X</span><span style=\"font-weight:600\">529,99 €</span>",
+      "pourquoi": "même relevé, ligne du budget (le total est un jeton {budget:ded200x+tapis} et suit seul)"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": ">Donner DED-200X</div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">499,99 €</div>",
+      "remplace": ">Donner DED-200X</div><div style=\"padding:14px 16px;white-space:nowrap;font-weight:600\">529,99 €</div>",
+      "pourquoi": "même relevé, tableau « Face à la concurrence ». La MPS-750X (498 €) reste « notre choix à ce prix » : nue, elle est moins chère ; équipée d'un casque et d'un siège (568 €), elle coûte 38 € de plus que la Donner, comme l'avis le dit déjà par jeton"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "letter-spacing:-.02em\">499,99 €</div>",
+      "remplace": "letter-spacing:-.02em\">529,99 €</div>",
+      "pourquoi": "même relevé, bloc « prix indicatif » du verdict"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "c'est le kit le plus complet de sa tranche.",
+      "remplace": "c'est le kit le plus complet autour de 500 €.",
+      "pourquoi": "Relevé du 03/11/2026 : à 529,99 €, la DED-200X passe de la tranche 300 à 500 € à 500 à 800 €, où la MPS-850 et la Nitro Pro XL alignent dix pads. « De sa tranche » devient faux. Autour de 500 € (Nitro Max, DDX50, MPS-750X, TD-02KV, DTX432K), elle reste la seule à neuf pads"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "C'est la seule de la tranche avec deux crashs.",
+      "remplace": "C'est la seule autour de 500 € avec deux crashs.",
+      "pourquoi": "même raison : dans la tranche 500 à 800 €, la MPS-850, la DED-300X, la DED-200 Pro, la Nitro Pro XL et la Nitro Ultimate ont aussi quatre cymbales. Autour de 500 €, les cinq voisines en ont trois"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "comme sur toutes les batteries de cette tranche sauf la Roland TD-02KV",
+      "remplace": "comme sur toutes les batteries autour de 500 € sauf la Roland TD-02KV",
+      "pourquoi": "même raison : la TD-02KV (498 €) est restée dans la tranche 300 à 500 €, que la DED-200X a quittée. La phrase gardait la TD-02KV comme exception d'une tranche qui n'est plus celle de la Donner"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "<span>Neuf pads, le kit le plus fourni de sa tranche</span>",
+      "remplace": "<span>Neuf pads, le kit le plus fourni autour de 500 €</span>",
+      "pourquoi": "même raison, liste des points forts"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": " d'écart seulement.",
+      "remplace": " d'écart en faveur de l'Alesis.",
+      "pourquoi": "Relevé du 03/11/2026 : équipée d'un casque et d'un siège, la Nitro Max revient à 479 €, la DED-200X coûte 529,99 €. L'écart (un jeton, {diff:ded200x-nitromax+casque+siege}) passe de 20,99 à 50,99 € : « seulement » minimisait un écart qui a plus que doublé. Le conseil de l'encart (attendre une promotion sous 420 €) en sort renforcé"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "équipement compris, elle ne coûte que ",
+      "remplace": "équipement compris, elle coûte ",
+      "pourquoi": "même relevé, verdict : « ne coûte que 50,99 € de plus » ne se dit plus. Le verdict lui-même tient : plus de pads et un carton complet, un module moins fin, l'Alesis pour qui joue sur sa playlist. La note de la grille (critère prix à 7) est laissée telle quelle, voir JOURNAL du 03/11/2026"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": "Prix relevés le 11 septembre 2026 chez Donner Music et Thomann.",
+      "remplace": "Prix relevés le 3 novembre 2026 chez Donner Music et Thomann.",
+      "pourquoi": "le tableau « Face à la concurrence » est modifié par le relevé du 03/11/2026 ; ses trois autres prix (MPS-750X 498 €, Nitro Max 409 €, TD-02KV 498 €) y sont confirmés"
+    },
+    {
+      "fichier": "Avis-Donner-DED-200X.dc.html",
+      "au": ">11 SEPT. 2026 · 7 MIN DE LECTURE</div>",
+      "remplace": ">3 NOV. 2026 · 7 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 03/11/2026 (529,99 €, changement de tranche, écart équipé réécrit)"
+    },
+    {
+      "fichier": "Avis-Millenium-MPS-750X.dc.html",
+      "au": "Pour à peine plus, la <a href=\"/avis/donner-ded-200x/\"",
+      "remplace": "Pour trente-deux euros de plus, la <a href=\"/avis/donner-ded-200x/\"",
+      "pourquoi": "Relevé du 03/11/2026 : DED-200X à 529,99 € (499,99 € auparavant), MPS-750X à 498 € : l'écart passe de 1,99 à 31,99 €, « à peine plus » devient faux. Le prix de la Donner est un jeton ({prix:ded200x}) et suit seul, l'écart écrit en lettres non : à relire si l'un des deux prix bouge"
+    },
+    {
+      "fichier": "Avis-Millenium-MPS-750X.dc.html",
+      "au": ">11 SEPT. 2026 · 7 MIN DE LECTURE</div>",
+      "remplace": ">3 NOV. 2026 · 7 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie : une phrase réécrite au relevé du 03/11/2026 (écart avec la DED-200X)"
+    },
+    {
+      "fichier": "Guide-Moins-De-500-Euros.dc.html",
+      "au": "</a> à 499,99 € rentre aussi dans le budget, mais elle se vend chez Donner Music et pas chez Thomann.",
+      "remplace": "</a> est passée à 529,99 € au relevé du 3 novembre 2026 : elle sort du budget, sauf pendant une promotion Donner. Elle se vend chez Donner Music, pas chez Thomann.",
+      "pourquoi": "Relevé du 03/11/2026 : Donner DED-200X à 529,99 € chez Donner Music, par le flux (499,99 € auparavant). « Rentre aussi dans le budget » d'un guide « moins de 500 € » devient faux. La phrase garde le renvoi au duel avec la Nitro Max qui la suit"
+    },
+    {
+      "fichier": "Guide-Appartement.dc.html",
+      "au": "Sous 250 €, deux kits de notre base seulement en ont partout, la Millenium Rookie et l'Alesis Debut, deux kits pour enfant.",
+      "remplace": "Sous 300 €, trois kits de notre base seulement en ont partout : la Millenium MPS-150X et deux kits pour enfant, la Millenium Rookie et l'Alesis Debut.",
+      "pourquoi": "Relevé du 03/11/2026 : l'Alesis Debut Kit remonte à 279 € chez Woodbrass (240 € auparavant) et sort des « sous 250 € ». Plutôt que de la retirer, le seuil passe à 300 € : dans la base, les kits tout mesh sous 300 € sont la Rookie (179 €), la Debut (279 €) et la MPS-150X (298 €) ; la Turbo Mesh (309 €) est au-dessus. La phrase suivante (« Deux Donner en ont sur les fûts seulement ») reste vraie : DED-70 (219,99 €) et DED-80 (239,99 €), « mixte » dans la base"
+    },
+    {
+      "fichier": "Guide-Appartement.dc.html",
+      "au": "MIS À JOUR LE 14 OCT. 2026 · 9 MIN",
+      "remplace": "MIS À JOUR LE 3 NOV. 2026 · 9 MIN",
+      "pourquoi": "date rafraîchie : une phrase réécrite au relevé du 03/11/2026 (kits tout mesh sous 300 €)"
     }
   ]
 }

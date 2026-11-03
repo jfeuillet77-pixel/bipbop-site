@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-10-22",
+ "date": "2026-11-02",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -330,7 +330,7 @@
    "id": "272606",
    "marque": "Pearl",
    "modele": "THMP-1 Throne Thumper",
-   "prix": 666,
+   "prix": 659,
    "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
    "url": "https://www.thomann.fr/pearl_thmp_1_throne_thumper.htm"
   },
@@ -391,14 +391,6 @@
    "url": "https://www.thomann.fr/gibraltar_gems_elect._mounting_station.htm"
   },
   {
-   "id": "292396",
-   "marque": "Roland",
-   "modele": "KD-7 Kick-Controller B-Stock",
-   "prix": 156,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/roland_kd_7_kick_controller_b_stock.htm"
-  },
-  {
    "id": "294621",
    "marque": "Thon",
    "modele": "Case for Roland SPD-30",
@@ -415,14 +407,6 @@
    "url": "https://www.thomann.fr/gewa_sps_drum_rack_bag_mds_12.htm"
   },
   {
-   "id": "295366",
-   "marque": "Millenium",
-   "modele": "Hi-Hat Controller B-Stock",
-   "prix": 23.6,
-   "categorie": "Batteries Electroniques > Pads de Charleston",
-   "url": "https://www.thomann.fr/millenium_hi_hat_controller_b_stock.htm"
-  },
-  {
    "id": "295724",
    "marque": "Gibraltar",
    "modele": "SC-GEMC Electronic Mounting",
@@ -437,14 +421,6 @@
    "prix": 88,
    "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
    "url": "https://www.thomann.fr/yamaha_ku100_silent_kick_pedal.htm"
-  },
-  {
-   "id": "302706",
-   "marque": "Yamaha",
-   "modele": "KU100 Silent Kick Peda B-Stock",
-   "prix": 75,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/yamaha_ku100_silent_kick_peda_b_stock.htm"
   },
   {
    "id": "305277",
@@ -469,14 +445,6 @@
    "prix": 1049,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/roland_hpd_20_handsonic_pad.htm"
-  },
-  {
-   "id": "326443",
-   "marque": "Roland",
-   "modele": "HPD-20 Handsonic Pad B-Stock",
-   "prix": 975,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_hpd_20_handsonic_pad_b_stock.htm"
   },
   {
    "id": "327094",
@@ -567,14 +535,6 @@
    "url": "https://www.thomann.fr/yamaha_pcy_100_10_3_zone_cymbal_pad.htm"
   },
   {
-   "id": "342271",
-   "marque": "Roland",
-   "modele": "TM-2 Trigger Module B-Stock",
-   "prix": 205,
-   "categorie": "Batteries Electroniques > Modules de Sons",
-   "url": "https://www.thomann.fr/roland_tm_2_trigger_module_b_stock.htm"
-  },
-  {
    "id": "343002",
    "marque": "Yamaha",
    "modele": "TPCL500 Pad Holder",
@@ -642,7 +602,7 @@
    "id": "368167",
    "marque": "Roland",
    "modele": "RT-30HR Dual Trigger B-Stock",
-   "prix": 75,
+   "prix": 71,
    "categorie": "Batteries Electroniques > Triggers pour Batteries",
    "url": "https://www.thomann.fr/roland_rt_30hr_dual_trigger_b_stock.htm"
   },
@@ -661,14 +621,6 @@
    "prix": 166,
    "categorie": "Batteries Electroniques > Modules de Sons",
    "url": "https://www.thomann.fr/ddrum_ddti_trigger_interface.htm"
-  },
-  {
-   "id": "374113",
-   "marque": "Millenium",
-   "modele": "MPS-150 E-Drum Set B-Stock",
-   "prix": 229,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_150_e_drum_set_b_stock.htm"
   },
   {
    "id": "374712",
@@ -722,7 +674,7 @@
    "id": "382279",
    "marque": "Aerodrums",
    "modele": "Air Percussion Set",
-   "prix": 210,
+   "prix": 209,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/aerodrums_air_percussion_set.htm"
   },
@@ -746,7 +698,7 @@
    "id": "384987",
    "marque": "Aerodrums",
    "modele": "Air Percussion Set B-Stock",
-   "prix": 196,
+   "prix": 180,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/aerodrums_air_percussion_set_b_stock.htm"
   },
@@ -813,14 +765,6 @@
    "prix": 20.9,
    "categorie": "Hardware pour Batterie & Percussions > Hardware pour Batteries Electroniques",
    "url": "https://www.thomann.fr/millenium_mps_750_cymbal_arm.htm"
-  },
-  {
-   "id": "394338",
-   "marque": "Roland",
-   "modele": "KT-9 Kick Trigger Peda B-Stock",
-   "prix": 199,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/roland_kt_9_kick_trigger_peda_b_stock.htm"
   },
   {
    "id": "397031",
@@ -943,12 +887,12 @@
    "url": "https://www.thomann.fr/yamaha_dd_75.htm"
   },
   {
-   "id": "413575",
-   "marque": "Roland",
-   "modele": "TD-9/TD-11/TD-15 Multi B-Stock",
-   "prix": 45,
-   "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
-   "url": "https://www.thomann.fr/roland_td_9_td_11_td_15_multi_b_stock.htm"
+   "id": "414094",
+   "marque": "Millenium",
+   "modele": "MPS-500/750 10\" Mesh H B-Stock",
+   "prix": 73,
+   "categorie": "Batteries Electroniques > Pads de Caisse Claire",
+   "url": "https://www.thomann.fr/millenium_mps_500_750_10_mesh_h_b_stock.htm"
   },
   {
    "id": "414579",
@@ -991,14 +935,6 @@
    "url": "https://www.thomann.fr/roland_spd_one_wav.htm"
   },
   {
-   "id": "417509",
-   "marque": "Yamaha",
-   "modele": "DD-75 B-Stock",
-   "prix": 225,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/yamaha_dd_75_b_stock.htm"
-  },
-  {
    "id": "419792",
    "marque": "Millenium",
    "modele": "MPS-150X E-Drum Mesh Bundle",
@@ -1007,12 +943,12 @@
    "url": "https://www.thomann.fr/millenium_mps_150x_e_drum_mesh_bundle.htm"
   },
   {
-   "id": "423749",
-   "marque": "Millenium",
-   "modele": "MPS-150X E-Drum Mesh S B-Stock",
+   "id": "424953",
+   "marque": "Roland",
+   "modele": "SPD::ONE Wav B-Stock",
    "prix": 275,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_150x_e_drum_mesh_s_b_stock.htm"
+   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
+   "url": "https://www.thomann.fr/roland_spdone_wav_b_stock.htm"
   },
   {
    "id": "425652",
@@ -1061,14 +997,6 @@
    "prix": 969,
    "categorie": "Batteries Electroniques > Modules de Sons",
    "url": "https://www.thomann.fr/roland_tm_6_pro_drum_trigger_module.htm"
-  },
-  {
-   "id": "432278",
-   "marque": "Millenium",
-   "modele": "Percussion Pad Stand B-Stock",
-   "prix": 64,
-   "categorie": "Hardware pour Batterie & Percussions > Hardware pour Batteries Electroniques",
-   "url": "https://www.thomann.fr/millenium_percussion_pad_stand_b_stock.htm"
   },
   {
    "id": "433133",
@@ -1135,14 +1063,6 @@
    "url": "https://www.thomann.fr/millenium_mps_850_e_drum_set_bundle.htm"
   },
   {
-   "id": "443248",
-   "marque": "Roland",
-   "modele": "KD-10 Kick Pad B-Stock",
-   "prix": 189,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/roland_kd_10_kick_pad_b_stock.htm"
-  },
-  {
    "id": "443798",
    "marque": "Yamaha",
    "modele": "DTX402K E-Drum Set",
@@ -1173,22 +1093,6 @@
    "prix": 549,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/yamaha_dtx432k_e_drum_set_bundle.htm"
-  },
-  {
-   "id": "444000",
-   "marque": "Roland",
-   "modele": "SPD::ONE Electro B-Stock",
-   "prix": 229,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_spdone_electro_b_stock.htm"
-  },
-  {
-   "id": "444277",
-   "marque": "Millenium",
-   "modele": "MPS-850 E-Drum Set B-Stock",
-   "prix": 555,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_850_e_drum_set_b_stock.htm"
   },
   {
    "id": "445689",
@@ -1247,12 +1151,12 @@
    "url": "https://www.thomann.fr/millenium_mps_450_e_drum_set.htm"
   },
   {
-   "id": "455688",
+   "id": "455902",
    "marque": "Millenium",
-   "modele": "MPS-850 10\" Mesh Head  B-Stock",
-   "prix": 73,
-   "categorie": "Batteries Electroniques > Pads de Caisse Claire",
-   "url": "https://www.thomann.fr/millenium_mps_850_10_mesh_head_b_stock.htm"
+   "modele": "MPS-850 Drum Module B-Stock",
+   "prix": 185,
+   "categorie": "Batteries Electroniques > Modules de Sons",
+   "url": "https://www.thomann.fr/millenium_mps_850_drum_module_b_stock.htm"
   },
   {
    "id": "457843",
@@ -1285,14 +1189,6 @@
    "prix": 219,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_hd_120_e_drum_set.htm"
-  },
-  {
-   "id": "462224",
-   "marque": "Millenium",
-   "modele": "MPS-250/500/750 12\" Cr B-Stock",
-   "prix": 55,
-   "categorie": "Batteries Electroniques > Pads de Cymbale",
-   "url": "https://www.thomann.fr/millenium_mps_250_500_750_12_cr_b_stock.htm"
   },
   {
    "id": "463796",
@@ -1367,14 +1263,6 @@
    "url": "https://www.thomann.fr/yamaha_pcy95at_cymbal_pad.htm"
   },
   {
-   "id": "475488",
-   "marque": "Millenium",
-   "modele": "MPS-450 Drum Module B-Stock",
-   "prix": 119,
-   "categorie": "Batteries Electroniques > Modules de Sons",
-   "url": "https://www.thomann.fr/millenium_mps_450_drum_module_b_stock.htm"
-  },
-  {
    "id": "477269",
    "marque": "Roland",
    "modele": "TD-1DMK Multicore",
@@ -1413,14 +1301,6 @@
    "prix": 649,
    "categorie": "Batteries Electroniques > Pads de Caisse Claire",
    "url": "https://www.thomann.fr/roland_14_x13_pda140f_ms_floor_tom.htm"
-  },
-  {
-   "id": "489091",
-   "marque": "2box",
-   "modele": "DrumIt Five MKII",
-   "prix": 799,
-   "categorie": "Batteries Electroniques > Modules de Sons",
-   "url": "https://www.thomann.fr/2box_drumit_five_mkii.htm"
   },
   {
    "id": "492454",
@@ -1618,7 +1498,7 @@
    "id": "516535",
    "marque": "Efnote",
    "modele": "5 E-Drum Set",
-   "prix": 3111,
+   "prix": 3159,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/efnote_5_e_drum_set.htm"
   },
@@ -2071,14 +1951,6 @@
    "url": "https://www.thomann.fr/tama_mph63_electronic_pad_holder.htm"
   },
   {
-   "id": "536711",
-   "marque": "Roland",
-   "modele": "VH-14D Digital Hi-Hat  B-Stock",
-   "prix": 799,
-   "categorie": "Batteries Electroniques > Pads de Charleston",
-   "url": "https://www.thomann.fr/roland_vh_14d_digital_hi_hat_b_stock.htm"
-  },
-  {
    "id": "538700",
    "marque": "Yamaha",
    "modele": "PCY-175 E-Drum Cymbal Pad",
@@ -2095,14 +1967,6 @@
    "url": "https://www.thomann.fr/the_box_pro_achat_e_drum_monitor_bundle.htm"
   },
   {
-   "id": "540276",
-   "marque": "Millenium",
-   "modele": "NonaPad B-Stock",
-   "prix": 169,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/millenium_nonapad_b_stock.htm"
-  },
-  {
    "id": "542521",
    "marque": "Alesis",
    "modele": "Nitro Multicore",
@@ -2117,14 +1981,6 @@
    "prix": 39,
    "categorie": "Batteries Electroniques > Pads de Charleston",
    "url": "https://www.thomann.fr/millenium_mps_850_hi_hat_controller_v2.htm"
-  },
-  {
-   "id": "542601",
-   "marque": "Millenium",
-   "modele": "E-Drum Kick Bass Pad B-Stock",
-   "prix": 39,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/millenium_e_drum_kick_bass_pad_b_stock_542601.htm"
   },
   {
    "id": "543102",
@@ -2370,7 +2226,7 @@
    "id": "557719",
    "marque": "Roland",
    "modele": "TD-02K V-Drums Kit",
-   "prix": 329,
+   "prix": 333,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/roland_td_02k_v_drums_kit.htm"
   },
@@ -2775,14 +2631,6 @@
    "url": "https://www.thomann.fr/millenium_mps_750x_pro_mesh_bundle.htm"
   },
   {
-   "id": "573397",
-   "marque": "Evans",
-   "modele": "Hybrid Sensory Perc. B B-Stock",
-   "prix": 735,
-   "categorie": "Batteries Electroniques > Triggers pour Batteries",
-   "url": "https://www.thomann.fr/evans_hybrid_sensory_perc_b_b_stock.htm"
-  },
-  {
    "id": "574100",
    "marque": "Millenium",
    "modele": "Universal Percussion Pad Bag",
@@ -2797,6 +2645,14 @@
    "prix": 409,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/alesis_nitro_max_kit.htm"
+  },
+  {
+   "id": "576319",
+   "marque": "Millenium",
+   "modele": "MPS-750 Anti-Twist Device",
+   "prix": 4.9,
+   "categorie": "Hardware pour Batterie & Percussions > Hardware pour Batteries Electroniques",
+   "url": "https://www.thomann.fr/millenium_mps_750_anti_twist_device.htm"
   },
   {
    "id": "577441",
@@ -2855,12 +2711,12 @@
    "url": "https://www.thomann.fr/millenium_nonapad_bag_bundle.htm"
   },
   {
-   "id": "581813",
-   "marque": "Millenium",
-   "modele": "MD-100 Mobile Drum B-Stock",
-   "prix": 185,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_md_100_mobile_drum_b_stock.htm"
+   "id": "580572",
+   "marque": "Roland",
+   "modele": "12\" CY-12C-T Cymbal Pa B-Stock",
+   "prix": 229,
+   "categorie": "Batteries Electroniques > Pads de Cymbale",
+   "url": "https://www.thomann.fr/roland_12_cy_12c_t_cymbal_pa_b_stock.htm"
   },
   {
    "id": "583444",
@@ -2909,14 +2765,6 @@
    "prix": 289,
    "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
    "url": "https://www.thomann.fr/alesis_strike_amp_8_mk2.htm"
-  },
-  {
-   "id": "594944",
-   "marque": "Millenium",
-   "modele": "MPS-1000 D2 E-Drum Set B-Stock",
-   "prix": 875,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_1000_d2_e_drum_set_b_stock_594944.htm"
   },
   {
    "id": "596352",
@@ -2978,7 +2826,7 @@
    "id": "599942",
    "marque": "Roland",
    "modele": "TD713 V-Drums Kit",
-   "prix": 4698,
+   "prix": 5989,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/roland_td713_v_drums_kit.htm"
   },
@@ -3250,7 +3098,7 @@
    "id": "607781",
    "marque": "Alesis",
    "modele": "Nitro Amp B-Stock",
-   "prix": 83,
+   "prix": 91,
    "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
    "url": "https://www.thomann.fr/alesis_nitro_amp_b_stock.htm"
   },
@@ -3269,6 +3117,14 @@
    "prix": 1369,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/yamaha_dtx6k5_m_e_drum_set.htm"
+  },
+  {
+   "id": "611486",
+   "marque": "Alesis",
+   "modele": "Strata Core E-Drum Kit B-Stock",
+   "prix": 1555,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/alesis_strata_core_e_drum_kit_b_stock.htm"
   },
   {
    "id": "611746",
@@ -3666,7 +3522,7 @@
    "id": "626915",
    "marque": "Alesis",
    "modele": "Nitro Ultimate Drum Kit Bundle",
-   "prix": 929,
+   "prix": 899,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/alesis_nitro_ultimate_drum_kit_bundle.htm"
   },
@@ -3711,14 +3567,6 @@
    "url": "https://www.thomann.fr/roland_rsh_10_drums_smartphone_holder.htm"
   },
   {
-   "id": "629301",
-   "marque": "Alesis",
-   "modele": "Nitro Amp Pro B-Stock",
-   "prix": 139,
-   "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
-   "url": "https://www.thomann.fr/alesis_nitro_amp_pro_b_stock.htm"
-  },
-  {
    "id": "630636",
    "marque": "Millenium",
    "modele": "MPS-350 E-Drum Bundle",
@@ -3751,12 +3599,12 @@
    "url": "https://www.thomann.fr/efnote_efd_t1180_bo_11x08_tom_tom.htm"
   },
   {
-   "id": "634098",
-   "marque": "Roland",
-   "modele": "TD316 V-Drum Kit B-Stock",
-   "prix": 1829,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/roland_td316_v_drum_kit_b_stock.htm"
+   "id": "634330",
+   "marque": "Millenium",
+   "modele": "MPS-350 Expansion Pack",
+   "prix": 49,
+   "categorie": "Batteries Electroniques > Pads de Cymbale",
+   "url": "https://www.thomann.fr/millenium_mps_350_expansion_pack.htm"
   },
   {
    "id": "635822",
@@ -3855,20 +3703,20 @@
    "url": "https://www.thomann.fr/gibraltar_e_drum_module_mounting_plate.htm"
   },
   {
+   "id": "640655",
+   "marque": "Roland",
+   "modele": "V51 Drum Module B-Stock",
+   "prix": 1539,
+   "categorie": "Batteries Electroniques > Modules de Sons",
+   "url": "https://www.thomann.fr/roland_v51_drum_module_b_stock.htm"
+  },
+  {
    "id": "641144",
    "marque": "Efnote",
    "modele": "EFD-C17FX 17\" Effect C B-Stock",
-   "prix": 333,
+   "prix": 311,
    "categorie": "Batteries Electroniques > Pads de Cymbale",
    "url": "https://www.thomann.fr/efnote_efd_c17fx_17_effect_c_b_stock.htm"
-  },
-  {
-   "id": "642323",
-   "marque": "Yamaha",
-   "modele": "EAD50 Drum Module B-Stock",
-   "prix": 1478,
-   "categorie": "Batteries Electroniques > Modules de Sons",
-   "url": "https://www.thomann.fr/yamaha_ead50_drum_module_b_stock.htm"
   },
   {
    "id": "642820",
@@ -3882,7 +3730,7 @@
    "id": "642998",
    "marque": "Gewa",
    "modele": "G3-G5 Basic Rack B-Stock",
-   "prix": 145,
+   "prix": 139,
    "categorie": "Hardware pour Batterie & Percussions > Hardware pour Batteries Electroniques",
    "url": "https://www.thomann.fr/gewa_g3_g5_basic_rack_b_stock.htm"
   },
@@ -3957,14 +3805,6 @@
    "prix": 54,
    "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
    "url": "https://www.thomann.fr/muse_kinetics_boppad_mount.htm"
-  },
-  {
-   "id": "651036",
-   "marque": "Evans",
-   "modele": "Hybrid Sensory E-Kit B B-Stock",
-   "prix": 1845,
-   "categorie": "Batteries Electroniques > Triggers pour Batteries",
-   "url": "https://www.thomann.fr/evans_hybrid_sensory_e_kit_b_b_stock.htm"
   },
   {
    "id": "652107",
@@ -4071,19 +3911,83 @@
    "url": "https://www.thomann.fr/efnote_aura_73_power_set.htm"
   },
   {
+   "id": "655935",
+   "marque": "Alesis",
+   "modele": "Kitstream",
+   "prix": 399,
+   "categorie": "Batteries Electroniques > Modules de Sons",
+   "url": "https://www.thomann.fr/alesis_kitstream.htm"
+  },
+  {
    "id": "656777",
    "marque": "Millenium",
    "modele": "MPS-1000 Multicore B-Stock",
    "prix": 24.4,
    "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
    "url": "https://www.thomann.fr/millenium_mps_1000_multicore_b_stock.htm"
+  },
+  {
+   "id": "657396",
+   "marque": "Gretsch Drums",
+   "modele": "Catalina Evo 4-PC BS Bundle",
+   "prix": 2069,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/gretsch_drums_catalina_evo_4_pc_bs_bundle.htm"
+  },
+  {
+   "id": "657397",
+   "marque": "Gretsch Drums",
+   "modele": "Catalina Evo 4-PC WG Bundle",
+   "prix": 2269,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/gretsch_drums_catalina_evo_4_pc_wg_bundle.htm"
+  },
+  {
+   "id": "657456",
+   "marque": "Gretsch Drums",
+   "modele": "Catalina Evo 5-PC WG Bundle",
+   "prix": 2555,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/gretsch_drums_catalina_evo_5_pc_wg_bundle.htm"
+  },
+  {
+   "id": "657457",
+   "marque": "Gretsch Drums",
+   "modele": "Catalina Evo 5-PC BS Bundle",
+   "prix": 2333,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/gretsch_drums_catalina_evo_5_pc_bs_bundle.htm"
+  },
+  {
+   "id": "657520",
+   "marque": "Millenium",
+   "modele": "MPS-1500 Hybrid-X E-Dr B-Stock",
+   "prix": 1222,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/millenium_mps_1500_hybrid_x_e_dr_b_stock_657520.htm"
+  },
+  {
+   "id": "657854",
+   "marque": "Efnote",
+   "modele": "EFD-H14 14\" Hi-Hat Cymbal",
+   "prix": 415,
+   "categorie": "Batteries Electroniques > Pads de Charleston",
+   "url": "https://www.thomann.fr/efnote_efd_h14_14_hi_hat_cymbal.htm"
+  },
+  {
+   "id": "657861",
+   "marque": "Efnote",
+   "modele": "EFD-K12P-BO Kick Pad",
+   "prix": 325,
+   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
+   "url": "https://www.thomann.fr/efnote_efd_k12p_bo_kick_pad.htm"
   }
  ],
  "donner": [
   {
    "id": "7786764075232",
    "nom": "Donner DED-200X Batterie Électronique【Version mise à niveau disponible】",
-   "prix": 499.99,
+   "prix": 529.99,
    "prixBarre": 599.99,
    "stock": "Y",
    "parent": ""
@@ -4091,7 +3995,7 @@
   {
    "id": "8231822950624",
    "nom": "Donner BackBeat Batterie Electronique",
-   "prix": 1099.99,
+   "prix": 1199.99,
    "prixBarre": 1499.99,
    "stock": "Y",
    "parent": ""
@@ -4099,7 +4003,7 @@
   {
    "id": "8759874093280",
    "nom": "Donner DED-80 Batterie électronique adaptée aux adolescents",
-   "prix": 219.99,
+   "prix": 239.99,
    "prixBarre": 309.99,
    "stock": "Y",
    "parent": ""
@@ -4107,7 +4011,7 @@
   {
    "id": "8843194925280",
    "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents",
-   "prix": 199.99,
+   "prix": 219.99,
    "prixBarre": 459.99,
    "stock": "Y",
    "parent": ""
@@ -4115,7 +4019,7 @@
   {
    "id": "9255429406944",
    "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied",
-   "prix": 72.99,
+   "prix": 79.99,
    "prixBarre": 129.99,
    "stock": "Y",
    "parent": ""
@@ -4123,7 +4027,7 @@
   {
    "id": "9273475367136",
    "nom": "Donner DED-200 Pro Batterie électronique",
-   "prix": 599.99,
+   "prix": 659.99,
    "prixBarre": 899.99,
    "stock": "Y",
    "parent": ""
@@ -4131,15 +4035,15 @@
   {
    "id": "9649002316000",
    "nom": "Donner BackBeat Pro Batterie électronique",
-   "prix": 1099.99,
-   "prixBarre": 1717.99,
+   "prix": 1169.99,
+   "prixBarre": 1843.99,
    "stock": "Y",
    "parent": ""
   },
   {
    "id": "43220848378080",
    "nom": "Donner DED-200X Batterie Électronique【Version mise à niveau disponible】 - DED-200X",
-   "prix": 499.99,
+   "prix": 529.99,
    "prixBarre": 599.99,
    "stock": "Y",
    "parent": "7786764075232"
@@ -4147,7 +4051,7 @@
   {
    "id": "44706337652960",
    "nom": "Donner DED-200 Max Batteries Electroniques",
-   "prix": 499.99,
+   "prix": 539.99,
    "prixBarre": 899.99,
    "stock": "Y",
    "parent": ""
@@ -4163,7 +4067,7 @@
   {
    "id": "46518429712608",
    "nom": "Donner BackBeat Batterie Electronique - BackBeat",
-   "prix": 1099.99,
+   "prix": 1199.99,
    "prixBarre": 1499.99,
    "stock": "Y",
    "parent": "8231822950624"
@@ -4171,7 +4075,7 @@
   {
    "id": "46518429745376",
    "nom": "Donner BackBeat Batterie Electronique - BackBeat + Tabouret de batterie DT-50",
-   "prix": 1114.99,
+   "prix": 1272.98,
    "prixBarre": 1999.99,
    "stock": "Y",
    "parent": "8231822950624"
@@ -4179,7 +4083,7 @@
   {
    "id": "46776412930272",
    "nom": "Donner DED-300X Batterie Electronique",
-   "prix": 539.99,
+   "prix": 599.99,
    "prixBarre": 899.99,
    "stock": "Y",
    "parent": ""
@@ -4195,7 +4099,7 @@
   {
    "id": "47888193716448",
    "nom": "Donner DED-80 Batterie électronique adaptée aux adolescents - Noir",
-   "prix": 219.99,
+   "prix": 239.99,
    "prixBarre": 309.99,
    "stock": "Y",
    "parent": "8759874093280"
@@ -4203,7 +4107,7 @@
   {
    "id": "47888193749216",
    "nom": "Donner DED-80 Batterie électronique adaptée aux adolescents - Blanc",
-   "prix": 219.99,
+   "prix": 239.99,
    "prixBarre": 309.99,
    "stock": "Y",
    "parent": "8759874093280"
@@ -4211,7 +4115,7 @@
   {
    "id": "48042422698208",
    "nom": "Donner DED-70L Batterie électronique Avec Lumière LED",
-   "prix": 269.99,
+   "prix": 249.99,
    "prixBarre": 369.99,
    "stock": "Y",
    "parent": ""
@@ -4219,7 +4123,7 @@
   {
    "id": "48119712022752",
    "nom": "Donner Beat Go Kit de batterie électronique portable",
-   "prix": 289.99,
+   "prix": 269.99,
    "prixBarre": 369.99,
    "stock": "Y",
    "parent": ""
@@ -4235,7 +4139,7 @@
   {
    "id": "48873083437280",
    "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Contrôleur de cymbale Charleston",
-   "prix": 72.99,
+   "prix": 79.99,
    "prixBarre": 129.99,
    "stock": "N",
    "parent": "9255429406944"
@@ -4243,7 +4147,7 @@
   {
    "id": "48873083470048",
    "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Pied",
-   "prix": 92.99,
+   "prix": 99.99,
    "prixBarre": 139.99,
    "stock": "N",
    "parent": "9255429406944"
@@ -4251,7 +4155,7 @@
   {
    "id": "48873083502816",
    "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Contrôleur de cymbale Charleston + Pied",
-   "prix": 165.99,
+   "prix": 179.98,
    "prixBarre": 269.98,
    "stock": "Y",
    "parent": "9255429406944"
@@ -4259,7 +4163,7 @@
   {
    "id": "48935230275808",
    "nom": "Donner DED-200 Pro Batterie électronique - DED-200Pro",
-   "prix": 599.99,
+   "prix": 659.99,
    "prixBarre": 899.99,
    "stock": "Y",
    "parent": "9273475367136"
@@ -4283,7 +4187,7 @@
   {
    "id": "51327404114144",
    "nom": "Donner BackBeat Pro Batterie électronique - BackBeat Pro",
-   "prix": 1099.99,
+   "prix": 1199.99,
    "prixBarre": 1717.99,
    "stock": "Y",
    "parent": "9649002316000"
@@ -4323,14 +4227,14 @@
   {
    "id": "54882227945696",
    "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents - DED-70",
-   "prix": 199.99,
+   "prix": 219.99,
    "prixBarre": 459.99,
    "stock": "Y",
    "parent": "8843194925280"
   },
   {
    "id": "54882227978464",
-   "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents - DED-70 + MH1 Casque + Plateau pour batterie",
+   "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents - DED-70 + Casque MH1 + Plateau pour batterie",
    "prix": 284.99,
    "prixBarre": 609.99,
    "stock": "Y",

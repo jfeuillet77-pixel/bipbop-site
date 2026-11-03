@@ -175,7 +175,9 @@ pas la même contrainte qu'un `<title>`.
 
 **Title (53)** — Que vaut la Donner DED-200X ? Notre avis et prix 2026
 
-**Meta (148)** — Neuf pads tous maillés pour 499,99 €. Avis complet sur la Donner DED-200X : le kit le mieux fourni de sa tranche, mais le plus difficile à défendre.
+**Meta (150)** — Neuf pads tous maillés pour 529,99 €. Avis complet sur la Donner DED-200X : le kit le mieux fourni autour de 500 €, mais le plus difficile à défendre.
+
+*Relevé du 03/11/2026 : 499,99 → 529,99 €, et la DED-200X passe de la tranche 300 à 500 € à 500 à 800 €, où la MPS-850 et la Nitro Pro XL alignent dix pads. « De sa tranche » devenait faux : « autour de 500 € ». Ancienne meta (148) : « …pour 499,99 €… le kit le mieux fourni de sa tranche… ».*
 
 *Actuel — title 65 : « Donner DED-200X : le kit le plus fourni, au mauvais prix — BipBop »*
 *Actuel — meta 160 : « Avis complet de la Donner DED-200X à 499,99 € : neuf pads tous maillés, deux crashs, un rack rigide — et un tarif qui la met au niveau de mieux équipée qu'elle. »*
@@ -254,7 +256,9 @@ pas la même contrainte qu'un `<title>`.
 
 **Title (56)** — Alesis Nitro Max ou Donner DED-200X : laquelle choisir ?
 
-**Meta (153)** — 91 € séparent ces deux kits, des pads mesh des deux côtés et deux réputations solides. Comparatif pad par pad, avec le verdict et le prix réel de chacun.
+**Meta (154)** — 121 € séparent ces deux kits, des pads mesh des deux côtés et deux réputations solides. Comparatif pad par pad, avec le verdict et le prix réel de chacun.
+
+*Relevé du 03/11/2026 : DED-200X 499,99 → 529,99 €, Nitro Max inchangée à 409 €, l'écart affiché passe de 91 à 121 €. Ancienne meta (153) : « 91 € séparent ces deux kits… ».*
 
 *Actuel — title 65 : « Alesis Nitro Max ou Donner DED-200X : laquelle prendre ? — BipBop »*
 *Actuel — meta 179 : « Quatre-vingt-onze euros d'écart, des pads mesh des deux côtés, deux modèles qui reviennent sans arrêt dans les recherches. Le moins cher n'est pas celui que la réputation désigne. »*
