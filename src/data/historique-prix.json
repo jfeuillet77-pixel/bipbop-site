@@ -2,6 +2,185 @@
  "_": "L'historique publié des relevés de prix, source unique de /suivi-des-prix/. Écrit par scripts/prix/publier.mjs à chaque relevé, jamais à la main. Contrairement à releves/, il ne s'élague pas : c'est la trace du travail.",
  "releves": [
   {
+   "date": "2026-11-03",
+   "controlees": 160,
+   "lues": 159,
+   "seuil": 5,
+   "mouvements": [
+    {
+     "nom": "Donner BackBeat",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "1099,99 €",
+     "apres": "1 199,99 €",
+     "ecart": 100,
+     "pct": 9.1,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Donner DED-300X",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "539,99 €",
+     "apres": "599,99 €",
+     "ecart": 60,
+     "pct": 11.1,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Donner DED-200 Pro",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "599,99 €",
+     "apres": "659,99 €",
+     "ecart": 60,
+     "pct": 10,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Alesis Debut Kit",
+     "marchand": "Woodbrass",
+     "famille": "Batterie",
+     "avant": "240 €",
+     "apres": "279 €",
+     "ecart": 39,
+     "pct": 16.3,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Donner DED-200X",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "499,99 €",
+     "apres": "529,99 €",
+     "ecart": 30,
+     "pct": 6,
+     "changeDeTranche": {
+      "avant": "300 à 500 €",
+      "apres": "500 à 800 €"
+     }
+    },
+    {
+     "nom": "Donner DED-70",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "199,99 €",
+     "apres": "219,99 €",
+     "ecart": 20,
+     "pct": 10,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Donner DED-80",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "219,99 €",
+     "apres": "239,99 €",
+     "ecart": 20,
+     "pct": 9.1,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Roland TD-02K",
+     "marchand": "Thomann",
+     "famille": "Batterie",
+     "avant": "349 €",
+     "apres": "333 €",
+     "ecart": -16,
+     "pct": -4.6,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Donner HHCB-12 charleston + pied",
+     "marchand": "Donner Music",
+     "famille": "Charleston et pédales",
+     "avant": "165,99 €",
+     "apres": "179,98 €",
+     "ecart": 13.99,
+     "pct": 8.4,
+     "changeDeTranche": null
+    }
+   ],
+   "ruptures": [
+    {
+     "nom": "Roland TD-02KV",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 5-7 semaines"
+    },
+    {
+     "nom": "Yamaha DTX452K",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Alesis DRP100",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Roland NE-1 Noise Eater",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Vic Firth 12\" VF Practice Pad",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 8-10 semaines"
+    },
+    {
+     "nom": "Roland PDX-6 8\" Mesh",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Yamaha TP70S 7,5 pouces 3 zones",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Yamaha PCY-100 10\" 3 zones",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 4-5 semaines"
+    },
+    {
+     "nom": "Roland OP-TD1C Cymbal Set",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Nux Kit tom 10 pouces + clamp",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Alesis Nitro Multicore",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 5-7 semaines"
+    },
+    {
+     "nom": "Roland PM-03 Monitor System",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland RT-30K Kick Trigger",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Protection Racket E-Drum Kit Bag 28x16",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 3-4 semaines"
+    }
+   ],
+   "disparues": [
+    {
+     "nom": "Alesis Turbo Mesh Kit",
+     "marchand": "Thomann"
+    }
+   ]
+  },
+  {
    "date": "2026-10-19",
    "controlees": 160,
    "lues": 159,

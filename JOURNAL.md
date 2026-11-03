@@ -1,5 +1,82 @@
 # Journal BipBop
 
+## 3 novembre 2026 — Relevé du lundi : six Donner montent, la DED-200X quitte les « moins de 500 € », le Debut revient à 279 €
+
+**Les prix.** 160 références contrôlées, neuf au-dessus du seuil, toutes déjà écrites par le script dans
+`prix-reperes.json` (non touché) : BackBeat 1 099,99 → 1 199,99 €, DED-300X 539,99 → 599,99 €, DED-200 Pro
+599,99 → 659,99 €, Alesis Debut 240 → 279 €, DED-200X 499,99 → 529,99 € (change de tranche, 500 à 800 €), DED-70
+199,99 → 219,99 €, DED-80 219,99 → 239,99 €, Roland TD-02K 349 → 333 €, HHCB-12 165,99 → 179,98 € (publié nulle part).
+349 € est partagé avec la MPS-350 et la Nux DM-110 : seules deux lignes parlaient de la TD-02K (guide moins de
+500 €, et le duel Nitro Max contre TD-02KV, où l'écart est un jeton et passe seul de 149 à 165 €).
+
+**Réécrit (`port-corrections.json`).**
+- **DED-200X, changement de tranche.** « Le kit le plus fourni de sa tranche » devenait faux : dans 500 à 800 €, la
+  MPS-850 et la Nitro Pro XL ont dix pads, cinq kits ont quatre cymbales. Partout « autour de 500 € » : avis (quatre
+  phrases, dont « la seule de la tranche avec deux crashs »), carte du hub Avis (plus son étiquette « 500 à 800 € »),
+  texte d'index de la page `/marques/` (`marques.mjs`) et meta de l'avis. Dans l'avis, « 50,99 € d'écart
+  seulement » → « en faveur de l'Alesis », « elle ne coûte que » → « elle coûte » (l'écart équipé passe de 20,99 à
+  50,99 €). Quatre prix en dur, date d'en-tête et « Prix relevés le 3 novembre 2026 ».
+- **Duel Nitro Max contre DED-200X.** Chapeau et carte du hub : « Quatre-vingt-onze » → « Cent vingt et un euros
+  d'écart affiché, bien moins une fois équipées » (50,99 €). Rail et tableau à 529,99 €. FAQ : la Nitro Max plus son
+  pack (507 €) redevient moins chère, « sept euros de plus » → « vingt-trois euros de moins ». Le verdict (l'Alesis)
+  sort renforcé, rien à relire. Meta : 91 → 121 €. En-tête 3 NOV.
+- **Avis MPS-750X.** « Pour à peine plus, la DED-200X » → « Pour trente-deux euros de plus ». En-tête 3 NOV.
+- **Guide moins de 500 €.** « La DED-200X à 499,99 € rentre aussi dans le budget » → elle en sort, sauf promotion.
+  TD-02K à 333 € : elle repasse sous la DTX402K (346 €), l'ordre de la maquette redevient juste, j'ai remplacé
+  l'échange de lignes du 05/10 par les deux prix ; « 149 € de plus » (vers la TD-02KV) → 165 €. En-tête 3 NOV.
+- **Guide moins de 300 €.** La DED-70 n'est plus « moins de 200 € » (trois endroits, réécrits « à peine plus de
+  200 € », sans montant en dur) et passe au-dessus de la HD-120 (219 €) : lignes échangées comme le 05/10, « Vingt
+  euros de plus que la Donner » → « Le prix de la DED-70, avec siège, casque et baguettes dans le carton ». DED-80 à
+  239,99 €. J'ai laissé le badge « Si le budget serre » à la DED-70 (fûts en mesh, un euro de plus que la HD-120).
+- **Guide enfant.** Le Debut revient à 279 €, le prix de la maquette : j'ai **retiré** les sept corrections du 12/10
+  (cinq prix, le panier, la phrase de revente). Le panier redevient 405 € (279 + 39 + 26 + 2,22 + 59), « à peu près la
+  moitié du prix du neuf » redevient juste (36 à 61 %). Dates au 3 novembre.
+- **Guide appartement.** « Sous 250 €, deux kits tout mesh (Rookie, Debut) » devenait faux : « Sous 300 €, trois
+  kits : la MPS-150X et deux kits pour enfant ». En-tête 3 NOV.
+- **Hub Avis**, liste d'attente : DED-70 « des fûts en mesh sous 200 € » → « au plus bas prix de Donner »
+  (`liste-attente-avis.csv`). Date du relevé au 3 novembre.
+- **Simple substitution, date non touchée** : avis Nitro Max (ligne DED-200X du tableau). **Date du relevé seule** :
+  guide moins de 1 000 € (§05, aucun de ses prix ne bouge).
+
+**Suivent seuls (jetons), relus.** Où acheter, Bluetooth (l'ordre « du moins cher au plus cher » tient : DED-200 Pro
+659,99 € avant la Nitro Pro 698 €), duel MPS-450 contre Nitro Max, avis MPS-1000, HD-120, hubs. Le Black Friday cite
+des mouvements datés (Debut le 5 octobre, BackBeat le 21 septembre) : toujours vrai, non touché. Le Debut a encore
+bougé (227 → 240 → 279 € en un mois) et la BackBeat a pris 300 € depuis septembre : c'est la thèse du guide, une ligne
+de plus le renforcerait, ajout de fond laissé à Jordane.
+
+**Le guide moins de 500 € et la Turbo Mesh.** Les 12/10 et 19/10, sa date de relevé était restée au 5 octobre pour ne
+pas certifier le prix de la Turbo, absente de Thomann. Comme la page change aujourd'hui, la phrase dit maintenant
+« relevés le 3 novembre 2026. L'Alesis Turbo Mesh n'y figure plus depuis le 12 octobre : sa ligne garde son dernier
+prix connu ». C'est une mention, pas un retrait. **À relire par Jordane** si elle préfère l'ancienne prudence.
+
+**Pas tranché.**
+- **Alesis Turbo Mesh, quatrième relevé sans fiche** (absente du flux, HTTP 404). Rien retiré, pour les mêmes raisons :
+  pas d'accès web (un agent de lecture web a aussi été refusé), donc rien vérifié chez Woodbrass, et toujours aucun
+  mécanisme pour retirer un modèle. Le comparatif, le hub Alesis, son avis, le duel MPS-150X contre Turbo et les guides
+  lient toujours une fiche morte. **Décision attendue** : successeur (la MPS-150X) et un champ « retiré » côté modèles.
+- **Alesis Nitro Multicore**, en rupture depuis cinq relevés (guide occasion) : même blocage, ni bascule ni retrait.
+  **À vérifier à la main chez Woodbrass.**
+- **Roland TD-02KV** en rupture (5 à 7 semaines), premier relevé, liée depuis l'accueil, son avis, un duel et trois
+  guides : à revoir lundi prochain. Idem DRP100, NE-1, VF Practice Pad.
+- **Note de la DED-200X** : la grille garde 7 au critère prix. À 529,99 € elle coûte 51 € de plus que la Nitro Max
+  équipée, mais 38 € de moins que la MPS-750X équipée : elle reste au milieu de ses voisines. Si Jordane juge le prix
+  moins défendable, passer le critère à 6 dans `grilles.json` fera baisser la note.
+- **Avis MPS-1000** : dans son tableau, la BackBeat (1 199,99 €) passe juste au-dessus de la DTX6K2-X (1 198 €). Le
+  tableau ne se dit pas classé, je n'ai rien déplacé.
+- **Avis Nitro Max** : son tableau donne « 7 · mesh » pour la DED-200X, qui a neuf pads (base et avis Donner). Pas une
+  question de prix, défaut ancien, non corrigé ici.
+- **Le rapport** annonce que l'écart du duel Nitro Max contre DED-200X porte sur la **DED-200 Pro** (191 → 251 €) :
+  c'est faux, le duel oppose la DED-200X (`duels.mjs`, b: 'ded200x'). Le rapprochement vient sans doute du nom de la
+  maquette (« …-DED-200.dc.html »). À corriger dans `scripts/prix/rapport.mjs`. Le rapport ne voit pas non plus
+  `Guide-Appartement` (« Sous 250 € », la Debut) ni l'avis MPS-750X (« à peine plus », prix en jeton).
+- `relever.mjs` a encore écrasé un `pourquoi` : celui de la BackBeat perd l'histoire du lien changé le 21/09 et la
+  réserve sur le stock Shopify. Non restauré (le lundi ne touche pas à ce fichier), à reprendre en séance.
+- `git pull` du dépôt des maquettes refusé à cette session : le portage a tourné sur la copie locale.
+- Les meta se corrigent dans `design/port-seche/` (DED-200X, duel) et `seo-titles-meta.md`. Le portage a recopié les
+  deux dans le `<head>` des pages : je n'ai rien écrit à la main dans `src/pages/`.
+
+`npm run data` et `npm run port` passent. Ni `check` ni `fidelite` lancés : c'est le script de livraison qui les lance.
+
 ## 22 octobre 2026 (routine de 17 h 37) — P121, double pédale sur batterie électronique
 
 **La page.** `/guides/double-pedale-batterie-electronique/` (maquette `Guide-Double-Pedale.dc.html`, clonée du guide métal). Le principe (un pad, un capteur, le module ne voit rien), ce que le pad doit avoir, les kits de la base (déclarée : MPS-350, Nitro Pro, Pro XL, Ultimate ; KD-10 de la TD313 selon Roland ; non déclarée ailleurs ; TD-02KV sans batte), trois solutions pour un kit non déclaré avec un tableau de cinq pads seuls, la Nitro Max, le montage, les réglages (masquage, sensibilité, seuil), le bruit, le budget sans montant de double pédale (aucune n'est dans la base ni dans les relevés : le plan citait Tama HP30TW et Pearl P-532, non cités). Sources : fiches Thomann lues le 22/10 (kits MPS-350, Nitro Pro, MPS-750X, MPS-850 ; pads KD-10, KP-65A, KD-7, MPS-850 8" mesh, E-Drum Kick Bass Pad), catalogue du 19/10 repris du guide métal, rayon du 22/10. Prix en jetons, cinq alias neufs dans `ACCESSOIRES_CITES` (`kickbass`, `kickmps`, `kickyamaha`, `kdsept`, `kddix`). Title « Double pédale sur batterie électronique : quels kits ? » (54), meta 154. Carte au hub Guides (23 guides, « Par type de matériel » 9).
