@@ -91,7 +91,9 @@ function fin(code, pourquoi) {
   process.exit(code);
 }
 
-etape('flux', process.execPath, ['scripts/prix/telecharger-flux.mjs']);
+// 40 min : trois essais de 10 min et deux pauses d'une minute font 32 min. À 30, l'étape était tuée
+// juste avant de dire « l'ancien catalogue reste en place » (lundis 26/10 et 02/11, SIGTERM).
+etape('flux', process.execPath, ['scripts/prix/telecharger-flux.mjs'], { timeout: 2400000 });
 etape('relever', process.execPath, ['scripts/prix/relever.mjs', '--date', DATE], { timeout: 2400000 });
 etape('rapport', process.execPath, ['scripts/prix/rapport.mjs', '--date', DATE]);
 etape('appliquer', process.execPath, ['scripts/prix/appliquer.mjs', '--date', DATE, '--appliquer']);
