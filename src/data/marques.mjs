@@ -82,6 +82,13 @@ export const ACCESSOIRES_CITES = {
   kickyamaha: { marque: 'Yamaha', produit: 'KP-65A' },
   kdsept: { marque: 'Roland', produit: 'KD-7 Kick Controller' },
   kddix: { marque: 'Roland', produit: 'KD-10 Kick Pad' },
+  redshot: { marque: 'DDrum', produit: 'Red Shot Snare / Tom Trigger' },
+  dtclaire: { marque: 'Yamaha', produit: 'DT50S Snare Trigger' },
+  dtgc: { marque: 'Yamaha', produit: 'DT50K Kick Trigger' },
+  rthr: { marque: 'Roland', produit: 'RT-30HR Dual Trigger' },
+  rtk: { marque: 'Roland', produit: 'RT-30K Kick Trigger' },
+  tmun: { marque: 'Roland', produit: 'TM-1 Trigger Module' },
+  tmdeux: { marque: 'Roland', produit: 'TM-2 Trigger Module' },
 };
 
 export const MARQUES = {
