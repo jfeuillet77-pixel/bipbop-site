@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Transformer sa batterie acoustique en électronique : cinq triggers et deux modules analysés, le coût de l'hybride et ce que les triggers ne font pas taire.">
+<link rel="apple-touch-icon" href="/bipbop-touch-180.png">
+<link rel="canonical" href="https://bipbop.eu/guides/transformer-batterie-acoustique-electronique/">
+<title>Transformer sa batterie acoustique en électronique : guide</title>
+<link rel="icon" type="image/svg+xml" href="/bipbop-marque.svg">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+body{margin:0;background:#efe6d8;font-family:'Work Sans',system-ui,sans-serif}
+a{color:#d2431f}a:hover{color:#b93a19}
+</style>
+<!--responsive--><style>
+/* Adaptation aux petits ecrans. Rien ne change au-dela de 1080px. */
+@media (max-width:1080px){
+  html{--rwd:on}
+  [data-rwd="tbl"],*:has(>[data-rwd="tblrow"]){overflow-x:auto!important;scrollbar-width:thin}
+  [data-rwd="tblrow"]{min-width:620px}
+  [data-rwd="sp"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c4"],[data-rwd="c5"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  [data-sticky]{position:static!important;top:auto!important}
+  [data-hdr] a{white-space:nowrap}
+  [data-pad]{padding-left:26px!important;padding-right:26px!important}
+  [data-mar]{margin-left:26px!important;margin-right:26px!important}
+  img{max-width:100%}
+  pre{max-width:100%}
+}
+@media (max-width:860px){
+  [data-rwd="sp2"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="c3"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  [data-pad]{padding-left:18px!important;padding-right:18px!important}
+  [data-mar]{margin-left:18px!important;margin-right:18px!important}
+  [data-hdr]{flex-wrap:wrap!important;row-gap:12px!important}
+  [data-nav]{flex-wrap:wrap!important;gap:16px!important}
+  [data-big="a"]{font-size:76px!important}
+  [data-big="b"]{font-size:34px!important;line-height:1.06!important}
+  [data-big="c"]{font-size:27px!important;line-height:1.1!important}
+  [data-big="d"]{font-size:23px!important;line-height:1.14!important}
+}
+@media (max-width:620px){
+  [data-rwd="c3"],[data-rwd="c4"],[data-rwd="c5"],[data-rwd="mini"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="mini"]{justify-items:start!important;row-gap:12px!important}
+  [data-rwd="tblrow"]{min-width:540px}
+  [data-pad]{padding-left:14px!important;padding-right:14px!important}
+  [data-mar]{margin-left:14px!important;margin-right:14px!important}
+  [data-big="a"]{font-size:58px!important}
+  [data-big="b"]{font-size:29px!important}
+  [data-big="c"]{font-size:24px!important}
+  [data-big="d"]{font-size:21px!important}
+}
+
+@media (max-width:1080px){
+  [data-rwd="foot"]{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:28px!important}
+}
+@media (max-width:620px){
+  [data-rwd="foot"]{grid-template-columns:minmax(0,1fr)!important;gap:22px!important}
+}
+
+@media (max-width:620px){
+  [data-rwd="def"]{grid-template-columns:minmax(0,1fr)!important}
+  [data-rwd="def"]>div:nth-child(-n+2){display:none}
+}
+</style>
+
+<script>
+(function(){var K='bipbop-consent';
+function go(){var el=document.getElementById('cookie-banner');if(!el)return false;
+if(!localStorage.getItem(K)){el.style.display='flex';}
+el.addEventListener('click',function(e){var b=e.target.closest('[data-consent]');if(!b)return;
+try{localStorage.setItem(K,b.getAttribute('data-consent'));}catch(err){}el.style.display='none';});
+return true;}
+var t=setInterval(function(){if(go())clearInterval(t);},150);setTimeout(function(){clearInterval(t);},20000);})();
+</script>
+</head>
+<body>
+<div style="max-width:1180px;margin:0 auto;background:#fdf6ec;font-family:'Work Sans',system-ui,sans-serif;color:#241c14">
+
+<div data-pad data-hdr style="display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 40px;background:#fdf6ec;border-bottom:2.5px solid #241c14">
+<a href="/" style="display:flex;align-items:center;gap:11px;text-decoration:none;color:#241c14">
+<span style="width:34px;height:34px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 20px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</a>
+<div data-nav style="display:flex;gap:24px;font:500 14px 'Work Sans',sans-serif">
+<a href="/comparatif-batterie-electronique/" style="color:#241c14;text-decoration:none">Comparatif</a><a href="/avis/" style="color:#241c14;text-decoration:none">Avis</a><a href="/guides/" style="color:#241c14;font-weight:700;text-decoration:underline;text-decoration-thickness:2.5px;text-underline-offset:5px;text-decoration-color:#d2431f">Guides</a><a href="/a-propos/" style="color:#241c14;text-decoration:none">À propos</a>
+</div>
+<a href="/comparatif-batterie-electronique/" style="font:700 13px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;border:2.5px solid #241c14;padding:9px 15px;border-radius:10px;box-shadow:3px 3px 0 #241c14" style-hover="box-shadow:1px 1px 0 #241c14">Trouver ma batterie</a>
+</div>
+<div data-pad style="padding:22px 40px 0;font:500 12.5px 'IBM Plex Mono',monospace;color:#786550">ACCUEIL / GUIDES / ACOUSTIQUE EN ÉLECTRONIQUE</div>
+
+<div data-pad style="max-width:820px;margin:0 auto;padding:20px 40px 0">
+<div style="display:inline-flex;align-items:center;gap:8px;font:700 12px 'Work Sans',sans-serif;letter-spacing:.04em;background:#ffd166;color:#241c14;border:2.5px solid #241c14;border-radius:9px;padding:6px 12px;margin-bottom:20px">GUIDE</div>
+<h1 data-big="b" style="font:800 52px/1.03 'Bricolage Grotesque',sans-serif;letter-spacing:-.035em;margin:0 0 18px;text-wrap:pretty">Transformer sa batterie acoustique en électronique</h1>
+<p style="font:400 20px/1.55 'Work Sans',sans-serif;color:#5a4c3e;margin:0 0 22px;text-wrap:pretty">Un trigger se fixe sur un fût en quelques minutes et coûte de <span style="white-space:nowrap">17,50 €</span> à <span style="white-space:nowrap">98 €</span> dans notre sélection. Il ajoute des sons électroniques à ta batterie. Il ne la rend pas silencieuse. Avant d'acheter, sache lequel des deux projets est le tien.</p>
+<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-bottom:26px;border-bottom:2.5px solid #241c14">
+<div style="width:40px;height:40px;border-radius:50%;overflow:hidden;border:2.5px solid #241c14;background:#ffd166"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></div>
+<div style="font:500 14px 'Work Sans',sans-serif;color:#5a4c3e">Par <strong style="color:#241c14;font-weight:700">BipBop</strong></div>
+<span style="color:#c9b9a3">·</span>
+<div style="font:500 13px 'IBM Plex Mono',monospace;color:#786550">4 NOV. 2026 · 11 MIN</div>
+</div>
+</div>
+
+<div data-pad style="max-width:820px;margin:0 auto;padding:0 40px">
+<div style="background:#e7f3f2;border:2.5px solid #241c14;border-radius:20px;padding:24px 26px;margin:30px 0 34px">
+<div style="font:800 21px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;color:#0f5f5a;margin-bottom:14px">À retenir</div>
+<div style="display:flex;flex-direction:column;gap:11px;font:400 16.5px/1.55 'Work Sans',sans-serif;color:#264c49">
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">01</span><span>Un trigger est un capteur. Posé contre la peau d'un fût, il envoie chaque coup à un module qui joue un son. Sans module, il ne fait rien.</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">02</span><span>Garder le son de ta batterie et y ajouter une grosse caisse électronique ou un sample, c'est le projet hybride. Deux triggers et un petit module suffisent&nbsp;: <span style="white-space:nowrap">419 €</span> avec ceux de notre sélection.</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">03</span><span>Jouer en silence, c'est un autre projet. Il faut des peaux maillées sur chaque fût, des pads à la place des cymbales et un module complet. Le total dépasse vite le prix d'un kit électronique neuf.</span></div>
+<div style="display:flex;gap:11px"><span style="font-weight:700;color:#0f5f5a">04</span><span>Si ton but est de jouer le soir en appartement, une batterie électronique complète coûte presque toujours moins cher que la conversion. La MPS-150X, tout en peaux maillées, coûte <span style="white-space:nowrap">298 €</span>.</span></div>
+</div>
+</div>
+<h2 id="projets" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Deux projets derrière la même question</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Quand on tape «&nbsp;transformer sa batterie acoustique en électronique&nbsp;», on cherche en réalité l'une de deux choses. La première&nbsp;: garder sa batterie telle qu'elle sonne et lui ajouter des sons qu'elle n'a pas, une grosse caisse plus profonde, un clap, une boucle lancée du pied. C'est ce qu'on appelle une batterie hybride. La seconde&nbsp;: faire taire sa batterie pour pouvoir jouer chez soi sans déranger, en gardant ses fûts, son rack et ses réglages.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Les deux projets partagent le même matériel de départ, le trigger. Ils n'ont presque rien d'autre en commun. Le premier se règle en un après-midi pour le prix d'un bon pad. Le second touche toute la batterie, des peaux aux cymbales. Il se heurte vite au prix d'un kit électronique complet. Si tu hésites encore entre les deux mondes, notre article <a href="/les-bases/batterie-electronique-ou-acoustique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">batterie électronique ou batterie acoustique</a> pose la question de départ&nbsp;: as-tu un endroit où jouer fort&nbsp;?</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Ce guide prend les deux projets dans l'ordre. D'abord ce qu'est un trigger et ce qu'il faut lire sur sa fiche. Ensuite le module, qui décide de ce que tu pourras faire. Enfin le silence, le budget réel et le montage. Les caractéristiques citées viennent des fiches Thomann lues le 4 novembre 2026&nbsp;: rien n'a été monté ni joué par notre robot d'analyse.</p>
+<h2 id="trigger" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Comment marche un trigger</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Un trigger est une pastille piézoélectrique dans un petit boîtier. Le boîtier se fixe sur le cercle ou sur un tirant du fût. La pastille appuie contre la peau. Quand ta baguette frappe, la peau vibre, la pastille transforme cette vibration en un signal électrique et le module reçoit ce signal par un câble jack. Le module décide alors du son à jouer et de son volume, d'après la force du coup.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">C'est exactement le principe d'un pad de batterie électronique, à une différence près&nbsp;: sur un pad, le capteur est monté en usine sous une surface prévue pour lui. Sur une acoustique, il doit composer avec un fût qui résonne, des fûts voisins qui vibrent en même temps et une peau que tu accordes à ta façon. D'où l'importance des réglages du module, qu'on verra plus bas. Notre guide des <a href="/guides/pad-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">pads de batterie électronique</a> détaille le fonctionnement côté pads.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Trois informations décident si un trigger te convient.</p>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:10px">
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #d2431f">
+<div style="width:44px;height:44px;border-radius:50%;background:#d2431f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">1</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Le fût visé</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Un trigger de grosse caisse ne se pose pas sur une caisse claire. Les fiches le disent clairement&nbsp;: le Yamaha DT50S vise les caisses claires et les toms à cercles en acier, le DT50K les grosses caisses à cercles en bois. Regarde tes cercles avant de commander.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #0f7d76">
+<div style="width:44px;height:44px;border-radius:50%;background:#0f7d76;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">2</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Une zone ou deux</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Un trigger mono ne lit que la peau. Un trigger stéréo (on dit aussi double) lit aussi le cercle&nbsp;: le module joue un autre son quand tu fais un rimshot. Le Roland RT-30HR est double (peau et cercle), le DDrum Red Shot de caisse claire et de tom est mono. Il faut aussi que l'entrée du module accepte les deux zones.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#241c14;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">3</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">La fixation</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Le Red Shot se fixe sur un tirant, les Roland RT-30 et les Yamaha DT50 serrent le cercle. Les Yamaha ont une vis moletée pour régler la pression du capteur sur la peau. Dans tous les cas, le fût reste intact&nbsp;: rien ne se perce et rien ne se colle.</p></div>
+</div>
+</div>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Une dernière ligne se lit en bas de fiche&nbsp;: le câble. Le Red Shot de caisse claire est vendu sans câble, le RT-30HR avec le sien. Compte un câble jack par trigger, de la bonne longueur pour aller du fût au module.</p>
+<h2 id="selection" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Les triggers de notre sélection</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Classés du moins cher au plus cher, au prix du dernier relevé. Les fûts visés, les zones et les fixations viennent des fiches Thomann lues le 4 novembre 2026.</p>
+<div data-rwd="tbl" style="border:2.5px solid #241c14;border-radius:16px;overflow:hidden;margin-bottom:20px;font:400 15.5px 'Work Sans',sans-serif">
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.3fr) minmax(90px,.5fr) minmax(170px,1fr) minmax(200px,1.5fr);background:#241c14;color:#fdf6ec;font-weight:600;font-size:13px">
+<div style="padding:12px 16px">Trigger</div><div style="padding:12px 16px">Prix</div><div style="padding:12px 16px">Fût, zones, fixation</div><div style="padding:12px 16px">Ce qu'il faut savoir</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.3fr) minmax(90px,.5fr) minmax(170px,1fr) minmax(200px,1.5fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">DDrum Red Shot caisse claire et tom</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">17,50 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Caisse claire ou tom, mono, sur un tirant</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Le moins cher de notre sélection, utilisable sur peau classique ou maillée. Câble non fourni.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.3fr) minmax(90px,.5fr) minmax(170px,1fr) minmax(200px,1.5fr);background:#fdf6ec;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Yamaha DT50S</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">63 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Caisse claire ou tom à cercle en acier, stéréo</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Corps en métal, vis de réglage de la sensibilité du capteur.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.3fr) minmax(90px,.5fr) minmax(170px,1fr) minmax(200px,1.5fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Yamaha DT50K</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">74 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Grosse caisse à cercle en bois, mono</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Le pendant du DT50S pour la grosse caisse.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.3fr) minmax(90px,.5fr) minmax(170px,1fr) minmax(200px,1.5fr);background:#ffd166;border-top:1.5px solid #241c14;align-items:center">
+<div style="padding:14px 16px;font-weight:700">Roland RT-30HR</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">82 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Caisse claire ou tom, stéréo (peau et cercle)</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Câble fourni. Thomann le donne compatible avec tous les modules Roland TD et le TM-2.</div>
+</div>
+<div data-rwd="tblrow" style="display:grid;grid-template-columns:minmax(200px,1.3fr) minmax(90px,.5fr) minmax(170px,1fr) minmax(200px,1.5fr);background:#fff;border-top:1.5px solid #e4d8c6;align-items:center">
+<div style="padding:14px 16px;font-weight:600">Roland RT-30K</div><div style="padding:14px 16px;white-space:nowrap;font-weight:600"><span style="white-space:nowrap">98 €</span></div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Grosse caisse, mono</div><div style="padding:14px 16px;color:#4a3d31;font-size:15px">Le trigger de grosse caisse de la même famille.</div>
+</div>
+</div>
+<p style="font:400 14px/1.5 'Work Sans',sans-serif;color:#786550;margin:0 0 34px">Prix relevés chez Thomann, mis à jour à chaque relevé du lundi. Le Roland RT-30H, version mono du RT-30HR, existe aussi&nbsp;: sa fiche ne lit que la peau.</p>
+<div data-rwd="c3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:34px">
+<a href="https://www.thomann.fr/ddrum_d751.htm" rel="noopener" target="_blank" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:16px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:4px 4px 0 #241c14">
+<div style="height:150px;border-bottom:2px solid #e4d8c6;background:#fff"><img src="https://www.thomann.de/prodbilder/140296.jpg" alt="Trigger DDrum Red Shot de caisse claire et de tom" style="width:100%;height:100%;object-fit:contain;display:block;padding:12px;box-sizing:border-box"></div>
+<div style="padding:15px 17px;display:flex;flex-direction:column;gap:7px;flex:1">
+<div style="font:500 11px 'IBM Plex Mono',monospace;color:#786550">POUR ESSAYER</div>
+<div style="font:700 16px/1.2 'Work Sans',sans-serif">DDrum Red Shot</div>
+<div style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Un trigger mono qui se fixe sur un tirant, pour essayer sans se ruiner.</div>
+<div style="font:800 20px 'Bricolage Grotesque',sans-serif;color:#d2431f;margin-top:3px"><span style="white-space:nowrap">17,50 €</span></div>
+</div></a>
+<a href="https://www.thomann.fr/roland_rt_30hr_dual_trigger.htm" rel="noopener" target="_blank" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:16px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:4px 4px 0 #241c14">
+<div style="height:150px;border-bottom:2px solid #e4d8c6;background:#fff"><img src="https://www.thomann.de/prodbilder/356867.jpg" alt="Trigger double Roland RT-30HR" style="width:100%;height:100%;object-fit:contain;display:block;padding:12px;box-sizing:border-box"></div>
+<div style="padding:15px 17px;display:flex;flex-direction:column;gap:7px;flex:1">
+<div style="font:500 11px 'IBM Plex Mono',monospace;color:#786550">PEAU ET CERCLE</div>
+<div style="font:700 16px/1.2 'Work Sans',sans-serif">Roland RT-30HR</div>
+<div style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Deux zones pour la caisse claire&nbsp;: un son sur la peau, un autre sur le rimshot.</div>
+<div style="font:800 20px 'Bricolage Grotesque',sans-serif;color:#d2431f;margin-top:3px"><span style="white-space:nowrap">82 €</span></div>
+</div></a>
+<a href="https://www.thomann.fr/roland_tm_2_trigger_module.htm" rel="noopener" target="_blank" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:16px;overflow:hidden;display:flex;flex-direction:column" style-hover="box-shadow:4px 4px 0 #241c14">
+<div style="height:150px;border-bottom:2px solid #e4d8c6;background:#fff"><img src="https://www.thomann.de/prodbilder/335033.jpg" alt="Module de triggers Roland TM-2" style="width:100%;height:100%;object-fit:contain;display:block;padding:12px;box-sizing:border-box"></div>
+<div style="padding:15px 17px;display:flex;flex-direction:column;gap:7px;flex:1">
+<div style="font:500 11px 'IBM Plex Mono',monospace;color:#786550">LE MODULE HYBRIDE</div>
+<div style="font:700 16px/1.2 'Work Sans',sans-serif">Roland TM-2</div>
+<div style="font:400 14px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Deux entrées simples ou doubles et tes propres sons sur carte SD.</div>
+<div style="font:800 20px 'Bricolage Grotesque',sans-serif;color:#d2431f;margin-top:3px"><span style="white-space:nowrap">239 €</span></div>
+</div></a>
+</div>
+<div style="display:flex;gap:16px;align-items:flex-start;background:#241c14;border-radius:20px;padding:24px 26px;margin:34px 0;color:#fdf6ec">
+<div style="width:54px;height:54px;flex:none;border-radius:50%;overflow:hidden;border:2.5px solid #ffd166;background:#ffd166"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#241c14" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></div>
+<div>
+<div style="font:700 15px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:7px">Le conseil de BipBop</div>
+<p style="font:400 16.5px/1.6 'Work Sans',sans-serif;color:#e0d5c8;margin:0">Commence par un seul trigger, sur la grosse caisse, avec un modèle prévu pour elle comme le DT50K. C'est le fût le plus simple à déclencher proprement, loin des autres. C'est aussi celui dont le son électronique change le plus une batterie. Tu sauras en une soirée si l'hybride te plaît avant d'équiper le reste.</p>
+</div>
+</div>
+<h2 id="module" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Le module&nbsp;: petit module hybride ou module complet</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le trigger n'est que la moitié du système. Le module décide combien de fûts tu peux déclencher, quels sons tu entends et ce que tu peux envoyer à un ordinateur. Pour une batterie hybride, Roland vend deux petits modules conçus pour ça, présents dans notre sélection.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le <strong>Roland TM-1</strong>, à <span style="white-space:nowrap">198 €</span>, a deux entrées trigger mono sur jack 6,35 mm. D'après sa fiche, il embarque 30 sons, accepte 30 sons à toi de six secondes au plus, garde 15 kits et porte deux commutateurs au pied qui déclenchent un son, changent de kit ou coupent le son. Il transmet en MIDI par USB et fonctionne sur une pile de 9 volts. C'est le plus simple pour ajouter un ou deux sons sur une grosse caisse et une caisse claire.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le <strong>Roland TM-2</strong>, à <span style="white-space:nowrap">239 €</span>, a lui aussi deux entrées, mais chacune accepte un trigger simple ou double&nbsp;: ta caisse claire peut jouer un son sur la peau et un autre sur le cercle. Sa fiche annonce plus de 100 sons intégrés, une fente pour carte SDHC qui lit tes propres fichiers WAV (sons, boucles ou accompagnements) et des prises MIDI In et Out. Il n'a pas de port USB. Pour <span style="white-space:nowrap">41 €</span> de plus que le TM-1, c'est lui qu'on prend dès qu'on veut le rimshot ou ses propres samples.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Ni l'un ni l'autre ne transforme une batterie entière. Deux entrées, c'est deux fûts, quatre zones au mieux. Pour déclencher cinq fûts, il faut un module de batterie électronique complète, vendu seul, avec une entrée par fût, des entrées de cymbale et une entrée de charleston. La fiche du RT-30HR le dit compatible avec tous les modules Roland TD. Pour un module d'une autre marque, lis son manuel avant tout achat&nbsp;: c'est lui qui dit si une entrée accepte un trigger et lequel. Pour piloter ensuite des sons logiciels, notre guide pour <a href="/guides/enregistrer-batterie-electronique-ordinateur/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">enregistrer sa batterie électronique</a> explique le MIDI et la latence.</p>
+<h2 id="silence" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Le silence&nbsp;: ce que les triggers ne font pas</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">C'est le malentendu le plus coûteux de ce sujet. Un trigger écoute ta batterie, il ne l'étouffe pas. Une caisse claire avec un trigger fait exactement le même bruit qu'avant. Le module ajoute son propre son par-dessus. Pour jouer en silence, il faut changer ce que frappe la baguette.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">La première étape, ce sont des peaux maillées à la place des peaux de frappe, une par fût. Une peau maillée laisse passer l'air et rebondit sous la baguette sans presque sonner. C'est la même surface que sur les pads d'une batterie électronique&nbsp;: notre article <a href="/les-bases/pad-mesh-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">sur le pad mesh</a> explique ce qu'elle change au jeu. Le Red Shot s'utilise sur une peau classique ou maillée, d'après sa fiche. Les sourdines en caoutchouc posées sur les peaux sont une fausse piste&nbsp;: elles tuent le rebond que tu voulais garder.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Viennent ensuite les cymbales et le charleston. Une cymbale en bronze reste bruyante quoi que tu poses dessus. Il faut des pads de cymbale branchés au module complet (celui de Millenium coûte <span style="white-space:nowrap">45 €</span>) et un contrôleur de charleston, comme celui de Millenium à <span style="white-space:nowrap">29 €</span>. À ce stade, il ne reste de ta batterie acoustique que les fûts, le rack et les pieds.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Reste le bruit qu'aucune peau ne supprime&nbsp;: les chocs de la pédale de grosse caisse, qui passent par le sol. Un batteur sur des peaux maillées dérange encore le voisin du dessous. Le tapis, l'isolation sous la batterie et le choix de l'heure comptent autant qu'avec un kit électronique. Notre guide pour <a href="/les-bases/batterie-electronique-bruit-voisins/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">installer sa batterie sans déranger</a> détaille ces gestes.</p>
+<h2 id="budget" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Combien ça coûte vraiment</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le projet hybride reste raisonnable. Un TM-2, un RT-30K sur la grosse caisse et un RT-30HR sur la caisse claire coûtent <span style="white-space:nowrap">419 €</span> avec les prix de notre sélection. Avec un TM-1, un DT50K et un Red Shot sur la caisse claire, on paie <span style="white-space:nowrap">289,50 €</span>, au prix de sons plus simples et sans rimshot. Ajoute un casque ou une sortie vers la sono pour entendre le module.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">La conversion complète ne se chiffre pas aussi proprement, parce qu'elle dépend du module que tu choisis. Additionne seulement ce qui ne dépend pas de lui&nbsp;: quatre Red Shot pour la caisse claire et trois toms, un DT50K pour la grosse caisse, deux pads de cymbale et un contrôleur de charleston font déjà <span style="white-space:nowrap">263 €</span>. Il faut encore le module complet, une peau maillée par fût, les câbles et les fixations des cymbales.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Face à ce total, la comparaison est vite faite. La <a href="/avis/millenium-mps-150x/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Millenium MPS-150X Mesh</a> coûte <span style="white-space:nowrap">298 €</span> avec ses peaux maillées, son module, ses cymbales et son rack. La <a href="/avis/millenium-mps-450/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">Millenium MPS-450</a> coûte <span style="white-space:nowrap">398 €</span>. Notre article sur <a href="/guides/prix-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">le vrai prix d'une batterie électronique</a> donne le budget complet, casque et siège compris. Le <a href="/comparatif-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">comparatif des batteries électroniques</a> les range côte à côte. Si tu cherches le silence et rien d'autre, la conversion ne se défend que si tu tiens vraiment à tes fûts ou si tu possèdes déjà le module.</p>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Avant de lancer le chantier, pose-toi la même question que pour une électronique&nbsp;: une amélioration à la fois et une limite de dépense fixée d'avance. Notre guide pour <a href="/guides/ameliorer-batterie-electronique/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">faire évoluer sa batterie plutôt que la remplacer</a> donne la règle qui évite de dépenser le prix d'un kit neuf par petites touches.</p>
+<h2 id="montage" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Monter et régler, dans l'ordre</h2>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Le montage prend peu de temps. Les réglages en prennent plus. C'est d'eux que dépend le résultat.</p>
+<div style="display:flex;flex-direction:column;gap:16px;margin-bottom:10px">
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #d2431f">
+<div style="width:44px;height:44px;border-radius:50%;background:#d2431f;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">1</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Placer le capteur</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Fixe le trigger sur le cercle ou le tirant le plus éloigné de l'endroit où tu frappes, loin de ton bras et de tes baguettes. Le capteur doit toucher la peau sans l'enfoncer. Accorde ton fût avant de régler quoi que ce soit&nbsp;: une peau retendue change le signal.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #0f7d76">
+<div style="width:44px;height:44px;border-radius:50%;background:#0f7d76;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">2</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Régler la sensibilité</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Dans le module, monte la sensibilité de l'entrée jusqu'à ce que tes coups les plus doux sonnent, sans que les coups forts saturent tous au même volume. Un seuil trop bas déclenche des sons quand tu ne joues pas. Un seuil trop haut avale les notes fantômes.</p></div>
+</div>
+<div data-rwd="mini" style="display:grid;grid-template-columns:56px 1fr;gap:18px;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px 22px;box-shadow:4px 4px 0 #241c14">
+<div style="width:44px;height:44px;border-radius:50%;background:#241c14;border:2.5px solid #241c14;color:#fff;font:800 19px 'Bricolage Grotesque',sans-serif;display:flex;align-items:center;justify-content:center">3</div>
+<div><div style="font:700 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:7px">Chasser la diaphonie</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Sur une acoustique, une frappe sur la caisse claire fait vibrer les toms voisins, qui peuvent déclencher leur propre son. On appelle ça la diaphonie. Les modules ont un réglage pour l'atténuer. Commence par la caisse claire et la grosse caisse, puis ajoute les toms un par un.</p></div>
+</div>
+</div>
+<p style="font:400 18px/1.75 'Work Sans',sans-serif;color:#3a2f26;margin:0 0 18px;text-wrap:pretty">Enfin, choisis le rôle du son électronique. En hybride, le module double souvent la grosse caisse acoustique par un son plus grave. Il peut aussi remplacer un fût par un son qu'aucune batterie ne produit. Joue un mois avec un réglage avant d'en changer&nbsp;: c'est le meilleur moyen de savoir ce que tu veux vraiment ajouter.</p>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:20px;padding:24px 26px;margin:30px 0 34px;box-shadow:6px 6px 0 #0f7d76">
+<div style="font:800 21px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;margin-bottom:14px">Notre verdict</div>
+<div style="display:flex;flex-direction:column;gap:11px;font:400 16.5px/1.55 'Work Sans',sans-serif;color:#3a2f26">
+<div><strong>Tu veux juste essayer&nbsp;:</strong> un DT50K à <span style="white-space:nowrap">74 €</span> sur la grosse caisse et le TM-1 à <span style="white-space:nowrap">198 €</span>. Tu sauras vite si l'hybride te parle.</div>
+<div><strong>Tu joues sur scène et tu veux tes propres sons&nbsp;:</strong> le TM-2 à <span style="white-space:nowrap">239 €</span> avec un RT-30K et un RT-30HR&nbsp;: <span style="white-space:nowrap">419 €</span> pour la grosse caisse, la caisse claire et son rimshot.</div>
+<div><strong>Tu veux jouer en silence chez toi&nbsp;:</strong> n'achète pas de triggers. Une batterie électronique complète fait le travail pour moins cher, comme la MPS-150X à <span style="white-space:nowrap">298 €</span>, tout en peaux maillées.</div>
+<div><strong>Tu possèdes déjà un module complet et tu tiens à tes fûts&nbsp;:</strong> la conversion se tente&nbsp;: peaux maillées, un trigger par fût, pads de cymbale. Vérifie d'abord dans le manuel que chaque entrée accepte un trigger.</div>
+</div>
+</div>
+<h2 id="questions" data-big="d" style="font:800 32px/1.14 'Bricolage Grotesque',sans-serif;letter-spacing:-.028em;margin:40px 0 16px;scroll-margin-top:20px">Les questions fréquentes</h2>
+<div style="display:flex;flex-direction:column;gap:14px;margin-bottom:38px">
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Faut-il percer les fûts pour poser un trigger&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Non. Les triggers de notre sélection se serrent sur le cercle ou sur un tirant et se retirent sans laisser de trace. Ta batterie redevient acoustique en quelques minutes.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Un trigger peut-il se brancher directement sur un ordinateur&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Non. Il envoie un signal brut que seul un module sait lire. Le module traduit ensuite tes coups en MIDI. Le TM-1 le fait par USB, le TM-2 par ses prises MIDI. Un module complet passe le plus souvent par USB.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Le trigger Rtom Black Hole sert-il à convertir un fût&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Non, malgré son nom. Sa fiche Thomann précise qu'il fonctionne uniquement sur un pad d'entraînement Rtom Black Hole. Pour un fût acoustique, prends un trigger prévu pour un cercle ou un tirant, comme ceux du tableau.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Peut-on mélanger les marques de triggers et de module&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Souvent pour un trigger mono, avec plus de prudence pour un trigger double. La prise jack est la même, mais chaque module lit le signal à sa façon. Les fiches citent surtout des modules de la même marque&nbsp;: le RT-30HR pour les modules Roland, le Red Shot pour «&nbsp;presque tous les modules&nbsp;». Le manuel de ton module tranche.</p></div>
+<div style="background:#fff;border:2.5px solid #241c14;border-radius:16px;padding:20px 22px">
+<div style="font:700 17px 'Work Sans',sans-serif;margin-bottom:8px">Une batterie hybride reste-t-elle bonne pour apprendre&nbsp;?</div>
+<p style="font:400 15.5px/1.6 'Work Sans',sans-serif;color:#4a3d31;margin:0">Oui, puisque tu joues toujours sur ta batterie acoustique. Les triggers n'enlèvent rien au toucher. Pour la méthode, notre article <a href="/les-bases/apprendre-la-batterie/" style="color:inherit;text-decoration:underline;text-underline-offset:3px">apprendre la batterie</a> reste valable.</p></div>
+</div>
+<div style="display:flex;align-items:center;gap:14px;margin:44px 0 20px">
+<div data-big="d" style="font:800 28px 'Bricolage Grotesque',sans-serif;letter-spacing:-.025em">Pour aller plus loin</div>
+<div style="flex:1;height:2.5px;background:#241c14"></div>
+</div>
+<div data-rwd="c3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:26px">
+<a href="/les-bases/batterie-electronique-ou-acoustique/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #0f7d76;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #0f7d76">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#0f7d76;color:#ffffff;border:2px solid #241c14;border-radius:7px;padding:4px 9px">LES BASES</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Électronique ou acoustique</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">La question de départ&nbsp;: où tu joues et qui dort à côté.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+<a href="/guides/ameliorer-batterie-electronique/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #241c14;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #241c14">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#ffd166;color:#241c14;border:2px solid #241c14;border-radius:7px;padding:4px 9px">GUIDE</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Faire évoluer sa batterie</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Améliorer ou changer de kit&nbsp;: le calcul qui tranche en deux minutes.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+<a href="/guides/enregistrer-batterie-electronique-ordinateur/" style="text-decoration:none;color:inherit;background:#fff;border:2.5px solid #241c14;border-radius:18px;padding:20px;box-shadow:5px 5px 0 #d2431f;display:flex;flex-direction:column;gap:10px" style-hover="box-shadow:2px 2px 0 #d2431f">
+<span style="align-self:flex-start;font:700 10.5px 'Work Sans',sans-serif;letter-spacing:.07em;background:#ffd166;color:#241c14;border:2px solid #241c14;border-radius:7px;padding:4px 9px">GUIDE</span>
+<span style="font:700 19px/1.2 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">Enregistrer sa batterie</span>
+<span style="font:400 14.5px/1.5 'Work Sans',sans-serif;color:#4a3d31;flex:1">Le MIDI, le câble USB et la latence, sans jargon.</span>
+<span style="font:700 14px 'Work Sans',sans-serif;color:#d2431f">Y aller →</span></a>
+</div>
+<p style="font:400 14px/1.6 'Work Sans',sans-serif;color:#786550;margin:0 0 10px">Les triggers et les modules cités sont vendus chez Thomann ou Woodbrass, au prix du dernier relevé. Les caractéristiques viennent des fiches des marchands.</p>
+</div>
+
+<div style="height:52px"></div>
+<footer data-pad style="background:#241c14;color:#fdf6ec;padding:48px 40px 26px">
+<div data-rwd="foot" style="display:grid;grid-template-columns:1.7fr 1fr 1.1fr 1.2fr;gap:40px;padding-bottom:34px;border-bottom:1px solid #4a3d31">
+<div>
+<div style="display:flex;align-items:center;gap:11px;margin-bottom:14px">
+<span style="width:32px;height:32px;flex:none;display:block"><svg style="width:100%;height:100%;display:block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img"> <title>BipBop, marque carrée claire</title><desc>BipBop, mascotte robot du comparatif de batteries électroniques bipbop.eu. Marque compacte pour en-tête et favicon.</desc> <g fill="none" stroke="#fdf6ec" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"> <rect x="9" y="9" width="82" height="82" rx="24" fill="#0f7d76"></rect> <rect x="25" y="30" width="50" height="31" rx="12" fill="#241c14" stroke="none"></rect> <path d="M37 47c0-6 4-10 8-10s8 4 8 10M53 47c0-6 4-10 8-10s8 4 8 10" fill="none" stroke="#fdf6ec" stroke-width="5"></path> <path d="M50 30V18" fill="none"></path> <circle cx="50" cy="12" r="5" fill="#ffd166"></circle> </g> </svg></span>
+<span style="font:800 19px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em">BipBop</span>
+</div>
+<p style="font:400 15px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 16px;max-width:300px">Des recommandations de batteries électroniques pour les gens qui débutent, en français et sans jargon.</p>
+<div style="display:inline-block;font:500 11.5px 'IBM Plex Mono',monospace;letter-spacing:.06em;color:#ffd166;border:1px solid #4a3d31;border-radius:8px;padding:7px 11px">MIS À JOUR EN NOV. 2026</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">TROUVER</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/comparatif-batterie-electronique/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Le comparatif</a><a href="/guides/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les guides</a><a href="/avis/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les avis</a><a href="/marques/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Toutes les marques</a><a href="/duels/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Tous les duels</a>
+</div>
+</div>
+<div>
+<div style="font:700 12.5px 'Work Sans',sans-serif;letter-spacing:.09em;color:#ffd166;margin-bottom:10px">LE SITE</div>
+<div style="font:400 15px 'Work Sans',sans-serif">
+<a href="/a-propos/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">À propos</a><a href="/contact/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Contact</a><a href="/mentions-legales/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Mentions légales</a><a href="/politique-confidentialite/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Politique de confidentialité</a><a href="/plan-du-site/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Plan du site</a><a href="/suivi-des-prix/" style="color:#ece2d4;text-decoration:none;display:block;padding:6px 0;font-weight:500" style-hover="color:#ffd166">Suivi des prix</a>
+</div>
+</div>
+<div style="background:#302519;border-radius:16px;padding:20px;align-self:start">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:8px">Pas encore décidé ?</div>
+<p style="font:400 14px/1.55 'Work Sans',sans-serif;color:#c4b7a7;margin:0 0 14px">Trois questions, deux modèles en face. Trente secondes.</p>
+<a href="/comparatif-batterie-electronique/" style="display:block;text-align:center;font:700 14px 'Work Sans',sans-serif;text-decoration:none;color:#241c14;background:#ffd166;padding:11px;border-radius:11px" style-hover="background:#ffdd8c">Trouver ma batterie</a>
+</div>
+</div>
+<div style="display:flex;align-items:flex-start;gap:14px;padding:22px 0 20px;border-bottom:1px solid #4a3d31">
+<p style="font:400 14px/1.6 'Work Sans',sans-serif;color:#c4b7a7;margin:0;max-width:840px">Les prix affichés sont relevés à la date de publication : vérifie toujours sur la fiche du marchand avant de commander.</p>
+</div>
+<div style="padding-top:20px;font:400 13.5px 'Work Sans',sans-serif;color:#a8998a">© 2026 BipBop. Tous droits réservés.</div>
+</footer>
+</div>
+
+<div id="cookie-banner" data-pad style="display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;background:#241c14;border-top:3px solid #ffd166;padding:18px 40px;align-items:center;justify-content:center;gap:32px;font-family:'Work Sans',system-ui,sans-serif;box-shadow:0 -6px 24px rgba(36,28,20,.28)">
+<div style="flex:1;max-width:760px">
+<div style="font:700 16px 'Work Sans',sans-serif;color:#ffd166;margin-bottom:6px">Une question de cookies, vite réglée</div>
+<p style="font:400 14.5px/1.55 'Work Sans',sans-serif;color:#d6cabb;margin:0">On mesure l'audience pour savoir quelles pages t'aident vraiment. Pas de publicité, pas de revente de données. Tu peux refuser, le site marche exactement pareil. <a href="/politique-confidentialite/" style="color:#ffd166;text-decoration:underline;text-underline-offset:3px">Notre politique de confidentialité</a>.</p>
+</div>
+<div style="display:flex;gap:12px;flex:none">
+<button type="button" data-consent="refuse" style="font:700 14.5px 'Work Sans',sans-serif;color:#fdf6ec;background:transparent;border:2.5px solid #8a7866;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Refuser</button>
+<button type="button" data-consent="accept" style="font:700 14.5px 'Work Sans',sans-serif;color:#241c14;background:#ffd166;border:2.5px solid #ffd166;padding:12px 22px;border-radius:11px;cursor:pointer;white-space:nowrap">Accepter</button>
+</div>
+</div>
+</body>
+</html>
