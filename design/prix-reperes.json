@@ -58,10 +58,10 @@
     },
     {
       "id": "ded80",
-      "prix": 239.99,
-      "prixTexte": "239,99 €",
+      "prix": 229.99,
+      "prixTexte": "229,99 €",
       "segment": "Moins de 300 €",
-      "pourquoi": "Donner Music à 239,99 € relevé le 03/11/2026 (219,99 € auparavant), par le flux partenaire."
+      "pourquoi": "Donner Music à 229,99 € dans le flux partenaire du 05/11/2026 (rayon du jour, lu par la routine de publication) ; 239,99 € au relevé du 03/11/2026, 219,99 € auparavant. Repris hors du lundi parce que /barometre/ publiait déjà le prix du jour et que le contrôle 3 bloquait la publication."
     },
     {
       "id": "td02k",

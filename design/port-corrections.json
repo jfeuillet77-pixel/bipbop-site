@@ -157,7 +157,7 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Sept modèles disponibles en France sous 300 €. Les deux lignes surlignées sont celles qu'on recommande. Prix relevés le 11 septembre 2026.",
-      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 3 novembre 2026.",
+      "remplace": "Six modèles disponibles en France sous 300 €. La ligne surlignée est celle qu'on recommande. Prix relevés le 3 novembre 2026, le 5 novembre pour la DED-80.",
       "pourquoi": "une seule ligne recommandée reste dans le tableau depuis la sortie de la Turbo Mesh. Date du relevé : l'Aide-Mémoire §05 date les guides par budget à chaque relevé. Celui du 03/11/2026 fait monter la DED-70 (219,99 €), la DED-80 (239,99 €) et l'Alesis Debut Kit (279 €) ; Rookie, HD-120 et MPS-150X confirmés"
     },
     {
@@ -241,7 +241,7 @@
     {
       "fichier": "Avis.dc.html",
       "au": "relevés chez Thomann, Woodbrass et Donner Music le 13 septembre 2026",
-      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 3 novembre 2026",
+      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 3 novembre 2026 (le 5 novembre pour la DED-80)",
       "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 03/11/2026 y change sept lignes (Debut 279 €, DED-80 239,99 €, DED-70 219,99 €, TD-02K 333 €, DED-300X 599,99 €, DED-200 Pro 659,99 €, BackBeat 1 199,99 €). La phrase de la DED-70 (« sous 200 € ») est réécrite dans liste-attente-avis.csv, les six autres tiennent. Avant : relevé du 12/10/2026"
     },
     {
@@ -283,8 +283,8 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": ">11 SEPT. 2026 · 8 MIN DE LECTURE</div>",
-      "remplace": ">3 NOV. 2026 · 8 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 03/11/2026 (DED-70 à 219,99 €, plus « moins de 200 € », lignes DED-70 et HD-120 échangées ; DED-80 à 239,99 € ; Debut revenue à 279 €). Avant : relevé du 12/10/2026"
+      "remplace": ">5 NOV. 2026 · 8 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie le 05/11/2026 (DED-80 à 229,99 € au flux Donner du jour). Avant : la page a été modifiée par le relevé du 03/11/2026 (DED-70 à 219,99 €, plus « moins de 200 € », lignes DED-70 et HD-120 échangées ; DED-80 à 239,99 € ; Debut revenue à 279 €). Avant : relevé du 12/10/2026"
     },
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
@@ -367,8 +367,8 @@
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Donner DED-80</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">219,99 €</div>",
-      "remplace": "Donner DED-80</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">239,99 €</div>",
-      "pourquoi": "Relevé du 03/11/2026 : Donner DED-80 à 239,99 € chez Donner Music, par le flux (219,99 € auparavant). Sa place dans le tableau tient : entre la DED-70 (219,99 €) et l'Alesis Debut (279 €)"
+      "remplace": "Donner DED-80</div>\n<div style=\"padding:15px 16px;font-weight:600;white-space:nowrap\">229,99 €</div>",
+      "pourquoi": "Flux Donner du 05/11/2026 (rayon du jour, routine de publication) : DED-80 à 229,99 € chez Donner Music (239,99 € au relevé du 03/11/2026, 219,99 € avant). Sa place dans le tableau tient : entre la DED-70 (219,99 €) et l'Alesis Debut (279 €)"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",

@@ -398,6 +398,34 @@
         "note": 9,
         "raison": "Les dimensions d'une vraie batterie et huit sorties pour la sono, pour bien moins que les grandes marques."
       }
+    },
+    "Avis-Millenium-MPS-750X-Pro.dc.html": {
+      "id": "mps750pro",
+      "toucher": [
+        10,
+        "Tout mesh sur des fûts en bois de vraie taille : caisse claire de 13 pouces, toms de 10, 12 et 14 pouces, tous à deux zones."
+      ],
+      "discretion": [
+        7,
+        "Peaux maillées sur les cinq fûts, mais une vraie grosse caisse de 18 pouces frappée par une batte."
+      ],
+      "module": [
+        8,
+        "Le module de la MPS-750X : 697 sons, Bluetooth et USB MIDI. Aucune sortie séparée, pas de programme de coaching."
+      ],
+      "confort": [
+        7,
+        "Une crash de 15 pouces et une ride de 18, mais une seule crash, des pieds plutôt qu'un rack et la place d'une petite acoustique."
+      ],
+      "prix": [
+        6,
+        "{prix:mps750pro} sans siège ni casque, {ecart:mps750pro-mps750x} de plus que la MPS-750X pour le même module : tu paies la taille."
+      ],
+      "profil": {
+        "pour": "Tu viens de l'acoustique et tu joues au casque",
+        "note": 9,
+        "raison": "Les dimensions d'une vraie batterie pour bien moins qu'une MPS-1000, si le module de la MPS-750X te suffit."
+      }
     }
   },
   "echelle": {
