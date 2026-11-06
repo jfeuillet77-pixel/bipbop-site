@@ -35,6 +35,7 @@ export const ACCESSOIRES_CITES = {
   plateau: { marque: 'Roland', produit: 'NE-10 Noise Eater' },
   ku: { marque: 'Yamaha', produit: 'KU100 Silent Kick Pedal' },
   kt: { marque: 'Roland', produit: 'KT-9 Kick Trigger Pedal' },
+  ktdix: { marque: 'Roland', produit: 'KT-10 Kick Trigger Pedal' },
   modulemps: { marque: 'Millenium', produit: 'MPS-150 Drum Module' },
   padmesh: { marque: 'Millenium', produit: 'MPS-850 08" Mesh Head Pad' },
   padcymbale: { marque: 'Millenium', produit: 'MPS-450 12" Mono Cymbal Pad' },
