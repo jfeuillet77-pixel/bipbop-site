@@ -91,6 +91,14 @@ export const ACCESSOIRES_CITES = {
   rtk: { marque: 'Roland', produit: 'RT-30K Kick Trigger' },
   tmun: { marque: 'Roland', produit: 'TM-1 Trigger Module' },
   tmdeux: { marque: 'Roland', produit: 'TM-2 Trigger Module' },
+  cymhd: { marque: 'Millenium', produit: 'HD-120 9" Cymbal Pad' },
+  crashmps: { marque: 'Millenium', produit: 'MPS-250/500/750 12" Crash Pad' },
+  ridemps: { marque: 'Millenium', produit: 'MPS-850 12" Ride Cymbal Pad' },
+  crashcc: { marque: 'Millenium', produit: 'CC-15 15" Crash' },
+  pcytrente: { marque: 'Yamaha', produit: 'PCY-135' },
+  pcycent: { marque: 'Yamaha', produit: 'PCY-100 10" 3 zones' },
+  cyhuit: { marque: 'Roland', produit: 'CY-8' },
+  optd: { marque: 'Roland', produit: 'OP-TD1C Cymbal Set' },
 };
 
 export const MARQUES = {
