@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-11-07",
+ "date": "2026-11-08",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -914,7 +914,7 @@
    "id": "414094",
    "marque": "Millenium",
    "modele": "MPS-500/750 10\" Mesh H B-Stock",
-   "prix": 73,
+   "prix": 62,
    "categorie": "Batteries Electroniques > Pads de Caisse Claire",
    "url": "https://www.thomann.fr/millenium_mps_500_750_10_mesh_h_b_stock.htm"
   },
@@ -1111,6 +1111,14 @@
    "url": "https://www.thomann.fr/yamaha_dtx432k_e_drum_set_bundle.htm"
   },
   {
+   "id": "444277",
+   "marque": "Millenium",
+   "modele": "MPS-850 E-Drum Set B-Stock",
+   "prix": 555,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/millenium_mps_850_e_drum_set_b_stock.htm"
+  },
+  {
    "id": "445689",
    "marque": "Millenium",
    "modele": "MPS-850 Drum Module",
@@ -1154,7 +1162,7 @@
    "id": "453120",
    "marque": "Millenium",
    "modele": "MPS-850 08\" Mesh Head  B-Stock",
-   "prix": 49,
+   "prix": 55,
    "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
    "url": "https://www.thomann.fr/millenium_mps_850_08_mesh_head_b_stock.htm"
   },
@@ -1178,7 +1186,7 @@
    "id": "455688",
    "marque": "Millenium",
    "modele": "MPS-850 10\" Mesh Head  B-Stock",
-   "prix": 60,
+   "prix": 73,
    "categorie": "Batteries Electroniques > Pads de Caisse Claire",
    "url": "https://www.thomann.fr/millenium_mps_850_10_mesh_head_b_stock.htm"
   },
@@ -2191,14 +2199,6 @@
    "url": "https://www.thomann.fr/roland_14_cy_14r_t_cymbal_pad.htm"
   },
   {
-   "id": "554606",
-   "marque": "Roland",
-   "modele": "SPD-SX PRO Sampling Pa B-Stock",
-   "prix": 799,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_spd_sx_pro_sampling_pa_b_stock.htm"
-  },
-  {
    "id": "555621",
    "marque": "Millenium",
    "modele": "Rookie E-Drum Set Bundle",
@@ -2653,14 +2653,6 @@
    "prix": 98,
    "categorie": "Batteries Electroniques > Pads de Caisse Claire",
    "url": "https://www.thomann.fr/alesis_nitro_max_expansion_pack.htm"
-  },
-  {
-   "id": "577508",
-   "marque": "Millenium",
-   "modele": "MPS-750X PRO E-Drum Me B-Stock",
-   "prix": 699,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_750x_pro_e_drum_me_b_stock.htm"
   },
   {
    "id": "577645",
@@ -3333,14 +3325,6 @@
    "prix": 2169,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/efnote_mini_e_drum_set_bundle.htm"
-  },
-  {
-   "id": "625352",
-   "marque": "Millenium",
-   "modele": "MPS-750X PRO E-Drum Me B-Stock",
-   "prix": 659,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_750x_pro_e_drum_me_b_stock_625352.htm"
   },
   {
    "id": "625865",
