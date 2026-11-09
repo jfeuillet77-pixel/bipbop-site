@@ -83,54 +83,6 @@
       "pourquoi": "page modifiée par le relevé du 17/09"
     },
     {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": "Millenium MPS-150X ou Alesis Turbo Mesh&nbsp;: le match à 298 €",
-      "remplace": "Millenium MPS-150X ou Alesis Turbo Mesh&nbsp;: le match des 300 €",
-      "pourquoi": "les deux kits ne sont plus au même tarif : 298 € contre 309 €"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": "Exactement le même prix, exactement le même positionnement : la batterie en peaux maillées la moins chère du marché.",
-      "remplace": "Onze euros d'écart, exactement le même positionnement : les deux batteries en peaux maillées les moins chères du marché.",
-      "pourquoi": "même relevé"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": "Au même prix que sa rivale.",
-      "remplace": "Onze euros moins cher que sa rivale.",
-      "pourquoi": "même relevé"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": ">L'AUTRE À 298 €</div>",
-      "remplace": ">L'AUTRE À 309 €</div>",
-      "pourquoi": "même relevé"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": ">Alesis Turbo Mesh</div>\n<div style=\"display:flex;align-items:baseline;gap:8px;margin-bottom:12px;flex-wrap:wrap\"><span style=\"font:800 30px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em\">298 €</span>",
-      "remplace": ">Alesis Turbo Mesh</div>\n<div style=\"display:flex;align-items:baseline;gap:8px;margin-bottom:12px;flex-wrap:wrap\"><span style=\"font:800 30px 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em\">309 €</span>",
-      "pourquoi": "rail de la Turbo"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": ">Prix</div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div><div style=\"padding:14px 16px;font-weight:600;color:#5a4c3e\">Égalité</div>",
-      "remplace": ">Prix</div><div style=\"padding:14px 16px;white-space:nowrap\">298 €</div><div style=\"padding:14px 16px;white-space:nowrap\">309 €</div><div style=\"padding:14px 16px;font-weight:600;color:#5a4c3e\">Millenium</div>",
-      "pourquoi": "ligne Prix du tableau : 298 contre 309, l'avantage bascule"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": "À 298 €, les deux modules sonnent quelconque.",
-      "remplace": "À 300 €, les deux modules sonnent quelconque.",
-      "pourquoi": "les deux sont maintenant de part et d'autre des 300 €"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": "relevés chez Thomann le 12 septembre 2026",
-      "remplace": "relevés chez Thomann le 17 septembre 2026",
-      "pourquoi": "page modifiée par le relevé du 17/09"
-    },
-    {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": " L'Alesis Turbo Mesh coûte pareil et fait presque aussi bien.",
       "remplace": "",
@@ -245,18 +197,6 @@
       "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 03/11/2026 y change sept lignes (Debut 279 €, DED-80 239,99 €, DED-70 219,99 €, TD-02K 333 €, DED-300X 599,99 €, DED-200 Pro 659,99 €, BackBeat 1 199,99 €). La phrase de la DED-70 (« sous 200 € ») est réécrite dans liste-attente-avis.csv, les six autres tiennent. Avant : relevé du 12/10/2026"
     },
     {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": "Prends la Millenium. À prix identique, elle donne un pad de plus",
-      "remplace": "Prends la Millenium. À onze euros de moins, elle donne un pad de plus",
-      "pourquoi": "Turbo Mesh relevée à 309 € le 17/09/2026 : les deux kits ne sont plus au même tarif"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": "Trois critères pour la Millenium, trois pour l'Alesis, cinq égalités. Mais les trois critères de la Millenium pèsent lourd au quotidien.",
-      "remplace": "Quatre critères pour la Millenium, trois pour l'Alesis, quatre égalités. Mais ce sont ceux de la Millenium qui pèsent lourd au quotidien.",
-      "pourquoi": "la ligne Prix est passée de « Égalité » à « Millenium » avec la Turbo à 309 € : le décompte suit le tableau"
-    },
-    {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
       "au": "Aucune de ces sept batteries n'est livrée avec un casque.",
       "remplace": "Aucune de ces six batteries n'est livrée avec un casque.",
@@ -271,12 +211,6 @@
     {
       "fichier": "Avis-Millenium-MPS-150X.dc.html",
       "au": ">11 SEPT. 2026 · 6 MIN DE LECTURE</div>",
-      "remplace": ">17 SEPT. 2026 · 6 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
-    },
-    {
-      "fichier": "Duel-Millenium-MPS-150X-vs-Alesis-Turbo-Mesh.dc.html",
-      "au": ">12 SEPT. 2026 · 6 MIN DE LECTURE</div>",
       "remplace": ">17 SEPT. 2026 · 6 MIN DE LECTURE</div>",
       "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 17/09"
     },
