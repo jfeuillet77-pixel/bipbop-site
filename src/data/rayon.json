@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-11-08",
+ "date": "2026-11-09",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -413,14 +413,6 @@
    "prix": 299,
    "categorie": "Housses & Etuis pour Batteries > Housses & Etuis pour Batteries Electroniques",
    "url": "https://www.thomann.fr/gewa_sps_drum_rack_bag_mds_12.htm"
-  },
-  {
-   "id": "295366",
-   "marque": "Millenium",
-   "modele": "Hi-Hat Controller B-Stock",
-   "prix": 24.4,
-   "categorie": "Batteries Electroniques > Pads de Charleston",
-   "url": "https://www.thomann.fr/millenium_hi_hat_controller_b_stock.htm"
   },
   {
    "id": "295724",
@@ -1157,14 +1149,6 @@
    "prix": 59,
    "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
    "url": "https://www.thomann.fr/millenium_mps_850_08_mesh_head_kick_pad.htm"
-  },
-  {
-   "id": "453120",
-   "marque": "Millenium",
-   "modele": "MPS-850 08\" Mesh Head  B-Stock",
-   "prix": 55,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/millenium_mps_850_08_mesh_head_b_stock.htm"
   },
   {
    "id": "453757",
@@ -2751,14 +2735,6 @@
    "url": "https://www.thomann.fr/alesis_strike_amp_8_mk2.htm"
   },
   {
-   "id": "589485",
-   "marque": "Korg",
-   "modele": "MPS-10 B-Stock",
-   "prix": 579,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/korg_mps_10_b_stock.htm"
-  },
-  {
    "id": "596352",
    "marque": "Yamaha",
    "modele": "XP125SDXRW 12\"x05\" Snare Pad",
@@ -3541,14 +3517,6 @@
    "prix": 398,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_350_e_drum_bundle.htm"
-  },
-  {
-   "id": "630907",
-   "marque": "Aerodrums",
-   "modele": "Air Percussion Set 2 B-Stock",
-   "prix": 735,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/aerodrums_air_percussion_set_2_b_stock.htm"
   },
   {
    "id": "631566",
