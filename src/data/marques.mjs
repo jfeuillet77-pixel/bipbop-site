@@ -286,7 +286,7 @@ export const MARQUES = {
       },
       {
         q: 'Nitro Max ou Nitro Pro ?',
-        r: "Pour apprendre, la {avis:nitromax}. La {nom:nitropro} coûte {ecart:nitropro-nitromax} de plus pour un rack en acier, des toms à deux zones et un pad de grosse caisse qui accepte une double pédale. C'est utile si tu joues déjà, pas pour découvrir.",
+        r: "Pour apprendre, la {avis:nitromax}. La {nom:nitropro} coûte {ecart:nitropro-nitromax} de plus pour un rack en acier, des toms à deux zones et un pad de grosse caisse qui accepte une double pédale. C'est utile si tu joues déjà, pas pour découvrir. Le [duel Nitro Max contre Nitro Pro](/duels/alesis-nitro-max-vs-nitro-pro/) fait le compte critère par critère.",
       },
       {
         q: 'Les Alesis sont-elles livrées avec des cours ?',

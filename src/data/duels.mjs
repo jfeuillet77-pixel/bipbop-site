@@ -13,6 +13,15 @@
  */
 
 export const DUELS = {
+  '/duels/alesis-nitro-max-vs-nitro-pro/': {
+    a: 'nitromax',
+    b: 'nitropro',
+    gagnant: 'nitromax',
+    resume:
+      "La Nitro Max gagne pour apprendre : la même caisse claire, les mêmes tailles de toms et de cymbales, le même Bluetooth et soixante leçons, pour {ecart:nitropro-nitromax} de moins. La Nitro Pro garde des toms à deux zones, un rack en acier et une grosse caisse prête pour la double pédale.",
+    pourA: 'tu débutes et que ton budget doit aussi payer le casque et le siège.',
+    pourB: 'tu joues déjà, tu frappes fort ou tu vises une double pédale.',
+  },
   '/duels/millenium-mps-450-vs-alesis-nitro-max/': {
     a: 'mps450',
     b: 'nitromax',
