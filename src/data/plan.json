@@ -1725,7 +1725,7 @@
   "priorite": "Moyenne",
   "produits_lies": "Packs BFD (flux Thomann, dès 26 €) ; logiciels gratuits à sourcer chez l éditeur",
   "maillage_sortant": "Enregistrer sa batterie, Réglages Nitro Max, Faire évoluer sa batterie",
-  "notes": "Rang 31. Volume : 110/mois (logiciel batterie électronique 20, e drum software 20, e drum samples 20, e drum midi 20, banque de sons batterie électronique 20, logiciel gratuit 10). Non-cannibalisation : Plus proche : P63 enregistrer (brancher, audio ou MIDI, latence). Ici quel logiciel choisir pour remplacer les sons du module : gratuits, payants, compatibilité. P63 renvoie ici depuis sa méthode MIDI. Page réceptrice : Enregistrer sa batterie (P63)."
+  "notes": "Rang 31. Volume : 110/mois (logiciel batterie électronique 20, e drum software 20, e drum samples 20, e drum midi 20, banque de sons batterie électronique 20, logiciel gratuit 10). Non-cannibalisation : Plus proche : P63 enregistrer (brancher, audio ou MIDI, latence). Ici quel logiciel choisir pour remplacer les sons du module : gratuits, payants, compatibilité. P63 renvoie ici depuis sa méthode MIDI. Page réceptrice : Enregistrer sa batterie (P63). Report du 10/11/2026 (routine) : aucun logiciel dans le rayon du jour ni dans la base, flux Thomann complet absent du cloud, gratuits à sourcer chez l éditeur. [session locale]"
  },
  {
   "id": "P131",
@@ -1734,9 +1734,9 @@
   "titre": "Batterie électronique de 1 000 à 1 600 € : pour batteur confirmé",
   "slug": "/guides/batterie-electronique-confirme",
   "permalien": "https://bipbop.eu/guides/batterie-electronique-confirme/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Guide-Batterie-Confirme.dc.html",
   "gabarit": "Guide",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "batterie electronique professionnel",
   "priorite": "Moyenne",
   "produits_lies": "Millenium MPS-1000, Donner BackBeat, Yamaha DTX6K2-X, Roland TD313, Alesis Strata Club ; à ajouter : Yamaha DTX6K5-M, DTX6K3-X, Millenium MPS-1500 Hybrid-X",
@@ -2269,7 +2269,7 @@
   "priorite": "Moyenne",
   "produits_lies": "Roland TD316 (à ajouter à modeles.json)",
   "maillage_sortant": "Hub Roland, Avis TD313, Guide moins de 1000 €, Comparatif",
-  "notes": "Ajouté le 07/10/2026 : plafond D05 levé par Jordane. Volume : 160/mois (roland td316 90, roland td 316 70). Non-cannibalisation : plus proche P72 avis TD313 (autre module, 3 cymbales) ; le TD316 est le palier au-dessus, l avis dit pour qui l écart de prix se justifie. Page réceptrice : hub Roland."
+  "notes": "Ajouté le 07/10/2026 : plafond D05 levé par Jordane. Volume : 160/mois (roland td316 90, roland td 316 70). Non-cannibalisation : plus proche P72 avis TD313 (autre module, 3 cymbales) ; le TD316 est le palier au-dessus, l avis dit pour qui l écart de prix se justifie. Page réceptrice : hub Roland. Report du 10/11/2026 (routine) : 1 979 € au rayon du 10/11, au-dessus de la dernière tranche du comparatif (800 à 1 600 €) ; D05 interdit d ajouter à modeles.json un modèle que le comparatif ne sait pas classer (ComparatifLecture échoue sur un segment inconnu). Créer une tranche au-delà de 1 600 € est un choix pour Jordane. [session locale]"
  },
  {
   "id": "P165",
@@ -2285,7 +2285,7 @@
   "priorite": "Moyenne",
   "produits_lies": "Alesis Strata Core (à ajouter à modeles.json)",
   "maillage_sortant": "Hub Alesis, Avis Strata Club (P154), Comparatif",
-  "notes": "Ajouté le 07/10/2026 : plafond D05 levé par Jordane. Volume : 130/mois (alesis strata core 90, alesis strata core e drum kit 40). Non-cannibalisation : plus proche P154 avis Strata Club (module à écran tactile, autre gamme de prix) ; l avis Core tranche entre les deux. Page réceptrice : hub Alesis."
+  "notes": "Ajouté le 07/10/2026 : plafond D05 levé par Jordane. Volume : 130/mois (alesis strata core 90, alesis strata core e drum kit 40). Non-cannibalisation : plus proche P154 avis Strata Club (module à écran tactile, autre gamme de prix) ; l avis Core tranche entre les deux. Page réceptrice : hub Alesis. Report du 10/11/2026 (routine) : 1 689 € au rayon du 10/11, même blocage que P164 (aucune tranche du comparatif au-delà de 1 600 €, D05). [session locale]"
  },
  {
   "id": "P166",
@@ -2301,7 +2301,7 @@
   "priorite": "Basse",
   "produits_lies": "Roland TD316, Alesis Strata Core",
   "maillage_sortant": "Les deux avis, Hub Roland, Hub Alesis",
-  "notes": "Ajouté le 07/10/2026 : plafond D05 levé. Volume inconnu pour la paire. Non-cannibalisation : aucun duel au-delà de 1 600 € ; à publier après P164 et P165 (duels.mjs appelle les deux modèles par leur identifiant). Page réceptrice : Comparatif."
+  "notes": "Ajouté le 07/10/2026 : plafond D05 levé. Volume inconnu pour la paire. Non-cannibalisation : aucun duel au-delà de 1 600 € ; à publier après P164 et P165 (duels.mjs appelle les deux modèles par leur identifiant). Page réceptrice : Comparatif. Report du 10/11/2026 (routine) : attend P164 et P165. [session locale]"
  },
  {
   "id": "P167",

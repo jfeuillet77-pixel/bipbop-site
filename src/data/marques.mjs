@@ -99,6 +99,13 @@ export const ACCESSOIRES_CITES = {
   pcycent: { marque: 'Yamaha', produit: 'PCY-100 10" 3 zones' },
   cyhuit: { marque: 'Roland', produit: 'CY-8' },
   optd: { marque: 'Roland', produit: 'OP-TD1C Cymbal Set' },
+  nitroamppro: { marque: 'Alesis', produit: 'Nitro Amp Pro' },
+  ddavingt: { marque: 'Donner', produit: 'DDA-20SE' },
+  dmtrente: { marque: 'Millenium', produit: 'DM-30 Drum Monitor' },
+  pmzerotrois: { marque: 'Roland', produit: 'PM-03 Monitor System' },
+  strikeamp: { marque: 'Alesis', produit: 'Strike Amp 8 MK2' },
+  msyamaha: { marque: 'Yamaha', produit: 'MS45DR' },
+  pmcent: { marque: 'Roland', produit: 'PM-100' },
 };
 
 export const MARQUES = {
