@@ -193,8 +193,8 @@
     {
       "fichier": "Avis.dc.html",
       "au": "relevés chez Thomann, Woodbrass et Donner Music le 13 septembre 2026",
-      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 3 novembre 2026 (le 5 novembre pour la DED-80)",
-      "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 03/11/2026 y change sept lignes (Debut 279 €, DED-80 239,99 €, DED-70 219,99 €, TD-02K 333 €, DED-300X 599,99 €, DED-200 Pro 659,99 €, BackBeat 1 199,99 €). La phrase de la DED-70 (« sous 200 € ») est réécrite dans liste-attente-avis.csv, les six autres tiennent. Avant : relevé du 12/10/2026"
+      "remplace": "relevés chez Thomann, Woodbrass et Donner Music le 3 novembre 2026 (le 5 novembre pour la DED-80, le 10 novembre pour la BackBeat)",
+      "pourquoi": "la phrase date les prix de la liste d'attente, reconstruite depuis la base : le relevé du 03/11/2026 y change sept lignes (Debut 279 €, DED-80 239,99 €, DED-70 219,99 €, TD-02K 333 €, DED-300X 599,99 €, DED-200 Pro 659,99 €, BackBeat 1 199,99 €, puis 899,99 € au flux Donner du 10/11/2026). La phrase de la DED-70 (« sous 200 € ») est réécrite dans liste-attente-avis.csv, les six autres tiennent. Avant : relevé du 12/10/2026"
     },
     {
       "fichier": "Guide-Moins-De-300-Euros.dc.html",
