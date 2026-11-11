@@ -223,8 +223,8 @@
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
       "au": ">11 SEPT. 2026 · 9 MIN DE LECTURE</div>",
-      "remplace": ">3 NOV. 2026 · 9 MIN DE LECTURE</div>",
-      "pourquoi": "date rafraîchie : la page a été modifiée par le relevé du 03/11/2026 (TD-02K à 333 €, écart avec la TD-02KV réécrit ; DED-200X à 529,99 €, sortie du budget). Avant : relevé du 05/10/2026 (DTX402K à 346 €)"
+      "remplace": ">11 NOV. 2026 · 9 MIN DE LECTURE</div>",
+      "pourquoi": "date rafraîchie le 11/11/2026 (routine) : « neuf modèles disponibles en France sous 500 € » faux (la base en compte dix-huit), « aucune autre ne coche les trois cases » restreint au tableau, budget du premier piège en jetons (539 € faux, le panier fait 538 €), liens vers le hub Donner et le duel MPS-150X contre MPS-450. Avant : la page a été modifiée par le relevé du 03/11/2026 (TD-02K à 333 €, écart avec la TD-02KV réécrit ; DED-200X à 529,99 €, sortie du budget). Avant : relevé du 05/10/2026 (DTX402K à 346 €)"
     },
     {
       "fichier": "Guide-Acheter-Occasion.dc.html",
@@ -517,7 +517,7 @@
     {
       "fichier": "Guide-Moins-De-500-Euros.dc.html",
       "au": "</a> à 499,99 € rentre aussi dans le budget, mais elle se vend chez Donner Music et pas chez Thomann.",
-      "remplace": "</a> est passée à 529,99 € au relevé du 3 novembre 2026 : elle sort du budget, sauf pendant une promotion Donner. Elle se vend chez Donner Music, pas chez Thomann.",
+      "remplace": "</a> est passée à 529,99 € au relevé du 3 novembre 2026 : elle sort du budget, sauf pendant une promotion Donner. Elle se vend chez Donner Music, pas chez Thomann, comme toute la <a href=\"/marques/batterie-electronique-donner/\" style=\"color:#241c14;text-decoration:underline;text-underline-offset:3px\">gamme Donner</a>.",
       "pourquoi": "Relevé du 03/11/2026 : Donner DED-200X à 529,99 € chez Donner Music, par le flux (499,99 € auparavant). « Rentre aussi dans le budget » d'un guide « moins de 500 € » devient faux. La phrase garde le renvoi au duel avec la Nitro Max qui la suit"
     },
     {

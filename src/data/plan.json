@@ -1752,12 +1752,12 @@
   "permalien": "https://bipbop.eu/marques/batterie-electronique-donner/",
   "fichier_maquette": "",
   "gabarit": "Hub de marque",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "batterie electronique donner",
   "priorite": "Moyenne",
   "produits_lies": "Donner DED-70, DED-80, DED-200X, DED-300X, DED-200 Pro, BackBeat",
   "maillage_sortant": "Avis DED-200X, Avis DED-70, Duel Nitro Max contre DED-200X, Hub marques",
-  "notes": "Rang 33. Volume : 30/mois (batterie électronique donner 30) ; noms de modèles Donner absents du CSV. Non-cannibalisation : Plus proche : P22 avis DED-200X (« donner ded 200 avis », un modèle). Le hub vise la marque et ses six modèles au catalogue. Construit depuis modeles.json et marques.mjs. Page réceptrice : Comparatif (P01)."
+  "notes": "Rang 33. Volume : 30/mois (batterie électronique donner 30) ; noms de modèles Donner absents du CSV. Non-cannibalisation : Plus proche : P22 avis DED-200X (« donner ded 200 avis », un modèle). Le hub vise la marque et ses six modèles au catalogue. Construit depuis modeles.json et marques.mjs. Page réceptrice : Comparatif (P01). Publié le 11/11/2026 (routine) : fiches Donner lues le 11/11 (DED-70, DED-80, DED-200X, DED-300X, DED-200 Pro ; fiche BackBeat introuvable à l'adresse de la base, corrigée dans prix-reperes.json)."
  },
  {
   "id": "P133",
