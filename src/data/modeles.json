@@ -84,7 +84,7 @@
    "largeur": null,
    "bluetooth": false,
    "avis": null,
-   "phrase": "Pads de fûts en mesh à moins de 200 €, au prix de la finition.",
+   "phrase": "Pads de fûts en mesh sous 250 €, en format compact.",
    "profondeur": null,
    "empreinte": null,
    "empreinte_source": null,
@@ -492,7 +492,7 @@
    "largeur": null,
    "bluetooth": false,
    "avis": "/avis/donner-ded-200x/",
-   "phrase": "Cinq fûts et quatre cymbales, le kit le plus fourni sous 500 €.",
+   "phrase": "Cinq fûts et quatre cymbales, le kit le plus fourni autour de 500 €.",
    "profondeur": null,
    "empreinte": null,
    "empreinte_source": null,
@@ -726,7 +726,7 @@
    "nom_complet": "Donner BackBeat",
    "segment": "800 à 1600 €",
    "nom_marchand": "BackBeat",
-   "url": "https://fr.donnermusic.com/products/offre-exclusive-donner-backbeat-batterie-electronique"
+   "url": "https://fr.donnermusic.com/products/donner-backbeat-batteries-electroniques"
   },
   {
    "id": "mps1000",

@@ -542,6 +542,141 @@ export const MARQUES = {
       },
     ],
   },
+  donner: {
+    marque: 'Donner',
+    route: '/marques/batterie-electronique-donner/',
+    title: 'Batterie électronique Donner : laquelle choisir en 2026 ?',
+    description:
+      '{N:modeles:Donner} batteries Donner comparées, de la DED-70 à la BackBeat. Laquelle prendre, ce que vaut la vente en direct et pourquoi ignorer ses prix barrés.',
+    h1: 'Batterie électronique Donner : laquelle choisir ?',
+    chapeau:
+      "Donner vend ses batteries en direct sur son propre site. Sa ligne, c'est la quantité : quatre cymbales dès la {nom:ded200x}, casque et tabouret souvent dans le carton. On suit {n:modeles:Donner} modèles de la marque, de {prix:ded70} à {prix:backbeat}. Voilà lequel prendre, ce que Donner fait moins bien et comment lire ses prix.",
+    reponse: [
+      "**Le Donner qu'on regarderait en premier** : la {nom:ded300x} à {prix:ded300x}. Pour {ecart:ded300x-ded200x} de plus que la DED-200X, une caisse claire de 10 pouces, des toms à deux zones, des cymbales de 12 pouces et deux fois plus de sons.",
+      "**Tout dans un seul carton** : la {avis:ded200x} à {prix:ded200x}, avec casque, tabouret et baguettes selon Donner. Face à l'{avis:nitromax}, c'est son module qui la dessert.",
+      "**Un ado ou une petite chambre** : la {nom:ded80} à {prix:ded80}, pliable, avec des fûts en peau maillée.",
+      "**Tu hésites avec une autre marque** : notre [comparatif des batteries électroniques](/comparatif-batterie-electronique/) sort deux modèles en trois questions, Donner compris.",
+    ],
+    sections: [
+      {
+        h2: 'La gamme Donner, du plus petit au plus complet',
+        id: 'gamme',
+        texte: [
+          "Donner range ses batteries en deux familles. Les DED-70 et DED-80 sont des kits compacts à pads de 6,5 pouces, que la marque présente comme adaptés aux adolescents. Les DED-200X, DED-300X et DED-200 Pro alignent cinq fûts et quatre cymbales. La BackBeat coiffe la gamme. Les configurations ci-dessous viennent des fiches Donner lues le 11 novembre 2026.",
+        ],
+        liste: [
+          "**{nom:ded70}** ({prix:ded70}) : caisse claire et trois toms de 6,5 pouces en peau maillée, trois cymbales de 9 pouces, 150 sons et 15 kits. La grosse caisse et la charleston se jouent avec deux pédales, sans pad de grosse caisse à frapper. Selon Donner, elle s'alimente aussi sur une batterie externe USB.",
+          "**{nom:ded80}** ({prix:ded80}) : la même base, avec des cymbales de 10 pouces, 180 sons et un rack qui se replie. La fiche donne environ 100 × 45 × 110 cm dépliée et 80 × 40 × 80 cm pliée, pour 15 kg.",
+          "**{avis:ded200x}** ({prix:ded200x}) : cinq fûts en peau maillée, dont une caisse claire de 8 pouces à deux zones et une grosse caisse de 6 pouces. Quatre cymbales de 10 pouces : charleston, deux crashs et une ride. Le module propose 450 sons et 30 kits. C'est le seul Donner qu'on a analysé en détail.",
+          "**{nom:ded300x}** ({prix:ded300x}) : une caisse claire de 10 pouces et trois toms de 8 pouces, tous en mesh à deux zones, une grosse caisse de 6 pouces, une ride et deux crashs de 12 pouces à deux zones avec étouffement, une charleston de 10 pouces. Le module annonce plus de 900 sons, une centaine de kits et un mixeur pour régler le volume de chaque pad.",
+          "**{nom:ded200pro}** ({prix:ded200pro}) : cinq fûts en peau maillée et quatre cymbales, dont deux crashs à deux zones avec étouffement. Son module garde 450 sons et 31 kits. Ce qu'il ajoute : la lecture Bluetooth de ta musique et une application d'exercices et de jeux, plus un séquenceur et l'enregistrement.",
+          "**{nom:backbeat}** ({prix:backbeat}) : le haut de la gamme, avec cinq fûts en peau maillée, quatre cymbales, un module à écran tactile et le Bluetooth. On ne l'a pas encore analysée en détail.",
+        ],
+        apres: [
+          "Le rayon Donner du 11 novembre contient aussi des kits qu'on ne suit pas encore, comme la DED-100, la DED-200 Max, la Beat Go portable ou une BackBeat Pro. Aucune fiche relevée pour eux : on n'en dit rien de plus.",
+        ],
+      },
+      {
+        h2: 'DED-200X, DED-300X ou DED-200 Pro ?',
+        id: 'trois-ded',
+        texte: [
+          "C'est là que tout se joue, entre {prix:ded200x} et {prix:ded200pro}. Les trois ont cinq fûts en peau maillée et quatre cymbales, dont deux crashs. Ce qui les sépare, c'est le module, la taille des pads et le Bluetooth.",
+          "De la {nom:ded200x} à la {nom:ded300x}, {ecart:ded300x-ded200x} de plus achètent une caisse claire de 10 pouces au lieu de 8, des toms à deux zones au lieu d'une, des cymbales de 12 pouces au lieu de 10 et un module qui annonce plus de deux fois plus de sons. Sur le papier, c'est le meilleur palier de la gamme. Une réserve : la fiche lue le 11 novembre ne mentionne ni casque ni tabouret dans le carton. Compte-les avant de comparer.",
+          "La {nom:ded200pro} coûte {ecart:ded200pro-ded200x} de plus que la DED-200X pour un module du même nombre de sons. Ce que tu paies, c'est le Bluetooth et l'application. Si tu veux jouer par-dessus ta musique sans câble, c'est la seule des trois qui le fait. Sinon, la DED-300X coûte moins cher et propose deux fois plus de sons.",
+          "Notre conseil : si tu achètes chez Donner, regarde d'abord la {nom:ded300x}. La {avis:ded200x} se justifie pour son carton complet, la {nom:ded200pro} pour le Bluetooth. Face aux autres marques, le [duel Nitro Max contre DED-200X](/duels/alesis-nitro-max-vs-donner-ded-200x/) fait le compte critère par critère.",
+        ],
+      },
+      {
+        h2: 'DED-70 ou DED-80 : les petits Donner',
+        id: 'petits',
+        texte: [
+          "Les deux partagent presque tout : caisse claire et trois toms de 6,5 pouces en peau maillée, 15 kits, une sortie casque, une entrée Aux pour ton téléphone, un port USB MIDI et des leçons Melodics offertes. Selon le tableau de la fiche Donner, les deux arrivent avec un casque, des baguettes et un tabouret.",
+          "La {nom:ded80} coûte {ecart:ded80-ded70} de plus pour des cymbales de 10 pouces au lieu de 9, 180 sons au lieu de 150 et un rack qui se replie. Pour une petite chambre où la batterie doit disparaître après la séance, c'est elle.",
+          "Leur limite, c'est la taille. Des pads de 6,5 pouces, c'est petit : l'{avis:turbo}, déjà serrée, en a de 8. Et la grosse caisse n'est qu'une pédale, sans pad à frapper. Pour un enfant, c'est un bon début. Pour un adulte qui veut progresser, la {avis:mps150x} ({prix:mps150x}) a une caisse claire de 10 pouces et des peaux maillées sur tous les fûts, grosse caisse comprise. Pour un plus jeune, [quel kit à quel âge](/guides/choisir-batterie-electronique-enfant/) donne les tailles modèle par modèle.",
+        ],
+      },
+      {
+        h2: 'Les prix Donner : ignore le prix barré',
+        id: 'prix',
+        texte: [
+          "Le 11 novembre, les 33 références du rayon Donner que relève notre robot portaient toutes un ancien prix rayé à côté du prix du jour. Un prix barré affiché en continu ne te dit pas ce que la batterie coûtait la veille. Sur ce site, on ne le reprend jamais : le prix publié est celui que tu paies, relevé chaque lundi et chaque jour pour notre [baromètre des prix](/barometre/).",
+          "Le vrai prix, lui, bouge dans les deux sens. La {nom:backbeat} a perdu 300 € entre notre relevé du 3 novembre et le flux Donner du 10 novembre. La {nom:ded200x} avait pris 30 € au relevé du 3 novembre. D'où la seule règle qui tienne : compare au prix des semaines précédentes, pas au prix rayé. Le [guide du Black Friday](/guides/black-friday-batterie-electronique/) montre ce que les prix font vraiment en novembre.",
+          "Les fiches affichent aussi des codes de réduction. Lis la foire aux questions avant de t'en servir : si tu retournes un article payé avec un code, Donner ne rembourse pas le montant du code.",
+        ],
+      },
+      {
+        h2: 'Acheter chez Donner : livraison, retour, garantie',
+        id: 'acheter',
+        texte: [
+          "Dans notre sélection, Donner est le seul marchand de ses batteries : ni Thomann ni Woodbrass ne les proposent. Tu commandes en direct, sur le site de la marque.",
+          "Ce que disent ses fiches, lues le 11 novembre : livraison gratuite vers la France, expédition sous 24 heures par DHL, GLS ou GEL, livraison en 3 à 5 jours ouvrés, retour accepté dans les 30 jours suivant la réception et garantie de deux ans. Deux ans, c'est la durée de la garantie légale. Thomann en donne trois sur ses kits.",
+          "Le point faible, c'est l'après-vente. Le rayon Donner du 11 novembre propose un contrôleur de charleston, un tabouret, une enceinte, un pupitre et une table de percussion, mais aucun pad de rechange. Si un pad lâche après la garantie, la pièce n'est pas au catalogue de la marque. Le tapis, un casque de rechange ou un siège plus solide viendront aussi d'un autre marchand : deux commandes, deux livraisons. Le [guide pour savoir où acheter](/guides/ou-acheter-batterie-electronique/) compare les trois marchands critère par critère.",
+        ],
+      },
+      {
+        h2: "Le budget réel d'une Donner",
+        id: 'budget',
+        texte: [
+          "C'est là que Donner marque des points. Selon ses fiches, la {nom:ded70}, la {nom:ded80} et la {nom:ded200x} arrivent avec casque, tabouret et baguettes. Il ne manque que le tapis si quelqu'un vit sous toi :",
+        ],
+        liste: [
+          "la {avis:ded200x} avec un {acc:tapis} ({accprix:tapis}) : {budget:ded200x+tapis} ;",
+          "la {nom:ded80} avec le même tapis : {budget:ded80+tapis}.",
+        ],
+        apres: [
+          "En face, l'{avis:nitromax} demande un casque et un siège. Avec le {acc:casque} ({accprix:casque}) et le {acc:siege} ({accprix:siege}), elle revient à {budget:nitromax+casque+siege} : l'écart avec la DED-200X tombe à {diff:ded200x-nitromax+casque+siege}.",
+          "Pour la {nom:ded300x} et la {nom:ded200pro}, les fiches lues le 11 novembre ne mentionnent ni casque ni tabouret. La DED-200 Pro se vend d'ailleurs aussi en variante avec le tabouret Donner DT-50. Avec le casque et le siège cités plus haut, une DED-300X revient à {budget:ded300x+casque+siege}. Le [vrai prix d'une batterie électronique](/guides/prix-batterie-electronique/) compare les tranches, équipement compris.",
+        ],
+      },
+      {
+        h2: "Ce qu'on reproche aux Donner",
+        id: 'defauts',
+        texte: [
+          "**Des modules moins fins.** Notre avis de la DED-200X le relève : ses sons manquent de nuance face à ceux d'Alesis. C'est le module, plus que les pads, qui fait la différence avec la Nitro Max.",
+          "**Des cymbales qui claquent.** Sur la DED-200X, quatre cymbales en caoutchouc font quatre surfaces bruyantes sous la baguette, même quand les fûts sont en mesh. C'est la contrepartie d'un kit fourni.",
+          "**Peu de Bluetooth.** Seules la {nom:ded200pro} et la {nom:backbeat} l'ont parmi les modèles qu'on suit. Le [guide Bluetooth](/guides/batterie-electronique-bluetooth/) dit ce qu'il apporte vraiment.",
+          "**Une notice qui n'est pas en français.** Deux acheteurs le signalent dans les avis de la fiche DED-300X, lue le 11 novembre.",
+          "**Une pédale à batte** sur la DED-200X et la DED-300X : chaque coup de grosse caisse descend dans le plancher. [Jouer sans déranger](/les-bases/batterie-electronique-bruit-voisins/) classe les solutions par efficacité.",
+        ],
+      },
+      {
+        h2: 'Donner ou une autre marque ?',
+        id: 'ou-ailleurs',
+        texte: [
+          "Autour de 500 €, la {avis:mps750x} ({prix:mps750x}) a des cymbales de 12 à 14 pouces et le Bluetooth, sans casque ni siège. L'{avis:nitromax} ({prix:nitromax}) a un meilleur module et le Bluetooth. Ce que Donner vend en plus, c'est la quantité : deux crashs et un carton complet.",
+          "Dans la même tranche que la {nom:ded300x}, la {avis:mps850} ({prix:mps850}) aligne dix pads, des prises MIDI à cinq broches et l'import de tes propres sons. La [page Millenium](/marques/batterie-electronique-millenium/) compare toute sa gamme.",
+          "Pour un petit budget, la {nom:ded70} et la {nom:ded80} font face à deux Millenium. La {nom:rookie} ({prix:rookie}) est en peau maillée elle aussi, pensée pour les enfants dès 3 ans selon Thomann. La {avis:hd120} ({prix:hd120}) est livrée elle aussi avec siège, casque et baguettes. Le [guide à moins de 300 €](/guides/batterie-electronique-moins-300-euros/) les départage.",
+          "Pour tout voir d'un coup, la [page des marques](/marques/) passe en revue les {n:marques} marques qu'on suit.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Donner, est-ce une bonne marque de batterie électronique ?',
+        r: "Pour la quantité de matériel à prix donné, oui : chez Donner, cinq fûts en mesh et quatre cymbales commencent à {prix:ded200x}. Ses limites sont des modules moins fins que chez Alesis, une garantie de deux ans au lieu de trois chez Thomann et aucun pad de rechange au catalogue. L'[avis complet de la DED-200X](/avis/donner-ded-200x/) détaille ce qu'on en pense.",
+      },
+      {
+        q: 'Quelle batterie Donner pour débuter ?',
+        r: "La {avis:ded200x} si tu veux tout dans un seul carton, la {nom:ded300x} si tu peux ajouter {ecart:ded300x-ded200x} pour des pads plus grands et un module plus riche. Pour un ado ou une petite chambre, la {nom:ded80}. Si tu débutes adulte, notre guide pour [choisir une batterie électronique quand on débute](/guides/choisir-batterie-electronique-adulte-debutant/) compare toutes les marques.",
+      },
+      {
+        q: 'Où acheter une batterie Donner ?',
+        r: "Sur le site de la marque, Donner Music : c'est le seul marchand de ses batteries dans notre sélection. Livraison gratuite en France, 30 jours pour la retourner et deux ans de garantie, d'après ses fiches lues le 11 novembre.",
+      },
+      {
+        q: 'La Donner DED-200X a-t-elle le Bluetooth ?',
+        r: "Non. Chez Donner, seules la {nom:ded200pro} et la {nom:backbeat} l'ont parmi les modèles qu'on suit. La DED-200X ne lit pas ta musique sans fil.",
+      },
+      {
+        q: 'Les prix barrés Donner sont-ils de vraies promotions ?',
+        r: "Pas forcément. Le 11 novembre, toutes les références Donner que relève notre robot en portaient un. Seul compte le prix payé les semaines précédentes : c'est celui que suit notre baromètre.",
+      },
+      {
+        q: 'DED-70 ou DED-80 ?',
+        r: "La {nom:ded80} pour {ecart:ded80-ded70} de plus : des cymbales de 10 pouces au lieu de 9, 180 sons au lieu de 150 et un rack pliable. Les deux ont des fûts en peau maillée et arrivent avec casque, baguettes et tabouret selon Donner.",
+      },
+    ],
+  },
 };
 
 /**

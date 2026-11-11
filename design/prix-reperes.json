@@ -26,7 +26,8 @@
       "prix": 899.99,
       "prixTexte": "899,99 €",
       "segment": "800 à 1600 €",
-      "pourquoi": "Donner Music à 899,99 € dans le flux partenaire du 10/11/2026 (rayon du jour, lu par la routine de publication, produit 8231822950624) ; 1 199,99 € au relevé du 03/11/2026, 1 099,99 € auparavant. Repris hors du lundi parce que /barometre/ publiait déjà le prix du jour et que le contrôle 3 bloquait la publication."
+      "url": "https://fr.donnermusic.com/products/donner-backbeat-batteries-electroniques",
+      "pourquoi": "URL corrigée le 11/11/2026 par la routine de publication : l'adresse de la sélection (offre-exclusive-donner-backbeat-batterie-electronique) redirige vers l'accueil de Donner Music ; la recherche du site Donner donne cette fiche pour le produit 8231822950624, le même que le rayon, à 899,99 €. Donner Music à 899,99 € dans le flux partenaire du 10/11/2026 (rayon du jour, lu par la routine de publication, produit 8231822950624) ; 1 199,99 € au relevé du 03/11/2026, 1 099,99 € auparavant. Repris hors du lundi parce que /barometre/ publiait déjà le prix du jour et que le contrôle 3 bloquait la publication."
     },
     {
       "id": "debut",
