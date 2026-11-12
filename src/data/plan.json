@@ -541,7 +541,7 @@
   "priorite": "Basse",
   "produits_lies": "Alesis Debut Kit",
   "maillage_sortant": "Comparatif, guide lié",
-  "notes": "Moins de 50/mois. Pour la règle D06."
+  "notes": "Moins de 50/mois. Pour la règle D06. La fiche Woodbrass lue le 12/11/2026 ne donne ni la taille des pads de fûts, ni le type de grosse caisse (batte ou contrôleur), ni l encombrement, et annonce « 3 à 8 ans » quand le guide enfant écrit 7 à 12 ans : sources insuffisantes pour une grille. [session locale]"
  },
  {
   "id": "P35",
@@ -566,9 +566,9 @@
   "titre": "Woodbrass DDX50-Mesh",
   "slug": "/avis/woodbrass-ddx50",
   "permalien": "https://bipbop.eu/avis/woodbrass-ddx50/",
-  "fichier_maquette": "",
+  "fichier_maquette": "Avis-Woodbrass-DDX50.dc.html",
   "gabarit": "Avis",
-  "statut": "À produire",
+  "statut": "Publié",
   "requete_cible": "woodbrass ddx50 avis",
   "priorite": "Basse",
   "produits_lies": "Woodbrass DDX50-Mesh",

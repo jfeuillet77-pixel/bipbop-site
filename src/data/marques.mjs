@@ -600,7 +600,7 @@ export const MARQUES = {
         id: 'prix',
         texte: [
           "Le 11 novembre, les 33 références du rayon Donner que relève notre robot portaient toutes un ancien prix rayé à côté du prix du jour. Un prix barré affiché en continu ne te dit pas ce que la batterie coûtait la veille. Sur ce site, on ne le reprend jamais : le prix publié est celui que tu paies, relevé chaque lundi et chaque jour pour notre [baromètre des prix](/barometre/).",
-          "Le vrai prix, lui, bouge dans les deux sens. La {nom:backbeat} a perdu 300 € entre notre relevé du 3 novembre et le flux Donner du 10 novembre. La {nom:ded200x} avait pris 30 € au relevé du 3 novembre. D'où la seule règle qui tienne : compare au prix des semaines précédentes, pas au prix rayé. Le [guide du Black Friday](/guides/black-friday-batterie-electronique/) montre ce que les prix font vraiment en novembre.",
+          "Le vrai prix, lui, bouge dans les deux sens. La {nom:backbeat} a perdu 300 € entre notre relevé du 3 novembre et le flux Donner du 10 novembre, puis les a repris le 12 novembre. La {nom:ded200x} avait pris 30 € au relevé du 3 novembre. D'où la seule règle qui tienne : compare au prix des semaines précédentes, pas au prix rayé. Le [guide du Black Friday](/guides/black-friday-batterie-electronique/) montre ce que les prix font vraiment en novembre.",
           "Les fiches affichent aussi des codes de réduction. Lis la foire aux questions avant de t'en servir : si tu retournes un article payé avec un code, Donner ne rembourse pas le montant du code.",
         ],
       },
@@ -705,7 +705,7 @@ export const INDEX_MARQUES = {
     Roland: "Sous 1 600 €, la sélection Roland tient en {n:modeles:Roland} modèles : la {nom:td02k} ({prix:td02k}) et la {avis:td02kv} ({prix:td02kv}), qui partagent une pédale de grosse caisse sans batte, la meilleure réponse en immeuble ancien. Au-dessus, la {avis:td313} ({prix:td313}). Les TD-07, TD-17 et TD-1DMK, encore très cherchées, ne sont plus vendues chez Thomann ni chez Woodbrass : la série 3 de Roland a pris leur place.",
     Donner: "Donner vend en direct, sur Donner Music, qui est le seul marchand de ses batteries dans notre sélection. {N:modeles:Donner} modèles, de {prix:ded70} à {prix:backbeat}. La {avis:ded200x} est le kit le mieux fourni autour de 500 €, casque et tabouret compris ; face à la Nitro Max, c'est son module qui la dessert. Un réflexe à prendre : ignore les prix barrés du site Donner, ses remises affichées sont permanentes.",
     Nux: "Un seul modèle suivi, la {nom:dm110} ({prix:dm110}), en peaux maillées et vendue chez Woodbrass. On ne l'a pas encore analysée en détail : elle attend son avis.",
-    Woodbrass: "Le revendeur français a sa propre batterie, la {nom:ddx50} ({prix:ddx50}), en peaux maillées. Comme la Nux, elle attend encore son avis.",
+    Woodbrass: "Le revendeur français a sa propre batterie, la {avis:ddx50} ({prix:ddx50}) : caisse claire et trois toms de 10 pouces en peaux maillées, une charleston sur son propre pied, mais pas de Bluetooth.",
   },
   sections: [
     {

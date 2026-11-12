@@ -426,6 +426,34 @@
         "note": 9,
         "raison": "Les dimensions d'une vraie batterie pour bien moins qu'une MPS-1000, si le module de la MPS-750X te suffit."
       }
+    },
+    "Avis-Woodbrass-DDX50.dc.html": {
+      "id": "ddx50",
+      "toucher": [
+        8,
+        "Caisse claire et trois toms de 10 pouces en peau maillée. Woodbrass n'annonce pas de deuxième zone et la grosse caisse est un pad en silicone."
+      ],
+      "discretion": [
+        7,
+        "Fûts mesh discrets. La pédale à batte frappe le sol et la charleston sur pied ajoute un appui."
+      ],
+      "module": [
+        7,
+        "475 sons, 25 kits d'usine, enregistrement et MIDI par USB. Ni Bluetooth ni application, des sons jugés moyens par les acheteurs."
+      ],
+      "confort": [
+        7,
+        "Trois cymbales de 12 pouces et une charleston sur son propre pied, mais aucun encombrement annoncé."
+      ],
+      "prix": [
+        7,
+        "Des toms de 10 pouces pour {prix:ddx50}, mais ni siège, ni casque, ni baguettes, ni Bluetooth."
+      ],
+      "profil": {
+        "pour": "Tu trouves les toms de 8 pouces trop petits",
+        "note": 8,
+        "raison": "Des toms de 10 pouces et une charleston sur pied, sans monter jusqu'à la MPS-750X."
+      }
     }
   },
   "echelle": {

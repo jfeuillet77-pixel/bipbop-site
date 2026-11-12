@@ -40,6 +40,7 @@ AVIS = {
     'Avis-Alesis-Nitro-Pro.dc.html': ('Alesis Nitro Pro', r'(?:Alesis )?Nitro Pro(?! ?(?:XL|Drum Kit Bundle))'),
     'Avis-Millenium-MPS-1000.dc.html': ('Millenium MPS-1000', r'(?<!module )(?<!Module )(?<!module de la )(?:Millenium )?MPS-1000(?! ?(?:E-Drum Module|Multicore|D2|E-Drum Set Bundle|Monitor))'),
     'Avis-Millenium-MPS-750X-Pro.dc.html': ('Millenium MPS-750X Pro', r'(?:Millenium )?MPS-750X (?:Pro|PRO)(?! ?(?:Mesh Bundle|E-Drum Me B-Stock))'),
+    'Avis-Woodbrass-DDX50.dc.html': ('Woodbrass DDX50-Mesh', r'(?:Woodbrass )?DDX50(?:-Mesh| Mesh|-MESH)?'),
 }
 NOM_VERS_AVIS = {nom: c for c, (nom, _) in AVIS.items()}
 SOURCES = sorted(glob.glob('Guide-*.dc.html') + glob.glob('Les-Bases-*.dc.html') + glob.glob('Duel-*.dc.html') + glob.glob('Avis-*.dc.html'))
