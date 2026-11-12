@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-11-11",
+ "date": "2026-11-12",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -415,6 +415,14 @@
    "url": "https://www.thomann.fr/gewa_sps_drum_rack_bag_mds_12.htm"
   },
   {
+   "id": "295366",
+   "marque": "Millenium",
+   "modele": "Hi-Hat Controller B-Stock",
+   "prix": 24.4,
+   "categorie": "Batteries Electroniques > Pads de Charleston",
+   "url": "https://www.thomann.fr/millenium_hi_hat_controller_b_stock.htm"
+  },
+  {
    "id": "295724",
    "marque": "Gibraltar",
    "modele": "SC-GEMC Electronic Mounting",
@@ -591,14 +599,6 @@
    "url": "https://www.thomann.fr/roland_rt_30k_kick_trigger.htm"
   },
   {
-   "id": "359837",
-   "marque": "Alesis",
-   "modele": "Samplepad Pro B-Stock",
-   "prix": 275,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/alesis_samplepad_pro_b_stock.htm"
-  },
-  {
    "id": "360221",
    "marque": "Millenium",
    "modele": "MPS-150 E-Drum Set",
@@ -613,14 +613,6 @@
    "prix": 99,
    "categorie": "Batteries Electroniques > Triggers pour Batteries",
    "url": "https://www.thomann.fr/2box_trigit_triggerset.htm"
-  },
-  {
-   "id": "364280",
-   "marque": "Roland",
-   "modele": "RT-30K Kick Trigger B-Stock",
-   "prix": 89,
-   "categorie": "Batteries Electroniques > Triggers pour Batteries",
-   "url": "https://www.thomann.fr/roland_rt_30k_kick_trigger_b_stock.htm"
   },
   {
    "id": "367921",
@@ -682,7 +674,7 @@
    "id": "376072",
    "marque": "Alesis",
    "modele": "Samplepad 4",
-   "prix": 165,
+   "prix": 139,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/alesis_samplepad_4.htm"
   },
@@ -693,14 +685,6 @@
    "prix": 12.6,
    "categorie": "Batteries Electroniques > Triggers pour Batteries",
    "url": "https://www.thomann.fr/ddrum_chrome_elite_trigger_sensor.htm"
-  },
-  {
-   "id": "377384",
-   "marque": "Alesis",
-   "modele": "Samplepad 4 B-Stock",
-   "prix": 153,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/alesis_samplepad_4_b_stock.htm"
   },
   {
    "id": "379192",
@@ -813,14 +797,6 @@
    "prix": 211,
    "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
    "url": "https://www.thomann.fr/roland_kt_9_kick_trigger_peda_b_stock.htm"
-  },
-  {
-   "id": "394724",
-   "marque": "Roland",
-   "modele": "FD-9 Hi-Hat Controller B-Stock",
-   "prix": 199,
-   "categorie": "Batteries Electroniques > Pads de Charleston",
-   "url": "https://www.thomann.fr/roland_fd_9_hi_hat_controller_b_stock.htm"
   },
   {
    "id": "397031",
@@ -989,14 +965,6 @@
    "prix": 369,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_150x_e_drum_mesh_bundle.htm"
-  },
-  {
-   "id": "423501",
-   "marque": "Roland",
-   "modele": "SPD::ONE Kick B-Stock",
-   "prix": 249,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_spdone_kick_b_stock.htm"
   },
   {
    "id": "426092",
@@ -1199,14 +1167,6 @@
    "url": "https://www.thomann.fr/roland_tm_6_pro_drum_trigger_b_stock.htm"
   },
   {
-   "id": "453120",
-   "marque": "Millenium",
-   "modele": "MPS-850 08\" Mesh Head  B-Stock",
-   "prix": 55,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/millenium_mps_850_08_mesh_head_b_stock.htm"
-  },
-  {
    "id": "453757",
    "marque": "Alesis",
    "modele": "Strike MultiPad",
@@ -1226,7 +1186,7 @@
    "id": "455688",
    "marque": "Millenium",
    "modele": "MPS-850 10\" Mesh Head  B-Stock",
-   "prix": 73,
+   "prix": 59,
    "categorie": "Batteries Electroniques > Pads de Caisse Claire",
    "url": "https://www.thomann.fr/millenium_mps_850_10_mesh_head_b_stock.htm"
   },
@@ -1375,6 +1335,14 @@
    "url": "https://www.thomann.fr/roland_14_x13_pda140f_ms_floor_tom.htm"
   },
   {
+   "id": "486707",
+   "marque": "Millenium",
+   "modele": "MPS-850 E-Drum Set B-Stock",
+   "prix": 525,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/millenium_mps_850_e_drum_set_b_stock_486707.htm"
+  },
+  {
    "id": "492454",
    "marque": "Roland",
    "modele": "16\" CY-16R-T Cymbal Pad",
@@ -1469,14 +1437,6 @@
    "prix": 44,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/startone_mat_drum.htm"
-  },
-  {
-   "id": "505194",
-   "marque": "Millenium",
-   "modele": "MPS-750X E-Drum Module B-Stock",
-   "prix": 185,
-   "categorie": "Batteries Electroniques > Modules de Sons",
-   "url": "https://www.thomann.fr/millenium_mps_750x_e_drum_module_b_stock.htm"
   },
   {
    "id": "507011",
@@ -2311,14 +2271,6 @@
    "url": "https://www.thomann.fr/roland_14_cy_14r_t_cymbal_pad.htm"
   },
   {
-   "id": "554606",
-   "marque": "Roland",
-   "modele": "SPD-SX PRO Sampling Pa B-Stock",
-   "prix": 799,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_spd_sx_pro_sampling_pa_b_stock.htm"
-  },
-  {
    "id": "555621",
    "marque": "Millenium",
    "modele": "Rookie E-Drum Set Bundle",
@@ -2338,7 +2290,7 @@
    "id": "557719",
    "marque": "Roland",
    "modele": "TD-02K V-Drums Kit",
-   "prix": 329,
+   "prix": 333,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/roland_td_02k_v_drums_kit.htm"
   },
@@ -2365,14 +2317,6 @@
    "prix": 555,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/roland_td_02kv_v_drums_kit_bundle.htm"
-  },
-  {
-   "id": "557887",
-   "marque": "Millenium",
-   "modele": "PS-13 13\"x05\" Snare Gr B-Stock",
-   "prix": 119,
-   "categorie": "Batteries Electroniques > Pads de Caisse Claire",
-   "url": "https://www.thomann.fr/millenium_ps_13_13x05_snare_gr_b_stock.htm"
   },
   {
    "id": "559405",
@@ -3410,7 +3354,7 @@
    "id": "620189",
    "marque": "Roland",
    "modele": "MN-10 Mood Pan",
-   "prix": 599,
+   "prix": 555,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/roland_mn_10_mood_pan.htm"
   },
@@ -3634,7 +3578,7 @@
    "id": "626915",
    "marque": "Alesis",
    "modele": "Nitro Ultimate Drum Kit Bundle",
-   "prix": 899,
+   "prix": 777,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/alesis_nitro_ultimate_drum_kit_bundle.htm"
   },
@@ -4131,7 +4075,7 @@
   {
    "id": "8231822950624",
    "nom": "Donner BackBeat Batterie Electronique",
-   "prix": 899.99,
+   "prix": 1199.99,
    "prixBarre": 1499.99,
    "stock": "Y",
    "parent": ""
@@ -4187,7 +4131,7 @@
   {
    "id": "44706337652960",
    "nom": "Donner DED-200 Max Batteries Electroniques",
-   "prix": 429.99,
+   "prix": 539.99,
    "prixBarre": 699.99,
    "stock": "Y",
    "parent": ""
@@ -4203,7 +4147,7 @@
   {
    "id": "46518429712608",
    "nom": "Donner BackBeat Batterie Electronique - BackBeat",
-   "prix": 899.99,
+   "prix": 1199.99,
    "prixBarre": 1499.99,
    "stock": "Y",
    "parent": "8231822950624"
@@ -4211,7 +4155,7 @@
   {
    "id": "46518429745376",
    "nom": "Donner BackBeat Batterie Electronique - BackBeat + Tabouret de batterie DT-50",
-   "prix": 972.98,
+   "prix": 1272.98,
    "prixBarre": 1999.99,
    "stock": "Y",
    "parent": "8231822950624"
