@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-11-12",
+ "date": "2026-11-13",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -463,14 +463,6 @@
    "url": "https://www.thomann.fr/roland_hpd_20_handsonic_pad.htm"
   },
   {
-   "id": "326443",
-   "marque": "Roland",
-   "modele": "HPD-20 Handsonic Pad B-Stock",
-   "prix": 975,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_hpd_20_handsonic_pad_b_stock.htm"
-  },
-  {
    "id": "327094",
    "marque": "Yamaha",
    "modele": "KP-65A",
@@ -658,7 +650,7 @@
    "id": "374790",
    "marque": "Roland",
    "modele": "RT-30H Single Trigger B-Stock",
-   "prix": 77,
+   "prix": 71,
    "categorie": "Batteries Electroniques > Triggers pour Batteries",
    "url": "https://www.thomann.fr/roland_rt_30h_single_trigger_b_stock.htm"
   },
@@ -1335,14 +1327,6 @@
    "url": "https://www.thomann.fr/roland_14_x13_pda140f_ms_floor_tom.htm"
   },
   {
-   "id": "486707",
-   "marque": "Millenium",
-   "modele": "MPS-850 E-Drum Set B-Stock",
-   "prix": 525,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_850_e_drum_set_b_stock_486707.htm"
-  },
-  {
    "id": "492454",
    "marque": "Roland",
    "modele": "16\" CY-16R-T Cymbal Pad",
@@ -1962,7 +1946,7 @@
    "id": "531710",
    "marque": "Efnote",
    "modele": "EFD-C18 18\" Crash Cymbal",
-   "prix": 384,
+   "prix": 379,
    "categorie": "Batteries Electroniques > Pads de Cymbale",
    "url": "https://www.thomann.fr/efnote_efd_c18_18_crash_cymbal.htm"
   },
@@ -1997,6 +1981,14 @@
    "prix": 82,
    "categorie": "Hardware pour Batterie & Percussions > Hardware pour Batteries Electroniques",
    "url": "https://www.thomann.fr/tama_mph63_electronic_pad_holder.htm"
+  },
+  {
+   "id": "535031",
+   "marque": "Startone",
+   "modele": "Mat Drum B-Stock",
+   "prix": 41,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/startone_mat_drum_b_stock.htm"
   },
   {
    "id": "536711",
@@ -2497,7 +2489,7 @@
   {
    "id": "563164",
    "marque": "Millenium",
-   "modele": "e-drum cable loom black",
+   "modele": "E-Drum cable loom black",
    "prix": 35,
    "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
    "url": "https://www.thomann.fr/millenium_e_drum_cable_loom_black.htm"
@@ -2505,7 +2497,7 @@
   {
    "id": "563165",
    "marque": "Millenium",
-   "modele": "e-drum cable loom white",
+   "modele": "E-Drum cable loom white",
    "prix": 34,
    "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
    "url": "https://www.thomann.fr/millenium_e_drum_cable_loom_white.htm"
@@ -2513,7 +2505,7 @@
   {
    "id": "563166",
    "marque": "Millenium",
-   "modele": "e-drum cable loom transparent",
+   "modele": "E-Drum cable loom transparent",
    "prix": 35,
    "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
    "url": "https://www.thomann.fr/millenium_e_drum_cable_loom_transparent.htm"
@@ -3362,7 +3354,7 @@
    "id": "622136",
    "marque": "Roland",
    "modele": "MN-10 Mood Pan B-Stock",
-   "prix": 515,
+   "prix": 479,
    "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
    "url": "https://www.thomann.fr/roland_mn_10_mood_pan_b_stock.htm"
   },
@@ -3423,18 +3415,10 @@
    "url": "https://www.thomann.fr/alesis_nitro_ultimate_drum_kit.htm"
   },
   {
-   "id": "626124",
-   "marque": "Roland",
-   "modele": "MN-10 Mood Pan Bundle",
-   "prix": 629,
-   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
-   "url": "https://www.thomann.fr/roland_mn_10_mood_pan_bundle.htm"
-  },
-  {
    "id": "626201",
    "marque": "Roland",
    "modele": "TD513 V-Drum Kit",
-   "prix": 2799,
+   "prix": 2698,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/roland_td513_v_drum_kit.htm"
   },
@@ -3807,14 +3791,6 @@
    "url": "https://www.thomann.fr/millenium_mps_1500_hybrid_x_bundle.htm"
   },
   {
-   "id": "645731",
-   "marque": "DW",
-   "modele": "DWe E33 Drum Kit Exotic ltd.",
-   "prix": 4998,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/dw_dwe_e33_drum_kit_exotic_ltd.htm"
-  },
-  {
    "id": "647177",
    "marque": "DW",
    "modele": "DWe E33 Drum Kit Black Galaxy",
@@ -4067,7 +4043,7 @@
   {
    "id": "7786764075232",
    "nom": "Donner DED-200X Batterie Électronique【Version mise à niveau disponible】",
-   "prix": 529.99,
+   "prix": 429.99,
    "prixBarre": 599.99,
    "stock": "Y",
    "parent": ""
@@ -4075,7 +4051,7 @@
   {
    "id": "8231822950624",
    "nom": "Donner BackBeat Batterie Electronique",
-   "prix": 1199.99,
+   "prix": 879.99,
    "prixBarre": 1499.99,
    "stock": "Y",
    "parent": ""
@@ -4091,7 +4067,7 @@
   {
    "id": "8843194925280",
    "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents",
-   "prix": 219.99,
+   "prix": 189.99,
    "prixBarre": 459.99,
    "stock": "Y",
    "parent": ""
@@ -4115,7 +4091,7 @@
   {
    "id": "9649002316000",
    "nom": "Donner BackBeat Pro Batterie électronique",
-   "prix": 1099.99,
+   "prix": 899.99,
    "prixBarre": 1717.99,
    "stock": "Y",
    "parent": ""
@@ -4123,7 +4099,7 @@
   {
    "id": "43220848378080",
    "nom": "Donner DED-200X Batterie Électronique【Version mise à niveau disponible】 - DED-200X",
-   "prix": 529.99,
+   "prix": 429.99,
    "prixBarre": 599.99,
    "stock": "Y",
    "parent": "7786764075232"
@@ -4147,7 +4123,7 @@
   {
    "id": "46518429712608",
    "nom": "Donner BackBeat Batterie Electronique - BackBeat",
-   "prix": 1199.99,
+   "prix": 879.99,
    "prixBarre": 1499.99,
    "stock": "Y",
    "parent": "8231822950624"
@@ -4155,7 +4131,7 @@
   {
    "id": "46518429745376",
    "nom": "Donner BackBeat Batterie Electronique - BackBeat + Tabouret de batterie DT-50",
-   "prix": 1272.98,
+   "prix": 952.98,
    "prixBarre": 1999.99,
    "stock": "Y",
    "parent": "8231822950624"
@@ -4267,7 +4243,7 @@
   {
    "id": "51327404114144",
    "nom": "Donner BackBeat Pro Batterie électronique - BackBeat Pro",
-   "prix": 1099.99,
+   "prix": 899.99,
    "prixBarre": 1717.99,
    "stock": "Y",
    "parent": "9649002316000"
@@ -4275,7 +4251,7 @@
   {
    "id": "51327404146912",
    "nom": "Donner BackBeat Pro Batterie électronique - BackBeat Pro + Tabouret de batterie DT-50",
-   "prix": 1169.99,
+   "prix": 969.99,
    "prixBarre": 1843.99,
    "stock": "Y",
    "parent": "9649002316000"
@@ -4299,7 +4275,7 @@
   {
    "id": "53344041271520",
    "nom": "Donner DED-200X Batterie Électronique【Version mise à niveau disponible】 - DED-200X Mise à niveau",
-   "prix": 599.99,
+   "prix": 479.99,
    "prixBarre": 659.99,
    "stock": "Y",
    "parent": "7786764075232"
@@ -4307,7 +4283,7 @@
   {
    "id": "54882227945696",
    "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents - DED-70",
-   "prix": 219.99,
+   "prix": 189.99,
    "prixBarre": 459.99,
    "stock": "Y",
    "parent": "8843194925280"
@@ -4315,7 +4291,7 @@
   {
    "id": "54882227978464",
    "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents - DED-70 + Casque MH1 + Plateau pour batterie",
-   "prix": 284.99,
+   "prix": 254.99,
    "prixBarre": 609.99,
    "stock": "Y",
    "parent": "8843194925280"
