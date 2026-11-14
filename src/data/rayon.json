@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-11-13",
+ "date": "2026-11-14",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -383,20 +383,20 @@
    "url": "https://www.thomann.fr/roland_spd_30_bk_octapad_bundle.htm"
   },
   {
+   "id": "287372",
+   "marque": "Pearl",
+   "modele": "THMP-1 Throne Thumper B-Stock",
+   "prix": 609,
+   "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
+   "url": "https://www.thomann.fr/pearl_thmp_1_throne_thumper_b_stock.htm"
+  },
+  {
    "id": "290813",
    "marque": "Gibraltar",
    "modele": "GEMS Elect. Mounting Station",
    "prix": 259,
    "categorie": "Hardware pour Batterie & Percussions > Hardware pour Batteries Electroniques",
    "url": "https://www.thomann.fr/gibraltar_gems_elect._mounting_station.htm"
-  },
-  {
-   "id": "292396",
-   "marque": "Roland",
-   "modele": "KD-7 Kick-Controller B-Stock",
-   "prix": 156,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/roland_kd_7_kick_controller_b_stock.htm"
   },
   {
    "id": "294621",
@@ -783,14 +783,6 @@
    "url": "https://www.thomann.fr/millenium_mps_750_cymbal_arm.htm"
   },
   {
-   "id": "394338",
-   "marque": "Roland",
-   "modele": "KT-9 Kick Trigger Peda B-Stock",
-   "prix": 211,
-   "categorie": "Batteries Electroniques > Pads de Grosse Caisse",
-   "url": "https://www.thomann.fr/roland_kt_9_kick_trigger_peda_b_stock.htm"
-  },
-  {
    "id": "397031",
    "marque": "2box",
    "modele": "Rubber Ring for Trigger Pads",
@@ -1109,6 +1101,14 @@
    "prix": 549,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/yamaha_dtx432k_e_drum_set_bundle.htm"
+  },
+  {
+   "id": "444298",
+   "marque": "Roland",
+   "modele": "PDX-12 12\" V-Drum Pad B-Stock",
+   "prix": 199,
+   "categorie": "Batteries Electroniques > Pads de Caisse Claire",
+   "url": "https://www.thomann.fr/roland_pdx_12_12_v_drum_pad_b_stock.htm"
   },
   {
    "id": "445689",
@@ -2018,7 +2018,7 @@
    "id": "539783",
    "marque": "Roland",
    "modele": "Motion Sensor for VH-1 B-Stock",
-   "prix": 91,
+   "prix": 80,
    "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
    "url": "https://www.thomann.fr/roland_motion_sensor_for_vh_1_b_stock.htm"
   },
@@ -2093,6 +2093,14 @@
    "prix": 195,
    "categorie": "Housses & Etuis pour Batteries > Housses & Etuis pour Batteries Electroniques",
    "url": "https://www.thomann.fr/thon_case_for_roland_spd_sx_pb.htm"
+  },
+  {
+   "id": "546012",
+   "marque": "Millenium",
+   "modele": "CH-13 13\" Hi-Hat Pad B-Stock",
+   "prix": 111,
+   "categorie": "Batteries Electroniques > Pads de Charleston",
+   "url": "https://www.thomann.fr/millenium_ch_13_13_hi_hat_pad_b_stock.htm"
   },
   {
    "id": "547422",
@@ -2719,6 +2727,14 @@
    "url": "https://www.thomann.fr/alesis_nitro_max_expansion_pack.htm"
   },
   {
+   "id": "577508",
+   "marque": "Millenium",
+   "modele": "MPS-750X PRO E-Drum Me B-Stock",
+   "prix": 699,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/millenium_mps_750x_pro_e_drum_me_b_stock.htm"
+  },
+  {
    "id": "577645",
    "marque": "Alesis",
    "modele": "Nitro Max Kit Bundle",
@@ -2815,10 +2831,18 @@
    "url": "https://www.thomann.fr/alesis_strike_amp_8_mk2.htm"
   },
   {
+   "id": "590320",
+   "marque": "Alesis",
+   "modele": "Strike Amp 8 MK2 B-Stock",
+   "prix": 205,
+   "categorie": "Batteries Electroniques > Moniteurs pour Batteries Electroniques",
+   "url": "https://www.thomann.fr/alesis_strike_amp_8_mk2_b_stock.htm"
+  },
+  {
    "id": "590502",
    "marque": "Millenium",
    "modele": "CR-18X 18\" Ride Cymbal B-Stock",
-   "prix": 119,
+   "prix": 105,
    "categorie": "Batteries Electroniques > Pads de Cymbale",
    "url": "https://www.thomann.fr/millenium_cr_18x_18_ride_cymbal_b_stock.htm"
   },
@@ -3306,7 +3330,7 @@
    "id": "618905",
    "marque": "DW",
    "modele": "DWe E33 Drum Kit Midnight Blue",
-   "prix": 9890,
+   "prix": 9699,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/dw_dwe_e33_drum_kit_midnight_blue.htm"
   },
@@ -3413,6 +3437,14 @@
    "prix": 799,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/alesis_nitro_ultimate_drum_kit.htm"
+  },
+  {
+   "id": "626124",
+   "marque": "Roland",
+   "modele": "MN-10 Mood Pan Bundle",
+   "prix": 579,
+   "categorie": "Batteries Electroniques > Percussion & Sampling Pads",
+   "url": "https://www.thomann.fr/roland_mn_10_mood_pan_bundle.htm"
   },
   {
    "id": "626201",
@@ -3623,14 +3655,6 @@
    "url": "https://www.thomann.fr/millenium_mps_350_e_drum_bundle.htm"
   },
   {
-   "id": "630765",
-   "marque": "Millenium",
-   "modele": "MPS-350 E-Drum Set B-Stock",
-   "prix": 322,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/millenium_mps_350_e_drum_set_b_stock.htm"
-  },
-  {
    "id": "630907",
    "marque": "Aerodrums",
    "modele": "Air Percussion Set 2 B-Stock",
@@ -3693,6 +3717,14 @@
    "prix": 1079,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/alesis_nitro_ultimate_xl_drum_bundle.htm"
+  },
+  {
+   "id": "636827",
+   "marque": "Millenium",
+   "modele": "MPS-350 E-Drum Set B-Stock",
+   "prix": 305,
+   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
+   "url": "https://www.thomann.fr/millenium_mps_350_e_drum_set_b_stock_636827.htm"
   },
   {
    "id": "636957",
@@ -4018,7 +4050,7 @@
    "id": "658274",
    "marque": "Roland",
    "modele": "TD713 V-Drums Thomann Edition",
-   "prix": 5498,
+   "prix": 4798,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/roland_td713_v_drums_thomann_edition.htm"
   },
@@ -4026,7 +4058,7 @@
    "id": "658276",
    "marque": "Roland",
    "modele": "TD713 Thomann Edition Bundle",
-   "prix": 5998,
+   "prix": 5398,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/roland_td713_thomann_edition_bundle.htm"
   },
@@ -4037,6 +4069,14 @@
    "prix": 398,
    "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
    "url": "https://www.thomann.fr/millenium_mps_350_e_drum_junior_bundle.htm"
+  },
+  {
+   "id": "658813",
+   "marque": "Evans",
+   "modele": "Hybrid Sensory Perc. H B-Stock",
+   "prix": 321,
+   "categorie": "Batteries Electroniques > Triggers pour Batteries",
+   "url": "https://www.thomann.fr/evans_hybrid_sensory_perc_h_b_stock.htm"
   }
  ],
  "donner": [
@@ -4069,14 +4109,6 @@
    "nom": "Donner DED-70 Batterie électronique adaptée aux adolescents",
    "prix": 189.99,
    "prixBarre": 459.99,
-   "stock": "Y",
-   "parent": ""
-  },
-  {
-   "id": "9255429406944",
-   "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied",
-   "prix": 79.99,
-   "prixBarre": 129.99,
    "stock": "Y",
    "parent": ""
   },
@@ -4193,28 +4225,12 @@
    "parent": ""
   },
   {
-   "id": "48873083437280",
-   "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Contrôleur de cymbale Charleston",
-   "prix": 79.99,
-   "prixBarre": 129.99,
-   "stock": "N",
-   "parent": "9255429406944"
-  },
-  {
-   "id": "48873083470048",
-   "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Pied",
-   "prix": 99.99,
-   "prixBarre": 139.99,
-   "stock": "N",
-   "parent": "9255429406944"
-  },
-  {
    "id": "48873083502816",
-   "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied - Contrôleur de cymbale Charleston + Pied",
+   "nom": "Donner HHCB-12 Contrôleur de cymbale Charleston 12'' + Pied",
    "prix": 179.98,
    "prixBarre": 269.98,
    "stock": "Y",
-   "parent": "9255429406944"
+   "parent": ""
   },
   {
    "id": "48935230275808",
