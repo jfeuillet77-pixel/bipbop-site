@@ -27,8 +27,8 @@ export const DUELS = {
     b: 'nitromax',
     gagnant: 'mps450',
     resume:
-      "La MPS-450 gagne : la même caisse claire et les mêmes toms en peau maillée, mais des cymbales de 12 pouces qui s'étouffent toutes les deux, deux entrées libres et les baguettes, pour {ecart:nitromax-mps450} de moins. La Nitro Max garde le Bluetooth, un module plus riche et une meilleure revente.",
-    pourA: 'tu veux plus de matériel pour moins cher.',
+      "La MPS-450 gagne : la même caisse claire et les mêmes toms en peau maillée, mais des cymbales de 12 pouces qui s'étouffent toutes les deux, deux entrées libres et les baguettes, pour {diff:mps450-nitromax} de plus. La Nitro Max garde le prix, le Bluetooth, un module plus riche et une meilleure revente.",
+    pourA: 'tu veux plus de matériel, quitte à payer un peu plus.',
     pourB: 'tu joueras chaque soir sur la musique de ton téléphone.',
   },
   '/duels/millenium-mps-150x-vs-mps-450/': {
@@ -63,9 +63,9 @@ export const DUELS = {
     b: 'ded200x',
     gagnant: 'nitromax',
     resume:
-      "L'Alesis gagne : {diff:ded200x-nitromax+casque+siege} de moins une fois équipée du casque et du siège que la Donner fournit, des sons tirés de la bibliothèque BFD et le Bluetooth. La Donner aligne une deuxième crash, un rack plus rigide et un carton complet.",
+      "L'Alesis gagne : des sons tirés de la bibliothèque BFD, le Bluetooth et {diff:ded200x-nitromax} de moins à l'affiche. Une fois équipée du casque et du siège que la Donner fournit, elle revient pourtant {diff:nitromax+casque+siege-ded200x} plus cher. La Donner aligne une deuxième crash, un rack plus rigide et un carton complet.",
     pourA: 'tu veux jouer sur ta playlist dès le premier soir.',
-    pourB: 'tu veux neuf pads dès le départ, idéalement pendant une promotion Donner.',
+    pourB: 'tu pars de zéro et veux neuf pads, casque et tabouret compris.',
   },
   '/duels/alesis-nitro-max-vs-roland-td-02kv/': {
     a: 'nitromax',
