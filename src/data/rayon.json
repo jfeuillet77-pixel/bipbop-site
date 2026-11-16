@@ -1,6 +1,6 @@
 {
  "_": "Le rayon batterie électronique de Thomann et Donner au jour du relevé, écrit par scripts/prix/archiver-flux.mjs (workflow extrait-rayon). Prix seulement : Thomann ne donne pas le stock. prixBarre Donner : à mesurer, jamais à publier (règle I05).",
- "date": "2026-11-15",
+ "date": "2026-11-16",
  "sources": {
   "thomann": "flux partenaire",
   "donner": "flux Impact"
@@ -3591,14 +3591,6 @@
    "url": "https://www.thomann.fr/millenium_mps_350_e_drum_bundle.htm"
   },
   {
-   "id": "630907",
-   "marque": "Aerodrums",
-   "modele": "Air Percussion Set 2 B-Stock",
-   "prix": 735,
-   "categorie": "Batteries Electroniques > Batteries Electroniques Complètes",
-   "url": "https://www.thomann.fr/aerodrums_air_percussion_set_2_b_stock.htm"
-  },
-  {
    "id": "631566",
    "marque": "Yamaha",
    "modele": "MS45DR E-Drum Monitor System",
@@ -3797,14 +3789,6 @@
    "prix": 54,
    "categorie": "Batteries Electroniques > Accessoires pour Batteries Electroniques",
    "url": "https://www.thomann.fr/muse_kinetics_boppad_mount.htm"
-  },
-  {
-   "id": "651036",
-   "marque": "Evans",
-   "modele": "Hybrid Sensory E-Kit B B-Stock",
-   "prix": 1845,
-   "categorie": "Batteries Electroniques > Triggers pour Batteries",
-   "url": "https://www.thomann.fr/evans_hybrid_sensory_e_kit_b_b_stock.htm"
   },
   {
    "id": "652107",
@@ -4175,14 +4159,6 @@
    "prixBarre": 1029.99,
    "stock": "Y",
    "parent": "9273475367136"
-  },
-  {
-   "id": "51229459939552",
-   "nom": "Donner Pupitre de batterie",
-   "prix": 39.99,
-   "prixBarre": 69.99,
-   "stock": "Y",
-   "parent": ""
   },
   {
    "id": "51327404114144",
