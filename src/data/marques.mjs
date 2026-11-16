@@ -175,7 +175,7 @@ export const MARQUES = {
         h2: 'Yamaha ou une autre marque ?',
         id: 'ou-ailleurs',
         texte: [
-          "Pour le prix de la {nom:dtx432} ({prix:dtx432}), on trouve cinq fûts en peau maillée chez Millenium avec la {avis:mps750x} ({prix:mps750x}). Chez Roland, la {avis:td02kv} ({prix:td02kv}) apporte une pédale sans batte et les sons de la marque. Ce que Yamaha vend en plus, c'est la pédagogie. Si tu sais déjà que tu vas t'y tenir, tu la paieras sans t'en servir.",
+          "Pour {diff:dtx432-mps750x} de moins que la {nom:dtx432} ({prix:dtx432}), on trouve cinq fûts en peau maillée chez Millenium avec la {avis:mps750x} ({prix:mps750x}). Chez Roland, la {avis:td02kv} ({prix:td02kv}) apporte une pédale sans batte et les sons de la marque. Ce que Yamaha vend en plus, c'est la pédagogie. Si tu sais déjà que tu vas t'y tenir, tu la paieras sans t'en servir.",
           "Si c'est Alesis qui te fait hésiter, sa gamme Nitro met des peaux maillées sur tous les fûts dès {prix:nitromax}, avec le Bluetooth en plus. La [page Alesis](/marques/batterie-electronique-alesis/) compare ses {n:modeles:Alesis} modèles.",
           "Pour comparer toutes les marques d'un coup, le [comparatif en trois questions](/comparatif-batterie-electronique/) sort deux modèles selon ton budget, ta place et ce que tu veux jouer.",
         ],
@@ -386,7 +386,7 @@ export const MARQUES = {
         h2: 'Roland ou une autre marque ?',
         id: 'ou-ailleurs',
         texte: [
-          "Pour le prix de la {nom:td02kv}, Millenium donne cinq fûts en peau maillée avec la {avis:mps750x} ({prix:mps750x}) : la [page Millenium](/marques/batterie-electronique-millenium/) compare toute sa gamme. Alesis met du mesh partout dès {prix:nitromax} avec la {avis:nitromax}, Bluetooth compris. Ce que Roland vend en plus, c'est la pédale sans batte : si personne ne vit sous toi, tu la paieras sans en profiter. Le [duel Nitro Max contre TD-02KV](/duels/alesis-nitro-max-vs-roland-td-02kv/) fait le calcul.",
+          "Pour {diff:td02kv-mps750x} de moins que la {nom:td02kv}, Millenium donne cinq fûts en peau maillée avec la {avis:mps750x} ({prix:mps750x}) : la [page Millenium](/marques/batterie-electronique-millenium/) compare toute sa gamme. Alesis met du mesh partout dès {prix:nitromax} avec la {avis:nitromax}, Bluetooth compris. Ce que Roland vend en plus, c'est la pédale sans batte : si personne ne vit sous toi, tu la paieras sans en profiter. Le [duel Nitro Max contre TD-02KV](/duels/alesis-nitro-max-vs-roland-td-02kv/) fait le calcul.",
           "Les Roland ne sont pas les seules à proposer une pédale sans batte : la Yamaha DTX402K en a une aussi, pour moins cher. La [page Yamaha](/marques/batterie-electronique-yamaha/) la compare aux autres DTX.",
           "Pour comparer toutes les marques d'un coup, le [comparatif en trois questions](/comparatif-batterie-electronique/) sort deux modèles selon ton budget, ta place et ce que tu veux jouer.",
         ],
@@ -600,7 +600,7 @@ export const MARQUES = {
         id: 'prix',
         texte: [
           "Le 11 novembre, les 33 références du rayon Donner que relève notre robot portaient toutes un ancien prix rayé à côté du prix du jour. Un prix barré affiché en continu ne te dit pas ce que la batterie coûtait la veille. Sur ce site, on ne le reprend jamais : le prix publié est celui que tu paies, relevé chaque lundi et chaque jour pour notre [baromètre des prix](/barometre/).",
-          "Le vrai prix, lui, bouge dans les deux sens. La {nom:backbeat} a perdu 300 € entre notre relevé du 3 novembre et le flux Donner du 10 novembre, puis les a repris le 12 novembre. La {nom:ded200x} avait pris 30 € au relevé du 3 novembre. D'où la seule règle qui tienne : compare au prix des semaines précédentes, pas au prix rayé. Le [guide du Black Friday](/guides/black-friday-batterie-electronique/) montre ce que les prix font vraiment en novembre.",
+          "Le vrai prix, lui, bouge dans les deux sens. La {nom:backbeat} a perdu 300 € entre notre relevé du 3 novembre et le flux Donner du 10 novembre, puis les a repris le 12 novembre, avant de tomber à {prix:backbeat} au relevé du 16 novembre. La {nom:ded200x} avait pris 30 € au relevé du 3 novembre, elle en a perdu cent au relevé du 16 novembre. D'où la seule règle qui tienne : compare au prix des semaines précédentes, pas au prix rayé. Le [guide du Black Friday](/guides/black-friday-batterie-electronique/) montre ce que les prix font vraiment en novembre.",
           "Les fiches affichent aussi des codes de réduction. Lis la foire aux questions avant de t'en servir : si tu retournes un article payé avec un code, Donner ne rembourse pas le montant du code.",
         ],
       },
@@ -624,7 +624,7 @@ export const MARQUES = {
           "la {nom:ded80} avec le même tapis : {budget:ded80+tapis}.",
         ],
         apres: [
-          "En face, l'{avis:nitromax} demande un casque et un siège. Avec le {acc:casque} ({accprix:casque}) et le {acc:siege} ({accprix:siege}), elle revient à {budget:nitromax+casque+siege} : l'écart avec la DED-200X tombe à {diff:ded200x-nitromax+casque+siege}.",
+          "En face, l'{avis:nitromax} demande un casque et un siège. Avec le {acc:casque} ({accprix:casque}) et le {acc:siege} ({accprix:siege}), elle revient à {budget:nitromax+casque+siege} : {diff:nitromax+casque+siege-ded200x} de plus que la DED-200X, qui a déjà les siens.",
           "Pour la {nom:ded300x} et la {nom:ded200pro}, les fiches lues le 11 novembre ne mentionnent ni casque ni tabouret. La DED-200 Pro se vend d'ailleurs aussi en variante avec le tabouret Donner DT-50. Avec le casque et le siège cités plus haut, une DED-300X revient à {budget:ded300x+casque+siege}. Le [vrai prix d'une batterie électronique](/guides/prix-batterie-electronique/) compare les tranches, équipement compris.",
         ],
       },
@@ -643,7 +643,7 @@ export const MARQUES = {
         h2: 'Donner ou une autre marque ?',
         id: 'ou-ailleurs',
         texte: [
-          "Autour de 500 €, la {avis:mps750x} ({prix:mps750x}) a des cymbales de 12 à 14 pouces et le Bluetooth, sans casque ni siège. L'{avis:nitromax} ({prix:nitromax}) a un meilleur module et le Bluetooth. Ce que Donner vend en plus, c'est la quantité : deux crashs et un carton complet.",
+          "Sous 450 €, la {avis:mps750x} ({prix:mps750x}) a des cymbales de 12 à 14 pouces et le Bluetooth, sans casque ni siège. L'{avis:nitromax} ({prix:nitromax}) a un meilleur module et le Bluetooth. Ce que Donner vend en plus, c'est la quantité : deux crashs et un carton complet.",
           "Dans la même tranche que la {nom:ded300x}, la {avis:mps850} ({prix:mps850}) aligne dix pads, des prises MIDI à cinq broches et l'import de tes propres sons. La [page Millenium](/marques/batterie-electronique-millenium/) compare toute sa gamme.",
           "Pour un petit budget, la {nom:ded70} et la {nom:ded80} font face à deux Millenium. La {nom:rookie} ({prix:rookie}) est en peau maillée elle aussi, pensée pour les enfants dès 3 ans selon Thomann. La {avis:hd120} ({prix:hd120}) est livrée elle aussi avec siège, casque et baguettes. Le [guide à moins de 300 €](/guides/batterie-electronique-moins-300-euros/) les départage.",
           "Pour tout voir d'un coup, la [page des marques](/marques/) passe en revue les {n:marques} marques qu'on suit.",
@@ -703,7 +703,7 @@ export const INDEX_MARQUES = {
     Alesis: "La peau maillée à petit prix, sur tous les modèles qu'on suit. Le Bluetooth arrive dès la {avis:nitromax}, qu'on recommande à la majorité des débutants. Ses défauts : des cymbales de 10 pouces sur toute la gamme Nitro et des pads étroits sur la Turbo. Elle se revend bien, ce qui compte si tu n'es pas sûr de t'y tenir.",
     Yamaha: "La méthode avant le matériel. Trois de ses {n:modeles:Yamaha} modèles partagent le module DTX402 et ses programmes de coaching, qui notent ta régularité. En échange, aucune Yamaha de la sélection n'a de peau maillée : les pads en caoutchouc rebondissent plus sec et font plus de bruit sous la baguette.",
     Roland: "Sous 1 600 €, la sélection Roland tient en {n:modeles:Roland} modèles : la {nom:td02k} ({prix:td02k}) et la {avis:td02kv} ({prix:td02kv}), qui partagent une pédale de grosse caisse sans batte, la meilleure réponse en immeuble ancien. Au-dessus, la {avis:td313} ({prix:td313}). Les TD-07, TD-17 et TD-1DMK, encore très cherchées, ne sont plus vendues chez Thomann ni chez Woodbrass : la série 3 de Roland a pris leur place.",
-    Donner: "Donner vend en direct, sur Donner Music, qui est le seul marchand de ses batteries dans notre sélection. {N:modeles:Donner} modèles, de {prix:ded70} à {prix:backbeat}. La {avis:ded200x} est le kit le mieux fourni autour de 500 €, casque et tabouret compris ; face à la Nitro Max, c'est son module qui la dessert. Un réflexe à prendre : ignore les prix barrés du site Donner, ses remises affichées sont permanentes.",
+    Donner: "Donner vend en direct, sur Donner Music, qui est le seul marchand de ses batteries dans notre sélection. {N:modeles:Donner} modèles, de {prix:ded70} à {prix:backbeat}. La {avis:ded200x} est le kit le mieux fourni sous 500 €, casque et tabouret compris ; face à la Nitro Max, c'est son module qui la dessert. Un réflexe à prendre : ignore les prix barrés du site Donner, ses remises affichées sont permanentes.",
     Nux: "Un seul modèle suivi, la {nom:dm110} ({prix:dm110}), en peaux maillées et vendue chez Woodbrass. On ne l'a pas encore analysée en détail : elle attend son avis.",
     Woodbrass: "Le revendeur français a sa propre batterie, la {avis:ddx50} ({prix:ddx50}) : caisse claire et trois toms de 10 pouces en peaux maillées, une charleston sur son propre pied, mais pas de Bluetooth.",
   },
@@ -751,7 +751,7 @@ export const INDEX_MARQUES = {
     },
     {
       q: 'Roland vaut-il son prix pour débuter ?',
-      r: "Pour le son et le silence, oui : la {avis:td02kv} est celle qu'on recommande en immeuble ancien, grâce à sa pédale sans batte, que partage la {nom:td02k}. Pour le toucher, moins : au même prix, la {avis:mps750x} a des peaux maillées sur ses cinq fûts, la Roland sur sa seule caisse claire.",
+      r: "Pour le son et le silence, oui : la {avis:td02kv} est celle qu'on recommande en immeuble ancien, grâce à sa pédale sans batte, que partage la {nom:td02k}. Pour le toucher, moins : pour {diff:td02kv-mps750x} de moins, la {avis:mps750x} a des peaux maillées sur ses cinq fûts, la Roland sur sa seule caisse claire.",
     },
     {
       q: 'Faut-il rester sur la même marque pour faire évoluer sa batterie ?',

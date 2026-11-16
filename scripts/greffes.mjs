@@ -85,12 +85,21 @@ export function urlPublique(brute) {
   return url.origin + url.pathname + (reste ? `?${reste}` : '') + url.hash;
 }
 
-/** 1. Les remplacements déclarés. `au` introuvable est une erreur, pas un silence. */
-export function appliquerCorrections(corps, fichier, { sobre = false } = {}) {
+/**
+ * 1. Les remplacements déclarés. `au` introuvable est une erreur, pas un silence.
+ *
+ * Par défaut une correction lit le corps APRÈS la résolution des jetons (elle voit « 379 € », pas
+ * « {prix:nitromax} »). Une entrée `"avant_jetons": true` lit au contraire le texte brut de la
+ * maquette, jetons compris, et s'applique avant eux : c'est le seul moyen de réécrire une phrase
+ * dont le jeton lui-même échoue (un {diff:a-b} devenu négatif quand l'ordre de deux prix s'inverse,
+ * relevé du 16/11/2026), sans toucher à la maquette. Même règle d'unicité dans les deux passes.
+ */
+export function appliquerCorrections(corps, fichier, { sobre = false, avantJetons = false } = {}) {
   const notes = [];
   const Corrections = JSON.parse(readFileSync(join(SITE, 'design', 'port-corrections.json'), 'utf8')).corrections ?? [];
   for (const c of Corrections) {
     if (c.fichier !== fichier) continue;
+    if (Boolean(c.avant_jetons) !== avantJetons) continue;
     const occurrences = corps.split(c.au).length - 1;
     if (occurrences === 0) {
       throw new Error(`la correction « ${c.au} » ne trouve plus son texte dans ${fichier} — la maquette a bougé, ou la divergence n'a plus lieu d'être : revoir design/port-corrections.json`);
@@ -425,6 +434,11 @@ export function appliquerGreffes(corps, fichier, options = {}) {
     const g = grefferLegal(corps, fichier, options);
     corps = g.corps;
     notes.push(...g.notes);
+  }
+  {
+    const c = appliquerCorrections(corps, fichier, { ...options, avantJetons: true });
+    corps = c.corps;
+    notes.push(...c.notes);
   }
   if (JETON.test(corps)) {
     const g = resoudreJetons(corps, fichier);

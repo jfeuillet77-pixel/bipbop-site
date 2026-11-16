@@ -251,12 +251,12 @@
       ],
       "prix": [
         7,
-        "{prix:ded200x} casque et tabouret compris : équipement égal, {diff:ded200x-nitromax+casque+siege} de plus que la Nitro Max."
+        "{prix:ded200x} casque et tabouret compris : équipement égal, {diff:nitromax+casque+siege-ded200x} de moins que la Nitro Max."
       ],
       "profil": {
         "pour": "Tu veux le kit le plus fourni",
         "note": 8,
-        "raison": "Neuf pads, une deuxième crash, casque et tabouret dans le carton. En promotion sous 420 €, elle devient une affaire."
+        "raison": "Neuf pads, une deuxième crash, casque et tabouret dans le carton. En promotion sous 400 €, elle devient une affaire."
       }
     },
     "Avis-Millenium-MPS-850.dc.html": {
@@ -279,7 +279,7 @@
       ],
       "prix": [
         6,
-        "{prix:mps850} : la MPS-750X et son pack d'extension donnent aussi dix pads pour vingt-cinq euros de plus."
+        "{prix:mps850} : la MPS-750X et son pack d'extension donnent aussi dix pads pour vingt-neuf euros de moins."
       ],
       "profil": {
         "pour": "Tu joues déjà un peu",

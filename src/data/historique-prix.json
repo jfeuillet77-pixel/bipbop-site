@@ -2,6 +2,254 @@
  "_": "L'historique publié des relevés de prix, source unique de /suivi-des-prix/. Écrit par scripts/prix/publier.mjs à chaque relevé, jamais à la main. Contrairement à releves/, il ne s'élague pas : c'est la trace du travail.",
  "releves": [
   {
+   "date": "2026-11-16",
+   "controlees": 160,
+   "lues": 158,
+   "seuil": 5,
+   "mouvements": [
+    {
+     "nom": "Donner BackBeat",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "1 199,99 €",
+     "apres": "879,99 €",
+     "ecart": -320,
+     "pct": -26.7,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Millenium MPS-1000",
+     "marchand": "Thomann",
+     "famille": "Batterie",
+     "avant": "999 €",
+     "apres": "888 €",
+     "ecart": -111,
+     "pct": -11.1,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Donner DED-200X",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "529,99 €",
+     "apres": "429,99 €",
+     "ecart": -100,
+     "pct": -18.9,
+     "changeDeTranche": {
+      "avant": "500 à 800 €",
+      "apres": "300 à 500 €"
+     }
+    },
+    {
+     "nom": "Alesis Strike Amp 8 MK2",
+     "marchand": "Thomann",
+     "famille": "Amplification",
+     "avant": "290 €",
+     "apres": "222 €",
+     "ecart": -68,
+     "pct": -23.4,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Millenium MPS-750X Mesh",
+     "marchand": "Thomann",
+     "famille": "Batterie",
+     "avant": "498 €",
+     "apres": "444 €",
+     "ecart": -54,
+     "pct": -10.8,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Alesis Debut Kit",
+     "marchand": "Woodbrass",
+     "famille": "Batterie",
+     "avant": "279 €",
+     "apres": "239 €",
+     "ecart": -40,
+     "pct": -14.3,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Donner DED-70",
+     "marchand": "Donner Music",
+     "famille": "Batterie",
+     "avant": "219,99 €",
+     "apres": "189,99 €",
+     "ecart": -30,
+     "pct": -13.6,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Alesis Nitro Max Kit",
+     "marchand": "Thomann",
+     "famille": "Batterie",
+     "avant": "409 €",
+     "apres": "379 €",
+     "ecart": -30,
+     "pct": -7.3,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Alesis Nitro Amp",
+     "marchand": "Thomann",
+     "famille": "Amplification",
+     "avant": "98 €",
+     "apres": "69 €",
+     "ecart": -29,
+     "pct": -29.6,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Millenium HD-120 E-Drum Set",
+     "marchand": "Thomann",
+     "famille": "Batterie",
+     "avant": "219 €",
+     "apres": "198 €",
+     "ecart": -21,
+     "pct": -9.6,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Millenium Rookie E-Drum Set",
+     "marchand": "Thomann",
+     "famille": "Batterie",
+     "avant": "179 €",
+     "apres": "159 €",
+     "ecart": -20,
+     "pct": -11.2,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Millenium DM-30 Drum Monitor",
+     "marchand": "Thomann",
+     "famille": "Amplification",
+     "avant": "149 €",
+     "apres": "129 €",
+     "ecart": -20,
+     "pct": -13.4,
+     "changeDeTranche": null
+    },
+    {
+     "nom": "Donner DT-50",
+     "marchand": "Donner Music",
+     "famille": "Sièges",
+     "avant": "72,99 €",
+     "apres": "65,99 €",
+     "ecart": -7,
+     "pct": -9.6,
+     "changeDeTranche": null
+    }
+   ],
+   "ruptures": [
+    {
+     "nom": "Roland TD-02KV",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 4-5 semaines"
+    },
+    {
+     "nom": "Yamaha DTX6K2-X",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 12-15 semaines"
+    },
+    {
+     "nom": "Vic Firth SIH3 Headphones",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 4-5 semaines"
+    },
+    {
+     "nom": "Alesis DRP100",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Thomann E-Drum Rug Black 120",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland NE-1 Noise Eater",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Roland NE-10 Noise Eater",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Vic Firth American Classic spécial électronique",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Vic Firth 12\" VF Practice Pad",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 6-8 semaines"
+    },
+    {
+     "nom": "Yamaha PCY-135",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 2-3 semaines"
+    },
+    {
+     "nom": "Roland OP-TD1C Cymbal Set",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Yamaha KP-65A",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 2-3 semaines"
+    },
+    {
+     "nom": "Yamaha RCL500 Clamp",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 11-14 semaines"
+    },
+    {
+     "nom": "Nux Kit tom 10 pouces + clamp",
+     "marchand": "Woodbrass",
+     "etat": "hors stock, sans date annoncée"
+    },
+    {
+     "nom": "Alesis Nitro Multicore",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 5-7 semaines"
+    },
+    {
+     "nom": "Roland PM-03 Monitor System",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Yamaha DT50K Kick Trigger",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Roland RT-30K Kick Trigger",
+     "marchand": "Thomann",
+     "etat": "actuellement indisponible"
+    },
+    {
+     "nom": "Protection Racket E-Drum Kit Bag 28x16",
+     "marchand": "Thomann",
+     "etat": "Disponible sous 12-15 semaines"
+    }
+   ],
+   "disparues": [
+    {
+     "nom": "Alesis Turbo Mesh Kit",
+     "marchand": "Thomann"
+    },
+    {
+     "nom": "Donner Pupitre de batterie",
+     "marchand": "Donner Music"
+    }
+   ]
+  },
+  {
    "date": "2026-11-03",
    "controlees": 160,
    "lues": 159,
