@@ -234,7 +234,7 @@ export const MARQUES = {
           "**{avis:nitromax}** ({prix:nitromax}) : une caisse claire de 10 pouces à deux zones, trois toms de 8 pouces, 440 sons et le Bluetooth pour jouer par-dessus ta musique.",
           "**{avis:nitropro}** ({prix:nitropro}) : la Nitro Max en plus robuste. Rack en acier réglable plus haut, toms à deux zones, pad de grosse caisse qui accepte une double pédale, plus de 500 sons.",
           "**{nom:nitroproxl}** ({prix:nitroproxl}) : la Nitro Pro avec un quatrième tom et une troisième cymbale.",
-          "**{nom:nitroultimate}** ({prix:nitroultimate}) : le haut de la gamme Nitro. 640 sons, charleston et ride à deux zones, logiciel BFD Player inclus.",
+          "**{avis:nitroultimate}** ({prix:nitroultimate}) : neuf pads, 640 sons, charleston et ride à deux zones, logiciel BFD Player inclus. Sa charleston se monte sur un vrai pied, vendu à part.",
           "**{nom:strata}** ({prix:strata}) : un autre monde. Module à écran tactile de 7 pouces, caisse claire de 12 pouces, ride de 14 pouces à trois zones. Livrée sans pédale de grosse caisse ni pédale de charleston.",
         ],
       },

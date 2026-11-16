@@ -454,6 +454,34 @@
         "note": 8,
         "raison": "Des toms de 10 pouces et une charleston sur pied, sans monter jusqu'à la MPS-750X."
       }
+    },
+    "Avis-Alesis-Nitro-Ultimate.dc.html": {
+      "id": "nitroultimate",
+      "toucher": [
+        9,
+        "Tout mesh, caisse claire de 10 pouces et trois toms de 8 pouces, tous à deux zones."
+      ],
+      "discretion": [
+        7,
+        "Fûts en mesh, mais une pédale à batte qui frappe le sol et un pied de charleston qui ajoute un appui."
+      ],
+      "module": [
+        8,
+        "640 sons BFD, Bluetooth, métronome, séquenceur, logiciel BFD Player et 90 jours de Drumeo. Pas de programme de coaching."
+      ],
+      "confort": [
+        7,
+        "Rack en acier et charleston sur un vrai pied, mais des cymbales de 10 pouces et un pad de charleston qui bouge selon deux acheteurs."
+      ],
+      "prix": [
+        5,
+        "{prix:nitroultimate} sans pied de charleston, siège ni casque : la Nitro Pro XL donne dix pads pour {ecart:nitroultimate-nitroproxl} de moins."
+      ],
+      "profil": {
+        "pour": "Tu veux la charleston d'une acoustique sous le pied gauche",
+        "note": 8,
+        "raison": "Un vrai pied de charleston, une ride à deux zones et BFD Player, surtout si le lot Thomann passe sous le prix du kit seul."
+      }
     }
   },
   "echelle": {
