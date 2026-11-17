@@ -645,7 +645,7 @@ export const MARQUES = {
         texte: [
           "Sous 450 €, la {avis:mps750x} ({prix:mps750x}) a des cymbales de 12 à 14 pouces et le Bluetooth, sans casque ni siège. L'{avis:nitromax} ({prix:nitromax}) a un meilleur module et le Bluetooth. Ce que Donner vend en plus, c'est la quantité : deux crashs et un carton complet.",
           "Dans la même tranche que la {nom:ded300x}, la {avis:mps850} ({prix:mps850}) aligne dix pads, des prises MIDI à cinq broches et l'import de tes propres sons. La [page Millenium](/marques/batterie-electronique-millenium/) compare toute sa gamme.",
-          "Pour un petit budget, la {nom:ded70} et la {nom:ded80} font face à deux Millenium. La {nom:rookie} ({prix:rookie}) est en peau maillée elle aussi, pensée pour les enfants dès 3 ans selon Thomann. La {avis:hd120} ({prix:hd120}) est livrée elle aussi avec siège, casque et baguettes. Le [guide à moins de 300 €](/guides/batterie-electronique-moins-300-euros/) les départage.",
+          "Pour un petit budget, la {nom:ded70} et la {nom:ded80} font face à deux Millenium. La {avis:rookie} ({prix:rookie}) est en peau maillée elle aussi, pensée pour les enfants dès 3 ans selon Thomann. La {avis:hd120} ({prix:hd120}) est livrée elle aussi avec siège, casque et baguettes. Le [guide à moins de 300 €](/guides/batterie-electronique-moins-300-euros/) les départage.",
           "Pour tout voir d'un coup, la [page des marques](/marques/) passe en revue les {n:marques} marques qu'on suit.",
         ],
       },

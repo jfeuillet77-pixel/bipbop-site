@@ -482,6 +482,34 @@
         "note": 8,
         "raison": "Un vrai pied de charleston, une ride à deux zones et BFD Player, surtout si le lot Thomann passe sous le prix du kit seul."
       }
+    },
+    "Avis-Millenium-Rookie.dc.html": {
+      "id": "rookie",
+      "toucher": [
+        6,
+        "Caisse claire et toms en mesh, mais en 7 pouces et à une seule zone : un cran sous le mesh en 8 pouces."
+      ],
+      "discretion": [
+        9,
+        "Grosse caisse en contrôleur sans batte et fûts en peau maillée : rien ne frappe le plancher."
+      ],
+      "module": [
+        5,
+        "68 sons en douze kits, dix morceaux, un métronome et le MIDI par USB. Ni Bluetooth ni application."
+      ],
+      "confort": [
+        6,
+        "100 × 50 cm au sol et un rack réglable de 57 à 80 cm : le bon format pour un petit enfant, trop bas pour un adulte."
+      ],
+      "prix": [
+        7,
+        "{prix:rookie} pour du mesh, mais ni siège ni casque, que la HD-120 fournit dans son carton."
+      ],
+      "profil": {
+        "pour": "Un enfant de 3 à 7 ans",
+        "note": 8,
+        "raison": "Un rack qui descend à 57 cm, du mesh sur les fûts et une grosse caisse sans batte : le bon format pour commencer petit."
+      }
     }
   },
   "echelle": {
