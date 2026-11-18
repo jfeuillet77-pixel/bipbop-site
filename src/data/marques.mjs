@@ -119,7 +119,7 @@ export const MARQUES = {
     chapeau:
       "Au même prix, Yamaha te donne moins de matériel que ses concurrents. Sa force est ailleurs : la méthode. Trois des {n:modeles:Yamaha} modèles qu'on suit partagent le même module d'apprentissage. Voilà lequel prendre et quand regarder ailleurs.",
     reponse: [
-      "**Tu doutes de t'y tenir** : la {avis:dtx432} à {prix:dtx432}, pour ses dix programmes de coaching. Une batterie sur laquelle on s'entraîne vaut mieux qu'une batterie mieux équipée qui prend la poussière.",
+      "**Tu doutes de t'y tenir** : la {avis:dtx432} à {prix:dtx432}, pour ses dix programmes de coaching et sa vraie pédale de grosse caisse. La {nom:dtx402} a les mêmes programmes. Une batterie sur laquelle on s'entraîne vaut mieux qu'une batterie mieux équipée qui prend la poussière.",
       "**Petit budget, en appartement** : la {avis:dtx402} à {prix:dtx402}, avec une pédale de grosse caisse sans batte comme les Roland TD-02.",
       "**Tu sais déjà que tu vas t'y tenir** : à ce prix, prends plutôt des peaux maillées, comme la {avis:nitromax} à {prix:nitromax}.",
     ],
@@ -128,11 +128,11 @@ export const MARQUES = {
         h2: 'La gamme DTX402 : un module, trois batteries',
         id: 'gamme',
         texte: [
-          "La {nom:dtx402}, la {nom:dtx432} et la {nom:dtx452} partagent le même module, le DTX402 : 287 sons, 10 kits utilisateur, un métronome et une sortie casque. Ce qui les sépare, c'est ce que tu frappes.",
+          "La {nom:dtx402}, la {nom:dtx432} et la {nom:dtx452} partagent le même module, le DTX402 : 287 sons, 10 kits utilisateur, dix programmes de coaching, un métronome et une sortie casque. Ce qui les sépare, c'est ce que tu frappes.",
         ],
         liste: [
-          "**{nom:dtx402}** ({prix:dtx402}) : quatre pads de 7,5 pouces en caoutchouc, trois cymbales de 10 pouces et une pédale de grosse caisse KU100 sans batte. Elle ne frappe rien, donc elle ne cogne pas dans le plancher. Livrée sans baguettes, ni siège, ni casque.",
-          "**{avis:dtx432}** ({prix:dtx432}) : les mêmes pads, mais une vraie tour de grosse caisse KP65 avec sa pédale, un contrôleur de charleston HH65 et dix programmes de coaching.",
+          "**{avis:dtx402}** ({prix:dtx402}) : quatre pads de 7,5 pouces en caoutchouc, trois cymbales de 10 pouces et une pédale de grosse caisse KU100 sans batte. Elle ne frappe rien, donc elle ne cogne pas dans le plancher. Livrée sans baguettes, ni siège, ni casque.",
+          "**{avis:dtx432}** ({prix:dtx432}) : les mêmes pads, mais une vraie tour de grosse caisse KP65 avec sa pédale, un contrôleur de charleston HH65 et une sortie ligne séparée de la sortie casque.",
           "**{nom:dtx452}** ({prix:dtx452}) : la DTX432K avec une caisse claire à trois zones, la TP70S. Tu peux jouer sur la peau ou sur le cercle, ouvert ou fermé. Elle reste en caoutchouc.",
         ],
         apres: [
@@ -184,7 +184,7 @@ export const MARQUES = {
     faq: [
       {
         q: 'Quelle batterie Yamaha pour débuter ?',
-        r: "La {avis:dtx432} si tu as peur d'abandonner : ses programmes de coaching notent ta régularité et montrent tes progrès. La {nom:dtx402} si le budget est serré ou si quelqu'un vit sous toi, grâce à sa pédale sans batte.",
+        r: "Si tu as peur d'abandonner, une des deux DTX402 d'entrée : leurs dix programmes de coaching notent ta régularité et montrent tes progrès. La {avis:dtx432} si tu veux une vraie pédale qui frappe un pad de grosse caisse. La {avis:dtx402} si le budget est serré ou si quelqu'un vit sous toi, grâce à sa pédale sans batte.",
       },
       {
         q: 'Y a-t-il une Yamaha en peaux maillées dans la sélection ?',
@@ -192,7 +192,7 @@ export const MARQUES = {
       },
       {
         q: 'DTX402K ou DTX432K : laquelle prendre ?',
-        r: "Même module, même taille de pads. La {nom:dtx432} coûte {ecart:dtx432-dtx402} de plus pour une vraie pédale qui frappe un pad de grosse caisse, un contrôleur de charleston HH65 et les dix programmes de coaching. Si quelqu'un vit sous toi, la pédale sans batte de la {nom:dtx402} devient au contraire un avantage.",
+        r: "Même module, même taille de pads. La {nom:dtx432} coûte {ecart:dtx432-dtx402} de plus pour une vraie pédale qui frappe un pad de grosse caisse et un contrôleur de charleston HH65. Les dix programmes de coaching sont les mêmes. Si quelqu'un vit sous toi, la pédale sans batte de la {avis:dtx402} devient au contraire un avantage.",
       },
       {
         q: 'Peut-on agrandir une DTX432K ?',

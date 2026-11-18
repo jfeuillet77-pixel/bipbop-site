@@ -510,6 +510,34 @@
         "note": 8,
         "raison": "Un rack qui descend à 57 cm, du mesh sur les fûts et une grosse caisse sans batte : le bon format pour commencer petit."
       }
+    },
+    "Avis-Yamaha-DTX402K.dc.html": {
+      "id": "dtx402",
+      "toucher": [
+        5,
+        "Quatre pads de 7,5 pouces en caoutchouc, une zone chacun : un rebond sec, aucune peau maillée."
+      ],
+      "discretion": [
+        9,
+        "Grosse caisse KU100 sans batte : rien ne frappe le plancher. Le caoutchouc claque toutefois dans la pièce."
+      ],
+      "module": [
+        9,
+        "Le module DTX402 de la DTX432K et son programme de coaching, avec l'application gratuite de Yamaha."
+      ],
+      "confort": [
+        5,
+        "Cymbales de 10 pouces et petits pads. Thomann ne publie pas la surface au sol."
+      ],
+      "prix": [
+        6,
+        "{prix:dtx402} pour le coaching Yamaha, mais ni baguettes, ni siège, ni casque dans le carton."
+      ],
+      "profil": {
+        "pour": "Tu vis en étage et tu doutes de tenir",
+        "note": 9,
+        "raison": "Le coaching de la gamme DTX402 et une grosse caisse qui ne frappe rien : la méthode sans le choc dans le plancher."
+      }
     }
   },
   "echelle": {

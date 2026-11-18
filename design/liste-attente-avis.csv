@@ -1,5 +1,5 @@
 # Hub /avis/ — liste d'attente des modèles sans avis publié.
-# Les 15 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
+# Les 14 lignes sont portées par scripts/port.mjs dans le tableau « en préparation » de Avis.dc.html.
 # cle     = nom_complet de src/data/modeles.json — c'est elle qui joint la base ; prix et segment
 #           en sont lus, ils ne se saisissent pas ici.
 # affiche = le libellé tel que la maquette l'écrit dans la colonne « Modèle » (il diffère de la base :
@@ -15,7 +15,6 @@ Donner DED-70;Donner DED-70;Des fûts en mesh au plus bas prix de Donner, un mod
 Millenium MPS-150;Millenium MPS-150;La MPS-150X en caoutchouc, plus compacte;rédigée
 Roland TD-02K;Roland TD-02K;Les sons Roland sans le mesh;maquette
 Millenium MPS-350;Millenium MPS-350;Entre la MPS-150X et la MPS-450;maquette
-Yamaha DTX402K;Yamaha DTX402K;La Yamaha la moins chère;maquette
 Nux DM-110 Mesh Kit;Nux DM-110 Mesh;Outsider mesh distribué par Woodbrass;maquette
 Donner DED-300X;Donner DED-300X;Cinq fûts mesh et module évolué;maquette
 Yamaha DTX6K2-X;Yamaha DTX6K2-X;La première vraie intermédiaire;maquette
