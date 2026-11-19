@@ -538,6 +538,34 @@
         "note": 9,
         "raison": "Le coaching de la gamme DTX402 et une grosse caisse qui ne frappe rien : la méthode sans le choc dans le plancher."
       }
+    },
+    "Avis-Roland-TD-02K.dc.html": {
+      "id": "td02k",
+      "toucher": [
+        5,
+        "Caisse claire et toms en pads PD-4 de caoutchouc, à une zone : un rebond sec, aucune peau maillée."
+      ],
+      "discretion": [
+        9,
+        "La pédale sans batte de la TD-02KV : rien ne frappe le plancher. Le caoutchouc claque toutefois dans la pièce."
+      ],
+      "module": [
+        6,
+        "Seize kits aux sons Roland, cinq fonctions de coaching et une sortie ligne à part. Pas de Bluetooth intégré."
+      ],
+      "confort": [
+        6,
+        "Environ 120 × 80 cm au sol, mais un rack à trois pieds et des pads de cymbale à une zone."
+      ],
+      "prix": [
+        6,
+        "{prix:td02k} pour les sons Roland et le silence au sol, mais ni siège ni casque dans le carton."
+      ],
+      "profil": {
+        "pour": "Quelqu'un vit sous toi et ton budget est serré",
+        "note": 9,
+        "raison": "La pédale sans batte de la TD-02KV et le même module, pour bien moins cher : le plancher reste tranquille."
+      }
     }
   },
   "echelle": {
