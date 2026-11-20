@@ -13,6 +13,15 @@
  */
 
 export const DUELS = {
+  '/duels/yamaha-dtx402k-vs-roland-td-02k/': {
+    a: 'dtx402',
+    b: 'td02k',
+    gagnant: 'dtx402',
+    resume:
+      "La DTX402K gagne pour apprendre seul : la même grosse caisse sans batte que la TD-02K, mais 287 sons, deux fois plus de programmes de coaching et une application, pour {diff:dtx402-td02k} de plus. La TD-02K garde une sortie ligne à part, des cymbales qui s'étouffent et le Bluetooth en option.",
+    pourA: "tu débutes seul et que tu as besoin d'un cadre pour tenir.",
+    pourB: 'tu joueras aussi sur une enceinte ou sur ta musique sans fil.',
+  },
   '/duels/alesis-nitro-max-vs-nitro-pro/': {
     a: 'nitromax',
     b: 'nitropro',
